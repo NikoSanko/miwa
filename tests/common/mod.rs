@@ -51,7 +51,7 @@ pub fn run_git(dir: &Path, args: &[&str]) -> String {
 /// The default `.miwa/config.yaml` used by most fixtures: docs/req/tests dirs,
 /// as plain top-level directories under the fixture root.
 pub fn default_config_yaml() -> &'static str {
-    "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_model: claude-sonnet-5\n"
+    "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_command:\n    - claude-sonnet-5\n"
 }
 
 /// Runs `miwa` with `args` in `dir` and returns the `assert_cmd::Command` (unasserted).
@@ -79,4 +79,151 @@ pub fn write_minimal_fixture(dir: &Path) {
         "tests/sample.rs",
         "// [FR-001]\n#[test]\nfn checks_fr_001() {\n    assert!(true);\n}\n",
     );
+}
+
+/// A request recorded by `MockServer`.
+#[derive(Debug, Clone)]
+pub struct RecordedRequest {
+    pub method: String,
+    pub path: String,
+    /// Header names are lower-cased.
+    pub headers: Vec<(String, String)>,
+    pub body: String,
+}
+
+impl RecordedRequest {
+    pub fn header(&self, name: &str) -> Option<&str> {
+        let name = name.to_ascii_lowercase();
+        self.headers
+            .iter()
+            .find(|(k, _)| *k == name)
+            .map(|(_, v)| v.as_str())
+    }
+}
+
+/// A tiny HTTP server on `127.0.0.1:0` that records requests and replies with
+/// the given `(status, body)` responses in order (the last one repeats).
+pub struct MockServer {
+    pub url: String,
+    requests: std::sync::Arc<std::sync::Mutex<Vec<RecordedRequest>>>,
+}
+
+impl MockServer {
+    pub fn start(responses: Vec<(u16, String)>) -> MockServer {
+        use std::io::{BufRead, BufReader, Read, Write};
+        assert!(!responses.is_empty());
+        let listener = std::net::TcpListener::bind("127.0.0.1:0").unwrap();
+        let addr = listener.local_addr().unwrap();
+        let requests = std::sync::Arc::new(std::sync::Mutex::new(Vec::new()));
+        let recorded = requests.clone();
+        std::thread::spawn(move || {
+            let mut index = 0usize;
+            for stream in listener.incoming() {
+                let Ok(mut stream) = stream else { continue };
+                let mut reader = BufReader::new(stream.try_clone().unwrap());
+                let mut request_line = String::new();
+                if reader.read_line(&mut request_line).unwrap_or(0) == 0 {
+                    continue;
+                }
+                let mut parts = request_line.split_whitespace();
+                let method = parts.next().unwrap_or("").to_string();
+                let path = parts.next().unwrap_or("").to_string();
+                let mut headers = Vec::new();
+                let mut content_length = 0usize;
+                loop {
+                    let mut line = String::new();
+                    if reader.read_line(&mut line).unwrap_or(0) == 0 {
+                        break;
+                    }
+                    let line = line.trim_end().to_string();
+                    if line.is_empty() {
+                        break;
+                    }
+                    if let Some((k, v)) = line.split_once(':') {
+                        let k = k.trim().to_ascii_lowercase();
+                        let v = v.trim().to_string();
+                        if k == "content-length" {
+                            content_length = v.parse().unwrap_or(0);
+                        }
+                        headers.push((k, v));
+                    }
+                }
+                let mut body = vec![0u8; content_length];
+                let _ = reader.read_exact(&mut body);
+                recorded.lock().unwrap().push(RecordedRequest {
+                    method,
+                    path,
+                    headers,
+                    body: String::from_utf8_lossy(&body).into_owned(),
+                });
+                let (status, resp_body) = &responses[index.min(responses.len() - 1)];
+                index += 1;
+                let reply = format!(
+                    "HTTP/1.1 {status} Mock\r\nContent-Type: application/json\r\nContent-Length: {}\r\nConnection: close\r\n\r\n{resp_body}",
+                    resp_body.len()
+                );
+                let _ = stream.write_all(reply.as_bytes());
+                let _ = stream.flush();
+            }
+        });
+        MockServer {
+            url: format!("http://{addr}/v1/systemone"),
+            requests,
+        }
+    }
+
+    pub fn requests(&self) -> Vec<RecordedRequest> {
+        self.requests.lock().unwrap().clone()
+    }
+}
+
+/// A Jev response body carrying `score`.
+pub fn jev_response(score: f64) -> String {
+    format!(
+        r#"{{"model":"jev-1.13.0","answers":{{"consistent":{{"type":"noul","noul":{score}}}}},"usage":{{"input_tokens":1,"output_tokens":1}}}}"#
+    )
+}
+
+pub const DUMMY_API_KEY: &str = "sk-dummy-typesafe";
+
+/// Fixture for `judge`: the minimal fixture (edges `doc-req:DOC-A:FR-001` and
+/// `test-req:tests/sample::checks_fr_001:FR-001`) whose config runs
+/// `agent_script` (via `sh -c`) as the LLM agent.
+pub fn write_judge_fixture(dir: &Path, agent_script: &str) {
+    write_minimal_fixture(dir);
+    let command = serde_json::json!(["sh", "-c", agent_script]);
+    write(
+        dir,
+        ".miwa/config.yaml",
+        &format!(
+            "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_command: {command}\n"
+        ),
+    );
+}
+
+/// An agent script that records its stdin to `<agent_dir>/prompt.txt`, appends
+/// a line to `<agent_dir>/runs.txt`, and prints `AGENT-OUTPUT`.
+pub fn recording_agent_script(agent_dir: &Path) -> String {
+    let d = agent_dir.display();
+    format!("echo run >> {d}/runs.txt; pwd > {d}/cwd.txt; cat > {d}/prompt.txt; echo AGENT-OUTPUT")
+}
+
+/// Makes every edge of the minimal fixture drift: reconciles all edges, then edits the req.
+pub fn make_edges_drift(dir: &Path) {
+    run(dir, &["reconcile", "--all"]).assert().success();
+    write(
+        dir,
+        "req/fr1.md",
+        "---\ntype: Requirement\nid: FR-001\n---\n変更後の要件本文。\n",
+    );
+}
+
+/// `miwa judge <args>` in `dir` with the API key and the mock endpoint set.
+pub fn run_judge(dir: &Path, server: &MockServer, args: &[&str]) -> Command {
+    let mut full = vec!["judge"];
+    full.extend_from_slice(args);
+    let mut cmd = run(dir, &full);
+    cmd.env("TYPESAFE_API_KEY", DUMMY_API_KEY)
+        .env("MIWA_JEV_ENDPOINT", &server.url);
+    cmd
 }

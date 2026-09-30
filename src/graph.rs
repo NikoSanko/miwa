@@ -332,7 +332,7 @@ mod tests {
             diff_base: "main".to_string(),
             judge: JudgeConfig {
                 threshold: 0.9,
-                llm_model: "x".to_string(),
+                llm_command: vec!["x".to_string()],
             },
         }
     }
@@ -561,7 +561,7 @@ mod tests {
             diff_base: "main".to_string(),
             judge: JudgeConfig {
                 threshold: 0.9,
-                llm_model: "x".to_string(),
+                llm_command: vec!["x".to_string()],
             },
         };
         let graph = build_graph(&source, &config).unwrap();

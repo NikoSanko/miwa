@@ -6,6 +6,7 @@ pub mod extract;
 pub mod frontmatter;
 pub mod graph;
 pub mod hash;
+pub mod judge;
 pub mod lock;
 pub mod markdown;
 pub mod model;
