@@ -30,7 +30,7 @@
 ## 3. スコープ（α版）
 
 - コマンド: `init` / `check` / `reconcile` / `judge`
-- 対応言語: Go のみ
+- 対応言語: Go と Rust（Rust は miwa 自身を miwa でチェックするために含める）
 - doc / req / test が同じリポジトリにあること
 
 ## 4. モデル
@@ -46,9 +46,10 @@ doc ──依存──▶ req ◀──検証── test
 |---|---|---|
 | doc | フロントマター `id` | 本文（フロントマター除く） |
 | req | フロントマター `id` | 本文（フロントマター除く） |
-| test | パッケージディレクトリ ＋ 関数名 | 関数全体 |
+| test | Go: パッケージディレクトリ ＋ 関数名 / Rust: ファイルパス ＋ モジュールパス ＋ 関数名 | 関数全体（Rust はシグネチャと本体を含む `fn` 全体。外側の属性は含まない） |
 
 - ハッシュは SHA-256。改行を LF に揃える以外の正規化はしない
+- doc / req のフロントマター `id` に使える文字は `A-Z a-z 0-9 . _ -`（`:` はエッジ ID の区切りに使うため不可）
 
 ## 5. ファイル形式
 
@@ -78,8 +79,17 @@ id: DOC-AUTH
 // [FR-001]
 func TestRejectsShortPassword(t *testing.T) { ... }
 ```
-- `*_test.go` の `func TestXxx` の直前のコメントに書いた `[req id]` が test → req のエッジになる
+- `*_test.go` のトップレベルの `func TestXxx` の直前に隣接するコメント（空行を挟まない）に書いた `[req id]` が test → req のエッジになる
 - マーカーのない Test 関数は無視する
+
+**test（Rust）**
+```rust
+// [FR-001]
+#[test]
+fn rejects_short_password() { ... }
+```
+- リテラルな `#[test]` 属性を持つ `fn` が対象（`#[tokio::test]` などは対象外）
+- マーカーは `#[test]` の直前に隣接するコメントに書く
 
 ## 6. 検知（`check`）
 
@@ -102,7 +112,7 @@ func TestRejectsShortPassword(t *testing.T) { ... }
 
 オプション:
 - `--gate`: finding が1件でもあれば exit 2 を返す（エラー時は exit 1）
-- `--diff`: merge-base との比較で、新たに発生した finding だけを報告する。CI でどちらを使うかはプロジェクトに任せる
+- `--diff`: merge-base との比較で、新たに発生した finding だけを報告する。merge-base 側は、その時点の設定・ソース・ロックで評価する。CI でどちらを使うかはプロジェクトに任せる
 
 ## 7. 合意（`reconcile`）
 
@@ -130,7 +140,7 @@ func TestRejectsShortPassword(t *testing.T) { ... }
 
 ## 9. ロック
 
-`.specdrift/lock.json` に、エッジ単位で記録する。
+`.miwa/lock.json` に、エッジ単位で記録する。設定は `.miwa/config.yaml`。
 
 ```json
 {
@@ -173,6 +183,7 @@ func TestRejectsShortPassword(t *testing.T) { ... }
 | D6 | doc はファイル全体を1ノードとする |
 | D7 | doc / req の識別子はフロントマターの `id` |
 | D8 | 1つの test が検証する req は1つ |
+| D9 | 対応言語は Go と Rust。miwa 自身を miwa でチェックする（dogfooding） |
 
 ## 12. 次のスコープ以降
 
