@@ -21,6 +21,8 @@ miwa reconcile --edge doc-req:DOC-AUTH:FR-001 --reason "最小長の記述が一
 
 指定した依存関係が、以前はロックにあったけれど今はソースから消えている場合（`removed` の状態）、`reconcile --edge` を実行すると[その記録はロックから削除されます](../req/reconcile-removes-stale-lock-only-edge.md)。
 
+`removed` の依存関係は、[意味判定（`judge`）の対象外](../req/judge-target-edges.md)です。ソースから消えた理由は人が判断する必要があるため、消えたものを復元するか、`reconcile --edge` で削除を承認するかを選んでください（詳しくは [意味判定](judge.md) を参照）。
+
 なお、[リンク切れ（broken）や不正な状態（invalid）に関わる依存関係は reconcile できません](../req/reconcile-rejects-broken-or-invalid.md)。まずソース側（doc・req・test）を直して、壊れた状態を解消してください。
 
 ## まとめて合意する
@@ -35,6 +37,6 @@ miwa reconcile --all
 
 ## 記録される内容
 
-`reconcile` で記録されるエントリの合意者は、常に [`by: human`](../req/reconcile-records-by-human-and-reason.md) です（機械的な自動合意は将来の機能として別に用意されます）。`--reason` を指定すればその内容が記録され、指定しなければ理由は記録されません。
+`reconcile` で記録されるエントリの合意者は、常に [`by: human`](../req/reconcile-records-by-human-and-reason.md) です（[`judge --auto-reconcile`](judge.md) による自動合意は別に記録されます）。`--reason` を指定すればその内容が記録され、指定しなければ理由は記録されません。
 
 依存関係の識別子（エッジ ID）や、doc・req・test それぞれの書き方については [3層モデル](model.md) を参照してください。

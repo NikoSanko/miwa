@@ -190,74 +190,74 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
-      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "from": "sha256:692e3def9ea6892ae86f22664fe39564f0292d750389f40cab53a992f83a976f",
       "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-RECONCILE:FR-022": {
-      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "from": "sha256:692e3def9ea6892ae86f22664fe39564f0292d750389f40cab53a992f83a976f",
       "to": "sha256:d5a7d587826af6ea3aa2e435f1277cb3003617e073bb96da52a66dde7dec1aa5",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-RECONCILE:FR-033": {
-      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "from": "sha256:692e3def9ea6892ae86f22664fe39564f0292d750389f40cab53a992f83a976f",
       "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-RECONCILE:FR-034": {
-      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "from": "sha256:692e3def9ea6892ae86f22664fe39564f0292d750389f40cab53a992f83a976f",
       "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-RECONCILE:FR-035": {
-      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "from": "sha256:692e3def9ea6892ae86f22664fe39564f0292d750389f40cab53a992f83a976f",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-RECONCILE:FR-036": {
-      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "from": "sha256:692e3def9ea6892ae86f22664fe39564f0292d750389f40cab53a992f83a976f",
       "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-RECONCILE:FR-037": {
-      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "from": "sha256:692e3def9ea6892ae86f22664fe39564f0292d750389f40cab53a992f83a976f",
       "to": "sha256:691e943b879df5a28ecafc254e42c9c4c5ed80d1407a329e378393fca4b0ec4c",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:c478c402b37f50e3f5acc9789c0d0da201c47935eaa9ad83759b47136e98c36f",
+      "from": "sha256:bd91b3a97f05c7d775b68a7c0cb4e1a97fe9fc5b22c150c9277cbcf67cad2838",
       "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:c478c402b37f50e3f5acc9789c0d0da201c47935eaa9ad83759b47136e98c36f",
-      "to": "sha256:9456848aed997c98c1b0606371f93ab10591af9056468d402ece9cf915d2c55e",
+      "from": "sha256:bd91b3a97f05c7d775b68a7c0cb4e1a97fe9fc5b22c150c9277cbcf67cad2838",
+      "to": "sha256:8674ea3de2cd0ceee38c202406280977624d27cb3ed9e103f23258350f16dc05",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:c478c402b37f50e3f5acc9789c0d0da201c47935eaa9ad83759b47136e98c36f",
+      "from": "sha256:bd91b3a97f05c7d775b68a7c0cb4e1a97fe9fc5b22c150c9277cbcf67cad2838",
       "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
       "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
@@ -961,17 +961,17 @@
     },
     "test-req:tests/cli_init::initは既定値でconfigを生成する:FR-019": {
       "from": "sha256:91d41f4bb7594a841ed3cdee42c8150e7854c518803bb7f96b22291399a308e9",
-      "to": "sha256:9456848aed997c98c1b0606371f93ab10591af9056468d402ece9cf915d2c55e",
+      "to": "sha256:8674ea3de2cd0ceee38c202406280977624d27cb3ed9e103f23258350f16dc05",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "test-req:tests/cli_init::既にconfigが存在する場合は上書きせず失敗する:FR-019": {
       "from": "sha256:4f320ca39810d3a4fe7d93810b271771b6eafe99235a895265ce06a8d7b9ea2c",
-      "to": "sha256:9456848aed997c98c1b0606371f93ab10591af9056468d402ece9cf915d2c55e",
+      "to": "sha256:8674ea3de2cd0ceee38c202406280977624d27cb3ed9e103f23258350f16dc05",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge の説明追加と llm_model 既定値の変更（レビュー済み）",
+      "at": "2026-09-30T18:48:50Z"
     },
     "test-req:tests/cli_reconcile::allでreconcileした直後はgate付きcheckがfindingなしになる:FR-036": {
       "from": "sha256:c9a78153b55ecb5e855f90e88353f0a28eba47a7283f05eb4c0b6f5ee2c8c8c0",
