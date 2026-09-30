@@ -70,6 +70,104 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "doc-req:DOC-JUDGE:FR-038": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-039": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:14ac646ea65457f53456b62362c5e70e3906da5d1f707e59ccfdb5b3f99eed74",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-040": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:07faf6692e128ab047af9396070a08f94e83f4349d857dc7d06dbeb61e6524e0",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-041": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:36638d7738c94f6a290b61472d1d2822c2ff3193937a9155ea5b1345b6d812ca",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-042": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:328228e8684c191901261060c184ed55cd9fc7355165c826b9161e89233068f3",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-043": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:9ee77162965603e68dc365a1b36c1ecaa43db355cf08024f0e2207e066d3e69c",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-044": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:37f018623ceebd4536e357343d1d3a12f1fbf129b8c8af2463a94b95248e346b",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-045": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-046": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:e51c03d0196dbdcd5d935fee1078af2d8d5acb15d684db939c40198d4e3e2772",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-047": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-048": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:7d5a4a4e231408cc31d1230da1ab19625a438ff2888f19e5a237ffd4e959e022",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-049": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:51d2100ad4c0a3a6e62d6bcb92ac7096ee49cbbec2c85d3345960d20ac5c5da8",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-050": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:43f2e35e26985f73b7565d6ba910bd83ae7fa435e44376005241fe73a0c15491",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "doc-req:DOC-JUDGE:FR-051": {
+      "from": "sha256:de1f0b06216feec0fff1ec8992ba38918e936050d1c7ddae7ba2def81b075fbf",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
     "doc-req:DOC-MODEL:FR-001": {
       "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
       "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
@@ -238,6 +336,13 @@
       "reason": "judge の二次判定をエージェント CLI 委任に変更（llm_model → llm_command。レビュー済み）",
       "at": "2026-09-30T19:17:10Z"
     },
+    "doc-req:DOC-RECONCILE:FR-038": {
+      "from": "sha256:4b5baa26003f156e2e3961e28ce5f61ef147758a89d24a7d4fb3af9901c134cf",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
     "doc-req:DOC-SETUP:FR-018": {
       "from": "sha256:633bce56909702d9505c98d455a19276bb18b4669a583bbd18ffbb5058df6ea1",
       "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
@@ -364,6 +469,13 @@
       "reason": "judge の二次判定をエージェント CLI 委任に変更（llm_model → llm_command。レビュー済み）",
       "at": "2026-09-30T19:17:10Z"
     },
+    "test-req:src/config:tests:llm_commandが空配列なら設定エラーになる:FR-020": {
+      "from": "sha256:857417e89f1be93ed37dfe59325e36434d1b60e3647f00528155a3790abbc5b3",
+      "to": "sha256:c2b69b4a231780975752eb63223663d82db18c446d4ec88759333d8911162af6",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
     "test-req:src/config:tests:thresholdが0から1の範囲内であれば妥当:FR-020": {
       "from": "sha256:654ad0b23b63ac3ae03dff0926bf3e21556da586eb0d5b51c9658bf66dab39b3",
       "to": "sha256:c2b69b4a231780975752eb63223663d82db18c446d4ec88759333d8911162af6",
@@ -377,6 +489,20 @@
       "by": "human",
       "reason": "judge の二次判定をエージェント CLI 委任に変更（llm_model → llm_command。レビュー済み）",
       "at": "2026-09-30T19:17:10Z"
+    },
+    "test-req:src/config:tests:yamlのllm_commandが空配列ならparseが失敗する:FR-020": {
+      "from": "sha256:4ebc349aeac2ac02d5069c028ec90488a9301fcbb155177765968f76afeef12e",
+      "to": "sha256:c2b69b4a231780975752eb63223663d82db18c446d4ec88759333d8911162af6",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/config:tests:既定値のllm_commandはclaudeを呼び出すコマンドである:FR-019": {
+      "from": "sha256:b165eccc40656846fb4db4d2522eee3234500042ab7017b58319b69eddbd580e",
+      "to": "sha256:b864615283ddc75312aadd45effb4a984be0617004e544fc79d7cef06273b0a7",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
     },
     "test-req:src/extract:tests:goのtest識別子はディレクトリと関数名を組み合わせた形式になる:FR-013": {
       "from": "sha256:a3fca9070f5b830b451593501769afce2f92683c3e6c75ccc3ea16c7e8057c0e",
@@ -512,11 +638,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
-      "from": "sha256:442fd4cb7b064238f8a1b62aa3079c31342119220b5df9f527846f79b8253618",
+      "from": "sha256:92620cea5948a66182cc25b45d34c146051a071eb2ce5c02ea40284416494a23",
       "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
     },
     "test-req:src/graph:tests:go_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:c963e55e4e807dab507de0b5a817dbf5706af73f564736db91a4c115a3dd230d",
@@ -629,6 +755,272 @@
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/judge:tests:apply_auto_reconcileはconsistentのエッジだけをjevの合意として記録する:FR-051": {
+      "from": "sha256:40df02c870ecd9ce80e390eee6f7c0edd2ee27a4e8c5d5531ec4d67836f28828",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:apply_auto_reconcileはreviewとskippedを記録せず既存エントリを変えない:FR-051": {
+      "from": "sha256:24aa91c7ab521fda98adc5cc980e8ecce7c15fd96a1845bc466feb305cdafdf7",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:apply_auto_reconcileは元のロックを変更しない:FR-051": {
+      "from": "sha256:42f38eb3913f4abac943224605d5b65da99215ebbe66f57f4b492a41ba04e17c",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:auto_reconcile指定ありならreconcileの実行指示を含む:FR-047": {
+      "from": "sha256:1ba20641f723d65b7e543a4ccd4e3c791a6e2a7b7be42b353f930a1ec6a490f4",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:auto_reconcile指定なしならreconcileを実行しないと明記する:FR-047": {
+      "from": "sha256:e671e14021886bf6a354e6cb239bb260004b63b6f9b0124c8c80bd90e19b8c3b",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:build_jev_requestはdoc_reqエッジのstateとquestionsを組み立てる:FR-041": {
+      "from": "sha256:602a7b3aa76554b0b63e6a2134f1f14303199db9556055800ba84aee5b457898",
+      "to": "sha256:36638d7738c94f6a290b61472d1d2822c2ff3193937a9155ea5b1345b6d812ca",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:build_jev_requestはtest_reqエッジのstateとquestionsを組み立てる:FR-041": {
+      "from": "sha256:71d8753b1b0a72889ca39402914bdbbebe6d0d8c1b34b4752df175767600d738",
+      "to": "sha256:36638d7738c94f6a290b61472d1d2822c2ff3193937a9155ea5b1345b6d812ca",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:jevがhttpエラーを返すとjudge_edgesはエラーになる:FR-043": {
+      "from": "sha256:64c123bd7d886fef7bd262e0f7bfb0d022821cc8ceef4b341a0013ccd433a647",
+      "to": "sha256:9ee77162965603e68dc365a1b36c1ecaa43db355cf08024f0e2207e066d3e69c",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:jevの質問文言はreqの文言と完全一致する:FR-041": {
+      "from": "sha256:6fcea5a458089bbe5ac45be94b055e6cd6cb77c2920098c51dd671c1df7f3fb5",
+      "to": "sha256:36638d7738c94f6a290b61472d1d2822c2ff3193937a9155ea5b1345b6d812ca",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:judge_edgesはエッジid昇順で判定結果を返す:FR-044": {
+      "from": "sha256:1eb840a4229cb13ae8635dea67eaba7fd95c7d40d7b6f6265df98b95dd5a1802",
+      "to": "sha256:37f018623ceebd4536e357343d1d3a12f1fbf129b8c8af2463a94b95248e346b",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:parse_jev_responseは0と1の境界値を受け入れる:FR-042": {
+      "from": "sha256:269ddc648d359481c06b48bfa76eed6ee039b14f834bd7bdb6893cb08dc7255a",
+      "to": "sha256:328228e8684c191901261060c184ed55cd9fc7355165c826b9161e89233068f3",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:parse_jev_responseは正常な応答からスコアを取り出す:FR-042": {
+      "from": "sha256:7fc4a9193f7cef1dea273a78275dcf95c0cc67eaef51240209bde6e3e2582194",
+      "to": "sha256:328228e8684c191901261060c184ed55cd9fc7355165c826b9161e89233068f3",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:parse_jev_responseは範囲外_欠落_非数値_壊れたjsonを拒否する:FR-042": {
+      "from": "sha256:fc7d7bd3df0a32457c3232f9ace681e30fc58dc917b329f8fb38391ee0d7014b",
+      "to": "sha256:328228e8684c191901261060c184ed55cd9fc7355165c826b9161e89233068f3",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:parse_jev_responseは負のゼロを0に正規化する:FR-042": {
+      "from": "sha256:585ebcc13f8ff0c28773802ed0c11344b1133e2a76294ed28e267452a19b4d5a",
+      "to": "sha256:328228e8684c191901261060c184ed55cd9fc7355165c826b9161e89233068f3",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:render_textは0件なら対象なしを返す:FR-049": {
+      "from": "sha256:c86d58faa8035df4920b0f3643055598860dd306326898078a358970ee1a5f7c",
+      "to": "sha256:51d2100ad4c0a3a6e62d6bcb92ac7096ee49cbbec2c85d3345960d20ac5c5da8",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:render_textは1エッジ1行でverdictとスコアを小数2桁で表示する:FR-049": {
+      "from": "sha256:71742e2f2af758979d818ac5db785233f71b805af8863e15571c74f4ec969032",
+      "to": "sha256:51d2100ad4c0a3a6e62d6bcb92ac7096ee49cbbec2c85d3345960d20ac5c5da8",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:render_textはスコアを小数第2位に丸めて表示する:FR-049": {
+      "from": "sha256:25ec020b8c2fffa621e903f28d877d109b9a918abd526f252eba89161dc7b826",
+      "to": "sha256:51d2100ad4c0a3a6e62d6bcb92ac7096ee49cbbec2c85d3345960d20ac5c5da8",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:reviewが0件ならプロンプトは空文字列になる:FR-046": {
+      "from": "sha256:929cde4ccf3c33582bf087542adc688038df48ca9d0529423d0c8db1d952ae41",
+      "to": "sha256:e51c03d0196dbdcd5d935fee1078af2d8d5acb15d684db939c40198d4e3e2772",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:run_agentはstdinへの書き込み失敗をagent_spawnにする:FR-045": {
+      "from": "sha256:949e20a96b6ba82923eda60b190c88196732c5e2d5d246eff1bd1a3e143432ad",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:run_agentはプロンプトを標準入力で渡し作業ディレクトリで実行する:FR-045": {
+      "from": "sha256:907188dcebd4441078692ef1a1487f421f99d84ac45c11021005cee2490c8d7a",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:run_agentは存在しないコマンドをagent_spawnにする:FR-045": {
+      "from": "sha256:8b7f83d7e3015a8688806c3ce3b1459128b5c36da288c4810a0d0e237ea37002",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:run_agentは非0終了をagent_failedにする:FR-045": {
+      "from": "sha256:31eeca8d30cb18dee11b374ffd68038299feffdc93799dff099c1f0a5cdfd30e",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:select_targetsはbrokenやinvalidに関わるエッジとremovedを対象にしない:FR-038": {
+      "from": "sha256:8d3743ecd55c49b5ba75071add63d0404de4e5fd3577dcd8d9b840b56d987fe3",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:select_targetsはdriftとnewのエッジだけをエッジid昇順で返す:FR-038": {
+      "from": "sha256:4ff347c9a21f9e62da773778b5be19e1386f5c3db9d1d92a037951bae34afa68",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:select_targetsはedge指定で絞り込み重複指定は1つにまとめる:FR-038": {
+      "from": "sha256:ef7cfb67495a5f875e400eda47e2cbfe8f716cd1b01a83fdb9dbefcfc8439d16",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:select_targetsはinvalidの種別と端点の種別が一致するときだけ除外する:FR-038": {
+      "from": "sha256:710d0143dc44d080ca166ed372a8a3179618b855430dbb79ccf1e541e6998dc7",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:select_targetsはエッジの両端のパス_本文_ハッシュをedge_inputに詰める:FR-038": {
+      "from": "sha256:33a0d28e462ee460cd7b89a9cb1e792c3fdf404366654af82c911addd5cf26f1",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:select_targetsは対象外のidを指定するとnot_a_targetになる:FR-038": {
+      "from": "sha256:3dadeaba5bb6b7c9f30cd57e43e886d79594494618b0042c4fe3f35c3764cd1e",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:スコアが閾値ちょうどならconsistentになる:FR-044": {
+      "from": "sha256:78ae6de32989b47425f731001a8d40b6ce222da73afe0a0422d073a82a9151bc",
+      "to": "sha256:37f018623ceebd4536e357343d1d3a12f1fbf129b8c8af2463a94b95248e346b",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:スコアが閾値未満ならreviewになる:FR-044": {
+      "from": "sha256:29a8d41e86000facd752d1ec81bc034d31a7213f109990d5bb8ef4cdd70d9ab9",
+      "to": "sha256:37f018623ceebd4536e357343d1d3a12f1fbf129b8c8af2463a94b95248e346b",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:プロンプトにはconsistentとskippedのエッジを含めない:FR-046": {
+      "from": "sha256:49d5b4e0b5db6e1e36a2e4678838c2b785bcf222e0b31421e16a65450d2f56a7",
+      "to": "sha256:e51c03d0196dbdcd5d935fee1078af2d8d5acb15d684db939c40198d4e3e2772",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:プロンプトにはreviewのエッジの詳細が含まれる:FR-046": {
+      "from": "sha256:0fad0366cf1b15b9e6b303be9d9111982dfcef49d2dfd5c9c02d7cbbda60c553",
+      "to": "sha256:e51c03d0196dbdcd5d935fee1078af2d8d5acb15d684db939c40198d4e3e2772",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:プロンプトのreconcile指示文はreqの文言と完全一致する:FR-047": {
+      "from": "sha256:0af3bc17a85d35cff1a9fcd0bb7ae0ac7f4f0f75a442fe705e430a89ae0ad509",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:プロンプトのエッジはid昇順に並ぶ:FR-046": {
+      "from": "sha256:3b3557e71748917160c1c2187c53ec86d0d7c684f3cbe954b8ea1067e4a12d7b",
+      "to": "sha256:e51c03d0196dbdcd5d935fee1078af2d8d5acb15d684db939c40198d4e3e2772",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:プロンプトは両モードで共通の判定基準と編集禁止を含む:FR-047": {
+      "from": "sha256:50cdc6029d1656bd470e47efb64eb0f2bed0d1c0aabb57ad92f91a3b0acf9f01",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:本文にバッククォートのフェンスを含んでもプロンプト中で本文はフェンス内に収まる:FR-047": {
+      "from": "sha256:6212e37a505af6d2e2dfd36decee5faeb560a752c7e167a1b70711ce4f77c805",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:本文合計が上限ちょうどならjevを呼ぶ:FR-048": {
+      "from": "sha256:4ee4a330fef62894e793acdd1fff34cf06950e4f16e7584e1d776a8564c6c8b5",
+      "to": "sha256:7d5a4a4e231408cc31d1230da1ab19625a438ff2888f19e5a237ffd4e959e022",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:src/judge:tests:本文合計が上限を超えるとjevを呼ばずskippedになる:FR-048": {
+      "from": "sha256:49ca731b184d0f6661ac663793065f5a410b00099597cb1aaa4c207326364ea4",
+      "to": "sha256:7d5a4a4e231408cc31d1230da1ab19625a438ff2888f19e5a237ffd4e959e022",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
     },
     "test-req:src/lock:tests:load_from_sourceはnotfoundなら空ロックとして扱う:FR-021": {
       "from": "sha256:2dfadf2e92232cf928832cc5859618359ac11014e5ba77c5fcb8173e805a763c",
@@ -925,11 +1317,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_check::設定エラーの場合はexit_code_1を返す:FR-030": {
-      "from": "sha256:7f325e57c7150708603cb681b2e6549df16d33015d49db8be558ea5cf9e3c68b",
+      "from": "sha256:6e7870e6b97d5d59aa764d469e1c84b7c5233a3c6c59c5319177fc79b8d27cef",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
     },
     "test-req:tests/cli_diff::diffはhead時点のロックで評価する_headで再合意すれば新たなfindingは出ない:FR-031": {
       "from": "sha256:4ff29ca728cb9daf16fb594d0033dfc1e26b4d646f28cba0e03c5465f20f8c10",
@@ -939,11 +1331,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_diff::diffはhead時点の設定で評価する_新しいrequirements領域のreqはnewとno_testになる:FR-031": {
-      "from": "sha256:92b7730be59e480ed0d716779c2fea30b54b04f6ec8e44495b81804a74fad409",
+      "from": "sha256:ab5e5a972d9bbecbff5ca328058b70a35a4c34bd9c678b12cb27b0104dc5fa6f",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
     },
     "test-req:tests/cli_diff::diffはmerge_base以降に新たに発生したfindingだけを報告する:FR-031": {
       "from": "sha256:949a2a53884e1c9d035b179fe6671040e46a14cc987701d67a0820af866b4645",
@@ -960,18 +1352,242 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_init::initは既定値でconfigを生成する:FR-019": {
-      "from": "sha256:91d41f4bb7594a841ed3cdee42c8150e7854c518803bb7f96b22291399a308e9",
+      "from": "sha256:738de6754552913cca7c48db13f57470670ebb0ef17c7b533c1f4291308c1b7f",
       "to": "sha256:b864615283ddc75312aadd45effb4a984be0617004e544fc79d7cef06273b0a7",
       "by": "human",
-      "reason": "judge の二次判定をエージェント CLI 委任に変更（llm_model → llm_command。レビュー済み）",
-      "at": "2026-09-30T19:17:10Z"
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
     },
     "test-req:tests/cli_init::既にconfigが存在する場合は上書きせず失敗する:FR-019": {
-      "from": "sha256:4f320ca39810d3a4fe7d93810b271771b6eafe99235a895265ce06a8d7b9ea2c",
+      "from": "sha256:669b6be6c6ca04c41e23cda9408c278bc40c8ce18415ad9354e9b3fb09ce27b5",
       "to": "sha256:b864615283ddc75312aadd45effb4a984be0617004e544fc79d7cef06273b0a7",
       "by": "human",
-      "reason": "judge の二次判定をエージェント CLI 委任に変更（llm_model → llm_command。レビュー済み）",
-      "at": "2026-09-30T19:17:10Z"
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::apiキーが未設定なら何も送信せずキー名を表示してexit1になる:FR-039": {
+      "from": "sha256:b5807846f00a226228dfd8f949dc742f5f1511c97fdda82a83971a1d263f237f",
+      "to": "sha256:14ac646ea65457f53456b62362c5e70e3906da5d1f707e59ccfdb5b3f99eed74",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::apiキーが空文字列なら何も送信せずexit1になる:FR-039": {
+      "from": "sha256:f23f5563c24a0e53c2c30877550ae2a95f6f659924676448850e635f6ffa58e6",
+      "to": "sha256:14ac646ea65457f53456b62362c5e70e3906da5d1f707e59ccfdb5b3f99eed74",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::apiキーの確認は対象エッジが0件でも行う:FR-039": {
+      "from": "sha256:ccd3e14c7714842da3a4259472cc797b7e31bf5929a03750660371c3254e1213",
+      "to": "sha256:14ac646ea65457f53456b62362c5e70e3906da5d1f707e59ccfdb5b3f99eed74",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::apiキー未設定で終了する場合は外部送信の表示を行わない:FR-040": {
+      "from": "sha256:e1afc181ba20afe88d19d7259deef075c10fc2e7137c0a4fab54f51d53983227",
+      "to": "sha256:07faf6692e128ab047af9396070a08f94e83f4349d857dc7d06dbeb61e6524e0",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::auto_reconcileなしならロックは変更されない:FR-051": {
+      "from": "sha256:70fab3aa0cadd24fcbb19e09cfc001afc39a629044531d041fda8d54dac34ed2",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::auto_reconcileはconsistentのエッジだけをjevの合意としてロックに書く:FR-051": {
+      "from": "sha256:bc21bd3bdba425d582fce7029df2e2d5274574aede62099a60d3aeea7632cad1",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::auto_reconcileはエージェントを起動する前にロックを書く:FR-051": {
+      "from": "sha256:ab22378950e1441d6c49132e57a8b4a98e1e215b2c6ef96a5f3cb1ca915dc5c4",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::auto_reconcile指定ありのプロンプトはreconcileの実行を指示する:FR-047": {
+      "from": "sha256:f62fb356c93287d6045f77aae4146f87359291d3e70b2df1f51a5ca8a0d012e0",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::auto_reconcile指定なしのプロンプトはreconcileを実行しないと明記する:FR-047": {
+      "from": "sha256:a47d94492c28b1c14d6309135ecbf2b05ee758cb751dabd0688118face4a389b",
+      "to": "sha256:1cdc8e33b820857b834b7b47bb97af6f95146b4533bacae0d8e9dae422672c37",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::jevが503を返したらexit1になりapiキーをstderrに出さずエージェントも起動しない:FR-043": {
+      "from": "sha256:5acece4aa6e98f2b50d44a0035baafcba1a8c9640b866598f22fb2802abeed72",
+      "to": "sha256:9ee77162965603e68dc365a1b36c1ecaa43db355cf08024f0e2207e066d3e69c",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::jevにはbearer認証のpostでmodelを指定して送る:FR-041": {
+      "from": "sha256:c80eeb629c31960faaa89f8438bdc94682eb421cbfafc8d961277e422562953e",
+      "to": "sha256:36638d7738c94f6a290b61472d1d2822c2ff3193937a9155ea5b1345b6d812ca",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::jevの応答からスコアが取れなければexit1になりエージェントは起動しない:FR-042": {
+      "from": "sha256:f892fe47f5183e6e5cbf018393bdc7b18eff0967eaa02f91002aa3991dd8d9a6",
+      "to": "sha256:328228e8684c191901261060c184ed55cd9fc7355165c826b9161e89233068f3",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::judgeのedge指定は対象外のidならapiもエージェントも呼ばずexit1になる:FR-038": {
+      "from": "sha256:e62131dfe95b450962fa77c8743c750d08fd10e92b2ad0f45375d299ee6feaac",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::judgeのedge指定は指定したエッジだけを判定する:FR-038": {
+      "from": "sha256:4fe1ecc6ad7daab6cd64ffa728182aee0fbd2f9913431472890ff11e50181cb4",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::judgeはdriftとnewのエッジを一次判定にかける:FR-038": {
+      "from": "sha256:db1016645357f6536f85a7d87d526a043497fe8512b40749a28ba3fa28c01181",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::judgeはformatオプションを持たない:FR-038": {
+      "from": "sha256:85d44f38e9aaeedc04bbea8927da8d4a5321caa6c9b66c38744500a54b6a1622",
+      "to": "sha256:08e57338f0d28116d75cf970ef8858256f419f19bf3620950963ef887d7ad561",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::reviewが0件ならエージェントは起動しない:FR-045": {
+      "from": "sha256:b9b39031594ec9cc38c8dde5a5c87539f4f1001102b6e579e85bae5a1ec95bdd",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::reviewが複数あってもエージェントは1回だけリポジトリルートで起動される:FR-045": {
+      "from": "sha256:7f646dbe289803f27bfa3212178184510b73295e30754ca21464110aac67af26",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::reviewやskippedがあっても判定が完了すればexit0になる:FR-050": {
+      "from": "sha256:1bc73a76327bd48455a34f7107e391c54c7ae6aa026cf955e6fd969a6fb48217",
+      "to": "sha256:43f2e35e26985f73b7565d6ba910bd83ae7fa435e44376005241fe73a0c15491",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::エージェントが起動できなければexit1になる:FR-045": {
+      "from": "sha256:6d76295a5711c7fdc88b8517898d6c2582bd8c25ca2b796c7c93016dbeea552c",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::エージェントが非0で終了したらexit1になる:FR-050": {
+      "from": "sha256:4f7b11463fcad973410cae35dd4c9044d4f54c5e293afc337a917d79940b6655",
+      "to": "sha256:43f2e35e26985f73b7565d6ba910bd83ae7fa435e44376005241fe73a0c15491",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::エージェントの出力は加工せずstdoutに流れる:FR-045": {
+      "from": "sha256:0b419c045c787c7574fa2adb957cc079f63eaa4ffa6dabbd7fe6b6e5ee403cf5",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::エージェントの子プロセスにapiキーとendpoint上書きは継承されない:FR-045": {
+      "from": "sha256:ece6c8d3d800c813e7ed8a64cc34eba3140e02e5eb33a0970bd37c6c7706ec4b",
+      "to": "sha256:5d9dda1bfc84ad11e07c64b38804474742a79258b6d386e840aceec11db09f35",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::スコアが閾値以上のエッジだけconsistentとして表示する:FR-044": {
+      "from": "sha256:d96a27131baf23593cbfb954525b952e76773d30a0ada49c3f358866a7c121d3",
+      "to": "sha256:37f018623ceebd4536e357343d1d3a12f1fbf129b8c8af2463a94b95248e346b",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::プロンプトにはreviewのエッジの詳細が入りconsistentのエッジは入らない:FR-046": {
+      "from": "sha256:5fd758b1800fd0e0e67531f2e926590b74f501e74eaa10803004baf016bce46e",
+      "to": "sha256:e51c03d0196dbdcd5d935fee1078af2d8d5acb15d684db939c40198d4e3e2772",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::プロンプトのエッジはid昇順に並ぶ:FR-046": {
+      "from": "sha256:5e39880a9c409d0231394d4e5479b177e43c72e1daf59bc2a14c1be6d66649df",
+      "to": "sha256:e51c03d0196dbdcd5d935fee1078af2d8d5acb15d684db939c40198d4e3e2772",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::一次判定の途中でエラーになったらロックは変更されない:FR-051": {
+      "from": "sha256:a831822993f7eb4b51191eede40320090afb28d5dddad93509277e58a0658108",
+      "to": "sha256:3dce63d965f6d0889beea597190ff2839cc22fb2b903c64d2a354abad602e6f1",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::一覧はエッジid昇順の1行1エッジで表示されエージェントの出力より前に出る:FR-049": {
+      "from": "sha256:387c3674bb990ec8ba596fe7124a760865f00177130a4b19eb8348d8893ef566",
+      "to": "sha256:51d2100ad4c0a3a6e62d6bcb92ac7096ee49cbbec2c85d3345960d20ac5c5da8",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::実行開始時に外部送信する旨をstderrに1行で表示する:FR-040": {
+      "from": "sha256:9f417cb2e1760b60917dd09630a0aab1aff9517240e6c369519cd5bfddcead84",
+      "to": "sha256:07faf6692e128ab047af9396070a08f94e83f4349d857dc7d06dbeb61e6524e0",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::対象が0件なら対象なしと表示してexit0になりapiもエージェントも呼ばない:FR-050": {
+      "from": "sha256:b624df34b15c339b9f8f4aeff29ee7a2901bd8de66938f4f86e656979d837509",
+      "to": "sha256:43f2e35e26985f73b7565d6ba910bd83ae7fa435e44376005241fe73a0c15491",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::本文が上限を超えるエッジはskippedになりjevにもエージェントにも渡らない:FR-048": {
+      "from": "sha256:38ea99138d6bb78311ea32eea5b29d544b7b9542ab3d7e1df0f72e228b855cd6",
+      "to": "sha256:7d5a4a4e231408cc31d1230da1ab19625a438ff2888f19e5a237ffd4e959e022",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
+    },
+    "test-req:tests/cli_judge::設定エラーならexit1になり何も送信しない:FR-050": {
+      "from": "sha256:e576db691837c713e6701a0b45e0dac005458dbb1ca176d0f7b3957778c45e21",
+      "to": "sha256:43f2e35e26985f73b7565d6ba910bd83ae7fa435e44376005241fe73a0c15491",
+      "by": "human",
+      "reason": "judge（FR-038〜051）の doc / req / テスト / 実装を追加（レビュー済み）",
+      "at": "2026-09-30T19:32:09Z"
     },
     "test-req:tests/cli_reconcile::allでreconcileした直後はgate付きcheckがfindingなしになる:FR-036": {
       "from": "sha256:c9a78153b55ecb5e855f90e88353f0a28eba47a7283f05eb4c0b6f5ee2c8c8c0",
