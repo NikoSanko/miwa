@@ -1,5 +1,5 @@
 ---
 type: Requirement
-id: FR-051
+id: FR-050
 ---
-`judge` は、すべての対象エッジの判定が完了した場合に exit 0 とする（`contradiction` や `uncertain` があっても exit 0）。設定エラー・API キー未設定・`--edge` の指定誤り・HTTP エラー・タイムアウト・一次判定の応答不正などの実行エラーは exit 1 とする。対象エッジが 0 件の場合は「対象なし」を表示して exit 0 とし、API は呼ばない（`--format json` では `{"judgments":[]}` を出力する）。
+`judge` は、一次判定と（必要なら）エージェントの実行が完了した場合に exit 0 とする（`review` や `skipped` があっても exit 0）。設定エラー・API キー未設定・`--edge` の指定誤り・Jev の HTTP エラーやタイムアウト・Jev の応答不正・エージェントの起動失敗・エージェントの非 0 終了は実行エラーとして exit 1 とする。対象エッジが 0 件の場合は「対象なし」を表示して exit 0 とし、Jev もエージェントも呼ばない。
