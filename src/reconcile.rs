@@ -23,8 +23,142 @@ pub fn reconcile(
     reason: Option<String>,
     now: &str,
 ) -> Result<crate::lock::Lock, ReconcileError> {
-    let _ = (graph, lock, target, reason, now);
-    todo!()
+    use crate::lock::{Lock, LockEntry};
+
+    match target {
+        ReconcileTarget::All => {
+            if !graph.invalid.is_empty() || !graph.broken.is_empty() {
+                return Err(ReconcileError::GraphNotClean);
+            }
+            let mut new_lock = Lock::default();
+            for (edge_id, edge) in &graph.edges {
+                let from_hash = graph
+                    .nodes
+                    .get(&edge.from)
+                    .map(|n| n.hash.clone())
+                    .unwrap_or_default();
+                let to_hash = graph
+                    .nodes
+                    .get(&edge.to)
+                    .map(|n| n.hash.clone())
+                    .unwrap_or_default();
+                let entry = match lock.edges.get(edge_id) {
+                    Some(existing) if existing.from == from_hash && existing.to == to_hash => {
+                        existing.clone()
+                    }
+                    _ => LockEntry {
+                        from: from_hash,
+                        to: to_hash,
+                        by: "human".to_string(),
+                        reason: reason.clone(),
+                        score: None,
+                        at: now.to_string(),
+                    },
+                };
+                new_lock.edges.insert(edge_id.clone(), entry);
+            }
+            Ok(new_lock)
+        }
+        ReconcileTarget::Edges(ids) => {
+            let mut new_lock = lock.clone();
+            for id in ids {
+                if let Some(edge) = graph.edges.get(&id) {
+                    let blocked = graph
+                        .invalid
+                        .iter()
+                        .any(|inv| inv.target == edge.from.id || inv.target == edge.to.id)
+                        || graph.broken.iter().any(|b| b.from == edge.from);
+                    if blocked {
+                        return Err(ReconcileError::Blocked(id));
+                    }
+                    let from_hash = graph
+                        .nodes
+                        .get(&edge.from)
+                        .map(|n| n.hash.clone())
+                        .unwrap_or_default();
+                    let to_hash = graph
+                        .nodes
+                        .get(&edge.to)
+                        .map(|n| n.hash.clone())
+                        .unwrap_or_default();
+                    new_lock.edges.insert(
+                        id,
+                        LockEntry {
+                            from: from_hash,
+                            to: to_hash,
+                            by: "human".to_string(),
+                            reason: reason.clone(),
+                            score: None,
+                            at: now.to_string(),
+                        },
+                    );
+                } else if new_lock.edges.contains_key(&id) {
+                    // The edge only exists in the lock (it was removed from
+                    // the source). Deleting it is normally fine, but if its
+                    // endpoints are currently invalid/broken (e.g. the req it
+                    // pointed to now has a duplicate id, or the test file it
+                    // lived in now fails to parse), removing the record could
+                    // hide that problem, so reject it instead.
+                    if let Some((kind_prefix, from_id, to_id)) = parse_edge_id(&id) {
+                        let mut blocked = graph
+                            .invalid
+                            .iter()
+                            .any(|inv| inv.target == from_id || inv.target == to_id)
+                            || graph.broken.iter().any(|b| b.from.id == from_id);
+                        if !blocked && kind_prefix == "test-req" {
+                            blocked = test_source_has_parse_error(&graph.invalid, from_id);
+                        }
+                        if blocked {
+                            return Err(ReconcileError::Blocked(id));
+                        }
+                    }
+                    new_lock.edges.remove(&id);
+                } else {
+                    return Err(ReconcileError::UnknownEdge(id));
+                }
+            }
+            Ok(new_lock)
+        }
+    }
+}
+
+/// Splits an edge id (`"doc-req:<from>:<to>"` / `"test-req:<from>:<to>"`)
+/// into `(kind_prefix, from_id, to_id)`. `to` (a req id) never contains `:`
+/// (doc/req ids are restricted to `[A-Za-z0-9._-]`), so it is always the
+/// last `:`-separated segment; `from` is everything between the kind prefix
+/// and that segment (and may itself contain `:` for Rust test ids).
+fn parse_edge_id(id: &str) -> Option<(&str, &str, &str)> {
+    let (rest, to_id) = id.rsplit_once(':')?;
+    let (kind_prefix, from_id) = rest.split_once(':')?;
+    Some((kind_prefix, from_id, to_id))
+}
+
+/// Whether `invalid` contains a `ParseError` whose target (a file path)
+/// looks like the source file that test id `test_id` lives in. The "source
+/// prefix" is the part of the test id before its first `:` (e.g. Rust
+/// `tests/sample::t` -> `tests/sample`, Go `internal/auth:TestX` ->
+/// `internal/auth`, Go at the repo root `.:TestX` -> `.`). The match is
+/// deliberately conservative (a false positive only blocks a removal, it
+/// never silently drops information):
+/// - Rust: the target equals `<prefix>.rs` exactly.
+/// - Go (non-root): the target starts with `<prefix>/`.
+/// - Go (repo root, `prefix == "."`): the target contains no `/`.
+fn test_source_has_parse_error(invalid: &[crate::model::Invalid], test_id: &str) -> bool {
+    let prefix = test_id.split_once(':').map_or(test_id, |(p, _)| p);
+    invalid.iter().any(|inv| {
+        if inv.reason != crate::model::ReasonCode::ParseError {
+            return false;
+        }
+        let target = inv.target.as_str();
+        if target == format!("{prefix}.rs") {
+            return true;
+        }
+        if prefix == "." {
+            !target.contains('/')
+        } else {
+            target.starts_with(&format!("{prefix}/"))
+        }
+    })
 }
 
 #[cfg(test)]
@@ -130,6 +264,93 @@ mod tests {
         )
         .unwrap();
         assert!(!result.edges.contains_key("doc-req:DOC-A:FR-001"));
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するエッジの終端がinvalidな場合はblockedとして拒否される() {
+        let graph = {
+            let mut graph = Graph::default(); // FR-001 は重複idによりグラフから消えている
+            graph.invalid.push(Invalid {
+                target_kind: TargetKind::Req,
+                target: "FR-001".to_string(),
+                reason: ReasonCode::DuplicateId,
+                detail: "duplicate id".to_string(),
+            });
+            graph
+        };
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "doc-req:DOC-A:FR-001".to_string(),
+            lock_entry("sha256:old-doc", "sha256:old-req", "2025-01-01T00:00:00Z"),
+        );
+        let before = lock.clone();
+
+        let result = reconcile(
+            &graph,
+            &lock,
+            ReconcileTarget::Edges(vec!["doc-req:DOC-A:FR-001".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        );
+        assert!(matches!(result, Err(ReconcileError::Blocked(_))));
+        assert_eq!(lock, before);
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するrustのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
+        let mut graph = Graph::default(); // テストは構文エラーによりグラフから消えている
+        graph.invalid.push(Invalid {
+            target_kind: TargetKind::File,
+            target: "tests/sample.rs".to_string(),
+            reason: ReasonCode::ParseError,
+            detail: "parse error".to_string(),
+        });
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "test-req:tests/sample::t:FR-001".to_string(),
+            lock_entry("sha256:old-test", "sha256:old-req", "2025-01-01T00:00:00Z"),
+        );
+        let before = lock.clone();
+
+        let result = reconcile(
+            &graph,
+            &lock,
+            ReconcileTarget::Edges(vec!["test-req:tests/sample::t:FR-001".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        );
+        assert!(matches!(result, Err(ReconcileError::Blocked(_))));
+        assert_eq!(lock, before);
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するgoのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
+        let mut graph = Graph::default(); // テストは構文エラーによりグラフから消えている
+        graph.invalid.push(Invalid {
+            target_kind: TargetKind::File,
+            target: "internal/auth/login_test.go".to_string(),
+            reason: ReasonCode::ParseError,
+            detail: "parse error".to_string(),
+        });
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "test-req:internal/auth:TestX:FR-001".to_string(),
+            lock_entry("sha256:old-test", "sha256:old-req", "2025-01-01T00:00:00Z"),
+        );
+        let before = lock.clone();
+
+        let result = reconcile(
+            &graph,
+            &lock,
+            ReconcileTarget::Edges(vec!["test-req:internal/auth:TestX:FR-001".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        );
+        assert!(matches!(result, Err(ReconcileError::Blocked(_))));
+        assert_eq!(lock, before);
     }
 
     // [FR-034]

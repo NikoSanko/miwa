@@ -19,31 +19,50 @@ pub struct Lock {
 
 impl Lock {
     pub fn parse(json: &str) -> anyhow::Result<Lock> {
-        let _ = json;
-        todo!()
+        let lock: Lock = serde_json::from_str(json)?;
+        Ok(lock)
     }
 
     /// Pretty JSON, stable key order, trailing newline.
     pub fn to_json(&self) -> String {
-        todo!()
+        let mut json = serde_json::to_string_pretty(self).expect("Lock serializes to json");
+        json.push('\n');
+        json
     }
 
     /// Returns `Lock::default()` if the file does not exist.
     pub fn load(root: &std::path::Path) -> anyhow::Result<Lock> {
-        let _ = root;
-        todo!()
+        let path = root.join(crate::config::LOCK_PATH);
+        if !path.exists() {
+            return Ok(Lock::default());
+        }
+        let content = std::fs::read_to_string(&path)?;
+        Lock::parse(&content)
     }
 
-    /// Loads via a `Source` (for `GitTreeSource`).
+    /// Loads via a `Source` (for `GitTreeSource`). `.miwa/` is excluded from
+    /// `list_files`, so this reads the lock file directly. A `NotFound` read
+    /// error means "no lock yet"; any other error (e.g. a `git` failure)
+    /// propagates instead of being silently treated as "absent".
     pub fn load_from_source(source: &dyn crate::source::Source) -> anyhow::Result<Lock> {
-        let _ = source;
-        todo!()
+        let bytes = match source.read(crate::config::LOCK_PATH) {
+            Ok(bytes) => bytes,
+            Err(e) if crate::source::is_not_found(&e) => return Ok(Lock::default()),
+            Err(e) => return Err(e),
+        };
+        let content = String::from_utf8(bytes)?;
+        Lock::parse(&content)
     }
 
     /// Writes via a temp file + rename.
     pub fn save(&self, root: &std::path::Path) -> anyhow::Result<()> {
-        let _ = root;
-        todo!()
+        let dir = root.join(".miwa");
+        std::fs::create_dir_all(&dir)?;
+        let final_path = root.join(crate::config::LOCK_PATH);
+        let tmp_path = dir.join("lock.json.tmp");
+        std::fs::write(&tmp_path, self.to_json())?;
+        std::fs::rename(&tmp_path, &final_path)?;
+        Ok(())
     }
 }
 
@@ -111,5 +130,46 @@ mod tests {
         let mut sorted = keys.clone();
         sorted.sort();
         assert_eq!(keys, sorted);
+    }
+
+    /// A `Source` test double whose `read` always fails with a fixed error.
+    struct FailingSource {
+        error_kind: std::io::ErrorKind,
+    }
+
+    impl crate::source::Source for FailingSource {
+        fn list_files(&self) -> anyhow::Result<Vec<String>> {
+            Ok(Vec::new())
+        }
+
+        fn read(&self, path: &str) -> anyhow::Result<Vec<u8>> {
+            Err(anyhow::Error::new(std::io::Error::new(
+                self.error_kind,
+                format!("{path} is unavailable"),
+            )))
+        }
+    }
+
+    // [FR-021]
+    #[test]
+    fn load_from_sourceはnotfoundなら空ロックとして扱う() {
+        let source = FailingSource {
+            error_kind: std::io::ErrorKind::NotFound,
+        };
+        let lock = Lock::load_from_source(&source).unwrap();
+        assert!(lock.edges.is_empty());
+    }
+
+    // [FR-021]
+    #[test]
+    fn load_from_sourceはnotfound以外のエラーを伝播する() {
+        let source = FailingSource {
+            error_kind: std::io::ErrorKind::PermissionDenied,
+        };
+        let result = Lock::load_from_source(&source);
+        assert!(
+            result.is_err(),
+            "non-NotFound read errors must propagate, not be treated as an absent lock"
+        );
     }
 }

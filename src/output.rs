@@ -1,15 +1,44 @@
 //! Text / JSON rendering of findings.
 
+fn kind_label(kind: crate::check::FindingKind) -> &'static str {
+    use crate::check::FindingKind::*;
+    match kind {
+        Drift => "drift",
+        New => "new",
+        Removed => "removed",
+        Broken => "broken",
+        Orphan => "orphan",
+        NoTest => "no-test",
+        Invalid => "invalid",
+    }
+}
+
 /// One line per finding. `"no findings\n"` if empty.
 pub fn render_text(findings: &[crate::check::Finding]) -> String {
-    let _ = findings;
-    todo!()
+    if findings.is_empty() {
+        return "no findings\n".to_string();
+    }
+    let mut out = String::new();
+    for f in findings {
+        out.push_str(&format!(
+            "{} {:?} {} {:?} {}\n",
+            kind_label(f.kind),
+            f.target_kind,
+            f.target,
+            f.reason,
+            f.detail
+        ));
+    }
+    out
 }
 
 /// `{"findings":[...]}`, pretty-printed.
 pub fn render_json(findings: &[crate::check::Finding]) -> String {
-    let _ = findings;
-    todo!()
+    #[derive(serde::Serialize)]
+    struct Wrapper<'a> {
+        findings: &'a [crate::check::Finding],
+    }
+    serde_json::to_string_pretty(&Wrapper { findings }).expect("findings serialize to json")
 }
 
 #[cfg(test)]

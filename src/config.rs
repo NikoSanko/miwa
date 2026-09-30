@@ -22,23 +22,51 @@ impl Config {
     /// docs=["docs"], requirements=["req"], tests=["."], diff_base="main",
     /// threshold=0.9, llm_model="claude-sonnet-5"
     pub fn default_config() -> Config {
-        todo!()
+        Config {
+            docs: vec!["docs".to_string()],
+            requirements: vec!["req".to_string()],
+            tests: vec![".".to_string()],
+            diff_base: "main".to_string(),
+            judge: JudgeConfig {
+                threshold: 0.9,
+                llm_model: "claude-sonnet-5".to_string(),
+            },
+        }
     }
 
     /// Parse `yaml` into a `Config` and validate it.
     pub fn parse(yaml: &str) -> anyhow::Result<Config> {
-        let _ = yaml;
-        todo!()
+        let config: Config = serde_yaml_ng::from_str(yaml)?;
+        config.validate()?;
+        Ok(config)
     }
 
     pub fn to_yaml(&self) -> String {
-        todo!()
+        serde_yaml_ng::to_string(self).expect("Config serializes to yaml")
     }
 
     /// `threshold` must be finite and within `0..=1`; each `Vec` must be
     /// non-empty; `diff_base` must be non-empty.
     pub fn validate(&self) -> anyhow::Result<()> {
-        todo!()
+        if !self.judge.threshold.is_finite() || !(0.0..=1.0).contains(&self.judge.threshold) {
+            anyhow::bail!(
+                "judge.threshold must be within 0..=1, got {}",
+                self.judge.threshold
+            );
+        }
+        if self.docs.is_empty() {
+            anyhow::bail!("docs must not be empty");
+        }
+        if self.requirements.is_empty() {
+            anyhow::bail!("requirements must not be empty");
+        }
+        if self.tests.is_empty() {
+            anyhow::bail!("tests must not be empty");
+        }
+        if self.diff_base.is_empty() {
+            anyhow::bail!("diff_base must not be empty");
+        }
+        Ok(())
     }
 }
 

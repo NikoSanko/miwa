@@ -24,20 +24,176 @@ pub struct Finding {
 
 /// Findings are sorted by `(kind, target_kind, target, reason)`.
 pub fn check(graph: &crate::model::Graph, lock: &crate::lock::Lock) -> Vec<Finding> {
-    let _ = (graph, lock);
-    todo!()
+    use crate::model::{EdgeKind, NodeKind, ReasonCode, TargetKind};
+
+    let mut findings = Vec::new();
+
+    for (edge_id, edge) in &graph.edges {
+        let from_hash = graph
+            .nodes
+            .get(&edge.from)
+            .map(|n| n.hash.clone())
+            .unwrap_or_default();
+        let to_hash = graph
+            .nodes
+            .get(&edge.to)
+            .map(|n| n.hash.clone())
+            .unwrap_or_default();
+        match lock.edges.get(edge_id) {
+            Some(entry) => {
+                let from_changed = entry.from != from_hash;
+                let to_changed = entry.to != to_hash;
+                if from_changed || to_changed {
+                    let reason = if from_changed && to_changed {
+                        ReasonCode::BothChanged
+                    } else if from_changed {
+                        match edge.kind {
+                            EdgeKind::DocReq => ReasonCode::DocChanged,
+                            EdgeKind::TestReq => ReasonCode::TestChanged,
+                        }
+                    } else {
+                        ReasonCode::ReqChanged
+                    };
+                    findings.push(Finding {
+                        kind: FindingKind::Drift,
+                        target_kind: TargetKind::Edge,
+                        target: edge_id.clone(),
+                        reason,
+                        detail: format!("edge {edge_id} drifted from the agreed state"),
+                    });
+                }
+            }
+            None => {
+                findings.push(Finding {
+                    kind: FindingKind::New,
+                    target_kind: TargetKind::Edge,
+                    target: edge_id.clone(),
+                    reason: ReasonCode::NewEdge,
+                    detail: format!("edge {edge_id} is not recorded in the lock"),
+                });
+            }
+        }
+    }
+
+    for edge_id in lock.edges.keys() {
+        if !graph.edges.contains_key(edge_id) {
+            findings.push(Finding {
+                kind: FindingKind::Removed,
+                target_kind: TargetKind::Edge,
+                target: edge_id.clone(),
+                reason: ReasonCode::RemovedEdge,
+                detail: format!("edge {edge_id} no longer exists in the source"),
+            });
+        }
+    }
+
+    // Precompute, in a single pass over the edges, which docs/reqs already
+    // have an incoming/outgoing edge, so the orphan/no-test checks below can
+    // look each node up in O(1) instead of re-scanning all edges per node.
+    let mut docs_with_req: std::collections::HashSet<&crate::model::NodeKey> =
+        std::collections::HashSet::new();
+    let mut reqs_with_doc: std::collections::HashSet<&crate::model::NodeKey> =
+        std::collections::HashSet::new();
+    let mut reqs_with_test: std::collections::HashSet<&crate::model::NodeKey> =
+        std::collections::HashSet::new();
+    for edge in graph.edges.values() {
+        match edge.kind {
+            EdgeKind::DocReq => {
+                docs_with_req.insert(&edge.from);
+                reqs_with_doc.insert(&edge.to);
+            }
+            EdgeKind::TestReq => {
+                reqs_with_test.insert(&edge.to);
+            }
+        }
+    }
+
+    for node in graph.nodes.values() {
+        match node.key.kind {
+            NodeKind::Req => {
+                if !reqs_with_doc.contains(&node.key) {
+                    findings.push(Finding {
+                        kind: FindingKind::Orphan,
+                        target_kind: TargetKind::Req,
+                        target: node.key.id.clone(),
+                        reason: ReasonCode::ReqWithoutDoc,
+                        detail: format!("{} is not linked from any doc", node.key.id),
+                    });
+                }
+                if !reqs_with_test.contains(&node.key) {
+                    findings.push(Finding {
+                        kind: FindingKind::NoTest,
+                        target_kind: TargetKind::Req,
+                        target: node.key.id.clone(),
+                        reason: ReasonCode::ReqWithoutTest,
+                        detail: format!("{} has no verifying test", node.key.id),
+                    });
+                }
+            }
+            NodeKind::Doc => {
+                if !docs_with_req.contains(&node.key) {
+                    findings.push(Finding {
+                        kind: FindingKind::Orphan,
+                        target_kind: TargetKind::Doc,
+                        target: node.key.id.clone(),
+                        reason: ReasonCode::DocWithoutReq,
+                        detail: format!("{} does not link to any req", node.key.id),
+                    });
+                }
+            }
+            NodeKind::Test => {}
+        }
+    }
+
+    for invalid in &graph.invalid {
+        findings.push(Finding {
+            kind: FindingKind::Invalid,
+            target_kind: invalid.target_kind,
+            target: invalid.target.clone(),
+            reason: invalid.reason,
+            detail: invalid.detail.clone(),
+        });
+    }
+
+    for broken in &graph.broken {
+        let target_kind = match broken.from.kind {
+            NodeKind::Doc => TargetKind::Doc,
+            NodeKind::Test => TargetKind::Test,
+            NodeKind::Req => TargetKind::Req,
+        };
+        findings.push(Finding {
+            kind: FindingKind::Broken,
+            target_kind,
+            target: broken.from.id.clone(),
+            reason: broken.reason,
+            detail: broken.detail.clone(),
+        });
+    }
+
+    findings.sort();
+    findings
 }
 
 /// `current - base`, keyed by `(kind, target_kind, target, reason)`.
 pub fn diff_findings(current: &[Finding], base: &[Finding]) -> Vec<Finding> {
-    let _ = (current, base);
-    todo!()
+    let base_keys: std::collections::HashSet<_> = base
+        .iter()
+        .map(|f| (f.kind, f.target_kind, f.target.clone(), f.reason))
+        .collect();
+    current
+        .iter()
+        .filter(|f| !base_keys.contains(&(f.kind, f.target_kind, f.target.clone(), f.reason)))
+        .cloned()
+        .collect()
 }
 
 /// Returns 2 if `gate` and `findings` is non-empty, else 0.
 pub fn exit_code(findings: &[Finding], gate: bool) -> i32 {
-    let _ = (findings, gate);
-    todo!()
+    if gate && !findings.is_empty() {
+        2
+    } else {
+        0
+    }
 }
 
 #[cfg(test)]

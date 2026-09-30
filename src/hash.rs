@@ -2,14 +2,17 @@
 
 /// Normalize line endings (CRLF / CR) to LF. Nothing else is changed.
 pub fn normalize(text: &str) -> String {
-    let _ = text;
-    todo!()
+    text.replace("\r\n", "\n").replace('\r', "\n")
 }
 
 /// Normalize `text` and return its SHA-256 hash as `"sha256:<hex>"` (lowercase hex).
 pub fn content_hash(text: &str) -> String {
-    let _ = text;
-    todo!()
+    use sha2::Digest;
+    let normalized = normalize(text);
+    let mut hasher = sha2::Sha256::new();
+    hasher.update(normalized.as_bytes());
+    let digest = hasher.finalize();
+    format!("sha256:{}", hex::encode(digest))
 }
 
 #[cfg(test)]
@@ -36,5 +39,13 @@ mod tests {
             .all(|c| c.is_ascii_hexdigit() && !c.is_ascii_uppercase()));
         // 空白除去や大小文字変換のような正規化は行われないため、内容が違えば別ハッシュになる
         assert_ne!(content_hash("hello"), content_hash("hello "));
+    }
+
+    // [FR-001]
+    #[test]
+    fn 単独crもlfと同じハッシュになる() {
+        let lf = "a\nb";
+        let cr = "a\rb";
+        assert_eq!(content_hash(lf), content_hash(cr));
     }
 }

@@ -43,14 +43,19 @@ pub struct Edge {
 
 /// `"doc-req:<from>:<to>"` / `"test-req:<from>:<to>"`.
 pub fn edge_id(kind: EdgeKind, from_id: &str, to_id: &str) -> String {
-    let _ = (kind, from_id, to_id);
-    todo!()
+    let prefix = match kind {
+        EdgeKind::DocReq => "doc-req",
+        EdgeKind::TestReq => "test-req",
+    };
+    format!("{prefix}:{from_id}:{to_id}")
 }
 
 /// `id` is non-empty and contains only `[A-Za-z0-9._-]`.
 pub fn is_valid_id(id: &str) -> bool {
-    let _ = id;
-    todo!()
+    !id.is_empty()
+        && id
+            .chars()
+            .all(|c| c.is_ascii_alphanumeric() || c == '.' || c == '_' || c == '-')
 }
 
 #[derive(

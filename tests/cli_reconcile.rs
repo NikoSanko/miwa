@@ -114,3 +114,39 @@ fn allでreconcileした直後はgate付きcheckがfindingなしになる() {
         .assert()
         .code(0);
 }
+
+// [FR-033]
+#[test]
+fn edgeもallも指定しないreconcileはexit_code_1でロックを作らない() {
+    let dir = tempfile::tempdir().unwrap();
+    common::write_minimal_fixture(dir.path());
+
+    common::run(dir.path(), &["reconcile"])
+        .assert()
+        .failure()
+        .code(1);
+
+    assert!(
+        !dir.path().join(".miwa/lock.json").exists(),
+        "lock must not be created when neither --edge nor --all is given"
+    );
+}
+
+// [FR-036]
+#[test]
+fn edgeとallを同時に指定するとreconcileは拒否される() {
+    let dir = tempfile::tempdir().unwrap();
+    common::write_minimal_fixture(dir.path());
+
+    common::run(
+        dir.path(),
+        &["reconcile", "--edge", "doc-req:DOC-A:FR-001", "--all"],
+    )
+    .assert()
+    .failure();
+
+    assert!(
+        !dir.path().join(".miwa/lock.json").exists(),
+        "lock must not be created when --edge and --all conflict"
+    );
+}

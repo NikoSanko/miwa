@@ -18,8 +18,48 @@ pub enum ExtractError {
 /// whose name starts with `Test`. Markers are collected from the block of
 /// comments immediately (no blank line) preceding the function.
 pub fn extract_go_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, ExtractError> {
-    let _ = (path, source);
-    todo!()
+    let mut parser = tree_sitter::Parser::new();
+    parser
+        .set_language(&tree_sitter_go::LANGUAGE.into())
+        .expect("valid go grammar");
+    let tree = parser
+        .parse(source, None)
+        .ok_or_else(|| ExtractError::Parse {
+            path: path.to_string(),
+        })?;
+    let root = tree.root_node();
+    if root.has_error() {
+        return Err(ExtractError::Parse {
+            path: path.to_string(),
+        });
+    }
+
+    let dir = dir_of(path);
+    let mut results = Vec::new();
+
+    let mut cursor = root.walk();
+    let children: Vec<tree_sitter::Node> = root.children(&mut cursor).collect();
+    for (idx, node) in children.iter().enumerate() {
+        if node.kind() != "function_declaration" {
+            continue;
+        }
+        let Some(name_node) = node.child_by_field_name("name") else {
+            continue;
+        };
+        let name = name_node.utf8_text(source.as_bytes()).unwrap_or("");
+        if !name.starts_with("Test") {
+            continue;
+        }
+        let markers = collect_preceding_markers(&children, idx, source, "comment");
+        let content = node.utf8_text(source.as_bytes()).unwrap_or("").to_string();
+        results.push(ExtractedTest {
+            id: format!("{dir}:{name}"),
+            name: name.to_string(),
+            markers,
+            content,
+        });
+    }
+    Ok(results)
 }
 
 /// Extract Rust tests: `function_item`s carrying a literal `#[test]`
@@ -27,8 +67,204 @@ pub fn extract_go_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, 
 /// `#[test]`. `content` is the source of the `function_item` (attributes not
 /// included).
 pub fn extract_rust_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, ExtractError> {
-    let _ = (path, source);
-    todo!()
+    let mut parser = tree_sitter::Parser::new();
+    parser
+        .set_language(&tree_sitter_rust::LANGUAGE.into())
+        .expect("valid rust grammar");
+    let tree = parser
+        .parse(source, None)
+        .ok_or_else(|| ExtractError::Parse {
+            path: path.to_string(),
+        })?;
+    let root = tree.root_node();
+    if root.has_error() {
+        return Err(ExtractError::Parse {
+            path: path.to_string(),
+        });
+    }
+
+    let base = path.strip_suffix(".rs").unwrap_or(path);
+    let mut results = Vec::new();
+    walk_rust_items(root, source, base, &[], &mut results);
+    Ok(results)
+}
+
+fn walk_rust_items(
+    container: tree_sitter::Node,
+    source: &str,
+    base: &str,
+    mods: &[String],
+    results: &mut Vec<ExtractedTest>,
+) {
+    let mut cursor = container.walk();
+    let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
+    for (idx, node) in children.iter().enumerate() {
+        match node.kind() {
+            "function_item" => {
+                let Some(name_node) = node.child_by_field_name("name") else {
+                    continue;
+                };
+                let name = name_node
+                    .utf8_text(source.as_bytes())
+                    .unwrap_or("")
+                    .to_string();
+                let Some(markers) = rust_test_markers(&children, idx, source) else {
+                    continue;
+                };
+                let content = node.utf8_text(source.as_bytes()).unwrap_or("").to_string();
+                let id = if mods.is_empty() {
+                    format!("{base}::{name}")
+                } else {
+                    format!("{base}:{}:{name}", mods.join("/"))
+                };
+                results.push(ExtractedTest {
+                    id,
+                    name,
+                    markers,
+                    content,
+                });
+            }
+            "mod_item" => {
+                let Some(name_node) = node.child_by_field_name("name") else {
+                    continue;
+                };
+                let Some(body) = node.child_by_field_name("body") else {
+                    continue;
+                };
+                let mod_name = name_node
+                    .utf8_text(source.as_bytes())
+                    .unwrap_or("")
+                    .to_string();
+                let mut new_mods = mods.to_vec();
+                new_mods.push(mod_name);
+                walk_rust_items(body, source, base, &new_mods, results);
+            }
+            _ => {}
+        }
+    }
+}
+
+/// Walks backward from `children[target_idx]`, collecting a contiguous
+/// (no-blank-line) block of `comment_kind` nodes, and extracts `[marker]`
+/// tokens from them, top to bottom.
+fn collect_preceding_markers(
+    children: &[tree_sitter::Node],
+    target_idx: usize,
+    source: &str,
+    comment_kind: &str,
+) -> Vec<String> {
+    let mut next_start_row = children[target_idx].start_position().row;
+    let mut j = target_idx as isize - 1;
+    let mut comments = Vec::new();
+    while j >= 0 {
+        let node = children[j as usize];
+        if node.kind() != comment_kind {
+            break;
+        }
+        let end_row = node.end_position().row;
+        if end_row + 1 != next_start_row {
+            break;
+        }
+        comments.push(node);
+        next_start_row = node.start_position().row;
+        j -= 1;
+    }
+    comments.reverse();
+    let mut markers = Vec::new();
+    for c in comments {
+        let text = c.utf8_text(source.as_bytes()).unwrap_or("");
+        markers.extend(extract_markers(text));
+    }
+    markers
+}
+
+/// Returns `None` if `children[func_idx]` is not preceded (immediately) by an
+/// `attribute_item` chain containing a literal `#[test]`. Otherwise, returns
+/// the markers from the comment block immediately (no blank line, no other
+/// attribute in between) preceding that specific `#[test]` attribute node
+/// (not just the start of the whole attribute chain).
+fn rust_test_markers(
+    children: &[tree_sitter::Node],
+    func_idx: usize,
+    source: &str,
+) -> Option<Vec<String>> {
+    // Comments may sit between the attribute chain and the function itself
+    // (e.g. `#[test]` / `// note` / `fn f() {}`). Skip over those before
+    // looking for the attribute chain; they never contribute markers (a
+    // marker must be immediately before `#[test]` itself, handled below).
+    let mut j = func_idx as isize - 1;
+    while j >= 0 && is_comment_kind(children[j as usize].kind()) {
+        j -= 1;
+    }
+
+    let mut test_attr_idx: Option<usize> = None;
+    while j >= 0 && children[j as usize].kind() == "attribute_item" {
+        let attr = children[j as usize];
+        let text = attr.utf8_text(source.as_bytes()).unwrap_or("").trim();
+        if text == "#[test]" {
+            test_attr_idx = Some(j as usize);
+        }
+        j -= 1;
+    }
+    let test_attr_idx = test_attr_idx?;
+
+    let mut next_start_row = children[test_attr_idx].start_position().row;
+    let mut k = test_attr_idx as isize - 1;
+    let mut comments = Vec::new();
+    while k >= 0 {
+        let node = children[k as usize];
+        if !is_comment_kind(node.kind()) {
+            break;
+        }
+        let end_row = node.end_position().row;
+        if end_row + 1 != next_start_row {
+            break;
+        }
+        comments.push(node);
+        next_start_row = node.start_position().row;
+        k -= 1;
+    }
+    comments.reverse();
+    let mut markers = Vec::new();
+    for c in comments {
+        let text = c.utf8_text(source.as_bytes()).unwrap_or("");
+        markers.extend(extract_markers(text));
+    }
+    Some(markers)
+}
+
+fn is_comment_kind(kind: &str) -> bool {
+    kind == "line_comment" || kind == "block_comment"
+}
+
+/// Extracts every `[marker]` occurrence, where `marker` is one or more
+/// `[A-Za-z0-9._-]` characters.
+fn extract_markers(text: &str) -> Vec<String> {
+    let mut markers = Vec::new();
+    let mut rest = text;
+    while let Some(start) = rest.find('[') {
+        let after_open = &rest[start + 1..];
+        let Some(end) = after_open.find(']') else {
+            break;
+        };
+        let inner = &after_open[..end];
+        if !inner.is_empty()
+            && inner
+                .chars()
+                .all(|c| c.is_ascii_alphanumeric() || c == '.' || c == '_' || c == '-')
+        {
+            markers.push(inner.to_string());
+        }
+        rest = &after_open[end + 1..];
+    }
+    markers
+}
+
+fn dir_of(path: &str) -> String {
+    match path.rsplit_once('/') {
+        Some((dir, _)) => dir.to_string(),
+        None => ".".to_string(),
+    }
 }
 
 #[cfg(test)]
@@ -217,5 +453,61 @@ fn no_comment() {}
 "#;
         let tests = extract_rust_tests("src/lock.rs", source).unwrap();
         assert_eq!(find(&tests, "roundtrip").id, "src/lock:tests:roundtrip");
+    }
+
+    // [FR-017]
+    #[test]
+    fn rustのtest識別子はネストしたinline_modをスラッシュで連結する() {
+        let source = r#"mod outer {
+    mod inner {
+        // [FR-001]
+        #[test]
+        fn t() {}
+    }
+}
+"#;
+        let tests = extract_rust_tests("src/x.rs", source).unwrap();
+        assert_eq!(find(&tests, "t").id, "src/x:outer/inner:t");
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustは属性が間に挟まるとtestの直前のコメントをマーカーにしない() {
+        let source = r#"// [FR-001]
+#[cfg(feature = "x")]
+#[test]
+fn not_adjacent() {}
+"#;
+        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
+        assert!(find(&tests, "not_adjacent").markers.is_empty());
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustは他の属性の後ろでもtestの直前のコメントはマーカーになる() {
+        let source = r#"#[cfg(feature = "x")]
+// [FR-001]
+#[test]
+fn adjacent_after_other_attr() {}
+"#;
+        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
+        assert_eq!(
+            find(&tests, "adjacent_after_other_attr").markers,
+            vec!["FR-001".to_string()]
+        );
+    }
+
+    // [FR-015]
+    #[test]
+    fn rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する() {
+        let source = r#"// [FR-001]
+#[test]
+// 補足
+fn t() {}
+"#;
+        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
+        let found = find(&tests, "t");
+        assert_eq!(found.markers, vec!["FR-001".to_string()]);
+        assert!(!found.content.contains("補足"));
     }
 }
