@@ -534,3 +534,19 @@ fn auto_reconcileはエージェントを起動する前にロックを書く() 
     assert!(snapshot.contains(DOC_EDGE), "{snapshot}");
     assert!(snapshot.contains("\"jev\""), "{snapshot}");
 }
+
+// [FR-045]
+#[test]
+fn エージェントの子プロセスにapiキーとendpoint上書きは継承されない() {
+    let repo = tempfile::tempdir().unwrap();
+    let agent = tempfile::tempdir().unwrap();
+    let script = format!("cat > /dev/null; env > {}/env.txt", agent.path().display());
+    write_judge_fixture(repo.path(), &script);
+    let server = MockServer::start(vec![ok(0.3)]);
+    let output = run_judge(repo.path(), &server, &[]).output().unwrap();
+    assert_eq!(output.status.code(), Some(0));
+    let env = std::fs::read_to_string(agent.path().join("env.txt")).unwrap();
+    assert!(!env.contains("TYPESAFE_API_KEY"), "{env}");
+    assert!(!env.contains("MIWA_JEV_ENDPOINT"), "{env}");
+    assert!(!env.contains(DUMMY_API_KEY), "{env}");
+}

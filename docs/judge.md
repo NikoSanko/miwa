@@ -47,6 +47,8 @@ miwa judge --auto-reconcile
 
 TypeSafe AI の API キーは、設定ファイルには書かず、環境変数 `TYPESAFE_API_KEY` で渡します。[設定されていない場合は、何も送信せずにエラーで終了します](../req/judge-api-key-required.md)。エージェント CLI 側の認証は、そのツール自身の方法で行ってください。しきい値やエージェントのコマンドの設定は [miwa を使い始める](setup.md) を参照してください。
 
+`judge.llm_command` はリポジトリの設定ファイルから読んで実行するため、信頼できないリポジトリ（他人の clone やブランチ）で `judge` を実行しないでください。α版では設定ファイルを信頼済みの入力として扱います。
+
 通信エラーやタイムアウトは、[一次判定の実行エラーとして止まり、エラーメッセージに API キーは含まれません](../req/judge-jev-http-errors-timeouts-and-redaction.md)。
 
 ## 結果の見方
