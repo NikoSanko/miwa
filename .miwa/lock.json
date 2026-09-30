@@ -1,0 +1,1019 @@
+{
+  "edges": {
+    "doc-req:DOC-CHECK:FR-014": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:34469d9549d02cf4750f266d5776cf648c5873eb4a2d526b236acd63a7ed58dd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-024": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-025": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-026": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-027": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-028": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-029": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-030": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-031": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-CHECK:FR-032": {
+      "from": "sha256:68356b75c3386b35228977b6f3aa36dca5faaee1ef2d0637ce3a13dbda9da02b",
+      "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-001": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-002": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-003": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:b2f0873d5d33f0c6c497ebe344ce809821bd9b04258e1d07c8afa436e42bc2c7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-004": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-005": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-006": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-007": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-008": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-009": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-010": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-011": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-012": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-013": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-015": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-016": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-017": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-MODEL:FR-023": {
+      "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
+      "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-021": {
+      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-022": {
+      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "to": "sha256:d5a7d587826af6ea3aa2e435f1277cb3003617e073bb96da52a66dde7dec1aa5",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-033": {
+      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-034": {
+      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-035": {
+      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-036": {
+      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-037": {
+      "from": "sha256:e5bb3f534f892205724fe9d93b3e966eb69d40b87383c3e186b0530653a69aa0",
+      "to": "sha256:691e943b879df5a28ecafc254e42c9c4c5ed80d1407a329e378393fca4b0ec4c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-SETUP:FR-018": {
+      "from": "sha256:c478c402b37f50e3f5acc9789c0d0da201c47935eaa9ad83759b47136e98c36f",
+      "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-SETUP:FR-019": {
+      "from": "sha256:c478c402b37f50e3f5acc9789c0d0da201c47935eaa9ad83759b47136e98c36f",
+      "to": "sha256:9456848aed997c98c1b0606371f93ab10591af9056468d402ece9cf915d2c55e",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "doc-req:DOC-SETUP:FR-020": {
+      "from": "sha256:c478c402b37f50e3f5acc9789c0d0da201c47935eaa9ad83759b47136e98c36f",
+      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
+      "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
+      "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:docだけ変わった場合はdoc_changedとしてdriftを報告する:FR-024": {
+      "from": "sha256:b7655654efdbe93e4a1df190150061844544b04d082274e2816e3aedfaede684",
+      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:exit_codeはfindingが0件でgateがあっても0を返す:FR-030": {
+      "from": "sha256:e69f6c3752dd27bd3d21c5c10e9e360077608bbc0c3c65c793f4110696823b34",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:exit_codeはgateなしなら常に0を返す:FR-030": {
+      "from": "sha256:3cc74f2c0f5940b83b8dc5bc389ac49be07d4922b342b740c18cb943631d98e2",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:exit_codeはgate指定かつfindingがあれば2を返す:FR-030": {
+      "from": "sha256:70ea520f7553cfd5c0898ea5a77e77453319ddc84f43a86cd22bae5eb570fd70",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:reqだけ変わった場合はreq_changedとしてdriftを報告する:FR-024": {
+      "from": "sha256:943da658bf341065c2089ae9e2827b0f675a611a896af3450b04583b935cf513",
+      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:testだけ変わった場合はtest_changedとしてdriftを報告する:FR-024": {
+      "from": "sha256:2ae5e128ab880e3c8c97d1c69ebba93910111b6813b7d414942c7a30986d0660",
+      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:どのdocからもリンクされないreqはorphanになる:FR-026": {
+      "from": "sha256:ee7dad58112e4d9caa65e30cca826caf5bd32ec4f514e18da5fceafa76f1752e",
+      "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:どのreqにもリンクしないdocはorphanになる:FR-026": {
+      "from": "sha256:20c41bb2c0dcf8ebef07dc81ddae72ccfb753f19a093d4693d2cf7e9809cd563",
+      "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:ソースから消えたエッジはremovedとして報告する:FR-025": {
+      "from": "sha256:f045d7eaba06f1697f3f2d712a2d6769fcf31d59e3a3a664240a48a4f01ada08",
+      "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:テストで検証されていないreqはno_testになる:FR-027": {
+      "from": "sha256:011951be49efb5f35646347417f933172e427aa7e9129e43f3f7b7be2cc4f08a",
+      "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:ロックにないエッジはnewとして報告する:FR-025": {
+      "from": "sha256:06bd9bf25e8fdb2bb15d792531c17ba933353c38a42a70c6c8ae6f9c9209ff86",
+      "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/check:tests:両側が変わった場合はboth_changedとして1件だけ報告する:FR-024": {
+      "from": "sha256:8b3a55fb0eb8aace588e01c57989f020fcb8eb5c7fa167762239eeb46a96497f",
+      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/config:tests:diff_baseが空文字列なら設定エラーになる:FR-020": {
+      "from": "sha256:f5dade3238a577ec186c624952d234809780c00a9db0204bf940b29754aa81b4",
+      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/config:tests:docs_requirements_testsのいずれかが空なら設定エラーになる:FR-020": {
+      "from": "sha256:77929e7e9ca8ce34cf22e879437d562835cdd231c4d08cee6136332f11c386e7",
+      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/config:tests:thresholdが0から1の範囲内であれば妥当:FR-020": {
+      "from": "sha256:654ad0b23b63ac3ae03dff0926bf3e21556da586eb0d5b51c9658bf66dab39b3",
+      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/config:tests:thresholdが範囲外なら設定エラーになる:FR-020": {
+      "from": "sha256:f05352c3f3501f3d40227c722ee6af434188c780da9412e382f281a53f596f66",
+      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:goのtest識別子はディレクトリと関数名を組み合わせた形式になる:FR-013": {
+      "from": "sha256:a3fca9070f5b830b451593501769afce2f92683c3e6c75ccc3ea16c7e8057c0e",
+      "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:goのtest識別子はリポジトリ直下ならドットになる:FR-013": {
+      "from": "sha256:5367aabb021332bf2b98e2e2803fadd9534b733c643b68a9b7297e0fd2f637b5",
+      "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:goの関数本体の変更はcontentに反映される:FR-003": {
+      "from": "sha256:4faa011e2c87d3c32eac3a72af66047b02b8376c25d439f0719d54f487ec4402",
+      "to": "sha256:b2f0873d5d33f0c6c497ebe344ce809821bd9b04258e1d07c8afa436e42bc2c7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:goは直前に隣接するコメントをマーカーとして抽出する:FR-012": {
+      "from": "sha256:9ef89183b685271fc708b7e61da1dd7e3e87b3d5c2cd9fe880f8d4e6ca367205",
+      "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:goは空行を挟んだコメントや欠落をマーカーなしとして無視する:FR-012": {
+      "from": "sha256:6f7283511e3859425075dc5111af47b2376e460139abda632cc06b6499362fbf",
+      "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustのcontentは外側の属性とマーカーコメントを含まない:FR-004": {
+      "from": "sha256:8f84bf009f39ffd8aebdf0b7063253910113ff06ab2536fd43267066df0aae7e",
+      "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustのtest識別子はinline_modを外側から内側の順に連結する:FR-017": {
+      "from": "sha256:30d61c716a9c0dcebdfae0d194b268d122d4e2d74047e65ed97e8c50b7383432",
+      "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustのtest識別子はトップレベルなら空モジュールパスになる:FR-017": {
+      "from": "sha256:412f7c47d561af9abac2c0527d22e2c07eb71835efa61c2f665692d6ff74dcb8",
+      "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustのtest識別子はネストしたinline_modをスラッシュで連結する:FR-017": {
+      "from": "sha256:be7f6657c8f9227e4bc34a231b2aca0de245f8d8600f7ebd125759336b0fc2b3",
+      "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustの関数本体の変更はcontentに反映される:FR-003": {
+      "from": "sha256:cdc679035bf2bee29c9e3a0838d7e5a77c93bbbdfa1b3a92bf5040d6af874318",
+      "to": "sha256:b2f0873d5d33f0c6c497ebe344ce809821bd9b04258e1d07c8afa436e42bc2c7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する:FR-015": {
+      "from": "sha256:b9d75c162775b20ad5c482ef2648faae6eb1924a3a56f4e563aef073d899f950",
+      "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustはtest属性の直前に隣接するコメントをマーカーとする:FR-016": {
+      "from": "sha256:c553857d12880567c212dfb7baf79a3de78ab8bf732117ffc88d1eb932e64834",
+      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustは他の属性の後ろでもtestの直前のコメントはマーカーになる:FR-016": {
+      "from": "sha256:5379fc4ae0fb72acb1fbda4e3d00549dabcec265c794e5e272341374feb70f16",
+      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:rustは属性が間に挟まるとtestの直前のコメントをマーカーにしない:FR-016": {
+      "from": "sha256:0f7bc1788dba0853107002ab640c9aab5d1eb6aac0948c1ebf2271a4119e2545",
+      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:リテラルなtest属性のみをrustのtestとして抽出する:FR-015": {
+      "from": "sha256:168ab467b344c0a26f5559a51e1b023d94f04f867be39ed91e2413a6a0b3ff24",
+      "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/frontmatter:tests:bodyにはフロントマターのブロックが含まれない:FR-002": {
+      "from": "sha256:fa37e123aedbe74153243f29044ef60ff35d26300597ac994d33e770b7b7c42e",
+      "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/frontmatter:tests:id_だけを変えても本文bodyは変わらない:FR-002": {
+      "from": "sha256:a0702e719e462fed3d1878e7359ad43c9e9790cbd51b7b44b9ff02a46e531a7c",
+      "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/frontmatter:tests:typeフィールドがない場合はkindがnoneになる:FR-005": {
+      "from": "sha256:93e7d867ed6032b7b92c872143b91c49e83ec4b8d0ffc3ba18fb97a06ec9eb6b",
+      "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/frontmatter:tests:ハイフン3つで始まらないテキストはnoneになる:FR-005": {
+      "from": "sha256:fda49ebf189b1a3f91ca49a6bf1622dfa87b94a376f896ab905609d25549acc6",
+      "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
+      "from": "sha256:442fd4cb7b064238f8a1b62aa3079c31342119220b5df9f527846f79b8253618",
+      "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:go_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
+      "from": "sha256:c963e55e4e807dab507de0b5a817dbf5706af73f564736db91a4c115a3dd230d",
+      "to": "sha256:34469d9549d02cf4750f266d5776cf648c5873eb4a2d526b236acd63a7ed58dd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:idが空のファイルはmissing_idとして報告される:FR-007": {
+      "from": "sha256:8d4683b0a9928750e2fb743f6f283c7027b68b785005e79473fb9bdabcb5b07b",
+      "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:requirements領域外を指すリンクはエッジにもbrokenにもならない:FR-010": {
+      "from": "sha256:08456d470f12742417e5a32ca9c67119c0ca73ecf9142a80d6e451c3cd3389c5",
+      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:requirement型でないファイルを指すリンクはnot_req_fileとしてbrokenになる:FR-011": {
+      "from": "sha256:b463d5c33d6af94a819162234fc24fc3f5b01234df36d2e5c622c14f8d177c64",
+      "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:rust_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
+      "from": "sha256:450cd6de02730e0650465f516903cf30ae66d476cd5cd013c358e533107c72e2",
+      "to": "sha256:34469d9549d02cf4750f266d5776cf648c5873eb4a2d526b236acd63a7ed58dd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:typeの値がspecification_requirement以外なら対象外になる:FR-005": {
+      "from": "sha256:2f4bbe94f27d9f4c9a3d2710a4f9869ddc629713a54302bf93324872cc67eaef",
+      "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:typeフィールドのないmdファイルはノードとして扱われない:FR-005": {
+      "from": "sha256:8cbe323a8dc7f51239d097d8cf657508f0388ce666f746586ee24148477541b4",
+      "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:不正な文字を含むidはinvalid_idとして報告される:FR-006": {
+      "from": "sha256:7121aaf049c06fa3847f5b4c668f4a34f6b714a14f67654addb0a8deeb46cfea",
+      "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:同じidを持つファイルが複数あるとduplicate_idとして報告される:FR-007": {
+      "from": "sha256:d06a3354a3c4eb5dcfed5def07753b4d178977092c762e78602528d177d9436e",
+      "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:存在しないreq_idを指すtestマーカーはbrokenになる:FR-011": {
+      "from": "sha256:327a6a87f1539ff1445aad7e33c0a3eb533a93235f246164642145aeb74854d5",
+      "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:存在しないreqファイルを指すリンクはbrokenになる:FR-011": {
+      "from": "sha256:bc2ce90c9bdcbd9a37138dacca0894d92d8e8af87c79cc8145d94d02feafa86a",
+      "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:構文エラーのgoテストファイルはparse_errorとしてinvalidになる:FR-014": {
+      "from": "sha256:dab20a651b1ff14bb4908868dcb097939ab91c7e2717fb5ef7bb8f623e73f7ee",
+      "to": "sha256:34469d9549d02cf4750f266d5776cf648c5873eb4a2d526b236acd63a7ed58dd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:構文エラーのrustテストファイルはparse_errorとしてinvalidになる:FR-014": {
+      "from": "sha256:07c3d40ff26668ed45e68bca7941acf64d08478b9e8bf1e2349822b9b9de3b6e",
+      "to": "sha256:34469d9549d02cf4750f266d5776cf648c5873eb4a2d526b236acd63a7ed58dd",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/hash:tests:content_hash_はsha256プレフィックス付きの小文字hexを返す:FR-001": {
+      "from": "sha256:f25a04dd8737c3c235bbc0467be14b5f2b18dbc10cea98d6a5eb3eb1d02d1a8e",
+      "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/hash:tests:crlf_と_lf_は同じハッシュになる:FR-001": {
+      "from": "sha256:edd94e8d6bf6bf93e4fd6d7e3f097b52f193ddb82a788bfef6881d5dca9071e6",
+      "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/hash:tests:単独crもlfと同じハッシュになる:FR-001": {
+      "from": "sha256:4a5965b5413e20a03d069c3f86775bf9a48d618a25f16408b57fa9a7416dfe28",
+      "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/lock:tests:load_from_sourceはnotfoundなら空ロックとして扱う:FR-021": {
+      "from": "sha256:2dfadf2e92232cf928832cc5859618359ac11014e5ba77c5fcb8173e805a763c",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/lock:tests:load_from_sourceはnotfound以外のエラーを伝播する:FR-021": {
+      "from": "sha256:9b22a40e5a2a17f41d71816dd646dc494c177fa8ffe2f30747d73fb8ecc90b30",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/lock:tests:to_jsonはエッジidの昇順で出力される:FR-022": {
+      "from": "sha256:054d826bcae4150d13dd365a20385c99bda668b4e987dd7144a5ecc12d836609",
+      "to": "sha256:d5a7d587826af6ea3aa2e435f1277cb3003617e073bb96da52a66dde7dec1aa5",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/lock:tests:ロックファイルが存在しない場合は空のロックとして扱う:FR-021": {
+      "from": "sha256:3d727fb007c2f65c96b601234cfeec1165e45f218841a17489e38d86e40630b8",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/lock:tests:壊れたjsonのロックはparseがエラーになる:FR-021": {
+      "from": "sha256:82286ee8466abce76091a0ad6e7bf380d85d200fe66a5a3ba31c6e8ee97780d6",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:mailtoやdataスキームのリンクはresolve_linkでnoneになる:FR-010": {
+      "from": "sha256:ad057d3932df11f17d069b0882077468af31d5857ab7f8819e67468bdccfdffc",
+      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:resolve_linkはフラグメントを取り除いてから解決する:FR-009": {
+      "from": "sha256:98bfa428895fb876953c3e69e3c15f641e420a38e4ada144998cd362a5e1fa7d",
+      "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:インライン形式のリンクをdoc_reqエッジとして抽出できる:FR-008": {
+      "from": "sha256:ac6d1a3503dd557b20a8206b3d5da73dcaa9c578629bc7214b6d02ce818cc594",
+      "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:コードブロックやインラインコード内のリンクは対象にならない:FR-010": {
+      "from": "sha256:0dcd2b278de8f8a140a6f27982ba78eae6243ccfdfe5dc4b1704b6067cbee52f",
+      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:参照形式のリンクをdoc_reqエッジとして抽出できる:FR-008": {
+      "from": "sha256:a62a245085a6fd672d4e9ea5dd16192d17902634765a37c96a34e19253d37c10",
+      "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:外部urlやリポジトリ外へ逃げるパスはresolve_linkでnoneになる:FR-010": {
+      "from": "sha256:cdda4e6d90627294ab76fda9e6863929493b69ee43ae5c99f898e36b7f617de8",
+      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:画像リンクはextract_linksの対象にならない:FR-010": {
+      "from": "sha256:ee5ee6c9b7a332fd605a8b92bd3634457ef6367d18b523813b302bfa1f109a73",
+      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/model:tests:edge_idはdoc_reqの接頭辞と両端のidを持つ:FR-023": {
+      "from": "sha256:ad17456a25ac364d66a23ec786890aabb19a05585027e3ab8d9cbbfb842ca9d4",
+      "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/model:tests:edge_idはtest_reqの接頭辞と両端のidを持つ:FR-023": {
+      "from": "sha256:1b5a6cc9246b2ebe8078c0b30698819fd50393c32fdf6290e72b88e6a1842360",
+      "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/model:tests:is_valid_idはコロンや空白_日本語_空文字を拒否する:FR-006": {
+      "from": "sha256:62174129bc01591bcd07ea812478c12b24c4a35c19940e02408450426e597317",
+      "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/model:tests:is_valid_idは英数字とドット_アンダースコア_ハイフンのみ許可する:FR-006": {
+      "from": "sha256:0d84112d49133fe27cc3c11f26f02ffee8facc890ba306cde4dad2b15d5255ec",
+      "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/output:tests:render_jsonはfindings配列にkind_target_kind_target_reason_detailを持つ:FR-032": {
+      "from": "sha256:e1a6fd16f9683a9b4bda6863de864d6905f6dc17e091efc538e18a55d0287726",
+      "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/output:tests:render_textは1行1findingでkindとtargetを含む:FR-032": {
+      "from": "sha256:61e76577aa37611cedcedd5a5515f80b7df5ba711401db342406adc7035c3583",
+      "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/output:tests:render_textはfindingなしなら固定文言になる:FR-032": {
+      "from": "sha256:434f8989748ff694d1a71e97b693d01c786383abfc63273d911794ff59180c62",
+      "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:allは変更のないエッジを据え置き_新規を追加し_消えたエッジを削除する:FR-036": {
+      "from": "sha256:65858f29eef0a4caf9dc55771f0a2dab71c5f2597fdb669c4e9b97de2128f325",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:edgeを指定すると現在の両端のハッシュがロックに記録される:FR-033": {
+      "from": "sha256:aecedaff61f348470442226f09c58adf99073ed62942f44c82675a7cc54cabfb",
+      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:reasonを指定した場合はエントリに記録される:FR-037": {
+      "from": "sha256:262632d80e03f9b7e1246b6e5dc743d13757e1581ad0a1360591a540ef904d6d",
+      "to": "sha256:691e943b879df5a28ecafc254e42c9c4c5ed80d1407a329e378393fca4b0ec4c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:reasonを指定しない場合は記録されない:FR-037": {
+      "from": "sha256:a6e4cbeefa3de48cb4685e713c66c45aeba2685d7a0c62ce8428d30583a83fac",
+      "to": "sha256:691e943b879df5a28ecafc254e42c9c4c5ed80d1407a329e378393fca4b0ec4c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:ロックにのみ存在するgoのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
+      "from": "sha256:b4668576828923a9a9401cb8b2840ea474a1f931a267f27d603d713814a01bd8",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:ロックにのみ存在するrustのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
+      "from": "sha256:f0c3bda1452e66a190d1f7e3c3c312526127424ed5d9fdb3fb914aeb97d0eda4",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:ロックにのみ存在するエッジの終端がinvalidな場合はblockedとして拒否される:FR-035": {
+      "from": "sha256:10110c83e452299a4600e841ed636e3edf30c503b83923bcc2ccb4c3e48167f2",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:ロックにのみ存在するエッジを指定するとロックから削除される:FR-034": {
+      "from": "sha256:b636160dc75c676b81fafd18e8be8cefd7e4c1314acb17f0473ca60666b1739a",
+      "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:ロックにもグラフにも存在しないエッジを指定するとエラーになる:FR-034": {
+      "from": "sha256:bf01091a30035cb6caefda2afd8d61d0a479e3665229d078968f684e150efb7c",
+      "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:対象reqがinvalidに関わるエッジはreconcileを拒否される:FR-035": {
+      "from": "sha256:2e00fcc0069209338c7b83a592ca187cb32e5eceed765f9d19f72aac7239294c",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:対象にbrokenまたはinvalidが1件でもあればallは全く変更せず失敗する:FR-036": {
+      "from": "sha256:1ce382c3c14946f1e39d084c6e60e1c1361282472e9a68dfa0c87e49e5d3c7e5",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/source:tests:fssourceのreadは絶対パスやドットドットや空パスを拒否する:FR-018": {
+      "from": "sha256:44a9b182d3c88a11d35f9230c217c9cb648eb548f4a7597b8237a1c385a39b26",
+      "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/source:tests:gittreesourceのreadはコミット時点の内容を返す:FR-021": {
+      "from": "sha256:7bc006f7613723598cbfbee0531668579b476184dd518fd269a4ccfd3d83957b",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/source:tests:gittreesourceのreadは存在しないパスでnotfoundエラーを返す:FR-021": {
+      "from": "sha256:a0e59e891bc9750e6074f7b5fe22e2c64155fb700bcad847d5214c1cf738c286",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/source:tests:gittreesourceは除外ディレクトリ配下もreadでは読める:FR-021": {
+      "from": "sha256:a92814b3844f8a5a52c376b5f83cb4b364e16c495d9bc4c3a6c5269382b2cc7b",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/source:tests:gittreesourceは除外ディレクトリ配下をlist_filesに含めない:FR-018": {
+      "from": "sha256:fe0a7f9f3f34869b90dbcd12b53f302510d37bb1ab13be391fc82099ca46c731",
+      "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/source:tests:除外ディレクトリ配下のファイルは列挙されない:FR-018": {
+      "from": "sha256:f6bcc5f4687f9db2951d1635a85e9901f52ceb86203b83ecae02b749fb5f2ade",
+      "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_check::checkはロックファイルの内容を書き換えない:FR-028": {
+      "from": "sha256:aefa5b49fa885ab92c36b9881ff3b8cf417a3201920c8af3992f2b88dafe7231",
+      "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_check::checkは同じ入力に対して常に同じ出力を返す:FR-029": {
+      "from": "sha256:4f71b35fbac4591e4ef247ec7b1eb1e2c7081747547a9b0250ebddc7cb403b4e",
+      "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_check::findingが0件でgateがあってもexit_code_0を返す:FR-030": {
+      "from": "sha256:edfcffdb652ad03df3f9e9bc7adde477c0a818f15b14d578463aab61d625480d",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_check::gateなしのcheckはfindingがあってもexit_code_0を返す:FR-030": {
+      "from": "sha256:8ab44a0c82d077606656a9f0b82b397996505f9d28b3f527a566aae10b17fa59",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_check::gateはfindingがあればexit_code_2を返す:FR-030": {
+      "from": "sha256:4eaa80968e9d4dd39e0fe0b677974185cd81da03bfc8dd9aed745c2a91a39585",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_check::textとjsonは同じ数のfindingを表す:FR-032": {
+      "from": "sha256:f98a22937f95ba74469c00a49594dc8155fdec0fa92b9cef9f44dfe227ac9fc5",
+      "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_check::設定エラーの場合はexit_code_1を返す:FR-030": {
+      "from": "sha256:7f325e57c7150708603cb681b2e6549df16d33015d49db8be558ea5cf9e3c68b",
+      "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_diff::diffはhead時点のロックで評価する_headで再合意すれば新たなfindingは出ない:FR-031": {
+      "from": "sha256:4ff29ca728cb9daf16fb594d0033dfc1e26b4d646f28cba0e03c5465f20f8c10",
+      "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_diff::diffはhead時点の設定で評価する_新しいrequirements領域のreqはnewとno_testになる:FR-031": {
+      "from": "sha256:92b7730be59e480ed0d716779c2fea30b54b04f6ec8e44495b81804a74fad409",
+      "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_diff::diffはmerge_base以降に新たに発生したfindingだけを報告する:FR-031": {
+      "from": "sha256:949a2a53884e1c9d035b179fe6671040e46a14cc987701d67a0820af866b4645",
+      "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_diff::merge_baseが取得できない場合はexit_code_1で終了する:FR-031": {
+      "from": "sha256:dd275c89b9307cf10d66b53c9443a63fbf9a859afcd6e2d75bdd99e3a0d16dc6",
+      "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_init::initは既定値でconfigを生成する:FR-019": {
+      "from": "sha256:91d41f4bb7594a841ed3cdee42c8150e7854c518803bb7f96b22291399a308e9",
+      "to": "sha256:9456848aed997c98c1b0606371f93ab10591af9056468d402ece9cf915d2c55e",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_init::既にconfigが存在する場合は上書きせず失敗する:FR-019": {
+      "from": "sha256:4f320ca39810d3a4fe7d93810b271771b6eafe99235a895265ce06a8d7b9ea2c",
+      "to": "sha256:9456848aed997c98c1b0606371f93ab10591af9056468d402ece9cf915d2c55e",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_reconcile::allでreconcileした直後はgate付きcheckがfindingなしになる:FR-036": {
+      "from": "sha256:c9a78153b55ecb5e855f90e88353f0a28eba47a7283f05eb4c0b6f5ee2c8c8c0",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_reconcile::brokenなtest_reqエッジを指定したreconcileは拒否されロックは書き込まれない:FR-035": {
+      "from": "sha256:ce9951cf239c1caf81efed92f686267fa48d1590cb9e0a813f231111a4884bc6",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_reconcile::edgeとallを同時に指定するとreconcileは拒否される:FR-036": {
+      "from": "sha256:0573b29a19ecc000b0ce36044a4606358b275759f0aba75c780968fa15364585",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_reconcile::edgeもallも指定しないreconcileはexit_code_1でロックを作らない:FR-033": {
+      "from": "sha256:c543db11caa64e181c4706128c0831fd88fa0460c62c4ac4dc4766ab5d2d272d",
+      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_reconcile::edge指定のreconcileはロックファイルに現在のハッシュを書き込む:FR-033": {
+      "from": "sha256:e293f4b1d4a12589bdc520ce402c25c8b99e354f09a5da841abb205e0ab16c66",
+      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:tests/cli_reconcile::invalidなreqに紐づくエッジを指定したreconcileは拒否されロックは書き込まれない:FR-035": {
+      "from": "sha256:699932d0f41888dd39d4a91a75e38618078950604a36c85cc4fac23b6d6a68e3",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "α版の初回合意",
+      "at": "2026-09-30T16:19:51Z"
+    }
+  }
+}

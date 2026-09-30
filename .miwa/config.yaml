@@ -1,0 +1,11 @@
+docs:
+  - docs
+requirements:
+  - req
+tests:
+  - src
+  - tests
+diff_base: main
+judge:
+  threshold: 0.9
+  llm_model: claude-sonnet-5
