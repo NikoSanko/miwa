@@ -271,6 +271,17 @@ fn typescriptのtestはnew_reconcile_driftの順で検知される() {
     );
 }
 
+// [FR-053]
+#[test]
+fn javascriptのtestはnew_reconcile_driftの順で検知される() {
+    assert_new_then_drift(
+        "tests/a.test.js",
+        "describe(\"d\", () => {\n  // [FR-001]\n  it(\"t\", () => { expect(1).toBe(1); });\n});\n",
+        "describe(\"d\", () => {\n  // [FR-001]\n  it(\"t\", () => { expect(1).toBe(2); });\n});\n",
+        "test-req:tests/a.test:d:t:FR-001",
+    );
+}
+
 // [FR-057]
 #[test]
 fn csharpのオーバーロードは1本のedgeにまとまりどれかの本体変更でdriftになる() {

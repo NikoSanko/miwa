@@ -1,4 +1,4 @@
-//! Test extraction for Go, Rust, C# and TypeScript source files.
+//! Test extraction for Go, Rust, C#, TypeScript and JavaScript source files.
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ExtractedTest {
@@ -443,20 +443,36 @@ const TYPESCRIPT_DESCRIBE_MODIFIERS: [&str; 6] = [
     "shuffle",
 ];
 
-/// Extract TypeScript (Vitest) tests from a `*.test.ts` / `*.spec.ts` /
-/// `*.test.tsx` / `*.spec.tsx` file: `it` / `test` call statements at the top
-/// level or directly inside `describe` callbacks. Markers come from the
-/// comment block immediately preceding the call, and `content` is the whole
-/// call statement.
+/// File extensions (without the dot) of TypeScript / JavaScript (Vitest)
+/// test files: `<name>.test.<ext>` / `<name>.spec.<ext>`.
+pub const TYPESCRIPT_TEST_EXTENSIONS: [&str; 8] =
+    ["ts", "tsx", "mts", "cts", "js", "jsx", "mjs", "cjs"];
+
+/// Whether `path` is a TypeScript / JavaScript (Vitest) test file, i.e. ends
+/// with `.test.<ext>` or `.spec.<ext>` for one of the supported extensions.
+pub fn is_typescript_test_file(path: &str) -> bool {
+    TYPESCRIPT_TEST_EXTENSIONS.iter().any(|ext| {
+        path.ends_with(&format!(".test.{ext}")) || path.ends_with(&format!(".spec.{ext}"))
+    })
+}
+
+/// Extract TypeScript / JavaScript (Vitest) tests from a `*.test.<ext>` /
+/// `*.spec.<ext>` file (see [`TYPESCRIPT_TEST_EXTENSIONS`]): `it` / `test`
+/// call statements at the top level or directly inside `describe` callbacks.
+/// Markers come from the comment block immediately preceding the call, and
+/// `content` is the whole call statement.
 pub fn extract_typescript_tests(
     path: &str,
     source: &str,
 ) -> Result<Vec<ExtractedTest>, ExtractError> {
     let mut parser = tree_sitter::Parser::new();
-    let lang: tree_sitter::Language = if path.ends_with(".tsx") {
-        tree_sitter_typescript::LANGUAGE_TSX.into()
-    } else {
+    let lang: tree_sitter::Language = if [".ts", ".mts", ".cts"]
+        .iter()
+        .any(|ext| path.ends_with(ext))
+    {
         tree_sitter_typescript::LANGUAGE_TYPESCRIPT.into()
+    } else {
+        tree_sitter_typescript::LANGUAGE_TSX.into()
     };
     parser
         .set_language(&lang)
@@ -472,9 +488,9 @@ pub fn extract_typescript_tests(
             path: path.to_string(),
         });
     }
-    let base = path
-        .strip_suffix(".tsx")
-        .or_else(|| path.strip_suffix(".ts"))
+    let base = TYPESCRIPT_TEST_EXTENSIONS
+        .iter()
+        .find_map(|ext| path.strip_suffix(&format!(".{ext}")))
         .unwrap_or(path);
     let mut results = Vec::new();
     walk_typescript_statements(root, source, base, &[], &mut results);
@@ -1204,7 +1220,7 @@ fn t() {}
         assert!(extract_csharp_tests("tests/A.cs", source).is_err());
     }
 
-    // ---- TypeScript ----
+    // ---- TypeScript / JavaScript ----
 
     fn ts(source: &str) -> Vec<ExtractedTest> {
         extract_typescript_tests("src/a.test.ts", source).unwrap()
@@ -1391,11 +1407,65 @@ if (cond) {
 
     // [FR-056]
     #[test]
-    fn typescriptのtest識別子は拡張子のtsとtsxだけを除去する() {
-        let a = extract_typescript_tests("src/a.spec.tsx", "it(\"t\", () => {});\n").unwrap();
-        assert_eq!(a[0].id, "src/a.spec::t");
-        let b = extract_typescript_tests("src/b.spec.ts", "it(\"t\", () => {});\n").unwrap();
-        assert_eq!(b[0].id, "src/b.spec::t");
+    fn typescriptのtest識別子は対象拡張子をすべて除去しtestやspecは残す() {
+        let src = "it(\"t\", () => {});\n";
+        for (path, id) in [
+            ("src/a.test.ts", "src/a.test::t"),
+            ("src/a.spec.tsx", "src/a.spec::t"),
+            ("src/a.test.mjs", "src/a.test::t"),
+            ("src/a.spec.cts", "src/a.spec::t"),
+            ("src/a.test.jsx", "src/a.test::t"),
+            ("src/a.test.js", "src/a.test::t"),
+            ("src/a.spec.cjs", "src/a.spec::t"),
+            ("src/a.test.mts", "src/a.test::t"),
+        ] {
+            let tests = extract_typescript_tests(path, src).unwrap();
+            assert_eq!(tests[0].id, id, "{path}");
+        }
+    }
+
+    // [FR-056]
+    #[test]
+    fn typescriptのtest識別子は対象外の拡張子を除去しない() {
+        let tests =
+            extract_typescript_tests("src/a.test.ts.bak", "it(\"t\", () => {});\n").unwrap();
+        assert_eq!(tests[0].id, "src/a.test.ts.bak::t");
+    }
+
+    // [FR-053]
+    #[test]
+    fn typescriptはjs系拡張子のファイルからtestを検出する() {
+        for path in [
+            "src/a.test.js",
+            "src/a.spec.mjs",
+            "src/a.test.cjs",
+            "src/a.spec.mts",
+            "src/a.test.cts",
+        ] {
+            let tests = extract_typescript_tests(path, "it(\"t\", () => {});\n").unwrap();
+            assert_eq!(tests.len(), 1, "{path}");
+        }
+    }
+
+    // [FR-053]
+    #[test]
+    fn typescriptはts系拡張子でtsx文法が拒否する角括弧キャストを解析できる() {
+        let source = "it(\"t\", () => {\n  const n = <number>x;\n});\n";
+        for path in ["src/a.test.ts", "src/a.test.mts", "src/a.spec.cts"] {
+            let tests = extract_typescript_tests(path, source).unwrap();
+            assert_eq!(tests.len(), 1, "{path}");
+        }
+    }
+
+    // [FR-053]
+    #[test]
+    fn typescriptはjsxとjsファイルのjsxを含むソースも解析できる() {
+        let source = "it(\"renders\", () => {\n  render(<App />);\n});\n";
+        for path in ["src/a.test.jsx", "src/a.test.js"] {
+            let tests = extract_typescript_tests(path, source).unwrap();
+            assert_eq!(tests.len(), 1, "{path}");
+            assert_eq!(tests[0].id, "src/a.test::renders", "{path}");
+        }
     }
 
     // [FR-055]
