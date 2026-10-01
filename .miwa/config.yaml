@@ -8,3 +8,4 @@ tests:
 diff_base: main
 judge:
   threshold: 0.9
+  max_body_bytes: 200000
