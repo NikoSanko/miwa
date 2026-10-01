@@ -248,10 +248,7 @@ fn run_judge_inner(edge: Vec<String>, auto_reconcile: bool) -> anyhow::Result<()
         return Ok(());
     }
 
-    eprintln!(
-        "note: sending doc/req/test contents to api.typesafe.ai and the configured agent command ({})",
-        config.judge.llm_command[0]
-    );
+    eprintln!("note: sending doc/req/test contents to api.typesafe.ai");
 
     let endpoint = std::env::var(judge::JEV_ENDPOINT_OVERRIDE_ENV)
         .unwrap_or_else(|_| judge::JEV_ENDPOINT.to_string());
@@ -267,11 +264,6 @@ fn run_judge_inner(edge: Vec<String>, auto_reconcile: bool) -> anyhow::Result<()
     if auto_reconcile {
         let now = chrono::Utc::now().to_rfc3339_opts(chrono::SecondsFormat::Secs, true);
         judge::apply_auto_reconcile(&lock, &inputs, &judgments, &now).save(&root)?;
-    }
-
-    let prompt = judge::build_agent_prompt(&inputs, &judgments, auto_reconcile);
-    if !prompt.is_empty() {
-        judge::run_agent(&config.judge.llm_command, &prompt, &root)?;
     }
     Ok(())
 }

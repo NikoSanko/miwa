@@ -6,7 +6,6 @@ pub const LOCK_PATH: &str = ".miwa/lock.json";
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct JudgeConfig {
     pub threshold: f64,
-    pub llm_command: Vec<String>,
 }
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -19,23 +18,14 @@ pub struct Config {
 }
 
 impl Config {
-    /// docs=["docs"], requirements=["req"], tests=["."], diff_base="main",
-    /// threshold=0.9, llm_command=["claude", "-p", "--allowedTools", "Bash(miwa reconcile:*),Read"]
+    /// docs=["docs"], requirements=["req"], tests=["."], diff_base="main"
     pub fn default_config() -> Config {
         Config {
             docs: vec!["docs".to_string()],
             requirements: vec!["req".to_string()],
             tests: vec![".".to_string()],
             diff_base: "main".to_string(),
-            judge: JudgeConfig {
-                threshold: 0.9,
-                llm_command: vec![
-                    "claude".to_string(),
-                    "-p".to_string(),
-                    "--allowedTools".to_string(),
-                    "Bash(miwa reconcile:*),Read".to_string(),
-                ],
-            },
+            judge: JudgeConfig { threshold: 0.9 },
         }
     }
 
@@ -58,9 +48,6 @@ impl Config {
                 "judge.threshold must be within 0..=1, got {}",
                 self.judge.threshold
             );
-        }
-        if self.judge.llm_command.is_empty() {
-            anyhow::bail!("judge.llm_command must not be empty");
         }
         if self.docs.is_empty() {
             anyhow::bail!("docs must not be empty");
@@ -88,15 +75,7 @@ mod tests {
             requirements: vec!["req".to_string()],
             tests: vec![".".to_string()],
             diff_base: "main".to_string(),
-            judge: JudgeConfig {
-                threshold: 0.9,
-                llm_command: vec![
-                    "claude".to_string(),
-                    "-p".to_string(),
-                    "--allowedTools".to_string(),
-                    "Bash(miwa reconcile:*),Read".to_string(),
-                ],
-            },
+            judge: JudgeConfig { threshold: 0.9 },
         }
     }
 
@@ -134,34 +113,10 @@ mod tests {
         assert!(config.validate().is_err());
     }
 
-    // [FR-020]
-    #[test]
-    fn llm_commandが空配列なら設定エラーになる() {
-        let mut config = valid_config();
-        config.judge.llm_command = vec![];
-        assert!(config.validate().is_err());
-    }
-
-    // [FR-020]
-    #[test]
-    fn yamlのllm_commandが空配列ならparseが失敗する() {
-        let yaml = "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_command: []\n";
-        assert!(Config::parse(yaml).is_err());
-    }
-
     // [FR-019]
     #[test]
-    fn 既定値のllm_commandはclaudeを呼び出すコマンドである() {
+    fn 既定値のthresholdは0_9で妥当な設定である() {
         let config = Config::default_config();
-        assert_eq!(
-            config.judge.llm_command,
-            vec![
-                "claude",
-                "-p",
-                "--allowedTools",
-                "Bash(miwa reconcile:*),Read"
-            ]
-        );
         assert_eq!(config.judge.threshold, 0.9);
         assert!(config.validate().is_ok());
     }

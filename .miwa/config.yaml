@@ -8,8 +8,3 @@ tests:
 diff_base: main
 judge:
   threshold: 0.9
-  llm_command:
-    - claude
-    - -p
-    - --allowedTools
-    - Bash(miwa reconcile:*),Read

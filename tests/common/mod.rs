@@ -51,7 +51,7 @@ pub fn run_git(dir: &Path, args: &[&str]) -> String {
 /// The default `.miwa/config.yaml` used by most fixtures: docs/req/tests dirs,
 /// as plain top-level directories under the fixture root.
 pub fn default_config_yaml() -> &'static str {
-    "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_command:\n    - claude-sonnet-5\n"
+    "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n"
 }
 
 /// Runs `miwa` with `args` in `dir` and returns the `assert_cmd::Command` (unasserted).
@@ -187,25 +187,9 @@ pub fn jev_response(score: f64) -> String {
 pub const DUMMY_API_KEY: &str = "sk-dummy-typesafe";
 
 /// Fixture for `judge`: the minimal fixture (edges `doc-req:DOC-A:FR-001` and
-/// `test-req:tests/sample::checks_fr_001:FR-001`) whose config runs
-/// `agent_script` (via `sh -c`) as the LLM agent.
-pub fn write_judge_fixture(dir: &Path, agent_script: &str) {
+/// `test-req:tests/sample::checks_fr_001:FR-001`) with the default config.
+pub fn write_judge_fixture(dir: &Path) {
     write_minimal_fixture(dir);
-    let command = serde_json::json!(["sh", "-c", agent_script]);
-    write(
-        dir,
-        ".miwa/config.yaml",
-        &format!(
-            "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_command: {command}\n"
-        ),
-    );
-}
-
-/// An agent script that records its stdin to `<agent_dir>/prompt.txt`, appends
-/// a line to `<agent_dir>/runs.txt`, and prints `AGENT-OUTPUT`.
-pub fn recording_agent_script(agent_dir: &Path) -> String {
-    let d = agent_dir.display();
-    format!("echo run >> {d}/runs.txt; pwd > {d}/cwd.txt; cat > {d}/prompt.txt; echo AGENT-OUTPUT")
 }
 
 /// Makes every edge of the minimal fixture drift: reconciles all edges, then edits the req.

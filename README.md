@@ -47,12 +47,11 @@ doc・req・test の依存関係（エッジ）を、前回合意した内容（
 
 `check` が `drift` / `new` とした依存関係について、両端が意味的に整合しているかを判定して助言します。`--edge` で対象を絞れます（対象でない ID はエラー）。
 
-1. 一次判定（Jev）: TypeSafe AI の Jev で 0〜1 のスコアを取ります。環境変数 `TYPESAFE_API_KEY` が必要です。スコアが `judge.threshold` 以上なら `consistent`、未満なら `review` です。
-2. 二次判定: `review` の依存関係をまとめて、設定 `judge.llm_command` のエージェント（既定は `claude -p --allowedTools "Bash(miwa reconcile:*),Read"`）に1回だけ委任します。結論と理由はエージェントが報告し、miwa は加工せずそのまま表示します。
+Jev で 0〜1 のスコアを取ります（環境変数 `TYPESAFE_API_KEY` が必要）。スコアが `judge.threshold` 以上なら `consistent`、未満なら `review` として報告します。`review` の判断は呼び出し元（人や LLM）に任せ、miwa は理由の文章を作りません。
 
-`--auto-reconcile` を付けると、Jev が `consistent` とした依存関係を miwa がロックに合意（`by: jev`）し、エージェントにも整合と判断したものの `reconcile` を許可します。付けない場合は、表示と報告だけでロックは書き換えません。
+`--auto-reconcile` を付けると、Jev が `consistent` とした依存関係を miwa がロックに合意（`by: jev`）として記録します。付けない場合は、表示だけでロックは書き換えません。
 
-出力例（1依存関係につき1行、識別子順。この後にエージェントの報告が続きます）:
+出力例（1依存関係につき1行、識別子順）:
 
 ```
 consistent test-req:internal/auth:TestRejectsShortPassword:FR-001 score=0.94
@@ -60,11 +59,10 @@ review doc-req:DOC-AUTH:FR-001 score=0.31
 skipped doc-req:DOC-BIG:FR-090 score=-
 ```
 
-終了コード: `0`（判定が最後まで完了。`review` / `skipped` があっても 0） / `1`（実行エラー: 設定・API キーの問題、通信エラー、エージェントの失敗など）
+終了コード: `0`（判定が最後まで完了。`review` / `skipped` があっても 0） / `1`（実行エラー: 設定・API キーの問題、通信エラーなど）
 
 - `removed` は対象外です。復元するか `reconcile --edge` で削除を承認するか、人が判断してください。
-- 対象の doc・req・test の本文は TypeSafe AI（`api.typesafe.ai`）と、設定したエージェント CLI（およびその先の LLM サービス）に送られます。社外に出せない内容を含むリポジトリでは事前に確認してください。
-- `judge.llm_command` はリポジトリの設定ファイルから読んで実行されるため、信頼できないリポジトリ（他人の clone やブランチ）では `judge` を実行しないでください。
+- 対象の doc・req・test の本文は TypeSafe AI（`api.typesafe.ai`）にのみ送られます。社外に出せない内容を含むリポジトリでは事前に確認してください。
 - `judge` はローカル専用の助言コマンドです。CI では `check --gate` を使います。
 
 ## 設定
@@ -72,7 +70,6 @@ skipped doc-req:DOC-BIG:FR-090 score=-
 `.miwa/config.yaml` のうち `judge` に関する項目です（他の項目は [docs/setup.md](docs/setup.md) を参照）。
 
 - `judge.threshold`: Jev のスコアがこの値以上なら `consistent` とみなします。0〜1 の範囲で、既定値は `0.9`
-- `judge.llm_command`: 二次判定を任せるエージェント CLI を、コマンドと引数の配列で指定します。既定値は `["claude", "-p", "--allowedTools", "Bash(miwa reconcile:*),Read"]`（空にはできません）
 
 ## ファイルの書き方
 

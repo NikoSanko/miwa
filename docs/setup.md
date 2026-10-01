@@ -22,12 +22,11 @@ miwa init
 - `tests`: test（テストコード）を探すフォルダの一覧
 - `diff_base`: `check --diff` で比較する既定のブランチ・タグ
 - `judge`: 意味判定（[`judge`](judge.md)）の設定
-  - `threshold`: 一次判定（Jev）のスコアがこの値以上なら「整合」とみなす。0〜1 の範囲で、既定値は 0.9
-  - `llm_command`: 二次判定を任せる LLM エージェントの CLI を、コマンドと引数の配列で指定する。既定値は `["claude", "-p", "--allowedTools", "Bash(miwa reconcile:*),Read"]`（空にはできません）
-  - 一次判定用の API キーは設定ファイルではなく環境変数 `TYPESAFE_API_KEY` で渡します
+  - `threshold`: Jev のスコアがこの値以上なら「整合」とみなす。0〜1 の範囲で、既定値は 0.9
+  - API キーは設定ファイルではなく環境変数 `TYPESAFE_API_KEY` で渡します
 
 `docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。また、[`.git` `target` `.miwa` `.worktrees` `node_modules` という名前のフォルダは自動的に探索から除外され、シンボリックリンクの先は辿りません](../req/source-scan-scope-and-exclusions.md)。大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません。
 
-`init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.llm_command` は上記の Claude Code を呼び出すコマンドです。
+`init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9 です。
 
-設定ファイルの値には制約があります。[`judge` のしきい値は 0 から 1 の範囲でなければならず、`docs` / `requirements` / `tests` / `judge.llm_command` のいずれも空にはできません](../req/config-validation-rules.md)。範囲外の値や空の一覧が設定されていると、miwa は実行時にエラーとして止まります。設定を直接編集した際は、この点に注意してください。
+設定ファイルの値には制約があります。[`judge` のしきい値は 0 から 1 の範囲でなければならず、`docs` / `requirements` / `tests` のいずれも空にはできません](../req/config-validation-rules.md)。範囲外の値や空の一覧が設定されていると、miwa は実行時にエラーとして止まります。設定を直接編集した際は、この点に注意してください。

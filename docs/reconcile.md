@@ -37,6 +37,6 @@ miwa reconcile --all
 
 ## 記録される内容
 
-`reconcile` で記録されるエントリの合意者は、常に [`by: human`](../req/reconcile-records-by-human-and-reason.md) です（[`judge --auto-reconcile`](judge.md) で Jev が自動合意した場合だけ `by: jev` とスコアが記録されます。エージェントが `reconcile` を実行した場合は `by: human` です）。`--reason` を指定すればその内容が記録され、指定しなければ理由は記録されません。
+`reconcile` で記録されるエントリの合意者は、常に [`by: human`](../req/reconcile-records-by-human-and-reason.md) です（[`judge --auto-reconcile`](judge.md) で Jev が合意した場合は `by: jev` とスコアが記録されます）。`--reason` を指定すればその内容が記録され、指定しなければ理由は記録されません。
 
 依存関係の識別子（エッジ ID）や、doc・req・test それぞれの書き方については [3層モデル](model.md) を参照してください。

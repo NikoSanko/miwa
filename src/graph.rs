@@ -330,10 +330,7 @@ mod tests {
             requirements: vec!["req".to_string()],
             tests: vec![".".to_string()],
             diff_base: "main".to_string(),
-            judge: JudgeConfig {
-                threshold: 0.9,
-                llm_command: vec!["x".to_string()],
-            },
+            judge: JudgeConfig { threshold: 0.9 },
         }
     }
 
@@ -559,10 +556,7 @@ mod tests {
             requirements: vec!["req/".to_string()],
             tests: vec![".".to_string()],
             diff_base: "main".to_string(),
-            judge: JudgeConfig {
-                threshold: 0.9,
-                llm_command: vec!["x".to_string()],
-            },
+            judge: JudgeConfig { threshold: 0.9 },
         };
         let graph = build_graph(&source, &config).unwrap();
         assert!(graph
