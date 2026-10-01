@@ -6,7 +6,12 @@ pub const LOCK_PATH: &str = ".miwa/lock.json";
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct JudgeConfig {
     pub threshold: f64,
-    pub llm_model: String,
+    #[serde(default = "default_max_body_bytes")]
+    pub max_body_bytes: usize,
+}
+
+fn default_max_body_bytes() -> usize {
+    crate::judge::DEFAULT_MAX_BODY_BYTES
 }
 
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -19,8 +24,7 @@ pub struct Config {
 }
 
 impl Config {
-    /// docs=["docs"], requirements=["req"], tests=["."], diff_base="main",
-    /// threshold=0.9, llm_model="claude-sonnet-5"
+    /// docs=["docs"], requirements=["req"], tests=["."], diff_base="main"
     pub fn default_config() -> Config {
         Config {
             docs: vec!["docs".to_string()],
@@ -29,7 +33,7 @@ impl Config {
             diff_base: "main".to_string(),
             judge: JudgeConfig {
                 threshold: 0.9,
-                llm_model: "claude-sonnet-5".to_string(),
+                max_body_bytes: crate::judge::DEFAULT_MAX_BODY_BYTES,
             },
         }
     }
@@ -52,6 +56,12 @@ impl Config {
             anyhow::bail!(
                 "judge.threshold must be within 0..=1, got {}",
                 self.judge.threshold
+            );
+        }
+        if self.judge.max_body_bytes < 1 {
+            anyhow::bail!(
+                "judge.max_body_bytes must be >= 1, got {}",
+                self.judge.max_body_bytes
             );
         }
         if self.docs.is_empty() {
@@ -82,7 +92,7 @@ mod tests {
             diff_base: "main".to_string(),
             judge: JudgeConfig {
                 threshold: 0.9,
-                llm_model: "claude-sonnet-5".to_string(),
+                max_body_bytes: 200_000,
             },
         }
     }
@@ -121,11 +131,57 @@ mod tests {
         assert!(config.validate().is_err());
     }
 
+    // [FR-019]
+    #[test]
+    fn 既定値のthresholdは0_9で妥当な設定である() {
+        let config = Config::default_config();
+        assert_eq!(config.judge.threshold, 0.9);
+        assert!(config.validate().is_ok());
+    }
+
     // [FR-020]
     #[test]
     fn diff_baseが空文字列なら設定エラーになる() {
         let mut config = valid_config();
         config.diff_base = String::new();
         assert!(config.validate().is_err());
+    }
+
+    // [FR-019]
+    #[test]
+    fn 既定値のmax_body_bytesは200000で妥当な設定である() {
+        let config = Config::default_config();
+        assert_eq!(config.judge.max_body_bytes, 200_000);
+        assert!(config.validate().is_ok());
+    }
+
+    // [FR-020]
+    #[test]
+    fn max_body_bytesが0なら設定エラーになる() {
+        let mut config = valid_config();
+        config.judge.max_body_bytes = 0;
+        assert!(config.validate().is_err());
+        config.judge.max_body_bytes = 1;
+        assert!(config.validate().is_ok());
+    }
+
+    // [FR-019]
+    #[test]
+    fn max_body_bytesを省略したyamlは既定値で読める() {
+        let yaml = "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n";
+        let config = Config::parse(yaml).unwrap();
+        assert_eq!(config.judge.max_body_bytes, 200_000);
+    }
+
+    // [FR-020]
+    #[test]
+    fn max_body_bytesが整数以外のyamlはparseエラーになる() {
+        let base = "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n";
+        for bad in ["1.5", "\"abc\"", "0", "-1"] {
+            let yaml = format!("{base}  max_body_bytes: {bad}\n");
+            assert!(Config::parse(&yaml).is_err(), "{bad}");
+        }
+        let yaml = format!("{base}  max_body_bytes: 1\n");
+        assert_eq!(Config::parse(&yaml).unwrap().judge.max_body_bytes, 1);
     }
 }

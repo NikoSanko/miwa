@@ -4,7 +4,7 @@ fn write_base_fixture(dir: &std::path::Path) {
     common::write(
         dir,
         ".miwa/config.yaml",
-        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_model: x\n",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n",
     );
     common::write(
         dir,
@@ -126,7 +126,7 @@ fn diffはhead時点の設定で評価する_新しいrequirements領域のreq�
     common::write(
         root,
         ".miwa/config.yaml",
-        "docs:\n  - docs\nrequirements:\n  - req\n  - req2\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_model: x\n",
+        "docs:\n  - docs\nrequirements:\n  - req\n  - req2\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n",
     );
     common::write(
         root,

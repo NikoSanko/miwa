@@ -188,7 +188,87 @@ fn run_reconcile_inner(edge: Vec<String>, all: bool, reason: Option<String>) -> 
 }
 
 fn run_judge(edge: Vec<String>, auto_reconcile: bool) {
-    let _ = (edge, auto_reconcile);
-    eprintln!("judge is not implemented yet (Phase B)");
-    std::process::exit(1);
+    match run_judge_inner(edge, auto_reconcile) {
+        Ok(()) => std::process::exit(0),
+        Err(e) => {
+            eprintln!("{e}");
+            std::process::exit(1);
+        }
+    }
+}
+
+fn jev_http(
+    agent: &ureq::Agent,
+    endpoint: &str,
+    key: &str,
+    value: &serde_json::Value,
+) -> Result<String, miwa::judge::JudgeError> {
+    use miwa::judge::JudgeError;
+    let redact = |s: String| s.replace(key, "***");
+    let response = agent
+        .post(endpoint)
+        .header("Authorization", format!("Bearer {key}"))
+        .header("Content-Type", "application/json")
+        .send_json(value)
+        .map_err(|e| match e {
+            ureq::Error::StatusCode(status) => JudgeError::HttpStatus { status },
+            other => JudgeError::Transport {
+                message: redact(other.to_string()),
+            },
+        })?;
+    response
+        .into_body()
+        .read_to_string()
+        .map_err(|e| JudgeError::Transport {
+            message: redact(e.to_string()),
+        })
+}
+
+fn run_judge_inner(edge: Vec<String>, auto_reconcile: bool) -> anyhow::Result<()> {
+    use miwa::judge;
+
+    let root = std::env::current_dir()?;
+    let config = load_config(&root)?;
+    let key = std::env::var(judge::JEV_API_KEY_ENV).unwrap_or_default();
+    if key.is_empty() {
+        anyhow::bail!(
+            "{}",
+            judge::JudgeError::MissingApiKey(judge::JEV_API_KEY_ENV.to_string())
+        );
+    }
+
+    let source = miwa::source::FsSource::new(root.clone());
+    let graph = miwa::graph::build_graph(&source, &config)?;
+    let lock = miwa::lock::Lock::load(&root)?;
+    let findings = miwa::check::check(&graph, &lock);
+    let inputs = judge::select_targets(&graph, &findings, &edge)?;
+
+    if inputs.is_empty() {
+        print!("{}", judge::render_text(&[]));
+        return Ok(());
+    }
+
+    eprintln!("note: sending doc/req/test contents to api.typesafe.ai");
+
+    let endpoint = std::env::var(judge::JEV_ENDPOINT_OVERRIDE_ENV)
+        .unwrap_or_else(|_| judge::JEV_ENDPOINT.to_string());
+    let http: ureq::Agent = ureq::Agent::config_builder()
+        .timeout_connect(Some(std::time::Duration::from_secs(10)))
+        .timeout_global(Some(std::time::Duration::from_secs(60)))
+        .build()
+        .into();
+    let call = |value: &serde_json::Value| jev_http(&http, &endpoint, &key, value);
+    let judgments = judge::judge_edges(
+        &inputs,
+        config.judge.threshold,
+        config.judge.max_body_bytes,
+        &call,
+    )?;
+    print!("{}", judge::render_text(&judgments));
+
+    if auto_reconcile {
+        let now = chrono::Utc::now().to_rfc3339_opts(chrono::SecondsFormat::Secs, true);
+        judge::apply_auto_reconcile(&lock, &inputs, &judgments, &now).save(&root)?;
+    }
+    Ok(())
 }

@@ -9,7 +9,7 @@ fn write_rich_fixture(dir: &std::path::Path) {
     common::write(
         dir,
         ".miwa/config.yaml",
-        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_model: x\n",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n",
     );
 
     // ファイル名のアルファベット順と id の順が一致しないようにする
@@ -162,7 +162,7 @@ fn 設定エラーの場合はexit_code_1を返す() {
     common::write(
         dir.path(),
         ".miwa/config.yaml",
-        "docs: []\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  llm_model: x\n",
+        "docs: []\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n",
     );
 
     common::run(dir.path(), &["check", "--gate"])
