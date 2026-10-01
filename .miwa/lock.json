@@ -71,81 +71,81 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "doc-req:DOC-JUDGE:FR-038": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-039": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:a9c6c29daf695471ee2c0f25e48f54b030a755627f7310bd92a8dc39ee0601f2",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-040": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:ec60d43857ef60fac83546da78359de3f64527baa6c0a5117502fead2db1c39d",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-041": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:59d7548fd351cd1fbb74f8930702c4d0ab90dbe2d38e3536e8aad8b84e73363a",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-042": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:fea1aa42fd85d16f12272e38509e740732f694e6957328b1de020602daf6b4fe",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-043": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:b627b654e1ea48ec5c66458db85390a6445ed6f6cd12a855b6c85ec8db4b8c34",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-044": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:05cce8b6ecd8fb9edb9c980affb7aed7521adaed6999ae662279b69b305726a1",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-045": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
-      "to": "sha256:9de60e8cde27aa9e8318d41dbf08b3198429319fd235c68d9de18e6a0aba31d0",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-046": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:dafa1d46f4fe6d0e726d85a5ef61e738a1d657a765e71e8afdd9f17a353718c2",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-047": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:8d896b70d7a0216ce0a7c33e626ec5e50e5a18121ffc180702f08dd6d291fd94",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-JUDGE:FR-048": {
-      "from": "sha256:eefe4421cd4b791fc1a1ad5176bd4e083bfc1b2e62aa020c9f50961ee14324b2",
+      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
       "to": "sha256:4feb72b2d319ccccd6f3afaa31486df961cc6cfbdca0e6eb5be54760ad933b05",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
       "from": "sha256:68dd8348cf9b1bd5c4786128cba17d0ca3837c8601489a681b1e646267a5634a",
@@ -323,25 +323,25 @@
       "at": "2026-10-01T01:51:00Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:8ba55ee2dcdfd6aac95263b6aea5dcc937e104073dcfdca33c2b1062c8a9ad19",
+      "from": "sha256:f5a6cfde8f2265ed80a2b6e633b215120064bcb5ea20018147bc34323a52c310",
       "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:8ba55ee2dcdfd6aac95263b6aea5dcc937e104073dcfdca33c2b1062c8a9ad19",
-      "to": "sha256:51bc1442d03062198a3cdbb97915a7520e6980fbc65ff7b6a83737587eba27da",
+      "from": "sha256:f5a6cfde8f2265ed80a2b6e633b215120064bcb5ea20018147bc34323a52c310",
+      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:8ba55ee2dcdfd6aac95263b6aea5dcc937e104073dcfdca33c2b1062c8a9ad19",
-      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "from": "sha256:f5a6cfde8f2265ed80a2b6e633b215120064bcb5ea20018147bc34323a52c310",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
       "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
@@ -436,38 +436,66 @@
     },
     "test-req:src/config:tests:diff_baseが空文字列なら設定エラーになる:FR-020": {
       "from": "sha256:f5dade3238a577ec186c624952d234809780c00a9db0204bf940b29754aa81b4",
-      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/config:tests:docs_requirements_testsのいずれかが空なら設定エラーになる:FR-020": {
       "from": "sha256:77929e7e9ca8ce34cf22e879437d562835cdd231c4d08cee6136332f11c386e7",
-      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
+    },
+    "test-req:src/config:tests:max_body_bytesが0なら設定エラーになる:FR-020": {
+      "from": "sha256:ef0ff8daed417485d2618c3c166c14885516834c52d8d7141b2f4c1c728af3a0",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
+      "by": "human",
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
+    },
+    "test-req:src/config:tests:max_body_bytesが整数以外のyamlはparseエラーになる:FR-020": {
+      "from": "sha256:80559716c695df4b230189115813055035933f0873ef2f96bf3e5b5bf3487dc6",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
+      "by": "human",
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
+    },
+    "test-req:src/config:tests:max_body_bytesを省略したyamlは既定値で読める:FR-019": {
+      "from": "sha256:30fb457c119cb9f587833fb51cb81f7650764c202f77838989a33993b17a2dea",
+      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "by": "human",
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/config:tests:thresholdが0から1の範囲内であれば妥当:FR-020": {
       "from": "sha256:654ad0b23b63ac3ae03dff0926bf3e21556da586eb0d5b51c9658bf66dab39b3",
-      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/config:tests:thresholdが範囲外なら設定エラーになる:FR-020": {
       "from": "sha256:f05352c3f3501f3d40227c722ee6af434188c780da9412e382f281a53f596f66",
-      "to": "sha256:96768e8e266414994236bcebf86c99c57557baea248bf39bbcb5ab16b09b5cd4",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
+    },
+    "test-req:src/config:tests:既定値のmax_body_bytesは200000で妥当な設定である:FR-019": {
+      "from": "sha256:27e566cd420add509897265ef4da1815e734b3e97cfd8fbe6592625f50687685",
+      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "by": "human",
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/config:tests:既定値のthresholdは0_9で妥当な設定である:FR-019": {
       "from": "sha256:72599f677b4109acd7ec0a69362831fc6503429a8ec6ff1bd415e8dfce383ebf",
-      "to": "sha256:51bc1442d03062198a3cdbb97915a7520e6980fbc65ff7b6a83737587eba27da",
+      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/extract:tests:goのtest識別子はディレクトリと関数名を組み合わせた形式になる:FR-013": {
       "from": "sha256:a3fca9070f5b830b451593501769afce2f92683c3e6c75ccc3ea16c7e8057c0e",
@@ -603,11 +631,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
-      "from": "sha256:9f8d2311c30132716c9734ae791087a1874b6a312ec127eb6c0979432f7aeba6",
+      "from": "sha256:b12c93bf811faaedd46c37dfe779f73aa1cbf4c21083f2dedfb8bb01cc208527",
       "to": "sha256:db9372c091bcb84aae2cea7af310db4fce759553fad18d4b2b88f96b2f538a1c",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/graph:tests:go_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:c963e55e4e807dab507de0b5a817dbf5706af73f564736db91a4c115a3dd230d",
@@ -757,11 +785,11 @@
       "at": "2026-10-01T01:51:00Z"
     },
     "test-req:src/judge:tests:jevがhttpエラーを返すとjudge_edgesはエラーになる:FR-043": {
-      "from": "sha256:64c123bd7d886fef7bd262e0f7bfb0d022821cc8ceef4b341a0013ccd433a647",
+      "from": "sha256:65af47c22de04e1fd7b55cdee3237e4b87e2c75fbff68048abbae7bb06afcb47",
       "to": "sha256:b627b654e1ea48ec5c66458db85390a6445ed6f6cd12a855b6c85ec8db4b8c34",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/judge:tests:jevの質問文言はreqの文言と完全一致する:FR-041": {
       "from": "sha256:6fcea5a458089bbe5ac45be94b055e6cd6cb77c2920098c51dd671c1df7f3fb5",
@@ -771,11 +799,11 @@
       "at": "2026-10-01T01:51:00Z"
     },
     "test-req:src/judge:tests:judge_edgesはエッジid昇順で判定結果を返す:FR-044": {
-      "from": "sha256:1eb840a4229cb13ae8635dea67eaba7fd95c7d40d7b6f6265df98b95dd5a1802",
+      "from": "sha256:278660bcf13d6e7b0bc9171eae25ebaafca63de9e987778fd1777c9f1f110618",
       "to": "sha256:05cce8b6ecd8fb9edb9c980affb7aed7521adaed6999ae662279b69b305726a1",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/judge:tests:parse_jev_responseは0と1の境界値を受け入れる:FR-042": {
       "from": "sha256:269ddc648d359481c06b48bfa76eed6ee039b14f834bd7bdb6893cb08dc7255a",
@@ -882,19 +910,26 @@
       "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
       "at": "2026-10-01T01:51:00Z"
     },
-    "test-req:src/judge:tests:本文合計が上限ちょうどならjevを呼ぶ:FR-045": {
-      "from": "sha256:4ee4a330fef62894e793acdd1fff34cf06950e4f16e7584e1d776a8564c6c8b5",
-      "to": "sha256:9de60e8cde27aa9e8318d41dbf08b3198429319fd235c68d9de18e6a0aba31d0",
+    "test-req:src/judge:tests:上限は引数で指定でき小さい上限なら通常サイズでもskippedになる:FR-045": {
+      "from": "sha256:627d477ffe36ec5e40415b32a1b9739f0c62f608f86d3be0f79bd7b9d246256e",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
+    },
+    "test-req:src/judge:tests:本文合計が上限ちょうどならjevを呼ぶ:FR-045": {
+      "from": "sha256:e20b34293305710d6c35592f8178322813067aab70b0ed0705e4036f26c013d7",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
+      "by": "human",
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/judge:tests:本文合計が上限を超えるとjevを呼ばずskippedになる:FR-045": {
-      "from": "sha256:49ca731b184d0f6661ac663793065f5a410b00099597cb1aaa4c207326364ea4",
-      "to": "sha256:9de60e8cde27aa9e8318d41dbf08b3198429319fd235c68d9de18e6a0aba31d0",
+      "from": "sha256:11fc2bf6df41079d81f6390d6db3d92ef502cf93b470c287a306e55de9bcf9ab",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:src/lock:tests:load_from_sourceはnotfoundなら空ロックとして扱う:FR-021": {
       "from": "sha256:2dfadf2e92232cf928832cc5859618359ac11014e5ba77c5fcb8173e805a763c",
@@ -1226,18 +1261,18 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_init::initは既定値でconfigを生成する:FR-019": {
-      "from": "sha256:658fc9c30820b314b5c10e5f4c503b4e8732f0654a4756a7ca0c83148d945d25",
-      "to": "sha256:51bc1442d03062198a3cdbb97915a7520e6980fbc65ff7b6a83737587eba27da",
+      "from": "sha256:4cb6781f83b073f1d6049cf7e0d4e2e7877b585365dd9fc594566e042fc11330",
+      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:tests/cli_init::既にconfigが存在する場合は上書きせず失敗する:FR-019": {
       "from": "sha256:b66872b9219212696ad48e751ac2947b39d7db15a3f6001c71565a6b16a71342",
-      "to": "sha256:51bc1442d03062198a3cdbb97915a7520e6980fbc65ff7b6a83737587eba27da",
+      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:tests/cli_judge::apiキーが未設定なら何も送信せずキー名を表示してexit1になる:FR-039": {
       "from": "sha256:afd2121c575a1d153e2aa90fba9cd2309ba54ccc0131b0151877ef3a477691b1",
@@ -1301,6 +1336,13 @@
       "by": "human",
       "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
       "at": "2026-10-01T01:51:00Z"
+    },
+    "test-req:tests/cli_judge::judge_max_body_bytesの設定で上限を変えられる:FR-045": {
+      "from": "sha256:d3d65d64d767a23cef6e1574bc03211dc16ee197d4252de9acbde7696174d5e6",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
+      "by": "human",
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:tests/cli_judge::judgeのedge指定は対象外のidならapiを呼ばずexit1になる:FR-038": {
       "from": "sha256:bdd447bf3f328c36f656ceb266866ca09f3b8e2db041c34352a1055c7c6c1bef",
@@ -1374,10 +1416,10 @@
     },
     "test-req:tests/cli_judge::本文が上限を超えるエッジはskippedになりjevに渡らない:FR-045": {
       "from": "sha256:ce5b84470916d762dc17701b68aac9eba89744a17e9b58a2faaea3947e8a6c49",
-      "to": "sha256:9de60e8cde27aa9e8318d41dbf08b3198429319fd235c68d9de18e6a0aba31d0",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
+      "at": "2026-10-01T02:13:08Z"
     },
     "test-req:tests/cli_judge::設定エラーならexit1になり何も送信しない:FR-047": {
       "from": "sha256:cb2f8231525312a0ad3f77ace3cee4840bc558764da9f5ed0ee0b6118c79fb20",
