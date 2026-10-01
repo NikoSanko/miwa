@@ -168,7 +168,7 @@ public class AuthTests
 }
 ```
 
-### test（TypeScript / Vitest）
+### test（TypeScript / JavaScript / Vitest）
 
 ```typescript
 describe("auth", () => {

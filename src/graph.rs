@@ -188,10 +188,7 @@ pub fn build_graph(
             crate::extract::extract_rust_tests
         } else if path.ends_with(".cs") {
             crate::extract::extract_csharp_tests
-        } else if [".test.ts", ".spec.ts", ".test.tsx", ".spec.tsx"]
-            .iter()
-            .any(|suffix| path.ends_with(suffix))
-        {
+        } else if crate::extract::is_typescript_test_file(path) {
             crate::extract::extract_typescript_tests
         } else {
             continue;
@@ -675,6 +672,42 @@ mod tests {
         let graph = build_graph(&source, &config()).unwrap();
         assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
         assert!(graph.invalid.is_empty());
+    }
+
+    // [FR-053]
+    #[test]
+    fn javascriptのtest_jsとspec_mjsからtestノードが作られる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("src/a.test.js", "// [FR-001]\nit(\"works\", () => {});\n"),
+            ("src/b.spec.mjs", "// [FR-001]\nit(\"loads\", () => {});\n"),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(has_test_node(&graph, "src/a.test::works"));
+        assert!(has_test_node(&graph, "src/b.spec::loads"));
+    }
+
+    // [FR-053]
+    #[test]
+    fn testやspecを含まない通常のjsファイルは走査されない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("src/a.js", "// [FR-001]\nit(\"works\", () => {});\n"),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
+        assert!(graph.invalid.is_empty());
+    }
+
+    // [FR-014]
+    #[test]
+    fn 構文エラーのjsテストファイルはparse_errorとしてinvalidになる() {
+        let source = FakeSource::new(&[("src/broken.test.js", "it(\"t\", () => {\n")]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("broken.test.js")));
     }
 
     const REQ2: (&str, &str) = (
