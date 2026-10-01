@@ -1,81 +1,81 @@
 {
   "edges": {
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
       "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:0c24a377bb5564f7dd0188786765b0335e0a2f35371815a98ba6d0abe906d0a7",
-      "to": "sha256:2b59191e273fc673540ccf41e22b12b5e7a457608dc456d67bbdd885c130d6c4",
+      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-JUDGE:FR-038": {
       "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
@@ -155,179 +155,186 @@
       "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:bfcdb3bedd2a1a81d181faaa637fc52c5d68ccbb6e4cb4b58fbc552afa2e743b",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:7f2f45bf6b8355c79d89f7a35b8ffa50515f80290356fb2a9d8bbcda9d45700a",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:fce2926b1b4540811579825f21ff2cba276c28127a65ca284ce6510f21cc2d7a",
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
       "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
+    },
+    "doc-req:DOC-MODEL:FR-057": {
+      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "by": "human",
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
@@ -1022,12 +1029,12 @@
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
     },
-    "test-req:src/graph:tests:csharpのオーバーロードは識別子ごとに1件のduplicate_idとなりノードもエッジも作られない:FR-057": {
-      "from": "sha256:a66b3fb00ea405cb30a0bb553f5bd2173d7630d1ab332292601554c57dfca224",
-      "to": "sha256:2b59191e273fc673540ccf41e22b12b5e7a457608dc456d67bbdd885c130d6c4",
+    "test-req:src/graph:tests:csharpのオーバーロードは1つのtestにまとめられcontentが出現順に連結される:FR-057": {
+      "from": "sha256:c82ad1000f509afb92621ab72a4b3f470567e3a58d25532b7290624c4978db25",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "test-req:src/graph:tests:csharpファイルからtestノードとエッジが作られる:FR-049": {
       "from": "sha256:7ce227b833b7744b58910578ebb1365927fc19aba88c976ac9d0cd0e4f5f177b",
@@ -1043,12 +1050,12 @@
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
     },
-    "test-req:src/graph:tests:goの別ファイルにある同名testはduplicate_idになる:FR-057": {
-      "from": "sha256:67c27ccf71033f4c3f20073ebb3c0ca58f68bca532d469f1c38012ed26120af3",
-      "to": "sha256:2b59191e273fc673540ccf41e22b12b5e7a457608dc456d67bbdd885c130d6c4",
+    "test-req:src/graph:tests:goの別ファイルにある同名testはファイルパス順に連結される:FR-057": {
+      "from": "sha256:a36e02fa421c4c45eb34675f136a0e2fefafc951e46e5eeb3cc859bcb8a10160",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "test-req:src/graph:tests:idが空のファイルはmissing_idとして報告される:FR-007": {
       "from": "sha256:8d4683b0a9928750e2fb743f6f283c7027b68b785005e79473fb9bdabcb5b07b",
@@ -1078,6 +1085,13 @@
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
     },
+    "test-req:src/graph:tests:rustのcfg分岐による同名testは1つのtestにまとめられる:FR-057": {
+      "from": "sha256:0bcf17549290a5cb8cee7fd3750973337737cf2bcc728e12595f989c0dcb574f",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "by": "human",
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
+    },
     "test-req:src/graph:tests:testsのディレクトリ指定はcsharpとtypescriptのファイルにも適用される:FR-018": {
       "from": "sha256:cce55f81af85bc383f1a7c200bad91d98994f0f7a42e122d79b475009c69d92b",
       "to": "sha256:6ebd7ccb5359343476f1b531efe1776726fe2268ca07172253b966573bf6a26c",
@@ -1106,12 +1120,12 @@
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
     },
-    "test-req:src/graph:tests:typescriptの同名testはduplicate_idになる:FR-057": {
-      "from": "sha256:b2fbc6e1d19ea7c8a43ed91e28b1d1934d2b0e148efdbd2b67d94856e9ecd0d0",
-      "to": "sha256:2b59191e273fc673540ccf41e22b12b5e7a457608dc456d67bbdd885c130d6c4",
+    "test-req:src/graph:tests:typescriptの同名testは1つのtestにまとめられる:FR-057": {
+      "from": "sha256:7e4ba7547c1c247047e2993476e4752f9cacd2f4976c3b569bf4b34ec9d074ad",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "test-req:src/graph:tests:typeの値がspecification_requirement以外なら対象外になる:FR-005": {
       "from": "sha256:2f4bbe94f27d9f4c9a3d2710a4f9869ddc629713a54302bf93324872cc67eaef",
@@ -1127,12 +1141,26 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
-    "test-req:src/graph:tests:マーカーのないtestの同名は重複として扱われない:FR-057": {
-      "from": "sha256:956c7902f1dd387a26ca4102acb35c096b05631bcda0f889346ae500f45b2d7b",
-      "to": "sha256:2b59191e273fc673540ccf41e22b12b5e7a457608dc456d67bbdd885c130d6c4",
+    "test-req:src/graph:tests:まとめたtestは出現の本体が変わるとhashが変わる:FR-057": {
+      "from": "sha256:5a0308bc1875e71026b624b574f40fc994e91828245b3a720537fae3f8532dfb",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
+    },
+    "test-req:src/graph:tests:まとめたtestは出現の順序を入れ替えるとhashが変わる:FR-057": {
+      "from": "sha256:6f1470d545edc3082b317aa84771126802feda5c77d9b16338f8954ed3e139f2",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "by": "human",
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
+    },
+    "test-req:src/graph:tests:マーカーのない同名出現はまとめられない:FR-057": {
+      "from": "sha256:a6cb9aa7b0fbbcfd5a35ab1ee17bf93314d4db259df9db7361b985e8f65126aa",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "by": "human",
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "test-req:src/graph:tests:不正な文字を含むidはinvalid_idとして報告される:FR-006": {
       "from": "sha256:7121aaf049c06fa3847f5b4c668f4a34f6b714a14f67654addb0a8deeb46cfea",
@@ -1147,6 +1175,13 @@
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:同一ファイル内で異なるreqを指す重複は識別子ごとに1件でファイル名は1回だけ出る:FR-057": {
+      "from": "sha256:e27793ebf17f763e7658744ea114928b6f971cdac1a672da2d5162bb536e788c",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "by": "human",
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "test-req:src/graph:tests:存在しないreq_idを指すtestマーカーはbrokenになる:FR-011": {
       "from": "sha256:327a6a87f1539ff1445aad7e33c0a3eb533a93235f246164642145aeb74854d5",
@@ -1190,19 +1225,26 @@
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
     },
-    "test-req:src/graph:tests:複数マーカーかつ重複のtestはduplicate_idのみ報告されmultiple_markersは出ない:FR-057": {
-      "from": "sha256:e62a4a36ad80eabf0dcf3c0fecbe542cb2f7c92b1fa30efdb66758c04ad20775",
-      "to": "sha256:2b59191e273fc673540ccf41e22b12b5e7a457608dc456d67bbdd885c130d6c4",
+    "test-req:src/graph:tests:異なるreqを指す重複はduplicate_idとなりノードもエッジも作られない:FR-057": {
+      "from": "sha256:06addf82d52e8b9a192750d2c988b31d9d5047a0d092bdc1eba01a9edf4a1029",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
-    "test-req:src/graph:tests:重複したtestだけが検証だったreqにはno_testが出る:FR-057": {
-      "from": "sha256:1f962d9d589f80ce8a1102ca550160af6dddb3a399f4275de40fb79dac50eb67",
-      "to": "sha256:2b59191e273fc673540ccf41e22b12b5e7a457608dc456d67bbdd885c130d6c4",
+    "test-req:src/graph:tests:重複の1つが複数マーカーで残りが1件なら通常のtestとして扱われる:FR-057": {
+      "from": "sha256:a64fc17c32d0d9a67beddef0cf6456a91993537a1dca0d64d8a8281de86eff83",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
+    },
+    "test-req:src/graph:tests:重複の1つが複数マーカーならその出現はmultiple_markersで残りだけがまとめられる:FR-057": {
+      "from": "sha256:2b47725c22da8e6947bfb14af125ea660f85b4156b39bb2ad985f0578657923e",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "by": "human",
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "test-req:src/hash:tests:content_hash_はsha256プレフィックス付きの小文字hexを返す:FR-001": {
       "from": "sha256:f25a04dd8737c3c235bbc0467be14b5f2b18dbc10cea98d6a5eb3eb1d02d1a8e",
@@ -1700,6 +1742,13 @@
       "by": "human",
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
+    },
+    "test-req:tests/cli_check::csharpのオーバーロードは1本のedgeにまとまりどれかの本体変更でdriftになる:FR-057": {
+      "from": "sha256:8e78f5c0b58cc08b224bdf5ac1f43d00465886639b1c67fedc563d9df09bbded",
+      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "by": "human",
+      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
+      "at": "2026-10-01T09:40:26Z"
     },
     "test-req:tests/cli_check::findingが0件でgateがあってもexit_code_0を返す:FR-030": {
       "from": "sha256:edfcffdb652ad03df3f9e9bc7adde477c0a818f15b14d578463aab61d625480d",

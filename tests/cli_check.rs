@@ -270,3 +270,14 @@ fn typescriptのtestはnew_reconcile_driftの順で検知される() {
         "test-req:tests/a.test:d:t:FR-001",
     );
 }
+
+// [FR-057]
+#[test]
+fn csharpのオーバーロードは1本のedgeにまとまりどれかの本体変更でdriftになる() {
+    assert_new_then_drift(
+        "tests/AuthTests.cs",
+        "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { Assert.True(true); }\n\n    // [FR-001]\n    [Fact]\n    public void T(int x) { Assert.True(true); }\n}\n",
+        "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { Assert.True(true); }\n\n    // [FR-001]\n    [Fact]\n    public void T(int x) { Assert.True(false); }\n}\n",
+        "test-req:tests/AuthTests:AuthTests:T:FR-001",
+    );
+}

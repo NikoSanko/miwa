@@ -125,7 +125,7 @@ describe("auth", () => {
 | `broken` | リンク先・マーカーの req が存在しない |
 | `orphan` | どの doc からも依存されない req、どの req にも依存しない doc |
 | `no-test` | test が1件もない req |
-| `invalid` | `id` の重複・欠落、1つの test にマーカーが複数ある |
+| `invalid` | `id` の重複・欠落、1つの test にマーカーが複数ある、同じ識別子の test が異なる req を指す |
 
 `drift` の読み方:
 - doc だけ変わった → req が追随していない可能性

@@ -19,7 +19,7 @@ id: DOC-CHECK
 - **orphan（孤立）**: [どの doc からもリンクされていない req、どの req にもリンクしていない doc](../req/finding-orphan.md)を報告します。書いたのに使われていない req や、参照が漏れている doc を見つけられます。
 - **no-test**: [1件もテストで検証されていない req](../req/finding-no-test.md)を報告します。免除の仕組みはなく、すべての req が対象です。
 - **invalid**: id の重複・欠落、テスト関数に複数のマーカーが付いている、テストファイルの構文が壊れている、といった不正な状態です。[テスト関数に2件以上のマーカーが付いている場合や、テストファイルが構文エラーで解析できない場合も invalid として報告](../req/test-invalid-conditions.md)されます（Go・Rust・C#・TypeScript 共通）。
-  - [マーカーを持つ test の識別子が重複している場合](../req/test-duplicate-identifier-is-invalid.md)（C# のオーバーロード、TypeScript の同名 test など）も、重複したすべての test が invalid になります。Rust や Go の同名 test も invalid になります。重複した test は依存関係を作らないため、その test だけが検証していた req には no-test も報告されます。
+  - マーカーを持つ test の識別子が重複している場合（C# のオーバーロード、Rust の `#[cfg]` 分岐による同名関数、TypeScript の同名 test など）は、invalid ではなく[出現をまとめて 1 つの test として扱われます](../req/test-duplicate-identifier-merged.md)。invalid になるのは、まとめようとした出現のマーカーが異なる req を指している場合だけで、その識別子のすべての出現が invalid となり、依存関係は作られません。同じ識別子にマーカーが複数ある不正な出現が残っている間は、まとめた test の依存関係も reconcile や judge の対象になりません。先に不正な出現を直してください。
 - **broken（壊れたリンク）**: doc から参照している req が存在しない、または req でないファイルを指している状態です（詳細は [モデル](model.md) を参照）。
 
 `check` は診断だけを行い、[前回合意した記録（ロック）の内容を書き換えることはありません](../req/check-does-not-write-lock.md)。同じ入力に対しては、[常に同じ順序で同じ finding を返します](../req/check-findings-deterministic-order.md)。

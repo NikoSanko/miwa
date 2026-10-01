@@ -112,3 +112,5 @@ miwa は doc・req・test それぞれの「内容」をハッシュ値にして
 ## エッジの識別子
 
 doc → req、test → req のそれぞれの依存関係（エッジ）には識別子が付きます。[doc → req は `doc-req:<doc の id>:<req の id>`、test → req は `test-req:<test の識別子>:<req の id>`](../req/edge-id-format.md) という形式です。この識別子は `check` の結果やロックファイルの中で、依存関係を指し示すために使われます。
+
+マーカーを持つ test の識別子がリポジトリ内で重複している場合（C# のオーバーロードなど）は、[それらの出現が 1 つの test にまとめられ](../req/test-duplicate-identifier-merged.md)、内容はソース順に連結されます。まとめられた出現のマーカーが異なる req を指している場合だけ、不正として報告されます。
