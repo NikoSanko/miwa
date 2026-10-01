@@ -57,7 +57,7 @@ doc の本文中で req ファイルへ相対リンクを張ると、それが d
 
 ## test（テストコード）の書き方
 
-test は、req が実際に検証されていることを示すコードです。miwa は現時点で Go と Rust に対応しています。
+test は、req が実際に検証されていることを示すコードです。miwa は現時点で Go・Rust・C#・TypeScript（Vitest）に対応しています。
 
 ### Go
 
@@ -78,12 +78,36 @@ fn rejects_short_password() { ... }
 
 Rust では、[`#[test]` 属性が付いた関数だけが対象](../req/rust-test-literal-test-attribute-only.md)です（`#[tokio::test]` のような属性は対象外）。マーカーの書き方は Go と同様、[`#[test]` の直前に空行を挟まないコメント](../req/rust-test-marker-adjacency.md)です。Rust の test の識別子は、[ファイルパスとモジュールの階層、関数名を組み合わせた形式](../req/rust-test-identifier-format.md)になります。
 
+### C#
+
+```csharp
+public class AuthTests
+{
+    // [FR-001]
+    [Fact]
+    public void RejectsShortPassword() { ... }
+}
+```
+
+C# では、[`Fact` `Theory` `Test` `TestCase` `TestCaseSource` `TestMethod` `DataTestMethod` のいずれかの属性が付いたメソッドが対象](../req/csharp-test-attribute-detection.md)です（xUnit・NUnit・MSTest に対応。`[Xunit.Fact]` のような名前空間付きや `[Fact(Skip = "x")]` のような引数付きも対象で、`[FactAttribute]` の書き方は対象外です）。マーカーは、[メソッド宣言（属性を含む）の直前に空行を挟まないコメント](../req/csharp-test-marker-adjacency.md)に書きます。属性と署名の間に書いたコメントはマーカーになりません。C# の test の識別子は、[ファイルパスと型名の階層、メソッド名を組み合わせた形式](../req/csharp-test-identifier-format.md)です（namespace は含みません）。例えば `tests/AuthTests.cs` の `class AuthTests` 内の `RejectsShort` は `tests/AuthTests:AuthTests:RejectsShort` になります。
+
+### TypeScript（Vitest）
+
+```typescript
+describe("auth", () => {
+  // [FR-001]
+  it("rejects short password", () => { ... });
+});
+```
+
+TypeScript では、[`*.test.ts` `*.spec.ts` `*.test.tsx` `*.spec.tsx` が対象ファイル](../req/typescript-test-file-patterns.md)です。ファイル直下、または `describe` のコールバック直下にある [`test(...)` / `it(...)` の呼び出し文が test として抽出され](../req/typescript-test-call-detection.md)ます（`it.skip` `test.only` などの修飾子付きも対象。`test.each` や関数の中・test の中にある `it` は無視されます）。マーカーは、[呼び出し文の直前に空行を挟まないコメント](../req/typescript-test-marker-adjacency.md)に書きます。TypeScript の test の識別子は、[ファイルパスと describe 名の階層、test 名を組み合わせた形式](../req/typescript-test-identifier-format.md)です。上の例は `src/auth.test:auth:rejects short password` になります。
+
 ## 変更の検知に使う範囲
 
 miwa は doc・req・test それぞれの「内容」をハッシュ値にして、前回合意した内容と比べます。ハッシュの計算には [SHA-256 を使い、改行コードの違いだけは無視します](../req/hash-sha256-with-lf-normalization.md)。
 
 - doc・req は、[フロントマターを除いた本文だけ](../req/hash-doc-req-scope-excludes-frontmatter.md)が比較対象です。`id` だけを書き換えても内容の変更とはみなされません。
-- test は、[関数の定義全体](../req/hash-test-scope-is-whole-function.md)が比較対象です。Rust の場合、[`#[test]` などの属性やマーカーコメントはハッシュの対象に含めません](../req/hash-rust-test-excludes-outer-attributes.md)。
+- test は、[関数の定義全体](../req/hash-test-scope-is-whole-function.md)が比較対象です。Rust の場合、[`#[test]` などの属性やマーカーコメントはハッシュの対象に含めません](../req/hash-rust-test-excludes-outer-attributes.md)。C# の場合も、[メソッドに付けた属性（`[Fact]` など）や属性直後のコメントはハッシュの対象に含めません](../req/hash-csharp-test-excludes-attributes.md)。TypeScript の場合は `test(...)` / `it(...)` の呼び出し文全体が対象です。
 
 ## エッジの識別子
 

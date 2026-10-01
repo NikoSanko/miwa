@@ -26,7 +26,9 @@ miwa init
   - `max_body_bytes`: 1つの依存関係で Jev に送る両端の本文の合計バイト数の上限。超えると `skipped` になります。既定は 200000
   - API キーは設定ファイルではなく環境変数 `TYPESAFE_API_KEY` で渡します
 
-`docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。また、[`.git` `target` `.miwa` `.worktrees` `node_modules` という名前のフォルダは自動的に探索から除外され、シンボリックリンクの先は辿りません](../req/source-scan-scope-and-exclusions.md)。大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません。
+`docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。また、[`.git` `target` `.miwa` `.worktrees` `node_modules` `obj` という名前のフォルダは自動的に探索から除外され、シンボリックリンクの先は辿りません](../req/source-scan-scope-and-exclusions.md)。大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません（`obj` は C# のビルド生成物を読み込まないための除外で、docs・requirements・tests のすべてに適用されます）。
+
+既知の制約として、miwa が使っている構文解析器が未対応の構文を含むテストファイルは、構文エラーとして `invalid` になります（例: C# のリストパターン内のスライス `[.., var r]`）。該当するファイルは、その構文を避けて書くか、`tests` の対象から外してください。
 
 `init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.max_body_bytes` は 200000 です。
 

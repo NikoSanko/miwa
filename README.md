@@ -157,6 +157,28 @@ func TestRejectsShortPassword(t *testing.T) { ... }
 fn rejects_short_password() { ... }
 ```
 
+### test（C#）
+
+```csharp
+public class AuthTests
+{
+    // [FR-001]
+    [Fact]
+    public void RejectsShortPassword() { ... }
+}
+```
+
+### test（TypeScript / Vitest）
+
+```typescript
+describe("auth", () => {
+  // [FR-001]
+  it("rejects short password", () => { ... });
+});
+```
+
+Vitest のテストをソースと同じディレクトリに置く構成では、`.miwa/config.yaml` の `tests` にそのディレクトリを指定します（例: `tests: [src]`）。
+
 詳しい書き方・制約は [docs/model.md](docs/model.md) を参照してください。
 
 ## このリポジトリ自身が miwa でチェックされている
