@@ -258,7 +258,12 @@ fn run_judge_inner(edge: Vec<String>, auto_reconcile: bool) -> anyhow::Result<()
         .build()
         .into();
     let call = |value: &serde_json::Value| jev_http(&http, &endpoint, &key, value);
-    let judgments = judge::judge_edges(&inputs, config.judge.threshold, &call)?;
+    let judgments = judge::judge_edges(
+        &inputs,
+        config.judge.threshold,
+        config.judge.max_body_bytes,
+        &call,
+    )?;
     print!("{}", judge::render_text(&judgments));
 
     if auto_reconcile {

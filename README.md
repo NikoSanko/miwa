@@ -70,6 +70,7 @@ skipped doc-req:DOC-BIG:FR-090 score=-
 `.miwa/config.yaml` のうち `judge` に関する項目です（他の項目は [docs/setup.md](docs/setup.md) を参照）。
 
 - `judge.threshold`: Jev のスコアがこの値以上なら `consistent` とみなします。0〜1 の範囲で、既定値は `0.9`
+- `judge.max_body_bytes`: 1つの依存関係で Jev に送る両端の本文の合計バイト数の上限。超えると `skipped` になります。1以上の整数で、既定値は `200000`
 
 ## ファイルの書き方
 

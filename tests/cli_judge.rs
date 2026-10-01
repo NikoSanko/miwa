@@ -274,6 +274,30 @@ fn 本文が上限を超えるエッジはskippedになりjevに渡らない() {
     );
 }
 
+// [FR-045]
+#[test]
+fn judge_max_body_bytesの設定で上限を変えられる() {
+    let env = Env::new();
+    common::write(
+        env.repo.path(),
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n  max_body_bytes: 50\n",
+    );
+    let server = MockServer::start(vec![ok(0.95)]);
+    let output = run_judge(env.repo.path(), &server, &[]).output().unwrap();
+    assert_eq!(output.status.code(), Some(0));
+    assert!(server.requests().is_empty());
+    let stdout = stdout_of(&output);
+    assert!(
+        stdout.contains(&format!("skipped {DOC_EDGE} score=-")),
+        "{stdout}"
+    );
+    assert!(
+        stdout.contains(&format!("skipped {TEST_EDGE} score=-")),
+        "{stdout}"
+    );
+}
+
 // [FR-046]
 #[test]
 fn 一覧はエッジid昇順の1行1エッジで表示される() {

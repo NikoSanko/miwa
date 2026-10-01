@@ -17,6 +17,7 @@ fn initは既定値でconfigを生成する() {
     assert_eq!(value["tests"][0].as_str(), Some("."));
     assert_eq!(value["diff_base"].as_str(), Some("main"));
     assert_eq!(value["judge"]["threshold"].as_f64(), Some(0.9));
+    assert_eq!(value["judge"]["max_body_bytes"].as_u64(), Some(200000)); // [FR-019]
     assert!(value["judge"].get("llm_command").is_none());
 }
 

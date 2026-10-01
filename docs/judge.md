@@ -28,7 +28,9 @@ miwa judge --auto-reconcile
 1. [doc と req の組、または test と req の組を1組ずつ Jev に送ります](../req/judge-jev-request.md)。Jev が返すのは数値だけで、文章による理由は返しません。[スコアが取り出せない応答は、実行エラーとして扱います](../req/judge-jev-response-score.md)。
 2. [スコアが設定のしきい値（`judge.threshold`）以上なら `consistent`（整合）、未満なら `review`（見直しが必要）](../req/judge-threshold-decides-consistent-or-review.md)とします。`review` について矛盾かどうかを判断し、どちらを直すかを決めるのは呼び出し元です。miwa は理由の文章を作りません。
 
-なお、[1つの依存関係の本文が大きすぎる場合（両端の合計が 200,000 バイトを超える場合）は、Jev に送らず、`skipped`（見送り）と表示します](../req/judge-oversize-body-skipped.md)。
+なお、[1つの依存関係の本文が大きすぎる場合（両端の合計が設定 `judge.max_body_bytes`（既定 200,000 バイト）を超える場合）は、Jev に送らず、`skipped`（見送り）と表示します](../req/judge-oversize-body-skipped.md)。
+
+上限があるのは、1本の巨大な依存関係が HTTP エラーになって全体が止まるのを防ぎ、送信コストを抑えるためです。上限を超える本文は、doc や req を小さく保つべきだという設計上のシグナルでもあります。
 
 ## 外部サービスに送られるもの
 

@@ -2,7 +2,7 @@
 
 use crate::model::EdgeKind;
 
-pub const MAX_BODY_BYTES: usize = 200_000;
+pub const DEFAULT_MAX_BODY_BYTES: usize = 200_000;
 pub const JEV_ENDPOINT: &str = "https://api.typesafe.ai/v1/systemone";
 pub const JEV_API_KEY_ENV: &str = "TYPESAFE_API_KEY";
 /// テスト専用: 設定されていれば Jev の endpoint を上書きする
@@ -173,17 +173,18 @@ pub fn parse_jev_response(body: &str) -> Result<f64, JudgeError> {
 
 pub type HttpCall<'a> = &'a dyn Fn(&serde_json::Value) -> Result<String, JudgeError>;
 
-/// 各エッジを判定。本文合計が MAX_BODY_BYTES 超なら Jev を呼ばず Skipped（score None）。score >= threshold で Consistent、未満で Review。順序はエッジ ID 昇順。Jev のエラーはそのまま Err
+/// 各エッジを判定。本文合計が max_body_bytes 超なら Jev を呼ばず Skipped（score None）。score >= threshold で Consistent、未満で Review。順序はエッジ ID 昇順。Jev のエラーはそのまま Err
 pub fn judge_edges(
     inputs: &[EdgeInput],
     threshold: f64,
+    max_body_bytes: usize,
     jev: HttpCall,
 ) -> Result<Vec<Judgment>, JudgeError> {
     let mut sorted: Vec<&EdgeInput> = inputs.iter().collect();
     sorted.sort_by(|a, b| a.edge_id.cmp(&b.edge_id));
     let mut out = Vec::new();
     for input in sorted {
-        let (verdict, score) = if input.from_text.len() + input.req_text.len() > MAX_BODY_BYTES {
+        let (verdict, score) = if input.from_text.len() + input.req_text.len() > max_body_bytes {
             (Verdict::Skipped, None)
         } else {
             let body = jev(&build_jev_request(input))?;
@@ -670,7 +671,7 @@ mod tests {
         let inputs = vec![input("doc-req:DOC-A:FR-001", EdgeKind::DocReq, "d", "r")];
         let body = jev_body(score);
         let jev = move |_: &serde_json::Value| Ok(body.clone());
-        let result = judge_edges(&inputs, threshold, &jev).unwrap();
+        let result = judge_edges(&inputs, threshold, DEFAULT_MAX_BODY_BYTES, &jev).unwrap();
         assert_eq!(result.len(), 1);
         assert_eq!(result[0].score, Some(score));
         result[0].verdict
@@ -705,7 +706,7 @@ mod tests {
             scores.set(n + 1);
             Ok(jev_body(if n == 0 { 0.95 } else { 0.3 }))
         };
-        let result = judge_edges(&inputs, 0.9, &jev).unwrap();
+        let result = judge_edges(&inputs, 0.9, DEFAULT_MAX_BODY_BYTES, &jev).unwrap();
         assert_eq!(*order.borrow(), vec!["dA".to_string(), "dB".to_string()]);
         assert_eq!(result[0].edge, "doc-req:DOC-A:FR-001");
         assert_eq!(result[0].verdict, Verdict::Consistent);
@@ -718,7 +719,7 @@ mod tests {
     fn jevがhttpエラーを返すとjudge_edgesはエラーになる() {
         let inputs = vec![input("doc-req:DOC-A:FR-001", EdgeKind::DocReq, "d", "r")];
         let jev = |_: &serde_json::Value| Err(JudgeError::HttpStatus { status: 503 });
-        let err = judge_edges(&inputs, 0.9, &jev).unwrap_err();
+        let err = judge_edges(&inputs, 0.9, DEFAULT_MAX_BODY_BYTES, &jev).unwrap_err();
         assert!(
             matches!(err, JudgeError::HttpStatus { status: 503 }),
             "{err:?}"
@@ -728,14 +729,14 @@ mod tests {
     // [FR-045]
     #[test]
     fn 本文合計が上限を超えるとjevを呼ばずskippedになる() {
-        let big = "a".repeat(MAX_BODY_BYTES);
+        let big = "a".repeat(DEFAULT_MAX_BODY_BYTES);
         let inputs = vec![input("doc-req:DOC-A:FR-001", EdgeKind::DocReq, &big, "b")];
         let calls = Cell::new(0usize);
         let jev = |_: &serde_json::Value| {
             calls.set(calls.get() + 1);
             Ok(jev_body(0.95))
         };
-        let result = judge_edges(&inputs, 0.9, &jev).unwrap();
+        let result = judge_edges(&inputs, 0.9, DEFAULT_MAX_BODY_BYTES, &jev).unwrap();
         assert_eq!(result[0].verdict, Verdict::Skipped);
         assert_eq!(result[0].score, None);
         assert_eq!(calls.get(), 0);
@@ -744,7 +745,7 @@ mod tests {
     // [FR-045]
     #[test]
     fn 本文合計が上限ちょうどならjevを呼ぶ() {
-        let big = "a".repeat(MAX_BODY_BYTES - 3);
+        let big = "a".repeat(DEFAULT_MAX_BODY_BYTES - 3);
         // マルチバイト文字（3 バイト）を含めてバイト数で数えることも確かめる
         let inputs = vec![input("doc-req:DOC-A:FR-001", EdgeKind::DocReq, &big, "あ")];
         let calls = Cell::new(0usize);
@@ -752,7 +753,29 @@ mod tests {
             calls.set(calls.get() + 1);
             Ok(jev_body(0.95))
         };
-        let result = judge_edges(&inputs, 0.9, &jev).unwrap();
+        let result = judge_edges(&inputs, 0.9, DEFAULT_MAX_BODY_BYTES, &jev).unwrap();
+        assert_eq!(result[0].verdict, Verdict::Consistent);
+        assert_eq!(calls.get(), 1);
+    }
+
+    // [FR-045]
+    #[test]
+    fn 上限は引数で指定でき小さい上限なら通常サイズでもskippedになる() {
+        let inputs = vec![input(
+            "doc-req:DOC-A:FR-001",
+            EdgeKind::DocReq,
+            "aaaaaa",
+            "bbbbb",
+        )];
+        let calls = Cell::new(0usize);
+        let jev = |_: &serde_json::Value| {
+            calls.set(calls.get() + 1);
+            Ok(jev_body(0.95))
+        };
+        let result = judge_edges(&inputs, 0.9, 10, &jev).unwrap();
+        assert_eq!(result[0].verdict, Verdict::Skipped);
+        assert_eq!(calls.get(), 0);
+        let result = judge_edges(&inputs, 0.9, 11, &jev).unwrap();
         assert_eq!(result[0].verdict, Verdict::Consistent);
         assert_eq!(calls.get(), 1);
     }

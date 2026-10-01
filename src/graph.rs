@@ -330,7 +330,10 @@ mod tests {
             requirements: vec!["req".to_string()],
             tests: vec![".".to_string()],
             diff_base: "main".to_string(),
-            judge: JudgeConfig { threshold: 0.9 },
+            judge: JudgeConfig {
+                threshold: 0.9,
+                max_body_bytes: 200_000,
+            },
         }
     }
 
@@ -556,7 +559,10 @@ mod tests {
             requirements: vec!["req/".to_string()],
             tests: vec![".".to_string()],
             diff_base: "main".to_string(),
-            judge: JudgeConfig { threshold: 0.9 },
+            judge: JudgeConfig {
+                threshold: 0.9,
+                max_body_bytes: 200_000,
+            },
         };
         let graph = build_graph(&source, &config).unwrap();
         assert!(graph
