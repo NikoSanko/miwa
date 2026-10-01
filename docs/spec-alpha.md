@@ -30,7 +30,7 @@
 ## 3. スコープ（α版）
 
 - コマンド: `init` / `check` / `reconcile` / `judge`
-- 対応言語: Go と Rust（Rust は miwa 自身を miwa でチェックするために含める）
+- 対応言語: Go・Rust・C#・TypeScript（Vitest）（Rust は miwa 自身を miwa でチェックするために含める）
 - doc / req / test が同じリポジトリにあること
 
 ## 4. モデル
@@ -46,7 +46,7 @@ doc ──依存──▶ req ◀──検証── test
 |---|---|---|
 | doc | フロントマター `id` | 本文（フロントマター除く） |
 | req | フロントマター `id` | 本文（フロントマター除く） |
-| test | Go: パッケージディレクトリ ＋ 関数名 / Rust: ファイルパス ＋ モジュールパス ＋ 関数名 | 関数全体（Rust はシグネチャと本体を含む `fn` 全体。外側の属性は含まない） |
+| test | Go: パッケージディレクトリ ＋ 関数名 / Rust: ファイルパス ＋ モジュールパス ＋ 関数名 / C#: ファイルパス ＋ 型名の階層 ＋ メソッド名 / TypeScript: ファイルパス ＋ describe 名の階層 ＋ test 名 | 関数全体（Rust はシグネチャと本体を含む `fn` 全体。外側の属性は含まない）。C# は属性を除いたメソッド宣言全体。TypeScript は `test(...)` / `it(...)` の呼び出し文全体 |
 
 - ハッシュは SHA-256。改行を LF に揃える以外の正規化はしない
 - doc / req のフロントマター `id` に使える文字は `A-Z a-z 0-9 . _ -`（`:` はエッジ ID の区切りに使うため不可）
@@ -91,6 +91,28 @@ fn rejects_short_password() { ... }
 - リテラルな `#[test]` 属性を持つ `fn` が対象（`#[tokio::test]` などは対象外）
 - マーカーは `#[test]` の直前に隣接するコメントに書く
 
+**test（C#）**
+```csharp
+public class AuthTests
+{
+    // [FR-001]
+    [Fact]
+    public void RejectsShortPassword() { ... }
+}
+```
+- `Fact` `Theory` `Test` `TestCase` `TestCaseSource` `TestMethod` `DataTestMethod` のいずれかの属性を持つメソッドが対象（xUnit / NUnit / MSTest）
+- マーカーはメソッド宣言（属性を含む）の直前に隣接するコメントに書く
+
+**test（TypeScript / Vitest）**
+```typescript
+describe("auth", () => {
+  // [FR-001]
+  it("rejects short password", () => { ... });
+});
+```
+- `*.test.ts` `*.spec.ts` `*.test.tsx` `*.spec.tsx` のファイル直下または `describe` 直下の `test(...)` / `it(...)` が対象
+- マーカーは呼び出し文の直前に隣接するコメントに書く
+
 ## 6. 検知（`check`）
 
 ロックには、エッジごとに「合意時の両端のハッシュ」を記録する。`check` は、現在のハッシュと比べて次を報告する。
@@ -103,7 +125,7 @@ fn rejects_short_password() { ... }
 | `broken` | リンク先・マーカーの req が存在しない |
 | `orphan` | どの doc からも依存されない req、どの req にも依存しない doc |
 | `no-test` | test が1件もない req |
-| `invalid` | `id` の重複・欠落、1つの test にマーカーが複数ある |
+| `invalid` | `id` の重複・欠落、1つの test にマーカーが複数ある、同じ識別子の test が異なる req を指す |
 
 `drift` の読み方:
 - doc だけ変わった → req が追随していない可能性
@@ -183,7 +205,7 @@ fn rejects_short_password() { ... }
 | D6 | doc はファイル全体を1ノードとする |
 | D7 | doc / req の識別子はフロントマターの `id` |
 | D8 | 1つの test が検証する req は1つ |
-| D9 | 対応言語は Go と Rust。miwa 自身を miwa でチェックする（dogfooding） |
+| D9 | 対応言語は Go・Rust・C#・TypeScript。miwa 自身を miwa でチェックする（dogfooding） |
 
 ## 12. 次のスコープ以降
 

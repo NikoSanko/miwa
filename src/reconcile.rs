@@ -140,7 +140,9 @@ fn parse_edge_id(id: &str) -> Option<(&str, &str, &str)> {
 /// `internal/auth`, Go at the repo root `.:TestX` -> `.`). The match is
 /// deliberately conservative (a false positive only blocks a removal, it
 /// never silently drops information):
-/// - Rust: the target equals `<prefix>.rs` exactly.
+/// - Rust / C# / TypeScript: the target equals `<prefix>.rs` / `<prefix>.cs`
+///   / `<prefix>.ts` / `<prefix>.tsx` exactly (TS prefixes keep `.test` /
+///   `.spec`).
 /// - Go (non-root): the target starts with `<prefix>/`.
 /// - Go (repo root, `prefix == "."`): the target contains no `/`.
 fn test_source_has_parse_error(invalid: &[crate::model::Invalid], test_id: &str) -> bool {
@@ -150,7 +152,11 @@ fn test_source_has_parse_error(invalid: &[crate::model::Invalid], test_id: &str)
             return false;
         }
         let target = inv.target.as_str();
-        if target == format!("{prefix}.rs") {
+        if target == format!("{prefix}.rs")
+            || target == format!("{prefix}.cs")
+            || target == format!("{prefix}.ts")
+            || target == format!("{prefix}.tsx")
+        {
             return true;
         }
         if prefix == "." {
@@ -527,5 +533,54 @@ mod tests {
         let entry = result.edges.get("doc-req:DOC-A:FR-001").unwrap();
         assert_eq!(entry.by, "human");
         assert_eq!(entry.reason, None);
+    }
+
+    fn assert_blocked_by_parse_error(file: &str, edge: &str) {
+        let mut graph = Graph::default();
+        graph.invalid.push(Invalid {
+            target_kind: TargetKind::File,
+            target: file.to_string(),
+            reason: ReasonCode::ParseError,
+            detail: "parse error".to_string(),
+        });
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            edge.to_string(),
+            lock_entry("sha256:old-test", "sha256:old-req", "2025-01-01T00:00:00Z"),
+        );
+        let before = lock.clone();
+
+        let result = reconcile(
+            &graph,
+            &lock,
+            ReconcileTarget::Edges(vec![edge.to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        );
+        assert!(matches!(result, Err(ReconcileError::Blocked(_))), "{edge}");
+        assert_eq!(lock, before);
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するcsharpのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
+        assert_blocked_by_parse_error(
+            "tests/AuthTests.cs",
+            "test-req:tests/AuthTests:AuthTests:T:FR-001",
+        );
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するtypescriptのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
+        assert_blocked_by_parse_error("src/a.test.ts", "test-req:src/a.test:d:t:FR-001");
+        assert_blocked_by_parse_error("src/a.spec.ts", "test-req:src/a.spec:d:t:FR-001");
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するtsxのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
+        assert_blocked_by_parse_error("src/a.test.tsx", "test-req:src/a.test:d:t:FR-001");
+        assert_blocked_by_parse_error("src/a.spec.tsx", "test-req:src/a.spec::t:FR-001");
     }
 }

@@ -192,3 +192,92 @@ fn textとjsonは同じ数のfindingを表す() {
     assert!(json_count > 0, "fixture should produce findings");
     assert_eq!(text_lines, json_count);
 }
+
+fn write_lang_fixture(dir: &std::path::Path, test_path: &str, test_src: &str) {
+    common::write(dir, ".miwa/config.yaml", "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n");
+    common::write(
+        dir,
+        "docs/spec.md",
+        "---\ntype: Specification\nid: DOC-A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
+    );
+    common::write(
+        dir,
+        "req/fr1.md",
+        "---\ntype: Requirement\nid: FR-001\n---\n最初の要件本文。\n",
+    );
+    common::write(dir, test_path, test_src);
+}
+
+fn check_json(dir: &std::path::Path) -> Vec<serde_json::Value> {
+    let out = common::run(dir, &["check", "--format", "json"])
+        .output()
+        .unwrap();
+    let value: serde_json::Value = serde_json::from_slice(&out.stdout).unwrap();
+    value["findings"].as_array().unwrap().clone()
+}
+
+fn assert_new_then_drift(test_path: &str, before: &str, after: &str, edge: &str) {
+    let dir = tempfile::tempdir().unwrap();
+    write_lang_fixture(dir.path(), test_path, before);
+
+    let findings = check_json(dir.path());
+    assert!(
+        findings
+            .iter()
+            .any(|f| f["kind"] == "New" && f["target"] == edge),
+        "expected new finding for {edge}: {findings:?}"
+    );
+
+    common::run(dir.path(), &["reconcile", "--all"])
+        .assert()
+        .success();
+    let findings = check_json(dir.path());
+    assert!(
+        !findings
+            .iter()
+            .any(|f| f["kind"] == "New" || f["kind"] == "Drift"),
+        "unexpected findings after reconcile: {findings:?}"
+    );
+
+    common::write(dir.path(), test_path, after);
+    let findings = check_json(dir.path());
+    assert!(
+        findings
+            .iter()
+            .any(|f| f["kind"] == "Drift" && f["target"] == edge),
+        "expected drift for {edge}: {findings:?}"
+    );
+}
+
+// [FR-049]
+#[test]
+fn csharpのtestはnew_reconcile_driftの順で検知される() {
+    assert_new_then_drift(
+        "tests/AuthTests.cs",
+        "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { Assert.True(true); }\n}\n",
+        "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { Assert.True(false); }\n}\n",
+        "test-req:tests/AuthTests:AuthTests:T:FR-001",
+    );
+}
+
+// [FR-054]
+#[test]
+fn typescriptのtestはnew_reconcile_driftの順で検知される() {
+    assert_new_then_drift(
+        "tests/a.test.ts",
+        "describe(\"d\", () => {\n  // [FR-001]\n  it(\"t\", () => { expect(1).toBe(1); });\n});\n",
+        "describe(\"d\", () => {\n  // [FR-001]\n  it(\"t\", () => { expect(1).toBe(2); });\n});\n",
+        "test-req:tests/a.test:d:t:FR-001",
+    );
+}
+
+// [FR-057]
+#[test]
+fn csharpのオーバーロードは1本のedgeにまとまりどれかの本体変更でdriftになる() {
+    assert_new_then_drift(
+        "tests/AuthTests.cs",
+        "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { Assert.True(true); }\n\n    // [FR-001]\n    [Fact]\n    public void T(int x) { Assert.True(true); }\n}\n",
+        "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { Assert.True(true); }\n\n    // [FR-001]\n    [Fact]\n    public void T(int x) { Assert.True(false); }\n}\n",
+        "test-req:tests/AuthTests:AuthTests:T:FR-001",
+    );
+}

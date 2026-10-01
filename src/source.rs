@@ -2,7 +2,7 @@
 
 /// Lists and reads files of a repository snapshot. Paths are repo-relative,
 /// `/`-separated, and sorted. Symlinks are not included. Paths under `.git`,
-/// `target`, `.miwa`, `.worktrees`, and `node_modules` are excluded.
+/// `target`, `.miwa`, `.worktrees`, `node_modules`, and `obj` are excluded.
 pub trait Source {
     fn list_files(&self) -> anyhow::Result<Vec<String>>;
     fn read(&self, path: &str) -> anyhow::Result<Vec<u8>>;
@@ -13,7 +13,14 @@ pub struct FsSource {
     root: std::path::PathBuf,
 }
 
-const EXCLUDED_DIRS: [&str; 5] = [".git", "target", ".miwa", ".worktrees", "node_modules"];
+const EXCLUDED_DIRS: [&str; 6] = [
+    ".git",
+    "target",
+    ".miwa",
+    ".worktrees",
+    "node_modules",
+    "obj",
+];
 
 impl FsSource {
     pub fn new(root: impl Into<std::path::PathBuf>) -> FsSource {
@@ -225,16 +232,39 @@ mod tests {
         let root = dir.path();
         fs::create_dir_all(root.join("req")).unwrap();
         fs::write(root.join("req/fr-001.md"), "ok").unwrap();
-        for excluded in [".git", "target", ".miwa", ".worktrees", "node_modules"] {
+        for excluded in [
+            ".git",
+            "target",
+            ".miwa",
+            ".worktrees",
+            "node_modules",
+            "obj",
+        ] {
             let sub = root.join(excluded).join("nested");
             fs::create_dir_all(&sub).unwrap();
             fs::write(sub.join("file.md"), "should not be listed").unwrap();
         }
+        fs::create_dir_all(root.join("proj/obj/Debug")).unwrap();
+        fs::write(root.join("proj/obj/Debug/X.cs"), "generated").unwrap();
+        fs::create_dir_all(root.join("src/bin")).unwrap();
+        fs::write(root.join("src/bin/main.rs"), "kept").unwrap();
 
         let source = FsSource::new(root);
         let files = source.list_files().unwrap();
         assert!(files.contains(&"req/fr-001.md".to_string()));
-        for excluded in [".git", "target", ".miwa", ".worktrees", "node_modules"] {
+        assert!(files.contains(&"src/bin/main.rs".to_string()), "{files:?}");
+        assert!(
+            !files.contains(&"proj/obj/Debug/X.cs".to_string()),
+            "nested obj leaked: {files:?}"
+        );
+        for excluded in [
+            ".git",
+            "target",
+            ".miwa",
+            ".worktrees",
+            "node_modules",
+            "obj",
+        ] {
             assert!(
                 !files.iter().any(|f| f.starts_with(&format!("{excluded}/"))),
                 "excluded dir {excluded} leaked into: {files:?}"
@@ -346,6 +376,12 @@ mod tests {
         init_repo(root);
         fs::create_dir_all(root.join("target/nested")).unwrap();
         fs::write(root.join("target/nested/file.txt"), "x").unwrap();
+        fs::create_dir_all(root.join("obj/nested")).unwrap();
+        fs::write(root.join("obj/nested/file.txt"), "x").unwrap();
+        fs::create_dir_all(root.join("proj/obj/Debug")).unwrap();
+        fs::write(root.join("proj/obj/Debug/X.cs"), "x").unwrap();
+        fs::create_dir_all(root.join("src/bin")).unwrap();
+        fs::write(root.join("src/bin/main.rs"), "x").unwrap();
         fs::write(root.join("keep.txt"), "y").unwrap();
         git(root, &["add", "-A"]);
         git(root, &["commit", "-q", "-m", "init"]);
@@ -354,9 +390,12 @@ mod tests {
         let files = source.list_files().unwrap();
         assert!(files.contains(&"keep.txt".to_string()));
         assert!(
-            !files.iter().any(|f| f.starts_with("target/")),
-            "target/ should be excluded: {files:?}"
+            !files
+                .iter()
+                .any(|f| f.starts_with("target/") || f.starts_with("obj/") || f.contains("/obj/")),
+            "target/ and obj/ should be excluded: {files:?}"
         );
+        assert!(files.contains(&"src/bin/main.rs".to_string()), "{files:?}");
     }
 
     // [FR-021]

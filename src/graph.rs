@@ -8,7 +8,7 @@ pub fn build_graph(
         edge_id, is_valid_id, Broken, Edge, EdgeKind, Invalid, Node, NodeKey, NodeKind, ReasonCode,
         TargetKind,
     };
-    use std::collections::BTreeMap;
+    use std::collections::{BTreeMap, BTreeSet};
 
     let mut graph = crate::model::Graph::default();
     let files = source.list_files()?;
@@ -175,24 +175,38 @@ pub fn build_graph(
         }
     }
 
+    type Extractor =
+        fn(&str, &str) -> Result<Vec<crate::extract::ExtractedTest>, crate::extract::ExtractError>;
+    let mut extracted_tests: Vec<(String, crate::extract::ExtractedTest)> = Vec::new();
     for path in &files {
-        let is_go_test = path.ends_with("_test.go");
-        let is_rust = path.ends_with(".rs");
-        if !(is_go_test || is_rust) {
-            continue;
-        }
         if !is_under(path, &config.tests) {
             continue;
         }
+        let extractor: Extractor = if path.ends_with("_test.go") {
+            crate::extract::extract_go_tests
+        } else if path.ends_with(".rs") {
+            crate::extract::extract_rust_tests
+        } else if path.ends_with(".cs") {
+            crate::extract::extract_csharp_tests
+        } else if [".test.ts", ".spec.ts", ".test.tsx", ".spec.tsx"]
+            .iter()
+            .any(|suffix| path.ends_with(suffix))
+        {
+            crate::extract::extract_typescript_tests
+        } else {
+            continue;
+        };
         let bytes = source.read(path)?;
         let text = String::from_utf8_lossy(&bytes).into_owned();
-        let extracted = if is_go_test {
-            crate::extract::extract_go_tests(path, &text)
-        } else {
-            crate::extract::extract_rust_tests(path, &text)
-        };
-        let tests = match extracted {
-            Ok(tests) => tests,
+        match extractor(path, &text) {
+            Ok(tests) => {
+                extracted_tests.extend(
+                    tests
+                        .into_iter()
+                        .filter(|t| !t.markers.is_empty())
+                        .map(|t| (path.clone(), t)),
+                );
+            }
             Err(_e) => {
                 graph.invalid.push(Invalid {
                     target_kind: TargetKind::File,
@@ -200,60 +214,89 @@ pub fn build_graph(
                     reason: ReasonCode::ParseError,
                     detail: format!("failed to parse {path}"),
                 });
-                continue;
             }
+        }
+    }
+
+    // Group marked tests by identifier. Occurrences with several markers are
+    // invalid and excluded; the rest are merged into one test when they all
+    // point at the same req (FR-057).
+    let mut by_test_id: BTreeMap<String, Vec<(String, crate::extract::ExtractedTest)>> =
+        BTreeMap::new();
+    for (path, t) in extracted_tests {
+        if t.markers.len() > 1 {
+            graph.invalid.push(Invalid {
+                target_kind: TargetKind::Test,
+                target: t.id.clone(),
+                reason: ReasonCode::MultipleMarkers,
+                detail: format!("{} has multiple markers: {:?}", t.id, t.markers),
+            });
+            continue;
+        }
+        by_test_id.entry(t.id.clone()).or_default().push((path, t));
+    }
+
+    for (test_id, occurrences) in by_test_id {
+        let req_ids: std::collections::BTreeSet<&String> =
+            occurrences.iter().map(|(_, t)| &t.markers[0]).collect();
+        if req_ids.len() > 1 {
+            let paths: BTreeSet<&str> = occurrences.iter().map(|(p, _)| p.as_str()).collect();
+            let reqs: Vec<&str> = req_ids.iter().map(|r| r.as_str()).collect();
+            graph.invalid.push(Invalid {
+                target_kind: TargetKind::Test,
+                target: test_id.clone(),
+                reason: ReasonCode::DuplicateId,
+                detail: format!(
+                    "duplicate test id {test_id} points at different requirements ({}) at {}",
+                    reqs.join(", "),
+                    paths.into_iter().collect::<Vec<_>>().join(", ")
+                ),
+            });
+            continue;
+        }
+        let req_id = occurrences[0].1.markers[0].clone();
+        let path = occurrences[0].0.clone();
+        let content = occurrences
+            .iter()
+            .map(|(_, t)| t.content.as_str())
+            .collect::<Vec<_>>()
+            .join("\n");
+        let test_key = NodeKey {
+            kind: NodeKind::Test,
+            id: test_id.clone(),
         };
-        for t in tests {
-            if t.markers.len() > 1 {
-                graph.invalid.push(Invalid {
-                    target_kind: TargetKind::Test,
-                    target: t.id.clone(),
-                    reason: ReasonCode::MultipleMarkers,
-                    detail: format!("{} has multiple markers: {:?}", t.id, t.markers),
-                });
-                continue;
-            }
-            if t.markers.is_empty() {
-                continue;
-            }
-            let req_id = &t.markers[0];
-            let test_key = NodeKey {
-                kind: NodeKind::Test,
-                id: t.id.clone(),
-            };
-            let hash = crate::hash::content_hash(&t.content);
-            graph.nodes.insert(
-                test_key.clone(),
-                Node {
-                    key: test_key.clone(),
-                    path: path.clone(),
-                    content: t.content.clone(),
-                    hash,
+        let hash = crate::hash::content_hash(&content);
+        graph.nodes.insert(
+            test_key.clone(),
+            Node {
+                key: test_key.clone(),
+                path,
+                content,
+                hash,
+            },
+        );
+        let req_key = NodeKey {
+            kind: NodeKind::Req,
+            id: req_id.clone(),
+        };
+        if graph.nodes.contains_key(&req_key) {
+            let id = edge_id(EdgeKind::TestReq, &test_id, &req_id);
+            graph.edges.insert(
+                id.clone(),
+                Edge {
+                    id,
+                    kind: EdgeKind::TestReq,
+                    from: test_key,
+                    to: req_key,
                 },
             );
-            let req_key = NodeKey {
-                kind: NodeKind::Req,
-                id: req_id.clone(),
-            };
-            if graph.nodes.contains_key(&req_key) {
-                let id = edge_id(EdgeKind::TestReq, &t.id, req_id);
-                graph.edges.insert(
-                    id.clone(),
-                    Edge {
-                        id,
-                        kind: EdgeKind::TestReq,
-                        from: test_key,
-                        to: req_key,
-                    },
-                );
-            } else {
-                graph.broken.push(Broken {
-                    from: test_key,
-                    target: req_id.clone(),
-                    reason: ReasonCode::MissingReq,
-                    detail: format!("{req_id} does not exist"),
-                });
-            }
+        } else {
+            graph.broken.push(Broken {
+                from: test_key,
+                target: req_id.clone(),
+                reason: ReasonCode::MissingReq,
+                detail: format!("{req_id} does not exist"),
+            });
         }
     }
 
@@ -574,5 +617,412 @@ mod tests {
             .keys()
             .any(|k| k.kind == NodeKind::Req && k.id == "FR-001"));
         assert!(graph.edges.contains_key("doc-req:DOC-A:FR-001"));
+    }
+
+    const REQ1: (&str, &str) = (
+        "req/fr1.md",
+        "---\ntype: Requirement\nid: FR-001\n---\n本文\n",
+    );
+
+    fn has_test_node(graph: &crate::model::Graph, id: &str) -> bool {
+        graph
+            .nodes
+            .keys()
+            .any(|k| k.kind == NodeKind::Test && k.id == id)
+    }
+
+    // [FR-049]
+    #[test]
+    fn csharpファイルからtestノードとエッジが作られる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "tests/AuthTests.cs",
+                "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(has_test_node(&graph, "tests/AuthTests:AuthTests:T"));
+        assert!(graph
+            .edges
+            .contains_key("test-req:tests/AuthTests:AuthTests:T:FR-001"));
+    }
+
+    // [FR-053]
+    #[test]
+    fn typescriptのtest_tsとspec_tsxからtestノードが作られる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("src/a.test.ts", "// [FR-001]\nit(\"works\", () => {});\n"),
+            (
+                "src/b.spec.tsx",
+                "// [FR-001]\nit(\"renders\", () => { const x = <div />; });\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(has_test_node(&graph, "src/a.test::works"));
+        assert!(has_test_node(&graph, "src/b.spec::renders"));
+    }
+
+    // [FR-053]
+    #[test]
+    fn typescriptのtestやspecを含まない通常のtsファイルは走査されない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("src/a.ts", "// [FR-001]\nit(\"works\", () => {});\n"),
+            ("src/b.tsx", "// [FR-001]\nit(\"works\", () => {});\n"),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
+        assert!(graph.invalid.is_empty());
+    }
+
+    const REQ2: (&str, &str) = (
+        "req/fr2.md",
+        "---\ntype: Requirement\nid: FR-002\n---\n本文2\n",
+    );
+
+    fn test_node<'a>(graph: &'a crate::model::Graph, id: &str) -> &'a crate::model::Node {
+        graph
+            .nodes
+            .values()
+            .find(|n| n.key.kind == NodeKind::Test && n.key.id == id)
+            .unwrap_or_else(|| panic!("test node {id} not found"))
+    }
+
+    fn cs_overloads(first: &str, second: &str) -> String {
+        format!(
+            "public class AuthTests\n{{\n    // [FR-001]\n    [Fact]\n    public void T() {{ {first} }}\n\n    // [FR-001]\n    [Fact]\n    public void T(int x) {{ {second} }}\n}}\n"
+        )
+    }
+
+    // [FR-057]
+    #[test]
+    fn csharpのオーバーロードは1つのtestにまとめられcontentが出現順に連結される() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("tests/AuthTests.cs", &cs_overloads("one();", "two();")),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let tests: Vec<_> = graph
+            .nodes
+            .keys()
+            .filter(|k| k.kind == NodeKind::Test)
+            .collect();
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        let edges: Vec<_> = graph
+            .edges
+            .values()
+            .filter(|e| e.kind == crate::model::EdgeKind::TestReq)
+            .collect();
+        assert_eq!(edges.len(), 1, "{edges:?}");
+        let node = test_node(&graph, "tests/AuthTests:AuthTests:T");
+        let a = node.content.find("one();").expect("first occurrence");
+        let b = node.content.find("two();").expect("second occurrence");
+        assert!(a < b, "{:?}", node.content);
+        let between = &node.content[a..b];
+        assert!(between.contains('\n'), "{:?}", node.content);
+        assert!(node.content.contains("public void T()"));
+        assert!(node.content.contains("public void T(int x)"));
+    }
+
+    // [FR-057]
+    #[test]
+    fn goの別ファイルにある同名testはファイルパス順に連結される() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "pkg/b_test.go",
+                "package pkg\n\n// [FR-001]\nfunc TestX(t *testing.T) { second_body() }\n",
+            ),
+            (
+                "pkg/a_test.go",
+                "package pkg\n\n// [FR-001]\nfunc TestX(t *testing.T) { first_body() }\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let node = test_node(&graph, "pkg:TestX");
+        let a = node.content.find("first_body").expect("a_test.go");
+        let b = node.content.find("second_body").expect("b_test.go");
+        assert!(a < b, "{:?}", node.content);
+    }
+
+    // [FR-057]
+    #[test]
+    fn rustのcfg分岐による同名testは1つのtestにまとめられる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "src/lib.rs",
+                "#[cfg(unix)]\n// [FR-001]\n#[test]\nfn same() { unix_body(); }\n\n#[cfg(windows)]\n// [FR-001]\n#[test]\nfn same() { windows_body(); }\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let node = test_node(&graph, "src/lib::same");
+        let a = node.content.find("unix_body").expect("unix");
+        let b = node.content.find("windows_body").expect("windows");
+        assert!(a < b, "{:?}", node.content);
+    }
+
+    // [FR-057]
+    #[test]
+    fn typescriptの同名testは1つのtestにまとめられる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "src/a.test.ts",
+                "// [FR-001]\nit(\"same\", () => { first(); });\n\n// [FR-001]\nit(`same`, () => { second(); });\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let node = test_node(&graph, "src/a.test::same");
+        assert!(node.content.contains("first();"));
+        assert!(node.content.contains("second();"));
+    }
+
+    // [FR-057]
+    #[test]
+    fn まとめたtestは出現の本体が変わるとhashが変わる() {
+        let hash_of = |first: &str, second: &str| {
+            let source =
+                FakeSource::new(&[REQ1, ("tests/AuthTests.cs", &cs_overloads(first, second))]);
+            let graph = build_graph(&source, &config()).unwrap();
+            test_node(&graph, "tests/AuthTests:AuthTests:T")
+                .hash
+                .clone()
+        };
+        let base = hash_of("one();", "two();");
+        assert_ne!(base, hash_of("one();", "changed();"));
+        assert_ne!(base, hash_of("changed();", "two();"));
+    }
+
+    // [FR-057]
+    #[test]
+    fn まとめたtestは出現の順序を入れ替えるとhashが変わる() {
+        let hash_of = |first: &str, second: &str| {
+            let src = format!(
+                "public class AuthTests\n{{\n    // [FR-001]\n    [Fact]\n    public void T({first}) {{ }}\n\n    // [FR-001]\n    [Fact]\n    public void T({second}) {{ }}\n}}\n"
+            );
+            let source = FakeSource::new(&[REQ1, ("tests/AuthTests.cs", &src)]);
+            let graph = build_graph(&source, &config()).unwrap();
+            test_node(&graph, "tests/AuthTests:AuthTests:T")
+                .hash
+                .clone()
+        };
+        assert_ne!(hash_of("int x", "string s"), hash_of("string s", "int x"));
+    }
+
+    // [FR-057]
+    #[test]
+    fn 異なるreqを指す重複はduplicate_idとなりノードもエッジも作られない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            REQ2,
+            (
+                "pkg/a_test.go",
+                "package pkg\n\n// [FR-001]\nfunc TestX(t *testing.T) {}\n",
+            ),
+            (
+                "pkg/b_test.go",
+                "package pkg\n\n// [FR-002]\nfunc TestX(t *testing.T) {}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        let dups: Vec<_> = graph
+            .invalid
+            .iter()
+            .filter(|i| i.reason == ReasonCode::DuplicateId)
+            .collect();
+        assert_eq!(dups.len(), 1, "{:?}", graph.invalid);
+        assert_eq!(dups[0].target_kind, TargetKind::Test);
+        assert_eq!(dups[0].target, "pkg:TestX");
+        assert!(dups[0].detail.contains("pkg/a_test.go"));
+        assert!(dups[0].detail.contains("pkg/b_test.go"));
+        assert!(dups[0].detail.contains("FR-001"));
+        assert!(dups[0].detail.contains("FR-002"));
+        assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
+        assert!(graph
+            .edges
+            .values()
+            .all(|e| e.kind != crate::model::EdgeKind::TestReq));
+        let findings = crate::check::check(&graph, &crate::lock::Lock::default());
+        for req in ["FR-001", "FR-002"] {
+            assert!(
+                findings
+                    .iter()
+                    .any(|f| f.kind == crate::check::FindingKind::NoTest && f.target == req),
+                "{req}: {findings:?}"
+            );
+        }
+    }
+
+    // [FR-057]
+    #[test]
+    fn 同一ファイル内で異なるreqを指す重複は識別子ごとに1件でファイル名は1回だけ出る() {
+        let source = FakeSource::new(&[
+            REQ1,
+            REQ2,
+            (
+                "tests/AuthTests.cs",
+                "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { }\n\n    // [FR-002]\n    [Fact]\n    public void T(int x) { }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        let dups: Vec<_> = graph
+            .invalid
+            .iter()
+            .filter(|i| i.reason == ReasonCode::DuplicateId)
+            .collect();
+        assert_eq!(dups.len(), 1, "{:?}", graph.invalid);
+        assert_eq!(dups[0].detail.matches("tests/AuthTests.cs").count(), 1);
+        assert!(dups[0].detail.contains("FR-001"));
+        assert!(dups[0].detail.contains("FR-002"));
+        assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
+    }
+
+    // [FR-057]
+    #[test]
+    fn 重複の1つが複数マーカーならその出現はmultiple_markersで残りだけがまとめられる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            REQ2,
+            (
+                "tests/AuthTests.cs",
+                "public class AuthTests\n{\n    // [FR-001]\n    // [FR-002]\n    [Fact]\n    public void T() { multi(); }\n\n    // [FR-001]\n    [Fact]\n    public void T(int x) { single_a(); }\n\n    // [FR-001]\n    [Fact]\n    public void T(string s) { single_b(); }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(
+            graph
+                .invalid
+                .iter()
+                .any(|i| i.reason == ReasonCode::MultipleMarkers),
+            "{:?}",
+            graph.invalid
+        );
+        assert!(!graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::DuplicateId));
+        let node = test_node(&graph, "tests/AuthTests:AuthTests:T");
+        assert!(node.content.contains("single_a();"));
+        assert!(node.content.contains("single_b();"));
+        assert!(!node.content.contains("multi();"));
+    }
+
+    // [FR-057]
+    #[test]
+    fn 重複の1つが複数マーカーで残りが1件なら通常のtestとして扱われる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            REQ2,
+            (
+                "tests/AuthTests.cs",
+                "public class AuthTests\n{\n    // [FR-001]\n    // [FR-002]\n    [Fact]\n    public void T() { multi(); }\n\n    // [FR-001]\n    [Fact]\n    public void T(int x) { single_a(); }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::MultipleMarkers));
+        assert!(!graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::DuplicateId));
+        let node = test_node(&graph, "tests/AuthTests:AuthTests:T");
+        assert!(node.content.contains("single_a();"));
+        assert!(!node.content.contains("multi();"));
+    }
+
+    // [FR-057]
+    #[test]
+    fn マーカーのない同名出現はまとめられない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "tests/AuthTests.cs",
+                "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { marked_body(); }\n\n    [Fact]\n    public void T(int x) { unmarked_body(); }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let node = test_node(&graph, "tests/AuthTests:AuthTests:T");
+        assert!(node.content.contains("marked_body();"));
+        assert!(!node.content.contains("unmarked_body();"));
+    }
+
+    // [FR-014]
+    #[test]
+    fn 構文エラーのcsharpテストファイルはparse_errorとしてinvalidになる() {
+        let source = FakeSource::new(&[(
+            "tests/Broken.cs",
+            "public class A {\n    [Fact]\n    public void T( {\n}\n",
+        )]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("Broken.cs")));
+    }
+
+    // [FR-014]
+    #[test]
+    fn 構文エラーのtypescriptテストファイルはparse_errorとしてinvalidになる() {
+        let source = FakeSource::new(&[("src/broken.test.ts", "it(\"a\", () => {\n")]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("broken.test.ts")));
+    }
+
+    // [FR-014]
+    #[test]
+    fn csharp_1つのテストに2件以上のマーカーがあるとinvalidになる() {
+        let source = FakeSource::new(&[(
+            "tests/AuthTests.cs",
+            "public class AuthTests\n{\n    // [FR-001]\n    // [FR-002]\n    [Fact]\n    public void T() { }\n}\n",
+        )]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::MultipleMarkers));
+    }
+
+    // [FR-014]
+    #[test]
+    fn typescript_1つのテストに2件以上のマーカーがあるとinvalidになる() {
+        let source = FakeSource::new(&[(
+            "src/a.test.ts",
+            "// [FR-001]\n// [FR-002]\nit(\"a\", () => {});\n",
+        )]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::MultipleMarkers));
+    }
+
+    // [FR-018]
+    #[test]
+    fn testsのディレクトリ指定はcsharpとtypescriptのファイルにも適用される() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "other/AuthTests.cs",
+                "public class AuthTests\n{\n    // [FR-001]\n    [Fact]\n    public void T() { }\n}\n",
+            ),
+            ("other/a.test.ts", "// [FR-001]\nit(\"a\", () => {});\n"),
+        ]);
+        let mut cfg = config();
+        cfg.tests = vec!["tests".to_string()];
+        let graph = build_graph(&source, &cfg).unwrap();
+        assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
     }
 }
