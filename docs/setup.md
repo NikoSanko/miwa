@@ -25,6 +25,7 @@ miwa init
   - `threshold`: Jev のスコアがこの値以上なら「整合」とみなす。0〜1 の範囲で、既定値は 0.9
   - `max_body_bytes`: 1つの依存関係で Jev に送る両端の本文の合計バイト数の上限。超えると `skipped` になります。既定は 200000
   - API キーは設定ファイルではなく環境変数 `TYPESAFE_API_KEY` で渡します
+- `rust.test_attributes`: Rust で `test` 以外の名前の test 属性（例: `rstest`）を test として扱うための属性名の一覧。省略時は空。属性パスの末尾の名前だけを書きます（`rstest::rstest` ではなく `rstest`）
 
 `docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。また、[`.git` `target` `.miwa` `.worktrees` `node_modules` `obj` という名前のフォルダは自動的に探索から除外され、シンボリックリンクの先は辿りません](../req/source-scan-scope-and-exclusions.md)。大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません（`obj` は C# のビルド生成物を読み込まないための除外で、docs・requirements・tests のすべてに適用されます）。
 
@@ -33,3 +34,5 @@ miwa init
 `init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.max_body_bytes` は 200000 です。
 
 設定ファイルの値には制約があります。[`judge` のしきい値は 0 から 1 の範囲、`judge.max_body_bytes` は 1 以上の整数でなければならず、`docs` / `requirements` / `tests` のいずれも空にはできません](../req/config-validation-rules.md)。範囲外の値や空の一覧が設定されていると、miwa は実行時にエラーとして止まります。設定を直接編集した際は、この点に注意してください。
+
+`rust.test_attributes` の各項目は、[英数字とアンダースコアのみからなる空でない文字列でなければならず、違反するとエラーになります](../req/config-rust-test-attributes.md)。なお、`rust.test_attributes` に属性を追加すると、マーカーを置く位置（最初の対象属性の直前）が変わり、既存の test → req の依存関係が外れることがあります。

@@ -76,7 +76,7 @@ func TestRejectsShortPassword(t *testing.T) { ... }
 fn rejects_short_password() { ... }
 ```
 
-Rust では、[`#[test]` 属性が付いた関数だけが対象](../req/rust-test-literal-test-attribute-only.md)です（`#[tokio::test]` のような属性は対象外）。マーカーの書き方は Go と同様、[`#[test]` の直前に空行を挟まないコメント](../req/rust-test-marker-adjacency.md)です。Rust の test の識別子は、[ファイルパスとモジュールの階層、関数名を組み合わせた形式](../req/rust-test-identifier-format.md)になります。
+Rust では、[属性パスの末尾が `test` の属性（`#[test]`、`#[tokio::test]`、`#[async_std::test]` など。引数付きも可）が付いた関数が対象](../req/rust-test-attribute-detection.md)です。他の属性の引数の中に現れる `test`（`#[cfg_attr(x, test)]` など）は見ません。`#[rstest]` のようにこれに当たらない属性は、`.miwa/config.yaml` の `rust.test_attributes` に名前を列挙すると対象になります（[設定の規則](../req/config-rust-test-attributes.md)。既定は空）。マーカーは、その関数に付いた test 属性のうち[ソース上で最初に現れるものの直前に、空行を挟まず隣接するコメント](../req/rust-test-marker-adjacency.md)に書きます。属性同士の間や、属性と関数の間のコメントはマーカーになりません。Rust の test の識別子は、[ファイルパスとモジュールの階層、関数名を組み合わせた形式](../req/rust-test-identifier-format.md)になります。
 
 ### C#
 

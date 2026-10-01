@@ -14,6 +14,12 @@ fn default_max_body_bytes() -> usize {
     crate::judge::DEFAULT_MAX_BODY_BYTES
 }
 
+#[derive(Debug, Clone, Default, PartialEq, serde::Serialize, serde::Deserialize)]
+pub struct RustConfig {
+    #[serde(default)]
+    pub test_attributes: Vec<String>,
+}
+
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct Config {
     pub docs: Vec<String>,
@@ -21,6 +27,8 @@ pub struct Config {
     pub tests: Vec<String>,
     pub diff_base: String,
     pub judge: JudgeConfig,
+    #[serde(default)]
+    pub rust: RustConfig,
 }
 
 impl Config {
@@ -35,6 +43,7 @@ impl Config {
                 threshold: 0.9,
                 max_body_bytes: crate::judge::DEFAULT_MAX_BODY_BYTES,
             },
+            rust: RustConfig::default(),
         }
     }
 
@@ -50,7 +59,8 @@ impl Config {
     }
 
     /// `threshold` must be finite and within `0..=1`; each `Vec` must be
-    /// non-empty; `diff_base` must be non-empty.
+    /// non-empty; `diff_base` must be non-empty; each `rust.test_attributes`
+    /// entry must be a non-empty `[A-Za-z0-9_]+` string.
     pub fn validate(&self) -> anyhow::Result<()> {
         if !self.judge.threshold.is_finite() || !(0.0..=1.0).contains(&self.judge.threshold) {
             anyhow::bail!(
@@ -76,6 +86,13 @@ impl Config {
         if self.diff_base.is_empty() {
             anyhow::bail!("diff_base must not be empty");
         }
+        for attr in &self.rust.test_attributes {
+            if attr.is_empty() || !attr.chars().all(|c| c.is_ascii_alphanumeric() || c == '_') {
+                anyhow::bail!(
+                    "rust.test_attributes entries must be the last path segment only (e.g. `rstest`, not `rstest::rstest`): got `{attr}`"
+                );
+            }
+        }
         Ok(())
     }
 }
@@ -94,6 +111,7 @@ mod tests {
                 threshold: 0.9,
                 max_body_bytes: 200_000,
             },
+            rust: RustConfig::default(),
         }
     }
 
@@ -183,5 +201,49 @@ mod tests {
         }
         let yaml = format!("{base}  max_body_bytes: 1\n");
         assert_eq!(Config::parse(&yaml).unwrap().judge.max_body_bytes, 1);
+    }
+
+    const BASE_YAML: &str = "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n";
+
+    // [FR-058]
+    #[test]
+    fn rustキーを省略_null_空マップのいずれでもtest_attributesは空になる() {
+        for extra in ["", "rust:\n", "rust: {}\n", "rust:\n  test_attributes:\n"] {
+            let yaml = format!("{BASE_YAML}{extra}");
+            let config = Config::parse(&yaml).unwrap_or_else(|e| panic!("{extra:?}: {e}"));
+            assert!(config.rust.test_attributes.is_empty(), "{extra:?}");
+        }
+    }
+
+    // [FR-058]
+    #[test]
+    fn rustのtest_attributesを指定するとそのまま読める() {
+        let yaml = format!("{BASE_YAML}rust:\n  test_attributes: [\"rstest\", \"test_case_2\"]\n");
+        let config = Config::parse(&yaml).unwrap();
+        assert_eq!(
+            config.rust.test_attributes,
+            vec!["rstest".to_string(), "test_case_2".to_string()]
+        );
+    }
+
+    // [FR-058]
+    #[test]
+    fn rustのtest_attributesにパス区切りや空文字があるとparseエラーになる() {
+        for bad in ["\"rs::test\"", "\"\"", "\"my-attr\"", "\"a b\""] {
+            let yaml = format!("{BASE_YAML}rust:\n  test_attributes: [{bad}]\n");
+            let err = Config::parse(&yaml).expect_err(bad);
+            assert!(err.to_string().contains("segment"), "{bad}: {err}");
+        }
+    }
+
+    // [FR-019]
+    #[test]
+    fn 既定のconfigのyamlはrustのtest_attributesを空配列で含む() {
+        let yaml = Config::default_config().to_yaml();
+        let value: serde_yaml_ng::Value = serde_yaml_ng::from_str(&yaml).unwrap();
+        let attrs = value["rust"]["test_attributes"]
+            .as_sequence()
+            .expect("sequence");
+        assert!(attrs.is_empty());
     }
 }

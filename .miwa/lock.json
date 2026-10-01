@@ -155,186 +155,193 @@
       "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:bfcdb3bedd2a1a81d181faaa637fc52c5d68ccbb6e4cb4b58fbc552afa2e743b",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:7f2f45bf6b8355c79d89f7a35b8ffa50515f80290356fb2a9d8bbcda9d45700a",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
       "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "doc-req:DOC-MODEL:FR-058": {
+      "from": "sha256:87c40cefd7315639347d4354376a1988c8b6e3cc0257ed69a2af9736a22e7e2b",
+      "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
@@ -393,25 +400,32 @@
       "at": "2026-10-01T01:51:00Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:9907a04be76fb88648a6e1c858e936befd441421b8208c7e9f079e424e8d30c1",
+      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
       "to": "sha256:6ebd7ccb5359343476f1b531efe1776726fe2268ca07172253b966573bf6a26c",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:9907a04be76fb88648a6e1c858e936befd441421b8208c7e9f079e424e8d30c1",
-      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
+      "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:9907a04be76fb88648a6e1c858e936befd441421b8208c7e9f079e424e8d30c1",
+      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
       "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "doc-req:DOC-SETUP:FR-058": {
+      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
+      "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
       "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
@@ -534,10 +548,31 @@
     },
     "test-req:src/config:tests:max_body_bytesを省略したyamlは既定値で読める:FR-019": {
       "from": "sha256:30fb457c119cb9f587833fb51cb81f7650764c202f77838989a33993b17a2dea",
-      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
       "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/config:tests:rustのtest_attributesにパス区切りや空文字があるとparseエラーになる:FR-058": {
+      "from": "sha256:d53bde879aad0fb9f00206fd1e502b40da0ad4c7fe3c5e73719de6aa4f8bdb69",
+      "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/config:tests:rustのtest_attributesを指定するとそのまま読める:FR-058": {
+      "from": "sha256:bfdbbcdf55d699f93a43730f0f5bb14521d11da122ae6e1547a03c2556b9843b",
+      "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/config:tests:rustキーを省略_null_空マップのいずれでもtest_attributesは空になる:FR-058": {
+      "from": "sha256:926560a7906adc50fe925a17a6d170b31481284216a1e98e37fd15bb7d0abc07",
+      "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/config:tests:thresholdが0から1の範囲内であれば妥当:FR-020": {
       "from": "sha256:654ad0b23b63ac3ae03dff0926bf3e21556da586eb0d5b51c9658bf66dab39b3",
@@ -553,19 +588,26 @@
       "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
       "at": "2026-10-01T02:13:08Z"
     },
+    "test-req:src/config:tests:既定のconfigのyamlはrustのtest_attributesを空配列で含む:FR-019": {
+      "from": "sha256:18559bddb92234400072d5ef59dee199741c2cc24b9009a7634b95b439d8a506",
+      "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
     "test-req:src/config:tests:既定値のmax_body_bytesは200000で妥当な設定である:FR-019": {
       "from": "sha256:27e566cd420add509897265ef4da1815e734b3e97cfd8fbe6592625f50687685",
-      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
       "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/config:tests:既定値のthresholdは0_9で妥当な設定である:FR-019": {
       "from": "sha256:72599f677b4109acd7ec0a69362831fc6503429a8ec6ff1bd415e8dfce383ebf",
-      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
       "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:csharpのcontentは属性を含まず修飾子から始まる:FR-052": {
       "from": "sha256:07c175587f6bb2175094b4b0567228953598c486a9379bff4272195a026d67aa",
@@ -750,67 +792,123 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:src/extract:tests:rustのcontentは外側の属性とマーカーコメントを含まない:FR-004": {
-      "from": "sha256:8f84bf009f39ffd8aebdf0b7063253910113ff06ab2536fd43267066df0aae7e",
+      "from": "sha256:572aea5b124db0c4c563d194775723acc5ded60cad87deb681490a885d1fbec6",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:rustのinner_attributeのtestはtestを作らない:FR-015": {
+      "from": "sha256:4b05e0f0271ba6952917c812114ccf2d051d5db2b67c0ce672585891f327bdd3",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:rustのrstestは追加指定がなければ対象外で指定があれば対象になる:FR-015": {
+      "from": "sha256:3b748bb34cf299be1b825b823c218b69b217970fc416e0fa6f38e99c6b9e97af",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:rustのtest_caseとcfg_attrのtestは対象外:FR-015": {
+      "from": "sha256:069e0d86a684e64f8e32e95921a55b51d65bbf27848d2d7c1f972461fd951fb8",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:rustのtest識別子はinline_modを外側から内側の順に連結する:FR-017": {
-      "from": "sha256:30d61c716a9c0dcebdfae0d194b268d122d4e2d74047e65ed97e8c50b7383432",
+      "from": "sha256:a3a8b1941fe8f6988d6af5afd6f0a0a2ee5255145a3fca6d99b16f471beb7e51",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:rustのtest識別子はトップレベルなら空モジュールパスになる:FR-017": {
-      "from": "sha256:412f7c47d561af9abac2c0527d22e2c07eb71835efa61c2f665692d6ff74dcb8",
+      "from": "sha256:0a812056896c26cdc586be878ec6e5033df18265b602843b149820b32934b5d5",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:rustのtest識別子はネストしたinline_modをスラッシュで連結する:FR-017": {
-      "from": "sha256:be7f6657c8f9227e4bc34a231b2aca0de245f8d8600f7ebd125759336b0fc2b3",
+      "from": "sha256:ddad945bdb1778a1d5a0f47e19c0e9490e731ad65159c2ffcbb4c9937617fe56",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:rustの関数本体の変更はcontentに反映される:FR-003": {
-      "from": "sha256:cdc679035bf2bee29c9e3a0838d7e5a77c93bbbdfa1b3a92bf5040d6af874318",
+      "from": "sha256:195431d6e26235ff51203f48d3b5b69f31dc09dde94c924bf8f33c16f83b2d95",
       "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
-    "test-req:src/extract:tests:rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する:FR-015": {
-      "from": "sha256:b9d75c162775b20ad5c482ef2648faae6eb1924a3a56f4e563aef073d899f950",
-      "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
+    "test-req:src/extract:tests:rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する:FR-016": {
+      "from": "sha256:91ef470166431e5b2248cd193454f3ebee1d8b76dc7e6de5e88cb124ddeaf117",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:rustはtest属性の直前に隣接するコメントをマーカーとする:FR-016": {
-      "from": "sha256:c553857d12880567c212dfb7baf79a3de78ab8bf732117ffc88d1eb932e64834",
-      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "from": "sha256:5bfae528dc2d303fab75326dc11e9b0c1879de3bea7d203bcbb77bd0f3468d19",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:rustは他の属性の後ろでもtestの直前のコメントはマーカーになる:FR-016": {
-      "from": "sha256:5379fc4ae0fb72acb1fbda4e3d00549dabcec265c794e5e272341374feb70f16",
-      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "from": "sha256:d2c708a8e8892449a173bbf222a661d01f39fb47f99c5c17c0f269626786d82b",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:rustは対象属性の設定によりマーカー位置が変わる:FR-016": {
+      "from": "sha256:72714ba3c4c7ac43c7ed238d23da26126a5249f19adc312640e53f0ba0b30659",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:rustは属性が間に挟まるとtestの直前のコメントをマーカーにしない:FR-016": {
-      "from": "sha256:0f7bc1788dba0853107002ab640c9aab5d1eb6aac0948c1ebf2271a4119e2545",
-      "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
+      "from": "sha256:edbd6fea22228deda9c33e88d481feeebd8902cc3c514ef4b033e83813f0fc4a",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:rustは属性パスの末尾がtestならtestとして抽出する:FR-015": {
+      "from": "sha256:d0c68692b110a76589fd58851402a994822893cfa18281d9ae4929aca7ae485e",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:rustは属性間や属性末尾のコメントがあってもtestとして検出しマーカーを取る:FR-016": {
+      "from": "sha256:0d173fff7f904dddf924727d8ddb8108890587f3de1c8ffaf4b5d270157effec",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:rustは最初の対象属性の直前のコメントをマーカーにする:FR-016": {
+      "from": "sha256:fa631884599cd83d0724b0c1658922a7ab5edd43f574e28037cef99aac93bec6",
+      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
+    "test-req:src/extract:tests:tokioのtest属性はcontentに含まれない:FR-004": {
+      "from": "sha256:f7117e68be0b6a95b180fc4e7a06e5ebe1629f8d6ca84e30fb1bcd3619900d7a",
+      "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/extract:tests:typescriptのcontentは呼び出し文全体でマーカーコメントを含まない:FR-003": {
       "from": "sha256:78a562d3429d5a7ea74957a4dd429c8ec8b5a073b02fcbef6a6b0ee7b702de72",
@@ -980,13 +1078,6 @@
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
     },
-    "test-req:src/extract:tests:リテラルなtest属性のみをrustのtestとして抽出する:FR-015": {
-      "from": "sha256:168ab467b344c0a26f5559a51e1b023d94f04f867be39ed91e2413a6a0b3ff24",
-      "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
-      "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
-    },
     "test-req:src/frontmatter:tests:bodyにはフロントマターのブロックが含まれない:FR-002": {
       "from": "sha256:fa37e123aedbe74153243f29044ef60ff35d26300597ac994d33e770b7b7c42e",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
@@ -1015,12 +1106,19 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/graph:tests:configのrust_test_attributesが抽出に反映される:FR-015": {
+      "from": "sha256:2a8a52a926fe9b9da735af720825449d2e494936795d9fcdfb9eddbc432563a1",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
     "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
-      "from": "sha256:b12c93bf811faaedd46c37dfe779f73aa1cbf4c21083f2dedfb8bb01cc208527",
+      "from": "sha256:5b3c6e1f6ebc035110451121e474171f01968f6742dba2db75b864d71c802ab1",
       "to": "sha256:6ebd7ccb5359343476f1b531efe1776726fe2268ca07172253b966573bf6a26c",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:src/graph:tests:csharp_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:8e591a891ddf617f169e9c675124e06ea5c53ab887b1a6ceb1b29f3ec1267436",
@@ -1778,6 +1876,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:tests/cli_check::tokioのtestはnew_reconcile_driftの順で検知される:FR-015": {
+      "from": "sha256:d3622a567038bce49cb2f165d753eca8de4efd50503b6b750baa4c264419c0e5",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
+      "by": "human",
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
+    },
     "test-req:tests/cli_check::typescriptのtestはnew_reconcile_driftの順で検知される:FR-054": {
       "from": "sha256:ad2de5727802d9f337d60c81888a6b64da372d043fda169c10c475f385dce2da",
       "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
@@ -1821,18 +1926,18 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_init::initは既定値でconfigを生成する:FR-019": {
-      "from": "sha256:4cb6781f83b073f1d6049cf7e0d4e2e7877b585365dd9fc594566e042fc11330",
-      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "from": "sha256:996acbdaf0c86036c5f6e50f20fbe3739716a4ffc2adcf39ea10accb8968e74d",
+      "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
       "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:tests/cli_init::既にconfigが存在する場合は上書きせず失敗する:FR-019": {
       "from": "sha256:b66872b9219212696ad48e751ac2947b39d7db15a3f6001c71565a6b16a71342",
-      "to": "sha256:552914f3ecd1b7df7bded3b42eeff9a1a611e3fee382b7e5642cf9ee579d0aa7",
+      "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
       "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
+      "reason": "Rust の test 属性を末尾セグメント判定と rust.test_attributes 設定に拡張（Issue #2）",
+      "at": "2026-10-01T13:49:54Z"
     },
     "test-req:tests/cli_judge::apiキーが未設定なら何も送信せずキー名を表示してexit1になる:FR-039": {
       "from": "sha256:afd2121c575a1d153e2aa90fba9cd2309ba54ccc0131b0151877ef3a477691b1",
