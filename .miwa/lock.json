@@ -1,81 +1,81 @@
 {
   "edges": {
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
       "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:5de81d8b241ac2f92898a6939b4656cb4a13f19b888a359e10e8185522cdd25b",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-JUDGE:FR-038": {
       "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
@@ -155,186 +155,186 @@
       "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
+      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:b1b9f2ed8920fd74e428771f7faaeab4a2739392e8b4af7fdf60c8a0668cbf15",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:f2c595b8e6e20f0accb6cdaacb579afccb3f97767fab177d3d22d1c7e9f51cc0",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
       "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:bfcdb3bedd2a1a81d181faaa637fc52c5d68ccbb6e4cb4b58fbc552afa2e743b",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:7f2f45bf6b8355c79d89f7a35b8ffa50515f80290356fb2a9d8bbcda9d45700a",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
+      "to": "sha256:cf631f2b92eaa48a494eb6b1f05efacb5fe6952853f4f6079f5c2c29461607b1",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:12170dd6ee62c575d6243e941e83fa834171c9e2360a6fd48cda8971d272b01c",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "from": "sha256:0388d4ee48d388dd46a543816a257a7e43e6b8e8b4ec1772f47bab245390e893",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
@@ -695,10 +695,10 @@
     },
     "test-req:src/extract:tests:csharpは構文エラーのソースでエラーを返す:FR-014": {
       "from": "sha256:eab33ccb313a73a78d550552c977277b0152cf1527fef1fc3e1b2237505bfc5a",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:csharpは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-050": {
       "from": "sha256:f53ee7f7f10d9fea7d67f48883520f978b19251fc12fed6431fb29c091d3250f",
@@ -730,10 +730,10 @@
     },
     "test-req:src/extract:tests:goの関数本体の変更はcontentに反映される:FR-003": {
       "from": "sha256:4faa011e2c87d3c32eac3a72af66047b02b8376c25d439f0719d54f487ec4402",
-      "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
+      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:goは直前に隣接するコメントをマーカーとして抽出する:FR-012": {
       "from": "sha256:9ef89183b685271fc708b7e61da1dd7e3e87b3d5c2cd9fe880f8d4e6ca367205",
@@ -779,10 +779,10 @@
     },
     "test-req:src/extract:tests:rustの関数本体の変更はcontentに反映される:FR-003": {
       "from": "sha256:cdc679035bf2bee29c9e3a0838d7e5a77c93bbbdfa1b3a92bf5040d6af874318",
-      "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
+      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する:FR-015": {
       "from": "sha256:b9d75c162775b20ad5c482ef2648faae6eb1924a3a56f4e563aef073d899f950",
@@ -814,171 +814,199 @@
     },
     "test-req:src/extract:tests:typescriptのcontentは呼び出し文全体でマーカーコメントを含まない:FR-003": {
       "from": "sha256:78a562d3429d5a7ea74957a4dd429c8ec8b5a073b02fcbef6a6b0ee7b702de72",
-      "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
+      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptのtest識別子はdescribeの外なら空のdescribeパスになる:FR-056": {
       "from": "sha256:f9056a2a6c7848b6f7428fe053a946c15e70599f8b6f52ed9b5ffe0d0fbcfb40",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptのtest識別子はdescribeを外側から内側へスラッシュで連結する:FR-056": {
       "from": "sha256:b46bac319add284ba4288909cdf5a364460c6576aa40e830490180690a932765",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
-    "test-req:src/extract:tests:typescriptのtest識別子は拡張子のtsとtsxだけを除去する:FR-056": {
-      "from": "sha256:e023823b111921f46eba165bf68c7091ba48e84d7521bafcfed5016176c27f2f",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+    "test-req:src/extract:tests:typescriptのtest識別子は対象外の拡張子を除去しない:FR-056": {
+      "from": "sha256:32e56dcbdd74de79807d2aac09c9571d73be1b1db38fc006f077b8ec33fc195f",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:src/extract:tests:typescriptのtest識別子は対象拡張子をすべて除去しtestやspecは残す:FR-056": {
+      "from": "sha256:b9660ff9e763a47877be4c1a1e66be6d7f9a16e1522ea89ff84fe2a646c63b8f",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptの本体変更はcontentに反映される:FR-003": {
       "from": "sha256:e72e8655fb24b207528db7f9fd10ebc992a659b238049392b68dad35cd4d91b6",
-      "to": "sha256:123998052141c4aa257aa9486ef1420d18054cace67678ba38684d68bb960c59",
+      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはawaitなど式文直下でない呼び出しを検出しない:FR-054": {
       "from": "sha256:9bc09f2ec8d6fa5c812c34a9c1cd46b2950f7a2a2168924d7f8f0bd6aec5a4f4",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはdescribe_eachの中のtestを検出しない:FR-054": {
       "from": "sha256:73c3d1634ad0069aa0f1f97ba54e4551bc953e26d82dd1b955c63f8bc78513f8",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはdescribe_skipの中のtestも検出する:FR-054": {
       "from": "sha256:0290ccb15e9fd40423f31b74bdac1e9c5f0de68b22cdf46d9be07bb26bddc1b0",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはdescribe内のtestでも直前のコメントをマーカーにする:FR-055": {
       "from": "sha256:3acc0a3d1a9c48be18e49e2bde4c5b72dca75fd8e224bde20a6562601cf1e523",
-      "to": "sha256:7f2f45bf6b8355c79d89f7a35b8ffa50515f80290356fb2a9d8bbcda9d45700a",
+      "to": "sha256:cf631f2b92eaa48a494eb6b1f05efacb5fe6952853f4f6079f5c2c29461607b1",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはexport_defaultやskipif_describeやforループ内のitを検出しない:FR-054": {
       "from": "sha256:d0831f0f9acc70d3ecce67bd8a299c1abd66d949d466dfc8bb6d1c5ec73f890b",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはfunction式のコールバックも検出する:FR-054": {
       "from": "sha256:ab5848995a8ead2f246489d43127634cccf5ee450b44d55d2e213b2b2c83e58a",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはhelper関数やtest本体やif文の中のitを検出しない:FR-054": {
       "from": "sha256:7fc23e395a26cc5a50fcf092d8879fa887ff017149773635f933404311c60bcc",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:src/extract:tests:typescriptはjsxとjsファイルのjsxを含むソースも解析できる:FR-053": {
+      "from": "sha256:b49a18b44df65654d78660b6417fc0cad1fd4c5933ecf04c0d7652bf75035ada",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:src/extract:tests:typescriptはjs系拡張子のファイルからtestを検出する:FR-053": {
+      "from": "sha256:20643521f046318e268ea43f84d09835c194f00c453c1a29b08d30f22aec3ef1",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはtestとitの呼び出しを検出する:FR-054": {
       "from": "sha256:9d43fd83705264dc24d319a437a04271bf209881c8980ea1ed72617f1739ed4a",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはtsxファイルのjsxを含むソースも解析できる:FR-053": {
       "from": "sha256:a3ba1bad5563877c2ec53ee542ae41d3cbd4ad72c0b32e0a114550a118971588",
-      "to": "sha256:bfcdb3bedd2a1a81d181faaa637fc52c5d68ccbb6e4cb4b58fbc552afa2e743b",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:src/extract:tests:typescriptはts系拡張子でtsx文法が拒否する角括弧キャストを解析できる:FR-053": {
+      "from": "sha256:3ac7ea9d6292b24c6050129b025255fae3279a637c3e958bf9c06d381d77500c",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptはエスケープを解釈せずソース表記のまま名前にする:FR-056": {
       "from": "sha256:70875c30e1dcf849c72bad03dcf4f077f9d7404fdd259e5620850f18460aeca4",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは構文エラーのソースでエラーを返す:FR-014": {
       "from": "sha256:7bdda4dda67dce24ea0925bc6ad582cd8ecde666ae97ed1d9c657e94e203636c",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-055": {
       "from": "sha256:af9387d11a3aea25301f48a537abd722fdbbbabc46ff4e8a70ce98e742dad745",
-      "to": "sha256:7f2f45bf6b8355c79d89f7a35b8ffa50515f80290356fb2a9d8bbcda9d45700a",
+      "to": "sha256:cf631f2b92eaa48a494eb6b1f05efacb5fe6952853f4f6079f5c2c29461607b1",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは空文字名と改行を含む名前を無視する:FR-056": {
       "from": "sha256:eb17ab080eb96d65b1ab58f34da5edc523f9571aea7ab1d6a5578fd42868e809",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは第1引数が文字列リテラルでない呼び出しを検出しない:FR-054": {
       "from": "sha256:9e9209fc6262931901e2f8e7a9d17a4d5bed1c75589b908b186efcc7569fbf15",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは置換なしのテンプレート文字列を対象にし置換ありを無視する:FR-056": {
       "from": "sha256:aeb29522590a444914333d1d5212b011800c0cf6a4042bb7483b8fca3d6e9a1e",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは行区切り文字を含む名前を無視する:FR-056": {
       "from": "sha256:7698a60b54ed529cfa564ff6ba044735b66655c929b58368e92d04a12ff49fe8",
-      "to": "sha256:8aa7aed9e66b393d3066b5a245bbd64816102c654a6ceaf3fb805d0709f239f6",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは許可された修飾子を検出し走査する:FR-054": {
       "from": "sha256:c3e0790b7824f107ef897539e6b3ef168746a1cbe08d79d58addd288c9317403",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは許可された修飾子付きの呼び出しを検出する:FR-054": {
       "from": "sha256:121e05ba46f0d9e738febafdcbc950debab08ed278e55b4fc8fa4eb13aa1ba43",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:typescriptは許可外の修飾子や呼び出し結果の呼び出しを検出しない:FR-054": {
       "from": "sha256:54f34a7022533488ded3674573d6c1c3b89b12cf6a82337950333d78408d8b5d",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/extract:tests:リテラルなtest属性のみをrustのtestとして抽出する:FR-015": {
       "from": "sha256:168ab467b344c0a26f5559a51e1b023d94f04f867be39ed91e2413a6a0b3ff24",
@@ -1024,17 +1052,17 @@
     },
     "test-req:src/graph:tests:csharp_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:8e591a891ddf617f169e9c675124e06ea5c53ab887b1a6ceb1b29f3ec1267436",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:csharpのオーバーロードは1つのtestにまとめられcontentが出現順に連結される:FR-057": {
       "from": "sha256:c82ad1000f509afb92621ab72a4b3f470567e3a58d25532b7290624c4978db25",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:csharpファイルからtestノードとエッジが作られる:FR-049": {
       "from": "sha256:7ce227b833b7744b58910578ebb1365927fc19aba88c976ac9d0cd0e4f5f177b",
@@ -1045,17 +1073,17 @@
     },
     "test-req:src/graph:tests:go_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:c963e55e4e807dab507de0b5a817dbf5706af73f564736db91a4c115a3dd230d",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:goの別ファイルにある同名testはファイルパス順に連結される:FR-057": {
       "from": "sha256:a36e02fa421c4c45eb34675f136a0e2fefafc951e46e5eeb3cc859bcb8a10160",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:idが空のファイルはmissing_idとして報告される:FR-007": {
       "from": "sha256:8d4683b0a9928750e2fb743f6f283c7027b68b785005e79473fb9bdabcb5b07b",
@@ -1063,6 +1091,13 @@
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:javascriptのtest_jsとspec_mjsからtestノードが作られる:FR-053": {
+      "from": "sha256:36fa2c21b44f14e64e0a976a8f388c48ed7a555634b9709c0a6cdce3f2b6f691",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:requirements領域外を指すリンクはエッジにもbrokenにもならない:FR-010": {
       "from": "sha256:08456d470f12742417e5a32ca9c67119c0ca73ecf9142a80d6e451c3cd3389c5",
@@ -1080,17 +1115,17 @@
     },
     "test-req:src/graph:tests:rust_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:450cd6de02730e0650465f516903cf30ae66d476cd5cd013c358e533107c72e2",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:rustのcfg分岐による同名testは1つのtestにまとめられる:FR-057": {
       "from": "sha256:0bcf17549290a5cb8cee7fd3750973337737cf2bcc728e12595f989c0dcb574f",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:testsのディレクトリ指定はcsharpとtypescriptのファイルにも適用される:FR-018": {
       "from": "sha256:cce55f81af85bc383f1a7c200bad91d98994f0f7a42e122d79b475009c69d92b",
@@ -1099,33 +1134,40 @@
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
     },
+    "test-req:src/graph:tests:testやspecを含まない通常のjsファイルは走査されない:FR-053": {
+      "from": "sha256:6a3d2260f6c305136caff1855538fb6026671a9964286da5c312c6159de39f64",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
     "test-req:src/graph:tests:typescript_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:375b372630f87fa20e0bedebbc2704b04f4da7eb54bbeb895c94782821f7267b",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:typescriptのtest_tsとspec_tsxからtestノードが作られる:FR-053": {
       "from": "sha256:978989048505ee974e74dbf664f0ff514ff2afa11e7130e827d69433366f0be9",
-      "to": "sha256:bfcdb3bedd2a1a81d181faaa637fc52c5d68ccbb6e4cb4b58fbc552afa2e743b",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:typescriptのtestやspecを含まない通常のtsファイルは走査されない:FR-053": {
       "from": "sha256:a72e0ab1305db510d350ba1f708a6623bbbd87232d1be0dc4bf15768ba3b5c28",
-      "to": "sha256:bfcdb3bedd2a1a81d181faaa637fc52c5d68ccbb6e4cb4b58fbc552afa2e743b",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:typescriptの同名testは1つのtestにまとめられる:FR-057": {
       "from": "sha256:7e4ba7547c1c247047e2993476e4752f9cacd2f4976c3b569bf4b34ec9d074ad",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:typeの値がspecification_requirement以外なら対象外になる:FR-005": {
       "from": "sha256:2f4bbe94f27d9f4c9a3d2710a4f9869ddc629713a54302bf93324872cc67eaef",
@@ -1143,24 +1185,24 @@
     },
     "test-req:src/graph:tests:まとめたtestは出現の本体が変わるとhashが変わる:FR-057": {
       "from": "sha256:5a0308bc1875e71026b624b574f40fc994e91828245b3a720537fae3f8532dfb",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:まとめたtestは出現の順序を入れ替えるとhashが変わる:FR-057": {
       "from": "sha256:6f1470d545edc3082b317aa84771126802feda5c77d9b16338f8954ed3e139f2",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:マーカーのない同名出現はまとめられない:FR-057": {
       "from": "sha256:a6cb9aa7b0fbbcfd5a35ab1ee17bf93314d4db259df9db7361b985e8f65126aa",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:不正な文字を含むidはinvalid_idとして報告される:FR-006": {
       "from": "sha256:7121aaf049c06fa3847f5b4c668f4a34f6b714a14f67654addb0a8deeb46cfea",
@@ -1178,10 +1220,10 @@
     },
     "test-req:src/graph:tests:同一ファイル内で異なるreqを指す重複は識別子ごとに1件でファイル名は1回だけ出る:FR-057": {
       "from": "sha256:e27793ebf17f763e7658744ea114928b6f971cdac1a672da2d5162bb536e788c",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:存在しないreq_idを指すtestマーカーはbrokenになる:FR-011": {
       "from": "sha256:327a6a87f1539ff1445aad7e33c0a3eb533a93235f246164642145aeb74854d5",
@@ -1199,52 +1241,59 @@
     },
     "test-req:src/graph:tests:構文エラーのcsharpテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:b9c1f591ba680de1a7a28d8fc7a3eabd541cfa1a05ad972fa09146c037d65f02",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:構文エラーのgoテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:dab20a651b1ff14bb4908868dcb097939ab91c7e2717fb5ef7bb8f623e73f7ee",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:src/graph:tests:構文エラーのjsテストファイルはparse_errorとしてinvalidになる:FR-014": {
+      "from": "sha256:4c9559d444d3c9e19dcef446a86f31eda4d63c74dd1bb867f71783853fab71c3",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:構文エラーのrustテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:07c3d40ff26668ed45e68bca7941acf64d08478b9e8bf1e2349822b9b9de3b6e",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:構文エラーのtypescriptテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:a1084b3d1c441d148e0b2e5750474fc5d10e8b2688afb4c476a917ec2bb0aed5",
-      "to": "sha256:d039d70e39aa345fa0a6d38276ced9b44650690783c1cd79a075366e0389b06d",
+      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:異なるreqを指す重複はduplicate_idとなりノードもエッジも作られない:FR-057": {
       "from": "sha256:06addf82d52e8b9a192750d2c988b31d9d5047a0d092bdc1eba01a9edf4a1029",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:重複の1つが複数マーカーで残りが1件なら通常のtestとして扱われる:FR-057": {
       "from": "sha256:a64fc17c32d0d9a67beddef0cf6456a91993537a1dca0d64d8a8281de86eff83",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/graph:tests:重複の1つが複数マーカーならその出現はmultiple_markersで残りだけがまとめられる:FR-057": {
       "from": "sha256:2b47725c22da8e6947bfb14af125ea660f85b4156b39bb2ad985f0578657923e",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:src/hash:tests:content_hash_はsha256プレフィックス付きの小文字hexを返す:FR-001": {
       "from": "sha256:f25a04dd8737c3c235bbc0467be14b5f2b18dbc10cea98d6a5eb3eb1d02d1a8e",
@@ -1624,6 +1673,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/reconcile:tests:ロックにのみ存在するjsのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
+      "from": "sha256:065eceefd62d14e159a1d9db8bda6056a8c28136d3e074b78d160f689543b07b",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
     "test-req:src/reconcile:tests:ロックにのみ存在するrustのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
       "from": "sha256:f0c3bda1452e66a190d1f7e3c3c312526127424ed5d9fdb3fb914aeb97d0eda4",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
@@ -1745,10 +1801,10 @@
     },
     "test-req:tests/cli_check::csharpのオーバーロードは1本のedgeにまとまりどれかの本体変更でdriftになる:FR-057": {
       "from": "sha256:8e78f5c0b58cc08b224bdf5ac1f43d00465886639b1c67fedc563d9df09bbded",
-      "to": "sha256:cf49850fbbce77a1dec361affad7c99917affe9a8cafa2ccd64ad6d02d16f544",
+      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
       "by": "human",
-      "reason": "FR-057 を「同じ req を指す重複 test は連結して 1 つにまとめる」方針へ変更",
-      "at": "2026-10-01T09:40:26Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:tests/cli_check::findingが0件でgateがあってもexit_code_0を返す:FR-030": {
       "from": "sha256:edfcffdb652ad03df3f9e9bc7adde477c0a818f15b14d578463aab61d625480d",
@@ -1771,6 +1827,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:tests/cli_check::javascriptのtestはnew_reconcile_driftの順で検知される:FR-053": {
+      "from": "sha256:64f7c5cc41dacdaa89009e0a452c45f0999a2169d132b25fca924b1719919cab",
+      "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
+      "by": "human",
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
+    },
     "test-req:tests/cli_check::textとjsonは同じ数のfindingを表す:FR-032": {
       "from": "sha256:f98a22937f95ba74469c00a49594dc8155fdec0fa92b9cef9f44dfe227ac9fc5",
       "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
@@ -1780,10 +1843,10 @@
     },
     "test-req:tests/cli_check::typescriptのtestはnew_reconcile_driftの順で検知される:FR-054": {
       "from": "sha256:ad2de5727802d9f337d60c81888a6b64da372d043fda169c10c475f385dce2da",
-      "to": "sha256:a497be2b80152827a71f50dd80a3368f32daa6d4bc95df8cb3abd2c5939838be",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
+      "at": "2026-10-01T13:46:58Z"
     },
     "test-req:tests/cli_check::設定エラーの場合はexit_code_1を返す:FR-030": {
       "from": "sha256:d520dc7db90be1061d9d3ea2de226b946e0806aca89f9bf9fa500e1261fde29f",

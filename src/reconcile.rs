@@ -140,9 +140,9 @@ fn parse_edge_id(id: &str) -> Option<(&str, &str, &str)> {
 /// `internal/auth`, Go at the repo root `.:TestX` -> `.`). The match is
 /// deliberately conservative (a false positive only blocks a removal, it
 /// never silently drops information):
-/// - Rust / C# / TypeScript: the target equals `<prefix>.rs` / `<prefix>.cs`
-///   / `<prefix>.ts` / `<prefix>.tsx` exactly (TS prefixes keep `.test` /
-///   `.spec`).
+/// - Rust / C# / TypeScript / JavaScript: the target equals `<prefix>.rs` /
+///   `<prefix>.cs` / `<prefix>.<ext>` exactly, `<ext>` being one of
+///   `TYPESCRIPT_TEST_EXTENSIONS` (TS / JS prefixes keep `.test` / `.spec`).
 /// - Go (non-root): the target starts with `<prefix>/`.
 /// - Go (repo root, `prefix == "."`): the target contains no `/`.
 fn test_source_has_parse_error(invalid: &[crate::model::Invalid], test_id: &str) -> bool {
@@ -154,8 +154,9 @@ fn test_source_has_parse_error(invalid: &[crate::model::Invalid], test_id: &str)
         let target = inv.target.as_str();
         if target == format!("{prefix}.rs")
             || target == format!("{prefix}.cs")
-            || target == format!("{prefix}.ts")
-            || target == format!("{prefix}.tsx")
+            || crate::extract::TYPESCRIPT_TEST_EXTENSIONS
+                .iter()
+                .any(|ext| target == format!("{prefix}.{ext}"))
         {
             return true;
         }
@@ -582,5 +583,16 @@ mod tests {
     fn ロックにのみ存在するtsxのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
         assert_blocked_by_parse_error("src/a.test.tsx", "test-req:src/a.test:d:t:FR-001");
         assert_blocked_by_parse_error("src/a.spec.tsx", "test-req:src/a.spec::t:FR-001");
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するjsのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
+        assert_blocked_by_parse_error("src/a.test.js", "test-req:src/a.test:d:t:FR-001");
+        assert_blocked_by_parse_error("src/a.test.mjs", "test-req:src/a.test:d:t:FR-001");
+        assert_blocked_by_parse_error("src/a.spec.cjs", "test-req:src/a.spec:d:t:FR-001");
+        assert_blocked_by_parse_error("src/a.spec.mts", "test-req:src/a.spec:d:t:FR-001");
+        assert_blocked_by_parse_error("src/a.test.cts", "test-req:src/a.test:d:t:FR-001");
+        assert_blocked_by_parse_error("src/a.spec.jsx", "test-req:src/a.spec:d:t:FR-001");
     }
 }
