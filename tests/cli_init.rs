@@ -19,6 +19,11 @@ fn initは既定値でconfigを生成する() {
     assert_eq!(value["judge"]["threshold"].as_f64(), Some(0.9));
     assert_eq!(value["judge"]["max_body_bytes"].as_u64(), Some(200000)); // [FR-019]
     assert!(value["judge"].get("llm_command").is_none());
+    // [FR-019]
+    let attrs = value["rust"]["test_attributes"]
+        .as_sequence()
+        .expect("rust.test_attributes");
+    assert!(attrs.is_empty());
 }
 
 // [FR-019]

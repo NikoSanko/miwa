@@ -62,11 +62,17 @@ pub fn extract_go_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, 
     Ok(results)
 }
 
-/// Extract Rust tests: `function_item`s carrying a literal `#[test]`
-/// attribute. Markers come from the comment block immediately preceding
-/// `#[test]`. `content` is the source of the `function_item` (attributes not
-/// included).
-pub fn extract_rust_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, ExtractError> {
+/// Extract Rust tests: `function_item`s carrying a test attribute, i.e. an
+/// outer attribute whose path ends in `test` (`#[test]`, `#[tokio::test]`, ...)
+/// or in one of `extra_attributes` (last path segment, e.g. `rstest`).
+/// Markers come from the comment block immediately preceding the first
+/// (topmost) test attribute. `content` is the source of the `function_item`
+/// (attributes not included).
+pub fn extract_rust_tests(
+    path: &str,
+    source: &str,
+    extra_attributes: &[String],
+) -> Result<Vec<ExtractedTest>, ExtractError> {
     let mut parser = tree_sitter::Parser::new();
     parser
         .set_language(&tree_sitter_rust::LANGUAGE.into())
@@ -85,7 +91,7 @@ pub fn extract_rust_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>
 
     let base = path.strip_suffix(".rs").unwrap_or(path);
     let mut results = Vec::new();
-    walk_rust_items(root, source, base, &[], &mut results);
+    walk_rust_items(root, source, base, &[], extra_attributes, &mut results);
     Ok(results)
 }
 
@@ -94,6 +100,7 @@ fn walk_rust_items(
     source: &str,
     base: &str,
     mods: &[String],
+    extra_attributes: &[String],
     results: &mut Vec<ExtractedTest>,
 ) {
     let mut cursor = container.walk();
@@ -108,7 +115,8 @@ fn walk_rust_items(
                     .utf8_text(source.as_bytes())
                     .unwrap_or("")
                     .to_string();
-                let Some(markers) = rust_test_markers(&children, idx, source) else {
+                let Some(markers) = rust_test_markers(&children, idx, source, extra_attributes)
+                else {
                     continue;
                 };
                 let content = node.utf8_text(source.as_bytes()).unwrap_or("").to_string();
@@ -137,7 +145,7 @@ fn walk_rust_items(
                     .to_string();
                 let mut new_mods = mods.to_vec();
                 new_mods.push(mod_name);
-                walk_rust_items(body, source, base, &new_mods, results);
+                walk_rust_items(body, source, base, &new_mods, extra_attributes, results);
             }
             _ => {}
         }
@@ -178,46 +186,38 @@ fn collect_preceding_markers(
     markers
 }
 
-/// Returns `None` if `children[func_idx]` is not preceded (immediately) by an
-/// `attribute_item` chain containing a literal `#[test]`. Otherwise, returns
-/// the markers from the comment block immediately (no blank line, no other
-/// attribute in between) preceding that specific `#[test]` attribute node
-/// (not just the start of the whole attribute chain).
+/// Returns `None` if the attribute chain above `children[func_idx]` has no
+/// test attribute. The chain is the contiguous run of `attribute_item`s and
+/// comments directly above the `fn` (comments do not end the chain). A test
+/// attribute is one whose path's last segment is `test` or listed in
+/// `extra_attributes`. Otherwise returns the markers from the comment block
+/// immediately (no blank line) preceding the topmost test attribute.
 fn rust_test_markers(
     children: &[tree_sitter::Node],
     func_idx: usize,
     source: &str,
+    extra_attributes: &[String],
 ) -> Option<Vec<String>> {
-    // Comments may sit between the attribute chain and the function itself
-    // (e.g. `#[test]` / `// note` / `fn f() {}`). Skip over those before
-    // looking for the attribute chain; they never contribute markers (a
-    // marker must be immediately before `#[test]` itself, handled below).
-    let mut j = func_idx as isize - 1;
-    while j >= 0 && is_comment_kind(children[j as usize].kind()) {
-        j -= 1;
-    }
-
     let mut test_attr_idx: Option<usize> = None;
-    while j >= 0 && children[j as usize].kind() == "attribute_item" {
-        let attr = children[j as usize];
-        let text = attr.utf8_text(source.as_bytes()).unwrap_or("").trim();
-        if text == "#[test]" {
-            test_attr_idx = Some(j as usize);
+    let mut j = func_idx as isize - 1;
+    while j >= 0 {
+        let node = children[j as usize];
+        if node.kind() == "attribute_item" {
+            if rust_is_test_attribute(node, source, extra_attributes) {
+                test_attr_idx = Some(j as usize);
+            }
+        } else if !is_comment_kind(node.kind()) {
+            break;
         }
         j -= 1;
     }
     let test_attr_idx = test_attr_idx?;
-
     let mut next_start_row = children[test_attr_idx].start_position().row;
     let mut k = test_attr_idx as isize - 1;
     let mut comments = Vec::new();
     while k >= 0 {
         let node = children[k as usize];
-        if !is_comment_kind(node.kind()) {
-            break;
-        }
-        let end_row = node.end_position().row;
-        if end_row + 1 != next_start_row {
+        if !is_comment_kind(node.kind()) || node.end_position().row + 1 != next_start_row {
             break;
         }
         comments.push(node);
@@ -227,10 +227,44 @@ fn rust_test_markers(
     comments.reverse();
     let mut markers = Vec::new();
     for c in comments {
-        let text = c.utf8_text(source.as_bytes()).unwrap_or("");
-        markers.extend(extract_markers(text));
+        markers.extend(extract_markers(
+            c.utf8_text(source.as_bytes()).unwrap_or(""),
+        ));
     }
     Some(markers)
+}
+
+/// Whether an `attribute_item` is a test attribute. The attribute path's last
+/// segment is the text of the first named child of `attribute` when it is an
+/// `identifier`, or the `name` field when it is a `scoped_identifier`;
+/// arguments are never inspected. It matches when that segment is `test` or
+/// equals one of `extra_attributes`. `#![test]` is an `inner_attribute_item`,
+/// so it never reaches this function.
+fn rust_is_test_attribute(
+    item: tree_sitter::Node,
+    source: &str,
+    extra_attributes: &[String],
+) -> bool {
+    let mut cursor = item.walk();
+    let Some(attribute) = item
+        .named_children(&mut cursor)
+        .find(|c| c.kind() == "attribute")
+    else {
+        return false;
+    };
+    let Some(path) = attribute.named_child(0) else {
+        return false;
+    };
+    let segment = match path.kind() {
+        "identifier" => path,
+        "scoped_identifier" => match path.child_by_field_name("name") {
+            Some(n) => n,
+            None => return false,
+        },
+        _ => return false,
+    };
+    let text = segment.utf8_text(source.as_bytes()).unwrap_or("");
+    text == "test" || extra_attributes.iter().any(|a| a == text)
 }
 
 fn is_comment_kind(kind: &str) -> bool {
@@ -668,13 +702,13 @@ fn rejects_short_password() {
 }
 "#;
         let a = find(
-            &extract_rust_tests("src/auth.rs", base).unwrap(),
+            &extract_rust_tests("src/auth.rs", base, &[]).unwrap(),
             "rejects_short_password",
         )
         .content
         .clone();
         let b = find(
-            &extract_rust_tests("src/auth.rs", changed).unwrap(),
+            &extract_rust_tests("src/auth.rs", changed, &[]).unwrap(),
             "rejects_short_password",
         )
         .content
@@ -715,16 +749,25 @@ fn rejects_short_password() {
     assert!(true);
 }
 "#;
-        let extracted = extract_rust_tests("src/auth.rs", source).unwrap();
+        let extracted = extract_rust_tests("src/auth.rs", source, &[]).unwrap();
         let t = find(&extracted, "rejects_short_password");
         assert!(!t.content.contains("#[test]"));
         assert!(!t.content.contains("[FR-001]"));
         assert!(t.content.contains("fn rejects_short_password"));
     }
 
+    fn rs(source: &str, extra: &[&str]) -> Vec<ExtractedTest> {
+        let extra: Vec<String> = extra.iter().map(|s| s.to_string()).collect();
+        extract_rust_tests("src/auth.rs", source, &extra).unwrap()
+    }
+
+    fn has(tests: &[ExtractedTest], name: &str) -> bool {
+        tests.iter().any(|t| t.name == name)
+    }
+
     // [FR-015]
     #[test]
-    fn リテラルなtest属性のみをrustのtestとして抽出する() {
+    fn rustは属性パスの末尾がtestならtestとして抽出する() {
         let source = r#"// [FR-001]
 #[test]
 fn plain_test() {}
@@ -732,10 +775,119 @@ fn plain_test() {}
 // [FR-002]
 #[tokio::test]
 async fn async_test() {}
+
+// [FR-003]
+#[async_std::test]
+async fn async_std_test() {}
+
+// [FR-004]
+#[tokio::test(flavor = "multi_thread")]
+async fn multi_thread_test() {}
+
+// [FR-005]
+#[ test ]
+fn spaced_test() {}
 "#;
-        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
-        assert!(tests.iter().any(|t| t.name == "plain_test"));
-        assert!(!tests.iter().any(|t| t.name == "async_test"));
+        let tests = rs(source, &[]);
+        for name in [
+            "plain_test",
+            "async_test",
+            "async_std_test",
+            "multi_thread_test",
+            "spaced_test",
+        ] {
+            assert!(has(&tests, name), "{name} should be extracted");
+        }
+        assert_eq!(
+            find(&tests, "async_test").markers,
+            vec!["FR-002".to_string()]
+        );
+    }
+
+    // [FR-015]
+    #[test]
+    fn rustのrstestは追加指定がなければ対象外で指定があれば対象になる() {
+        let source = "// [FR-001]\n#[rstest]\nfn t() {}\n";
+        assert!(!has(&rs(source, &[]), "t"));
+        assert!(has(&rs(source, &["rstest"]), "t"));
+
+        let scoped = "// [FR-001]\n#[rstest::rstest]\nfn t() {}\n";
+        assert!(!has(&rs(scoped, &[]), "t"));
+        assert!(has(&rs(scoped, &["rstest"]), "t"));
+    }
+
+    // [FR-015]
+    #[test]
+    fn rustのtest_caseとcfg_attrのtestは対象外() {
+        let source = r#"// [FR-001]
+#[test_case(1)]
+fn case_test() {}
+
+// [FR-002]
+#[cfg_attr(x, test)]
+fn cfg_attr_test() {}
+"#;
+        let tests = rs(source, &[]);
+        assert!(!has(&tests, "case_test"));
+        assert!(!has(&tests, "cfg_attr_test"));
+
+        let tests = rs(source, &["test_case"]);
+        assert!(has(&tests, "case_test"));
+        assert!(!has(&tests, "cfg_attr_test"));
+    }
+
+    // [FR-015]
+    #[test]
+    fn rustのinner_attributeのtestはtestを作らない() {
+        let source = "#![test]\n\n// [FR-001]\nfn helper() {}\n";
+        assert!(rs(source, &[]).is_empty());
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustは最初の対象属性の直前のコメントをマーカーにする() {
+        let source = "// [FR-001]\n#[rstest]\n#[case(1)]\n#[tokio::test]\nfn t() {}\n";
+        let tests = rs(source, &["rstest"]);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustは対象属性の設定によりマーカー位置が変わる() {
+        let source = "#[rstest]\n// [FR-001]\n#[tokio::test]\nfn t() {}\n";
+        let without = rs(source, &[]);
+        assert_eq!(find(&without, "t").markers, vec!["FR-001".to_string()]);
+        let with = rs(source, &["rstest"]);
+        assert!(find(&with, "t").markers.is_empty());
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustは属性間や属性末尾のコメントがあってもtestとして検出しマーカーを取る() {
+        let between = "// [FR-001]\n#[test]\n// note\n#[ignore]\nfn between() {}\n";
+        let tests = rs(between, &[]);
+        assert_eq!(find(&tests, "between").markers, vec!["FR-001".to_string()]);
+
+        let trailing = "// [FR-001]\n#[test] // trailing\n#[ignore]\nfn trailing() {}\n";
+        let tests = rs(trailing, &[]);
+        assert_eq!(find(&tests, "trailing").markers, vec!["FR-001".to_string()]);
+
+        let block = "// [FR-001]\n#[test]\n/* block */\n#[ignore]\nfn block() {}\n";
+        assert_eq!(
+            find(&rs(block, &[]), "block").markers,
+            vec!["FR-001".to_string()]
+        );
+    }
+
+    // [FR-004]
+    #[test]
+    fn tokioのtest属性はcontentに含まれない() {
+        let source = "// [FR-001]\n#[tokio::test]\nasync fn t() { assert!(true); }\n";
+        let tests = rs(source, &[]);
+        let t = find(&tests, "t");
+        assert!(!t.content.contains("tokio::test"));
+        assert!(!t.content.contains("#["));
+        assert!(t.content.contains("async fn t"));
     }
 
     // [FR-016]
@@ -753,7 +905,7 @@ fn blank_line_between() {}
 #[test]
 fn no_comment() {}
 "#;
-        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
+        let tests = extract_rust_tests("src/auth.rs", source, &[]).unwrap();
         assert_eq!(find(&tests, "adjacent").markers, vec!["FR-001".to_string()]);
         assert!(find(&tests, "blank_line_between").markers.is_empty());
         assert!(find(&tests, "no_comment").markers.is_empty());
@@ -763,7 +915,7 @@ fn no_comment() {}
     #[test]
     fn rustのtest識別子はトップレベルなら空モジュールパスになる() {
         let source = "// [FR-001]\n#[test]\nfn roundtrip() {}\n";
-        let tests = extract_rust_tests("src/lock.rs", source).unwrap();
+        let tests = extract_rust_tests("src/lock.rs", source, &[]).unwrap();
         assert_eq!(find(&tests, "roundtrip").id, "src/lock::roundtrip");
     }
 
@@ -776,7 +928,7 @@ fn no_comment() {}
     fn roundtrip() {}
 }
 "#;
-        let tests = extract_rust_tests("src/lock.rs", source).unwrap();
+        let tests = extract_rust_tests("src/lock.rs", source, &[]).unwrap();
         assert_eq!(find(&tests, "roundtrip").id, "src/lock:tests:roundtrip");
     }
 
@@ -791,7 +943,7 @@ fn no_comment() {}
     }
 }
 "#;
-        let tests = extract_rust_tests("src/x.rs", source).unwrap();
+        let tests = extract_rust_tests("src/x.rs", source, &[]).unwrap();
         assert_eq!(find(&tests, "t").id, "src/x:outer/inner:t");
     }
 
@@ -803,7 +955,7 @@ fn no_comment() {}
 #[test]
 fn not_adjacent() {}
 "#;
-        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
+        let tests = extract_rust_tests("src/auth.rs", source, &[]).unwrap();
         assert!(find(&tests, "not_adjacent").markers.is_empty());
     }
 
@@ -815,14 +967,14 @@ fn not_adjacent() {}
 #[test]
 fn adjacent_after_other_attr() {}
 "#;
-        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
+        let tests = extract_rust_tests("src/auth.rs", source, &[]).unwrap();
         assert_eq!(
             find(&tests, "adjacent_after_other_attr").markers,
             vec!["FR-001".to_string()]
         );
     }
 
-    // [FR-015]
+    // [FR-016]
     #[test]
     fn rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する() {
         let source = r#"// [FR-001]
@@ -830,7 +982,7 @@ fn adjacent_after_other_attr() {}
 // 補足
 fn t() {}
 "#;
-        let tests = extract_rust_tests("src/auth.rs", source).unwrap();
+        let tests = extract_rust_tests("src/auth.rs", source, &[]).unwrap();
         let found = find(&tests, "t");
         assert_eq!(found.markers, vec!["FR-001".to_string()]);
         assert!(!found.content.contains("補足"));

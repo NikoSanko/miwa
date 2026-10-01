@@ -292,3 +292,14 @@ fn csharpのオーバーロードは1本のedgeにまとまりどれかの本体
         "test-req:tests/AuthTests:AuthTests:T:FR-001",
     );
 }
+
+// [FR-015]
+#[test]
+fn tokioのtestはnew_reconcile_driftの順で検知される() {
+    assert_new_then_drift(
+        "tests/a.rs",
+        "// [FR-001]\n#[tokio::test]\nasync fn t() {\n    assert!(true);\n}\n",
+        "// [FR-001]\n#[tokio::test]\nasync fn t() {\n    assert!(false);\n}\n",
+        "test-req:tests/a::t:FR-001",
+    );
+}

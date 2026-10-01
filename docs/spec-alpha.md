@@ -88,8 +88,9 @@ func TestRejectsShortPassword(t *testing.T) { ... }
 #[test]
 fn rejects_short_password() { ... }
 ```
-- リテラルな `#[test]` 属性を持つ `fn` が対象（`#[tokio::test]` などは対象外）
-- マーカーは `#[test]` の直前に隣接するコメントに書く
+- 属性パスの末尾セグメントが `test` の属性（`#[test]` / `#[tokio::test]` / `#[async_std::test]`、引数付きも可）を持つ `fn` が対象。`#[cfg_attr(x, test)]` のような他属性の引数の中は見ない
+- `.miwa/config.yaml` の `rust.test_attributes`（既定は空）に列挙した名前も、末尾セグメントで比較して test 属性とみなす（`rstest` で `#[rstest]` / `#[rstest::rstest]` が対象）
+- マーカーは、test 属性のうちソース上で最初に現れるものの直前に隣接するコメント（空行を挟まない）に書く。属性間・属性と `fn` の間のコメントは対象外
 
 **test（C#）**
 ```csharp

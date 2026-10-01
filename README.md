@@ -118,6 +118,13 @@ skipped doc-req:DOC-BIG:FR-090 score=-
 - `judge.threshold`: Jev のスコアがこの値以上なら `consistent` とみなします。0〜1 の範囲で、既定値は `0.9`
 - `judge.max_body_bytes`: 1つの依存関係で Jev に送る両端の本文の合計バイト数の上限。超えると `skipped` になります。1以上の整数で、既定値は `200000`
 
+Rust で `rstest` など `test` 以外の名前の属性を test として扱う場合は、属性名（末尾セグメントのみ）を `rust.test_attributes` に列挙します。省略時は空です。
+
+```yaml
+rust:
+  test_attributes: []   # 例: [rstest]
+```
+
 ## ファイルの書き方
 
 ### doc（業務要件）
@@ -156,6 +163,8 @@ func TestRejectsShortPassword(t *testing.T) { ... }
 #[test]
 fn rejects_short_password() { ... }
 ```
+
+`#[test]` のほか、`#[tokio::test]` のように属性パスの末尾が `test` の属性も対象です。`rstest` など他の名前の属性は、`.miwa/config.yaml` の `rust.test_attributes` に追加すると対象になります。マーカーは最初の test 属性の直前に書きます。
 
 ### test（C#）
 

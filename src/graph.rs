@@ -175,27 +175,25 @@ pub fn build_graph(
         }
     }
 
-    type Extractor =
-        fn(&str, &str) -> Result<Vec<crate::extract::ExtractedTest>, crate::extract::ExtractError>;
     let mut extracted_tests: Vec<(String, crate::extract::ExtractedTest)> = Vec::new();
     for path in &files {
         if !is_under(path, &config.tests) {
             continue;
         }
-        let extractor: Extractor = if path.ends_with("_test.go") {
-            crate::extract::extract_go_tests
-        } else if path.ends_with(".rs") {
-            crate::extract::extract_rust_tests
-        } else if path.ends_with(".cs") {
-            crate::extract::extract_csharp_tests
-        } else if crate::extract::is_typescript_test_file(path) {
-            crate::extract::extract_typescript_tests
-        } else {
+        let Some(language) = test_language(path) else {
             continue;
         };
         let bytes = source.read(path)?;
         let text = String::from_utf8_lossy(&bytes).into_owned();
-        match extractor(path, &text) {
+        let result = match language {
+            TestLanguage::Go => crate::extract::extract_go_tests(path, &text),
+            TestLanguage::Rust => {
+                crate::extract::extract_rust_tests(path, &text, &config.rust.test_attributes)
+            }
+            TestLanguage::CSharp => crate::extract::extract_csharp_tests(path, &text),
+            TestLanguage::TypeScript => crate::extract::extract_typescript_tests(path, &text),
+        };
+        match result {
             Ok(tests) => {
                 extracted_tests.extend(
                     tests
@@ -328,6 +326,30 @@ fn is_under(path: &str, dirs: &[String]) -> bool {
     })
 }
 
+#[derive(Debug, Clone, Copy)]
+enum TestLanguage {
+    Go,
+    Rust,
+    CSharp,
+    TypeScript,
+}
+
+/// Decides the extraction language from the file path; `None` if the file is
+/// not a test file of a supported language.
+fn test_language(path: &str) -> Option<TestLanguage> {
+    if path.ends_with("_test.go") {
+        Some(TestLanguage::Go)
+    } else if path.ends_with(".rs") {
+        Some(TestLanguage::Rust)
+    } else if path.ends_with(".cs") {
+        Some(TestLanguage::CSharp)
+    } else if crate::extract::is_typescript_test_file(path) {
+        Some(TestLanguage::TypeScript)
+    } else {
+        None
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -374,6 +396,7 @@ mod tests {
                 threshold: 0.9,
                 max_body_bytes: 200_000,
             },
+            rust: crate::config::RustConfig::default(),
         }
     }
 
@@ -603,6 +626,7 @@ mod tests {
                 threshold: 0.9,
                 max_body_bytes: 200_000,
             },
+            rust: crate::config::RustConfig::default(),
         };
         let graph = build_graph(&source, &config).unwrap();
         assert!(graph
@@ -643,6 +667,22 @@ mod tests {
         assert!(graph
             .edges
             .contains_key("test-req:tests/AuthTests:AuthTests:T:FR-001"));
+    }
+
+    // [FR-015]
+    #[test]
+    fn configのrust_test_attributesが抽出に反映される() {
+        let src = "// [FR-001]\n#[rstest]\nfn t() {}\n";
+        let source = FakeSource::new(&[REQ1, ("src/a.rs", src)]);
+
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(!has_test_node(&graph, "src/a::t"));
+
+        let mut cfg = config();
+        cfg.rust.test_attributes = vec!["rstest".to_string()];
+        let graph = build_graph(&source, &cfg).unwrap();
+        assert!(has_test_node(&graph, "src/a::t"));
+        assert!(graph.edges.contains_key("test-req:src/a::t:FR-001"));
     }
 
     // [FR-053]
