@@ -2,6 +2,11 @@
 name = "miwa"
 version = "0.1.0"
 edition = "2021"
+description = "doc / req / test の3層の仕様乖離（ドリフト）を検知する CLI"
+repository = "https://github.com/NikoSanko/miwa"
+readme = "README.md"
+rust-version = "1.92"
+publish = false
 
 [dependencies]
 anyhow = "1.0.104"

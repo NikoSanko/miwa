@@ -17,9 +17,55 @@
 
 ## インストール
 
+前提: Rust ツールチェーン（[rustup](https://rustup.rs/)）。
+
+### 推奨: タグを指定して Git からインストール
+
 ```bash
-cargo install --path .
+cargo install --git https://github.com/NikoSanko/miwa --tag vX.Y.Z --locked
 ```
+
+`vX.Y.Z` は GitHub Releases にある利用したいタグに置き換えます。タグを固定することで、誰がいつ入れても同じバージョンになり再現性を確保できます。最新の main を入れる場合は `--tag` を省略します。
+
+```bash
+cargo install --git https://github.com/NikoSanko/miwa --locked
+```
+
+private リポジトリのため GitHub の認証が必要です。
+
+- HTTPS: `gh auth setup-git` などで credential helper を設定します
+- SSH: `--git ssh://git@github.com/NikoSanko/miwa.git` の形で指定します
+
+### 開発者向け
+
+リポジトリをクローンしてインストールします。
+
+```bash
+cargo install --path . --locked
+```
+
+### ビルド済みバイナリ
+
+タグを push すると、GitHub Releases に macOS / Linux / Windows のバイナリが添付される予定です（[`.github/workflows/release.yml`](.github/workflows/release.yml)）。ダウンロードして PATH の通った場所に置きます。
+
+Release には `SHA256SUMS` が添付されます。ダウンロードしたアーカイブと `SHA256SUMS` を同じディレクトリに保存し、展開前に次のコマンドで検証してください。
+
+```bash
+sha256sum --ignore-missing -c SHA256SUMS
+```
+
+今後の配布計画は [Issue #6](https://github.com/NikoSanko/miwa/issues/6) を参照してください。
+
+## 既存プロジェクトへの導入
+
+1. `miwa init` を実行します
+2. `.miwa/config.yaml` を編集します
+3. doc / req / マーカーを整備します
+4. `miwa reconcile --all` で現状の合意を記録します
+5. `.miwa/` をコミットします
+6. CI で `miwa check --gate`（または `--diff`）を実行します
+
+詳細は [docs/setup.md](docs/setup.md) を参照してください。
 
 ## 使い方
 
