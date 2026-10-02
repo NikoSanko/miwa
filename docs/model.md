@@ -57,7 +57,7 @@ doc の本文中で req ファイルへ相対リンクを張ると、それが d
 
 ## test（テストコード）の書き方
 
-test は、req が実際に検証されていることを示すコードです。miwa は現時点で Go・Rust・C#・TypeScript / JavaScript（Vitest）に対応しています。
+test は、req が実際に検証されていることを示すコードです。miwa は現時点で Go・Rust・C#・Java・Kotlin（JUnit）・TypeScript / JavaScript（Vitest）の 6 言語に対応しています。
 
 ### Go
 
@@ -91,6 +91,37 @@ public class AuthTests
 
 C# では、[`Fact` `Theory` `Test` `TestCase` `TestCaseSource` `TestMethod` `DataTestMethod` のいずれかの属性が付いたメソッドが対象](../req/csharp-test-attribute-detection.md)です（xUnit・NUnit・MSTest に対応。`[Xunit.Fact]` のような名前空間付きや `[Fact(Skip = "x")]` のような引数付きも対象で、`[FactAttribute]` の書き方は対象外です）。マーカーは、[メソッド宣言（属性を含む）の直前に空行を挟まないコメント](../req/csharp-test-marker-adjacency.md)に書きます。属性と署名の間に書いたコメントはマーカーになりません。C# の test の識別子は、[ファイルパスと型名の階層、メソッド名を組み合わせた形式](../req/csharp-test-identifier-format.md)です（namespace は含みません）。例えば `tests/AuthTests.cs` の `class AuthTests` 内の `RejectsShort` は `tests/AuthTests:AuthTests:RejectsShort` になります。
 
+### Java / Kotlin（JUnit）
+
+Java の例です。
+
+```java
+public class AuthTest {
+    // [FR-001]
+    @Test
+    void rejectsShortPassword() { ... }
+}
+```
+
+Kotlin の例です。
+
+```kotlin
+class AuthTest {
+    // [FR-001]
+    @Test
+    fun `短い パスワード は 拒否`() { ... }
+
+    @Nested
+    inner class 一覧取得 {
+        // [FR-002]
+        @Test
+        fun 取得() { ... }
+    }
+}
+```
+
+Java と Kotlin では、`tests` 配下の `*.java` と `*.kt` が対象ファイルで、`*.kts` は対象外です。[`Test` `ParameterizedTest` `RepeatedTest` `TestFactory` `TestTemplate` のいずれかの注釈が付いたメソッド（Kotlin では関数）が対象](../req/java-kotlin-test-annotation-detection.md)です（`@org.junit.jupiter.api.Test` のような修飾付きや `@Test(timeout = 1)` のような引数付きも対象です）。型の直下のメソッドだけを抽出し、メソッドの本体の中、匿名オブジェクト、enum 定数の本体、プロパティの中は対象外です。Kotlin ではトップレベル関数も対象です。マーカーは、[メソッド宣言（注釈・修飾子を含む）の直前に空行を挟まない `//` または `/* */` のコメント](../req/java-kotlin-test-marker-adjacency.md)に書きます。Javadoc / KDoc（`/** */`）や、注釈と署名の間に書いたコメントはマーカーになりません。Java / Kotlin の test の識別子は、[ファイルパスと型名の階層、メソッド名を組み合わせた形式](../req/java-kotlin-test-identifier-format.md)です（package は含みません）。上の Kotlin の例は `src/test/kotlin/AuthTest:AuthTest:短い パスワード は 拒否`（バッククォートは除かれます）と `src/test/kotlin/AuthTest:AuthTest/一覧取得:取得` になります。Kotlin では、[漢字・カタカナ・ハングルなどの非 ASCII 文字を識別子に含むテストも抽出できます](../req/kotlin-non-ascii-identifiers.md)。
+
 ### TypeScript / JavaScript（Vitest）
 
 ```typescript
@@ -107,10 +138,10 @@ TypeScript / JavaScript では、[`<name>.test.<ext>` `<name>.spec.<ext>`（ext 
 miwa は doc・req・test それぞれの「内容」をハッシュ値にして、前回合意した内容と比べます。ハッシュの計算には [SHA-256 を使い、改行コードの違いだけは無視します](../req/hash-sha256-with-lf-normalization.md)。
 
 - doc・req は、[フロントマターを除いた本文だけ](../req/hash-doc-req-scope-excludes-frontmatter.md)が比較対象です。`id` だけを書き換えても内容の変更とはみなされません。
-- test は、[関数の定義全体](../req/hash-test-scope-is-whole-function.md)が比較対象です。Rust の場合、[`#[test]` などの属性やマーカーコメントはハッシュの対象に含めません](../req/hash-rust-test-excludes-outer-attributes.md)。C# の場合も、[メソッドに付けた属性（`[Fact]` など）や属性直後のコメントはハッシュの対象に含めません](../req/hash-csharp-test-excludes-attributes.md)。TypeScript / JavaScript の場合は `test(...)` / `it(...)` の呼び出し文全体が対象です。
+- test は、[関数の定義全体](../req/hash-test-scope-is-whole-function.md)が比較対象です。Rust の場合、[`#[test]` などの属性やマーカーコメントはハッシュの対象に含めません](../req/hash-rust-test-excludes-outer-attributes.md)。C# の場合も、[メソッドに付けた属性（`[Fact]` など）や属性直後のコメントはハッシュの対象に含めません](../req/hash-csharp-test-excludes-attributes.md)。Java / Kotlin の場合も、[先頭に連続する注釈（`@Test` など）とその間・直後のコメントはハッシュの対象に含めません](../req/hash-java-kotlin-test-excludes-annotations.md)（修飾子より後ろに書いた注釈は含みます）。TypeScript / JavaScript の場合は `test(...)` / `it(...)` の呼び出し文全体が対象です。
 
 ## エッジの識別子
 
 doc → req、test → req のそれぞれの依存関係（エッジ）には識別子が付きます。[doc → req は `doc-req:<doc の id>:<req の id>`、test → req は `test-req:<test の識別子>:<req の id>`](../req/edge-id-format.md) という形式です。この識別子は `check` の結果やロックファイルの中で、依存関係を指し示すために使われます。
 
-マーカーを持つ test の識別子がリポジトリ内で重複している場合（C# のオーバーロードなど）は、[それらの出現が 1 つの test にまとめられ](../req/test-duplicate-identifier-merged.md)、内容はソース順に連結されます。まとめられた出現のマーカーが異なる req を指している場合だけ、不正として報告されます。
+マーカーを持つ test の識別子がリポジトリ内で重複している場合（C# や Java のオーバーロードなど）は、[それらの出現が 1 つの test にまとめられ](../req/test-duplicate-identifier-merged.md)、内容はソース順に連結されます。まとめられた出現のマーカーが異なる req を指している場合だけ、不正として報告されます。

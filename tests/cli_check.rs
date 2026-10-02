@@ -260,6 +260,17 @@ fn csharpのtestはnew_reconcile_driftの順で検知される() {
     );
 }
 
+// [FR-059]
+#[test]
+fn kotlinのtestはnew_reconcile_driftの順で検知される() {
+    assert_new_then_drift(
+        "tests/AuthTest.kt",
+        "class AuthTest {\n    @Nested\n    inner class 一覧取得 {\n        // [FR-001]\n        @Test\n        fun `一覧 取得 は 200`() { assertTrue(true) }\n    }\n}\n",
+        "class AuthTest {\n    @Nested\n    inner class 一覧取得 {\n        // [FR-001]\n        @Test\n        fun `一覧 取得 は 200`() { assertTrue(false) }\n    }\n}\n",
+        "test-req:tests/AuthTest:AuthTest/一覧取得:一覧 取得 は 200:FR-001",
+    );
+}
+
 // [FR-054]
 #[test]
 fn typescriptのtestはnew_reconcile_driftの順で検知される() {

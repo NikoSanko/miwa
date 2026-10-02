@@ -177,6 +177,18 @@ public class AuthTests
 }
 ```
 
+### test（Java / Kotlin / JUnit）
+
+```kotlin
+class AuthTest {
+    // [FR-001]
+    @Test
+    fun `短い パスワード は 拒否`() { ... }
+}
+```
+
+`Test` `ParameterizedTest` などの JUnit の注釈が付いたメソッドが対象です（Java も同様）。Gradle のプロジェクトでは、`.miwa/config.yaml` の `tests` に `tests: ["src/test"]` を指定します（`src/generated` や `build/` は含めないでください）。
+
 ### test（TypeScript / JavaScript / Vitest）
 
 ```typescript

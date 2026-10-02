@@ -1,81 +1,81 @@
 {
   "edges": {
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
       "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:72d8fc2a059af7fed0eb57e30dc7db7cad5b1036b7dbe5498f323be81a5cd163",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-JUDGE:FR-038": {
       "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
@@ -155,193 +155,228 @@
       "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
-      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:cf631f2b92eaa48a494eb6b1f05efacb5fe6952853f4f6079f5c2c29461607b1",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-MODEL:FR-058": {
-      "from": "sha256:6aae8bfe7a0b25e1463e0553f3b1cc239cbf452529fd100624f67a25f3106773",
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "doc-req:DOC-MODEL:FR-059": {
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "doc-req:DOC-MODEL:FR-060": {
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "doc-req:DOC-MODEL:FR-061": {
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "doc-req:DOC-MODEL:FR-062": {
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "doc-req:DOC-MODEL:FR-063": {
+      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
@@ -400,32 +435,39 @@
       "at": "2026-10-01T01:51:00Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
+      "from": "sha256:fb00c5ac9e27bdd7b09b671f87196f591475ac61596101ce4ac9cbe976f087c0",
       "to": "sha256:6ebd7ccb5359343476f1b531efe1776726fe2268ca07172253b966573bf6a26c",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
+      "from": "sha256:fb00c5ac9e27bdd7b09b671f87196f591475ac61596101ce4ac9cbe976f087c0",
       "to": "sha256:9cfd73d2f570f89e5a889e78526453c4b82a87e029c5eb2b49638f23f5294cf0",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
+      "from": "sha256:fb00c5ac9e27bdd7b09b671f87196f591475ac61596101ce4ac9cbe976f087c0",
       "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:336493c87bd97c2312eff28aaff2a25d01fb064e5d1aea4c4a6fdd578487d94b",
+      "from": "sha256:fb00c5ac9e27bdd7b09b671f87196f591475ac61596101ce4ac9cbe976f087c0",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "doc-req:DOC-SETUP:FR-063": {
+      "from": "sha256:fb00c5ac9e27bdd7b09b671f87196f591475ac61596101ce4ac9cbe976f087c0",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
       "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
@@ -737,10 +779,10 @@
     },
     "test-req:src/extract:tests:csharpは構文エラーのソースでエラーを返す:FR-014": {
       "from": "sha256:eab33ccb313a73a78d550552c977277b0152cf1527fef1fc3e1b2237505bfc5a",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/extract:tests:csharpは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-050": {
       "from": "sha256:f53ee7f7f10d9fea7d67f48883520f978b19251fc12fed6431fb29c091d3250f",
@@ -772,10 +814,10 @@
     },
     "test-req:src/extract:tests:goの関数本体の変更はcontentに反映される:FR-003": {
       "from": "sha256:4faa011e2c87d3c32eac3a72af66047b02b8376c25d439f0719d54f487ec4402",
-      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/extract:tests:goは直前に隣接するコメントをマーカーとして抽出する:FR-012": {
       "from": "sha256:9ef89183b685271fc708b7e61da1dd7e3e87b3d5c2cd9fe880f8d4e6ca367205",
@@ -790,6 +832,405 @@
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/extract:tests:javaのcontentは修飾子なしなら型パラメータから始まる:FR-062": {
+      "from": "sha256:38247ceb07a61824013a0db6e4b186a3cca1b1330b36f9ce6ed376dcb16899b2",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaのcontentは型パラメータ付きでも修飾子から始まる:FR-062": {
+      "from": "sha256:983c62520bdb95eede91b013327a8b4e191939c2c3f361734403ae0d862d98c1",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaのcontentは注釈を含まず修飾子から始まる:FR-062": {
+      "from": "sha256:3652116ad3409b0ac5b8d4c01ad179d03de768d6b7b6a1cdb529fa4d5d32870e",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaのtest識別子はclassならファイルパスと型名とメソッド名になる:FR-061": {
+      "from": "sha256:5ddab6da568c728dbbb5f7232ff7598eea01a55e2a2bf6d2642e89965ebb93e6",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaのtest識別子はpackageを含まない:FR-061": {
+      "from": "sha256:016f7dcaa276089bc0932e8f1a3ad09857af4fdd5d75d7fe197c0572dfe5af82",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaのtest識別子はrecord_interface_enumの中でも型名を辿る:FR-061": {
+      "from": "sha256:9265bf670f547cc55c268a4bb107a72f6f56b9428fcbc7e5b280d6b012c056c6",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaのtest識別子はネストした型を外側から内側へスラッシュで連結する:FR-061": {
+      "from": "sha256:0140b42d4e6a9d90b325cdf79df4e1dc55041eec60c7a5d7b2797067f02dcbd5",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaの本体変更はcontentに反映される:FR-003": {
+      "from": "sha256:3fe7205d766c6c95216146e6a89738da576baabcd6b2b7be5d0e390c0555a974",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaの注釈だけの変更はcontentを変えない:FR-062": {
+      "from": "sha256:7e19500b45fc15dc1299382cdf7fa8ce322350c816b4479c7a2c437967224899",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは5種類の注釈をそれぞれtestとして検出する:FR-059": {
+      "from": "sha256:8ebc146044bd46e96e4ad94a14a46abe12e5aa817de3e46d413ca8108b5a3831",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaはdocコメントを挟んでも手前のマーカーが有効になる:FR-060": {
+      "from": "sha256:0d5a3af401692e14b6cd959b51b63ea79aad3efdabfa995bdc4d7c948d2edcd3",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaはjavadocコメントをマーカーにしない:FR-060": {
+      "from": "sha256:d6048a517fbfbbc559dad5fdb273dc5500dfce362a8bb3c20f7ee11f51fb283e",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaはトップレベルメソッドを対象外にする:FR-059": {
+      "from": "sha256:a440b14cb4f774ac41d972e989577e95b5256801ad3728dfa695bd3d9314bfdc",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaはブロックコメントをマーカーにできる:FR-060": {
+      "from": "sha256:4aa8157ac1e10497dc36258748c19386a7494149f71dca05b7837c1bc267d8b2",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは修飾名の注釈と引数付きの注釈も検出する:FR-059": {
+      "from": "sha256:efe3760008f1fead9539db50974aeeaebf8e5622e1a1a80832e93fd612b72b22",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは修飾子の後ろに書かれた注釈も検出する:FR-059": {
+      "from": "sha256:6a9ba6864dd84f80c3df028f6161e7bec527cf21bc63a610130e27fd0d53eb5b",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは匿名クラスとenum定数本体の中を対象外にする:FR-059": {
+      "from": "sha256:c29f366672ab4d1ebeadfca85e1ffb53b60a561fc93fcd8777fa65d579b19812",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは構文エラーのソースでエラーを返す:FR-014": {
+      "from": "sha256:732a8d6cb8ec7d8f8175508f2a44f4ca0949a608ef11d1477330bf70c0849cce",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは注釈と署名の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
+      "from": "sha256:db5cb58abb57d6c6ad84a4090c345c84a6a6296b72363c5f0dfec5906a56e67a",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは注釈同士の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
+      "from": "sha256:2c870b4dd5b11facf71ca6853550328d5303498aa950bd01fbbed9b18075c827",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは無関係な注釈のみのメソッドを検出しない:FR-059": {
+      "from": "sha256:e6d1663eb1e028fc7ccb75a8e37273e004606207d48c9bbbdbf1682f2addf081",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-060": {
+      "from": "sha256:9bbe927948b865b434aa25e107ae4e266d087a6421a09b7bd019a01da7c4095e",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのcontentは注釈のみならfunから始まる:FR-062": {
+      "from": "sha256:2bd087ce93d0066261de8bc78be07225c6bf0969e47483fd25146f1ec8ec5bb7",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのcontentは注釈を含まず修飾子から始まる:FR-062": {
+      "from": "sha256:609183ffc6a0dd50b9ffd1ac3187854a9ec144d3a2282b2bda18de673ce0fd2f",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのtest識別子はobjectとcompanion_objectを辿る:FR-061": {
+      "from": "sha256:0113bb4d46a1693483748beb014b12a3fe87016212e72c57bac53fa542b58ed6",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのtest識別子はpackageを含まない:FR-061": {
+      "from": "sha256:d55a75349b6e9d5d10753d70f8a450d11612fbcbab70e76aa1421c900a47fc3c",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのtest識別子はネストした型を外側から内側へスラッシュで連結する:FR-061": {
+      "from": "sha256:4ca41d6f2ffe2a4bc59f88e786b411757bd713f38234ae1734dca0beb4c8721c",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのトップレベル関数は型部分が空の識別子になる:FR-061": {
+      "from": "sha256:4be29e5f8dd73f1522cf6859d7087b2583a4a894c1d74b2bce2813efde67d39a",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのバッククォート名はバッククォートを除いた名前になる:FR-061": {
+      "from": "sha256:8a62cf053ac4aaa7b8d72f875a8eff335ccf8b8128cec64bbf5fe0c830373392",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinのマーカーは元のソースから取り非asciiの角括弧は偽マーカーにならない:FR-060": {
+      "from": "sha256:3b644f12bb911691c1d5b9f4a07faa272a3d6b1cb058f0048d148855abe4657d",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinの修飾子の後ろに書かれた注釈はcontentに含まれる:FR-062": {
+      "from": "sha256:fde25f801b53968327f95abdcbd467a00780cac9d3a891558b5f94d1ea9ebd77",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinの式本体は終端までcontentに含まれる:FR-062": {
+      "from": "sha256:ae5f6e97701061b5832bc86d55db780ae988006e478c0edbd2c8142ca4e2a7df",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinの本体変更はcontentに反映される:FR-003": {
+      "from": "sha256:b1ab7308933c05c29c65bc76a3ac6bdd13984c2cdca6ce907afc6afa08fa5865",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinの注釈だけの変更はcontentを変えない:FR-062": {
+      "from": "sha256:1d2fa5ce88ee73323a3b0745e67acdcd73ddfef9daf88aaf042b0de8be6e5d46",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは5種類の注釈をそれぞれtestとして検出する:FR-059": {
+      "from": "sha256:0594d089c5ad092a47d0fb8383be0cad9f174475f62324b04f285ccbadd37463",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはbom付きファイルも解析できる:FR-063": {
+      "from": "sha256:c0552c7717cbf106e04e1f59e20536fe66b25061a5f20cb733bf791ea4e62547",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはdata_classとinterfaceの直下のtestも辿る:FR-061": {
+      "from": "sha256:05b12f23a26772e77074230dd7217a54ff19c520c6588e9bb2f853260297a018",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはdocコメントを挟んでも手前のマーカーが有効になる:FR-060": {
+      "from": "sha256:877f81b28a21e61ef5c49a4d9b3c7c4c6f0b40924affd251a3c97bed80df3318",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはkdocコメントをマーカーにしない:FR-060": {
+      "from": "sha256:293acbf9e00ffe88489318b8c194e63154b2a41d9e17c93888a8252eed7880e6",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはnestedを含む複数注釈クラスでも非asciiの名前を元のまま取る:FR-063": {
+      "from": "sha256:1d6b0a0ab655b958a8eb41ab90ac0f4b486a12c1f8a5bf8f916ca96f7e9c153f",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはshebangやimportやtypealiasなど宣言以外の通常の構造でok空になる:FR-063": {
+      "from": "sha256:fe3e2bf75d37e2255d62a22e057a9c2d2f2e077095cb6cfef69f57ad70aaeae9",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはカタカナとハングルの関数名も抽出する:FR-063": {
+      "from": "sha256:eeb66e3fb482fcef0344a64eacc61b67a6d6610c694c8a7b4441ba65539ae483",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinはコンストラクタ注釈付きの主コンストラクタを持つクラスでもtestを取れる:FR-061": {
+      "from": "sha256:c7391cab47c7d9ac906d6ef8b08bb86aec9bda50adb7a73a8473e80f3ebccd89",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは修飾名と複数注釈リストとuse_site_target付きの注釈も検出する:FR-059": {
+      "from": "sha256:50c91fe64313ae0f36f4a2ceed7092292aac92517b2523876b643053ec801b6d",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは制御文字や空を含む名前のtestを無視する:FR-061": {
+      "from": "sha256:f580ccb95c0a371801825e6d4d737e329312094eddfad8a4889a7515fb496f00",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは宣言以外のトップレベル構造やキーワードを含む文字列でもok空になる:FR-063": {
+      "from": "sha256:3085376c8a68c919b116dea6af321ad5f9603910c78057f61c9dcf360d822fe5",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは文法の不具合で宣言が認識されなかった場合に構文エラーを返す:FR-063": {
+      "from": "sha256:216eb142a6f4f46159696d37dd6b4cfdea6120e8f40144d087af4b96b5230466",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは構文エラーのソースでエラーを返す:FR-014": {
+      "from": "sha256:196d9f68c45c5e4eb2eb85f5f124089b49dc43dc2821976435fbc1a5d60fc404",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは注釈2つで基底型なしのクラス内の注釈付きinner_classでもtestを取れる:FR-063": {
+      "from": "sha256:fbaa8966c36ac05be603e4d99ac8e80246d3edef87598f49124807dcda904ea3",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは注釈と署名の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
+      "from": "sha256:29190e555c351771d6c57bf5be6782acb4535a6f45bc04b8d1a2152f9db9623c",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは注釈の間と直後のコメントをcontentに含めない:FR-062": {
+      "from": "sha256:f3ccd0645a38c6853f216835f9abbf7bb96aa50ac305ba9b56c2a57e853d553f",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは注釈同士の間のコメントをマーカーにしない:FR-060": {
+      "from": "sha256:47c61132e4b39583a1198550eae8b8b7c149708e376e9217ff21a0be73b56111",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは漢字の関数名と型名のtestを抽出し識別子とcontentが元の文字を保つ:FR-063": {
+      "from": "sha256:a4f5f79e30bf2f2c9d5af184d287bdbf137e665399ff6b1243b95466f9a34c6b",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは無関係な注釈のみの関数を検出しない:FR-059": {
+      "from": "sha256:e2b8c6675791d9082baf7b57bd5a29207be8b37ca3452e03be4326fb8cda4700",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-060": {
+      "from": "sha256:a06d761cff003e88a777821702e1231ec5f36cf0de7ff41c2dc6c3495bb27f4b",
+      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは関数本体内のローカル関数や匿名objectやenum定数本体やgetterを対象外にする:FR-059": {
+      "from": "sha256:7d45a4686f0236c76151ff61a8dac597d5c3f102dd7961941c883ac6724f8f6a",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは非asciiの文字リテラルを含むファイルも解析できる:FR-063": {
+      "from": "sha256:d1156f9728d2490085d8a8a234fbde1c5797c649dcfbef083f74206e3eeb8a61",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/extract:tests:rustのcontentは外側の属性とマーカーコメントを含まない:FR-004": {
       "from": "sha256:572aea5b124db0c4c563d194775723acc5ded60cad87deb681490a885d1fbec6",
@@ -842,10 +1283,10 @@
     },
     "test-req:src/extract:tests:rustの関数本体の変更はcontentに反映される:FR-003": {
       "from": "sha256:195431d6e26235ff51203f48d3b5b69f31dc09dde94c924bf8f33c16f83b2d95",
-      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/extract:tests:rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する:FR-016": {
       "from": "sha256:91ef470166431e5b2248cd193454f3ebee1d8b76dc7e6de5e88cb124ddeaf117",
@@ -912,10 +1353,10 @@
     },
     "test-req:src/extract:tests:typescriptのcontentは呼び出し文全体でマーカーコメントを含まない:FR-003": {
       "from": "sha256:78a562d3429d5a7ea74957a4dd429c8ec8b5a073b02fcbef6a6b0ee7b702de72",
-      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/extract:tests:typescriptのtest識別子はdescribeの外なら空のdescribeパスになる:FR-056": {
       "from": "sha256:f9056a2a6c7848b6f7428fe053a946c15e70599f8b6f52ed9b5ffe0d0fbcfb40",
@@ -947,10 +1388,10 @@
     },
     "test-req:src/extract:tests:typescriptの本体変更はcontentに反映される:FR-003": {
       "from": "sha256:e72e8655fb24b207528db7f9fd10ebc992a659b238049392b68dad35cd4d91b6",
-      "to": "sha256:27c8d222a0d22f01443ceedb1c0399639046a7fd7f408fd6182c759080e279d6",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/extract:tests:typescriptはawaitなど式文直下でない呼び出しを検出しない:FR-054": {
       "from": "sha256:9bc09f2ec8d6fa5c812c34a9c1cd46b2950f7a2a2168924d7f8f0bd6aec5a4f4",
@@ -1045,10 +1486,10 @@
     },
     "test-req:src/extract:tests:typescriptは構文エラーのソースでエラーを返す:FR-014": {
       "from": "sha256:7bdda4dda67dce24ea0925bc6ad582cd8ecde666ae97ed1d9c657e94e203636c",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/extract:tests:typescriptは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-055": {
       "from": "sha256:af9387d11a3aea25301f48a537abd722fdbbbabc46ff4e8a70ce98e742dad745",
@@ -1150,17 +1591,17 @@
     },
     "test-req:src/graph:tests:csharp_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:8e591a891ddf617f169e9c675124e06ea5c53ab887b1a6ceb1b29f3ec1267436",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:csharpのオーバーロードは1つのtestにまとめられcontentが出現順に連結される:FR-057": {
       "from": "sha256:c82ad1000f509afb92621ab72a4b3f470567e3a58d25532b7290624c4978db25",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:csharpファイルからtestノードとエッジが作られる:FR-049": {
       "from": "sha256:7ce227b833b7744b58910578ebb1365927fc19aba88c976ac9d0cd0e4f5f177b",
@@ -1171,17 +1612,17 @@
     },
     "test-req:src/graph:tests:go_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:c963e55e4e807dab507de0b5a817dbf5706af73f564736db91a4c115a3dd230d",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:goの別ファイルにある同名testはファイルパス順に連結される:FR-057": {
       "from": "sha256:a36e02fa421c4c45eb34675f136a0e2fefafc951e46e5eeb3cc859bcb8a10160",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:idが空のファイルはmissing_idとして報告される:FR-007": {
       "from": "sha256:8d4683b0a9928750e2fb743f6f283c7027b68b785005e79473fb9bdabcb5b07b",
@@ -1196,6 +1637,34 @@
       "by": "human",
       "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
       "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:src/graph:tests:javaのオーバーロードは1つのtestにまとめられる:FR-057": {
+      "from": "sha256:b3830bc8474b62338eb23a6a2017600973d8266767afa9e4857d9417bdda4274",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/graph:tests:javaファイルからtestノードとエッジが作られる:FR-059": {
+      "from": "sha256:c38083b164cf89c37d66d5144b10fe7bb61dc465b24dcc79699b581e87662ac8",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/graph:tests:kotlinスクリプトのktsファイルは対象外になる:FR-059": {
+      "from": "sha256:b32e3192721e9f69b55d11a07c8fffb56ef1df9dbb0263512844fafc237c2c0f",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/graph:tests:kotlinファイルからtestノードとエッジが作られる:FR-059": {
+      "from": "sha256:c1978c9db818586b94ff23865d1ca0fc1437bb8b476a0dbc8df937a73dd445a9",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:requirements領域外を指すリンクはエッジにもbrokenにもならない:FR-010": {
       "from": "sha256:08456d470f12742417e5a32ca9c67119c0ca73ecf9142a80d6e451c3cd3389c5",
@@ -1213,17 +1682,17 @@
     },
     "test-req:src/graph:tests:rust_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:450cd6de02730e0650465f516903cf30ae66d476cd5cd013c358e533107c72e2",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:rustのcfg分岐による同名testは1つのtestにまとめられる:FR-057": {
       "from": "sha256:0bcf17549290a5cb8cee7fd3750973337737cf2bcc728e12595f989c0dcb574f",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:testsのディレクトリ指定はcsharpとtypescriptのファイルにも適用される:FR-018": {
       "from": "sha256:cce55f81af85bc383f1a7c200bad91d98994f0f7a42e122d79b475009c69d92b",
@@ -1241,10 +1710,10 @@
     },
     "test-req:src/graph:tests:typescript_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:375b372630f87fa20e0bedebbc2704b04f4da7eb54bbeb895c94782821f7267b",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:typescriptのtest_tsとspec_tsxからtestノードが作られる:FR-053": {
       "from": "sha256:978989048505ee974e74dbf664f0ff514ff2afa11e7130e827d69433366f0be9",
@@ -1262,10 +1731,10 @@
     },
     "test-req:src/graph:tests:typescriptの同名testは1つのtestにまとめられる:FR-057": {
       "from": "sha256:7e4ba7547c1c247047e2993476e4752f9cacd2f4976c3b569bf4b34ec9d074ad",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:typeの値がspecification_requirement以外なら対象外になる:FR-005": {
       "from": "sha256:2f4bbe94f27d9f4c9a3d2710a4f9869ddc629713a54302bf93324872cc67eaef",
@@ -1283,24 +1752,24 @@
     },
     "test-req:src/graph:tests:まとめたtestは出現の本体が変わるとhashが変わる:FR-057": {
       "from": "sha256:5a0308bc1875e71026b624b574f40fc994e91828245b3a720537fae3f8532dfb",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:まとめたtestは出現の順序を入れ替えるとhashが変わる:FR-057": {
       "from": "sha256:6f1470d545edc3082b317aa84771126802feda5c77d9b16338f8954ed3e139f2",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:マーカーのない同名出現はまとめられない:FR-057": {
       "from": "sha256:a6cb9aa7b0fbbcfd5a35ab1ee17bf93314d4db259df9db7361b985e8f65126aa",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:不正な文字を含むidはinvalid_idとして報告される:FR-006": {
       "from": "sha256:7121aaf049c06fa3847f5b4c668f4a34f6b714a14f67654addb0a8deeb46cfea",
@@ -1318,10 +1787,10 @@
     },
     "test-req:src/graph:tests:同一ファイル内で異なるreqを指す重複は識別子ごとに1件でファイル名は1回だけ出る:FR-057": {
       "from": "sha256:e27793ebf17f763e7658744ea114928b6f971cdac1a672da2d5162bb536e788c",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:存在しないreq_idを指すtestマーカーはbrokenになる:FR-011": {
       "from": "sha256:327a6a87f1539ff1445aad7e33c0a3eb533a93235f246164642145aeb74854d5",
@@ -1339,59 +1808,73 @@
     },
     "test-req:src/graph:tests:構文エラーのcsharpテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:b9c1f591ba680de1a7a28d8fc7a3eabd541cfa1a05ad972fa09146c037d65f02",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:構文エラーのgoテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:dab20a651b1ff14bb4908868dcb097939ab91c7e2717fb5ef7bb8f623e73f7ee",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/graph:tests:構文エラーのjavaテストファイルはparse_errorとしてinvalidになる:FR-014": {
+      "from": "sha256:70ef05a33fa6d482a74e3d34c3e50043c607e94fc5d2cd9ecb1375c05fe0d253",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:構文エラーのjsテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:4c9559d444d3c9e19dcef446a86f31eda4d63c74dd1bb867f71783853fab71c3",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/graph:tests:構文エラーのkotlinテストファイルはparse_errorとしてinvalidになる:FR-014": {
+      "from": "sha256:2da3730023d7e1ae6d5f00349a4cb1a6b89678262fb43a6969eb7e60dc451bfe",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:構文エラーのrustテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:07c3d40ff26668ed45e68bca7941acf64d08478b9e8bf1e2349822b9b9de3b6e",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:構文エラーのtypescriptテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:a1084b3d1c441d148e0b2e5750474fc5d10e8b2688afb4c476a917ec2bb0aed5",
-      "to": "sha256:57346cd52f5c0c6ffb15d18420f33cb4ea8be2087a37cea1b681d59e19727884",
+      "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:異なるreqを指す重複はduplicate_idとなりノードもエッジも作られない:FR-057": {
       "from": "sha256:06addf82d52e8b9a192750d2c988b31d9d5047a0d092bdc1eba01a9edf4a1029",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:重複の1つが複数マーカーで残りが1件なら通常のtestとして扱われる:FR-057": {
       "from": "sha256:a64fc17c32d0d9a67beddef0cf6456a91993537a1dca0d64d8a8281de86eff83",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/graph:tests:重複の1つが複数マーカーならその出現はmultiple_markersで残りだけがまとめられる:FR-057": {
       "from": "sha256:2b47725c22da8e6947bfb14af125ea660f85b4156b39bb2ad985f0578657923e",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/hash:tests:content_hash_はsha256プレフィックス付きの小文字hexを返す:FR-001": {
       "from": "sha256:f25a04dd8737c3c235bbc0467be14b5f2b18dbc10cea98d6a5eb3eb1d02d1a8e",
@@ -1771,12 +2254,26 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/reconcile:tests:ロックにのみ存在するjavaのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
+      "from": "sha256:1f7054f3ba3f6e903a88c799a46112b32e4787bacbd1e4db62bc14072cca4678",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
+    },
     "test-req:src/reconcile:tests:ロックにのみ存在するjsのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
       "from": "sha256:065eceefd62d14e159a1d9db8bda6056a8c28136d3e074b78d160f689543b07b",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
       "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
       "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:src/reconcile:tests:ロックにのみ存在するkotlinのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
+      "from": "sha256:691088cd3a74835e470d82b1b9a85d26905bdca90681585a3acfc1eeb47ea6f8",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:src/reconcile:tests:ロックにのみ存在するrustのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
       "from": "sha256:f0c3bda1452e66a190d1f7e3c3c312526127424ed5d9fdb3fb914aeb97d0eda4",
@@ -1899,10 +2396,10 @@
     },
     "test-req:tests/cli_check::csharpのオーバーロードは1本のedgeにまとまりどれかの本体変更でdriftになる:FR-057": {
       "from": "sha256:8e78f5c0b58cc08b224bdf5ac1f43d00465886639b1c67fedc563d9df09bbded",
-      "to": "sha256:68edaecc1993642e3bdf9574563b052e579dd27b875c06a54a108c371d61c3cd",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:tests/cli_check::findingが0件でgateがあってもexit_code_0を返す:FR-030": {
       "from": "sha256:edfcffdb652ad03df3f9e9bc7adde477c0a818f15b14d578463aab61d625480d",
@@ -1931,6 +2428,13 @@
       "by": "human",
       "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
       "at": "2026-10-01T13:46:58Z"
+    },
+    "test-req:tests/cli_check::kotlinのtestはnew_reconcile_driftの順で検知される:FR-059": {
+      "from": "sha256:bafa814f8796313d83db8957adde06c214c0ff11893f3fc21beaf3a5f13b3991",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
+      "at": "2026-10-02T11:46:19Z"
     },
     "test-req:tests/cli_check::textとjsonは同じ数のfindingを表す:FR-032": {
       "from": "sha256:f98a22937f95ba74469c00a49594dc8155fdec0fa92b9cef9f44dfe227ac9fc5",

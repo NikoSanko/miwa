@@ -191,6 +191,8 @@ pub fn build_graph(
                 crate::extract::extract_rust_tests(path, &text, &config.rust.test_attributes)
             }
             TestLanguage::CSharp => crate::extract::extract_csharp_tests(path, &text),
+            TestLanguage::Java => crate::extract::extract_java_tests(path, &text),
+            TestLanguage::Kotlin => crate::extract::extract_kotlin_tests(path, &text),
             TestLanguage::TypeScript => crate::extract::extract_typescript_tests(path, &text),
         };
         match result {
@@ -331,6 +333,8 @@ enum TestLanguage {
     Go,
     Rust,
     CSharp,
+    Java,
+    Kotlin,
     TypeScript,
 }
 
@@ -343,6 +347,10 @@ fn test_language(path: &str) -> Option<TestLanguage> {
         Some(TestLanguage::Rust)
     } else if path.ends_with(".cs") {
         Some(TestLanguage::CSharp)
+    } else if path.ends_with(".java") {
+        Some(TestLanguage::Java)
+    } else if path.ends_with(".kt") {
+        Some(TestLanguage::Kotlin)
     } else if crate::extract::is_typescript_test_file(path) {
         Some(TestLanguage::TypeScript)
     } else {
@@ -1041,6 +1049,104 @@ mod tests {
             .invalid
             .iter()
             .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("Broken.cs")));
+    }
+
+    // [FR-059]
+    #[test]
+    fn javaファイルからtestノードとエッジが作られる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "tests/AuthTests.java",
+                "public class AuthTests {\n    // [FR-001]\n    @Test\n    void t() { }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(has_test_node(&graph, "tests/AuthTests:AuthTests:t"));
+        assert!(graph
+            .edges
+            .contains_key("test-req:tests/AuthTests:AuthTests:t:FR-001"));
+    }
+
+    // [FR-059]
+    #[test]
+    fn kotlinファイルからtestノードとエッジが作られる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "tests/AuthTest.kt",
+                "class AuthTest {\n    // [FR-001]\n    @Test\n    fun `一覧 取得`() { }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(has_test_node(&graph, "tests/AuthTest:AuthTest:一覧 取得"));
+        assert!(graph
+            .edges
+            .contains_key("test-req:tests/AuthTest:AuthTest:一覧 取得:FR-001"));
+    }
+
+    // [FR-059]
+    #[test]
+    fn kotlinスクリプトのktsファイルは対象外になる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "tests/build.kts",
+                "class AuthTest {\n    // [FR-001]\n    @Test\n    fun t() { }\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+    }
+
+    // [FR-057]
+    #[test]
+    fn javaのオーバーロードは1つのtestにまとめられる() {
+        let src = "public class AuthTests {\n    // [FR-001]\n    @Test\n    void t() { one(); }\n\n    // [FR-001]\n    @Test\n    void t(int x) { two(); }\n}\n";
+        let source = FakeSource::new(&[REQ1, ("tests/AuthTests.java", src)]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let tests: Vec<_> = graph
+            .nodes
+            .keys()
+            .filter(|k| k.kind == NodeKind::Test)
+            .collect();
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        let edges: Vec<_> = graph
+            .edges
+            .values()
+            .filter(|e| e.kind == crate::model::EdgeKind::TestReq)
+            .collect();
+        assert_eq!(edges.len(), 1, "{edges:?}");
+        let node = test_node(&graph, "tests/AuthTests:AuthTests:t");
+        assert!(node.content.contains("one();"));
+        assert!(node.content.contains("two();"));
+    }
+
+    // [FR-014]
+    #[test]
+    fn 構文エラーのkotlinテストファイルはparse_errorとしてinvalidになる() {
+        let source = FakeSource::new(&[("tests/Broken.kt", "class A { fun x() {} }\n")]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("Broken.kt")));
+    }
+
+    // [FR-014]
+    #[test]
+    fn 構文エラーのjavaテストファイルはparse_errorとしてinvalidになる() {
+        let source = FakeSource::new(&[(
+            "tests/Broken.java",
+            "public class A {\n    @Test\n    void t( {\n}\n",
+        )]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("Broken.java")));
     }
 
     // [FR-014]
