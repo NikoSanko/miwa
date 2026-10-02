@@ -1,6 +1,8 @@
 ---
 type: Specification
 id: DOC-RECONCILE
+title: "合意を記録する（reconcile）"
+description: "check が見つけた drift や new を人が確認して合意した結果を、ロックに記録するコマンドの仕様。"
 ---
 
 # 合意を記録する（`reconcile`）
@@ -40,3 +42,5 @@ miwa reconcile --all
 `reconcile` で記録されるエントリの合意者は、常に [`by: human`](../req/reconcile-records-by-human-and-reason.md) です（[`judge --auto-reconcile`](judge.md) で Jev が合意した場合は `by: jev` とスコアが記録されます）。`--reason` を指定すればその内容が記録され、指定しなければ理由は記録されません。
 
 依存関係の識別子（エッジ ID）や、doc・req・test それぞれの書き方については [3層モデル](model.md) を参照してください。
+
+索引の乱れ（`check` の `index` 種別）はロックと関係がないため、[`index` の finding が残っていても `reconcile` は成功します](../req/index-findings-do-not-block-reconcile.md)。

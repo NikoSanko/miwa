@@ -1,6 +1,8 @@
 ---
 type: Specification
 id: DOC-MODEL
+title: "miwa の3層モデル"
+description: "doc・req・test の3層の関係と、それぞれの書き方、変更の検知に使う範囲、エッジの識別子を説明する。"
 ---
 
 # miwa の3層モデル
@@ -28,6 +30,19 @@ id: DOC-AUTH
 ```
 
 `type` の書かれていない Markdown ファイルは miwa の対象になりません（[type を持たないファイルはノードとして扱わない](../req/node-requires-type-field.md)）。
+
+`index.md` と `log.md` は予約名で、[`type` を書いていてもどのフォルダでも doc や req として扱いません](../req/index-reserved-names.md)（索引については [索引を保つ](index-command.md) を参照）。
+
+doc には、`id` のほかに `title`（任意）と `description`（1 文の要約）を書けます。[`title` は無ければ本文の最初のレベル 1 見出し、それも無ければファイル名が使われ、`description` は 1 行の文字列](../req/index-document-title-and-description.md)で、索引のタイトルと要約の元になります。
+
+```markdown
+---
+type: Specification
+id: DOC-AUTH
+title: "ログイン"
+description: "メールアドレスとパスワードによる認証の振る舞いを定める。"
+---
+```
 
 ## req（技術要件）の書き方
 

@@ -38,13 +38,18 @@ pub fn resolve_link(doc_path: &str, target: &str) -> Option<String> {
         return None;
     }
 
-    let parent: Vec<&str> = {
-        let mut segs: Vec<&str> = doc_path.split('/').collect();
+    normalize_relative(doc_path, target)
+}
+
+/// Join `target` (a `/`-separated relative path, no fragment) onto the parent
+/// directory of `base_path` and normalize `.` / `..` / empty segments. Returns
+/// `None` if the result escapes the repository or is empty.
+pub(crate) fn normalize_relative(base_path: &str, target: &str) -> Option<String> {
+    let mut segments: Vec<&str> = {
+        let mut segs: Vec<&str> = base_path.split('/').collect();
         segs.pop(); // drop the file name
         segs
     };
-
-    let mut segments: Vec<&str> = parent;
     for part in target.split('/') {
         match part {
             "" | "." => continue,
@@ -62,10 +67,32 @@ pub fn resolve_link(doc_path: &str, target: &str) -> Option<String> {
     Some(segments.join("/"))
 }
 
+/// Decode `%XX` escapes as UTF-8 bytes. Invalid escapes (and results that are
+/// not valid UTF-8) are left as-is.
+pub(crate) fn percent_decode(s: &str) -> String {
+    let bytes = s.as_bytes();
+    let mut out: Vec<u8> = Vec::with_capacity(bytes.len());
+    let mut i = 0;
+    while i < bytes.len() {
+        if bytes[i] == b'%' && i + 2 < bytes.len() {
+            let hi = (bytes[i + 1] as char).to_digit(16);
+            let lo = (bytes[i + 2] as char).to_digit(16);
+            if let (Some(h), Some(l)) = (hi, lo) {
+                out.push((h * 16 + l) as u8);
+                i += 3;
+                continue;
+            }
+        }
+        out.push(bytes[i]);
+        i += 1;
+    }
+    String::from_utf8(out).unwrap_or_else(|_| s.to_string())
+}
+
 /// Whether `s` starts with a URI scheme (`^[A-Za-z][A-Za-z0-9+.-]*:`), e.g.
 /// `mailto:`, `data:`, `https:`. Windows drive letters (`C:\...`) are not
 /// treated specially.
-fn has_uri_scheme(s: &str) -> bool {
+pub(crate) fn has_uri_scheme(s: &str) -> bool {
     let mut chars = s.chars();
     match chars.next() {
         Some(c) if c.is_ascii_alphabetic() => {}
@@ -168,5 +195,49 @@ mod tests {
             resolve_link("docs/model.md", "data:text/plain;base64,aGVsbG8="),
             None
         );
+    }
+
+    // [FR-070]
+    #[test]
+    fn percent_decodeは通常の列をutf8としてデコードする() {
+        assert_eq!(percent_decode("%E9%9B%86.md"), "集.md");
+        assert_eq!(percent_decode("a%20b"), "a b");
+        assert_eq!(percent_decode("a%23b"), "a#b");
+        assert_eq!(percent_decode("x%41"), "xA");
+        assert_eq!(percent_decode("plain"), "plain");
+    }
+
+    // [FR-070]
+    #[test]
+    fn percent_decodeは不正な列をそのまま残す() {
+        assert_eq!(percent_decode("100%"), "100%");
+        assert_eq!(percent_decode("%zz"), "%zz");
+        assert_eq!(percent_decode("a%2"), "a%2");
+        assert_eq!(percent_decode("%E9"), "%E9");
+    }
+
+    // [FR-070]
+    #[test]
+    fn normalize_relativeはresolve_linkと同じ正規化をする() {
+        let cases = [
+            ("docs/index.md", "a.md"),
+            ("docs/index.md", "./a/../b.md"),
+            ("docs/sub/index.md", "../a.md"),
+            ("docs/index.md", "sub//x.md"),
+            ("docs/index.md", "../../out.md"),
+            ("docs/index.md", "../.."),
+        ];
+        for (base, target) in cases {
+            assert_eq!(
+                normalize_relative(base, target),
+                resolve_link(base, target),
+                "{base} {target}"
+            );
+        }
+        assert_eq!(
+            normalize_relative("docs/sub/index.md", "../a.md"),
+            Some("docs/a.md".to_string())
+        );
+        assert_eq!(normalize_relative("docs/index.md", "../../out.md"), None);
     }
 }

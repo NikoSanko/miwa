@@ -13,6 +13,7 @@
   - [docs/check.md](docs/check.md) — 更新漏れを検知する `check`
   - [docs/reconcile.md](docs/reconcile.md) — 合意を記録する `reconcile`
   - [docs/judge.md](docs/judge.md) — 意味が合っているか判定する `judge`
+  - [docs/index-command.md](docs/index-command.md) — 索引を保つ `index`
   - [docs/setup.md](docs/setup.md) — 使い始め方
 
 ## インストール
@@ -88,6 +89,12 @@ doc・req・test の依存関係（エッジ）を、前回合意した内容（
 指定したエッジ、または全エッジの現在のハッシュを「合意済み」としてロック（`.miwa/lock.json`）に記録します。`--reason` で合意の理由を残せます。リンク切れ（broken）や不正な状態（invalid）のエッジは reconcile できません。
 
 終了コード: `0`（成功） / `1`（実行エラー）
+
+### `miwa index`
+
+`.miwa/config.yaml` の `index` に設定した根ディレクトリの索引（`index.md`）を、文書のタイトル（`title`）と要約（`description`）から更新します。索引が無ければ新規に作り、未掲載の文書は末尾に追加します。リンク先が存在しないエントリ行は削除します。エントリ行以外は変更しません。`check` が `index` 種別の finding として索引の乱れを報告します。
+
+終了コード: `0`（成功） / `1`（実行エラー。`index` 未設定を含む）
 
 ### `miwa judge [--edge <id>]... [--auto-reconcile]`
 

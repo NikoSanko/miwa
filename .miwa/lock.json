@@ -1,81 +1,214 @@
 {
   "edges": {
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
       "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-073": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-074": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-075": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:6b969130f89d6e8195fb0bb6e0bcd8cacca5bb56df2250840326459795d9004b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-076": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-077": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-078": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:374d7b3e0dcd130fc24195de948d591c3bf6db01d255334d4226610253f5ca8a",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-079": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-CHECK:FR-080": {
+      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-067": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-068": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-069": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-070": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-071": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-072": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-081": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-082": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-083": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-084": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-INDEX:FR-085": {
+      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-JUDGE:FR-038": {
       "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
@@ -155,340 +288,375 @@
       "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:06698b9ee3e2312f389904a2ae4230548517f62d4d32577c276bb2bb6ad4f380",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-058": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-059": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-060": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-061": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-062": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-063": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-064": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-MODEL:FR-065": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
       "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-MODEL:FR-067": {
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-MODEL:FR-071": {
+      "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-022": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:d5a7d587826af6ea3aa2e435f1277cb3003617e073bb96da52a66dde7dec1aa5",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-033": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-034": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-035": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-036": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-037": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:691e943b879df5a28ecafc254e42c9c4c5ed80d1407a329e378393fca4b0ec4c",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-RECONCILE:FR-038": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
       "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-080": {
+      "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
       "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
       "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-SETUP:FR-063": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
       "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-SETUP:FR-065": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
       "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-SETUP:FR-066": {
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "doc-req:DOC-SETUP:FR-067": {
+      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
       "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
@@ -595,6 +763,13 @@
       "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
       "at": "2026-10-01T02:13:08Z"
     },
+    "test-req:src/config:tests:docsとrequirementsとtestsに親ディレクトリや空セグメントがあると設定エラーになる:FR-066": {
+      "from": "sha256:d5c5e5c0b3e032f235f0211dd17fee9f7f8f42799632bd2edd42d2c710bbce33",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/config:tests:docsやrequirementsやtestsのパスが除外名を含むと設定エラーになる:FR-065": {
       "from": "sha256:ae4178a83676d155c36b7cb8c1de3cfab816dfe5c3ad2c95bea680057b280d06",
       "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
@@ -623,6 +798,62 @@
       "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
       "at": "2026-10-02T15:12:26Z"
     },
+    "test-req:src/config:tests:indexがdocsでもrequirementsでもない場所なら設定エラーになる:FR-066": {
+      "from": "sha256:0e896363bdc86b51e6f389ef13b5b22bbd62ddfa9c283fb18e6b0c85a33a4642",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexが正規化後にリポジトリ全体_ドットになると設定エラーになる:FR-066": {
+      "from": "sha256:71e40cda6818912c696e2c3772942785e49fe83bf6f2a7c30ab778ba3f6f669c",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexが除外名のセグメントを含むと設定エラーになる:FR-066": {
+      "from": "sha256:274a72917f580f9f417e6246e3ee9906797b28a631981b45df21e3d9fee4dc72",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexに親ディレクトリや空セグメントがあると設定エラーになる:FR-066": {
+      "from": "sha256:fc3e4e40f578356602cc24295a2c6ec5d65389ab5948ead8ea761e9d9b816761",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexの要素が空なら設定エラーになる:FR-066": {
+      "from": "sha256:971d0f3cce1b30739fdbf2cd11ab12da85c7a14c93f1c005b5d94ea5117a78a2",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexはdocsかrequirements配下なら正規化されて受理される:FR-066": {
+      "from": "sha256:7124650193bc327d517b0d784b67565bef4779899dbe4082531f48b9771f96f3",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexを省略すると空の一覧として扱われる:FR-066": {
+      "from": "sha256:1769b6b549e82bcc5515b8ac4454270fff974d473736dc02197d708f62b29414",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:index同士が同一または包含関係なら設定エラーになる:FR-066": {
+      "from": "sha256:93f0e46792f6a03610e4677fb2bb958147dfdb2e6796efdb3b3330ef8e8199a5",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/config:tests:max_body_bytesが0なら設定エラーになる:FR-020": {
       "from": "sha256:ef0ff8daed417485d2618c3c166c14885516834c52d8d7141b2f4c1c728af3a0",
       "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
@@ -639,10 +870,10 @@
     },
     "test-req:src/config:tests:max_body_bytesを省略したyamlは既定値で読める:FR-019": {
       "from": "sha256:30fb457c119cb9f587833fb51cb81f7650764c202f77838989a33993b17a2dea",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:rustのtest_attributesにパス区切りや空文字があるとparseエラーになる:FR-058": {
       "from": "sha256:d53bde879aad0fb9f00206fd1e502b40da0ad4c7fe3c5e73719de6aa4f8bdb69",
@@ -679,33 +910,40 @@
       "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
       "at": "2026-10-01T02:13:08Z"
     },
+    "test-req:src/config:tests:既定のconfigのindexはdocsを1件含む:FR-019": {
+      "from": "sha256:443db8bfaecb2f9a4b367c0fadaafd93f4e5edd988ece7dbf65eb32f20026132",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/config:tests:既定のconfigのyamlはexcludeを空配列で含む:FR-019": {
       "from": "sha256:5ae67d98550aefd3faf39c245dab6d733f8077eff24830b63da3dc7c3676191e",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:既定のconfigのyamlはrustのtest_attributesを空配列で含む:FR-019": {
       "from": "sha256:18559bddb92234400072d5ef59dee199741c2cc24b9009a7634b95b439d8a506",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:既定値のmax_body_bytesは200000で妥当な設定である:FR-019": {
       "from": "sha256:27e566cd420add509897265ef4da1815e734b3e97cfd8fbe6592625f50687685",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:既定値のthresholdは0_9で妥当な設定である:FR-019": {
       "from": "sha256:72599f677b4109acd7ec0a69362831fc6503429a8ec6ff1bd415e8dfce383ebf",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/extract:tests:csharpのcontentは属性を含まず修飾子から始まる:FR-052": {
       "from": "sha256:07c175587f6bb2175094b4b0567228953598c486a9379bff4272195a026d67aa",
@@ -1779,11 +2017,11 @@
       "at": "2026-10-01T14:00:21Z"
     },
     "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
-      "from": "sha256:9e38df37e37a0c2eaf6a5ed10a75b387e00e06f19b2b4425a02e0d5df81dfbb8",
+      "from": "sha256:c35d24b691e37d99e051a78afb6cf5d252bea84c0ce056dfc3e85d36867600a2",
       "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/graph:tests:csharp_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:8e591a891ddf617f169e9c675124e06ea5c53ab887b1a6ceb1b29f3ec1267436",
@@ -1868,6 +2106,27 @@
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:index未設定なら索引のfindingを一切出さない:FR-066": {
+      "from": "sha256:69abce1b13b85f649bf8d141afcc0b70c5d1fca84ccd724e9152c5e5e5692993",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/graph:tests:index設定があっても索引のtype_specificationはノードにならない:FR-067": {
+      "from": "sha256:eda48d44ba66b2ce82fc39f76874631629b795693bf99aeff879516707ee42ee",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/graph:tests:index設定があればbuild_graphが索引のfindingを集める:FR-073": {
+      "from": "sha256:d8a0550da7a3771d15ddf35a54007c9760274e8fa652bda7cf907c813b8f006b",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/graph:tests:javascriptのtest_jsとspec_mjsからtestノードが作られる:FR-053": {
       "from": "sha256:36fa2c21b44f14e64e0a976a8f388c48ed7a555634b9709c0a6cdce3f2b6f691",
@@ -2016,6 +2275,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/graph:tests:予約名のindex_mdとlog_mdはdocsでもrequirementsでもノードにならない:FR-067": {
+      "from": "sha256:e019684375e032dbc76c8ea032b57cb3e2fbdb40c36b4ac8ab38a6d4e4c8ffdf",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/graph:tests:同じidを持つファイルが複数あるとduplicate_idとして報告される:FR-007": {
       "from": "sha256:d06a3354a3c4eb5dcfed5def07753b4d178977092c762e78602528d177d9436e",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
@@ -2134,6 +2400,769 @@
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/index:tests:bomがあっても同じエントリが検出される:FR-068": {
+      "from": "sha256:ce10a0d3690e9e18d10c44b5044736a4305fe70183d043cb59bc8b70548963fa",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:bomは書き換え後も保存される:FR-081": {
+      "from": "sha256:823f0da321a023d403192d9ba257e70b3b2a27cee6c988ee6293d8fe001a4e10",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:broken_entryのdetailとtargetの正準形:FR-076": {
+      "from": "sha256:5f29bd3103bcccb01da948b8fc570afe29b978858ca31c8228f406faf62aa6c3",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:descriptionがない_空_改行入りの文書はmissing_description:FR-078": {
+      "from": "sha256:72de3732b24a0e3f47d3b440a7360feb7cf46081c27e734360352e24f98ac7e7",
+      "to": "sha256:374d7b3e0dcd130fc24195de948d591c3bf6db01d255334d4226610253f5ca8a",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:descriptionのない文書は区切りも要約も付けない:FR-081": {
+      "from": "sha256:b0ab2191c5392dad17185cb747face5d5db692569175961ef28932046d37940c",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:descriptionの有無と空と改行の扱い:FR-071": {
+      "from": "sha256:19429304c82229f63fbdf94767c3d38ae69b7d63537ad93fad737487210bab2e",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:h1のコードスパンはソースのまま含む:FR-071": {
+      "from": "sha256:93b5f14fcbba52b0f6334120ee40f4f020f20a14ba21dd817a78e899d9b34a33",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:h1はatx閉じのシャープを含まない:FR-071": {
+      "from": "sha256:f4d86aec743be29489c4002af28cb8b493819292fc98d0f95a638055eedd502d",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:h1はsetext形式でも取れて下線を含まない:FR-071": {
+      "from": "sha256:a9b08bb09473588d217e71a1310b025eaaca98b29e9b57b7a372273a3d5717bf",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:h1以外の見出しは無視されファイル名にフォールバックする:FR-071": {
+      "from": "sha256:c239d1ff00322b4207c7c9c5f66e517e6317dc93031ee9a168ee3bc0b27ab894",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:indexとlogは予約名で文書にならず索引として分類される:FR-067": {
+      "from": "sha256:8e4133cf2bde8df266a62657ab40fb336c452097c715d08377e82262e85cbd09",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:line_spanは先頭行から改行までを含む:FR-083": {
+      "from": "sha256:83fef5c3c66b612acc8b7f3608da8a0490c79538b751e947ea1789bfa47287e5",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:missing_descriptionは未列挙の文書にも出る:FR-078": {
+      "from": "sha256:d87860295707c65342331a79bec5d7f38a461c6956e5af6ac0d67a1d8b28f19a",
+      "to": "sha256:374d7b3e0dcd130fc24195de948d591c3bf6db01d255334d4226610253f5ca8a",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:missing_index時は索引側の6種のfindingがすべて出ない:FR-073": {
+      "from": "sha256:9778bc15380952417d9acedb662076f95474dcafe4911d419273592517881031",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:okf_version等のfrontmatter付き索引でも検出される:FR-068": {
+      "from": "sha256:8d88d049ffe7982e1d04ba6e4080fa32f803b52ccbcadd9f74446f89f0ea8bca",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:setextのレベル2下線はh1として扱わない:FR-071": {
+      "from": "sha256:704bcd7e4f5d61d60b8117879ce29a26874dcb8088a3e4e9e8180654cfe9c370",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:titleが空なら最初のh1にフォールバックする:FR-071": {
+      "from": "sha256:efec1a39d99ad0c6e55a7cc37e712c5f3b7eb765768a45d7f79062584b4dbf48",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:titleはフロントマターのtitleを優先し前後の空白を除く:FR-071": {
+      "from": "sha256:065ebc629c4ca2a8b0ac5ebfba59b041f4e4d357c47763a39920fba93bb44533",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:typeなしとフロントマターなしはuntypedで壊れたフロントマターは無視される:FR-075": {
+      "from": "sha256:dba980ca1004cf87d39bc08d607c2920e5840b7a645b7356e19e49936e111ec9",
+      "to": "sha256:6b969130f89d6e8195fb0bb6e0bcd8cacca5bb56df2250840326459795d9004b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:typeのないmdはuntyped_fileでindexとlogと根の外は対象外:FR-075": {
+      "from": "sha256:0cd5ea23526c20f6c4bc51626a5aeb873dd05a5cac52ee6f64a944497734522d",
+      "to": "sha256:6b969130f89d6e8195fb0bb6e0bcd8cacca5bb56df2250840326459795d9004b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:typeは任意の値でも文書になる:FR-071": {
+      "from": "sha256:cb157a1138603fc4223a372480777a4baacc2acf95ae492973daa6eafbe1c2bd",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:すでに一致していればバイト列は変わらない:FR-081": {
+      "from": "sha256:4dd6ca02857037e8dba0eec2b3acf951d0e19e5a725f2bedf0909f153d9bd51c",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:エスケープされた角括弧を含むリンク文は壊れずに冪等に書き換わる:FR-081": {
+      "from": "sha256:9b473d89e06876647107ceca40484954df2c08db24d88702fa1a4a8f391d15de",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:エントリ行以外のバイト列は変更されない:FR-085": {
+      "from": "sha256:7580afdb9d8b24e4204d2f6f5bca5a64ed632e4f7d4c3da4d18d113c43fe1b4f",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:コードブロック内のシャープ行はh1として扱わない:FR-071": {
+      "from": "sha256:ea065747ff18d05d71f5210cbfcf8b1fc248ac127f760c5c0021a1c8e9dd2ab5",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:スラッシュなしでも配下にファイルがあればディレクトリになる:FR-070": {
+      "from": "sha256:d94e39a7e5c0c3369a58c5d2407751db9a3f46ac386f9cf611b278d686a05e7b",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:タイトルが一致しなければtitle_mismatchで対象は文書のパス:FR-077": {
+      "from": "sha256:40afc943526b946ff04eba345465821cd78800c3e95d53bf92ca82b4d18a5ee5",
+      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:タイトルの角括弧はエスケープされる:FR-081": {
+      "from": "sha256:bae876149101860f25e0e8103b88a7cfe87194a7096aa45fbe497088419641f8",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:タスクリストの項目はエントリではない:FR-068": {
+      "from": "sha256:a2a1b32113053efacb88bc9e1e21eea10cc784ada21fddfef131035ddea58391",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:ディレクトリを指す3形は同じディレクトリエントリになる:FR-070": {
+      "from": "sha256:1e7b33f0b842d9b649ef52ff4412b6c680d3f543de7f78a40f4446b646be88cf",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリの要約が空ならmissing_directory_description:FR-079": {
+      "from": "sha256:42ac032f281d179d7c2ee58d0215220903dd496b96b9bb652c4799b0da80a8ef",
+      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:ハードブレークとソフトブレークの直後の要約は1行に畳まれる:FR-081": {
+      "from": "sha256:a86c3f21ec7daf6798d889926a9ae486b66a3c4b784b5f1e766844e016aeea02",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:バックスラッシュはエスケープされ再パースで元のタイトルに戻る:FR-082": {
+      "from": "sha256:50aebf22b37297254cd6451c5f02d28d8b7ddb735edcb1c0698074c7bb8ad7d5",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:パーセントエンコードされたドットドットはデコード後に正規化される:FR-070": {
+      "from": "sha256:a0b92a00fb243affe56ab8c79fc95e537fba453158992f9a58233cbf4264793c",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:パーセントデコードされ_デコード後のシャープは再分割されない:FR-070": {
+      "from": "sha256:abfa83cc4d5ce0dbb6962471753543ce65c0800579034db4e38aedf86547d07c",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:フラグメントを除いてファイルに解決される:FR-070": {
+      "from": "sha256:0b5a9e4efb3127358bb765e8e1043d35a400320c5bb0a5232b1d8e55f2e9056e",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:フラグメント付きの索引ファイル指定もディレクトリエントリになる:FR-070": {
+      "from": "sha256:71d64d0b50c00164af448cee8b5d8fffd8fa269895848d332dffb31da253d31a",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:リンクで始まらない項目はエントリではない:FR-068": {
+      "from": "sha256:a120a4df7a227f75f79cef72e0b55b628c8508f8f06d222978d05cb93614f24e",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:リンクのtitle属性は無視される:FR-068": {
+      "from": "sha256:30a8f17fcd64ef0943ee676374c258ac53f3387a94a3ba9d21fdba34d13a201c",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:リンク先のソースは変更しない:FR-081": {
+      "from": "sha256:b04df16f9e7ad127fb30778098f29284c8fe74face017622f6c68130eae717a3",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:リンク文と要約を文書の値で置き換え区切りは既存を保つ:FR-081": {
+      "from": "sha256:66ba8417963867843ae6cf530c677bf712aeda890be24a9e529579f087135f9a",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:リンク文のコードスパンや入れ子の角括弧はソースのまま扱う:FR-069": {
+      "from": "sha256:b211441a486d47eb6168b3c0023474ac0f1de0fe545fec947a29d1e1a2ab2f26",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:ルーズリストでも同じ結果になる:FR-068": {
+      "from": "sha256:5b5b94b06235e36009430dfa4ffff712f326b9846d817e825ecf953e14ce63cc",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:中間ディレクトリに索引がなくても最も近い祖先の索引が親になる:FR-072": {
+      "from": "sha256:6c968f6da6bcfe11110424c8a9dd40feef80df23f572a1de8f08d4b73c499ada",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:中間索引を飛ばしたディレクトリエントリも要約がなければmissing_directory_description:FR-079": {
+      "from": "sha256:773d0d87ed5d0525a40c4d8c5e1b639315195bdee6239bb369c9adecb7f62455",
+      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:入れ子の索引で子の文書は子の索引が担当する:FR-072": {
+      "from": "sha256:7b2dc73269e9ff89c9e4b414a7e88fd85a79af9b15e1dd655ad7598e2d9a6fb8",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:入れ子の項目も任意の深さでエントリとして検出される:FR-068": {
+      "from": "sha256:6f218ac99e7d791aa3cce950d91ca8357a0f2db18245bb86d4f2e5364e309b62",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:列挙されていない文書はnot_listedになりidの妥当性に依存しない:FR-074": {
+      "from": "sha256:f737fcf5291e73a9a6b2680641cd6808a1e41789e472f5f487e23ec7c5487212",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:削除した項目の子項目は残る:FR-083": {
+      "from": "sha256:371d33455f825dce48c1fc052d840a1828c8bdd2bddc6b5d21ac5580d156fdb1",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:削除時もbomは保存される:FR-083": {
+      "from": "sha256:6a33891a19c34918bda13e05d40ef6fa8302443c17a3b6b21c56033ba40dc007",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:区切り4種を除いて要約を取り出す:FR-069": {
+      "from": "sha256:299e5b91724db1ee1280fd244eb8b9023b1fa0f4a832abf4cced29038f910547",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:区切りがなくても要約になり_区切りの二重指定は1文字だけ除く:FR-069": {
+      "from": "sha256:f7da16314fa68651bb62e49cde2a9bcf51e8e34d55cfa650c82712c7f251ef37",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:区切りのen_dashは書き戻しで保持される:FR-081": {
+      "from": "sha256:09c861c94a9d4d0a8bb488a5f2fd0a4284a7ecd79e90f45e754c310cc9026bba",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:参照形式とショートカットの後ろから要約を切り出す:FR-069": {
+      "from": "sha256:29ef1c437decd76ca87186048817cf6523e3bfa7f5975a07a213acef39e6bb26",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:参照形式のリンクで始まる項目もエントリになる:FR-068": {
+      "from": "sha256:1a1030499a04c020bc46b7182afc151e947ebd08bdff819adbbfc2bacf8a9f19",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:参照形式の定義とラベルは変更しない:FR-081": {
+      "from": "sha256:7dae0d3466d68b6cb3c3d73b2f689b55a047dee0705916bcb9f6e553641b67fd",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:各リンク形式でリンク文の範囲は元のソースの閉じ括弧までになる:FR-081": {
+      "from": "sha256:d88e105c1481dd90aa27120ad44512888049a115862bf5505703f2b51f8e4ffd",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:同じ文書を指す2本目だけ不一致でもfindingが出る:FR-077": {
+      "from": "sha256:5d8b650b94de4555c3c7f58c5f275c663169e77ba9b7f17e00b003d2835ae869",
+      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:同じ文書を指す複数エントリはすべて比較され_findingは重複しない:FR-077": {
+      "from": "sha256:9951cba166fd6ef26a736359a8e1b68efd1dde1d69477e47b310a307da12fc6d",
+      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:同じ文書を指す重複エントリはすべて書き換える:FR-081": {
+      "from": "sha256:b56384484222c30cf679c0b86c504c285696fb6a262866913b85b96cf2f6125f",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:外部リンクは無視される:FR-070": {
+      "from": "sha256:b8dcceccdb6bd06783805036b828e9c5dedfe3345b8b6d4ce3e6f4a5b2bb9495",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:太字で包まれたリンクで始まる項目はエントリではない:FR-068": {
+      "from": "sha256:59f1f7ae6a1f63224990d691c12ccb02cda4f0a5ce72fd81a615023b48f44e6f",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:子索引の追加は直近の親の索引の末尾にだけ行われる:FR-082": {
+      "from": "sha256:e77c194ac0772083545b766a5028eaded79ab297c593c42fcc29f418c354c9fc",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:存在しないファイルは文書エントリとして扱う:FR-070": {
+      "from": "sha256:dfb3f79425240df2196aa8e667671489a005a3c47e031c1bba865d2a99f69773",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:存在しない文書へのエントリ行は削除される:FR-083": {
+      "from": "sha256:d96f87eb3f0d3f8d195eb09c7091d1c8706761d46ea12b440e175a6976735050",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:山括弧とtitle付きの宛先のbroken_entryのtargetは解釈後のdestinationになる:FR-076": {
+      "from": "sha256:2e6538777139ee68bcfaaf29524b4c48743ce3fb623568f9bdc08db523ae441d",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:強調を含むリンク文はソース文字列のまま扱われる:FR-069": {
+      "from": "sha256:fa2a56474069857ff61f7862cb3b0b8a189b3de0c72b1369d669c5fe8cc472fb",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:折り畳み参照のラベルは変えず要約だけ更新されtitle_mismatchが残る:FR-081": {
+      "from": "sha256:c5f04221425174c249392bf26f5e648a5c841021403b46b19ee9a3bba5473782",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:折り畳み参照の後ろから要約を取り出す:FR-069": {
+      "from": "sha256:47027244b0223ab8d1401b03e195966d742e5e9c42d7b2007b0ce40bfd7358d8",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:担当索引が列挙していなければ他の索引が列挙していてもnot_listedになる:FR-074": {
+      "from": "sha256:33026b8889a16c6765ccee3f046b823179882b915f3053b24a100db89c1e4375",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:改行を含むtitleは無いものとしてh1にフォールバックする:FR-071": {
+      "from": "sha256:83b55c9b8acc5ab6d84b7804339b217d8e37f7a3c9826511aafa5358ee19998d",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:改行コードは既存本文にcrlfがあればcrlfになる:FR-082": {
+      "from": "sha256:5f444be3592cef7efef97c6d2a342bb221ee1d3318cf67f7e31dcd0a73a59b7b",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:文書が0件の根ではmissing_indexを出さない:FR-073": {
+      "from": "sha256:d4963348833d0ee571ddd7a796dadf231ab9d31d5f8b5093ec447edb914996b9",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:文書にdescriptionがなければdescription_mismatchを出さない:FR-077": {
+      "from": "sha256:2bd0620668697c560498116aa51db1023f06a8a9b3a57fa4561f3e1329cea303",
+      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:更新は冪等で2回目は同一文字列になる:FR-085": {
+      "from": "sha256:a5bb983205b321c8f53692da39e90954ceac25a177778d92360667a30137c5f6",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:書き込みはrename失敗時に同じディレクトリの一時ファイルを残さない:FR-085": {
+      "from": "sha256:655c5527ae8c92767d0f9eb837407427e12b044ca313936e38e12bfaea38b3fa",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:最初のh1が空なら次のh1を探さずファイル名にフォールバックする:FR-071": {
+      "from": "sha256:c3ecfe1251f7f451c88fe0eff44becc11321c48efea571d7a9c9a4d00857edb6",
+      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:未列挙の文書がパス順に末尾へ追加される:FR-082": {
+      "from": "sha256:a2703710c05b7c60902b67eb45834b9670aaefa0cb9fb3ba2f7fd2c21e84afb1",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:末尾の改行と空行の規則:FR-082": {
+      "from": "sha256:c2232a78a5aab9204ece6e48c03ebfa6639809629530b9614ce4a6475695b4df",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:根が子孫を列挙していても直近の親が列挙していなければunlinked_indexになる:FR-079": {
+      "from": "sha256:f10fb4b9fbad812b9a8f4116a6361e07709c0a7da1e4617e673ffd3dcd7331d1",
+      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:根のみの索引で整合していればfindingは出ない:FR-072": {
+      "from": "sha256:92c1af0fc64fa4a24e3c06782a9bef678227674f99da18200aa9c20cc1919453",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:根の索引がなく文書があればmissing_indexで他の検査は省く:FR-073": {
+      "from": "sha256:232c965e1c6774906d5bd07e2f8ef774a9e8de36c800a968a4a2ff9599e4c09f",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:段落中や見出し中のリンクはエントリではない:FR-068": {
+      "from": "sha256:b02696e0f8b01b3cebb6b5cdc59b058e90bb4f861ae2cee1efc1fef1289b27f8",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:直前に項目がある状態で削除すると子項目は直前の項目の下に残る:FR-083": {
+      "from": "sha256:50078150b850627bdc17f804195ea2b20dffb63903b51497ff6fe7d55b88b8b4",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:空とフラグメントのみは解決不能になる:FR-070": {
+      "from": "sha256:8302cd04ad01f732e2feb32672289eb849149b0154b90a1502eed0435a844309",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:空のリンク文は空文字列でspanは開き括弧の直後になる:FR-069": {
+      "from": "sha256:44c513388c5839d0a5fc735f852e60832d1cf152f070be7ef6337114f44bf21c",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:箇条書き記号とorderedの各形式がエントリとして検出される:FR-068": {
+      "from": "sha256:81eff14b0ab208e2beec83511ffe798e12c927d1f86c6654fcc59a02733d3335",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:索引がなければ見出しなしの平坦なリストを作る:FR-084": {
+      "from": "sha256:ca014c028847753d79c9d83f264d4a1a692a2e3a4f50d4f2b226389cbcd086ae",
+      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:索引自身を指すエントリは自己か祖先として壊れている:FR-076": {
+      "from": "sha256:9d5fffe40a4bfbe75f187034caf1fd52bdae216db76ab81f287a8a1c0f70d470",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:絶対パスとリポジトリ外と根の外は解決不能になる:FR-070": {
+      "from": "sha256:c19b07aa4820f57b36dd1d4c2da4ac5d37add4c84a84fc327e32fa487ed0d8b1",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:自前の索引を持たない中間ディレクトリへのエントリはbroken_entryになる:FR-072": {
+      "from": "sha256:3b7f6af8439e21d6e28e3a7f2dd02b1259e4aa52fba1c5c52a8c1ebdc18d2289",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:自身と祖先のディレクトリは解決不能になる:FR-070": {
+      "from": "sha256:2e68cc0c0319764dfa4ad5a382bbc5ce3d6e629a08c423ab40be13d8b967057b",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:複数行にわたる項目も1つのエントリになる:FR-068": {
+      "from": "sha256:ad43d62e24f1fc462541c7e77fc907fa37fad93aa74bfc4b1e2523c31cf830b3",
+      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:複数行エントリの削除で末尾行まで消える:FR-083": {
+      "from": "sha256:0bc4b3b1ad3c05133206e51673707977f864a9acfed8b7b7b9dc9c522e852330",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:複数行エントリは1行に畳まれる:FR-081": {
+      "from": "sha256:7209a2f5dd838db35759ed5689efbd22f55d113f6bc9f35911eb4b4539bfa60e",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:要約が一致しなければdescription_mismatchで空白は正規化しない:FR-077": {
+      "from": "sha256:76c9fc8dbc9425e57d9c3830ccbbd24ac40fb53e274eac036fe485c22c242f11",
+      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:要約に入れ子の子項目は含まれない:FR-069": {
+      "from": "sha256:edef1378848d759389aa5420d624898ab3485f2ef3ea6710f618b3c24919bfa0",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:要約のないエントリは空の要約になる:FR-069": {
+      "from": "sha256:464063336acded137925f661f506bfa95416ffee79494bb63fd84f5325292aee",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:要約の角括弧とバックスラッシュもエスケープされ比較で不一致にならない:FR-081": {
+      "from": "sha256:c7c221223c3d7bfa9cfc0624f07906a4b6446d8a930fcb1dc5e4653200437411",
+      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:要約付きのディレクトリエントリは問題にならない:FR-079": {
+      "from": "sha256:600ea6e974b432e61a9a9655ae95ee7f0330a3f01d8aa037843399e975f41630",
+      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:親から辿れない子の索引はunlinked_index:FR-079": {
+      "from": "sha256:ab5d7937c417c3fd53a4bb84cdaf9f9d240abe288fd2cac2c311203ecb6caf73",
+      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:親が子の担当文書を直接列挙しても_同じ文書の重複列挙もfindingにならない:FR-072": {
+      "from": "sha256:477d3cd2e7b683ca463fcd761f9d68e9077fe00a966bf0549390558408d3579d",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:角括弧のエスケープは比較時に戻される:FR-069": {
+      "from": "sha256:935977573ba01a75bbd1bca2193405cf4e7286a343b815dad7071e87d4b303e2",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:設定した根が配下のディレクトリでも担当範囲はその根の中だけになる:FR-072": {
+      "from": "sha256:69445f4c942879b6a4fb9c850c3a66cd5283d04fe491883bbbb79d2b80a42064",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:辿れない子の索引はディレクトリエントリとして文書の後に追加される:FR-082": {
+      "from": "sha256:6acef0632ae0cfb3a7d91448eaf859bc012d947b64e717bbf00b47928affd26e",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:追加するパスは相対でエンコードされタイトルはエスケープされる:FR-082": {
+      "from": "sha256:1c0ab9d7d583cfb7cbf92c97450a578faec1ffa57cfc847f1e4c3d7ab7f84b0b",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:遅延継続行と複数行の要約を含む:FR-069": {
+      "from": "sha256:1a2a543dd2596458d1b4d489bec04a3073141b91f816a909f1c65b1ede6322df",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:除外名の配下を指す存在しないエントリ行は削除されない:FR-083": {
+      "from": "sha256:f61d78658d699e1f1a030db25cff9b75dacd407b25172f25abfcc195c08856e0",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:除外配下_typeなし_解決不能_ディレクトリは削除しない:FR-083": {
+      "from": "sha256:9458d12dbc8cdbb9209eb1541e57caa60ccdd9a70ee2e61a7e4c94d5c8af4582",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/judge:tests:apply_auto_reconcileはconsistentのエッジだけをjevの合意として記録する:FR-048": {
       "from": "sha256:40df02c870ecd9ce80e390eee6f7c0edd2ee27a4e8c5d5531ec4d67836f28828",
@@ -2358,6 +3387,27 @@
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/markdown:tests:normalize_relativeはresolve_linkと同じ正規化をする:FR-070": {
+      "from": "sha256:a3faf8cfabdc3a650b3cc97258e74ea54940b954f0ce7f3ff7a6334f0fde3173",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/markdown:tests:percent_decodeは不正な列をそのまま残す:FR-070": {
+      "from": "sha256:49134c0916ccd1a79f88a1cd6622a5913155b23019949872211a45d88c2598bf",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/markdown:tests:percent_decodeは通常の列をutf8としてデコードする:FR-070": {
+      "from": "sha256:3178b79ca309250266764401d9ae3e44ca27efe4ce5d1a2f47cfda73cba0f8c4",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/markdown:tests:resolve_linkはフラグメントを取り除いてから解決する:FR-009": {
       "from": "sha256:98bfa428895fb876953c3e69e3c15f641e420a38e4ada144998cd362a5e1fa7d",
@@ -2765,19 +3815,173 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:tests/cli_index::checkのtextとjsonは種別をindexと表示しgateはexit_code_2を返す:FR-080": {
+      "from": "sha256:39516b798e99f646090ae2b3ae67722e6800195e57ec20d5be5f469f856d0778",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::diffは基準側にも存在するindex_findingを報告しない:FR-080": {
+      "from": "sha256:f8d503dae4cbb2a80fd912075153ac8612786575e4d2ebab3d433937d5b3c128",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::diffは基準側の設定にindexがなければ現在側のindex_findingをすべて新規として報告する:FR-080": {
+      "from": "sha256:644f57bfa6bc8582153a72fbffa90eabd55f47a11da59151d6836250c7242941",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::indexが未設定ならexit_code_1とメッセージで失敗する:FR-085": {
+      "from": "sha256:e97e82c3643d2352df1a1f84de8c63ef5e555d69d936976e88437bcd6a2a5804",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::indexのfindingが残っていてもreconcile_allは成功しロックに影響しない:FR-080": {
+      "from": "sha256:72b80f61e8534fa3930227735ee209ee8c5594a2822d4a8e9367a57dc7c50867",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::indexのfindingが残っていてもreconcile_edgeは成功する:FR-080": {
+      "from": "sha256:a0bc639cb9eede72d7886190ce4381eeb6e5cfb60fdedc66a6ecc0c0b2fae163",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::index実行後に残るindexのfindingは人の判断が要るものだけになる:FR-085": {
+      "from": "sha256:9c831116a3e4dcccb2f968ddc67775476b51345446ead82f96d052baff6729cc",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::utf8として読めない索引は書き換えずにexit_code_1で失敗する:FR-085": {
+      "from": "sha256:43ca712d66c948823ba6d7d98a4ec21398eb0ddbe31830d6903cb0a48140b379",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::エントリ行以外のバイト列はbomとcrlfを含めて保存される:FR-085": {
+      "from": "sha256:e40b362c7deb0d466e3eb4ce4987fbc9162935b1ae4090833d6e96969f40db75",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::タイトルと要約の不一致をcheckが報告する:FR-077": {
+      "from": "sha256:1ccf26da6614adc47e2e246ad42e99424768efc1effb30b1d87fa067f6ed75a7",
+      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::列挙されていない文書をcheckがnot_listedで報告する:FR-074": {
+      "from": "sha256:a184fb08dfab3be13adffe533653a9bc5f26084bd0e47ab6a60b2536a90aa0b1",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::壊れたエントリの正準形targetがtextとjsonに出る:FR-076": {
+      "from": "sha256:cf055dfd169221137e353c6fa6218f5c77a38a5873ed45c9ab82bc37f2138dfa",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::存在しない文書のエントリは削除され_除外配下は残る:FR-083": {
+      "from": "sha256:42b2cb1791094e90b83362089dae5271f0ffe6e64141398281c90092de04693f",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::実行後は索引と同じ場所にも他の場所にも一時ファイルが残らない:FR-085": {
+      "from": "sha256:ba30a493ea1bfa356a3448c2a2db067972766cfc4d08f58b8a956ee12e483404",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::文書が0件の根では索引を作らない:FR-084": {
+      "from": "sha256:56ceb0f74bca0bae381eb52cdd87a337a30a298ca17ea7d5e85a4301826e5a0d",
+      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::更新はupdatedで出力され_2回目は全件unchangedで一時ファイルも残らない:FR-085": {
+      "from": "sha256:71da5b45e7c1c6de96da3dc7616aa4738743f45fbff315984ea15d78aa2a9acd",
+      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::未列挙の文書と辿れない子の索引が末尾に追加される:FR-082": {
+      "from": "sha256:4742497cb9f9f6b91e7937379acc472767e44fdcb8486e2de2ce6606467a696b",
+      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::根の索引がなければcheckがmissing_indexを報告する:FR-073": {
+      "from": "sha256:7b5ed8cff9bd75f34352ba16d761b39f30eb839dcb7f158f14aab8adb8937aa5",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::根の索引の新規作成では文書の後に子索引のディレクトリエントリが入る:FR-084": {
+      "from": "sha256:171e76d7bbc2fa4173bf0653c06f088ce6b68d5bc3c99ba6032d8fc2f283dbfb",
+      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::索引がなければ平坦なリストで新規作成されcreatedが出力される:FR-084": {
+      "from": "sha256:973e64dbd92f80ada01991b4369d2012df057d53c3db9f088d93616b398dc6ae",
+      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::設定違反ではindexもcheckもexit_code_1で止まる:FR-066": {
+      "from": "sha256:cc677733a322d99a8fe92c1f55f972d81a72b3fb9f049ec3f31e1e71dccd3b0c",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_init::initの生成物はindexにdocsを1件含む:FR-019": {
+      "from": "sha256:1952457734c209ba7172f4a34f59ababb51a0fbfed3ac583db4a1def3d783b2b",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:tests/cli_init::initは既定値でconfigを生成する:FR-019": {
       "from": "sha256:b652d3aa29678949c274006d70fc53b91283b074cfad123217944f43a80d2681",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:tests/cli_init::既にconfigが存在する場合は上書きせず失敗する:FR-019": {
       "from": "sha256:b66872b9219212696ad48e751ac2947b39d7db15a3f6001c71565a6b16a71342",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:tests/cli_judge::apiキーが未設定なら何も送信せずキー名を表示してexit1になる:FR-039": {
       "from": "sha256:afd2121c575a1d153e2aa90fba9cd2309ba54ccc0131b0151877ef3a477691b1",
@@ -2941,11 +4145,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_reconcile::brokenなtest_reqエッジを指定したreconcileは拒否されロックは書き込まれない:FR-035": {
-      "from": "sha256:ce9951cf239c1caf81efed92f686267fa48d1590cb9e0a813f231111a4884bc6",
+      "from": "sha256:95482d40508d11a1a6eec290cfb384cfd6a1f286a326891ebb195940666810a0",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:tests/cli_reconcile::edgeとallを同時に指定するとreconcileは拒否される:FR-036": {
       "from": "sha256:0573b29a19ecc000b0ce36044a4606358b275759f0aba75c780968fa15364585",
@@ -2969,11 +4173,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_reconcile::invalidなreqに紐づくエッジを指定したreconcileは拒否されロックは書き込まれない:FR-035": {
-      "from": "sha256:699932d0f41888dd39d4a91a75e38618078950604a36c85cc4fac23b6d6a68e3",
+      "from": "sha256:4be6d9a30ebc03a23795b64d6acb7abcff496e13f76f8b0a7c27da24b2d8b670",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     }
   }
 }

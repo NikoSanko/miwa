@@ -67,6 +67,7 @@ pub enum TargetKind {
     Test,
     Edge,
     File,
+    Index,
 }
 
 #[derive(
@@ -89,6 +90,15 @@ pub enum ReasonCode {
     InvalidId,
     MultipleMarkers,
     ParseError,
+    MissingIndex,
+    NotListed,
+    UntypedFile,
+    BrokenEntry,
+    TitleMismatch,
+    DescriptionMismatch,
+    MissingDescription,
+    MissingDirectoryDescription,
+    UnlinkedIndex,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
@@ -114,6 +124,7 @@ pub struct Graph {
     pub edges: std::collections::BTreeMap<String, Edge>,
     pub invalid: Vec<Invalid>,
     pub broken: Vec<Broken>,
+    pub index_issues: Vec<crate::index::IndexIssue>,
 }
 
 #[cfg(test)]

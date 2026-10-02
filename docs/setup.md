@@ -1,6 +1,8 @@
 ---
 type: Specification
 id: DOC-SETUP
+title: "miwa を使い始める"
+description: "miwa をリポジトリで使い始めるための init と設定ファイル、索引の導入手順を説明する。"
 ---
 
 # miwa を使い始める
@@ -27,6 +29,7 @@ miwa init
   - API キーは設定ファイルではなく環境変数 `TYPESAFE_API_KEY` で渡します
 - `rust.test_attributes`: Rust で `test` 以外の名前の test 属性（例: `rstest`）を test として扱うための属性名の一覧。省略時は空。属性パスの末尾の名前だけを書きます（`rstest::rstest` ではなく `rstest`）
 - [`exclude`](../req/config-exclude-dirs.md): 探索から除外するディレクトリ名の一覧。省略時は空。パスではなく名前だけを書き、どの深さでも一致するディレクトリ配下が除外されます（例: Gradle の `build`、Next.js の `.next`。Vite や tsc の出力先 `dist` は既定で除外されます）
+- [`index`](../req/config-index-roots.md): 索引（`index.md`）を検査・生成する根のフォルダの一覧。省略時は空で、空のときは索引の機能は無効です。`docs` か `requirements` のフォルダと同じか、その配下のフォルダを書きます（`exclude` 配下は不可。要素同士が包含関係にあるのも不可）。子孫フォルダの `index.md` は設定しなくても担当を持ちます。詳細は [索引を保つ](index-command.md) を参照してください
 
 `docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。また、[`.git` `target` `.miwa` `.worktrees` `node_modules` `obj` `dist` という名前のフォルダは自動的に探索から除外され、シンボリックリンクの先は辿りません](../req/source-scan-scope-and-exclusions.md)。大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません（`obj` は C# のビルド生成物を読み込まないための除外で、docs・requirements・tests のすべてに適用されます）。
 
@@ -38,10 +41,24 @@ miwa init
 
 Java / Kotlin では、Gradle / Maven のモジュール直下であれば `tests: ["src/test"]` のように指定します。monorepo ではモジュールのパスを前置し、`tests: ["packages/api/src/test"]` のようにします。生成コードの `src/generated` は `tests` に含めないでください。ビルド出力の `build` などは、`exclude: ["build"]` のように指定して探索から除外します。
 
-`init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.max_body_bytes` は 200000 です。
+`init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.max_body_bytes` は 200000、`index` は `[docs]` です。
 
 設定ファイルの値には制約があります。[`judge` のしきい値は 0 から 1 の範囲、`judge.max_body_bytes` は 1 以上の整数でなければならず、`docs` / `requirements` / `tests` のいずれも空にはできません](../req/config-validation-rules.md)。範囲外の値や空の一覧が設定されていると、miwa は実行時にエラーとして止まります。設定を直接編集した際は、この点に注意してください。
 
 [`exclude` の各項目は、前後の空白を除いて空でなく、空白・`/`・`\`・`*` `?` `[` を含まず、`.` `..` でもないディレクトリ名でなければなりません](../req/config-exclude-dirs.md)。また、`docs` / `requirements` / `tests` のパスに `exclude` や既定の除外名と同じ名前のフォルダが含まれていると、探索先が丸ごと消えてしまうためエラーになります。
 
 `rust.test_attributes` の各項目は、[英数字とアンダースコアのみからなる空でない文字列でなければならず、違反するとエラーになります](../req/config-rust-test-attributes.md)。なお、`rust.test_attributes` に属性を追加すると、マーカーを置く位置（最初の対象属性の直前）が変わり、既存の test → req の依存関係が外れることがあります。
+
+## 予約名
+
+`index.md` と `log.md` は予約名で、[`docs` と `requirements` のどちらの配下でも、`type` を持っていても doc や req として扱われません](../req/index-reserved-names.md)。設定で変えることはできません。
+
+## 索引を導入する手順
+
+1. `.miwa/config.yaml` に `index: ["docs"]` を書きます（`init` した直後なら既定で入っています）。
+2. 文書に `description`（必須）と `title`（任意）を付けます。`type` の無い `.md` には `type` を付けるか、索引のフォルダの外へ出します。
+3. `miwa index` で索引を生成・更新します。末尾に追加された行を節へ移し、ディレクトリエントリの要約を書きます。
+4. `miwa reconcile --all` で現状の合意を記録します。
+5. `miwa check --gate` が通ることを確認します。
+
+索引の形式や `miwa index` の動作は [索引を保つ](index-command.md) を参照してください。

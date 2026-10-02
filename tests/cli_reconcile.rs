@@ -37,7 +37,7 @@ fn invalidなreqに紐づくエッジを指定したreconcileは拒否されロ�
     common::write(
         dir.path(),
         ".miwa/config.yaml",
-        common::default_config_yaml(),
+        common::config_yaml_without_index(),
     );
     common::write(
         dir.path(),
@@ -74,7 +74,7 @@ fn brokenなtest_reqエッジを指定したreconcileは拒否されロックは
     common::write(
         dir.path(),
         ".miwa/config.yaml",
-        common::default_config_yaml(),
+        common::config_yaml_without_index(),
     );
     // マーカーが指す FR-999 は存在しない req id なので broken になる
     common::write(

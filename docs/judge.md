@@ -1,6 +1,8 @@
 ---
 type: Specification
 id: DOC-JUDGE
+title: "意味が合っているか判定する（judge）"
+description: "check が見つけた drift と new について、両端が意味的に整合しているかを Jev でスコア化し、助言として報告するコマンドの仕様。"
 ---
 
 # 意味が合っているか判定する（`judge`）

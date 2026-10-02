@@ -11,6 +11,7 @@ pub enum FindingKind {
     Orphan,
     NoTest,
     Invalid,
+    Index,
 }
 
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, serde::Serialize)]
@@ -167,6 +168,16 @@ pub fn check(graph: &crate::model::Graph, lock: &crate::lock::Lock) -> Vec<Findi
             target: broken.from.id.clone(),
             reason: broken.reason,
             detail: broken.detail.clone(),
+        });
+    }
+
+    for issue in &graph.index_issues {
+        findings.push(Finding {
+            kind: FindingKind::Index,
+            target_kind: TargetKind::Index,
+            target: issue.target.clone(),
+            reason: issue.reason,
+            detail: issue.detail.clone(),
         });
     }
 

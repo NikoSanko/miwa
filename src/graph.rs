@@ -25,40 +25,62 @@ pub fn build_graph(
         body: String,
     }
     let mut candidates: Vec<Candidate> = Vec::new();
+    let mut texts: BTreeMap<String, crate::index::ParsedText> = BTreeMap::new();
+    let index_roots: Vec<String> = config
+        .index
+        .iter()
+        .map(|r| crate::config::normalize_dir(r))
+        .collect();
 
     for path in &files {
         if !path.ends_with(".md") {
             continue;
         }
-        if !(is_under(path, &config.docs) || is_under(path, &config.requirements)) {
+        if !(is_under_any(path, &config.docs) || is_under_any(path, &config.requirements)) {
             continue;
         }
         let bytes = source.read(path)?;
         let text = String::from_utf8_lossy(&bytes).into_owned();
-        let fm = match crate::frontmatter::parse(&text) {
-            Ok(Some(fm)) => fm,
-            Ok(None) => continue,
-            Err(_e) => {
-                graph.invalid.push(Invalid {
-                    target_kind: TargetKind::File,
-                    target: path.clone(),
-                    reason: ReasonCode::ParseError,
-                    detail: format!("invalid front matter in {path}"),
-                });
-                continue;
+        let parsed = crate::frontmatter::parse(&text);
+        // Reserved names never become nodes (the index still reads their bodies).
+        if !matches!(path.rsplit('/').next(), Some("index.md" | "log.md")) {
+            match &parsed {
+                Ok(Some(fm)) => {
+                    let kind = match fm.kind.as_deref() {
+                        Some("Specification") => Some(NodeKind::Doc),
+                        Some("Requirement") => Some(NodeKind::Req),
+                        _ => None,
+                    };
+                    if let Some(kind) = kind {
+                        candidates.push(Candidate {
+                            path: path.clone(),
+                            kind,
+                            id: fm.id.clone(),
+                            body: fm.body.clone(),
+                        });
+                    }
+                }
+                Ok(None) => {}
+                Err(_e) => {
+                    graph.invalid.push(Invalid {
+                        target_kind: TargetKind::File,
+                        target: path.clone(),
+                        reason: ReasonCode::ParseError,
+                        detail: format!("invalid front matter in {path}"),
+                    });
+                }
             }
-        };
-        let kind = match fm.kind.as_deref() {
-            Some("Specification") => NodeKind::Doc,
-            Some("Requirement") => NodeKind::Req,
-            _ => continue,
-        };
-        candidates.push(Candidate {
-            path: path.clone(),
-            kind,
-            id: fm.id,
-            body: fm.body,
-        });
+        }
+        // Bodies are only kept for files under an index root.
+        if index_roots.iter().any(|r| crate::config::is_under(path, r)) {
+            texts.insert(
+                path.clone(),
+                crate::index::ParsedText {
+                    text,
+                    front_matter: parsed,
+                },
+            );
+        }
     }
 
     let mut by_kind_id: BTreeMap<(NodeKind, String), Vec<usize>> = BTreeMap::new();
@@ -143,7 +165,7 @@ pub fn build_graph(
             let Some(resolved) = crate::markdown::resolve_link(&doc_path, &link) else {
                 continue;
             };
-            if !is_under(&resolved, &config.requirements) {
+            if !is_under_any(&resolved, &config.requirements) {
                 continue;
             }
             if let Some(req_id) = path_to_req_id.get(&resolved) {
@@ -181,7 +203,7 @@ pub fn build_graph(
 
     let mut extracted_tests: Vec<(String, crate::extract::ExtractedTest)> = Vec::new();
     for path in &files {
-        if !is_under(path, &config.tests) {
+        if !is_under_any(path, &config.tests) {
             continue;
         }
         let Some(language) = test_language(path) else {
@@ -301,35 +323,21 @@ pub fn build_graph(
         }
     }
 
+    // Index checks only run when at least one index root is configured.
+    if !config.index.is_empty() {
+        graph.index_issues = crate::index::collect_issues(config, &files, &texts)
+            .into_iter()
+            .collect();
+    }
+
     graph.invalid.sort();
     graph.broken.sort();
     Ok(graph)
 }
 
-/// Normalizes a configured directory entry: strips a leading `./`, strips a
-/// trailing `/`, and maps `.` / `./` / `` (empty) to `.` (the whole repo).
-fn normalize_dir(d: &str) -> String {
-    let mut s = d.trim();
-    while let Some(rest) = s.strip_prefix("./") {
-        s = rest;
-    }
-    let s = s.trim_end_matches('/');
-    if s.is_empty() {
-        ".".to_string()
-    } else {
-        s.to_string()
-    }
-}
-
-fn is_under(path: &str, dirs: &[String]) -> bool {
-    dirs.iter().any(|d| {
-        let normalized = normalize_dir(d);
-        if normalized == "." {
-            true
-        } else {
-            path == normalized.as_str() || path.starts_with(&format!("{normalized}/"))
-        }
-    })
+fn is_under_any(path: &str, dirs: &[String]) -> bool {
+    dirs.iter()
+        .any(|d| crate::config::is_under(path, &crate::config::normalize_dir(d)))
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -410,6 +418,7 @@ mod tests {
             },
             rust: crate::config::RustConfig::default(),
             exclude: vec![],
+            index: vec![],
         }
     }
 
@@ -641,6 +650,7 @@ mod tests {
             },
             rust: crate::config::RustConfig::default(),
             exclude: vec![],
+            index: vec![],
         };
         let graph = build_graph(&source, &config).unwrap();
         assert!(graph
@@ -1290,5 +1300,100 @@ mod tests {
         let graph = build_graph(&source, &exclude_config(&[".next"])).unwrap();
         assert!(!has_test_node(&graph, ".next/a.test::works"));
         assert!(has_test_node(&graph, "src/a.test::works"));
+    }
+
+    // [FR-067]
+    #[test]
+    fn 予約名のindex_mdとlog_mdはdocsでもrequirementsでもノードにならない() {
+        let source = FakeSource::new(&[
+            (
+                "docs/index.md",
+                "---\ntype: Specification\nid: DOC-X\n---\n[r](../req/fr1.md)\n",
+            ),
+            ("docs/log.md", "---\ntype: Specification\nid: DOC-L\n---\n"),
+            ("docs/sub/index.md", "---\ntype: Specification\n---\n"),
+            ("req/index.md", "---\ntype: Requirement\nid: FR-001\n---\n"),
+            ("req/log.md", "---\ntype: Requirement\n---\n"),
+            (
+                "req/fr1.md",
+                "---\ntype: Requirement\nid: FR-001\n---\n本文\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(
+            graph.invalid.is_empty(),
+            "reserved names must not be invalid: {:?}",
+            graph.invalid
+        );
+        assert!(!graph.nodes.values().any(|n| n.key.kind == NodeKind::Doc));
+        let reqs: Vec<&str> = graph
+            .nodes
+            .values()
+            .filter(|n| n.key.kind == NodeKind::Req)
+            .map(|n| n.path.as_str())
+            .collect();
+        assert_eq!(reqs, ["req/fr1.md"]);
+        assert!(graph.edges.is_empty(), "{:?}", graph.edges);
+    }
+
+    // [FR-066]
+    #[test]
+    fn index未設定なら索引のfindingを一切出さない() {
+        let source = FakeSource::new(&[
+            ("docs/a.md", "---\ntype: Specification\nid: DOC-A\n---\n"),
+            ("docs/untyped.md", "plain\n"),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.index_issues.is_empty(), "{:?}", graph.index_issues);
+    }
+
+    // [FR-067]
+    #[test]
+    fn index設定があっても索引のtype_specificationはノードにならない() {
+        let source = FakeSource::new(&[
+            (
+                "docs/index.md",
+                "---\ntype: Specification\nid: DOC-X\n---\n- [A](a.md) — D\n",
+            ),
+            (
+                "docs/a.md",
+                "---\ntype: Specification\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
+            ),
+        ]);
+        let mut cfg = config();
+        cfg.index = vec!["docs".to_string()];
+        let graph = build_graph(&source, &cfg).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let docs: Vec<&str> = graph
+            .nodes
+            .values()
+            .filter(|n| n.key.kind == NodeKind::Doc)
+            .map(|n| n.path.as_str())
+            .collect();
+        assert_eq!(docs, ["docs/a.md"]);
+        assert!(graph.index_issues.is_empty(), "{:?}", graph.index_issues);
+    }
+
+    // [FR-073]
+    #[test]
+    fn index設定があればbuild_graphが索引のfindingを集める() {
+        let source = FakeSource::new(&[
+            (
+                "docs/a.md",
+                "---\ntype: Specification\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
+            ),
+            ("docs/untyped.md", "plain\n"),
+        ]);
+        let mut cfg = config();
+        cfg.index = vec!["docs".to_string()];
+        let graph = build_graph(&source, &cfg).unwrap();
+        assert!(graph
+            .index_issues
+            .iter()
+            .any(|i| i.reason == ReasonCode::MissingIndex && i.target == "docs"));
+        assert!(graph
+            .index_issues
+            .iter()
+            .any(|i| i.reason == ReasonCode::UntypedFile && i.target == "docs/untyped.md"));
     }
 }

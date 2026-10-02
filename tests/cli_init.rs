@@ -44,3 +44,18 @@ fn 既にconfigが存在する場合は上書きせず失敗する() {
     let content = std::fs::read_to_string(dir.path().join(".miwa/config.yaml")).unwrap();
     assert_eq!(content, existing, "existing config must not be overwritten");
 }
+
+// [FR-019]
+#[test]
+fn initの生成物はindexにdocsを1件含む() {
+    let dir = tempfile::tempdir().unwrap();
+    common::run(dir.path(), &["init"]).assert().success();
+
+    let content = std::fs::read_to_string(dir.path().join(".miwa/config.yaml")).unwrap();
+    assert!(content.contains("index:"), "{content}");
+    assert!(content.contains("- docs"), "{content}");
+    let value: serde_yaml_ng::Value = serde_yaml_ng::from_str(&content).unwrap();
+    let index = value["index"].as_sequence().expect("index");
+    assert_eq!(index.len(), 1);
+    assert_eq!(index[0].as_str(), Some("docs"));
+}
