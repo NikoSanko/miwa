@@ -1,4 +1,4 @@
-//! Test extraction for Go, Rust, C#, TypeScript and JavaScript source files.
+//! Test extraction for Go, Rust, C#, Java, Kotlin, TypeScript and JavaScript source files.
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ExtractedTest {
@@ -153,37 +153,61 @@ fn walk_rust_items(
 }
 
 /// Walks backward from `children[target_idx]`, collecting a contiguous
-/// (no-blank-line) block of `comment_kind` nodes, and extracts `[marker]`
-/// tokens from them, top to bottom.
-fn collect_preceding_markers(
+/// (no-blank-line) block of comment nodes whose kind is in `comment_kinds`,
+/// and extracts `[marker]` tokens from them, top to bottom. `text_of` yields
+/// the text of a node (Kotlin reads the original source, not its ASCII
+/// shadow). With `skip_doc`, doc comments (`/**` ...) are read over without
+/// contributing markers and without ending the block.
+fn collect_preceding_markers_with<'a>(
     children: &[tree_sitter::Node],
     target_idx: usize,
-    source: &str,
-    comment_kind: &str,
+    text_of: &dyn Fn(tree_sitter::Node) -> Option<&'a str>,
+    comment_kinds: &[&str],
+    skip_doc: bool,
 ) -> Vec<String> {
     let mut next_start_row = children[target_idx].start_position().row;
     let mut j = target_idx as isize - 1;
     let mut comments = Vec::new();
     while j >= 0 {
         let node = children[j as usize];
-        if node.kind() != comment_kind {
+        if !comment_kinds.contains(&node.kind()) {
             break;
         }
+        let Some(text) = text_of(node) else {
+            break;
+        };
         let end_row = node.end_position().row;
         if end_row + 1 != next_start_row {
             break;
         }
-        comments.push(node);
+        if !(skip_doc && is_doc_comment(text)) {
+            comments.push(text);
+        }
         next_start_row = node.start_position().row;
         j -= 1;
     }
     comments.reverse();
     let mut markers = Vec::new();
-    for c in comments {
-        let text = c.utf8_text(source.as_bytes()).unwrap_or("");
+    for text in comments {
         markers.extend(extract_markers(text));
     }
     markers
+}
+
+/// Single-kind variant of [`collect_preceding_markers_with`] (no doc skip).
+fn collect_preceding_markers(
+    children: &[tree_sitter::Node],
+    target_idx: usize,
+    source: &str,
+    comment_kind: &str,
+) -> Vec<String> {
+    collect_preceding_markers_with(
+        children,
+        target_idx,
+        &|n| n.utf8_text(source.as_bytes()).ok(),
+        &[comment_kind],
+        false,
+    )
 }
 
 /// Returns `None` if the attribute chain above `children[func_idx]` has no
@@ -269,6 +293,21 @@ fn rust_is_test_attribute(
 
 fn is_comment_kind(kind: &str) -> bool {
     kind == "line_comment" || kind == "block_comment"
+}
+
+/// Doc comments (Javadoc / KDoc) are never markers in Java / Kotlin (and do
+/// not end the adjacent comment block).
+fn is_doc_comment(text: &str) -> bool {
+    text.starts_with("/**")
+}
+
+/// Test names that are empty or contain control characters / line separators
+/// (U+0085, U+2028, U+2029) are ignored.
+fn is_valid_test_name(name: &str) -> bool {
+    !name.is_empty()
+        && !name
+            .chars()
+            .any(|c| c.is_control() || matches!(c, '\u{85}' | '\u{2028}' | '\u{2029}'))
 }
 
 /// Extracts every `[marker]` occurrence, where `marker` is one or more
@@ -550,11 +589,7 @@ fn typescript_name_arg<'a>(args: tree_sitter::Node, source: &'a str) -> Option<&
         return None;
     }
     let name = &text[1..text.len() - 1];
-    if name.is_empty()
-        || name
-            .chars()
-            .any(|c| c.is_control() || matches!(c, '\u{85}' | '\u{2028}' | '\u{2029}'))
-    {
+    if !is_valid_test_name(name) {
         return None;
     }
     Some(name)
@@ -624,6 +659,465 @@ fn walk_typescript_statements(
             walk_typescript_statements(body, source, base, &new_desc, results);
         }
     }
+}
+
+// ---- Java / Kotlin (JUnit) ----
+
+/// Annotation names (last identifier, qualifiers ignored) marking a JUnit
+/// style test method / function in Java and Kotlin.
+const JVM_TEST_ANNOTATIONS: [&str; 5] = [
+    "Test",
+    "ParameterizedTest",
+    "RepeatedTest",
+    "TestFactory",
+    "TestTemplate",
+];
+
+const JVM_COMMENT_KINDS: [&str; 2] = ["line_comment", "block_comment"];
+
+/// Start byte of the hashed range: the first token of the declaration that is
+/// neither an annotation nor a comment (annotations / comments that lead the
+/// modifiers and the comments right after them are skipped).
+fn jvm_content_start(decl: tree_sitter::Node) -> Option<usize> {
+    fn skip(kind: &str) -> bool {
+        matches!(
+            kind,
+            "annotation" | "marker_annotation" | "line_comment" | "block_comment"
+        )
+    }
+    let mut cursor = decl.walk();
+    for child in decl.children(&mut cursor) {
+        if child.kind() == "modifiers" {
+            let mut c2 = child.walk();
+            let first = child.children(&mut c2).find(|n| !skip(n.kind()));
+            if let Some(first) = first {
+                return Some(first.start_byte());
+            }
+        } else if !skip(child.kind()) {
+            return Some(child.start_byte());
+        }
+    }
+    None
+}
+
+fn jvm_name_is_test(name: &str) -> bool {
+    JVM_TEST_ANNOTATIONS.contains(&name)
+}
+
+// -- Java --
+
+/// Extract Java (JUnit) tests: methods annotated with one of
+/// [`JVM_TEST_ANNOTATIONS`] directly inside class / record / interface / enum
+/// bodies. Markers come from the `//` / `/* */` comment block immediately
+/// preceding the method; `content` starts at the first non-annotation token.
+pub fn extract_java_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, ExtractError> {
+    let mut parser = tree_sitter::Parser::new();
+    parser
+        .set_language(&tree_sitter_java::LANGUAGE.into())
+        .expect("valid java grammar");
+    let tree = parser
+        .parse(source, None)
+        .ok_or_else(|| ExtractError::Parse {
+            path: path.to_string(),
+        })?;
+    let root = tree.root_node();
+    if root.has_error() {
+        return Err(ExtractError::Parse {
+            path: path.to_string(),
+        });
+    }
+    let base = path.strip_suffix(".java").unwrap_or(path);
+    let mut results = Vec::new();
+    walk_java_container(root, source, base, &[], &mut results);
+    Ok(results)
+}
+
+fn walk_java_container(
+    container: tree_sitter::Node,
+    source: &str,
+    base: &str,
+    types: &[String],
+    results: &mut Vec<ExtractedTest>,
+) {
+    let mut cursor = container.walk();
+    let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
+    for (idx, node) in children.iter().enumerate() {
+        match node.kind() {
+            "class_declaration"
+            | "record_declaration"
+            | "interface_declaration"
+            | "enum_declaration" => {
+                let (Some(name_node), Some(body)) = (
+                    node.child_by_field_name("name"),
+                    node.child_by_field_name("body"),
+                ) else {
+                    continue;
+                };
+                let name = name_node.utf8_text(source.as_bytes()).unwrap_or("");
+                let mut new_types = types.to_vec();
+                new_types.push(name.to_string());
+                if body.kind() == "enum_body" {
+                    let mut c = body.walk();
+                    let decls: Vec<_> = body
+                        .children(&mut c)
+                        .filter(|n| n.kind() == "enum_body_declarations")
+                        .collect();
+                    for d in decls {
+                        walk_java_container(d, source, base, &new_types, results);
+                    }
+                } else {
+                    walk_java_container(body, source, base, &new_types, results);
+                }
+            }
+            "method_declaration" if !types.is_empty() => {
+                if !java_is_test_method(*node, source) {
+                    continue;
+                }
+                let Some(name_node) = node.child_by_field_name("name") else {
+                    continue;
+                };
+                let Some(start) = jvm_content_start(*node) else {
+                    continue;
+                };
+                let name = name_node
+                    .utf8_text(source.as_bytes())
+                    .unwrap_or("")
+                    .to_string();
+                results.push(ExtractedTest {
+                    id: format!("{base}:{}:{name}", types.join("/")),
+                    name,
+                    markers: collect_preceding_markers_with(
+                        &children,
+                        idx,
+                        &|n| n.utf8_text(source.as_bytes()).ok(),
+                        &JVM_COMMENT_KINDS,
+                        true,
+                    ),
+                    content: source[start..node.end_byte()].to_string(),
+                });
+            }
+            _ => {}
+        }
+    }
+}
+
+fn java_is_test_method(method: tree_sitter::Node, source: &str) -> bool {
+    let mut cursor = method.walk();
+    let Some(modifiers) = method
+        .children(&mut cursor)
+        .find(|n| n.kind() == "modifiers")
+    else {
+        return false;
+    };
+    let mut c2 = modifiers.walk();
+    for ann in modifiers.children(&mut c2) {
+        if ann.kind() != "marker_annotation" && ann.kind() != "annotation" {
+            continue;
+        }
+        let Some(mut name) = ann.child_by_field_name("name") else {
+            continue;
+        };
+        while name.kind() == "scoped_identifier" {
+            match name.child_by_field_name("name") {
+                Some(n) => name = n,
+                None => break,
+            }
+        }
+        if jvm_name_is_test(name.utf8_text(source.as_bytes()).unwrap_or("")) {
+            return true;
+        }
+    }
+    false
+}
+
+// -- Kotlin --
+
+/// The Kotlin grammar rejects identifiers with many non-Latin characters.
+/// The source is therefore parsed as an "ASCII shadow": every non-ASCII
+/// code point becomes one ASCII character (`' '` for whitespace and U+FEFF,
+/// `'x'` otherwise). `map` records `(shadow_offset, original_offset)` pairs at
+/// every point where the two offsets diverge, so shadow byte ranges can be
+/// mapped back to the original source.
+struct KotlinShadow<'a> {
+    original: &'a str,
+    shadow: String,
+    map: Vec<(usize, usize)>,
+}
+
+impl<'a> KotlinShadow<'a> {
+    fn new(original: &'a str) -> Self {
+        let mut shadow = String::with_capacity(original.len());
+        let mut map = vec![(0usize, 0usize)];
+        for (off, ch) in original.char_indices() {
+            if ch.is_ascii() {
+                shadow.push(ch);
+            } else {
+                shadow.push(if ch.is_whitespace() || ch == '\u{feff}' {
+                    ' '
+                } else {
+                    'x'
+                });
+                map.push((shadow.len(), off + ch.len_utf8()));
+            }
+        }
+        KotlinShadow {
+            original,
+            shadow,
+            map,
+        }
+    }
+
+    /// Replaces the given shadow byte ranges with spaces (newlines kept).
+    fn blank_ranges(&mut self, ranges: &[(usize, usize)]) {
+        let mut bytes = std::mem::take(&mut self.shadow).into_bytes();
+        for &(a, b) in ranges {
+            for byte in &mut bytes[a..b] {
+                if *byte != b'\n' {
+                    *byte = b' ';
+                }
+            }
+        }
+        self.shadow = String::from_utf8(bytes).expect("ascii shadow");
+    }
+
+    fn to_original(&self, shadow_offset: usize) -> usize {
+        let i = self.map.partition_point(|&(s, _)| s <= shadow_offset) - 1;
+        let (s, o) = self.map[i];
+        o + (shadow_offset - s)
+    }
+
+    fn slice(&self, start: usize, end: usize) -> Option<&'a str> {
+        self.original
+            .get(self.to_original(start)..self.to_original(end))
+    }
+
+    fn node_text(&self, node: tree_sitter::Node) -> Option<&'a str> {
+        self.slice(node.start_byte(), node.end_byte())
+    }
+}
+
+/// Extract Kotlin (JUnit) tests: functions annotated with one of
+/// [`JVM_TEST_ANNOTATIONS`] at the top level or directly inside class /
+/// object / companion object bodies. Parsing uses an ASCII shadow of the
+/// source (see [`KotlinShadow`]); names and `content` come from the original.
+pub fn extract_kotlin_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, ExtractError> {
+    kotlin_extract(path, source, true)
+}
+
+/// Top-level node kinds the Kotlin grammar may legitimately produce under
+/// `source_file`. Anything else (e.g. a leftover `annotated_expression`)
+/// means the grammar failed to recognise a declaration.
+const KOTLIN_ROOT_KINDS: [&str; 11] = [
+    "shebang",
+    "file_annotation",
+    "package_header",
+    "import",
+    "class_declaration",
+    "object_declaration",
+    "function_declaration",
+    "property_declaration",
+    "type_alias",
+    "line_comment",
+    "block_comment",
+];
+
+/// `retry_annotated_expression` enables the class-annotation blanking
+/// workaround (disabled only by tests of the fallback error path).
+fn kotlin_extract(
+    path: &str,
+    source: &str,
+    retry_annotated_expression: bool,
+) -> Result<Vec<ExtractedTest>, ExtractError> {
+    let parse_err = || ExtractError::Parse {
+        path: path.to_string(),
+    };
+    let mut shadow = KotlinShadow::new(source);
+    let mut parser = tree_sitter::Parser::new();
+    parser
+        .set_language(&tree_sitter_kotlin_ng::LANGUAGE.into())
+        .expect("valid kotlin grammar");
+    let mut tree = parser.parse(&shadow.shadow, None).ok_or_else(parse_err)?;
+    if tree.root_node().has_error() {
+        return Err(parse_err());
+    }
+    // Grammar bug: a class with 2+ annotations, no supertype and an
+    // `@Annotation inner class` in its body parses as one
+    // `annotated_expression` with no error. The class annotations are not
+    // needed for extraction, so blank them out and parse again.
+    if retry_annotated_expression && kotlin_has_annotated_expression(tree.root_node()) {
+        let ranges = kotlin_annotated_expression_annotations(tree.root_node());
+        drop(tree);
+        shadow.blank_ranges(&ranges);
+        tree = parser.parse(&shadow.shadow, None).ok_or_else(parse_err)?;
+        if tree.root_node().has_error() {
+            return Err(parse_err());
+        }
+    }
+    let root = tree.root_node();
+    // A structure other than declarations at file level means the grammar
+    // missed a declaration: never silently report zero tests.
+    let mut cursor = root.walk();
+    let unexpected = root
+        .children(&mut cursor)
+        .any(|n| !KOTLIN_ROOT_KINDS.contains(&n.kind()));
+    if unexpected {
+        return Err(parse_err());
+    }
+    let base = path.strip_suffix(".kt").unwrap_or(path);
+    let mut results = Vec::new();
+    walk_kotlin_container(root, &shadow, base, &[], &mut results).map_err(|()| parse_err())?;
+    Ok(results)
+}
+
+fn kotlin_has_annotated_expression(root: tree_sitter::Node) -> bool {
+    let mut cursor = root.walk();
+    let found = root
+        .children(&mut cursor)
+        .any(|n| n.kind() == "annotated_expression");
+    found
+}
+
+fn kotlin_annotated_expression_annotations(root: tree_sitter::Node) -> Vec<(usize, usize)> {
+    let mut ranges = Vec::new();
+    let mut cursor = root.walk();
+    for expr in root.children(&mut cursor) {
+        if expr.kind() != "annotated_expression" {
+            continue;
+        }
+        let mut c2 = expr.walk();
+        for child in expr.children(&mut c2) {
+            if child.kind() == "annotation" {
+                ranges.push((child.start_byte(), child.end_byte()));
+            }
+        }
+    }
+    ranges
+}
+
+fn kotlin_ident(text: &str) -> String {
+    text.strip_prefix('`')
+        .and_then(|t| t.strip_suffix('`'))
+        .unwrap_or(text)
+        .to_string()
+}
+
+fn walk_kotlin_container(
+    container: tree_sitter::Node,
+    shadow: &KotlinShadow,
+    base: &str,
+    types: &[String],
+    results: &mut Vec<ExtractedTest>,
+) -> Result<(), ()> {
+    let mut cursor = container.walk();
+    let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
+    for (idx, node) in children.iter().enumerate() {
+        match node.kind() {
+            "class_declaration" | "object_declaration" | "companion_object" => {
+                let name = match node.child_by_field_name("name") {
+                    Some(n) => match shadow.node_text(n) {
+                        Some(t) => kotlin_ident(t),
+                        None => {
+                            debug_assert!(false, "kotlin name range off a char boundary");
+                            return Err(());
+                        }
+                    },
+                    None if node.kind() == "companion_object" => "Companion".to_string(),
+                    None => continue,
+                };
+                let mut c = node.walk();
+                let Some(body) = node
+                    .children(&mut c)
+                    .find(|n| matches!(n.kind(), "class_body" | "enum_class_body"))
+                else {
+                    continue;
+                };
+                let mut new_types = types.to_vec();
+                new_types.push(name);
+                walk_kotlin_container(body, shadow, base, &new_types, results)?;
+            }
+            "function_declaration" => {
+                if !kotlin_is_test_function(*node, shadow) {
+                    continue;
+                }
+                let Some(name_node) = node.child_by_field_name("name") else {
+                    continue;
+                };
+                let Some(name_text) = shadow.node_text(name_node) else {
+                    debug_assert!(false, "kotlin name range off a char boundary");
+                    return Err(());
+                };
+                let name = kotlin_ident(name_text);
+                if !is_valid_test_name(&name) {
+                    continue;
+                }
+                let Some(start) = jvm_content_start(*node) else {
+                    continue;
+                };
+                let Some(content) = shadow.slice(start, node.end_byte()) else {
+                    debug_assert!(false, "kotlin content range off a char boundary");
+                    return Err(());
+                };
+                results.push(ExtractedTest {
+                    id: format!("{base}:{}:{name}", types.join("/")),
+                    name,
+                    // Markers are read from the original source: the shadow
+                    // turns `[正常系]` into a bogus `[xxx]`.
+                    markers: collect_preceding_markers_with(
+                        &children,
+                        idx,
+                        &|n| shadow.node_text(n),
+                        &JVM_COMMENT_KINDS,
+                        true,
+                    ),
+                    content: content.to_string(),
+                });
+            }
+            _ => {}
+        }
+    }
+    Ok(())
+}
+
+fn kotlin_is_test_function(func: tree_sitter::Node, shadow: &KotlinShadow) -> bool {
+    let mut cursor = func.walk();
+    let Some(modifiers) = func.children(&mut cursor).find(|n| n.kind() == "modifiers") else {
+        return false;
+    };
+    let mut c2 = modifiers.walk();
+    let found = modifiers
+        .children(&mut c2)
+        .filter(|n| n.kind() == "annotation")
+        .any(|ann| kotlin_annotation_has_test(ann, shadow));
+    found
+}
+
+/// Whether any `user_type` under the annotation (outside argument lists) ends
+/// in a test annotation name.
+fn kotlin_annotation_has_test(node: tree_sitter::Node, shadow: &KotlinShadow) -> bool {
+    let mut cursor = node.walk();
+    for child in node.children(&mut cursor) {
+        match child.kind() {
+            "user_type" => {
+                let mut c = child.walk();
+                let last = child
+                    .children(&mut c)
+                    .filter(|n| matches!(n.kind(), "identifier" | "type_identifier"))
+                    .last();
+                if let Some(last) = last {
+                    if jvm_name_is_test(shadow.node_text(last).unwrap_or("")) {
+                        return true;
+                    }
+                }
+            }
+            "value_arguments" | "use_site_target" => {}
+            _ => {
+                if kotlin_annotation_has_test(child, shadow) {
+                    return true;
+                }
+            }
+        }
+    }
+    false
 }
 
 #[cfg(test)]
@@ -1510,5 +2004,579 @@ if (cond) {
     fn typescriptは構文エラーのソースでエラーを返す() {
         let source = "it(\"a\", () => {\n";
         assert!(extract_typescript_tests("src/a.test.ts", source).is_err());
+    }
+
+    // ---- Java ----
+
+    fn jv(source: &str) -> Vec<ExtractedTest> {
+        extract_java_tests("tests/AuthTests.java", source).unwrap()
+    }
+
+    fn jv_wrap(body: &str) -> String {
+        format!("public class AuthTests {{\n{body}\n}}\n")
+    }
+
+    // [FR-059]
+    #[test]
+    fn javaは5種類の注釈をそれぞれtestとして検出する() {
+        for ann in [
+            "Test",
+            "ParameterizedTest",
+            "RepeatedTest",
+            "TestFactory",
+            "TestTemplate",
+        ] {
+            let source = jv_wrap(&format!("    @{ann}\n    void t() {{ }}"));
+            let tests = jv(&source);
+            assert_eq!(tests.len(), 1, "annotation {ann} should be detected");
+            assert_eq!(tests[0].name, "t");
+        }
+    }
+
+    // [FR-059]
+    #[test]
+    fn javaは修飾名の注釈と引数付きの注釈も検出する() {
+        let source = jv_wrap(
+            "    @org.junit.jupiter.api.Test\n    void a() { }\n\n    @Test(timeout = 1)\n    void b() { }",
+        );
+        let tests = jv(&source);
+        assert_eq!(tests.len(), 2);
+        find(&tests, "a");
+        find(&tests, "b");
+    }
+
+    // [FR-059]
+    #[test]
+    fn javaは無関係な注釈のみのメソッドを検出しない() {
+        let source = jv_wrap(
+            "    @Disabled\n    void a() { }\n\n    void b() { }\n\n    @Tag(\"x\")\n    void c() { }",
+        );
+        assert!(jv(&source).is_empty());
+    }
+
+    // [FR-059]
+    #[test]
+    fn javaは修飾子の後ろに書かれた注釈も検出する() {
+        let source = jv_wrap("    public @Test void t() { }");
+        let tests = jv(&source);
+        assert_eq!(tests.len(), 1);
+        assert!(tests[0].content.contains("@Test"), "{:?}", tests[0].content);
+    }
+
+    // [FR-060]
+    #[test]
+    fn javaは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する() {
+        let source = jv_wrap(
+            "    // [FR-001]\n    @Test\n    void adjacent() { }\n\n    // [FR-002]\n\n    @Test\n    void blank() { }\n\n    @Test\n    void none() { }",
+        );
+        let tests = jv(&source);
+        assert_eq!(find(&tests, "adjacent").markers, vec!["FR-001".to_string()]);
+        assert!(find(&tests, "blank").markers.is_empty());
+        assert!(find(&tests, "none").markers.is_empty());
+    }
+
+    // [FR-060]
+    #[test]
+    fn javaはブロックコメントをマーカーにできる() {
+        let source = jv_wrap("    /* [FR-002] */\n    @Test\n    void t() { }");
+        assert_eq!(jv(&source)[0].markers, vec!["FR-002".to_string()]);
+    }
+
+    // [FR-060]
+    #[test]
+    fn javaはjavadocコメントをマーカーにしない() {
+        let source = jv_wrap("    /** [FR-001] */\n    @Test\n    void t() { }");
+        assert!(jv(&source)[0].markers.is_empty());
+    }
+
+    // [FR-060]
+    #[test]
+    fn javaは注釈と署名の間のコメントをマーカーにせずcontentにも含めない() {
+        let source = jv_wrap("    @Test\n    // [FR-001]\n    // 補足\n    void t() { }");
+        let tests = jv(&source);
+        assert!(tests[0].markers.is_empty());
+        assert!(!tests[0].content.contains("FR-001"));
+        assert!(!tests[0].content.contains("補足"));
+    }
+
+    // [FR-061]
+    #[test]
+    fn javaのtest識別子はclassならファイルパスと型名とメソッド名になる() {
+        let tests = jv(&jv_wrap("    @Test\n    void rejectsShort() { }"));
+        assert_eq!(tests[0].id, "tests/AuthTests:AuthTests:rejectsShort");
+    }
+
+    // [FR-061]
+    #[test]
+    fn javaのtest識別子はネストした型を外側から内側へスラッシュで連結する() {
+        let source = "public class Outer {\n    @Nested\n    class Inner {\n        @Test\n        void t() { }\n    }\n}\n";
+        let tests = jv(source);
+        assert_eq!(tests[0].id, "tests/AuthTests:Outer/Inner:t");
+    }
+
+    // [FR-061]
+    #[test]
+    fn javaのtest識別子はrecord_interface_enumの中でも型名を辿る() {
+        let source = "record R() {\n    @Test\n    void a() { }\n}\n\ninterface I {\n    @Test\n    default void b() { }\n}\n\nenum E {\n    X, Y;\n\n    @Test\n    void c() { }\n}\n";
+        let tests = jv(source);
+        assert_eq!(find(&tests, "a").id, "tests/AuthTests:R:a");
+        assert_eq!(find(&tests, "b").id, "tests/AuthTests:I:b");
+        assert_eq!(find(&tests, "c").id, "tests/AuthTests:E:c");
+    }
+
+    // [FR-061]
+    #[test]
+    fn javaのtest識別子はpackageを含まない() {
+        let source =
+            "package com.example;\n\npublic class AuthTests {\n    @Test\n    void t() { }\n}\n";
+        assert_eq!(jv(source)[0].id, "tests/AuthTests:AuthTests:t");
+    }
+
+    // [FR-059]
+    #[test]
+    fn javaはトップレベルメソッドを対象外にする() {
+        let source = "@Test\nvoid t() { }\n";
+        let tests = extract_java_tests("tests/AuthTests.java", source).unwrap();
+        assert!(tests.is_empty());
+        // a class alongside is still extracted
+        let source = "class A {\n    @Test\n    void u() { }\n}\n";
+        assert_eq!(jv(source).len(), 1);
+    }
+
+    // [FR-059]
+    #[test]
+    fn javaは匿名クラスとenum定数本体の中を対象外にする() {
+        let source = "public class A {\n    void helper() {\n        Runnable r = new Runnable() {\n            @Test\n            public void run() { }\n        };\n    }\n\n    @Test\n    void real() { }\n}\n\nenum E {\n    X {\n        @Test\n        void inConst() { }\n    };\n\n    @Test\n    void outside() { }\n}\n";
+        let tests = jv(source);
+        let names: Vec<&str> = tests.iter().map(|t| t.name.as_str()).collect();
+        assert_eq!(names, vec!["real", "outside"], "{names:?}");
+    }
+
+    // [FR-062]
+    #[test]
+    fn javaのcontentは注釈を含まず修飾子から始まる() {
+        let source = jv_wrap(
+            "    // [FR-001]\n    @Test\n    @Tag(\"a\")\n    public void t() { assertTrue(true); }",
+        );
+        let c = &jv(&source)[0].content;
+        assert!(c.starts_with("public void t()"), "content = {c:?}");
+        assert!(c.ends_with('}'));
+        assert!(!c.contains("@Test"));
+        assert!(!c.contains("@Tag"));
+        assert!(!c.contains("FR-001"));
+    }
+
+    // [FR-062]
+    #[test]
+    fn javaのcontentは型パラメータ付きでも修飾子から始まる() {
+        let source = jv_wrap("    @Test\n    static <T> void t() { }");
+        let c = &jv(&source)[0].content;
+        assert!(c.starts_with("static <T> void t()"), "content = {c:?}");
+    }
+
+    // [FR-062]
+    #[test]
+    fn javaのcontentは修飾子なしなら型パラメータから始まる() {
+        let source = jv_wrap("    @Test\n    <T> void t() { }");
+        let c = &jv(&source)[0].content;
+        assert!(c.starts_with("<T> void t()"), "content = {c:?}");
+    }
+
+    // [FR-003]
+    #[test]
+    fn javaの本体変更はcontentに反映される() {
+        let a = jv(&jv_wrap("    @Test\n    void t() { assertTrue(true); }"));
+        let b = jv(&jv_wrap("    @Test\n    void t() { assertTrue(false); }"));
+        assert_ne!(a[0].content, b[0].content);
+    }
+
+    // [FR-062]
+    #[test]
+    fn javaの注釈だけの変更はcontentを変えない() {
+        let a = jv(&jv_wrap("    @Test\n    void t() { assertTrue(true); }"));
+        let b = jv(&jv_wrap(
+            "    @Test(timeout = 1)\n    @Tag(\"a\")\n    void t() { assertTrue(true); }",
+        ));
+        assert_eq!(a[0].content, b[0].content);
+    }
+
+    // [FR-014]
+    #[test]
+    fn javaは構文エラーのソースでエラーを返す() {
+        let source = "public class A {\n    @Test\n    void t( {\n}\n";
+        assert!(extract_java_tests("tests/A.java", source).is_err());
+    }
+
+    // ---- Kotlin ----
+
+    fn kt(source: &str) -> Vec<ExtractedTest> {
+        extract_kotlin_tests("tests/AuthTest.kt", source).unwrap()
+    }
+
+    fn kt_wrap(body: &str) -> String {
+        format!("class AuthTest {{\n{body}\n}}\n")
+    }
+
+    // [FR-059]
+    #[test]
+    fn kotlinは5種類の注釈をそれぞれtestとして検出する() {
+        for ann in [
+            "Test",
+            "ParameterizedTest",
+            "RepeatedTest",
+            "TestFactory",
+            "TestTemplate",
+        ] {
+            let source = kt_wrap(&format!("    @{ann}\n    fun t() {{ }}"));
+            let tests = kt(&source);
+            assert_eq!(tests.len(), 1, "annotation {ann} should be detected");
+            assert_eq!(tests[0].name, "t");
+        }
+    }
+
+    // [FR-059]
+    #[test]
+    fn kotlinは修飾名と複数注釈リストとuse_site_target付きの注釈も検出する() {
+        let source = kt_wrap(
+            "    @org.junit.jupiter.api.Test\n    fun a() { }\n\n    @[Test Tag(\"a\")]\n    fun b() { }\n\n    @get:Test\n    fun c() { }",
+        );
+        let tests = kt(&source);
+        assert_eq!(tests.len(), 3, "{tests:?}");
+        find(&tests, "a");
+        find(&tests, "b");
+        find(&tests, "c");
+    }
+
+    // [FR-059]
+    #[test]
+    fn kotlinは無関係な注釈のみの関数を検出しない() {
+        let source = kt_wrap("    @Disabled\n    fun a() { }\n\n    fun b() { }");
+        assert!(kt(&source).is_empty());
+    }
+
+    // [FR-060]
+    #[test]
+    fn kotlinは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する() {
+        let source = kt_wrap(
+            "    // [FR-001]\n    @Test\n    fun adjacent() { }\n\n    // [FR-002]\n\n    @Test\n    fun blank() { }\n\n    /* [FR-003] */\n    @Test\n    fun block() { }",
+        );
+        let tests = kt(&source);
+        assert_eq!(find(&tests, "adjacent").markers, vec!["FR-001".to_string()]);
+        assert!(find(&tests, "blank").markers.is_empty());
+        assert_eq!(find(&tests, "block").markers, vec!["FR-003".to_string()]);
+    }
+
+    // [FR-060]
+    #[test]
+    fn kotlinはkdocコメントをマーカーにしない() {
+        let source = kt_wrap("    /** [Foo] */\n    @Test\n    fun t() { }");
+        assert!(kt(&source)[0].markers.is_empty());
+    }
+
+    // [FR-060]
+    #[test]
+    fn kotlinは注釈と署名の間のコメントをマーカーにせずcontentにも含めない() {
+        let source = kt_wrap(
+            "    @Test // [FR-001]\n    fun a() { }\n\n    @Test\n    // [FR-002]\n    fun b() { }",
+        );
+        let tests = kt(&source);
+        for name in ["a", "b"] {
+            let t = find(&tests, name);
+            assert!(t.markers.is_empty(), "{name}: {:?}", t.markers);
+            assert!(!t.content.contains("FR-00"), "{name}: {:?}", t.content);
+        }
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinのバッククォート名はバッククォートを除いた名前になる() {
+        let source = kt_wrap("    @Test\n    fun `一覧 取得 は 200`() { }");
+        let tests = kt(&source);
+        assert_eq!(tests[0].name, "一覧 取得 は 200");
+        assert_eq!(tests[0].id, "tests/AuthTest:AuthTest:一覧 取得 は 200");
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinのtest識別子はネストした型を外側から内側へスラッシュで連結する() {
+        let source = "class AuthTest {\n    @Nested\n    inner class Inner {\n        @Test\n        fun t() { }\n    }\n}\n";
+        assert_eq!(kt(source)[0].id, "tests/AuthTest:AuthTest/Inner:t");
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinのtest識別子はobjectとcompanion_objectを辿る() {
+        let source = "object O {\n    @Test\n    fun a() { }\n}\n\nclass C {\n    companion object {\n        @Test\n        fun b() { }\n    }\n\n    companion object Factory {\n        @Test\n        fun c() { }\n    }\n}\n";
+        // two companion objects in one class is invalid Kotlin semantically but
+        // syntactically fine; the grammar does not reject it.
+        let tests = kt(source);
+        assert_eq!(find(&tests, "a").id, "tests/AuthTest:O:a");
+        assert_eq!(find(&tests, "b").id, "tests/AuthTest:C/Companion:b");
+        assert_eq!(find(&tests, "c").id, "tests/AuthTest:C/Factory:c");
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinのトップレベル関数は型部分が空の識別子になる() {
+        let source = "@Test\nfun top() { }\n";
+        let tests = kt(source);
+        assert_eq!(tests.len(), 1);
+        assert_eq!(tests[0].id, "tests/AuthTest::top");
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinのtest識別子はpackageを含まない() {
+        let source = "package com.example\n\nclass AuthTest {\n    @Test\n    fun t() { }\n}\n";
+        assert_eq!(kt(source)[0].id, "tests/AuthTest:AuthTest:t");
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinはコンストラクタ注釈付きの主コンストラクタを持つクラスでもtestを取れる() {
+        let source = "@SpringBootTest\nclass X @Autowired constructor(private val a: Int) : Base(a) {\n    @Test\n    fun `日本語名`() { }\n}\n";
+        let tests = kt(source);
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].id, "tests/AuthTest:X:日本語名");
+    }
+
+    // [FR-059]
+    #[test]
+    fn kotlinは関数本体内のローカル関数や匿名objectやenum定数本体やgetterを対象外にする() {
+        let source = "class A {\n    @Test\n    fun real() {\n        @Test\n        fun local() { }\n    }\n\n    val x: Int\n        @Test\n        get() = 1\n\n    val r = object : Runnable {\n        @Test\n        fun inObj() { }\n    }\n}\n\nenum class E {\n    X {\n        @Test\n        fun inConst() { }\n    };\n\n    @Test\n    fun outside() { }\n}\n";
+        let tests = kt(source);
+        let names: Vec<&str> = tests.iter().map(|t| t.name.as_str()).collect();
+        assert_eq!(names, vec!["real", "outside"], "{names:?}");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは漢字の関数名と型名のtestを抽出し識別子とcontentが元の文字を保つ() {
+        let source = "class AuthTest {\n    @Nested\n    inner class 一覧取得 {\n        @Test\n        fun 取得() { println(\"漢字\") }\n    }\n}\n";
+        let tests = kt(source);
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].id, "tests/AuthTest:AuthTest/一覧取得:取得");
+        assert_eq!(tests[0].name, "取得");
+        assert!(tests[0].content.contains("取得"));
+        assert!(tests[0].content.contains("漢字"));
+        assert!(!tests[0].content.contains('x'), "{:?}", tests[0].content);
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinはカタカナとハングルの関数名も抽出する() {
+        let source = kt_wrap("    @Test\n    fun テスト() { }\n\n    @Test\n    fun 테스트() { }");
+        let tests = kt(&source);
+        assert_eq!(tests.len(), 2, "{tests:?}");
+        find(&tests, "テスト");
+        find(&tests, "테스트");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは非asciiの文字リテラルを含むファイルも解析できる() {
+        let source =
+            kt_wrap("    @Test\n    fun t() {\n        val c = 'あ'\n        val d = '漢'\n    }");
+        let tests = kt(&source);
+        assert_eq!(tests.len(), 1);
+        assert!(tests[0].content.contains("'あ'"));
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinはbom付きファイルも解析できる() {
+        let source = format!("\u{feff}{}", kt_wrap("    @Test\n    fun t() { }"));
+        let tests = kt(&source);
+        assert_eq!(tests.len(), 1);
+        assert_eq!(tests[0].name, "t");
+    }
+
+    // [FR-062]
+    #[test]
+    fn kotlinのcontentは注釈を含まず修飾子から始まる() {
+        let source = kt_wrap(
+            "    // [FR-001]\n    @Test\n    internal suspend fun t() { assertTrue(true) }",
+        );
+        let c = &kt(&source)[0].content;
+        assert!(c.starts_with("internal suspend fun t()"), "content = {c:?}");
+        assert!(c.ends_with('}'));
+        assert!(!c.contains("@Test"));
+        assert!(!c.contains("FR-001"));
+    }
+
+    // [FR-062]
+    #[test]
+    fn kotlinのcontentは注釈のみならfunから始まる() {
+        let source = kt_wrap("    @Test\n    @Tag(\"a\")\n    fun t() { }");
+        let c = &kt(&source)[0].content;
+        assert!(c.starts_with("fun t()"), "content = {c:?}");
+    }
+
+    // [FR-062]
+    #[test]
+    fn kotlinの修飾子の後ろに書かれた注釈はcontentに含まれる() {
+        let source = kt_wrap("    internal @Test fun t() { }");
+        let tests = kt(&source);
+        assert_eq!(tests.len(), 1);
+        assert!(
+            tests[0].content.starts_with("internal"),
+            "{:?}",
+            tests[0].content
+        );
+        assert!(tests[0].content.contains("@Test"), "{:?}", tests[0].content);
+    }
+
+    // [FR-062]
+    #[test]
+    fn kotlinの式本体は終端までcontentに含まれる() {
+        let source = kt_wrap("    @Test\n    fun t() = assertTrue(computeSomething())");
+        let c = &kt(&source)[0].content;
+        assert!(c.ends_with("computeSomething())"), "content = {c:?}");
+    }
+
+    // [FR-003]
+    #[test]
+    fn kotlinの本体変更はcontentに反映される() {
+        let a = kt(&kt_wrap("    @Test\n    fun t() { assertTrue(true) }"));
+        let b = kt(&kt_wrap("    @Test\n    fun t() { assertTrue(false) }"));
+        assert_ne!(a[0].content, b[0].content);
+    }
+
+    // [FR-062]
+    #[test]
+    fn kotlinの注釈だけの変更はcontentを変えない() {
+        let a = kt(&kt_wrap("    @Test\n    fun t() { assertTrue(true) }"));
+        let b = kt(&kt_wrap(
+            "    @Test\n    @Tag(\"a\")\n    fun t() { assertTrue(true) }",
+        ));
+        assert_eq!(a[0].content, b[0].content);
+    }
+
+    // [FR-014]
+    #[test]
+    fn kotlinは構文エラーのソースでエラーを返す() {
+        let source = "class A { fun x() {} }\n";
+        assert!(extract_kotlin_tests("tests/A.kt", source).is_err());
+    }
+
+    // [FR-060]
+    #[test]
+    fn kotlinのマーカーは元のソースから取り非asciiの角括弧は偽マーカーにならない() {
+        let source = kt_wrap(
+            "    // [正常系]\n    // [FR-001]\n    @Test\n    fun t() { }\n\n    // [仮] メモ\n    @Test\n    fun u() { }\n\n    // [FR\u{2010}001]\n    @Test\n    fun v() { }",
+        );
+        let tests = kt(&source);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+        assert!(find(&tests, "u").markers.is_empty());
+        assert!(find(&tests, "v").markers.is_empty());
+    }
+
+    // [FR-060]
+    #[test]
+    fn kotlinはdocコメントを挟んでも手前のマーカーが有効になる() {
+        let source = kt_wrap("    // [FR-001]\n    /** KDoc */\n    @Test\n    fun b() { }");
+        assert_eq!(kt(&source)[0].markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-060]
+    #[test]
+    fn javaはdocコメントを挟んでも手前のマーカーが有効になる() {
+        let source = jv_wrap("    // [FR-001]\n    /** Javadoc */\n    @Test\n    void b() { }");
+        assert_eq!(jv(&source)[0].markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-060]
+    #[test]
+    fn javaは注釈同士の間のコメントをマーカーにせずcontentにも含めない() {
+        let source =
+            jv_wrap("    @Test\n    // [FR-001]\n    @Tag(\"a\")\n    // 補足\n    void t() { }");
+        let t = &jv(&source)[0];
+        assert!(t.markers.is_empty());
+        assert!(!t.content.contains("FR-001"));
+        assert!(!t.content.contains("補足"));
+    }
+
+    // [FR-062]
+    #[test]
+    fn kotlinは注釈の間と直後のコメントをcontentに含めない() {
+        let source = kt_wrap(
+            "    @Test\n    // 間のメモ\n    @Tag(\"a\")\n    // 直後のメモ\n    fun t() { }",
+        );
+        let t = &kt(&source)[0];
+        assert!(!t.content.contains("メモ"), "{:?}", t.content);
+        assert!(t.content.starts_with("fun t()"), "{:?}", t.content);
+    }
+
+    // [FR-060]
+    #[test]
+    fn kotlinは注釈同士の間のコメントをマーカーにしない() {
+        let source = kt_wrap("    @Test\n    // [FR-001]\n    @Tag(\"a\")\n    fun t() { }");
+        assert!(kt(&source)[0].markers.is_empty());
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinはdata_classとinterfaceの直下のtestも辿る() {
+        let source = "data class D(val a: Int) {\n    @Test\n    fun a() { }\n}\n\ninterface I {\n    @Test\n    fun b() { }\n}\n";
+        let tests = kt(source);
+        assert_eq!(find(&tests, "a").id, "tests/AuthTest:D:a");
+        assert_eq!(find(&tests, "b").id, "tests/AuthTest:I:b");
+    }
+
+    // [FR-061]
+    #[test]
+    fn kotlinは制御文字や空を含む名前のtestを無視する() {
+        let source =
+            kt_wrap("    @Test\n    fun `tab\there`() { }\n\n    @Test\n    fun `ok name`() { }");
+        let tests = kt(&source);
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].name, "ok name");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは注釈2つで基底型なしのクラス内の注釈付きinner_classでもtestを取れる() {
+        let source = "@A\n@C\nclass P {\n    @Nested\n    inner class X {\n        // [FR-001]\n        @Test\n        fun t() { }\n    }\n}\n";
+        let tests = kt(source);
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].id, "tests/AuthTest:P/X:t");
+        assert_eq!(tests[0].markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinはnestedを含む複数注釈クラスでも非asciiの名前を元のまま取る() {
+        let source = "@A\n@C\nclass P {\n    @Nested\n    inner class 一覧取得 {\n        @Test\n        fun `取得 する`() { }\n    }\n}\n";
+        let tests = kt(source);
+        assert_eq!(tests[0].id, "tests/AuthTest:P/一覧取得:取得 する");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは宣言以外のトップレベル構造やキーワードを含む文字列でもok空になる() {
+        for source in [
+            "package a\n// helper for class X\nval x = 1\n",
+            "package a\nval fixture = object : Runnable {\n    override fun run() {}\n}\n",
+            "package a\nval f = fun() { }\n",
+            "package a\nconst val NAME = \"class\"\n",
+        ] {
+            let tests = kt(source);
+            assert!(tests.is_empty(), "{source:?}: {tests:?}");
+        }
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは文法の不具合で宣言が認識されなかった場合に構文エラーを返す() {
+        let source = "@A\n@C\nclass P {\n    @Nested\n    inner class X {\n    }\n}\n";
+        assert!(kotlin_extract("tests/P.kt", source, true).is_ok());
+        assert!(kotlin_extract("tests/P.kt", source, false).is_err());
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinはshebangやimportやtypealiasなど宣言以外の通常の構造でok空になる() {
+        let source = "#!/usr/bin/env kotlin\n@file:JvmName(\"X\")\npackage a\n\nimport b.C\n\ntypealias N = String\nval x = 1\nval y: Int\n    get() = 2\n";
+        assert!(kt(source).is_empty());
     }
 }

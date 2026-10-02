@@ -29,7 +29,13 @@ miwa init
 
 `docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。また、[`.git` `target` `.miwa` `.worktrees` `node_modules` `obj` という名前のフォルダは自動的に探索から除外され、シンボリックリンクの先は辿りません](../req/source-scan-scope-and-exclusions.md)。大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません（`obj` は C# のビルド生成物を読み込まないための除外で、docs・requirements・tests のすべてに適用されます）。
 
-既知の制約として、miwa が使っている構文解析器が未対応の構文を含むテストファイルは、構文エラーとして `invalid` になります（例: C# のリストパターン内のスライス `[.., var r]`）。該当するファイルは、その構文を避けて書くか、`tests` の対象から外してください。
+既知の制約として、miwa が使っている構文解析器が未対応の構文を含むテストファイルは、構文エラーとして `invalid` になります（例: C# のリストパターン内のスライス `[.., var r]`）。該当するファイルは、その構文を避けて書くか、`tests` の対象から外してください。Kotlin には次の制約もあります。
+
+- 非 ASCII 文字（漢字・カタカナ・ハングルなど）を含む行では、構文エラーの検知が緩くなります。有効なコードが `invalid` になる方向ではありません。
+- メンバーを 1 つでも持つ 1 行の class / object / interface / companion object 本体（`class A { fun x() {} }`、`object O { const val X = 1 }` など）は構文エラーになります。複数行に分ければ問題ありません。
+- 注釈を 2 つ以上付けた、supertype のないクラスの本体に `@Nested inner class` のように注釈付きの inner class があると、構文解析器の不具合でクラス全体が認識できなくなる場合があります。miwa は[このパターンを自動で回避し、回避できない場合は構文エラー（`invalid`）として扱います](../req/kotlin-non-ascii-identifiers.md)。その場合は supertype（`: Any()` など）を付けるか、クラスの注釈を 1 つにしてください。
+
+Java / Kotlin では、Gradle / Maven のモジュール直下であれば `tests: ["src/test"]` のように指定します。monorepo ではモジュールのパスを前置し、`tests: ["packages/api/src/test"]` のようにします。生成コードの `src/generated` や、ビルド出力の `build/` は `tests` に含めないでください。
 
 `init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.max_body_bytes` は 200000 です。
 

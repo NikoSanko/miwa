@@ -30,7 +30,7 @@
 ## 3. スコープ（α版）
 
 - コマンド: `init` / `check` / `reconcile` / `judge`
-- 対応言語: Go・Rust・C#・TypeScript / JavaScript（Vitest）（Rust は miwa 自身を miwa でチェックするために含める）
+- 対応言語: Go・Rust・C#・Java・Kotlin（JUnit）・TypeScript / JavaScript（Vitest）（Rust は miwa 自身を miwa でチェックするために含める）
 - doc / req / test が同じリポジトリにあること
 
 ## 4. モデル
@@ -46,7 +46,7 @@ doc ──依存──▶ req ◀──検証── test
 |---|---|---|
 | doc | フロントマター `id` | 本文（フロントマター除く） |
 | req | フロントマター `id` | 本文（フロントマター除く） |
-| test | Go: パッケージディレクトリ ＋ 関数名 / Rust: ファイルパス ＋ モジュールパス ＋ 関数名 / C#: ファイルパス ＋ 型名の階層 ＋ メソッド名 / TypeScript・JavaScript: ファイルパス ＋ describe 名の階層 ＋ test 名 | 関数全体（Rust はシグネチャと本体を含む `fn` 全体。外側の属性は含まない）。C# は属性を除いたメソッド宣言全体。TypeScript・JavaScript は `test(...)` / `it(...)` の呼び出し文全体 |
+| test | Go: パッケージディレクトリ ＋ 関数名 / Rust: ファイルパス ＋ モジュールパス ＋ 関数名 / C#・Java・Kotlin: ファイルパス ＋ 型名の階層 ＋ メソッド名 / TypeScript・JavaScript: ファイルパス ＋ describe 名の階層 ＋ test 名 | 関数全体（Rust はシグネチャと本体を含む `fn` 全体。外側の属性は含まない）。C#・Java・Kotlin は属性（注釈）を除いたメソッド宣言全体。TypeScript・JavaScript は `test(...)` / `it(...)` の呼び出し文全体 |
 
 - ハッシュは SHA-256。改行を LF に揃える以外の正規化はしない
 - doc / req のフロントマター `id` に使える文字は `A-Z a-z 0-9 . _ -`（`:` はエッジ ID の区切りに使うため不可）
@@ -103,6 +103,20 @@ public class AuthTests
 ```
 - `Fact` `Theory` `Test` `TestCase` `TestCaseSource` `TestMethod` `DataTestMethod` のいずれかの属性を持つメソッドが対象（xUnit / NUnit / MSTest）
 - マーカーはメソッド宣言（属性を含む）の直前に隣接するコメントに書く
+
+**test（Java / Kotlin / JUnit）**
+```kotlin
+class AuthTest {
+    // [FR-001]
+    @Test
+    fun `短い パスワード は 拒否`() { ... }
+}
+```
+- `tests` 配下の `*.java` `*.kt` が対象（`*.kts` は対象外）
+- `Test` `ParameterizedTest` `RepeatedTest` `TestFactory` `TestTemplate` のいずれかの注釈（修飾付き・引数付き可）を持つ、型の直下のメソッド（Kotlin はトップレベル関数も）が対象。メソッド本体・匿名オブジェクト・enum 定数本体・プロパティの中は対象外
+- マーカーはメソッド宣言（注釈・修飾子を含む）の直前に隣接する `//` または `/* */` のコメントに書く。Javadoc / KDoc（`/** */`）と、注釈と署名の間のコメントは対象外
+- 識別子は `<拡張子を除いたパス>:<型名を `/` 連結>:<メソッド名>`（package は含めない。Kotlin のバッククォート名は中身のみ）
+- 識別子に非 ASCII 文字を含む Kotlin のテストも抽出できる
 
 **test（TypeScript / JavaScript / Vitest）**
 ```typescript
@@ -206,7 +220,7 @@ describe("auth", () => {
 | D6 | doc はファイル全体を1ノードとする |
 | D7 | doc / req の識別子はフロントマターの `id` |
 | D8 | 1つの test が検証する req は1つ |
-| D9 | 対応言語は Go・Rust・C#・TypeScript / JavaScript。miwa 自身を miwa でチェックする（dogfooding） |
+| D9 | 対応言語は Go・Rust・C#・Java・Kotlin・TypeScript / JavaScript。miwa 自身を miwa でチェックする（dogfooding） |
 
 ## 12. 次のスコープ以降
 
