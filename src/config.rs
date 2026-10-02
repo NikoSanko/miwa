@@ -29,6 +29,8 @@ pub struct Config {
     pub judge: JudgeConfig,
     #[serde(default)]
     pub rust: RustConfig,
+    #[serde(default)]
+    pub exclude: Vec<String>,
 }
 
 impl Config {
@@ -44,6 +46,7 @@ impl Config {
                 max_body_bytes: crate::judge::DEFAULT_MAX_BODY_BYTES,
             },
             rust: RustConfig::default(),
+            exclude: vec![],
         }
     }
 
@@ -60,7 +63,10 @@ impl Config {
 
     /// `threshold` must be finite and within `0..=1`; each `Vec` must be
     /// non-empty; `diff_base` must be non-empty; each `rust.test_attributes`
-    /// entry must be a non-empty `[A-Za-z0-9_]+` string.
+    /// entry must be a non-empty `[A-Za-z0-9_]+` string; each `exclude` entry must
+    /// be a bare directory name (no whitespace, separators, globs, `.`/`..`); and no
+    /// `docs`/`requirements`/`tests` entry may lie under an excluded directory
+    /// (`exclude` or the default exclusions).
     pub fn validate(&self) -> anyhow::Result<()> {
         if !self.judge.threshold.is_finite() || !(0.0..=1.0).contains(&self.judge.threshold) {
             anyhow::bail!(
@@ -93,6 +99,43 @@ impl Config {
                 );
             }
         }
+        for e in &self.exclude {
+            if e.trim().is_empty()
+                || e.chars()
+                    .any(|c| c.is_whitespace() || matches!(c, '/' | '\\' | '*' | '?' | '['))
+                || e == "."
+                || e == ".."
+            {
+                anyhow::bail!(
+                    "exclude entries must be a directory name only (no paths or globs): got `{e}`"
+                );
+            }
+        }
+        for (field, entries) in [
+            ("docs", &self.docs),
+            ("requirements", &self.requirements),
+            ("tests", &self.tests),
+        ] {
+            for p in entries {
+                for seg in p
+                    .split('/')
+                    .map(str::trim)
+                    .filter(|s| !s.is_empty() && *s != ".")
+                {
+                    let hit = self
+                        .exclude
+                        .iter()
+                        .map(|s| s.as_str())
+                        .chain(crate::source::DEFAULT_EXCLUDED_DIRS)
+                        .find(|name| *name == seg);
+                    if let Some(name) = hit {
+                        anyhow::bail!(
+                            "{field} entry `{p}` is under an excluded directory `{name}`"
+                        );
+                    }
+                }
+            }
+        }
         Ok(())
     }
 }
@@ -112,6 +155,7 @@ mod tests {
                 max_body_bytes: 200_000,
             },
             rust: RustConfig::default(),
+            exclude: vec![],
         }
     }
 
@@ -245,5 +289,68 @@ mod tests {
             .as_sequence()
             .expect("sequence");
         assert!(attrs.is_empty());
+    }
+
+    // [FR-065]
+    #[test]
+    fn excludeを省略したyamlは空になる() {
+        let config = Config::parse(BASE_YAML).unwrap();
+        assert!(config.exclude.is_empty());
+    }
+
+    // [FR-065]
+    #[test]
+    fn excludeを指定するとそのまま読める() {
+        let yaml = format!("{BASE_YAML}exclude: [\".next\", \"build\"]\n");
+        let config = Config::parse(&yaml).unwrap();
+        assert_eq!(
+            config.exclude,
+            vec![".next".to_string(), "build".to_string()]
+        );
+    }
+
+    // [FR-065]
+    #[test]
+    fn excludeにディレクトリ名として不正な値があるとparseエラーになる() {
+        for bad in [
+            "\" \"",
+            "\"a b\"",
+            "\"a/b\"",
+            "\"a\\\\b\"",
+            "\".\"",
+            "\"..\"",
+            "\"*.js\"",
+            "\"a?\"",
+            "\"a[b]\"",
+        ] {
+            let yaml = format!("{BASE_YAML}exclude: [{bad}]\n");
+            let err = Config::parse(&yaml).expect_err(bad);
+            assert!(err.to_string().contains("directory name"), "{bad}: {err}");
+        }
+    }
+
+    // [FR-065]
+    #[test]
+    fn docsやrequirementsやtestsのパスが除外名を含むと設定エラーになる() {
+        let yaml = "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - build/tests\ndiff_base: main\njudge:\n  threshold: 0.9\nexclude: [build]\n";
+        let err = Config::parse(yaml).unwrap_err();
+        assert!(err.to_string().contains("excluded directory"), "{err}");
+
+        let yaml = "docs:\n  - dist\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\n";
+        let err = Config::parse(yaml).unwrap_err();
+        assert!(err.to_string().contains("excluded directory"), "{err}");
+
+        let yaml = "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - \" dist\"\ndiff_base: main\njudge:\n  threshold: 0.9\n";
+        let err = Config::parse(yaml).unwrap_err();
+        assert!(err.to_string().contains("excluded directory"), "{err}");
+    }
+
+    // [FR-019]
+    #[test]
+    fn 既定のconfigのyamlはexcludeを空配列で含む() {
+        let yaml = Config::default_config().to_yaml();
+        let value: serde_yaml_ng::Value = serde_yaml_ng::from_str(&yaml).unwrap();
+        let exclude = value["exclude"].as_sequence().expect("sequence");
+        assert!(exclude.is_empty());
     }
 }

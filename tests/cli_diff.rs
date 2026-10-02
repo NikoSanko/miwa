@@ -177,3 +177,82 @@ fn merge_baseが取得できない場合はexit_code_1で終了する() {
         .failure()
         .code(1);
 }
+
+// [FR-065]
+#[test]
+fn diffはheadでexcludeしたディレクトリ配下のtestをfindingにしない() {
+    let dir = tempfile::tempdir().unwrap();
+    let root = dir.path();
+    common::git_init(root);
+    write_base_fixture(root);
+    common::git_commit(root, "base state");
+
+    common::git_checkout_new_branch(root, "feature");
+    common::write(
+        root,
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\nexclude:\n  - build\n",
+    );
+    common::write(
+        root,
+        "build/x.test.js",
+        "// [FR-001]\nit(\"works\", () => {});\n",
+    );
+    common::git_commit(root, "exclude build and add build test at head");
+
+    let output = common::run(
+        root,
+        &["check", "--diff", "--base", "main", "--format", "json"],
+    )
+    .output()
+    .unwrap();
+    let stdout = String::from_utf8_lossy(&output.stdout);
+    assert!(
+        !stdout.contains("build/x.test"),
+        "build/x.test must not appear: {stdout}"
+    );
+}
+
+// [FR-065]
+#[test]
+fn diffはbaseのexcludeでbaseを評価する_headでexcludeを外すとnewが出る() {
+    let dir = tempfile::tempdir().unwrap();
+    let root = dir.path();
+    common::git_init(root);
+    write_base_fixture(root);
+    common::write(
+        root,
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\nexclude:\n  - build\n",
+    );
+    common::write(
+        root,
+        "build/x.test.js",
+        "// [FR-001]\nit(\"works\", () => {});\n",
+    );
+    common::git_commit(root, "base state with exclude");
+
+    common::git_checkout_new_branch(root, "feature");
+    common::write(
+        root,
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\nexclude: []\n",
+    );
+    common::git_commit(root, "drop exclude at head");
+
+    let output = common::run(
+        root,
+        &["check", "--diff", "--base", "main", "--format", "json"],
+    )
+    .output()
+    .unwrap();
+    let value: serde_json::Value = serde_json::from_slice(&output.stdout).unwrap();
+    let findings = value["findings"].as_array().unwrap();
+    assert!(
+        findings.iter().any(|f| f["kind"] == "New"
+            && f["target"]
+                .as_str()
+                .is_some_and(|t| t.contains("build/x.test"))),
+        "expected new finding for build/x.test: {findings:?}"
+    );
+}

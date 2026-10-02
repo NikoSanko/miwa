@@ -125,6 +125,12 @@ rust:
   test_attributes: []   # 例: [rstest]
 ```
 
+ビルド出力など探索から外したいディレクトリは、名前（パスではない）を `exclude` に列挙します。`dist` などは既定で除外されます。
+
+```yaml
+exclude: []   # 例: [build, .next]
+```
+
 ## ファイルの書き方
 
 ### doc（業務要件）
@@ -187,7 +193,7 @@ class AuthTest {
 }
 ```
 
-`Test` `ParameterizedTest` などの JUnit の注釈が付いたメソッドが対象です（Java も同様）。Gradle のプロジェクトでは、`.miwa/config.yaml` の `tests` に `tests: ["src/test"]` を指定します（`src/generated` や `build/` は含めないでください）。
+`Test` `ParameterizedTest` などの JUnit の注釈が付いたメソッドが対象です（Java も同様）。Gradle のプロジェクトでは、`.miwa/config.yaml` の `tests` に `tests: ["src/test"]` を指定します（`src/generated` は含めないでください。`build/` などのビルド出力は `exclude: ["build"]` で除外します）。
 
 ### test（TypeScript / JavaScript / Vitest）
 

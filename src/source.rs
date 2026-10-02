@@ -2,7 +2,10 @@
 
 /// Lists and reads files of a repository snapshot. Paths are repo-relative,
 /// `/`-separated, and sorted. Symlinks are not included. Paths under `.git`,
-/// `target`, `.miwa`, `.worktrees`, `node_modules`, and `obj` are excluded.
+/// `target`, `.miwa`, `.worktrees`, `node_modules`, `obj`, and `dist` are
+/// excluded (directory names at any depth; files with those names are not).
+/// Further directory names can be excluded via `exclude` in the config, which
+/// is applied in `build_graph`.
 pub trait Source {
     fn list_files(&self) -> anyhow::Result<Vec<String>>;
     fn read(&self, path: &str) -> anyhow::Result<Vec<u8>>;
@@ -13,13 +16,25 @@ pub struct FsSource {
     root: std::path::PathBuf,
 }
 
-const EXCLUDED_DIRS: [&str; 6] = [
+/// Whether any parent-directory segment of `path` (the file name itself is not
+/// considered) equals one of `names`.
+pub fn is_under_dir_named<S: AsRef<str>>(path: &str, names: &[S]) -> bool {
+    let mut segments = path.split('/').collect::<Vec<_>>();
+    segments.pop();
+    segments
+        .iter()
+        .any(|seg| names.iter().any(|n| n.as_ref() == *seg))
+}
+
+/// Directory names always excluded from scanning.
+pub const DEFAULT_EXCLUDED_DIRS: [&str; 7] = [
     ".git",
     "target",
     ".miwa",
     ".worktrees",
     "node_modules",
     "obj",
+    "dist",
 ];
 
 impl FsSource {
@@ -58,7 +73,7 @@ impl Source for FsSource {
                 }
                 if entry.file_type().is_dir() {
                     if let Some(name) = entry.file_name().to_str() {
-                        if EXCLUDED_DIRS.contains(&name) {
+                        if DEFAULT_EXCLUDED_DIRS.contains(&name) {
                             return false;
                         }
                     }
@@ -166,11 +181,7 @@ impl Source for GitTreeSource {
         let mut files: Vec<String> = self
             .files
             .keys()
-            .filter(|path| {
-                !path
-                    .split('/')
-                    .any(|segment| EXCLUDED_DIRS.contains(&segment))
-            })
+            .filter(|path| !is_under_dir_named(path, &DEFAULT_EXCLUDED_DIRS))
             .cloned()
             .collect();
         files.sort();
@@ -239,6 +250,7 @@ mod tests {
             ".worktrees",
             "node_modules",
             "obj",
+            "dist",
         ] {
             let sub = root.join(excluded).join("nested");
             fs::create_dir_all(&sub).unwrap();
@@ -264,6 +276,7 @@ mod tests {
             ".worktrees",
             "node_modules",
             "obj",
+            "dist",
         ] {
             assert!(
                 !files.iter().any(|f| f.starts_with(&format!("{excluded}/"))),
@@ -380,6 +393,8 @@ mod tests {
         fs::write(root.join("obj/nested/file.txt"), "x").unwrap();
         fs::create_dir_all(root.join("proj/obj/Debug")).unwrap();
         fs::write(root.join("proj/obj/Debug/X.cs"), "x").unwrap();
+        fs::create_dir_all(root.join("dist/nested")).unwrap();
+        fs::write(root.join("dist/nested/file.txt"), "x").unwrap();
         fs::create_dir_all(root.join("src/bin")).unwrap();
         fs::write(root.join("src/bin/main.rs"), "x").unwrap();
         fs::write(root.join("keep.txt"), "y").unwrap();
@@ -390,10 +405,11 @@ mod tests {
         let files = source.list_files().unwrap();
         assert!(files.contains(&"keep.txt".to_string()));
         assert!(
-            !files
-                .iter()
-                .any(|f| f.starts_with("target/") || f.starts_with("obj/") || f.contains("/obj/")),
-            "target/ and obj/ should be excluded: {files:?}"
+            !files.iter().any(|f| f.starts_with("target/")
+                || f.starts_with("obj/")
+                || f.contains("/obj/")
+                || f.starts_with("dist/")),
+            "target/ obj/ dist/ should be excluded: {files:?}"
         );
         assert!(files.contains(&"src/bin/main.rs".to_string()), "{files:?}");
     }
@@ -437,5 +453,41 @@ mod tests {
             !files.contains(&"linked.txt".to_string()),
             "symlinks should be excluded: {files:?}"
         );
+    }
+
+    // [FR-018]
+    #[test]
+    fn 既定除外名と同名のファイルはfssourceで除外されない() {
+        let dir = tempfile::tempdir().unwrap();
+        let root = dir.path();
+        fs::create_dir_all(root.join("tests")).unwrap();
+        fs::write(root.join("tests/dist"), "file named dist").unwrap();
+        fs::create_dir_all(root.join("dist")).unwrap();
+        fs::write(root.join("dist/x.txt"), "excluded").unwrap();
+
+        let files = FsSource::new(root).list_files().unwrap();
+        assert!(files.contains(&"tests/dist".to_string()), "{files:?}");
+        assert!(!files.contains(&"dist/x.txt".to_string()), "{files:?}");
+    }
+
+    // [FR-018]
+    #[test]
+    fn 既定除外名と同名のファイルはgittreesourceで除外されない() {
+        let dir = tempfile::tempdir().unwrap();
+        let root = dir.path();
+        init_repo(root);
+        fs::create_dir_all(root.join("tests")).unwrap();
+        fs::write(root.join("tests/dist"), "file named dist").unwrap();
+        fs::create_dir_all(root.join("dist")).unwrap();
+        fs::write(root.join("dist/x.txt"), "excluded").unwrap();
+        git(root, &["add", "-A"]);
+        git(root, &["commit", "-q", "-m", "init"]);
+
+        let files = GitTreeSource::new(root, "HEAD")
+            .unwrap()
+            .list_files()
+            .unwrap();
+        assert!(files.contains(&"tests/dist".to_string()), "{files:?}");
+        assert!(!files.contains(&"dist/x.txt".to_string()), "{files:?}");
     }
 }

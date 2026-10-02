@@ -314,3 +314,43 @@ fn tokioのtestはnew_reconcile_driftの順で検知される() {
         "test-req:tests/a::t:FR-001",
     );
 }
+
+// [FR-065]
+#[test]
+fn excludeしたディレクトリ配下のtestはfindingに出ない() {
+    let dir = tempfile::tempdir().unwrap();
+    let root = dir.path();
+    common::write(
+        root,
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\nexclude:\n  - build\n",
+    );
+    common::write(
+        root,
+        "docs/spec.md",
+        "---\ntype: Specification\nid: DOC-A\n---\n[req](../req/fr1.md)\n",
+    );
+    common::write(
+        root,
+        "req/fr1.md",
+        "---\ntype: Requirement\nid: FR-001\n---\n本文。\n",
+    );
+    let marked = "// [FR-001]\nit(\"works\", () => {});\n";
+    common::write(root, "build/x.test.js", marked);
+    common::write(root, "src/y.test.js", marked);
+
+    let findings = check_json(root);
+    assert!(
+        findings.iter().any(|f| f["kind"] == "New"
+            && f["target"]
+                .as_str()
+                .is_some_and(|t| t.contains("src/y.test"))),
+        "expected new finding for src/y.test: {findings:?}"
+    );
+    assert!(
+        !findings
+            .iter()
+            .any(|f| f.to_string().contains("build/x.test")),
+        "build/ must be excluded: {findings:?}"
+    );
+}

@@ -1,3 +1,4 @@
+use anyhow::Context;
 use clap::{Parser, Subcommand, ValueEnum};
 use miwa::source::Source;
 
@@ -136,7 +137,9 @@ fn run_check_inner(
         let base_findings = match base_source.read(miwa::config::CONFIG_PATH) {
             Ok(text_bytes) => {
                 let text = String::from_utf8(text_bytes)?;
-                let base_config = miwa::config::Config::parse(&text)?;
+                let base_config = miwa::config::Config::parse(&text).with_context(|| {
+                    format!("invalid .miwa/config.yaml at merge-base {merge_base_rev}")
+                })?;
                 let base_lock = miwa::lock::Lock::load_from_source(&base_source)?;
                 evaluate(&base_source, &base_config, &base_lock)?
             }

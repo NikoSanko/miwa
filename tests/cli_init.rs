@@ -24,6 +24,9 @@ fn initは既定値でconfigを生成する() {
         .as_sequence()
         .expect("rust.test_attributes");
     assert!(attrs.is_empty());
+    // [FR-019]
+    let exclude = value["exclude"].as_sequence().expect("exclude");
+    assert!(exclude.is_empty());
 }
 
 // [FR-019]
