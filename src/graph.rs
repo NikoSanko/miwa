@@ -11,7 +11,11 @@ pub fn build_graph(
     use std::collections::{BTreeMap, BTreeSet};
 
     let mut graph = crate::model::Graph::default();
-    let files = source.list_files()?;
+    let files: Vec<String> = source
+        .list_files()?
+        .into_iter()
+        .filter(|path| !crate::source::is_under_dir_named(path, &config.exclude))
+        .collect();
     let file_set: std::collections::HashSet<&str> = files.iter().map(|s| s.as_str()).collect();
 
     struct Candidate {
@@ -405,6 +409,7 @@ mod tests {
                 max_body_bytes: 200_000,
             },
             rust: crate::config::RustConfig::default(),
+            exclude: vec![],
         }
     }
 
@@ -635,6 +640,7 @@ mod tests {
                 max_body_bytes: 200_000,
             },
             rust: crate::config::RustConfig::default(),
+            exclude: vec![],
         };
         let graph = build_graph(&source, &config).unwrap();
         assert!(graph
@@ -1203,5 +1209,86 @@ mod tests {
         cfg.tests = vec!["tests".to_string()];
         let graph = build_graph(&source, &cfg).unwrap();
         assert!(!graph.nodes.keys().any(|k| k.kind == NodeKind::Test));
+    }
+
+    fn exclude_config(names: &[&str]) -> Config {
+        let mut cfg = config();
+        cfg.exclude = names.iter().map(|s| s.to_string()).collect();
+        cfg
+    }
+
+    const MARKED_JS: &str = "// [FR-001]\nit(\"works\", () => {});\n";
+
+    // [FR-065]
+    #[test]
+    fn excludeに指定した名前のディレクトリ配下のtestはノードにならない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("build/a.test.js", MARKED_JS),
+            ("src/a.test.js", MARKED_JS),
+        ]);
+        let graph = build_graph(&source, &exclude_config(&["build"])).unwrap();
+        assert!(!has_test_node(&graph, "build/a.test::works"));
+        assert!(has_test_node(&graph, "src/a.test::works"));
+    }
+
+    // [FR-065]
+    #[test]
+    fn excludeが空なら全ディレクトリのtestがノードになる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("build/a.test.js", MARKED_JS),
+            ("src/a.test.js", MARKED_JS),
+        ]);
+        let graph = build_graph(&source, &exclude_config(&[])).unwrap();
+        assert!(has_test_node(&graph, "build/a.test::works"));
+        assert!(has_test_node(&graph, "src/a.test::works"));
+    }
+
+    // [FR-065]
+    #[test]
+    fn excludeはネストした深さのディレクトリにも適用される() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("pkg/build/b.test.js", MARKED_JS),
+            ("pkg/src/b.test.js", MARKED_JS),
+        ]);
+        let graph = build_graph(&source, &exclude_config(&["build"])).unwrap();
+        assert!(!has_test_node(&graph, "pkg/build/b.test::works"));
+        assert!(has_test_node(&graph, "pkg/src/b.test::works"));
+    }
+
+    // [FR-065]
+    #[test]
+    fn excludeに既定の除外名と重複する名前を指定しても問題ない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            ("dist/a.test.js", MARKED_JS),
+            ("src/a.test.js", MARKED_JS),
+        ]);
+        let graph = build_graph(&source, &exclude_config(&["dist"])).unwrap();
+        assert!(!has_test_node(&graph, "dist/a.test::works"));
+        assert!(has_test_node(&graph, "src/a.test::works"));
+    }
+
+    // [FR-065]
+    #[test]
+    fn excludeは大文字小文字を区別する() {
+        let source = FakeSource::new(&[REQ1, ("build/a.test.js", MARKED_JS)]);
+        let graph = build_graph(&source, &exclude_config(&["Build"])).unwrap();
+        assert!(has_test_node(&graph, "build/a.test::works"));
+    }
+
+    // [FR-065]
+    #[test]
+    fn exclude_nextのようなドット始まりの名前も除外できる() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (".next/a.test.js", MARKED_JS),
+            ("src/a.test.js", MARKED_JS),
+        ]);
+        let graph = build_graph(&source, &exclude_config(&[".next"])).unwrap();
+        assert!(!has_test_node(&graph, ".next/a.test::works"));
+        assert!(has_test_node(&graph, "src/a.test::works"));
     }
 }

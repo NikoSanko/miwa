@@ -11,3 +11,4 @@ judge:
   max_body_bytes: 200000
 rust:
   test_attributes: []
+exclude: []
