@@ -155,228 +155,235 @@
       "at": "2026-10-01T02:13:08Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
-      "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
+      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
-      "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
+      "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:dcf7accc7eb0ac623d461d32cd1cd23b7466ed5bfb4ddc0c0e384a81648b6ce5",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
-      "to": "sha256:cf631f2b92eaa48a494eb6b1f05efacb5fe6952853f4f6079f5c2c29461607b1",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
+      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-058": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-059": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-060": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-061": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-062": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-MODEL:FR-063": {
-      "from": "sha256:9d63d8ff56eafb1f402cc33513caa1a7bd477168a7b2de05cc2a777139e8df9d",
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
       "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "doc-req:DOC-MODEL:FR-064": {
+      "from": "sha256:19481f90a2bb3a309b39ceb2e1bf9cf5669e758d890124ef75a176e149e58ee9",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
@@ -737,10 +744,17 @@
     },
     "test-req:src/extract:tests:csharpはドキュメントコメントとブロックコメントもマーカーにできる:FR-050": {
       "from": "sha256:e16fa71b7cb4ab8f88b987a1a2aaebbbdccbc5c6f3dc10d7900de7880b63b0c1",
-      "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
+      "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:csharpは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
+      "from": "sha256:ce632d89b3e8117fbf52683e9871e41848e64c10dfe0bd54fb7da542ce55cdf3",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:csharpは同一属性リスト内の他の属性と並んだ属性も検出する:FR-049": {
       "from": "sha256:6b6616d0642569fa6634dbb4eae0b1071051b3755b979abe6be352b457146a0c",
@@ -758,17 +772,17 @@
     },
     "test-req:src/extract:tests:csharpは属性と署名の間のコメントをマーカーにせずcontentにも含めない:FR-050": {
       "from": "sha256:9e188c90857287eac05f4f244a2a74e9abfbc02494d84edfbfafa452f1e9dc43",
-      "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
+      "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:csharpは属性リストの間のコメントをマーカーにせずcontentにも含めない:FR-050": {
       "from": "sha256:85799a9e9b519fb982dd26e3606f804498c73c1a2e9cdd65e1e57efc8e9ad09a",
-      "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
+      "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:csharpは引数付きの属性も検出する:FR-049": {
       "from": "sha256:f4778691e8df71c19400a86ef4bfa3b7bd0d516469eb6ddc5662c0623e7d96d3",
@@ -786,10 +800,10 @@
     },
     "test-req:src/extract:tests:csharpは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-050": {
       "from": "sha256:f53ee7f7f10d9fea7d67f48883520f978b19251fc12fed6431fb29c091d3250f",
-      "to": "sha256:57ba1d720443123759c2436bddd57515ce42671669726157935b4cc32ed986cd",
+      "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
       "by": "human",
-      "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
-      "at": "2026-10-01T09:16:16Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:csharpは複数の属性リストの順序に関わらず検出する:FR-049": {
       "from": "sha256:4fad624e088e28a61bae92576eaf0a26663683f0beb0ecf3acab889e83b79db8",
@@ -819,19 +833,33 @@
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
     },
+    "test-req:src/extract:tests:goはbomの直後の1行目マーカーを取る:FR-064": {
+      "from": "sha256:ffe645c51c05f87805fe92ed8d86afb9820b67d3cc89e8eb4f6dff5f0f566e88",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:goは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
+      "from": "sha256:d157d3cafd9593475f300aab84dc2849b13a5e611d202c9aac3d5b5c25b91529",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
     "test-req:src/extract:tests:goは直前に隣接するコメントをマーカーとして抽出する:FR-012": {
       "from": "sha256:9ef89183b685271fc708b7e61da1dd7e3e87b3d5c2cd9fe880f8d4e6ca367205",
-      "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
+      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:goは空行を挟んだコメントや欠落をマーカーなしとして無視する:FR-012": {
       "from": "sha256:6f7283511e3859425075dc5111af47b2376e460139abda632cc06b6499362fbf",
-      "to": "sha256:b95764ef5b060c45e1e1ddfa179996016413e6be39ff8c99f279ec8b164d2d44",
+      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:javaのcontentは修飾子なしなら型パラメータから始まる:FR-062": {
       "from": "sha256:38247ceb07a61824013a0db6e4b186a3cca1b1330b36f9ce6ed376dcb16899b2",
@@ -905,17 +933,17 @@
     },
     "test-req:src/extract:tests:javaはdocコメントを挟んでも手前のマーカーが有効になる:FR-060": {
       "from": "sha256:0d5a3af401692e14b6cd959b51b63ea79aad3efdabfa995bdc4d7c948d2edcd3",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:javaはjavadocコメントをマーカーにしない:FR-060": {
       "from": "sha256:d6048a517fbfbbc559dad5fdb273dc5500dfce362a8bb3c20f7ee11f51fb283e",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:javaはトップレベルメソッドを対象外にする:FR-059": {
       "from": "sha256:a440b14cb4f774ac41d972e989577e95b5256801ad3728dfa695bd3d9314bfdc",
@@ -926,10 +954,10 @@
     },
     "test-req:src/extract:tests:javaはブロックコメントをマーカーにできる:FR-060": {
       "from": "sha256:4aa8157ac1e10497dc36258748c19386a7494149f71dca05b7837c1bc267d8b2",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:javaは修飾名の注釈と引数付きの注釈も検出する:FR-059": {
       "from": "sha256:efe3760008f1fead9539db50974aeeaebf8e5622e1a1a80832e93fd612b72b22",
@@ -944,6 +972,13 @@
       "by": "human",
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:javaは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
+      "from": "sha256:e337d3584de86f7aef1f21c9549da2ad1d65fa4b6bef21df32a96e1b3ae61097",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:javaは匿名クラスとenum定数本体の中を対象外にする:FR-059": {
       "from": "sha256:c29f366672ab4d1ebeadfca85e1ffb53b60a561fc93fcd8777fa65d579b19812",
@@ -961,17 +996,17 @@
     },
     "test-req:src/extract:tests:javaは注釈と署名の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
       "from": "sha256:db5cb58abb57d6c6ad84a4090c345c84a6a6296b72363c5f0dfec5906a56e67a",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:javaは注釈同士の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
       "from": "sha256:2c870b4dd5b11facf71ca6853550328d5303498aa950bd01fbbed9b18075c827",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:javaは無関係な注釈のみのメソッドを検出しない:FR-059": {
       "from": "sha256:e6d1663eb1e028fc7ccb75a8e37273e004606207d48c9bbbdbf1682f2addf081",
@@ -982,10 +1017,10 @@
     },
     "test-req:src/extract:tests:javaは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-060": {
       "from": "sha256:9bbe927948b865b434aa25e107ae4e266d087a6421a09b7bd019a01da7c4095e",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:kotlinのcontentは注釈のみならfunから始まる:FR-062": {
       "from": "sha256:2bd087ce93d0066261de8bc78be07225c6bf0969e47483fd25146f1ec8ec5bb7",
@@ -1038,10 +1073,10 @@
     },
     "test-req:src/extract:tests:kotlinのマーカーは元のソースから取り非asciiの角括弧は偽マーカーにならない:FR-060": {
       "from": "sha256:3b644f12bb911691c1d5b9f4a07faa272a3d6b1cb058f0048d148855abe4657d",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:kotlinの修飾子の後ろに書かれた注釈はcontentに含まれる:FR-062": {
       "from": "sha256:fde25f801b53968327f95abdcbd467a00780cac9d3a891558b5f94d1ea9ebd77",
@@ -1094,17 +1129,17 @@
     },
     "test-req:src/extract:tests:kotlinはdocコメントを挟んでも手前のマーカーが有効になる:FR-060": {
       "from": "sha256:877f81b28a21e61ef5c49a4d9b3c7c4c6f0b40924affd251a3c97bed80df3318",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:kotlinはkdocコメントをマーカーにしない:FR-060": {
       "from": "sha256:293acbf9e00ffe88489318b8c194e63154b2a41d9e17c93888a8252eed7880e6",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:kotlinはnestedを含む複数注釈クラスでも非asciiの名前を元のまま取る:FR-063": {
       "from": "sha256:1d6b0a0ab655b958a8eb41ab90ac0f4b486a12c1f8a5bf8f916ca96f7e9c153f",
@@ -1178,10 +1213,10 @@
     },
     "test-req:src/extract:tests:kotlinは注釈と署名の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
       "from": "sha256:29190e555c351771d6c57bf5be6782acb4535a6f45bc04b8d1a2152f9db9623c",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:kotlinは注釈の間と直後のコメントをcontentに含めない:FR-062": {
       "from": "sha256:f3ccd0645a38c6853f216835f9abbf7bb96aa50ac305ba9b56c2a57e853d553f",
@@ -1192,10 +1227,10 @@
     },
     "test-req:src/extract:tests:kotlinは注釈同士の間のコメントをマーカーにしない:FR-060": {
       "from": "sha256:47c61132e4b39583a1198550eae8b8b7c149708e376e9217ff21a0be73b56111",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:kotlinは漢字の関数名と型名のtestを抽出し識別子とcontentが元の文字を保つ:FR-063": {
       "from": "sha256:a4f5f79e30bf2f2c9d5af184d287bdbf137e665399ff6b1243b95466f9a34c6b",
@@ -1213,10 +1248,10 @@
     },
     "test-req:src/extract:tests:kotlinは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-060": {
       "from": "sha256:a06d761cff003e88a777821702e1231ec5f36cf0de7ff41c2dc6c3495bb27f4b",
-      "to": "sha256:98c706e7b8935e3174dbeaced4d626104ab0f5bfb948d926f5c7d7bc8042b4cf",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:kotlinは関数本体内のローカル関数や匿名objectやenum定数本体やgetterを対象外にする:FR-059": {
       "from": "sha256:7d45a4686f0236c76151ff61a8dac597d5c3f102dd7961941c883ac6724f8f6a",
@@ -1231,6 +1266,13 @@
       "by": "human",
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/extract:tests:kotlinは非ascii識別子の後の末尾行コメントを次のtestのマーカーにしない:FR-064": {
+      "from": "sha256:d4d371f216310c235f4d71b51d810103c4cab35361aae38cd31fc25474615e06",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:rustのcontentは外側の属性とマーカーコメントを含まない:FR-004": {
       "from": "sha256:572aea5b124db0c4c563d194775723acc5ded60cad87deb681490a885d1fbec6",
@@ -1281,6 +1323,48 @@
       "reason": "main（PR #11）取り込み後の再合意",
       "at": "2026-10-01T14:00:21Z"
     },
+    "test-req:src/extract:tests:rustのスラッシュ4つのコメントは通常コメントとしてマーカーになる:FR-016": {
+      "from": "sha256:71187e10db998937298ebf1c4d56901850db610f70fb25d6edac8de97efb98cc",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustのスラッシュ星3つのコメントは通常コメントとしてマーカーになる:FR-016": {
+      "from": "sha256:b961c31262d6b84db74e05ce2286c47c7e40734ad3bd619ea533ac539822d101",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustの内側docコメントはマーカーにならない:FR-016": {
+      "from": "sha256:200977fbbb663815ec249f1aca588a118fbf81ee786a5430eec43ba45c16f859",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustの内側ブロックdocコメントはマーカーにならない:FR-016": {
+      "from": "sha256:30a6da4e57bfda3b754d962628c8aafa47dc87eaeac2afc57783107dfd4b7ed6",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustの外側docコメントはマーカーにならない:FR-016": {
+      "from": "sha256:2190e9309d6946f867f67e574bb8409688f2a2bc59de840d224da625a279e326",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustの外側ブロックdocコメントはマーカーにならない:FR-016": {
+      "from": "sha256:55394ce548eaec2849231862b18c1ad93c62093702c7d8499e8e9106181f85ea",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
     "test-req:src/extract:tests:rustの関数本体の変更はcontentに反映される:FR-003": {
       "from": "sha256:195431d6e26235ff51203f48d3b5b69f31dc09dde94c924bf8f33c16f83b2d95",
       "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
@@ -1288,40 +1372,89 @@
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
     },
+    "test-req:src/extract:tests:rustはbomの直後の1行目マーカーを取る:FR-064": {
+      "from": "sha256:76ddeed23eaf3cd2f25f3b0d5a3f5fc7495967f0db61cfb3e6d0d5bfe9b385c5",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustはcrlfでもdocコメントを挟んでマーカーを取る:FR-016": {
+      "from": "sha256:adb4d5bb66f917e679cf45331d41cf7259ac306279b84d5a56a76a1006f742a0",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustはdocコメントの後に空行があるとマーカーを取らない:FR-016": {
+      "from": "sha256:6f69b79918780822a53972363d47f3b35945a31d372e1fb8e310cce33730e9eb",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustはdocコメントを挟んでもマーカーを取る:FR-016": {
+      "from": "sha256:242574a9a56424dcadd89476016df2c4c0046806ed544310a3184af3f343aed3",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
     "test-req:src/extract:tests:rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する:FR-016": {
       "from": "sha256:91ef470166431e5b2248cd193454f3ebee1d8b76dc7e6de5e88cb124ddeaf117",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:rustはtest属性の直前に隣接するコメントをマーカーとする:FR-016": {
       "from": "sha256:5bfae528dc2d303fab75326dc11e9b0c1879de3bea7d203bcbb77bd0f3468d19",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustはインデント付きの行頭コメントをマーカーにする:FR-064": {
+      "from": "sha256:bd5ce7f7c7faf1569f13b7e261af13832965100db2d7d8702ffa6cbed6f30478",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustはブロックdocコメントを挟んでもマーカーを取る:FR-016": {
+      "from": "sha256:47cd1c41bad75233613676c1ec771ee91ae348baae96ace359375679a292b0bf",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:rustは他の属性の後ろでもtestの直前のコメントはマーカーになる:FR-016": {
       "from": "sha256:d2c708a8e8892449a173bbf222a661d01f39fb47f99c5c17c0f269626786d82b",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:rustは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
+      "from": "sha256:be873844944806e8e9c68a0c3901e4c2167e6f2562948e87c30b1ab0bf22c947",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:rustは対象属性の設定によりマーカー位置が変わる:FR-016": {
       "from": "sha256:72714ba3c4c7ac43c7ed238d23da26126a5249f19adc312640e53f0ba0b30659",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:rustは属性が間に挟まるとtestの直前のコメントをマーカーにしない:FR-016": {
       "from": "sha256:edbd6fea22228deda9c33e88d481feeebd8902cc3c514ef4b033e83813f0fc4a",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:rustは属性パスの末尾がtestならtestとして抽出する:FR-015": {
       "from": "sha256:d0c68692b110a76589fd58851402a994822893cfa18281d9ae4929aca7ae485e",
@@ -1332,17 +1465,17 @@
     },
     "test-req:src/extract:tests:rustは属性間や属性末尾のコメントがあってもtestとして検出しマーカーを取る:FR-016": {
       "from": "sha256:0d173fff7f904dddf924727d8ddb8108890587f3de1c8ffaf4b5d270157effec",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:rustは最初の対象属性の直前のコメントをマーカーにする:FR-016": {
       "from": "sha256:fa631884599cd83d0724b0c1658922a7ab5edd43f574e28037cef99aac93bec6",
-      "to": "sha256:c6fb88faf84be684de02bd51abc4dec02c6f7c69d9ea1b298baff38e815819a1",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
       "by": "human",
-      "reason": "main（PR #11）取り込み後の再合意",
-      "at": "2026-10-01T14:00:21Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:tokioのtest属性はcontentに含まれない:FR-004": {
       "from": "sha256:f7117e68be0b6a95b180fc4e7a06e5ebe1629f8d6ca84e30fb1bcd3619900d7a",
@@ -1416,10 +1549,10 @@
     },
     "test-req:src/extract:tests:typescriptはdescribe内のtestでも直前のコメントをマーカーにする:FR-055": {
       "from": "sha256:3acc0a3d1a9c48be18e49e2bde4c5b72dca75fd8e224bde20a6562601cf1e523",
-      "to": "sha256:cf631f2b92eaa48a494eb6b1f05efacb5fe6952853f4f6079f5c2c29461607b1",
+      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:typescriptはexport_defaultやskipif_describeやforループ内のitを検出しない:FR-054": {
       "from": "sha256:d0831f0f9acc70d3ecce67bd8a299c1abd66d949d466dfc8bb6d1c5ec73f890b",
@@ -1484,6 +1617,20 @@
       "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
       "at": "2026-10-01T13:46:58Z"
     },
+    "test-req:src/extract:tests:typescriptは前の文の末尾行コメントを次のtestのマーカーにしない:FR-064": {
+      "from": "sha256:b47186f4ecc7d023812898fee1cb0770ddccffa9e879d333edb660ac55282fac",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
+    "test-req:src/extract:tests:typescriptは同じ行に複数のコメントがあると2つ目以降は行頭でないので打ち切る:FR-064": {
+      "from": "sha256:25bd441b8365ce62d358d858cec82a5cab2e076c4840075e9bb5b76fa63f95fe",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
+    },
     "test-req:src/extract:tests:typescriptは構文エラーのソースでエラーを返す:FR-014": {
       "from": "sha256:7bdda4dda67dce24ea0925bc6ad582cd8ecde666ae97ed1d9c657e94e203636c",
       "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
@@ -1493,10 +1640,10 @@
     },
     "test-req:src/extract:tests:typescriptは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-055": {
       "from": "sha256:af9387d11a3aea25301f48a537abd722fdbbbabc46ff4e8a70ce98e742dad745",
-      "to": "sha256:cf631f2b92eaa48a494eb6b1f05efacb5fe6952853f4f6079f5c2c29461607b1",
+      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
       "by": "human",
-      "reason": "JavaScript 系拡張子（js/jsx/mjs/cjs/mts/cts）の Vitest テストファイルに対応（Issue #9）",
-      "at": "2026-10-01T13:46:58Z"
+      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
+      "at": "2026-10-02T14:58:07Z"
     },
     "test-req:src/extract:tests:typescriptは空文字名と改行を含む名前を無視する:FR-056": {
       "from": "sha256:eb17ab080eb96d65b1ab58f34da5edc523f9571aea7ab1d6a5578fd42868e809",

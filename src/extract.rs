@@ -152,18 +152,46 @@ fn walk_rust_items(
     }
 }
 
+/// Last row a comment occupies. tree-sitter-rust includes the trailing newline
+/// of `///` / `//!` line comments, so such a node ends at column 0 of the
+/// next row; that row is not part of the comment.
+fn comment_end_row(node: tree_sitter::Node) -> usize {
+    let end = node.end_position();
+    if end.column == 0 && end.row > node.start_position().row {
+        end.row - 1
+    } else {
+        end.row
+    }
+}
+
+/// Whether only whitespace (or a BOM) precedes the node on its line in
+/// `parsed` (the string the tree was built from). FR-064.
+fn is_own_line_comment(parsed: &str, node: tree_sitter::Node) -> bool {
+    let s = node.start_byte();
+    let Some(head) = parsed.get(..s) else {
+        return false;
+    };
+    let ls = head.rfind('\n').map_or(0, |i| i + 1);
+    head[ls..]
+        .chars()
+        .all(|c| c.is_whitespace() || c == '\u{feff}')
+}
+
 /// Walks backward from `children[target_idx]`, collecting a contiguous
-/// (no-blank-line) block of comment nodes whose kind is in `comment_kinds`,
-/// and extracts `[marker]` tokens from them, top to bottom. `text_of` yields
-/// the text of a node (Kotlin reads the original source, not its ASCII
-/// shadow). With `skip_doc`, doc comments (`/**` ...) are read over without
+/// (no-blank-line) block of own-line comment nodes whose kind is in
+/// `comment_kinds`, and extracts `[marker]` tokens from them, top to bottom.
+/// A comment that does not start its line (e.g. trailing a previous item)
+/// ends the block (FR-064). `parsed` is the string the tree was parsed from;
+/// `text_of` yields the text of a node (Kotlin reads the original source, not
+/// its ASCII shadow). Nodes for which `is_doc` holds are read over without
 /// contributing markers and without ending the block.
 fn collect_preceding_markers_with<'a>(
     children: &[tree_sitter::Node],
     target_idx: usize,
+    parsed: &str,
     text_of: &dyn Fn(tree_sitter::Node) -> Option<&'a str>,
     comment_kinds: &[&str],
-    skip_doc: bool,
+    is_doc: &dyn Fn(tree_sitter::Node) -> bool,
 ) -> Vec<String> {
     let mut next_start_row = children[target_idx].start_position().row;
     let mut j = target_idx as isize - 1;
@@ -176,11 +204,10 @@ fn collect_preceding_markers_with<'a>(
         let Some(text) = text_of(node) else {
             break;
         };
-        let end_row = node.end_position().row;
-        if end_row + 1 != next_start_row {
+        if comment_end_row(node) + 1 != next_start_row || !is_own_line_comment(parsed, node) {
             break;
         }
-        if !(skip_doc && is_doc_comment(text)) {
+        if !is_doc(node) {
             comments.push(text);
         }
         next_start_row = node.start_position().row;
@@ -204,10 +231,25 @@ fn collect_preceding_markers(
     collect_preceding_markers_with(
         children,
         target_idx,
+        source,
         &|n| n.utf8_text(source.as_bytes()).ok(),
         &[comment_kind],
-        false,
+        &|_| false,
     )
+}
+
+/// Rust doc comments (`///`, `//!`, `/** */`, `/*! */`) carry an
+/// `outer_doc_comment_marker` / `inner_doc_comment_marker` child. Decided by
+/// node structure so `////`, `/***` and `/**/` stay ordinary comments.
+fn is_rust_doc_comment(node: tree_sitter::Node) -> bool {
+    let mut cursor = node.walk();
+    let found = node.children(&mut cursor).any(|c| {
+        matches!(
+            c.kind(),
+            "outer_doc_comment_marker" | "inner_doc_comment_marker"
+        )
+    });
+    found
 }
 
 /// Returns `None` if the attribute chain above `children[func_idx]` has no
@@ -230,32 +272,20 @@ fn rust_test_markers(
             if rust_is_test_attribute(node, source, extra_attributes) {
                 test_attr_idx = Some(j as usize);
             }
-        } else if !is_comment_kind(node.kind()) {
+        } else if !RUST_COMMENT_KINDS.contains(&node.kind()) {
             break;
         }
         j -= 1;
     }
     let test_attr_idx = test_attr_idx?;
-    let mut next_start_row = children[test_attr_idx].start_position().row;
-    let mut k = test_attr_idx as isize - 1;
-    let mut comments = Vec::new();
-    while k >= 0 {
-        let node = children[k as usize];
-        if !is_comment_kind(node.kind()) || node.end_position().row + 1 != next_start_row {
-            break;
-        }
-        comments.push(node);
-        next_start_row = node.start_position().row;
-        k -= 1;
-    }
-    comments.reverse();
-    let mut markers = Vec::new();
-    for c in comments {
-        markers.extend(extract_markers(
-            c.utf8_text(source.as_bytes()).unwrap_or(""),
-        ));
-    }
-    Some(markers)
+    Some(collect_preceding_markers_with(
+        children,
+        test_attr_idx,
+        source,
+        &|n| n.utf8_text(source.as_bytes()).ok(),
+        &RUST_COMMENT_KINDS,
+        &is_rust_doc_comment,
+    ))
 }
 
 /// Whether an `attribute_item` is a test attribute. The attribute path's last
@@ -291,9 +321,7 @@ fn rust_is_test_attribute(
     text == "test" || extra_attributes.iter().any(|a| a == text)
 }
 
-fn is_comment_kind(kind: &str) -> bool {
-    kind == "line_comment" || kind == "block_comment"
-}
+const RUST_COMMENT_KINDS: [&str; 2] = ["line_comment", "block_comment"];
 
 /// Doc comments (Javadoc / KDoc) are never markers in Java / Kotlin (and do
 /// not end the adjacent comment block).
@@ -789,9 +817,10 @@ fn walk_java_container(
                     markers: collect_preceding_markers_with(
                         &children,
                         idx,
+                        source,
                         &|n| n.utf8_text(source.as_bytes()).ok(),
                         &JVM_COMMENT_KINDS,
-                        true,
+                        &|n| n.utf8_text(source.as_bytes()).is_ok_and(is_doc_comment),
                     ),
                     content: source[start..node.end_byte()].to_string(),
                 });
@@ -1065,9 +1094,10 @@ fn walk_kotlin_container(
                     markers: collect_preceding_markers_with(
                         &children,
                         idx,
+                        &shadow.shadow,
                         &|n| shadow.node_text(n),
                         &JVM_COMMENT_KINDS,
-                        true,
+                        &|n| shadow.node_text(n).is_some_and(is_doc_comment),
                     ),
                     content: content.to_string(),
                 });
@@ -2578,5 +2608,157 @@ if (cond) {
     fn kotlinはshebangやimportやtypealiasなど宣言以外の通常の構造でok空になる() {
         let source = "#!/usr/bin/env kotlin\n@file:JvmName(\"X\")\npackage a\n\nimport b.C\n\ntypealias N = String\nval x = 1\nval y: Int\n    get() = 2\n";
         assert!(kt(source).is_empty());
+    }
+
+    // ---- コメント隣接判定（FR-016 / FR-064） ----
+
+    // [FR-016]
+    #[test]
+    fn rustはdocコメントを挟んでもマーカーを取る() {
+        let tests = rs("// [FR-001]\n/// doc\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustの外側docコメントはマーカーにならない() {
+        let tests = rs("/// [FR-001]\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustの内側docコメントはマーカーにならない() {
+        let tests = rs("mod m {\n//! [FR-001]\n#[test]\nfn t() {}\n}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustはブロックdocコメントを挟んでもマーカーを取る() {
+        let tests = rs("// [FR-001]\n/** doc */\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustのスラッシュ4つのコメントは通常コメントとしてマーカーになる() {
+        let tests = rs("//// [FR-001]\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustはdocコメントの後に空行があるとマーカーを取らない() {
+        let tests = rs("// [FR-001]\n/// doc\n\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustはcrlfでもdocコメントを挟んでマーカーを取る() {
+        let tests = rs("// [FR-001]\r\n/// doc\r\n#[test]\r\nfn t() {}\r\n", &[]);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-064]
+    #[test]
+    fn goは前の宣言の末尾行コメントを次のtestのマーカーにしない() {
+        let source =
+            "package a\n\nfunc TestA(t *testing.T) {} // [FR-001]\nfunc TestB(t *testing.T) {}\n";
+        let tests = extract_go_tests("a/x_test.go", source).unwrap();
+        assert!(find(&tests, "TestB").markers.is_empty());
+    }
+
+    // [FR-064]
+    #[test]
+    fn rustは前の宣言の末尾行コメントを次のtestのマーカーにしない() {
+        let tests = rs("fn x() {} // [FR-001]\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
+    }
+
+    // [FR-064]
+    #[test]
+    fn csharpは前の宣言の末尾行コメントを次のtestのマーカーにしない() {
+        let source =
+            cs_wrap("    public void X() {} // [FR-001]\n    [Fact]\n    public void T() {}");
+        let tests = cs(&source);
+        assert!(find(&tests, "T").markers.is_empty());
+    }
+
+    // [FR-064]
+    #[test]
+    fn typescriptは前の文の末尾行コメントを次のtestのマーカーにしない() {
+        let tests = ts("it(\"a\", () => {}); // [FR-001]\nit(\"b\", () => {});\n");
+        assert!(find(&tests, "b").markers.is_empty());
+    }
+
+    // [FR-064]
+    #[test]
+    fn javaは前の宣言の末尾行コメントを次のtestのマーカーにしない() {
+        let source = jv_wrap("    void x() {} // [FR-001]\n    @Test\n    void t() {}");
+        let tests = jv(&source);
+        assert!(find(&tests, "t").markers.is_empty());
+    }
+
+    // [FR-064]
+    #[test]
+    fn kotlinは非ascii識別子の後の末尾行コメントを次のtestのマーカーにしない() {
+        let source = kt_wrap("    fun `日本語`() {} // [FR-001]\n    @Test\n    fun t() {}");
+        let tests = kt(&source);
+        assert!(find(&tests, "t").markers.is_empty());
+    }
+
+    // [FR-064]
+    #[test]
+    fn rustはインデント付きの行頭コメントをマーカーにする() {
+        let tests = rs(
+            "mod m {\n    // [FR-001]\n    #[test]\n    fn t() {}\n}\n",
+            &[],
+        );
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-064]
+    #[test]
+    fn typescriptは同じ行に複数のコメントがあると2つ目以降は行頭でないので打ち切る() {
+        let tests = ts("/* [FR-001] */ // note\nit(\"b\", () => {});\n");
+        assert!(find(&tests, "b").markers.is_empty());
+    }
+
+    // [FR-064]
+    #[test]
+    fn rustはbomの直後の1行目マーカーを取る() {
+        let tests = rs("\u{feff}// [FR-001]\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-064]
+    #[test]
+    fn goはbomの直後の1行目マーカーを取る() {
+        let source = "\u{feff}// [FR-001]\nfunc TestA(t *testing.T) {}\n";
+        let tests = extract_go_tests("a/x_test.go", source).unwrap();
+        assert_eq!(find(&tests, "TestA").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustの内側ブロックdocコメントはマーカーにならない() {
+        let tests = rs("mod m {\n/*! [FR-001] */\n#[test]\nfn t() {}\n}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustのスラッシュ星3つのコメントは通常コメントとしてマーカーになる() {
+        let tests = rs("/*** [FR-001] */\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-016]
+    #[test]
+    fn rustの外側ブロックdocコメントはマーカーにならない() {
+        let tests = rs("/** [FR-001] */\n#[test]\nfn t() {}\n", &[]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
     }
 }
