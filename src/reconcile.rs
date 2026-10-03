@@ -32,16 +32,7 @@ pub fn reconcile(
             }
             let mut new_lock = Lock::default();
             for (edge_id, edge) in &graph.edges {
-                let from_hash = graph
-                    .nodes
-                    .get(&edge.from)
-                    .map(|n| n.hash.clone())
-                    .unwrap_or_default();
-                let to_hash = graph
-                    .nodes
-                    .get(&edge.to)
-                    .map(|n| n.hash.clone())
-                    .unwrap_or_default();
+                let (from_hash, to_hash) = crate::model::edge_hashes(graph, edge);
                 let entry = match lock.edges.get(edge_id) {
                     Some(existing) if existing.from == from_hash && existing.to == to_hash => {
                         existing.clone()
@@ -71,16 +62,7 @@ pub fn reconcile(
                     if blocked {
                         return Err(ReconcileError::Blocked(id));
                     }
-                    let from_hash = graph
-                        .nodes
-                        .get(&edge.from)
-                        .map(|n| n.hash.clone())
-                        .unwrap_or_default();
-                    let to_hash = graph
-                        .nodes
-                        .get(&edge.to)
-                        .map(|n| n.hash.clone())
-                        .unwrap_or_default();
+                    let (from_hash, to_hash) = crate::model::edge_hashes(graph, edge);
                     new_lock.edges.insert(
                         id,
                         LockEntry {
@@ -122,12 +104,20 @@ pub fn reconcile(
     }
 }
 
-/// Splits an edge id (`"doc-req:<from>:<to>"` / `"test-req:<from>:<to>"`)
-/// into `(kind_prefix, from_id, to_id)`. `to` (a req id) never contains `:`
+/// Splits an edge id (`"doc-req:<from>:<to>"` / `"test-req:<from>:<to>"` /
+/// `"desc:doc:<id>"` / `"desc:req:<id>"`) into `(kind_prefix, from_id, to_id)`.
+/// A `desc` edge yields `("desc", <id>, <id>)` (a self-loop; the node kind is
+/// only part of the edge id). For the other kinds, `to` (a req id) never contains `:`
 /// (doc/req ids are restricted to `[A-Za-z0-9._-]`), so it is always the
 /// last `:`-separated segment; `from` is everything between the kind prefix
 /// and that segment (and may itself contain `:` for Rust test ids).
 fn parse_edge_id(id: &str) -> Option<(&str, &str, &str)> {
+    if let Some(node_id) = id
+        .strip_prefix("desc:doc:")
+        .or_else(|| id.strip_prefix("desc:req:"))
+    {
+        return Some(("desc", node_id, node_id));
+    }
     let (rest, to_id) = id.rsplit_once(':')?;
     let (kind_prefix, from_id) = rest.split_once(':')?;
     Some((kind_prefix, from_id, to_id))
@@ -188,6 +178,7 @@ mod tests {
             path: format!("{id}.md"),
             content: String::new(),
             hash: hash.to_string(),
+            description: None,
         }
     }
 
@@ -615,5 +606,212 @@ mod tests {
         assert_blocked_by_parse_error("src/a.spec.mts", "test-req:src/a.spec:d:t:FR-001");
         assert_blocked_by_parse_error("src/a.test.cts", "test-req:src/a.test:d:t:FR-001");
         assert_blocked_by_parse_error("src/a.spec.jsx", "test-req:src/a.spec:d:t:FR-001");
+    }
+
+    /// `clean_graph` plus `desc:doc:DOC-A` for the doc (with a description).
+    fn desc_graph() -> Graph {
+        let mut graph = clean_graph();
+        let key = NodeKey {
+            kind: NodeKind::Doc,
+            id: "DOC-A".to_string(),
+        };
+        graph.nodes.get_mut(&key).unwrap().description = Some("要約A".to_string());
+        graph.edges.insert(
+            "desc:doc:DOC-A".to_string(),
+            Edge {
+                id: "desc:doc:DOC-A".to_string(),
+                kind: EdgeKind::Desc,
+                from: key.clone(),
+                to: key,
+            },
+        );
+        graph
+    }
+
+    // [FR-033]
+    #[test]
+    fn descエッジを指定すると現在の要約と本文のハッシュが記録される() {
+        let graph = desc_graph();
+        let result = reconcile(
+            &graph,
+            &Lock::default(),
+            ReconcileTarget::Edges(vec!["desc:doc:DOC-A".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        )
+        .unwrap();
+        let entry = result.edges.get("desc:doc:DOC-A").expect("recorded");
+        assert_eq!(entry.from, crate::hash::content_hash("要約A"));
+        assert_eq!(entry.to, "sha256:doc-current");
+        assert_eq!(entry.by, "human");
+        assert!(!result.edges.contains_key("doc-req:DOC-A:FR-001"));
+    }
+
+    // [FR-087]
+    #[test]
+    fn descエッジは要約が無ければ空文字列のハッシュを記録する() {
+        let mut graph = desc_graph();
+        let key = NodeKey {
+            kind: NodeKind::Doc,
+            id: "DOC-A".to_string(),
+        };
+        graph.nodes.get_mut(&key).unwrap().description = None;
+        let result = reconcile(
+            &graph,
+            &Lock::default(),
+            ReconcileTarget::Edges(vec!["desc:doc:DOC-A".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        )
+        .unwrap();
+        assert_eq!(
+            result.edges["desc:doc:DOC-A"].from,
+            crate::hash::content_hash("")
+        );
+    }
+
+    // [FR-036]
+    #[test]
+    fn allはdescエッジも記録し変更のないdescは据え置く() {
+        let graph = desc_graph();
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-A".to_string(),
+            lock_entry(
+                &crate::hash::content_hash("要約A"),
+                "sha256:doc-current",
+                "2025-01-01T00:00:00Z",
+            ),
+        );
+        let before = lock.edges["desc:doc:DOC-A"].clone();
+        let result = reconcile(
+            &graph,
+            &lock,
+            ReconcileTarget::All,
+            None,
+            "2026-01-01T00:00:00Z",
+        )
+        .unwrap();
+        assert!(result.edges.contains_key("doc-req:DOC-A:FR-001"));
+        assert_eq!(result.edges["desc:doc:DOC-A"], before);
+    }
+
+    // [FR-036]
+    #[test]
+    fn allはロックにないdescエッジを新規に記録する() {
+        let result = reconcile(
+            &desc_graph(),
+            &Lock::default(),
+            ReconcileTarget::All,
+            None,
+            "2026-01-01T00:00:00Z",
+        )
+        .unwrap();
+        let entry = result.edges.get("desc:doc:DOC-A").expect("desc recorded");
+        assert_eq!(entry.from, crate::hash::content_hash("要約A"));
+        assert_eq!(entry.to, "sha256:doc-current");
+        assert_eq!(entry.at, "2026-01-01T00:00:00Z");
+    }
+
+    // [FR-034]
+    #[test]
+    fn ロックにのみ存在するdescエッジを指定するとロックから削除される() {
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-GONE".to_string(),
+            lock_entry("sha256:old", "sha256:old", "2025-01-01T00:00:00Z"),
+        );
+        let result = reconcile(
+            &Graph::default(),
+            &lock,
+            ReconcileTarget::Edges(vec!["desc:doc:DOC-GONE".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        )
+        .unwrap();
+        assert!(!result.edges.contains_key("desc:doc:DOC-GONE"));
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するdescエッジのノードがinvalidならblockedになる() {
+        let mut graph = Graph::default();
+        graph.invalid.push(Invalid {
+            target_kind: TargetKind::Doc,
+            target: "DOC-A".to_string(),
+            reason: ReasonCode::DuplicateId,
+            detail: "duplicate id".to_string(),
+        });
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-A".to_string(),
+            lock_entry("sha256:old", "sha256:old", "2025-01-01T00:00:00Z"),
+        );
+        let before = lock.clone();
+        let result = reconcile(
+            &graph,
+            &lock,
+            ReconcileTarget::Edges(vec!["desc:doc:DOC-A".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        );
+        assert!(matches!(result, Err(ReconcileError::Blocked(_))));
+        assert_eq!(lock, before);
+    }
+
+    // [FR-035]
+    #[test]
+    fn invalidなdocのdescエッジを指定するとblockedになる() {
+        let mut graph = desc_graph();
+        graph.invalid.push(Invalid {
+            target_kind: TargetKind::Doc,
+            target: "DOC-A".to_string(),
+            reason: ReasonCode::DuplicateId,
+            detail: "duplicate id".to_string(),
+        });
+        let result = reconcile(
+            &graph,
+            &Lock::default(),
+            ReconcileTarget::Edges(vec!["desc:doc:DOC-A".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        );
+        assert!(matches!(result, Err(ReconcileError::Blocked(_))));
+    }
+
+    // [FR-035]
+    #[test]
+    fn リンク切れを持つdocのdescエッジを指定するとblockedになる() {
+        let mut graph = desc_graph();
+        graph.broken.push(crate::model::Broken {
+            from: NodeKey {
+                kind: NodeKind::Doc,
+                id: "DOC-A".to_string(),
+            },
+            target: "../req/missing.md".to_string(),
+            reason: ReasonCode::MissingReq,
+            detail: "missing".to_string(),
+        });
+        let result = reconcile(
+            &graph,
+            &Lock::default(),
+            ReconcileTarget::Edges(vec!["desc:doc:DOC-A".to_string()]),
+            None,
+            "2026-01-01T00:00:00Z",
+        );
+        assert!(matches!(result, Err(ReconcileError::Blocked(_))));
+    }
+
+    // [FR-023]
+    #[test]
+    fn parse_edge_idはdescエッジを種別とidに分解する() {
+        assert_eq!(
+            parse_edge_id("desc:doc:DOC-A"),
+            Some(("desc", "DOC-A", "DOC-A"))
+        );
+        assert_eq!(
+            parse_edge_id("doc-req:DOC-A:FR-001"),
+            Some(("doc-req", "DOC-A", "FR-001"))
+        );
     }
 }

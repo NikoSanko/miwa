@@ -30,30 +30,22 @@ pub fn check(graph: &crate::model::Graph, lock: &crate::lock::Lock) -> Vec<Findi
     let mut findings = Vec::new();
 
     for (edge_id, edge) in &graph.edges {
-        let from_hash = graph
-            .nodes
-            .get(&edge.from)
-            .map(|n| n.hash.clone())
-            .unwrap_or_default();
-        let to_hash = graph
-            .nodes
-            .get(&edge.to)
-            .map(|n| n.hash.clone())
-            .unwrap_or_default();
+        let (from_hash, to_hash) = crate::model::edge_hashes(graph, edge);
         match lock.edges.get(edge_id) {
             Some(entry) => {
                 let from_changed = entry.from != from_hash;
                 let to_changed = entry.to != to_hash;
                 if from_changed || to_changed {
-                    let reason = if from_changed && to_changed {
-                        ReasonCode::BothChanged
-                    } else if from_changed {
-                        match edge.kind {
-                            EdgeKind::DocReq => ReasonCode::DocChanged,
-                            EdgeKind::TestReq => ReasonCode::TestChanged,
+                    let reason = match (from_changed, to_changed, edge.kind) {
+                        (true, true, _) => ReasonCode::BothChanged,
+                        (true, false, EdgeKind::DocReq) => ReasonCode::DocChanged,
+                        (true, false, EdgeKind::TestReq) => ReasonCode::TestChanged,
+                        (true, false, EdgeKind::Desc) => ReasonCode::DescriptionChanged,
+                        (false, true, EdgeKind::Desc) => ReasonCode::BodyChanged,
+                        (false, true, _) => ReasonCode::ReqChanged,
+                        (false, false, _) => {
+                            unreachable!("guarded by from_changed || to_changed")
                         }
-                    } else {
-                        ReasonCode::ReqChanged
                     };
                     findings.push(Finding {
                         kind: FindingKind::Drift,
@@ -106,6 +98,7 @@ pub fn check(graph: &crate::model::Graph, lock: &crate::lock::Lock) -> Vec<Findi
             EdgeKind::TestReq => {
                 reqs_with_test.insert(&edge.to);
             }
+            EdgeKind::Desc => {}
         }
     }
 
@@ -222,6 +215,7 @@ mod tests {
             path: format!("{id}.md"),
             content: String::new(),
             hash: hash.to_string(),
+            description: None,
         }
     }
 
@@ -499,5 +493,271 @@ mod tests {
         let base = vec![base_finding];
         let diff = diff_findings(&current, &base);
         assert_eq!(diff, vec![new_finding]);
+    }
+
+    fn desc_node(kind: NodeKind, id: &str, description: Option<&str>, hash: &str) -> Node {
+        Node {
+            description: description.map(str::to_string),
+            ..node(kind, id, hash)
+        }
+    }
+
+    fn add_desc_edge(graph: &mut Graph, kind: NodeKind, id: &str) {
+        let key = NodeKey {
+            kind,
+            id: id.to_string(),
+        };
+        let edge_id = crate::model::desc_edge_id(&key);
+        graph.edges.insert(
+            edge_id.clone(),
+            Edge {
+                id: edge_id,
+                kind: EdgeKind::Desc,
+                from: key.clone(),
+                to: key,
+            },
+        );
+    }
+
+    /// A single Doc node `DOC-A` with a `desc:doc:DOC-A` edge.
+    fn desc_graph(description: Option<&str>, body_hash: &str) -> Graph {
+        let mut graph = Graph::default();
+        let n = desc_node(NodeKind::Doc, "DOC-A", description, body_hash);
+        graph.nodes.insert(n.key.clone(), n);
+        add_desc_edge(&mut graph, NodeKind::Doc, "DOC-A");
+        graph
+    }
+
+    fn desc_lock(description: &str, body_hash: &str) -> Lock {
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-A".to_string(),
+            lock_entry(&crate::hash::content_hash(description), body_hash),
+        );
+        lock
+    }
+
+    fn desc_drifts(findings: &[Finding]) -> Vec<&Finding> {
+        findings
+            .iter()
+            .filter(|f| f.kind == FindingKind::Drift && f.target == "desc:doc:DOC-A")
+            .collect()
+    }
+
+    // [FR-024]
+    #[test]
+    fn descは要約だけ変わるとdescription_changedのdriftになる() {
+        let graph = desc_graph(Some("新しい要約"), "sha256:body");
+        let findings = check(&graph, &desc_lock("古い要約", "sha256:body"));
+        let drifts = desc_drifts(&findings);
+        assert_eq!(drifts.len(), 1, "{findings:?}");
+        assert_eq!(drifts[0].reason, ReasonCode::DescriptionChanged);
+    }
+
+    // [FR-024]
+    #[test]
+    fn descは本文だけ変わるとbody_changedのdriftになる() {
+        let graph = desc_graph(Some("要約"), "sha256:body-new");
+        let findings = check(&graph, &desc_lock("要約", "sha256:body-old"));
+        let drifts = desc_drifts(&findings);
+        assert_eq!(drifts.len(), 1, "{findings:?}");
+        assert_eq!(drifts[0].reason, ReasonCode::BodyChanged);
+    }
+
+    // [FR-088]
+    #[test]
+    fn descは要約と本文の両方が変わるとboth_changedのdriftが1件になる() {
+        let graph = desc_graph(Some("新しい要約"), "sha256:body-new");
+        let findings = check(&graph, &desc_lock("古い要約", "sha256:body-old"));
+        let drifts = desc_drifts(&findings);
+        assert_eq!(drifts.len(), 1, "{findings:?}");
+        assert_eq!(drifts[0].reason, ReasonCode::BothChanged);
+    }
+
+    // [FR-088]
+    #[test]
+    fn descは変化がなければdriftを報告しない() {
+        let graph = desc_graph(Some("要約"), "sha256:body");
+        let findings = check(&graph, &desc_lock("要約", "sha256:body"));
+        assert!(
+            findings.iter().all(|f| f.target != "desc:doc:DOC-A"),
+            "{findings:?}"
+        );
+    }
+
+    // [FR-088]
+    #[test]
+    fn ロックにないdescエッジはnewとして報告する() {
+        let graph = desc_graph(Some("要約"), "sha256:body");
+        let findings = check(&graph, &Lock::default());
+        assert!(findings.iter().any(|f| f.kind == FindingKind::New
+            && f.target == "desc:doc:DOC-A"
+            && f.reason == ReasonCode::NewEdge));
+    }
+
+    // [FR-088]
+    #[test]
+    fn ソースから消えたdescエッジはremovedとして報告する() {
+        let findings = check(&Graph::default(), &desc_lock("要約", "sha256:body"));
+        assert!(findings.iter().any(|f| f.kind == FindingKind::Removed
+            && f.target == "desc:doc:DOC-A"
+            && f.reason == ReasonCode::RemovedEdge));
+    }
+
+    // [FR-088]
+    #[test]
+    fn 要約を消すとロックの要約が非空ならdescription_changedになる() {
+        let graph = desc_graph(None, "sha256:body");
+        let findings = check(&graph, &desc_lock("要約", "sha256:body"));
+        let drifts = desc_drifts(&findings);
+        assert_eq!(drifts.len(), 1, "{findings:?}");
+        assert_eq!(drifts[0].reason, ReasonCode::DescriptionChanged);
+    }
+
+    // [FR-088]
+    #[test]
+    fn ロックの要約が空で要約も無ければdriftを報告しない() {
+        let graph = desc_graph(None, "sha256:body");
+        let findings = check(&graph, &desc_lock("", "sha256:body"));
+        assert!(desc_drifts(&findings).is_empty(), "{findings:?}");
+    }
+
+    fn lock_of(graph: &Graph) -> Lock {
+        let mut lock = Lock::default();
+        for (id, edge) in &graph.edges {
+            let (from, to) = crate::model::edge_hashes(graph, edge);
+            lock.edges.insert(id.clone(), lock_entry(&from, &to));
+        }
+        lock
+    }
+
+    /// DOC-A links FR-001 and FR-002; FR-001 is also tested; desc edges for
+    /// DOC-A and FR-001 (the req is under an index root).
+    fn full_graph(doc_hash: &str, req_hash: &str) -> Graph {
+        let mut graph = Graph::default();
+        for n in [
+            desc_node(NodeKind::Doc, "DOC-A", Some("doc 要約"), doc_hash),
+            desc_node(NodeKind::Req, "FR-001", Some("req 要約"), req_hash),
+            desc_node(NodeKind::Req, "FR-002", None, "sha256:r2"),
+            node(NodeKind::Test, "src/foo::bar", "sha256:t"),
+        ] {
+            graph.nodes.insert(n.key.clone(), n);
+        }
+        for (kind, from_kind, from, to) in [
+            (EdgeKind::DocReq, NodeKind::Doc, "DOC-A", "FR-001"),
+            (EdgeKind::DocReq, NodeKind::Doc, "DOC-A", "FR-002"),
+            (EdgeKind::TestReq, NodeKind::Test, "src/foo::bar", "FR-001"),
+        ] {
+            let id = crate::model::edge_id(kind, from, to);
+            graph.edges.insert(
+                id.clone(),
+                Edge {
+                    id,
+                    kind,
+                    from: NodeKey {
+                        kind: from_kind,
+                        id: from.to_string(),
+                    },
+                    to: NodeKey {
+                        kind: NodeKind::Req,
+                        id: to.to_string(),
+                    },
+                },
+            );
+        }
+        add_desc_edge(&mut graph, NodeKind::Doc, "DOC-A");
+        add_desc_edge(&mut graph, NodeKind::Req, "FR-001");
+        graph
+    }
+
+    fn drift_reasons(findings: &[Finding]) -> Vec<(String, ReasonCode)> {
+        findings
+            .iter()
+            .filter(|f| f.kind == FindingKind::Drift)
+            .map(|f| (f.target.clone(), f.reason))
+            .collect()
+    }
+
+    // [FR-088]
+    #[test]
+    fn doc本文を編集するとdoc_reqは本数分のdoc_changedとdescのbody_changedが別々に出る() {
+        let lock = lock_of(&full_graph("sha256:d-old", "sha256:r1"));
+        let findings = check(&full_graph("sha256:d-new", "sha256:r1"), &lock);
+        assert_eq!(
+            drift_reasons(&findings),
+            vec![
+                ("desc:doc:DOC-A".to_string(), ReasonCode::BodyChanged),
+                ("doc-req:DOC-A:FR-001".to_string(), ReasonCode::DocChanged),
+                ("doc-req:DOC-A:FR-002".to_string(), ReasonCode::DocChanged),
+            ]
+        );
+    }
+
+    // [FR-088]
+    #[test]
+    fn 索引配下のreq本文を編集するとreq_changedとdescのbody_changedが出る() {
+        let lock = lock_of(&full_graph("sha256:d", "sha256:r1-old"));
+        let findings = check(&full_graph("sha256:d", "sha256:r1-new"), &lock);
+        assert_eq!(
+            drift_reasons(&findings),
+            vec![
+                ("desc:req:FR-001".to_string(), ReasonCode::BodyChanged),
+                ("doc-req:DOC-A:FR-001".to_string(), ReasonCode::ReqChanged),
+                (
+                    "test-req:src/foo::bar:FR-001".to_string(),
+                    ReasonCode::ReqChanged
+                ),
+            ]
+        );
+    }
+
+    // [FR-087]
+    #[test]
+    fn 要約だけを変えてもdoc_reqとtest_reqにfindingは出ない() {
+        let old = full_graph("sha256:d", "sha256:r1");
+        let lock = lock_of(&old);
+        let mut new = old.clone();
+        for n in new.nodes.values_mut() {
+            if n.description.is_some() {
+                n.description = Some("変更後の要約".to_string());
+            }
+        }
+        let findings = check(&new, &lock);
+        assert_eq!(
+            drift_reasons(&findings),
+            vec![
+                ("desc:doc:DOC-A".to_string(), ReasonCode::DescriptionChanged),
+                (
+                    "desc:req:FR-001".to_string(),
+                    ReasonCode::DescriptionChanged
+                ),
+            ]
+        );
+    }
+
+    // [FR-086]
+    #[test]
+    fn descしか持たないreqはorphanとno_testのままになる() {
+        let mut graph = Graph::default();
+        let n = desc_node(NodeKind::Req, "FR-001", Some("要約"), "sha256:r");
+        graph.nodes.insert(n.key.clone(), n);
+        add_desc_edge(&mut graph, NodeKind::Req, "FR-001");
+        let findings = check(&graph, &lock_of(&graph));
+        assert!(findings.iter().any(|f| f.kind == FindingKind::Orphan
+            && f.reason == ReasonCode::ReqWithoutDoc
+            && f.target == "FR-001"));
+        assert!(findings.iter().any(|f| f.kind == FindingKind::NoTest
+            && f.reason == ReasonCode::ReqWithoutTest
+            && f.target == "FR-001"));
+    }
+
+    // [FR-086]
+    #[test]
+    fn descしか持たないdocはorphanのままになる() {
+        let graph = desc_graph(Some("要約"), "sha256:body");
+        let findings = check(&graph, &lock_of(&graph));
+        assert!(findings.iter().any(|f| f.kind == FindingKind::Orphan
+            && f.reason == ReasonCode::DocWithoutReq
+            && f.target == "DOC-A"));
     }
 }

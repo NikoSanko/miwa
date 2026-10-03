@@ -88,7 +88,18 @@ miwa index
 
 [エントリ行以外のバイト列（前書き、節見出し、エントリの並び順、入れ子の子項目、BOM、改行コード）は変えません](../req/index-command-preserves-and-exits.md)。リンク先（`](…)` の中身、参照形式の定義、title 属性）も書き換えません。出力は決定的で、続けて実行すると 2 回目は変更なしです。
 
-実行すると、索引ごとに `created <path>` / `updated <path>` / `unchanged <path>` を 1 行ずつ表示します。`index` が未設定のときはエラー（exit 1）です。実行後に残る finding は、人の判断が要るもの（`MissingDescription`、`MissingDirectoryDescription`、`UntypedFile`、文書でないファイルを指す `BrokenEntry`）だけです。
+実行すると、索引ごとに `created <path>` / `updated <path>` / `unchanged <path>` を 1 行ずつ表示します。`index` が未設定のときはエラー（exit 1）です。`index` 種別の finding のうち実行後に残るのは、人の判断が要るもの（`MissingDescription`、`MissingDirectoryDescription`、`UntypedFile`、文書でないファイルを指す `BrokenEntry`）だけです。索引を有効にした直後は `desc` エッジの `new` が別に残るので、`reconcile --all` で合意します。
+
+## 要約の追随
+
+読み手は要約だけを頼りに文書を開くか決めるので、本文を直したのに要約が古いままだと、LLM も人も誤った判断をします。miwa は、`index` の対象になっている文書（`Specification` と `Requirement`）それぞれについて、[要約と本文の対を `desc:doc:<id>` / `desc:req:<id>` エッジとして扱います](../req/desc-edge-exists-for-indexed-nodes.md)。エッジにすることで、次の 2 つが得られます。
+
+- 本文だけが変わって要約が追随していないとき、`check` が `drift` を報告するので、要約の見直しに気づけます。[理由は `DescriptionChanged` / `BodyChanged` / `BothChanged`](../req/desc-edge-drift-reasons.md) です（詳しくは [check](check.md) を参照）。
+- 要約が本文を正しく表しているかを、[`judge`](judge.md) で意味的に確かめられます。
+
+要約と本文のハッシュは別々に取ります。[要約は `description` の正規化後の値、本文はフロントマターを除いた本文](../req/desc-edge-hash-sources.md)なので、`description` だけを変えても doc と req をつなぐエッジには影響しません。逆に本文を編集すると、doc → req のエッジと `desc` エッジの 2 件が出ます。
+
+`desc` エッジは **ロックに記録するエッジ** です。そのため `index` を設定して導入した直後は、索引の対象になっているすべての doc・req（`description` の有無にかかわらず）の分だけ `new` が出ます。**導入時は `miwa reconcile --all` で一度に合意することが前提** です（[miwa を使い始める](setup.md) の手順 4）。`check --diff` では、基準側の設定に `index` が無ければ、現在側で未合意（ロックに無い）の `desc` エッジがすべて `new` として報告されます。`description` を消しても `desc` エッジは `removed` にならず、`MissingDescription` と `drift`（`DescriptionChanged`）になります。`removed` になるのは、文書の削除・`id` の変更・索引の根から外れたときだけです。
 
 ## LLM の読み方
 

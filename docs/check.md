@@ -17,6 +17,8 @@ description: "doc・req・test の追随漏れや索引の乱れを、ロック�
   - doc だけが変わった場合は、req が追随できていない可能性があります。
   - req だけが変わった場合は、doc や test が追随できていない可能性があります。
   - test だけが変わった場合は、test が req の範囲に収まっているかを確認してください。
+  - `index` を設定していると、索引の対象になっている doc・req について、要約（`description`）と本文の対も依存関係（`desc:doc:<id>` / `desc:req:<id>` エッジ）として見ます。[理由は `DescriptionChanged`（要約だけが変わった）、`BodyChanged`（本文だけが変わった）、`BothChanged`（両方）](../req/desc-edge-drift-reasons.md)です。要約が本文に追随しているかを確かめる合図になります。
+  - **本文を 1 回編集すると 2 件の finding が出ます**。doc の本文を編集すると、その doc の `doc-req` エッジ（リンクしている req の本数分）の `DocChanged` と、`desc` エッジの `BodyChanged` が別々に出ます（索引配下の req なら `ReqChanged` と `BodyChanged`）。意図した動作で、要約はそのままでよいかを確かめたうえで、それぞれ [`reconcile`](reconcile.md) します。`description` を消すと、`index` の `MissingDescription` と `desc` の `drift`（`DescriptionChanged`。ロックに記録された要約が空でなかった場合）の 2 件が出ます。
 - **new / removed**: [前回合意した記録（ロック）にない新しい依存関係は new、逆にロックにあったのにソースから消えた依存関係は removed](../req/finding-new-and-removed.md)として報告されます。
 - **orphan（孤立）**: [どの doc からもリンクされていない req、どの req にもリンクしていない doc](../req/finding-orphan.md)を報告します。書いたのに使われていない req や、参照が漏れている doc を見つけられます。
 - **no-test**: [1件もテストで検証されていない req](../req/finding-no-test.md)を報告します。免除の仕組みはなく、すべての req が対象です。

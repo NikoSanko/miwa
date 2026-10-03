@@ -275,7 +275,7 @@ fn run_judge_inner(edge: Vec<String>, auto_reconcile: bool) -> anyhow::Result<()
         return Ok(());
     }
 
-    eprintln!("note: sending doc/req/test contents to api.typesafe.ai");
+    eprintln!("note: sending doc/req/test contents and descriptions to api.typesafe.ai");
 
     let endpoint = std::env::var(judge::JEV_ENDPOINT_OVERRIDE_ENV)
         .unwrap_or_else(|_| judge::JEV_ENDPOINT.to_string());

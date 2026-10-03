@@ -228,7 +228,11 @@ pub(crate) fn join_under(root: &str, rel: &str) -> String {
 /// Whether `path` is `dir` or lies under it. `dir` must be normalized by
 /// [`normalize_dir`]; `.` (the whole repo) contains everything.
 pub(crate) fn is_under(path: &str, dir: &str) -> bool {
-    dir == "." || path == dir || path.starts_with(&format!("{dir}/"))
+    dir == "."
+        || path == dir
+        || path
+            .strip_prefix(dir)
+            .is_some_and(|rest| rest.starts_with('/'))
 }
 
 /// Normalizes a configured directory entry: strips a leading `./`, strips a

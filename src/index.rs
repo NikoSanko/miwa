@@ -434,7 +434,7 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
             Some("index.md") => {
                 let invalid = parsed.front_matter.is_err();
                 let (fm_title, description) = match &parsed.front_matter {
-                    Ok(Some(fm)) => (front_title(fm), front_description(fm)),
+                    Ok(Some(fm)) => (front_title(fm), normalize_description(fm)),
                     _ => (None, None),
                 };
                 let title = fm_title.unwrap_or_else(|| {
@@ -458,7 +458,7 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
         match &parsed.front_matter {
             Err(_) => {}
             Ok(Some(fm)) if fm.kind.is_some() => {
-                let description = front_description(fm);
+                let description = normalize_description(fm);
                 out.documents.push(Document {
                     path: path.clone(),
                     title: document_title(path, fm),
@@ -485,7 +485,7 @@ fn front_title(fm: &FrontMatter) -> Option<String> {
 }
 
 /// Frontmatter `description`: trimmed, non-empty, single line (no LF or CR).
-fn front_description(fm: &FrontMatter) -> Option<String> {
+pub fn normalize_description(fm: &FrontMatter) -> Option<String> {
     fm.description
         .as_deref()
         .map(str::trim)

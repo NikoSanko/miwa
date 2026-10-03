@@ -19,7 +19,7 @@ miwa judge --auto-reconcile
 
 ## 判定の対象
 
-[対象は `check` が `drift` または `new` と判定する依存関係（doc と req、test と req のどちらも）](../req/judge-target-edges.md)です。`--edge` を付けると、指定した依存関係だけに絞れます。対象でない ID を指定するとエラーになります。リンク切れ（`broken`）や不正な状態（`invalid`）に関わる依存関係は、先にソースを直す必要があるため対象になりません。
+[対象は `check` が `drift` または `new` と判定する依存関係（doc と req、test と req、要約と本文のいずれも）](../req/judge-target-edges.md)です。要約と本文の対とは、索引の対象になっている doc・req の `desc:doc:<id>` / `desc:req:<id>` エッジのことです（[model](model.md) を参照）。`--edge` を付けると、指定した依存関係だけに絞れます。対象でない ID を指定するとエラーになります。リンク切れ（`broken`）や不正な状態（`invalid`）に関わる依存関係は、先にソースを直す必要があるため対象になりません。
 
 対象が1件もない場合は、[「対象なし」と表示して正常終了します](../req/judge-exit-codes-and-no-targets.md)。
 
@@ -27,7 +27,7 @@ miwa judge --auto-reconcile
 
 `judge` は、依存関係の両端の **現在の本文** を読んで、TypeSafe AI の Jev に「整合しているか」を 0〜1 のスコアで答えさせます。1に近いほど整合しているという意味です。
 
-1. [doc と req の組、または test と req の組を1組ずつ Jev に送ります](../req/judge-jev-request.md)。Jev が返すのは数値だけで、文章による理由は返しません。[スコアが取り出せない応答は、実行エラーとして扱います](../req/judge-jev-response-score.md)。
+1. [doc と req の組、test と req の組、または要約と本文の組を1組ずつ Jev に送ります](../req/judge-jev-request.md)。要約と本文の組では「`description` は `body` の内容を正しく要約しているか」を尋ね、[要約は正規化した `description`、本文はフロントマターを除いた本文](../req/desc-edge-hash-sources.md)を送ります。Jev が返すのは数値だけで、文章による理由は返しません。[スコアが取り出せない応答は、実行エラーとして扱います](../req/judge-jev-response-score.md)。
 2. [スコアが設定のしきい値（`judge.threshold`）以上なら `consistent`（整合）、未満なら `review`（見直しが必要）](../req/judge-threshold-decides-consistent-or-review.md)とします。`review` について矛盾かどうかを判断し、どちらを直すかを決めるのは呼び出し元です。miwa は理由の文章を作りません。
 
 なお、[1つの依存関係の本文が大きすぎる場合（両端の合計が設定 `judge.max_body_bytes`（既定 200,000 バイト）を超える場合）は、Jev に送らず、`skipped`（見送り）と表示します](../req/judge-oversize-body-skipped.md)。
@@ -36,7 +36,7 @@ miwa judge --auto-reconcile
 
 ## 外部サービスに送られるもの
 
-`judge` は、対象の doc・req・test の **本文を TypeSafe AI（`api.typesafe.ai`）にのみ送ります**。社外に出せない内容を含むリポジトリでは、使う前に必ず確認してください。[実行を始めるときに、その旨が1行表示されます](../req/judge-announces-external-transmission.md)。
+`judge` は、対象の doc・req・test の **本文（要約と本文の対では要約も）を TypeSafe AI（`api.typesafe.ai`）にのみ送ります**。社外に出せない内容を含むリポジトリでは、使う前に必ず確認してください。[実行を始めるときに、その旨が1行表示されます](../req/judge-announces-external-transmission.md)。索引配下の doc・req は、他のエッジを持たなくても本文が送られます。索引を有効にすると、初回の `judge` の呼び出し数が索引対象ノード数ぶん増えます。`--edge` で絞るか、先に `reconcile --all` で合意する運用ができます。
 
 TypeSafe AI の API キーは、設定ファイルには書かず、環境変数 `TYPESAFE_API_KEY` で渡します。[設定されていない場合は、何も送信せずにエラーで終了します](../req/judge-api-key-required.md)。しきい値の設定は [miwa を使い始める](setup.md) を参照してください。
 

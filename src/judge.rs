@@ -23,6 +23,7 @@ pub struct EdgeInput {
     pub edge_id: String,
     pub kind: EdgeKind,
     pub from_text: String,
+    /// The req body for DocReq / TestReq edges; the node body for Desc edges.
     pub req_text: String,
     pub from_hash: String,
     pub to_hash: String,
@@ -114,13 +115,20 @@ pub fn select_targets(
 
     Ok(candidates
         .into_iter()
-        .map(|(edge, from, to)| EdgeInput {
-            edge_id: edge.id.clone(),
-            kind: edge.kind,
-            from_text: from.content.clone(),
-            req_text: to.content.clone(),
-            from_hash: from.hash.clone(),
-            to_hash: to.hash.clone(),
+        .map(|(edge, from, to)| {
+            let (from_text, req_text) = match edge.kind {
+                EdgeKind::DocReq | EdgeKind::TestReq => (from.content.clone(), to.content.clone()),
+                EdgeKind::Desc => (from.description_text().to_string(), from.content.clone()),
+            };
+            let (from_hash, to_hash) = crate::model::edge_hashes(graph, edge);
+            EdgeInput {
+                edge_id: edge.id.clone(),
+                kind: edge.kind,
+                from_text,
+                req_text,
+                from_hash,
+                to_hash,
+            }
         })
         .collect())
 }
@@ -138,6 +146,12 @@ pub fn build_jev_request(input: &EdgeInput) -> serde_json::Value {
             "`test` は `req` に書かれた振る舞いを検証しており、`req` と矛盾する期待値を持たないか",
             "test が req の振る舞いを検証しており、req と矛盾する期待値がない",
             "test が req の振る舞いを検証していない、または req と矛盾する期待値を持つ",
+        ),
+        EdgeKind::Desc => (
+            serde_json::json!({"description": input.from_text, "body": input.req_text}),
+            "`description` は `body` の内容を正しく要約しているか",
+            "description が body の主題と内容を正しく表しており、body にない事柄を述べていない",
+            "description が body の内容と食い違っている、または body の主題を表していない",
         ),
     };
     serde_json::json!({
@@ -282,6 +296,7 @@ mod tests {
                 path: path.to_string(),
                 content: content.to_string(),
                 hash: hash.to_string(),
+                description: None,
             },
         );
     }
@@ -291,6 +306,7 @@ mod tests {
         let from_kind = match kind {
             EdgeKind::DocReq => NodeKind::Doc,
             EdgeKind::TestReq => NodeKind::Test,
+            EdgeKind::Desc => unreachable!("use add_desc_edge"),
         };
         graph.edges.insert(
             id.clone(),
@@ -967,5 +983,336 @@ mod tests {
         assert_eq!(targets[0].edge_id, id);
         let (targets, _) = build(TargetKind::Req);
         assert!(targets.is_empty(), "{targets:?}");
+    }
+
+    /// Adds a Doc / Req node with a description and its self-loop `desc:doc:<id>` / `desc:req:<id>` edge.
+    fn add_desc_node(
+        graph: &mut Graph,
+        kind: NodeKind,
+        id: &str,
+        description: Option<&str>,
+        content: &str,
+        hash: &str,
+    ) -> String {
+        add_node(graph, kind, id, &format!("docs/{id}.md"), content, hash);
+        let key = NodeKey {
+            kind,
+            id: id.to_string(),
+        };
+        graph.nodes.get_mut(&key).unwrap().description = description.map(str::to_string);
+        add_desc_edge(graph, kind, id)
+    }
+
+    fn add_desc_edge(graph: &mut Graph, kind: NodeKind, id: &str) -> String {
+        let key = NodeKey {
+            kind,
+            id: id.to_string(),
+        };
+        let edge_id = crate::model::desc_edge_id(&key);
+        graph.edges.insert(
+            edge_id.clone(),
+            Edge {
+                id: edge_id.clone(),
+                kind: EdgeKind::Desc,
+                from: key.clone(),
+                to: key,
+            },
+        );
+        edge_id
+    }
+
+    fn select_in(
+        graph: &Graph,
+        lock: &Lock,
+        requested: &[&str],
+    ) -> Result<Vec<EdgeInput>, JudgeError> {
+        let findings = check(graph, lock);
+        let requested: Vec<String> = requested.iter().map(|s| s.to_string()).collect();
+        select_targets(graph, &findings, &requested)
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはdescのdriftを対象にし要約と本文を詰める() {
+        let mut graph = Graph::default();
+        add_desc_node(
+            &mut graph,
+            NodeKind::Doc,
+            "DOC-A",
+            Some("新しい要約"),
+            "doc 本文",
+            "sha256:body",
+        );
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-A".to_string(),
+            lock_entry(&crate::hash::content_hash("古い要約"), "sha256:body"),
+        );
+        let targets = select_in(&graph, &lock, &[]).unwrap();
+        assert_eq!(
+            targets,
+            vec![EdgeInput {
+                edge_id: "desc:doc:DOC-A".to_string(),
+                kind: EdgeKind::Desc,
+                from_text: "新しい要約".to_string(),
+                req_text: "doc 本文".to_string(),
+                from_hash: crate::hash::content_hash("新しい要約"),
+                to_hash: "sha256:body".to_string(),
+            }]
+        );
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはdescのnewを対象にし要約が無ければfrom_textを空文字列にする() {
+        let mut graph = Graph::default();
+        add_desc_node(
+            &mut graph,
+            NodeKind::Req,
+            "FR-001",
+            None,
+            "req 本文",
+            "sha256:r",
+        );
+        let targets = select_in(&graph, &Lock::default(), &[]).unwrap();
+        assert_eq!(targets.len(), 1, "{targets:?}");
+        assert_eq!(targets[0].edge_id, "desc:req:FR-001");
+        assert_eq!(targets[0].kind, EdgeKind::Desc);
+        assert_eq!(targets[0].from_text, "");
+        assert_eq!(targets[0].req_text, "req 本文");
+        assert_eq!(targets[0].from_hash, crate::hash::content_hash(""));
+        assert_eq!(targets[0].to_hash, "sha256:r");
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはdescエッジもエッジid昇順に並べ_descがdoc_reqより先になる() {
+        let (mut graph, lock) = mixed_fixture();
+        add_desc_node(
+            &mut graph,
+            NodeKind::Doc,
+            "DOC-Z",
+            Some("要約"),
+            "doc z",
+            "sha256:dz",
+        );
+        let findings = check(&graph, &lock);
+        let targets = select_targets(&graph, &findings, &[]).unwrap();
+        let ids: Vec<&str> = targets.iter().map(|t| t.edge_id.as_str()).collect();
+        assert_eq!(
+            ids,
+            vec![
+                "desc:doc:DOC-Z",
+                "doc-req:DOC-A:FR-001",
+                "doc-req:DOC-B:FR-002",
+                "test-req:tests/t::checks:FR-001",
+            ]
+        );
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはedge指定でdescエッジを選べる() {
+        let mut graph = Graph::default();
+        add_desc_node(
+            &mut graph,
+            NodeKind::Doc,
+            "DOC-A",
+            Some("要約"),
+            "本文",
+            "sha256:a",
+        );
+        add_desc_node(
+            &mut graph,
+            NodeKind::Doc,
+            "DOC-B",
+            Some("要約"),
+            "本文",
+            "sha256:b",
+        );
+        let targets = select_in(
+            &graph,
+            &Lock::default(),
+            &["desc:doc:DOC-B", "desc:doc:DOC-B"],
+        )
+        .unwrap();
+        assert_eq!(targets.len(), 1);
+        assert_eq!(targets[0].edge_id, "desc:doc:DOC-B");
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはfindingのないdescエッジを対象にせずedge指定はnot_a_targetになる() {
+        let mut graph = Graph::default();
+        add_desc_node(
+            &mut graph,
+            NodeKind::Doc,
+            "DOC-A",
+            Some("要約"),
+            "本文",
+            "sha256:a",
+        );
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-A".to_string(),
+            lock_entry(&crate::hash::content_hash("要約"), "sha256:a"),
+        );
+        assert!(select_in(&graph, &lock, &[]).unwrap().is_empty());
+        assert!(matches!(
+            select_in(&graph, &lock, &["desc:doc:DOC-A"]),
+            Err(JudgeError::NotATarget(_))
+        ));
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはロックにのみ存在するdescエッジのedge指定をnot_a_targetにする() {
+        let mut lock = Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-X".to_string(),
+            lock_entry(&crate::hash::content_hash("要約"), "sha256:x"),
+        );
+        assert!(matches!(
+            select_in(&Graph::default(), &lock, &["desc:doc:DOC-X"]),
+            Err(JudgeError::NotATarget(_))
+        ));
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはリンク切れを持つdocのdescエッジを対象にしない() {
+        let mut graph = Graph::default();
+        add_desc_node(
+            &mut graph,
+            NodeKind::Doc,
+            "DOC-A",
+            Some("要約"),
+            "本文",
+            "sha256:a",
+        );
+        graph.broken.push(Broken {
+            from: NodeKey {
+                kind: NodeKind::Doc,
+                id: "DOC-A".to_string(),
+            },
+            target: "../req/missing.md".to_string(),
+            reason: ReasonCode::MissingReq,
+            detail: "missing".to_string(),
+        });
+        assert!(select_in(&graph, &Lock::default(), &[]).unwrap().is_empty());
+        assert!(matches!(
+            select_in(&graph, &Lock::default(), &["desc:doc:DOC-A"]),
+            Err(JudgeError::NotATarget(_))
+        ));
+    }
+
+    // [FR-038]
+    #[test]
+    fn select_targetsはinvalidに関わるノードのdescエッジを対象にしない() {
+        let mut graph = Graph::default();
+        add_desc_node(
+            &mut graph,
+            NodeKind::Req,
+            "FR-001",
+            Some("要約"),
+            "本文",
+            "sha256:r",
+        );
+        graph.invalid.push(Invalid {
+            target_kind: TargetKind::Req,
+            target: "FR-001".to_string(),
+            reason: ReasonCode::DuplicateId,
+            detail: "dup".to_string(),
+        });
+        assert!(select_in(&graph, &Lock::default(), &[]).unwrap().is_empty());
+    }
+
+    // [FR-041]
+    #[test]
+    fn build_jev_requestはdescエッジのstateと質問文言を組み立てる() {
+        let i = input("desc:doc:DOC-A", EdgeKind::Desc, "要約です", "本文です");
+        let v = build_jev_request(&i);
+        assert_eq!(v["model"], "jev-latest");
+        assert_eq!(
+            v["state"],
+            serde_json::json!({"description": "要約です", "body": "本文です"})
+        );
+        assert_eq!(v["questions"].as_object().unwrap().len(), 1);
+        let q = &v["questions"]["consistent"];
+        assert_eq!(q["type"], "noul");
+        assert_eq!(
+            q["instructions"],
+            "`description` は `body` の内容を正しく要約しているか"
+        );
+        assert_eq!(
+            q["criteria"]["true"],
+            "description が body の主題と内容を正しく表しており、body にない事柄を述べていない"
+        );
+        assert_eq!(
+            q["criteria"]["false"],
+            "description が body の内容と食い違っている、または body の主題を表していない"
+        );
+    }
+
+    // [FR-041]
+    #[test]
+    fn build_jev_requestはdescで要約が空でもdescriptionキーを空文字列で送る() {
+        let i = input("desc:doc:DOC-A", EdgeKind::Desc, "", "本文です");
+        let v = build_jev_request(&i);
+        assert_eq!(v["state"]["description"], "");
+        assert_eq!(v["state"]["body"], "本文です");
+    }
+
+    // [FR-045]
+    #[test]
+    fn descエッジも要約と本文の合計が上限を超えるとjevを呼ばずskippedになる() {
+        let calls = Cell::new(0);
+        let jev = |_: &serde_json::Value| -> Result<String, JudgeError> {
+            calls.set(calls.get() + 1);
+            Ok(jev_body(0.95))
+        };
+        let inputs = vec![input("desc:doc:DOC-A", EdgeKind::Desc, "12345", "123456")];
+        let out = judge_edges(&inputs, 0.9, 10, &jev).unwrap();
+        assert_eq!(out.len(), 1);
+        assert_eq!(out[0].kind, EdgeKind::Desc);
+        assert_eq!(out[0].verdict, Verdict::Skipped);
+        assert_eq!(out[0].score, None);
+        assert_eq!(calls.get(), 0);
+    }
+
+    // [FR-045]
+    #[test]
+    fn descエッジの要約と本文の合計が上限ちょうどならjevを呼ぶ() {
+        let calls = Cell::new(0);
+        let jev = |_: &serde_json::Value| -> Result<String, JudgeError> {
+            calls.set(calls.get() + 1);
+            Ok(jev_body(0.95))
+        };
+        let inputs = vec![input("desc:doc:DOC-A", EdgeKind::Desc, "12345", "12345")];
+        let out = judge_edges(&inputs, 0.9, 10, &jev).unwrap();
+        assert_eq!(out[0].verdict, Verdict::Consistent);
+        assert_eq!(calls.get(), 1);
+    }
+
+    // [FR-048]
+    #[test]
+    fn apply_auto_reconcileはdescエッジの要約と本文のハッシュをjevの合意として記録する() {
+        let mut i = input("desc:doc:DOC-A", EdgeKind::Desc, "要約", "本文");
+        i.from_hash = "sha256:desc-from".to_string();
+        i.to_hash = "sha256:desc-to".to_string();
+        let judgments = vec![Judgment {
+            edge: "desc:doc:DOC-A".to_string(),
+            kind: EdgeKind::Desc,
+            verdict: Verdict::Consistent,
+            score: Some(0.97),
+        }];
+        let new_lock =
+            apply_auto_reconcile(&Lock::default(), &[i], &judgments, "2026-02-03T04:05:06Z");
+        let e = &new_lock.edges["desc:doc:DOC-A"];
+        assert_eq!(e.by, "jev");
+        assert_eq!(e.score, Some(0.97));
+        assert_eq!(e.from, "sha256:desc-from");
+        assert_eq!(e.to, "sha256:desc-to");
+        assert_eq!(e.at, "2026-02-03T04:05:06Z");
     }
 }
