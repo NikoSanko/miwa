@@ -170,10 +170,10 @@
     },
     "doc-req:DOC-INDEX:FR-071": {
       "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "doc-req:DOC-INDEX:FR-072": {
       "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
@@ -541,10 +541,10 @@
     },
     "doc-req:DOC-MODEL:FR-071": {
       "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
@@ -2445,38 +2445,38 @@
     },
     "test-req:src/index:tests:descriptionの有無と空と改行の扱い:FR-071": {
       "from": "sha256:19429304c82229f63fbdf94767c3d38ae69b7d63537ad93fad737487210bab2e",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:h1のコードスパンはソースのまま含む:FR-071": {
       "from": "sha256:93b5f14fcbba52b0f6334120ee40f4f020f20a14ba21dd817a78e899d9b34a33",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:h1はatx閉じのシャープを含まない:FR-071": {
       "from": "sha256:f4d86aec743be29489c4002af28cb8b493819292fc98d0f95a638055eedd502d",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:h1はsetext形式でも取れて下線を含まない:FR-071": {
       "from": "sha256:a9b08bb09473588d217e71a1310b025eaaca98b29e9b57b7a372273a3d5717bf",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:h1以外の見出しは無視されファイル名にフォールバックする:FR-071": {
       "from": "sha256:c239d1ff00322b4207c7c9c5f66e517e6317dc93031ee9a168ee3bc0b27ab894",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:indexとlogは予約名で文書にならず索引として分類される:FR-067": {
       "from": "sha256:831ce5f2829afdc87a92eb3e21780beca6a17d4b6b50766e0855693583d17892",
@@ -2515,24 +2515,24 @@
     },
     "test-req:src/index:tests:setextのレベル2下線はh1として扱わない:FR-071": {
       "from": "sha256:704bcd7e4f5d61d60b8117879ce29a26874dcb8088a3e4e9e8180654cfe9c370",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:titleが空なら最初のh1にフォールバックする:FR-071": {
       "from": "sha256:efec1a39d99ad0c6e55a7cc37e712c5f3b7eb765768a45d7f79062584b4dbf48",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:titleはフロントマターのtitleを優先し前後の空白を除く:FR-071": {
       "from": "sha256:065ebc629c4ca2a8b0ac5ebfba59b041f4e4d357c47763a39920fba93bb44533",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:typeなしとフロントマターなしはuntypedで壊れたフロントマターは無視される:FR-075": {
       "from": "sha256:dba980ca1004cf87d39bc08d607c2920e5840b7a645b7356e19e49936e111ec9",
@@ -2550,10 +2550,10 @@
     },
     "test-req:src/index:tests:typeは任意の値でも文書になる:FR-071": {
       "from": "sha256:cb157a1138603fc4223a372480777a4baacc2acf95ae492973daa6eafbe1c2bd",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:すでに一致していればバイト列は変わらない:FR-081": {
       "from": "sha256:4dd6ca02857037e8dba0eec2b3acf951d0e19e5a725f2bedf0909f153d9bd51c",
@@ -2592,10 +2592,10 @@
     },
     "test-req:src/index:tests:コードブロック内のシャープ行はh1として扱わない:FR-071": {
       "from": "sha256:ea065747ff18d05d71f5210cbfcf8b1fc248ac127f760c5c0021a1c8e9dd2ab5",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:スラッシュなしでも配下にファイルがあればディレクトリになる:FR-070": {
       "from": "sha256:d94e39a7e5c0c3369a58c5d2407751db9a3f46ac386f9cf611b278d686a05e7b",
@@ -2926,6 +2926,20 @@
       "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
       "at": "2026-10-05T17:24:34Z"
     },
+    "test-req:src/index:tests:子の索引のフロントマターが壊れていればタイトルと要約の照合をしない:FR-071": {
+      "from": "sha256:447fb5ea8facb0456f6c31b6e641164b703b1e91279c9d0d773e3512951dc34e",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:子の索引のフロントマターが壊れていれば親のエントリを書き換えない:FR-071": {
+      "from": "sha256:24578e370078f6cc379d5a7530559d1bf9f2fc8e96b83ebccc28149f8efa867c",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
     "test-req:src/index:tests:子索引の追加は直近の親の索引の末尾にだけ行われる:FR-082": {
       "from": "sha256:5279ba8485f7202ec3973f9a2f62cd42ec7c7e40c5320ae7bf83718ced412e21",
       "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
@@ -2982,12 +2996,19 @@
       "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
       "at": "2026-10-02T23:47:26Z"
     },
+    "test-req:src/index:tests:改行crを含むdescriptionは要約なし:FR-071": {
+      "from": "sha256:4e312ff9216564b4e53ac6cf44e3ff98c9f9216d539b446bb4b1f8dbaac17a13",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
     "test-req:src/index:tests:改行を含むtitleは無いものとしてh1にフォールバックする:FR-071": {
       "from": "sha256:83b55c9b8acc5ab6d84b7804339b217d8e37f7a3c9826511aafa5358ee19998d",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:改行コードは既存本文にcrlfがあればcrlfになる:FR-082": {
       "from": "sha256:5f444be3592cef7efef97c6d2a342bb221ee1d3318cf67f7e31dcd0a73a59b7b",
@@ -3033,10 +3054,10 @@
     },
     "test-req:src/index:tests:最初のh1が空なら次のh1を探さずファイル名にフォールバックする:FR-071": {
       "from": "sha256:c3ecfe1251f7f451c88fe0eff44becc11321c48efea571d7a9c9a4d00857edb6",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:未列挙の文書がパス順に末尾へ追加される:FR-082": {
       "from": "sha256:a2703710c05b7c60902b67eb45834b9670aaefa0cb9fb3ba2f7fd2c21e84afb1",
@@ -3117,10 +3138,10 @@
     },
     "test-req:src/index:tests:索引のtitleとdescriptionはディレクトリのタイトルと要約になる:FR-071": {
       "from": "sha256:d0b03121726b60817d49217fe71caf562511b1c83c99348c24747f2114696881",
-      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
       "by": "human",
-      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
-      "at": "2026-10-05T17:24:34Z"
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
     },
     "test-req:src/index:tests:索引自身を指すエントリは自己か祖先として壊れている:FR-076": {
       "from": "sha256:9d5fffe40a4bfbe75f187034caf1fd52bdae216db76ab81f287a8a1c0f70d470",

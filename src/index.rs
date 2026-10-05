@@ -60,11 +60,15 @@ pub struct IndexMeta {
     pub path: String,
     pub title: String,
     pub description: Option<String>,
+    /// The frontmatter could not be parsed; the title and summary are then
+    /// unknown and neither checked nor rewritten (reported as `invalid`).
+    pub invalid: bool,
 }
 
 /// An index structure problem. `target` follows the canonical form: for
-/// `BrokenEntry` / `MissingDirectoryDescription` it is
-/// `"<index path> -> <dest>"`, otherwise the path.
+/// `BrokenEntry` and for `TitleMismatch` / `DescriptionMismatch` of a
+/// directory entry it is `"<index path> -> <dest>"`, otherwise (including
+/// `MissingDirectoryDescription`) the path.
 #[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord)]
 pub struct IndexIssue {
     pub reason: ReasonCode,
@@ -428,6 +432,7 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
         }
         match path.rsplit('/').next() {
             Some("index.md") => {
+                let invalid = parsed.front_matter.is_err();
                 let (fm_title, description) = match &parsed.front_matter {
                     Ok(Some(fm)) => (front_title(fm), front_description(fm)),
                     _ => (None, None),
@@ -443,6 +448,7 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
                     path: path.clone(),
                     title,
                     description,
+                    invalid,
                 });
                 continue;
             }
@@ -465,6 +471,10 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
     out
 }
 
+fn child_index_of(dir: &str) -> String {
+    format!("{dir}/index.md")
+}
+
 /// Frontmatter `title`: trimmed, non-empty, single line.
 fn front_title(fm: &FrontMatter) -> Option<String> {
     fm.title
@@ -474,12 +484,12 @@ fn front_title(fm: &FrontMatter) -> Option<String> {
         .map(str::to_string)
 }
 
-/// Frontmatter `description`: trimmed, non-empty, single line.
+/// Frontmatter `description`: trimmed, non-empty, single line (no LF or CR).
 fn front_description(fm: &FrontMatter) -> Option<String> {
     fm.description
         .as_deref()
         .map(str::trim)
-        .filter(|d| !d.is_empty() && !d.contains('\n'))
+        .filter(|d| !d.is_empty() && !d.contains('\n') && !d.contains('\r'))
         .map(str::to_string)
 }
 
@@ -487,10 +497,8 @@ fn front_description(fm: &FrontMatter) -> Option<String> {
 /// -> first H1 of the body (source text of the inner events) -> file name
 /// without `.md`.
 pub fn document_title(path: &str, fm: &FrontMatter) -> String {
-    if let Some(t) = fm.title.as_deref().map(str::trim) {
-        if !t.is_empty() && !t.contains('\n') && !t.contains('\r') {
-            return t.to_string();
-        }
+    if let Some(t) = front_title(fm) {
+        return t;
     }
     let body = fm.body.as_str();
     let mut in_h1 = false;
@@ -671,7 +679,7 @@ fn check_root(
                     }
                 },
                 Resolution::Directory(d) => {
-                    let child = format!("{d}/index.md");
+                    let child = child_index_of(&d);
                     if !index_set.contains(child.as_str()) {
                         out.insert(issue(
                             ReasonCode::BrokenEntry,
@@ -679,7 +687,7 @@ fn check_root(
                             "directory has no index.md",
                         ));
                     } else {
-                        if let Some(m) = meta_map.get(child.as_str()) {
+                        if let Some(m) = meta_map.get(child.as_str()).filter(|m| !m.invalid) {
                             let target = entry_target(index, &e.dest);
                             if unescape_brackets(&e.link_text) != m.title {
                                 out.insert(issue(
@@ -806,34 +814,32 @@ pub fn update_index(
                         continue;
                     }
                 },
-                Resolution::Directory(d) => match meta_map.get(format!("{d}/index.md").as_str()) {
-                    Some(m) => (None, m.title.as_str(), &m.description),
-                    None => continue,
+                Resolution::Directory(d) => match meta_map.get(child_index_of(&d).as_str()) {
+                    Some(m) if !m.invalid => (None, m.title.as_str(), &m.description),
+                    _ => continue,
                 },
                 _ => continue,
             };
-        {
-            if let Some(p) = doc_path {
-                listed.insert(p);
-            }
-            let after = &text.as_bytes()[e.text_span.end..];
-            // Collapsed `[T][]` and shortcut `[T]` references use the link text as
-            // the reference label, so it must not change.
-            let keep_label = after.first() == Some(&b']')
-                && match after.get(1) {
-                    Some(b'(') => false,
-                    Some(b'[') => after.get(2) == Some(&b']'),
-                    _ => true,
-                };
-            if !keep_label {
-                edits.push((e.text_span.clone(), escape_brackets(title)));
-            }
-            let tail = match description {
-                Some(d) => format!(" {} {}", e.separator.unwrap_or('—'), escape_brackets(d)),
-                None => String::new(),
-            };
-            edits.push((e.tail_span.clone(), tail));
+        if let Some(p) = doc_path {
+            listed.insert(p);
         }
+        let after = &text.as_bytes()[e.text_span.end..];
+        // Collapsed `[T][]` and shortcut `[T]` references use the link text as
+        // the reference label, so it must not change.
+        let keep_label = after.first() == Some(&b']')
+            && match after.get(1) {
+                Some(b'(') => false,
+                Some(b'[') => after.get(2) == Some(&b']'),
+                _ => true,
+            };
+        if !keep_label {
+            edits.push((e.text_span.clone(), escape_brackets(title)));
+        }
+        let tail = match description {
+            Some(d) => format!(" {} {}", e.separator.unwrap_or('—'), escape_brackets(d)),
+            None => String::new(),
+        };
+        edits.push((e.tail_span.clone(), tail));
     }
     edits.sort_by_key(|e| e.0.start);
     let mut out = String::with_capacity(text.len());
@@ -870,6 +876,9 @@ pub fn update_index(
         lines.push(l);
     }
     for c in children {
+        if meta_map.get(c.as_str()).is_some_and(|m| m.invalid) {
+            continue;
+        }
         let dir = rel(parent_dir(c));
         let (title, description) = match meta_map.get(c.as_str()) {
             Some(m) => (m.title.clone(), m.description.clone()),
@@ -1009,7 +1018,7 @@ pub fn run(
             let linked: HashSet<String> = parse_entries(text)
                 .into_iter()
                 .filter_map(|e| match resolve(&index, root, &e.dest, &repo) {
-                    Resolution::Directory(d) => Some(format!("{d}/index.md")),
+                    Resolution::Directory(d) => Some(child_index_of(&d)),
                     _ => None,
                 })
                 .collect();
@@ -1129,6 +1138,7 @@ mod tests {
             path: path.to_string(),
             title: title.to_string(),
             description: description.map(str::to_string),
+            invalid: false,
         }
     }
 
@@ -2936,6 +2946,48 @@ mod tests {
             &excluded,
         );
         assert_eq!(out, "- [A](a.md) — D\n- [X](vendor/x.md) — x\n");
+    }
+
+    // [FR-071]
+    #[test]
+    fn 改行crを含むdescriptionは要約なし() {
+        let files = [("docs/cr.md", "---\ntype: X\ndescription: \"a\\rb\"\n---\n")];
+        let docs = collect(&files).documents;
+        assert_eq!(docs[0].description, None);
+    }
+
+    // [FR-071]
+    #[test]
+    fn 子の索引のフロントマターが壊れていればタイトルと要約の照合をしない() {
+        let b = typed("B", Some("DB"));
+        let files = [
+            ("docs/index.md", "- [S](sub/) — 何か\n"),
+            (
+                "docs/sub/index.md",
+                "---\ntitle: [\n---\n- [B](b.md) — DB\n",
+            ),
+            ("docs/sub/b.md", b.as_str()),
+        ];
+        let set = issues(&files);
+        for r in [
+            ReasonCode::TitleMismatch,
+            ReasonCode::DescriptionMismatch,
+            ReasonCode::MissingDirectoryDescription,
+        ] {
+            assert!(set.iter().all(|i| i.reason != r), "{set:?}");
+        }
+    }
+
+    // [FR-071]
+    #[test]
+    fn 子の索引のフロントマターが壊れていれば親のエントリを書き換えない() {
+        let files = ["docs/index.md", "docs/sub/index.md"];
+        let mut m = meta("docs/sub/index.md", "sub", None);
+        m.invalid = true;
+        let text = "- [Old](sub/) — 古い\n";
+        assert_eq!(upd_meta(text, &[], &[m.clone()], &files, &[]), text);
+        // Not appended as an unlinked child either.
+        assert_eq!(upd_meta("", &[], &[m], &files, &["docs/sub/index.md"]), "");
     }
 
     // [FR-071]
