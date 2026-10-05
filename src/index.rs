@@ -53,6 +53,15 @@ pub struct Document {
     pub description: Option<String>,
 }
 
+/// An `index.md` with the title and summary it contributes as a directory
+/// (FR-071): frontmatter `title` (else the directory name) and `description`.
+#[derive(Debug, Clone, PartialEq, Eq)]
+pub struct IndexMeta {
+    pub path: String,
+    pub title: String,
+    pub description: Option<String>,
+}
+
 /// An index structure problem. `target` follows the canonical form: for
 /// `BrokenEntry` / `MissingDirectoryDescription` it is
 /// `"<index path> -> <dest>"`, otherwise the path.
@@ -402,7 +411,7 @@ impl IndexStatus {
 pub struct RootFiles {
     pub documents: Vec<Document>,
     pub untyped: Vec<String>,
-    pub indexes: Vec<String>,
+    pub indexes: Vec<IndexMeta>,
 }
 
 /// Classify the `.md` files under `root` into documents, untyped files and
@@ -419,7 +428,22 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
         }
         match path.rsplit('/').next() {
             Some("index.md") => {
-                out.indexes.push(path.clone());
+                let (fm_title, description) = match &parsed.front_matter {
+                    Ok(Some(fm)) => (front_title(fm), front_description(fm)),
+                    _ => (None, None),
+                };
+                let title = fm_title.unwrap_or_else(|| {
+                    parent_dir(path)
+                        .rsplit('/')
+                        .next()
+                        .unwrap_or_default()
+                        .to_string()
+                });
+                out.indexes.push(IndexMeta {
+                    path: path.clone(),
+                    title,
+                    description,
+                });
                 continue;
             }
             Some("log.md") => continue,
@@ -428,12 +452,7 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
         match &parsed.front_matter {
             Err(_) => {}
             Ok(Some(fm)) if fm.kind.is_some() => {
-                let description = fm
-                    .description
-                    .as_deref()
-                    .map(str::trim)
-                    .filter(|d| !d.is_empty() && !d.contains('\n'))
-                    .map(str::to_string);
+                let description = front_description(fm);
                 out.documents.push(Document {
                     path: path.clone(),
                     title: document_title(path, fm),
@@ -444,6 +463,24 @@ pub fn collect_documents(root: &str, texts: &BTreeMap<String, ParsedText>) -> Ro
         }
     }
     out
+}
+
+/// Frontmatter `title`: trimmed, non-empty, single line.
+fn front_title(fm: &FrontMatter) -> Option<String> {
+    fm.title
+        .as_deref()
+        .map(str::trim)
+        .filter(|t| !t.is_empty() && !t.contains('\n') && !t.contains('\r'))
+        .map(str::to_string)
+}
+
+/// Frontmatter `description`: trimmed, non-empty, single line.
+fn front_description(fm: &FrontMatter) -> Option<String> {
+    fm.description
+        .as_deref()
+        .map(str::trim)
+        .filter(|d| !d.is_empty() && !d.contains('\n'))
+        .map(str::to_string)
 }
 
 /// Title of a document: frontmatter `title` (trimmed, non-empty, single line)
@@ -514,8 +551,9 @@ fn issue(reason: ReasonCode, target: impl Into<String>, detail: impl Into<String
 /// index; each entry is resolved: `External` ignored, `Unresolvable` ->
 /// `BrokenEntry`, `File` not a document -> `BrokenEntry`, title mismatch ->
 /// `TitleMismatch`, description mismatch -> `DescriptionMismatch`; `Directory`
-/// without `index.md` -> `BrokenEntry`, empty summary ->
-/// `MissingDirectoryDescription`; unlisted documents -> `NotListed`; child
+/// without `index.md` -> `BrokenEntry`, otherwise compared with the child
+/// index's title / description (`TitleMismatch` / `DescriptionMismatch`; no
+/// description -> `MissingDirectoryDescription` targeting the child index); unlisted documents -> `NotListed`; child
 /// indexes not reached from the parent -> `UnlinkedIndex`. Duplicates are
 /// removed by the set.
 pub fn collect_issues(
@@ -561,7 +599,7 @@ fn check_root(
         }
     }
     let root_index = crate::config::join_under(root, "index.md");
-    let index_set: HashSet<&str> = indexes.iter().map(String::as_str).collect();
+    let index_set: HashSet<&str> = indexes.iter().map(|m| m.path.as_str()).collect();
     if !index_set.contains(root_index.as_str()) {
         if !documents.is_empty() {
             out.insert(issue(
@@ -575,10 +613,12 @@ fn check_root(
     let doc_map: HashMap<&str, &Document> =
         documents.iter().map(|d| (d.path.as_str(), d)).collect();
     let untyped_set: HashSet<&str> = untyped.iter().map(String::as_str).collect();
-    let tree = IndexTree::new(root, indexes.iter().cloned());
+    let meta_map: HashMap<&str, &IndexMeta> =
+        indexes.iter().map(|m| (m.path.as_str(), m)).collect();
+    let tree = IndexTree::new(root, indexes.iter().map(|m| m.path.clone()));
     let mut listed: HashMap<&str, HashSet<String>> = HashMap::new();
     let mut linked: HashSet<String> = HashSet::new();
-    for index in &indexes {
+    for index in indexes.iter().map(|m| &m.path) {
         let text = &texts[index].text;
         for e in parse_entries(text) {
             match resolve(index, root, &e.dest, repo) {
@@ -639,12 +679,38 @@ fn check_root(
                             "directory has no index.md",
                         ));
                     } else {
-                        if e.description.is_empty() {
-                            out.insert(issue(
-                                ReasonCode::MissingDirectoryDescription,
-                                entry_target(index, &e.dest),
-                                "directory entry has no summary",
-                            ));
+                        if let Some(m) = meta_map.get(child.as_str()) {
+                            let target = entry_target(index, &e.dest);
+                            if unescape_brackets(&e.link_text) != m.title {
+                                out.insert(issue(
+                                    ReasonCode::TitleMismatch,
+                                    target.clone(),
+                                    format!(
+                                        "link text differs from the directory title `{}`",
+                                        m.title
+                                    ),
+                                ));
+                            }
+                            match &m.description {
+                                Some(d) => {
+                                    if unescape_brackets(&e.description) != *d {
+                                        out.insert(issue(
+                                            ReasonCode::DescriptionMismatch,
+                                            target,
+                                            format!(
+                                                "summary differs from the directory description `{d}`"
+                                            ),
+                                        ));
+                                    }
+                                }
+                                None => {
+                                    out.insert(issue(
+                                        ReasonCode::MissingDirectoryDescription,
+                                        child.clone(),
+                                        "directory index has no single-line `description`",
+                                    ));
+                                }
+                            }
                         }
                         if tree.parent_of(&child).as_deref() == Some(index.as_str()) {
                             linked.insert(child);
@@ -667,7 +733,7 @@ fn check_root(
             ));
         }
     }
-    for index in &indexes {
+    for index in indexes.iter().map(|m| &m.path) {
         if *index != root_index && !linked.contains(index) {
             out.insert(issue(
                 ReasonCode::UnlinkedIndex,
@@ -698,17 +764,22 @@ fn is_list_item_line(line: &str) -> bool {
 /// documents: `text_span` becomes the escaped title (`[` `]` -> `\[` `\]`;
 /// not for collapsed / shortcut references, whose link text doubles as the
 /// reference label), `tail_span` becomes ` {sep} {desc}` (sep = existing or
-/// `—`; empty if no description). Entries whose `File(p)` does not exist
+/// `—`; empty if no description); directory entries (the link target is a
+/// directory with a child `index.md` in `indexes`) are rewritten the same way
+/// from the child's title / description. Entries whose `File(p)` does not exist
 /// (`exists` false) and is not under a default-excluded directory have their
 /// `line_span` removed. Then missing owned documents (path order) and unlinked
-/// child indexes (path order) are appended as list items, with percent-encoded
+/// child indexes (path order, `- [<title>](<dir>/) — <summary>`, no separator
+/// without a summary) are appended as list items, with percent-encoded
 /// destinations, matching the text's line ending, and a blank line inserted
 /// when the last non-empty line is not a list item.
+#[allow(clippy::too_many_arguments)]
 pub fn update_index(
     text: &str,
     index_path: &str,
     tree: &IndexTree,
     documents: &[Document],
+    indexes: &[IndexMeta],
     repo: &RepoFiles,
     unlinked_child_indexes: &[String],
     excluded: &[String],
@@ -717,15 +788,34 @@ pub fn update_index(
     let index_dir = parent_dir(index_path);
     let doc_map: HashMap<&str, &Document> =
         documents.iter().map(|d| (d.path.as_str(), d)).collect();
+    let meta_map: HashMap<&str, &IndexMeta> =
+        indexes.iter().map(|m| (m.path.as_str(), m)).collect();
     let mut edits: Vec<(Range<usize>, String)> = Vec::new();
     let mut listed: HashSet<String> = HashSet::new();
     for e in parse_entries(text) {
-        let p = match resolve(index_path, root, &e.dest, repo) {
-            Resolution::File(p) => p,
-            _ => continue,
-        };
-        if let Some(doc) = doc_map.get(p.as_str()) {
-            listed.insert(p);
+        let (doc_path, title, description): (Option<String>, &str, &Option<String>) =
+            match resolve(index_path, root, &e.dest, repo) {
+                Resolution::File(p) => match doc_map.get(p.as_str()) {
+                    Some(doc) => (Some(p), doc.title.as_str(), &doc.description),
+                    None => {
+                        if !repo.files.contains(p.as_str())
+                            && !crate::source::is_under_dir_named(&p, excluded)
+                        {
+                            edits.push((e.line_span.clone(), String::new()));
+                        }
+                        continue;
+                    }
+                },
+                Resolution::Directory(d) => match meta_map.get(format!("{d}/index.md").as_str()) {
+                    Some(m) => (None, m.title.as_str(), &m.description),
+                    None => continue,
+                },
+                _ => continue,
+            };
+        {
+            if let Some(p) = doc_path {
+                listed.insert(p);
+            }
             let after = &text.as_bytes()[e.text_span.end..];
             // Collapsed `[T][]` and shortcut `[T]` references use the link text as
             // the reference label, so it must not change.
@@ -736,17 +826,13 @@ pub fn update_index(
                     _ => true,
                 };
             if !keep_label {
-                edits.push((e.text_span.clone(), escape_brackets(&doc.title)));
+                edits.push((e.text_span.clone(), escape_brackets(title)));
             }
-            let tail = match &doc.description {
+            let tail = match description {
                 Some(d) => format!(" {} {}", e.separator.unwrap_or('—'), escape_brackets(d)),
                 None => String::new(),
             };
             edits.push((e.tail_span.clone(), tail));
-        } else if !repo.files.contains(p.as_str())
-            && !crate::source::is_under_dir_named(&p, excluded)
-        {
-            edits.push((e.line_span.clone(), String::new()));
         }
     }
     edits.sort_by_key(|e| e.0.start);
@@ -785,11 +871,15 @@ pub fn update_index(
     }
     for c in children {
         let dir = rel(parent_dir(c));
-        lines.push(format!(
-            "- [{}]({}/) — ",
-            escape_brackets(&dir),
-            percent_encode(&dir)
-        ));
+        let (title, description) = match meta_map.get(c.as_str()) {
+            Some(m) => (m.title.clone(), m.description.clone()),
+            None => (dir.rsplit('/').next().unwrap_or(&dir).to_string(), None),
+        };
+        let mut l = format!("- [{}]({}/)", escape_brackets(&title), percent_encode(&dir));
+        if let Some(desc) = &description {
+            l.push_str(&format!(" — {}", escape_brackets(desc)));
+        }
+        lines.push(l);
     }
     if lines.is_empty() {
         return out;
@@ -901,15 +991,16 @@ pub fn run(
         let RootFiles {
             documents, indexes, ..
         } = collect_documents(root, &texts);
-        let tree = IndexTree::new(root, indexes.iter().cloned());
+        let index_paths: Vec<String> = indexes.iter().map(|m| m.path.clone()).collect();
+        let tree = IndexTree::new(root, index_paths.iter().cloned());
         let root_index = crate::config::join_under(root, "index.md");
-        let targets: Vec<String> = if indexes.contains(&root_index) {
-            indexes.clone()
+        let targets: Vec<String> = if index_paths.contains(&root_index) {
+            index_paths.clone()
         } else if documents.is_empty() {
             continue;
         } else {
             let mut all = vec![root_index.clone()];
-            all.extend(indexes.iter().cloned());
+            all.extend(index_paths.iter().cloned());
             all
         };
         for index in targets {
@@ -927,8 +1018,9 @@ pub fn run(
                 .into_iter()
                 .filter(|c| !linked.contains(c))
                 .collect();
-            let new_text =
-                update_index(text, &index, &tree, &documents, &repo, &unlinked, &excluded);
+            let new_text = update_index(
+                text, &index, &tree, &documents, &indexes, &repo, &unlinked, &excluded,
+            );
             let status = if existing.is_none() {
                 IndexStatus::Created
             } else if new_text == text {
@@ -1029,12 +1121,46 @@ mod tests {
     /// `update_index` for `docs/index.md` (root `docs`); every file in `files`
     /// exists on disk.
     fn upd(text: &str, documents: &[Document], files: &[&str], unlinked: &[&str]) -> String {
+        upd_meta(text, documents, &[], files, unlinked)
+    }
+
+    fn meta(path: &str, title: &str, description: Option<&str>) -> IndexMeta {
+        IndexMeta {
+            path: path.to_string(),
+            title: title.to_string(),
+            description: description.map(str::to_string),
+        }
+    }
+
+    /// An `index.md` source with `title` / `description` front matter and one
+    /// entry body line.
+    fn index_with(title: Option<&str>, description: Option<&str>) -> String {
+        let mut s = String::from("---\n");
+        if let Some(t) = title {
+            s.push_str(&format!("title: {t}\n"));
+        }
+        if let Some(d) = description {
+            s.push_str(&format!("description: {d}\n"));
+        }
+        s.push_str("---\n- [B](b.md) — DB\n");
+        s
+    }
+
+    /// Like `upd`, with the child index metadata supplied.
+    fn upd_meta(
+        text: &str,
+        documents: &[Document],
+        indexes: &[IndexMeta],
+        files: &[&str],
+        unlinked: &[&str],
+    ) -> String {
         let unlinked: Vec<String> = unlinked.iter().map(|s| s.to_string()).collect();
         update_index(
             text,
             "docs/index.md",
             &tree_of(files),
             documents,
+            indexes,
             &RepoFiles::new(files.iter().copied()),
             &unlinked,
             &test_excluded(),
@@ -1489,6 +1615,57 @@ mod tests {
         assert_eq!(d("docs/trim.md"), Some("x".to_string()));
     }
 
+    // [FR-071]
+    #[test]
+    fn 索引のtitleとdescriptionはディレクトリのタイトルと要約になる() {
+        let files = [
+            (
+                "docs/a/index.md",
+                "---\ntitle: \"  Alpha  \"\ndescription: \"  DA  \"\n---\n",
+            ),
+            ("docs/b/index.md", "---\ndescription: DB\n---\n"),
+            (
+                "docs/c/index.md",
+                "---\ntitle: \"\"\ndescription: \"\"\n---\n",
+            ),
+            (
+                "docs/d/index.md",
+                "---\ntitle: \"x\\ny\"\ndescription: \"a\\nb\"\n---\n",
+            ),
+            ("docs/e/f/index.md", "plain\n"),
+            (
+                "docs/g/index.md",
+                "---\ntype: Specification\ntitle: G\ndescription: DG\n---\n",
+            ),
+        ];
+        let RootFiles {
+            documents, indexes, ..
+        } = collect(&files);
+        assert!(documents.is_empty(), "{documents:?}");
+        let m = |p: &str| {
+            indexes
+                .iter()
+                .find(|m| m.path == p)
+                .unwrap_or_else(|| panic!("{p}"))
+                .clone()
+        };
+        assert_eq!(
+            m("docs/a/index.md"),
+            meta("docs/a/index.md", "Alpha", Some("DA"))
+        );
+        assert_eq!(
+            m("docs/b/index.md"),
+            meta("docs/b/index.md", "b", Some("DB"))
+        );
+        assert_eq!(m("docs/c/index.md"), meta("docs/c/index.md", "c", None));
+        assert_eq!(m("docs/d/index.md"), meta("docs/d/index.md", "d", None));
+        assert_eq!(m("docs/e/f/index.md"), meta("docs/e/f/index.md", "f", None));
+        assert_eq!(
+            m("docs/g/index.md"),
+            meta("docs/g/index.md", "G", Some("DG"))
+        );
+    }
+
     // [FR-067]
     #[test]
     fn indexとlogは予約名で文書にならず索引として分類される() {
@@ -1505,9 +1682,9 @@ mod tests {
         } = collect(&files);
         assert_eq!(docs.len(), 1, "{docs:?}");
         assert!(untyped.is_empty(), "{untyped:?}");
-        let mut indexes = indexes;
-        indexes.sort();
-        assert_eq!(indexes, ["docs/index.md", "docs/sub/index.md"]);
+        let mut paths: Vec<String> = indexes.into_iter().map(|m| m.path).collect();
+        paths.sort();
+        assert_eq!(paths, ["docs/index.md", "docs/sub/index.md"]);
     }
 
     // [FR-075]
@@ -1559,11 +1736,12 @@ mod tests {
     // [FR-072]
     #[test]
     fn 入れ子の索引で子の文書は子の索引が担当する() {
+        let sub = index_with(Some("sub"), Some("S"));
         let a = typed("A", Some("DA"));
         let b = typed("B", Some("DB"));
         let files = [
             ("docs/index.md", "- [A](a.md) — DA\n- [sub](sub/) — S\n"),
-            ("docs/sub/index.md", "- [B](b.md) — DB\n"),
+            ("docs/sub/index.md", sub.as_str()),
             ("docs/a.md", a.as_str()),
             ("docs/sub/b.md", b.as_str()),
         ];
@@ -1573,6 +1751,7 @@ mod tests {
     // [FR-072]
     #[test]
     fn 親が子の担当文書を直接列挙しても_同じ文書の重複列挙もfindingにならない() {
+        let sub = index_with(Some("sub"), Some("S"));
         let a = typed("A", Some("DA"));
         let b = typed("B", Some("DB"));
         let files = [
@@ -1580,7 +1759,7 @@ mod tests {
                 "docs/index.md",
                 "- [A](a.md) — DA\n- [A](a.md) — DA\n- [sub](sub/index.md) — S\n- [B](sub/b.md) — DB\n",
             ),
-            ("docs/sub/index.md", "- [B](b.md) — DB\n"),
+            ("docs/sub/index.md", sub.as_str()),
             ("docs/a.md", a.as_str()),
             ("docs/sub/b.md", b.as_str()),
         ];
@@ -1610,9 +1789,10 @@ mod tests {
     #[test]
     fn 中間ディレクトリに索引がなくても最も近い祖先の索引が親になる() {
         let c = typed("C", Some("DC"));
+        let ab = "---\ntitle: a/b\ndescription: AB\n---\n- [C](c.md) — DC\n";
         let files = [
             ("docs/index.md", "- [a/b](a/b/) — AB\n"),
-            ("docs/a/b/index.md", "- [C](c.md) — DC\n"),
+            ("docs/a/b/index.md", ab),
             ("docs/a/b/c.md", c.as_str()),
         ];
         assert!(issues(&files).is_empty(), "{:?}", issues(&files));
@@ -1870,11 +2050,12 @@ mod tests {
 
     // [FR-079]
     #[test]
-    fn ディレクトリエントリの要約が空ならmissing_directory_description() {
+    fn 子の索引にdescriptionがなければmissing_directory_descriptionで対象は子の索引のパス() {
         let b = typed("B", Some("DB"));
+        let sub = index_with(Some("S"), None);
         let files = [
-            ("docs/index.md", "- [sub](sub/)\n"),
-            ("docs/sub/index.md", "- [B](b.md) — DB\n"),
+            ("docs/index.md", "- [S](sub/) — 何か\n"),
+            ("docs/sub/index.md", sub.as_str()),
             ("docs/sub/b.md", b.as_str()),
         ];
         let set = issues(&files);
@@ -1882,8 +2063,14 @@ mod tests {
             has(
                 &set,
                 ReasonCode::MissingDirectoryDescription,
-                "docs/index.md -> sub/"
+                "docs/sub/index.md"
             ),
+            "{set:?}"
+        );
+        // The entry's own summary is not compared when the child has none.
+        assert!(
+            set.iter()
+                .all(|i| i.reason != ReasonCode::DescriptionMismatch),
             "{set:?}"
         );
         assert!(set.iter().all(|i| i.reason != ReasonCode::UnlinkedIndex));
@@ -1891,14 +2078,171 @@ mod tests {
 
     // [FR-079]
     #[test]
-    fn 要約付きのディレクトリエントリは問題にならない() {
+    fn 子のdescriptionが空や改行入りでもmissing_directory_description() {
         let b = typed("B", Some("DB"));
+        for desc in ["\"\"", "\"a\\nb\""] {
+            let sub = index_with(Some("S"), Some(desc));
+            let files = [
+                ("docs/index.md", "- [S](sub/) — x\n"),
+                ("docs/sub/index.md", sub.as_str()),
+                ("docs/sub/b.md", b.as_str()),
+            ];
+            let set = issues(&files);
+            assert!(
+                has(
+                    &set,
+                    ReasonCode::MissingDirectoryDescription,
+                    "docs/sub/index.md"
+                ),
+                "{desc}: {set:?}"
+            );
+        }
+    }
+
+    // [FR-079]
+    #[test]
+    fn エントリの要約が空でも子にdescriptionがあればdescription_mismatchだけが出る() {
+        let b = typed("B", Some("DB"));
+        let sub = index_with(Some("S"), Some("DS"));
         let files = [
-            ("docs/index.md", "- [sub](sub/) — S\n"),
-            ("docs/sub/index.md", "- [B](b.md) — DB\n"),
+            ("docs/index.md", "- [S](sub/)\n"),
+            ("docs/sub/index.md", sub.as_str()),
+            ("docs/sub/b.md", b.as_str()),
+        ];
+        let set = issues(&files);
+        assert!(
+            has(
+                &set,
+                ReasonCode::DescriptionMismatch,
+                "docs/index.md -> sub/"
+            ),
+            "{set:?}"
+        );
+        assert!(
+            set.iter()
+                .all(|i| i.reason != ReasonCode::MissingDirectoryDescription),
+            "{set:?}"
+        );
+    }
+
+    // [FR-079]
+    #[test]
+    fn エントリの要約が空で子にもなければmissing_directory_descriptionだけが出る() {
+        let b = typed("B", Some("DB"));
+        let sub = index_with(Some("S"), None);
+        let files = [
+            ("docs/index.md", "- [S](sub/)\n"),
+            ("docs/sub/index.md", sub.as_str()),
+            ("docs/sub/b.md", b.as_str()),
+        ];
+        let set = issues(&files);
+        assert_eq!(set.len(), 1, "{set:?}");
+        assert!(has(
+            &set,
+            ReasonCode::MissingDirectoryDescription,
+            "docs/sub/index.md"
+        ));
+    }
+
+    // [FR-079]
+    #[test]
+    fn 子の索引と一致するディレクトリエントリは問題にならない() {
+        let b = typed("B", Some("DB"));
+        let sub = index_with(Some("S"), Some("DS"));
+        let files = [
+            ("docs/index.md", "- [S](sub/) — DS\n"),
+            ("docs/sub/index.md", sub.as_str()),
             ("docs/sub/b.md", b.as_str()),
         ];
         assert!(issues(&files).is_empty());
+    }
+
+    // [FR-077]
+    #[test]
+    fn ディレクトリエントリのリンク文が子のtitleと違えばtitle_mismatch() {
+        let b = typed("B", Some("DB"));
+        let sub = index_with(Some("S"), Some("DS"));
+        let files = [
+            ("docs/index.md", "- [sub](sub/) — DS\n"),
+            ("docs/sub/index.md", sub.as_str()),
+            ("docs/sub/b.md", b.as_str()),
+        ];
+        let set = issues(&files);
+        assert!(
+            has(&set, ReasonCode::TitleMismatch, "docs/index.md -> sub/"),
+            "{set:?}"
+        );
+        assert!(
+            detail_of(&set, ReasonCode::TitleMismatch, "docs/index.md -> sub/").contains("`S`")
+        );
+        assert_eq!(set.len(), 1, "{set:?}");
+    }
+
+    // [FR-077]
+    #[test]
+    fn ディレクトリエントリの要約が子のdescriptionと違えばdescription_mismatch() {
+        let b = typed("B", Some("DB"));
+        let sub = index_with(Some("S"), Some("DS"));
+        let files = [
+            ("docs/index.md", "- [S](sub/) — 古い\n"),
+            ("docs/sub/index.md", sub.as_str()),
+            ("docs/sub/b.md", b.as_str()),
+        ];
+        let set = issues(&files);
+        assert!(
+            has(
+                &set,
+                ReasonCode::DescriptionMismatch,
+                "docs/index.md -> sub/"
+            ),
+            "{set:?}"
+        );
+        assert_eq!(set.len(), 1, "{set:?}");
+    }
+
+    // [FR-077]
+    #[test]
+    fn 子にtitleがなければディレクトリ名と照合される() {
+        let b = typed("B", Some("DB"));
+        let sub = index_with(None, Some("DS"));
+        let ok = [
+            ("docs/index.md", "- [sub](sub/) — DS\n"),
+            ("docs/sub/index.md", sub.as_str()),
+            ("docs/sub/b.md", b.as_str()),
+        ];
+        assert!(issues(&ok).is_empty());
+        let ng = [
+            ("docs/index.md", "- [other](sub/) — DS\n"),
+            ("docs/sub/index.md", sub.as_str()),
+            ("docs/sub/b.md", b.as_str()),
+        ];
+        let set = issues(&ng);
+        assert!(
+            has(&set, ReasonCode::TitleMismatch, "docs/index.md -> sub/"),
+            "{set:?}"
+        );
+    }
+
+    // [FR-079]
+    #[test]
+    fn 中間索引を飛ばしたディレクトリエントリも子の索引で判定する() {
+        let c = typed("C", Some("DC"));
+        let ab = index_with(Some("AB"), None);
+        let files = [
+            ("docs/index.md", "- [AB](a/b/) — x\n"),
+            ("docs/a/b/index.md", ab.as_str()),
+            ("docs/a/b/c.md", c.as_str()),
+        ];
+        let set = issues(&files);
+        assert!(
+            has(
+                &set,
+                ReasonCode::MissingDirectoryDescription,
+                "docs/a/b/index.md"
+            ),
+            "{set:?}"
+        );
+        assert!(set.iter().all(|i| i.reason != ReasonCode::UnlinkedIndex));
     }
 
     // [FR-079]
@@ -1915,27 +2259,6 @@ mod tests {
             has(&set, ReasonCode::UnlinkedIndex, "docs/sub/index.md"),
             "{set:?}"
         );
-    }
-
-    // [FR-079]
-    #[test]
-    fn 中間索引を飛ばしたディレクトリエントリも要約がなければmissing_directory_description() {
-        let c = typed("C", Some("DC"));
-        let files = [
-            ("docs/index.md", "- [a/b](a/b/)\n"),
-            ("docs/a/b/index.md", "- [C](c.md) — DC\n"),
-            ("docs/a/b/c.md", c.as_str()),
-        ];
-        let set = issues(&files);
-        assert!(
-            has(
-                &set,
-                ReasonCode::MissingDirectoryDescription,
-                "docs/index.md -> a/b/"
-            ),
-            "{set:?}"
-        );
-        assert!(set.iter().all(|i| i.reason != ReasonCode::UnlinkedIndex));
     }
 
     // ---- FR-081 update_index rewrite -----------------------------------
@@ -2131,16 +2454,92 @@ mod tests {
     #[test]
     fn 辿れない子の索引はディレクトリエントリとして文書の後に追加される() {
         let docs = [doc("docs/a.md", "A", Some("DA"))];
-        let out = upd(
+        let metas = [
+            meta("docs/zeta/index.md", "Zeta [z]", Some("DZ")),
+            meta("docs/sub/index.md", "Sub", Some("DS")),
+        ];
+        let out = upd_meta(
             "- [x](x.md)\n",
             &docs,
+            &metas,
             &["docs/a.md", "docs/x.md"],
             &["docs/zeta/index.md", "docs/sub/index.md"],
         );
         assert_eq!(
             out,
-            "- [x](x.md)\n- [A](a.md) — DA\n- [sub](sub/) — \n- [zeta](zeta/) — \n"
+            "- [x](x.md)\n- [A](a.md) — DA\n- [Sub](sub/) — DS\n- [Zeta \\[z\\]](zeta/) — DZ\n"
         );
+    }
+
+    // [FR-082]
+    #[test]
+    fn 子に要約がなければ追加するディレクトリエントリは区切りを付けない() {
+        let metas = [
+            meta("docs/sub/index.md", "sub", None),
+            meta("docs/two/index.md", "Two", None),
+        ];
+        let out = upd_meta(
+            "- [x](x.md)\n",
+            &[],
+            &metas,
+            &["docs/x.md"],
+            &["docs/sub/index.md", "docs/two/index.md"],
+        );
+        assert_eq!(out, "- [x](x.md)\n- [sub](sub/)\n- [Two](two/)\n");
+    }
+
+    // [FR-081]
+    #[test]
+    fn ディレクトリエントリのリンク文と要約を子の索引の値で置き換える() {
+        let metas = [meta("docs/sub/index.md", "Sub", Some("DS"))];
+        let files = ["docs/sub/index.md"];
+        let out = upd_meta("- [old](sub/) - 古い\n", &[], &metas, &files, &[]);
+        assert_eq!(out, "- [Sub](sub/) - DS\n");
+        // Destination source and reference forms stay as written.
+        let out = upd_meta("- [old](<sub/> \"t\")\n", &[], &metas, &files, &[]);
+        assert_eq!(out, "- [Sub](<sub/> \"t\") — DS\n");
+        // Already matching: byte-identical.
+        let same = "- [Sub](sub/) — DS\n";
+        assert_eq!(upd_meta(same, &[], &metas, &files, &[]), same);
+    }
+
+    // [FR-081]
+    #[test]
+    fn 子に要約がなければディレクトリエントリの後ろは空になる() {
+        let metas = [meta("docs/sub/index.md", "sub", None)];
+        let out = upd_meta(
+            "- [sub](sub/) — 古い\n",
+            &[],
+            &metas,
+            &["docs/sub/index.md"],
+            &[],
+        );
+        assert_eq!(out, "- [sub](sub/)\n");
+    }
+
+    // [FR-081]
+    #[test]
+    fn ディレクトリエントリの折り畳み参照はリンク文を保ち後ろだけ更新する() {
+        let metas = [meta("docs/sub/index.md", "Sub", Some("DS"))];
+        let out = upd_meta(
+            "- [sub][] — x\n\n[sub]: sub/\n",
+            &[],
+            &metas,
+            &["docs/sub/index.md"],
+            &[],
+        );
+        assert_eq!(out, "- [sub][] — DS\n\n[sub]: sub/\n");
+    }
+
+    // [FR-085]
+    #[test]
+    fn ディレクトリエントリの書き換えは冪等() {
+        let metas = [meta("docs/sub/index.md", "Sub", Some("DS"))];
+        let files = ["docs/sub/index.md"];
+        let once = upd_meta("- [x](sub/) — y\n", &[], &metas, &files, &[]);
+        let twice = upd_meta(&once, &[], &metas, &files, &[]);
+        assert_eq!(once, twice);
+        assert_eq!(once, "- [Sub](sub/) — DS\n");
     }
 
     // ---- FR-083 removal --------------------------------------------------
@@ -2214,6 +2613,24 @@ mod tests {
         assert!(!out.contains('#'));
     }
 
+    // [FR-084]
+    #[test]
+    fn 新規作成でも子索引のディレクトリエントリは子のtitleと要約を使う() {
+        let docs = [doc("docs/a.md", "A", Some("DA"))];
+        let metas = [
+            meta("docs/sub/index.md", "Sub", Some("DS")),
+            meta("docs/two/index.md", "two", None),
+        ];
+        let out = upd_meta(
+            "",
+            &docs,
+            &metas,
+            &["docs/a.md", "docs/sub/index.md", "docs/two/index.md"],
+            &["docs/sub/index.md", "docs/two/index.md"],
+        );
+        assert_eq!(out, "- [A](a.md) — DA\n- [Sub](sub/) — DS\n- [two](two/)\n");
+    }
+
     // ---- FR-085 preserve / idempotent -----------------------------------
 
     // [FR-085]
@@ -2221,9 +2638,10 @@ mod tests {
     fn エントリ行以外のバイト列は変更されない() {
         let docs = [doc("docs/a.md", "A", Some("D"))];
         let files = ["docs/a.md", "docs/sub/index.md"];
+        let metas = [meta("docs/sub/index.md", "sub", Some("S"))];
         let text = "\u{feff}# Index\r\n\r\nintro  text\r\n\r\n## Sec\r\n\r\n- [Old](a.md) — x\r\n  - child [c](c.md)\r\n- **[b](b.md)** — bold\r\n- [sub](sub/) — S\r\n";
         let want = "\u{feff}# Index\r\n\r\nintro  text\r\n\r\n## Sec\r\n\r\n- [A](a.md) — D\r\n  - child [c](c.md)\r\n- **[b](b.md)** — bold\r\n- [sub](sub/) — S\r\n";
-        assert_eq!(upd(text, &docs, &files, &[]), want);
+        assert_eq!(upd_meta(text, &docs, &metas, &files, &[]), want);
     }
 
     // [FR-085]
@@ -2512,6 +2930,7 @@ mod tests {
             "docs/index.md",
             &tree_of(&files),
             &docs,
+            &[],
             &RepoFiles::new(files.iter().copied()),
             &[],
             &excluded,
@@ -2581,25 +3000,31 @@ mod tests {
         let tree = tree_of(&files);
         let repo = RepoFiles::new(files.iter().copied());
         let child = vec!["docs/a/b/index.md".to_string()];
+        let metas = [
+            meta("docs/a/index.md", "A", Some("DA")),
+            meta("docs/a/b/index.md", "B", Some("DB")),
+        ];
         let out = update_index(
             "- [x](x.md)\n",
             "docs/a/index.md",
             &tree,
             &[],
+            &metas,
             &repo,
             &child,
             &test_excluded(),
         );
-        assert_eq!(out, "- [x](x.md)\n- [b](b/) — \n");
+        assert_eq!(out, "- [x](x.md)\n- [B](b/) — DB\n");
         let root = update_index(
-            "- [a](a/) — \n",
+            "- [A](a/) — DA\n",
             "docs/index.md",
             &tree,
             &[],
+            &metas,
             &repo,
             &[],
             &test_excluded(),
         );
-        assert_eq!(root, "- [a](a/) — \n");
+        assert_eq!(root, "- [A](a/) — DA\n");
     }
 }

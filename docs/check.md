@@ -28,11 +28,11 @@ description: "doc・req・test の追随漏れや索引の乱れを、ロック�
   - `NotListed`: 文書が、担当する索引に文書エントリとして載っていない（[詳細](../req/index-finding-not-listed.md)）。
   - `UntypedFile`: 索引の根の配下に `type` のない `.md` がある。木から黙って消えるのを防ぎます（[詳細](../req/index-finding-untyped-file.md)）。
   - `BrokenEntry`: エントリのリンク先が解決できない・存在しない・文書でない、またはディレクトリエントリのリンク先に `index.md` が無い。区別は detail に出ます（[詳細](../req/index-finding-broken-entry.md)）。
-  - `TitleMismatch` / `DescriptionMismatch`: エントリのリンク文・要約が、文書のタイトル・`description` と一致しない（[詳細](../req/index-finding-title-description-mismatch.md)）。
+  - `TitleMismatch` / `DescriptionMismatch`: エントリのリンク文・要約が、文書のタイトル・`description`（ディレクトリエントリでは子 `index.md` の `title` / `description`）と一致しない（[詳細](../req/index-finding-title-description-mismatch.md)）。
   - `MissingDescription`: 文書に `description` が無い、空、または改行を含む（[詳細](../req/index-finding-missing-description.md)）。
-  - `MissingDirectoryDescription`: ディレクトリエントリの要約が空。`UnlinkedIndex`: 子孫ディレクトリの `index.md` が、親の索引のディレクトリエントリから辿れない（[詳細](../req/index-finding-directory-entry.md)）。
+  - `MissingDirectoryDescription`: ディレクトリエントリのリンク先の子 `index.md` に、フロントマターの `description` が無い・空・改行を含む（target は子の索引のパス。エントリ側の要約が空かどうかは見ません）。`UnlinkedIndex`: 子孫ディレクトリの `index.md` が、親の索引のディレクトリエントリから辿れない（[詳細](../req/index-finding-directory-entry.md)）。
 
-  `index` の finding はロックと関係ないため、[`reconcile` を妨げません](../req/index-findings-do-not-block-reconcile.md)（`miwa index` と文書の修正で解消します）。`--gate` では他の finding と同様に終了コード 2 になり、`--diff` では基準側の設定に `index` が無ければ、現在の `index` finding がすべて新規として報告されます。text 出力では種別は `index` と表示され、JSON 出力では `kind` は `Index` です。`BrokenEntry` と `MissingDirectoryDescription` の target は空白を含む（`docs/index.md -> x.md`）ため、text 出力を空白で列に分けるときは注意してください。
+  既存の `broken` / `invalid` はグラフ自体が信用できないことを示すので、`reconcile --all` は 1 件でもあれば失敗し、`--edge` も関係するエッジを拒否します（[FR-035](../req/reconcile-rejects-broken-or-invalid.md) 参照）。これに対して `index` の finding は `index.md` と文書の食い違いであり、エッジやハッシュとは無関係です。そのため [`reconcile` の成否にも記録内容にも影響しません](../req/index-findings-do-not-block-reconcile.md)。解消する手段は `reconcile` ではなく、`miwa index` の実行や文書の修正（`description` / `type` を付ける）です。索引が乱れていても、doc / req / test の合意は記録できます。`--gate` では他の finding と同様に終了コード 2 になり、`--diff` では基準側の設定に `index` が無ければ、現在の `index` finding がすべて新規として報告されます。text 出力では種別は `index` と表示され、JSON 出力では `kind` は `Index` です。`BrokenEntry` と、ディレクトリエントリの `TitleMismatch` / `DescriptionMismatch` の target は空白を含む（`docs/index.md -> x.md`）ため、text 出力を空白で列に分けるときは注意してください。
 
 `check` は診断だけを行い、[前回合意した記録（ロック）の内容を書き換えることはありません](../req/check-does-not-write-lock.md)。同じ入力に対しては、[常に同じ順序で同じ finding を返します](../req/check-findings-deterministic-order.md)。
 

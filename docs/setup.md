@@ -57,7 +57,7 @@ Java / Kotlin では、Gradle / Maven のモジュール直下であれば `test
 
 1. `.miwa/config.yaml` に `index: ["docs"]` を書きます（`init` した直後なら既定で入っています）。
 2. 文書に `description`（必須）と `title`（任意）を付けます。`type` の無い `.md` には `type` を付けるか、索引のフォルダの外へ出します。
-3. `miwa index` で索引を生成・更新します。末尾に追加された行を節へ移し、ディレクトリエントリの要約を書きます。
+3. `miwa index` で索引を生成・更新します。末尾に追加された行を節へ移します。子ディレクトリに索引を置いた場合は、その `index.md` のフロントマターに `title` / `description` を書きます。
 4. `miwa reconcile --all` で現状の合意を記録します。
 5. `miwa check --gate` が通ることを確認します。
 

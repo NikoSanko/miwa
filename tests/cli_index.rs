@@ -170,13 +170,17 @@ fn 未列挙の文書と辿れない子の索引が末尾に追加される() {
     common::write(root, ".miwa/config.yaml", CONFIG_WITH_INDEX);
     common::write(root, "docs/a.md", &common::typed("A", Some("DA")));
     common::write(root, "docs/sub/b.md", &common::typed("B", Some("DB")));
-    common::write(root, "docs/sub/index.md", "- [B](b.md) — DB\n");
+    common::write(
+        root,
+        "docs/sub/index.md",
+        "---\ntitle: サブ\ndescription: サブの説明\n---\n- [B](b.md) — DB\n",
+    );
     common::write(root, "docs/index.md", "# 索引\n\n前書き\n");
 
     stdout_of(root, &["index"]);
     assert_eq!(
         read(root, "docs/index.md"),
-        "# 索引\n\n前書き\n\n- [A](a.md) — DA\n- [sub](sub/) — \n"
+        "# 索引\n\n前書き\n\n- [A](a.md) — DA\n- [サブ](sub/) — サブの説明\n"
     );
 }
 
@@ -448,13 +452,77 @@ fn 根の索引の新規作成では文書の後に子索引のディレクト�
     common::write(root, ".miwa/config.yaml", CONFIG_WITH_INDEX);
     common::write(root, "docs/a.md", &common::typed("A", Some("DA")));
     common::write(root, "docs/sub/b.md", &common::typed("B", Some("DB")));
-    common::write(root, "docs/sub/index.md", "- [B](b.md) — DB\n");
+    common::write(
+        root,
+        "docs/sub/index.md",
+        "---\ntitle: サブ\ndescription: サブの説明\n---\n- [B](b.md) — DB\n",
+    );
 
     let out = stdout_of(root, &["index"]);
     assert!(out.contains("created docs/index.md"), "{out}");
     assert_eq!(
         read(root, "docs/index.md"),
-        "- [A](a.md) — DA\n- [sub](sub/) — \n"
+        "- [A](a.md) — DA\n- [サブ](sub/) — サブの説明\n"
+    );
+}
+
+// [FR-081]
+#[test]
+fn 既存のディレクトリエントリが子の索引の値に書き換えられ_2回目はunchanged() {
+    let dir = tempfile::tempdir().unwrap();
+    let root = dir.path();
+    common::write(root, ".miwa/config.yaml", CONFIG_WITH_INDEX);
+    common::write(root, "docs/a.md", &common::typed("A", Some("DA")));
+    common::write(root, "docs/sub/b.md", &common::typed("B", Some("DB")));
+    common::write(
+        root,
+        "docs/sub/index.md",
+        "---\ntitle: サブ\ndescription: サブの説明\n---\n- [B](b.md) — DB\n",
+    );
+    common::write(
+        root,
+        "docs/index.md",
+        "# 索引\n\n- [A](a.md) — DA\n- [sub](sub/) — 古い\n",
+    );
+
+    let out = stdout_of(root, &["index"]);
+    assert!(out.contains("updated docs/index.md"), "{out}");
+    assert!(out.contains("unchanged docs/sub/index.md"), "{out}");
+    assert_eq!(
+        read(root, "docs/index.md"),
+        "# 索引\n\n- [A](a.md) — DA\n- [サブ](sub/) — サブの説明\n"
+    );
+    let again = stdout_of(root, &["index"]);
+    assert_eq!(
+        again,
+        "unchanged docs/index.md\nunchanged docs/sub/index.md\n"
+    );
+    assert!(index_findings(root).is_empty());
+}
+
+// [FR-082]
+#[test]
+fn 子の索引にtitleも要約もなければディレクトリ名で区切りなしのエントリが追加される() {
+    let dir = tempfile::tempdir().unwrap();
+    let root = dir.path();
+    common::write(root, ".miwa/config.yaml", CONFIG_WITH_INDEX);
+    common::write(root, "docs/a.md", &common::typed("A", Some("DA")));
+    common::write(root, "docs/sub/b.md", &common::typed("B", Some("DB")));
+    common::write(root, "docs/sub/index.md", "- [B](b.md) — DB\n");
+    common::write(root, "docs/index.md", "- [A](a.md) — DA\n");
+
+    stdout_of(root, &["index"]);
+    assert_eq!(
+        read(root, "docs/index.md"),
+        "- [A](a.md) — DA\n- [sub](sub/)\n"
+    );
+    let found = index_findings(root);
+    assert!(
+        found
+            .iter()
+            .any(|f| f["reason"] == "MissingDirectoryDescription"
+                && f["target"] == "docs/sub/index.md"),
+        "{found:?}"
     );
 }
 

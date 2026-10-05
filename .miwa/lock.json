@@ -1,214 +1,221 @@
 {
   "edges": {
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "doc-req:DOC-CHECK:FR-035": {
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-073": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-074": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-075": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:6b969130f89d6e8195fb0bb6e0bcd8cacca5bb56df2250840326459795d9004b",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-076": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-077": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
-      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-078": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:374d7b3e0dcd130fc24195de948d591c3bf6db01d255334d4226610253f5ca8a",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-079": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
-      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-CHECK:FR-080": {
-      "from": "sha256:1eab30bf58e75d265c58fd1067eeaf0a2bf085cc38d8097ff26b4123ee21cf60",
+      "from": "sha256:dd4a7dd04d2c7bb785d973589a06fe421800801f254bc0684c1124c23b98eb67",
       "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-067": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
       "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-068": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-069": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
       "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-070": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
       "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-071": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-072": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
       "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-081": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-082": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-083": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
       "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-084": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
-      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-INDEX:FR-085": {
-      "from": "sha256:b65751326a0eaa6278fc7a0816fea348b497e0a2ba41fca38d067206a5a6bec0",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "from": "sha256:43e966c13af24f10958dd0f8819a6fc4ed6bd5e5360ea5348f8d01bf7184edc2",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-JUDGE:FR-038": {
       "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
@@ -534,10 +541,10 @@
     },
     "doc-req:DOC-MODEL:FR-071": {
       "from": "sha256:71f1d8f4176c836e6181221095dc085ef22333568130235c1cc07c851c9322ae",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:9f39c43ea85dba94f8038b115e520eb05613e0955db7760d3032ae1dd0571400",
@@ -603,60 +610,60 @@
       "at": "2026-10-02T23:47:26Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-SETUP:FR-063": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-SETUP:FR-065": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-SETUP:FR-066": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "doc-req:DOC-SETUP:FR-067": {
-      "from": "sha256:0f0eeb8d995cdf092adeea0e7832ff9b21d79bec61c5e8d51ffa70c21f2e6e22",
+      "from": "sha256:757930b30fd0a406b13ca448e85a7090d0c48737d90a7a848fd475e503c23e67",
       "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
       "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
@@ -2403,17 +2410,17 @@
     },
     "test-req:src/index:tests:bomがあっても同じエントリが検出される:FR-068": {
       "from": "sha256:ce10a0d3690e9e18d10c44b5044736a4305fe70183d043cb59bc8b70548963fa",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:bomは書き換え後も保存される:FR-081": {
       "from": "sha256:823f0da321a023d403192d9ba257e70b3b2a27cee6c988ee6293d8fe001a4e10",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:broken_entryのdetailとtargetの正準形:FR-076": {
       "from": "sha256:5f29bd3103bcccb01da948b8fc570afe29b978858ca31c8228f406faf62aa6c3",
@@ -2431,52 +2438,52 @@
     },
     "test-req:src/index:tests:descriptionのない文書は区切りも要約も付けない:FR-081": {
       "from": "sha256:b0ab2191c5392dad17185cb747face5d5db692569175961ef28932046d37940c",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:descriptionの有無と空と改行の扱い:FR-071": {
       "from": "sha256:19429304c82229f63fbdf94767c3d38ae69b7d63537ad93fad737487210bab2e",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:h1のコードスパンはソースのまま含む:FR-071": {
       "from": "sha256:93b5f14fcbba52b0f6334120ee40f4f020f20a14ba21dd817a78e899d9b34a33",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:h1はatx閉じのシャープを含まない:FR-071": {
       "from": "sha256:f4d86aec743be29489c4002af28cb8b493819292fc98d0f95a638055eedd502d",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:h1はsetext形式でも取れて下線を含まない:FR-071": {
       "from": "sha256:a9b08bb09473588d217e71a1310b025eaaca98b29e9b57b7a372273a3d5717bf",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:h1以外の見出しは無視されファイル名にフォールバックする:FR-071": {
       "from": "sha256:c239d1ff00322b4207c7c9c5f66e517e6317dc93031ee9a168ee3bc0b27ab894",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:indexとlogは予約名で文書にならず索引として分類される:FR-067": {
-      "from": "sha256:8e4133cf2bde8df266a62657ab40fb336c452097c715d08377e82262e85cbd09",
+      "from": "sha256:831ce5f2829afdc87a92eb3e21780beca6a17d4b6b50766e0855693583d17892",
       "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:line_spanは先頭行から改行までを含む:FR-083": {
       "from": "sha256:83fef5c3c66b612acc8b7f3608da8a0490c79538b751e947ea1789bfa47287e5",
@@ -2501,31 +2508,31 @@
     },
     "test-req:src/index:tests:okf_version等のfrontmatter付き索引でも検出される:FR-068": {
       "from": "sha256:8d88d049ffe7982e1d04ba6e4080fa32f803b52ccbcadd9f74446f89f0ea8bca",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:setextのレベル2下線はh1として扱わない:FR-071": {
       "from": "sha256:704bcd7e4f5d61d60b8117879ce29a26874dcb8088a3e4e9e8180654cfe9c370",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:titleが空なら最初のh1にフォールバックする:FR-071": {
       "from": "sha256:efec1a39d99ad0c6e55a7cc37e712c5f3b7eb765768a45d7f79062584b4dbf48",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:titleはフロントマターのtitleを優先し前後の空白を除く:FR-071": {
       "from": "sha256:065ebc629c4ca2a8b0ac5ebfba59b041f4e4d357c47763a39920fba93bb44533",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:typeなしとフロントマターなしはuntypedで壊れたフロントマターは無視される:FR-075": {
       "from": "sha256:dba980ca1004cf87d39bc08d607c2920e5840b7a645b7356e19e49936e111ec9",
@@ -2543,38 +2550,52 @@
     },
     "test-req:src/index:tests:typeは任意の値でも文書になる:FR-071": {
       "from": "sha256:cb157a1138603fc4223a372480777a4baacc2acf95ae492973daa6eafbe1c2bd",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:すでに一致していればバイト列は変わらない:FR-081": {
       "from": "sha256:4dd6ca02857037e8dba0eec2b3acf951d0e19e5a725f2bedf0909f153d9bd51c",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:エスケープされた角括弧を含むリンク文は壊れずに冪等に書き換わる:FR-081": {
       "from": "sha256:9b473d89e06876647107ceca40484954df2c08db24d88702fa1a4a8f391d15de",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:エントリの要約が空でも子にdescriptionがあればdescription_mismatchだけが出る:FR-079": {
+      "from": "sha256:6a74c8ff662e735a081c267a8664da7c84b3cb5859a5f4638da37439b767609b",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:エントリの要約が空で子にもなければmissing_directory_descriptionだけが出る:FR-079": {
+      "from": "sha256:bcb2d2d72888d642889c72a3e0ed2e3791fa8619b0b564b486078d45a3f5aa23",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:エントリ行以外のバイト列は変更されない:FR-085": {
-      "from": "sha256:7580afdb9d8b24e4204d2f6f5bca5a64ed632e4f7d4c3da4d18d113c43fe1b4f",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "from": "sha256:4f627eaa9e7f20d850aae1354859a787f7ce1404e4ad189dd6d56bd6c2dd94bc",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:コードブロック内のシャープ行はh1として扱わない:FR-071": {
       "from": "sha256:ea065747ff18d05d71f5210cbfcf8b1fc248ac127f760c5c0021a1c8e9dd2ab5",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:スラッシュなしでも配下にファイルがあればディレクトリになる:FR-070": {
       "from": "sha256:d94e39a7e5c0c3369a58c5d2407751db9a3f46ac386f9cf611b278d686a05e7b",
@@ -2585,24 +2606,24 @@
     },
     "test-req:src/index:tests:タイトルが一致しなければtitle_mismatchで対象は文書のパス:FR-077": {
       "from": "sha256:40afc943526b946ff04eba345465821cd78800c3e95d53bf92ca82b4d18a5ee5",
-      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:タイトルの角括弧はエスケープされる:FR-081": {
       "from": "sha256:bae876149101860f25e0e8103b88a7cfe87194a7096aa45fbe497088419641f8",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:タスクリストの項目はエントリではない:FR-068": {
       "from": "sha256:a2a1b32113053efacb88bc9e1e21eea10cc784ada21fddfef131035ddea58391",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:ディレクトリを指す3形は同じディレクトリエントリになる:FR-070": {
       "from": "sha256:1e7b33f0b842d9b649ef52ff4412b6c680d3f543de7f78a40f4446b646be88cf",
@@ -2611,26 +2632,54 @@
       "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
       "at": "2026-10-02T23:47:26Z"
     },
-    "test-req:src/index:tests:ディレクトリエントリの要約が空ならmissing_directory_description:FR-079": {
-      "from": "sha256:42ac032f281d179d7c2ee58d0215220903dd496b96b9bb652c4799b0da80a8ef",
-      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+    "test-req:src/index:tests:ディレクトリエントリのリンク文が子のtitleと違えばtitle_mismatch:FR-077": {
+      "from": "sha256:4ebbd1a243e1a22f02a74707c00af7ba969db5e464f3148ea2fae071f3bcabd6",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリのリンク文と要約を子の索引の値で置き換える:FR-081": {
+      "from": "sha256:64c15fd7754130f150b4be3f15866054706faf3bb7c8cce1afad4be3240ffaed",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリの折り畳み参照はリンク文を保ち後ろだけ更新する:FR-081": {
+      "from": "sha256:8a92c296dc20d4182c8a07da6e289f5a3af3a924023ce33dc94a45939b430b58",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリの書き換えは冪等:FR-085": {
+      "from": "sha256:d03a89b1d669837385aa5f8cca15169651f8f635aac1bfb408c0cfd4be45f278",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリの要約が子のdescriptionと違えばdescription_mismatch:FR-077": {
+      "from": "sha256:4d315c1cf8fe83927a38d8850176ed66cf030fd83fded301164b6db7539e87c4",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:ハードブレークとソフトブレークの直後の要約は1行に畳まれる:FR-081": {
       "from": "sha256:a86c3f21ec7daf6798d889926a9ae486b66a3c4b784b5f1e766844e016aeea02",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:バックスラッシュはエスケープされ再パースで元のタイトルに戻る:FR-082": {
       "from": "sha256:50aebf22b37297254cd6451c5f02d28d8b7ddb735edcb1c0698074c7bb8ad7d5",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:パーセントエンコードされたドットドットはデコード後に正規化される:FR-070": {
       "from": "sha256:a0b92a00fb243affe56ab8c79fc95e537fba453158992f9a58233cbf4264793c",
@@ -2662,31 +2711,31 @@
     },
     "test-req:src/index:tests:リンクで始まらない項目はエントリではない:FR-068": {
       "from": "sha256:a120a4df7a227f75f79cef72e0b55b628c8508f8f06d222978d05cb93614f24e",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:リンクのtitle属性は無視される:FR-068": {
       "from": "sha256:30a8f17fcd64ef0943ee676374c258ac53f3387a94a3ba9d21fdba34d13a201c",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:リンク先のソースは変更しない:FR-081": {
       "from": "sha256:b04df16f9e7ad127fb30778098f29284c8fe74face017622f6c68130eae717a3",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:リンク文と要約を文書の値で置き換え区切りは既存を保つ:FR-081": {
       "from": "sha256:66ba8417963867843ae6cf530c677bf712aeda890be24a9e529579f087135f9a",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:リンク文のコードスパンや入れ子の角括弧はソースのまま扱う:FR-069": {
       "from": "sha256:b211441a486d47eb6168b3c0023474ac0f1de0fe545fec947a29d1e1a2ab2f26",
@@ -2697,38 +2746,38 @@
     },
     "test-req:src/index:tests:ルーズリストでも同じ結果になる:FR-068": {
       "from": "sha256:5b5b94b06235e36009430dfa4ffff712f326b9846d817e825ecf953e14ce63cc",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:中間ディレクトリに索引がなくても最も近い祖先の索引が親になる:FR-072": {
-      "from": "sha256:6c968f6da6bcfe11110424c8a9dd40feef80df23f572a1de8f08d4b73c499ada",
+      "from": "sha256:a0372ef069388ffa3b398b3fead70557aead8636c6caaf2539dcacf2a52ea7a0",
       "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
-    "test-req:src/index:tests:中間索引を飛ばしたディレクトリエントリも要約がなければmissing_directory_description:FR-079": {
-      "from": "sha256:773d0d87ed5d0525a40c4d8c5e1b639315195bdee6239bb369c9adecb7f62455",
-      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+    "test-req:src/index:tests:中間索引を飛ばしたディレクトリエントリも子の索引で判定する:FR-079": {
+      "from": "sha256:e8b5eb361df14f18d4b7d8c4de0cace478c22be1716a03e9fdfdb3a3a729b767",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:入れ子の索引で子の文書は子の索引が担当する:FR-072": {
-      "from": "sha256:7b2dc73269e9ff89c9e4b414a7e88fd85a79af9b15e1dd655ad7598e2d9a6fb8",
+      "from": "sha256:794391b618e7efcd83d8c066f6f02021bcc0412ce0bd1782db5c174c07405705",
       "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:入れ子の項目も任意の深さでエントリとして検出される:FR-068": {
       "from": "sha256:6f218ac99e7d791aa3cce950d91ca8357a0f2db18245bb86d4f2e5364e309b62",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:列挙されていない文書はnot_listedになりidの妥当性に依存しない:FR-074": {
       "from": "sha256:f737fcf5291e73a9a6b2680641cd6808a1e41789e472f5f487e23ec7c5487212",
@@ -2767,10 +2816,10 @@
     },
     "test-req:src/index:tests:区切りのen_dashは書き戻しで保持される:FR-081": {
       "from": "sha256:09c861c94a9d4d0a8bb488a5f2fd0a4284a7ecd79e90f45e754c310cc9026bba",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:参照形式とショートカットの後ろから要約を切り出す:FR-069": {
       "from": "sha256:29ef1c437decd76ca87186048817cf6523e3bfa7f5975a07a213acef39e6bb26",
@@ -2781,45 +2830,45 @@
     },
     "test-req:src/index:tests:参照形式のリンクで始まる項目もエントリになる:FR-068": {
       "from": "sha256:1a1030499a04c020bc46b7182afc151e947ebd08bdff819adbbfc2bacf8a9f19",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:参照形式の定義とラベルは変更しない:FR-081": {
       "from": "sha256:7dae0d3466d68b6cb3c3d73b2f689b55a047dee0705916bcb9f6e553641b67fd",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:各リンク形式でリンク文の範囲は元のソースの閉じ括弧までになる:FR-081": {
       "from": "sha256:d88e105c1481dd90aa27120ad44512888049a115862bf5505703f2b51f8e4ffd",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:同じ文書を指す2本目だけ不一致でもfindingが出る:FR-077": {
       "from": "sha256:5d8b650b94de4555c3c7f58c5f275c663169e77ba9b7f17e00b003d2835ae869",
-      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:同じ文書を指す複数エントリはすべて比較され_findingは重複しない:FR-077": {
       "from": "sha256:9951cba166fd6ef26a736359a8e1b68efd1dde1d69477e47b310a307da12fc6d",
-      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:同じ文書を指す重複エントリはすべて書き換える:FR-081": {
       "from": "sha256:b56384484222c30cf679c0b86c504c285696fb6a262866913b85b96cf2f6125f",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:外部リンクは無視される:FR-070": {
       "from": "sha256:b8dcceccdb6bd06783805036b828e9c5dedfe3345b8b6d4ce3e6f4a5b2bb9495",
@@ -2830,17 +2879,59 @@
     },
     "test-req:src/index:tests:太字で包まれたリンクで始まる項目はエントリではない:FR-068": {
       "from": "sha256:59f1f7ae6a1f63224990d691c12ccb02cda4f0a5ce72fd81a615023b48f44e6f",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子にtitleがなければディレクトリ名と照合される:FR-077": {
+      "from": "sha256:e9372116244a634f4f0071d7b876ab4ac323807edd8524ad21a1bede8045bb5b",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子に要約がなければディレクトリエントリの後ろは空になる:FR-081": {
+      "from": "sha256:e995af2528da738ad4c270d8b919d099761655562331c0bab1ccd5b1996cfb67",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子に要約がなければ追加するディレクトリエントリは区切りを付けない:FR-082": {
+      "from": "sha256:29a9828508b888d0d2f9e73294cd7fb85512a3ca1a5e5be6dbe95b52d02acefe",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子のdescriptionが空や改行入りでもmissing_directory_description:FR-079": {
+      "from": "sha256:fef0507f573e964f0d25e13858fc754684b30d7427ec6bc936d82a2acc24cb51",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子の索引と一致するディレクトリエントリは問題にならない:FR-079": {
+      "from": "sha256:992ab2d0c6b6bb0ea03d09073131b77d5d00876a7f124ba75cb8cbac91fbb77c",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子の索引にdescriptionがなければmissing_directory_descriptionで対象は子の索引のパス:FR-079": {
+      "from": "sha256:75852735e45f735460f3d2cf866924ae0bc7a87e9dbb674a80552f8e4230394b",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:子索引の追加は直近の親の索引の末尾にだけ行われる:FR-082": {
-      "from": "sha256:e77c194ac0772083545b766a5028eaded79ab297c593c42fcc29f418c354c9fc",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "from": "sha256:5279ba8485f7202ec3973f9a2f62cd42ec7c7e40c5320ae7bf83718ced412e21",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:存在しないファイルは文書エントリとして扱う:FR-070": {
       "from": "sha256:dfb3f79425240df2196aa8e667671489a005a3c47e031c1bba865d2a99f69773",
@@ -2872,10 +2963,10 @@
     },
     "test-req:src/index:tests:折り畳み参照のラベルは変えず要約だけ更新されtitle_mismatchが残る:FR-081": {
       "from": "sha256:c5f04221425174c249392bf26f5e648a5c841021403b46b19ee9a3bba5473782",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:折り畳み参照の後ろから要約を取り出す:FR-069": {
       "from": "sha256:47027244b0223ab8d1401b03e195966d742e5e9c42d7b2007b0ce40bfd7358d8",
@@ -2893,17 +2984,17 @@
     },
     "test-req:src/index:tests:改行を含むtitleは無いものとしてh1にフォールバックする:FR-071": {
       "from": "sha256:83b55c9b8acc5ab6d84b7804339b217d8e37f7a3c9826511aafa5358ee19998d",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:改行コードは既存本文にcrlfがあればcrlfになる:FR-082": {
       "from": "sha256:5f444be3592cef7efef97c6d2a342bb221ee1d3318cf67f7e31dcd0a73a59b7b",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:文書が0件の根ではmissing_indexを出さない:FR-073": {
       "from": "sha256:d4963348833d0ee571ddd7a796dadf231ab9d31d5f8b5093ec447edb914996b9",
@@ -2914,52 +3005,59 @@
     },
     "test-req:src/index:tests:文書にdescriptionがなければdescription_mismatchを出さない:FR-077": {
       "from": "sha256:2bd0620668697c560498116aa51db1023f06a8a9b3a57fa4561f3e1329cea303",
-      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:新規作成でも子索引のディレクトリエントリは子のtitleと要約を使う:FR-084": {
+      "from": "sha256:9f105766c31d4be0d1f615acf3b25bf2433e2086e083abd982b9ec0cb67ef579",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:更新は冪等で2回目は同一文字列になる:FR-085": {
       "from": "sha256:a5bb983205b321c8f53692da39e90954ceac25a177778d92360667a30137c5f6",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:書き込みはrename失敗時に同じディレクトリの一時ファイルを残さない:FR-085": {
       "from": "sha256:655c5527ae8c92767d0f9eb837407427e12b044ca313936e38e12bfaea38b3fa",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:最初のh1が空なら次のh1を探さずファイル名にフォールバックする:FR-071": {
       "from": "sha256:c3ecfe1251f7f451c88fe0eff44becc11321c48efea571d7a9c9a4d00857edb6",
-      "to": "sha256:e8d58682cf991eed678ff3cb0e27bee7b560d6d5180728d27f605f3a6dafab6c",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:未列挙の文書がパス順に末尾へ追加される:FR-082": {
       "from": "sha256:a2703710c05b7c60902b67eb45834b9670aaefa0cb9fb3ba2f7fd2c21e84afb1",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:末尾の改行と空行の規則:FR-082": {
       "from": "sha256:c2232a78a5aab9204ece6e48c03ebfa6639809629530b9614ce4a6475695b4df",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:根が子孫を列挙していても直近の親が列挙していなければunlinked_indexになる:FR-079": {
       "from": "sha256:f10fb4b9fbad812b9a8f4116a6361e07709c0a7da1e4617e673ffd3dcd7331d1",
-      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:根のみの索引で整合していればfindingは出ない:FR-072": {
       "from": "sha256:92c1af0fc64fa4a24e3c06782a9bef678227674f99da18200aa9c20cc1919453",
@@ -2977,10 +3075,10 @@
     },
     "test-req:src/index:tests:段落中や見出し中のリンクはエントリではない:FR-068": {
       "from": "sha256:b02696e0f8b01b3cebb6b5cdc59b058e90bb4f861ae2cee1efc1fef1289b27f8",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:直前に項目がある状態で削除すると子項目は直前の項目の下に残る:FR-083": {
       "from": "sha256:50078150b850627bdc17f804195ea2b20dffb63903b51497ff6fe7d55b88b8b4",
@@ -3005,17 +3103,24 @@
     },
     "test-req:src/index:tests:箇条書き記号とorderedの各形式がエントリとして検出される:FR-068": {
       "from": "sha256:81eff14b0ab208e2beec83511ffe798e12c927d1f86c6654fcc59a02733d3335",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:索引がなければ見出しなしの平坦なリストを作る:FR-084": {
       "from": "sha256:ca014c028847753d79c9d83f264d4a1a692a2e3a4f50d4f2b226389cbcd086ae",
-      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:索引のtitleとdescriptionはディレクトリのタイトルと要約になる:FR-071": {
+      "from": "sha256:d0b03121726b60817d49217fe71caf562511b1c83c99348c24747f2114696881",
+      "to": "sha256:5cc920de9ab44ed068157839f8c858f8aac5320b5081e65c9196bce39cf07148",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:索引自身を指すエントリは自己か祖先として壊れている:FR-076": {
       "from": "sha256:9d5fffe40a4bfbe75f187034caf1fd52bdae216db76ab81f287a8a1c0f70d470",
@@ -3047,10 +3152,10 @@
     },
     "test-req:src/index:tests:複数行にわたる項目も1つのエントリになる:FR-068": {
       "from": "sha256:ad43d62e24f1fc462541c7e77fc907fa37fad93aa74bfc4b1e2523c31cf830b3",
-      "to": "sha256:b6343c0895200bc8fe31368e0d0afc3d92561aef36a96beb48193b395807e1f3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:複数行エントリの削除で末尾行まで消える:FR-083": {
       "from": "sha256:0bc4b3b1ad3c05133206e51673707977f864a9acfed8b7b7b9dc9c522e852330",
@@ -3061,17 +3166,17 @@
     },
     "test-req:src/index:tests:複数行エントリは1行に畳まれる:FR-081": {
       "from": "sha256:7209a2f5dd838db35759ed5689efbd22f55d113f6bc9f35911eb4b4539bfa60e",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:要約が一致しなければdescription_mismatchで空白は正規化しない:FR-077": {
       "from": "sha256:76c9fc8dbc9425e57d9c3830ccbbd24ac40fb53e274eac036fe485c22c242f11",
-      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:要約に入れ子の子項目は含まれない:FR-069": {
       "from": "sha256:edef1378848d759389aa5420d624898ab3485f2ef3ea6710f618b3c24919bfa0",
@@ -3089,31 +3194,24 @@
     },
     "test-req:src/index:tests:要約の角括弧とバックスラッシュもエスケープされ比較で不一致にならない:FR-081": {
       "from": "sha256:c7c221223c3d7bfa9cfc0624f07906a4b6446d8a930fcb1dc5e4653200437411",
-      "to": "sha256:4ae3ce6828d11908d5f5fca81fa3056efcb7f85851d110b1c84d8c705ce33ecb",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
-    },
-    "test-req:src/index:tests:要約付きのディレクトリエントリは問題にならない:FR-079": {
-      "from": "sha256:600ea6e974b432e61a9a9655ae95ee7f0330a3f01d8aa037843399e975f41630",
-      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
-      "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:親から辿れない子の索引はunlinked_index:FR-079": {
       "from": "sha256:ab5d7937c417c3fd53a4bb84cdaf9f9d240abe288fd2cac2c311203ecb6caf73",
-      "to": "sha256:64960102e667f30e0509fe993e187ff11e2e080b32ff4f5c6a90b40ec3f236ef",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:親が子の担当文書を直接列挙しても_同じ文書の重複列挙もfindingにならない:FR-072": {
-      "from": "sha256:477d3cd2e7b683ca463fcd761f9d68e9077fe00a966bf0549390558408d3579d",
+      "from": "sha256:80d9f3b7464bfdbe7b5af975b95e77ddb5476860691fea38a8478ebeb13b1ed5",
       "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:角括弧のエスケープは比較時に戻される:FR-069": {
       "from": "sha256:935977573ba01a75bbd1bca2193405cf4e7286a343b815dad7071e87d4b303e2",
@@ -3130,18 +3228,18 @@
       "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/index:tests:辿れない子の索引はディレクトリエントリとして文書の後に追加される:FR-082": {
-      "from": "sha256:6acef0632ae0cfb3a7d91448eaf859bc012d947b64e717bbf00b47928affd26e",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "from": "sha256:b12c7bd0b1438c2d61e328e865eb4861d91ee13d1b54f06afb512077f9f12b29",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:追加するパスは相対でエンコードされタイトルはエスケープされる:FR-082": {
       "from": "sha256:1c0ab9d7d583cfb7cbf92c97450a578faec1ffa57cfc847f1e4c3d7ab7f84b0b",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:遅延継続行と複数行の要約を含む:FR-069": {
       "from": "sha256:1a2a543dd2596458d1b4d489bec04a3073141b91f816a909f1c65b1ede6322df",
@@ -3151,11 +3249,11 @@
       "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/index:tests:除外名の配下を指す存在しないエントリ行は削除されない:FR-083": {
-      "from": "sha256:f61d78658d699e1f1a030db25cff9b75dacd407b25172f25abfcc195c08856e0",
+      "from": "sha256:53937c013064e642acf3cd74e1d7126a3b338817923742c71a405ad5ea608c06",
       "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:src/index:tests:除外配下_typeなし_解決不能_ディレクトリは削除しない:FR-083": {
       "from": "sha256:9458d12dbc8cdbb9209eb1541e57caa60ccdd9a70ee2e61a7e4c94d5c8af4582",
@@ -3838,10 +3936,10 @@
     },
     "test-req:tests/cli_index::indexが未設定ならexit_code_1とメッセージで失敗する:FR-085": {
       "from": "sha256:e97e82c3643d2352df1a1f84de8c63ef5e555d69d936976e88437bcd6a2a5804",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::indexのfindingが残っていてもreconcile_allは成功しロックに影響しない:FR-080": {
       "from": "sha256:72b80f61e8534fa3930227735ee209ee8c5594a2822d4a8e9367a57dc7c50867",
@@ -3859,31 +3957,31 @@
     },
     "test-req:tests/cli_index::index実行後に残るindexのfindingは人の判断が要るものだけになる:FR-085": {
       "from": "sha256:9c831116a3e4dcccb2f968ddc67775476b51345446ead82f96d052baff6729cc",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::utf8として読めない索引は書き換えずにexit_code_1で失敗する:FR-085": {
       "from": "sha256:43ca712d66c948823ba6d7d98a4ec21398eb0ddbe31830d6903cb0a48140b379",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::エントリ行以外のバイト列はbomとcrlfを含めて保存される:FR-085": {
       "from": "sha256:e40b362c7deb0d466e3eb4ce4987fbc9162935b1ae4090833d6e96969f40db75",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::タイトルと要約の不一致をcheckが報告する:FR-077": {
       "from": "sha256:1ccf26da6614adc47e2e246ad42e99424768efc1effb30b1d87fa067f6ed75a7",
-      "to": "sha256:790aa7003707abcc962c82335c2b12f40454a2e0568b0fc30f07a4826fd63c06",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::列挙されていない文書をcheckがnot_listedで報告する:FR-074": {
       "from": "sha256:a184fb08dfab3be13adffe533653a9bc5f26084bd0e47ab6a60b2536a90aa0b1",
@@ -3899,6 +3997,13 @@
       "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
       "at": "2026-10-02T23:47:26Z"
     },
+    "test-req:tests/cli_index::子の索引にtitleも要約もなければディレクトリ名で区切りなしのエントリが追加される:FR-082": {
+      "from": "sha256:a5d568e05fe0fad4f98f255770864ece466edc8fafab48995fb76279edcbd1d8",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
     "test-req:tests/cli_index::存在しない文書のエントリは削除され_除外配下は残る:FR-083": {
       "from": "sha256:42b2cb1791094e90b83362089dae5271f0ffe6e64141398281c90092de04693f",
       "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
@@ -3908,31 +4013,38 @@
     },
     "test-req:tests/cli_index::実行後は索引と同じ場所にも他の場所にも一時ファイルが残らない:FR-085": {
       "from": "sha256:ba30a493ea1bfa356a3448c2a2db067972766cfc4d08f58b8a956ee12e483404",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::文書が0件の根では索引を作らない:FR-084": {
       "from": "sha256:56ceb0f74bca0bae381eb52cdd87a337a30a298ca17ea7d5e85a4301826e5a0d",
-      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::既存のディレクトリエントリが子の索引の値に書き換えられ_2回目はunchanged:FR-081": {
+      "from": "sha256:af6a4ebb3832c7a42b5b20229ade473462ec2bac01128cd2b9ee54c51fb7461c",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::更新はupdatedで出力され_2回目は全件unchangedで一時ファイルも残らない:FR-085": {
       "from": "sha256:71da5b45e7c1c6de96da3dc7616aa4738743f45fbff315984ea15d78aa2a9acd",
-      "to": "sha256:7c06caafe523f8f0253bba3f7d4b3e079e3d0031718d51c4db7dcad4c2af0598",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::未列挙の文書と辿れない子の索引が末尾に追加される:FR-082": {
-      "from": "sha256:4742497cb9f9f6b91e7937379acc472767e44fdcb8486e2de2ce6606467a696b",
-      "to": "sha256:bde3c26feccfb63bf3076cfe9c5b0f22d3cf4791900e128303c6feaad93086bd",
+      "from": "sha256:4302c70d0b84e0278cc3f037ddab964eb12b5a249f189107536b659adb893b72",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::根の索引がなければcheckがmissing_indexを報告する:FR-073": {
       "from": "sha256:7b5ed8cff9bd75f34352ba16d761b39f30eb839dcb7f158f14aab8adb8937aa5",
@@ -3942,18 +4054,18 @@
       "at": "2026-10-02T23:47:26Z"
     },
     "test-req:tests/cli_index::根の索引の新規作成では文書の後に子索引のディレクトリエントリが入る:FR-084": {
-      "from": "sha256:171e76d7bbc2fa4173bf0653c06f088ce6b68d5bc3c99ba6032d8fc2f283dbfb",
-      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "from": "sha256:2cb1ee6eccdbe8895055ec9f07e81c31fdf6f7d0a48a1b45dfb0f99a677272fa",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::索引がなければ平坦なリストで新規作成されcreatedが出力される:FR-084": {
       "from": "sha256:973e64dbd92f80ada01991b4369d2012df057d53c3db9f088d93616b398dc6ae",
-      "to": "sha256:2af6726cb0978696de81160e427eefa03580a2458076fd8b2cc374cff5038699",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
     },
     "test-req:tests/cli_index::設定違反ではindexもcheckもexit_code_1で止まる:FR-066": {
       "from": "sha256:cc677733a322d99a8fe92c1f55f972d81a72b3fb9f049ec3f31e1e71dccd3b0c",
