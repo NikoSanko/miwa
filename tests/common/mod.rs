@@ -48,9 +48,18 @@ pub fn run_git(dir: &Path, args: &[&str]) -> String {
     String::from_utf8_lossy(&output.stdout).trim().to_string()
 }
 
-/// The default `.miwa/config.yaml` used by most fixtures: docs/req/tests dirs,
-/// as plain top-level directories under the fixture root.
-pub fn default_config_yaml() -> &'static str {
+/// A typed document source with `title` / `description` front matter.
+pub fn typed(title: &str, description: Option<&str>) -> String {
+    match description {
+        Some(d) => format!("---\ntype: Specification\ntitle: {title}\ndescription: {d}\n---\n"),
+        None => format!("---\ntype: Specification\ntitle: {title}\n---\n"),
+    }
+}
+
+/// A `.miwa/config.yaml` without `index` (docs/req/tests dirs as plain
+/// top-level directories under the fixture root). Differs from what `init`
+/// writes, which includes `index`.
+pub fn config_yaml_without_index() -> &'static str {
     "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\n"
 }
 
@@ -63,7 +72,7 @@ pub fn run(dir: &Path, args: &[&str]) -> Command {
 
 /// A minimal fixture: one doc linking to one req, and one rust test verifying it.
 pub fn write_minimal_fixture(dir: &Path) {
-    write(dir, ".miwa/config.yaml", default_config_yaml());
+    write(dir, ".miwa/config.yaml", config_yaml_without_index());
     write(
         dir,
         "docs/spec.md",

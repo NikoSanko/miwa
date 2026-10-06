@@ -4,6 +4,8 @@
 pub struct FrontMatter {
     pub kind: Option<String>,
     pub id: Option<String>,
+    pub title: Option<String>,
+    pub description: Option<String>,
     pub body: String,
 }
 
@@ -55,7 +57,16 @@ pub fn parse(text: &str) -> Result<Option<FrontMatter>, FrontMatterError> {
     let kind = map.get("type").map(value_to_string);
     let id = map.get("id").map(value_to_string);
 
-    Ok(Some(FrontMatter { kind, id, body }))
+    let title = map.get("title").map(value_to_string);
+    let description = map.get("description").map(value_to_string);
+
+    Ok(Some(FrontMatter {
+        kind,
+        id,
+        title,
+        description,
+        body,
+    }))
 }
 
 fn value_to_string(value: &serde_yaml_ng::Value) -> String {

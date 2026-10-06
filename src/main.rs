@@ -30,6 +30,8 @@ enum Command {
         #[arg(long, value_enum, default_value_t = OutputFormat::Text)]
         format: OutputFormat,
     },
+    /// Create or update `index.md` files from the documents they list.
+    Index,
     /// Record the current state of edges into the lock.
     Reconcile {
         #[arg(long = "edge", conflicts_with = "all")]
@@ -58,6 +60,7 @@ fn main() {
             base,
             format,
         } => run_check(gate, diff, base, format),
+        Command::Index => run_index(),
         Command::Reconcile { edge, all, reason } => run_reconcile(edge, all, reason),
         Command::Judge {
             edge,
@@ -157,6 +160,27 @@ fn run_check_inner(
     Ok(miwa::check::exit_code(&findings, gate))
 }
 
+fn run_index() {
+    let result = std::env::current_dir()
+        .map_err(anyhow::Error::from)
+        .and_then(|root| {
+            let config = load_config(&root)?;
+            miwa::index::run(&root, &config)
+        });
+    match result {
+        Ok(results) => {
+            for (status, path) in results {
+                println!("{} {path}", status.as_str());
+            }
+            std::process::exit(0)
+        }
+        Err(e) => {
+            eprintln!("{e}");
+            std::process::exit(1);
+        }
+    }
+}
+
 fn run_reconcile(edge: Vec<String>, all: bool, reason: Option<String>) {
     match run_reconcile_inner(edge, all, reason) {
         Ok(()) => std::process::exit(0),
@@ -251,7 +275,7 @@ fn run_judge_inner(edge: Vec<String>, auto_reconcile: bool) -> anyhow::Result<()
         return Ok(());
     }
 
-    eprintln!("note: sending doc/req/test contents to api.typesafe.ai");
+    eprintln!("note: sending doc/req/test contents and descriptions to api.typesafe.ai");
 
     let endpoint = std::env::var(judge::JEV_ENDPOINT_OVERRIDE_ENV)
         .unwrap_or_else(|_| judge::JEV_ENDPOINT.to_string());

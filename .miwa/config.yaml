@@ -12,3 +12,5 @@ judge:
 rust:
   test_attributes: []
 exclude: []
+index:
+  - docs

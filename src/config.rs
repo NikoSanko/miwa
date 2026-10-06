@@ -31,6 +31,9 @@ pub struct Config {
     pub rust: RustConfig,
     #[serde(default)]
     pub exclude: Vec<String>,
+    /// Index roots (directories whose `index.md` lists the documents below).
+    #[serde(default)]
+    pub index: Vec<String>,
 }
 
 impl Config {
@@ -47,6 +50,7 @@ impl Config {
             },
             rust: RustConfig::default(),
             exclude: vec![],
+            index: vec!["docs".to_string()],
         }
     }
 
@@ -61,6 +65,11 @@ impl Config {
         serde_yaml_ng::to_string(self).expect("Config serializes to yaml")
     }
 
+    /// `index` rules: each entry must be non-empty after normalization, equal to
+    /// or under a `docs` / `requirements` entry, not contain an excluded
+    /// directory name (`exclude` or the default exclusions) as a segment, and no
+    /// two entries may be equal or nested in each other.
+    ///
     /// `threshold` must be finite and within `0..=1`; each `Vec` must be
     /// non-empty; `diff_base` must be non-empty; each `rust.test_attributes`
     /// entry must be a non-empty `[A-Za-z0-9_]+` string; each `exclude` entry must
@@ -117,6 +126,7 @@ impl Config {
             ("tests", &self.tests),
         ] {
             for p in entries {
+                check_path_segments(field, p)?;
                 for seg in p
                     .split('/')
                     .map(str::trim)
@@ -136,7 +146,107 @@ impl Config {
                 }
             }
         }
+        self.validate_index()?;
         Ok(())
+    }
+
+    fn validate_index(&self) -> anyhow::Result<()> {
+        let normalized: Vec<String> = self.index.iter().map(|e| normalize_dir(e)).collect();
+        for (raw, n) in self.index.iter().zip(&normalized) {
+            if raw.trim().is_empty() {
+                anyhow::bail!("index entries must not be empty");
+            }
+            if n == "." {
+                anyhow::bail!("index entry `{raw}` must not be the whole repository (`.`)");
+            }
+            check_path_segments("index", raw)?;
+            let in_scope = self
+                .docs
+                .iter()
+                .chain(self.requirements.iter())
+                .any(|d| is_under(n, &normalize_dir(d)));
+            if !in_scope {
+                anyhow::bail!(
+                    "index entry `{raw}` must be equal to or under a docs / requirements entry"
+                );
+            }
+            for seg in n.split('/').filter(|s| !s.is_empty() && *s != ".") {
+                let hit = self
+                    .exclude
+                    .iter()
+                    .map(|s| s.as_str())
+                    .chain(crate::source::DEFAULT_EXCLUDED_DIRS)
+                    .find(|name| *name == seg);
+                if let Some(name) = hit {
+                    anyhow::bail!("index entry `{raw}` is under an excluded directory `{name}`");
+                }
+            }
+        }
+        for (i, a) in normalized.iter().enumerate() {
+            for (j, b) in normalized.iter().enumerate() {
+                if i != j && is_under(a, b) {
+                    anyhow::bail!(
+                        "index entries `{}` and `{}` must not be equal or nested",
+                        self.index[i],
+                        self.index[j]
+                    );
+                }
+            }
+        }
+        Ok(())
+    }
+}
+
+/// Rejects configured directory entries containing `..` or empty (`//`)
+/// segments after normalization. `.` (the whole repo) is not checked here.
+fn check_path_segments(field: &str, raw: &str) -> anyhow::Result<()> {
+    let n = normalize_dir(raw);
+    if n == "." {
+        return Ok(());
+    }
+    for seg in n.split('/') {
+        if seg.is_empty() {
+            anyhow::bail!("{field} entry `{raw}` must not contain empty path segments");
+        }
+        if seg == ".." {
+            anyhow::bail!("{field} entry `{raw}` must not contain `..`");
+        }
+    }
+    Ok(())
+}
+
+/// Joins a normalized directory `root` and a relative path (`.` is the repo
+/// root, so the result has no `./` prefix).
+pub(crate) fn join_under(root: &str, rel: &str) -> String {
+    if root == "." || root.is_empty() {
+        rel.to_string()
+    } else {
+        format!("{root}/{rel}")
+    }
+}
+
+/// Whether `path` is `dir` or lies under it. `dir` must be normalized by
+/// [`normalize_dir`]; `.` (the whole repo) contains everything.
+pub(crate) fn is_under(path: &str, dir: &str) -> bool {
+    dir == "."
+        || path == dir
+        || path
+            .strip_prefix(dir)
+            .is_some_and(|rest| rest.starts_with('/'))
+}
+
+/// Normalizes a configured directory entry: strips a leading `./`, strips a
+/// trailing `/`, and maps `.` / `./` / `` (empty) to `.` (the whole repo).
+pub(crate) fn normalize_dir(d: &str) -> String {
+    let mut s = d.trim();
+    while let Some(rest) = s.strip_prefix("./") {
+        s = rest;
+    }
+    let s = s.trim_end_matches('/');
+    if s.is_empty() {
+        ".".to_string()
+    } else {
+        s.to_string()
     }
 }
 
@@ -156,6 +266,7 @@ mod tests {
             },
             rust: RustConfig::default(),
             exclude: vec![],
+            index: vec![],
         }
     }
 
@@ -352,5 +463,103 @@ mod tests {
         let value: serde_yaml_ng::Value = serde_yaml_ng::from_str(&yaml).unwrap();
         let exclude = value["exclude"].as_sequence().expect("sequence");
         assert!(exclude.is_empty());
+    }
+
+    fn with_index(index: &[&str], extra: &str) -> anyhow::Result<Config> {
+        let list: String = index.iter().map(|e| format!("  - \"{e}\"\n")).collect();
+        let yaml = format!("{BASE_YAML}{extra}index:\n{list}");
+        Config::parse(&yaml)
+    }
+
+    // [FR-066]
+    #[test]
+    fn indexを省略すると空の一覧として扱われる() {
+        let config = Config::parse(BASE_YAML).unwrap();
+        assert!(config.index.is_empty());
+    }
+
+    // [FR-066]
+    #[test]
+    fn indexはdocsかrequirements配下なら正規化されて受理される() {
+        assert!(with_index(&["docs"], "").is_ok());
+        assert!(with_index(&["req"], "").is_ok());
+        assert!(with_index(&["./docs/guide/"], "").is_ok());
+        assert!(with_index(&["docs", "req/sub"], "").is_ok());
+        assert!(with_index(&["docs/a", "docs/b"], "").is_ok());
+    }
+
+    // [FR-066]
+    #[test]
+    fn indexの要素が空なら設定エラーになる() {
+        assert!(with_index(&[""], "").is_err());
+        assert!(with_index(&["  "], "").is_err());
+    }
+
+    // [FR-066]
+    #[test]
+    fn indexがdocsでもrequirementsでもない場所なら設定エラーになる() {
+        assert!(with_index(&["other"], "").is_err());
+        assert!(with_index(&["docsx"], "").is_err());
+        assert!(with_index(&["."], "").is_err());
+        assert!(with_index(&["src/docs"], "").is_err());
+    }
+
+    // [FR-066]
+    #[test]
+    fn indexが除外名のセグメントを含むと設定エラーになる() {
+        assert!(with_index(&["docs/node_modules"], "").is_err());
+        assert!(with_index(&["docs/vendor/x"], "exclude: [vendor]\n").is_err());
+        assert!(with_index(&["docs/vendor"], "").is_ok());
+    }
+
+    // [FR-066]
+    #[test]
+    fn index同士が同一または包含関係なら設定エラーになる() {
+        assert!(with_index(&["docs", "docs"], "").is_err());
+        assert!(with_index(&["docs", "docs/a"], "").is_err());
+        assert!(with_index(&["docs/a", "docs"], "").is_err());
+        assert!(with_index(&["docs/", "./docs"], "").is_err());
+    }
+
+    // [FR-019]
+    #[test]
+    fn 既定のconfigのindexはdocsを1件含む() {
+        let config = Config::default_config();
+        assert_eq!(config.index, vec!["docs".to_string()]);
+        assert!(config.validate().is_ok());
+    }
+
+    // [FR-066]
+    #[test]
+    fn indexが正規化後にリポジトリ全体_ドットになると設定エラーになる() {
+        for e in [".", "./", "././"] {
+            let yaml = format!(
+                "docs:\n  - .\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\nindex:\n  - \"{e}\"\n"
+            );
+            assert!(Config::parse(&yaml).is_err(), "{e}");
+        }
+    }
+
+    // [FR-066]
+    #[test]
+    fn indexに親ディレクトリや空セグメントがあると設定エラーになる() {
+        assert!(with_index(&["docs/../docs"], "").is_err());
+        assert!(with_index(&["docs//a"], "").is_err());
+    }
+
+    // [FR-066]
+    #[test]
+    fn docsとrequirementsとtestsに親ディレクトリや空セグメントがあると設定エラーになる() {
+        for field in ["docs", "requirements", "tests"] {
+            for bad in ["a/../b", "a//b"] {
+                let mut yaml = String::new();
+                for f in ["docs", "requirements", "tests"] {
+                    let v = if f == field { bad } else { "ok" };
+                    yaml.push_str(&format!("{f}:\n  - \"{v}\"\n"));
+                }
+                yaml.push_str("diff_base: main\njudge:\n  threshold: 0.9\n");
+                assert!(Config::parse(&yaml).is_err(), "{field}: {bad}");
+            }
+        }
     }
 }

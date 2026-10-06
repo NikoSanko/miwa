@@ -10,6 +10,7 @@ fn kind_label(kind: crate::check::FindingKind) -> &'static str {
         Orphan => "orphan",
         NoTest => "no-test",
         Invalid => "invalid",
+        Index => "index",
     }
 }
 

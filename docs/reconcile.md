@@ -1,6 +1,8 @@
 ---
 type: Specification
 id: DOC-RECONCILE
+title: "合意を記録する（reconcile）"
+description: "check が見つけた drift や new を人が確認して合意した結果を、ロックに記録するコマンドの仕様。"
 ---
 
 # 合意を記録する（`reconcile`）
@@ -23,7 +25,7 @@ miwa reconcile --edge doc-req:DOC-AUTH:FR-001 --reason "最小長の記述が一
 
 `removed` の依存関係は、[意味判定（`judge`）の対象外](../req/judge-target-edges.md)です。ソースから消えた理由は人が判断する必要があるため、消えたものを復元するか、`reconcile --edge` で削除を承認するかを選んでください（詳しくは [意味判定](judge.md) を参照）。
 
-なお、[リンク切れ（broken）や不正な状態（invalid）に関わる依存関係は reconcile できません](../req/reconcile-rejects-broken-or-invalid.md)。まずソース側（doc・req・test）を直して、壊れた状態を解消してください。
+なお、[リンク切れ（broken）や不正な状態（invalid）に関わる依存関係は reconcile できません](../req/reconcile-rejects-broken-or-invalid.md)。まずソース側（doc・req・test）を直して、壊れた状態を解消してください。要約と本文の対（`desc:doc:<id>` / `desc:req:<id>`、[詳細](../req/desc-edge-exists-for-indexed-nodes.md)）も、他のエッジと同じように `--edge desc:doc:DOC-AUTH` で 1 件ずつ、`--all` でまとめて合意できます。リンク切れや不正な状態に関わる doc の対は、`doc-req` と同様に拒否されます。
 
 ## まとめて合意する
 
@@ -40,3 +42,5 @@ miwa reconcile --all
 `reconcile` で記録されるエントリの合意者は、常に [`by: human`](../req/reconcile-records-by-human-and-reason.md) です（[`judge --auto-reconcile`](judge.md) で Jev が合意した場合は `by: jev` とスコアが記録されます）。`--reason` を指定すればその内容が記録され、指定しなければ理由は記録されません。
 
 依存関係の識別子（エッジ ID）や、doc・req・test それぞれの書き方については [3層モデル](model.md) を参照してください。
+
+索引の乱れ（`check` の `index` 種別）はロックと関係がないため、[`index` の finding が残っていても `reconcile` は成功します](../req/index-findings-do-not-block-reconcile.md)。

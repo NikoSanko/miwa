@@ -1,494 +1,809 @@
 {
   "edges": {
+    "desc:doc:DOC-CHECK": {
+      "from": "sha256:2536d2ff59e09fe78450e76017752f3620b2d212f91498f6b8ebf3ec8972fc2c",
+      "to": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "desc:doc:DOC-INDEX": {
+      "from": "sha256:c900c476f334244260611eaaf2e4105d847f879e9e64eb3c9018a6a5a024ed15",
+      "to": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "desc:doc:DOC-JUDGE": {
+      "from": "sha256:f8910f28f64124c465f165769af47993572956352407da83c4923ab6f53e6db6",
+      "to": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "desc:doc:DOC-MODEL": {
+      "from": "sha256:ca3ad0836e1fbc85a3e65d4e8bc10d9691ea2831ffb66cace333b82b5d7ff85d",
+      "to": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "desc:doc:DOC-RECONCILE": {
+      "from": "sha256:8ea0b733babc6ed9a59f29e77b2616da57ef145ff297974443a6590b095d2db8",
+      "to": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "desc:doc:DOC-SETUP": {
+      "from": "sha256:bf2710c18a0162cec3ac53eaa2fc6ac366bf9fde06eae6fec0b919ef24434a5a",
+      "to": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:16290c58fd694a0068cd33d82a75ac942df36d2a1eb67827983607ac94991539",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
-      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:2547db5062e3affa51044c7ce04c8584aa8ba1bd736308f66e566bd3541af813",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:a7d58c494025242c2dbe56ea24f67cb6c0151a6f16319f41eacc574133257325",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:d355e8354661caa9980ef18b59f1117c51c1634fe66221153bd545de691aaeb6",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:1f04c094fbf9bb1fd686850e87f5aa96da2bf459b48c89c8fb5220eb677b7e76",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:d23be501966fba3c39ac082b8616cdeb16a67d7da271c763361dcd32384c5039",
       "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:3b7ba6f3fd573b87296262f6fb78feed938374876a2d46c94434cee4f538668d",
-      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
-      "by": "human",
-      "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
-      "at": "2026-10-02T11:46:19Z"
-    },
-    "doc-req:DOC-JUDGE:FR-038": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-039": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:a9c6c29daf695471ee2c0f25e48f54b030a755627f7310bd92a8dc39ee0601f2",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-040": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:ec60d43857ef60fac83546da78359de3f64527baa6c0a5117502fead2db1c39d",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-041": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:59d7548fd351cd1fbb74f8930702c4d0ab90dbe2d38e3536e8aad8b84e73363a",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-042": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:fea1aa42fd85d16f12272e38509e740732f694e6957328b1de020602daf6b4fe",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-043": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:b627b654e1ea48ec5c66458db85390a6445ed6f6cd12a855b6c85ec8db4b8c34",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-044": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:05cce8b6ecd8fb9edb9c980affb7aed7521adaed6999ae662279b69b305726a1",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-045": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-046": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:dafa1d46f4fe6d0e726d85a5ef61e738a1d657a765e71e8afdd9f17a353718c2",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-047": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:8d896b70d7a0216ce0a7c33e626ec5e50e5a18121ffc180702f08dd6d291fd94",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-JUDGE:FR-048": {
-      "from": "sha256:19fe713cb011efbd9ca979528bc51b7dd171db8a3c67334ffba6dd090a58fcb0",
-      "to": "sha256:4feb72b2d319ccccd6f3afaa31486df961cc6cfbdca0e6eb5be54760ad933b05",
-      "by": "human",
-      "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
-      "at": "2026-10-01T02:13:08Z"
-    },
-    "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:06698b9ee3e2312f389904a2ae4230548517f62d4d32577c276bb2bb6ad4f380",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-058": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-059": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-060": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-061": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-062": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-063": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-064": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-MODEL:FR-065": {
-      "from": "sha256:c1123e1dc507e18fcaaca3a988463efb24a86c52be2cc3f6e7ea6a58819c16e9",
-      "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
-      "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
-    },
-    "doc-req:DOC-RECONCILE:FR-021": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
-      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
-      "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
-    },
-    "doc-req:DOC-RECONCILE:FR-022": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
-      "to": "sha256:d5a7d587826af6ea3aa2e435f1277cb3003617e073bb96da52a66dde7dec1aa5",
-      "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
-    },
-    "doc-req:DOC-RECONCILE:FR-033": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
-      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
-      "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
-    },
-    "doc-req:DOC-RECONCILE:FR-034": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
-      "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
-      "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
-    },
-    "doc-req:DOC-RECONCILE:FR-035": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
+    "doc-req:DOC-CHECK:FR-035": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-RECONCILE:FR-036": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
-      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+    "doc-req:DOC-CHECK:FR-057": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-RECONCILE:FR-037": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
-      "to": "sha256:691e943b879df5a28ecafc254e42c9c4c5ed80d1407a329e378393fca4b0ec4c",
+    "doc-req:DOC-CHECK:FR-073": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-RECONCILE:FR-038": {
-      "from": "sha256:f045d7743aefedfd3e883941acb9ffda0af10a28a8cea668808eb192056e5d73",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+    "doc-req:DOC-CHECK:FR-074": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
-      "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
+    "doc-req:DOC-CHECK:FR-075": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:6b969130f89d6e8195fb0bb6e0bcd8cacca5bb56df2250840326459795d9004b",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+    "doc-req:DOC-CHECK:FR-076": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
-      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
+    "doc-req:DOC-CHECK:FR-077": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+    "doc-req:DOC-CHECK:FR-078": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:374d7b3e0dcd130fc24195de948d591c3bf6db01d255334d4226610253f5ca8a",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-CHECK:FR-079": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-CHECK:FR-080": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-CHECK:FR-088": {
+      "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-067": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-068": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-069": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-070": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-071": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-072": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-081": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-082": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-083": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-084": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-085": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-086": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-087": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-INDEX:FR-088": {
+      "from": "sha256:b882bb8d6ae493ec5303aa4cb77d7260b3bb2e1fe9e8e6b78ced9f73fe165af3",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-038": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-039": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:a9c6c29daf695471ee2c0f25e48f54b030a755627f7310bd92a8dc39ee0601f2",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-040": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:77a1bfd9573dc45ac2a1e8ded892911e222f39cc4aab3f861a736fb6bc34becd",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-041": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:8cf3acd2e45c6222f984e2b4554f8456b4c44e3cc86396b475ac34207729c7b8",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-042": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:fea1aa42fd85d16f12272e38509e740732f694e6957328b1de020602daf6b4fe",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-043": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:b627b654e1ea48ec5c66458db85390a6445ed6f6cd12a855b6c85ec8db4b8c34",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-044": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:05cce8b6ecd8fb9edb9c980affb7aed7521adaed6999ae662279b69b305726a1",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-045": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-046": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:dafa1d46f4fe6d0e726d85a5ef61e738a1d657a765e71e8afdd9f17a353718c2",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-047": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:8d896b70d7a0216ce0a7c33e626ec5e50e5a18121ffc180702f08dd6d291fd94",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-048": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:4feb72b2d319ccccd6f3afaa31486df961cc6cfbdca0e6eb5be54760ad933b05",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-JUDGE:FR-087": {
+      "from": "sha256:a6328c9fec9475044f79bed39e13999a43f5b3c97abb1e417a6f496eec4d8202",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-001": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:bfe5eb48e49343547eebe54cea59f0e062e344ff2ff4c2bf22ffa5f530445a7b",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-002": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-003": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:a619903bc4c85e852263760f2c25d4834bdeadd7e54f36adc71bcd75b982b4ac",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-004": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-005": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-006": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-007": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-008": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:982c99cdc9ddaa50bfda21457fbb4fdc1caf1c98c435bac5516e5a1569714a44",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-009": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-010": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:87bab8415ece832930174e78dec481b1f17b75f084d931038b6bc9f2c0dd64be",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-011": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:f47e9b3c1cd3e430fa8c88a9fd3a85ae82c96a3d01f6362f380530caa0a28483",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-012": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-013": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:1ba2d938e2ee3c39a65fca7f5ab9ab8998d39c774f9b02695c4dff0aedb73894",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-015": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:10397b0f426eabe827aab54a6d3a31928189fd2178c3f92054d8b97ec3e7d5d4",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-016": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:1508afe2049867c44b52ed405c8a70bdf73f0dafab73910405a5bc427ed30d47",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-017": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:80bd81c15a188b0f6f777615e3810c244ae5334b455ac6dcfd55c8f81a965c3a",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-023": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:19e2924a3e42be2c3df3dee01040f6ef820dac4786142f802c2c2be31849efa7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-049": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:7fb1a45608ebcea0c283fba0bb521b54f8dc339aa287f85d7a5a6829067130b7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-050": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:73ce7da43003f3ee82adc3bc8fb54016cc3b04b42bc0b3d3accf7d249f7933fc",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-051": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:ada6e7bc28bcbd7f6cc2f6e14832463e37cd55e2d7b25d2ed15e5c79ef176a81",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-052": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:7ca879c88827d7cc9e75372a43c66b49746b7595b3f1c81cbfb0187a44fc95ec",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-053": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:06698b9ee3e2312f389904a2ae4230548517f62d4d32577c276bb2bb6ad4f380",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-054": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:13e2dffa5008019ac29791cf8fd892aae576aa4959d2c20e13ef80ae887a03be",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-055": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-056": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:05b80d3fc929de571dccff601389c16a76e60463ea3da98280943057949ac9bc",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-057": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-058": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-SETUP:FR-063": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+    "doc-req:DOC-MODEL:FR-059": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:dd13f3db1965555725ba8ff963d63eed94c1392b37f6babfe75b4d9ee3bc2dc9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-060": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:a757e283a98660b9cbb57ed0652f7b43a1f45f50e777f3dd6c5246fa8863003c",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-061": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:11942733b2d690d3658d7c56c7306bc09d67b61031d75a97a8501214c619fb71",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-062": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:86fbea8bd5fb31527c22c59846e419381ba63d8e05d8fbfa47eb4f28ed95cbb5",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-063": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
       "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
-    "doc-req:DOC-SETUP:FR-065": {
-      "from": "sha256:508769897f61f82d474b434fdda20e32452161dad70010f2a35bcd8e53d5d641",
+    "doc-req:DOC-MODEL:FR-064": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:c3bf3f8e8d95b3ff0cec8ee3022f8dd1b9f4fccba1a95c413398f3c71b848534",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-065": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
       "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-067": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-071": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-086": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-MODEL:FR-087": {
+      "from": "sha256:a2303ae556f1b813bf548e5762d0b552e6b62e30ab813037bba18278acc5b1b3",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-021": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:2f861cdfafe9063e3fa9d0e63baa1a3b8c5d73f19d3c533c4d3073a3866dfcda",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-022": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:d5a7d587826af6ea3aa2e435f1277cb3003617e073bb96da52a66dde7dec1aa5",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-033": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-034": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-035": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-036": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-037": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:691e943b879df5a28ecafc254e42c9c4c5ed80d1407a329e378393fca4b0ec4c",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-038": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-080": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-RECONCILE:FR-086": {
+      "from": "sha256:36ff97c508f15cd539aaaf72ef0e3f73ffe65c0cb13a19445bf2952a25b644c4",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-018": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-019": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-020": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-058": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-063": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-065": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-066": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "doc-req:DOC-SETUP:FR-067": {
+      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:descしか持たないdocはorphanのままになる:FR-086": {
+      "from": "sha256:592dfc2d353150950625cb0f4be5763e6ce8fa81426de9f6d7739139bdd8583d",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:descしか持たないreqはorphanとno_testのままになる:FR-086": {
+      "from": "sha256:64d2f88e3e4be3b1580d3f9bb700bac24b6a54c3b04c6c8488f601295ca8429f",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:descは変化がなければdriftを報告しない:FR-088": {
+      "from": "sha256:9600d68af9da75531115da431cbc89bbbbde80fb24359ef6316b384b7a7e6ca7",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:descは本文だけ変わるとbody_changedのdriftになる:FR-024": {
+      "from": "sha256:eb929b5f7bfda3441babd478232bead5bd4d9fe0dddf6cbcfa960770d1c2cf34",
+      "to": "sha256:2547db5062e3affa51044c7ce04c8584aa8ba1bd736308f66e566bd3541af813",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:descは要約だけ変わるとdescription_changedのdriftになる:FR-024": {
+      "from": "sha256:19390368ecffd4443bb61b0da187d23e0003505715b05f5b3473dc70b2fa8cce",
+      "to": "sha256:2547db5062e3affa51044c7ce04c8584aa8ba1bd736308f66e566bd3541af813",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:descは要約と本文の両方が変わるとboth_changedのdriftが1件になる:FR-088": {
+      "from": "sha256:beb4553912d52eb5b3e40e80d7f62911d4d5b70673cb42c197fa29ca049a23d0",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/check:tests:diff_findingsは種別_対象種別_対象_理由が一致するものを除外する:FR-031": {
       "from": "sha256:6aadfda65c988e4884f3f80e2d8cbf2ce6c4d81b2f1960a5b607ae9b4e64466d",
@@ -499,10 +814,17 @@
     },
     "test-req:src/check:tests:docだけ変わった場合はdoc_changedとしてdriftを報告する:FR-024": {
       "from": "sha256:b7655654efdbe93e4a1df190150061844544b04d082274e2816e3aedfaede684",
-      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "to": "sha256:2547db5062e3affa51044c7ce04c8584aa8ba1bd736308f66e566bd3541af813",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:doc本文を編集するとdoc_reqは本数分のdoc_changedとdescのbody_changedが別々に出る:FR-088": {
+      "from": "sha256:a2d89fa4b413433ea8c3330639240e1a81fd42c389669b5fbee7f37913e08277",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/check:tests:exit_codeはfindingが0件でgateがあっても0を返す:FR-030": {
       "from": "sha256:e69f6c3752dd27bd3d21c5c10e9e360077608bbc0c3c65c793f4110696823b34",
@@ -527,17 +849,17 @@
     },
     "test-req:src/check:tests:reqだけ変わった場合はreq_changedとしてdriftを報告する:FR-024": {
       "from": "sha256:943da658bf341065c2089ae9e2827b0f675a611a896af3450b04583b935cf513",
-      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "to": "sha256:2547db5062e3affa51044c7ce04c8584aa8ba1bd736308f66e566bd3541af813",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/check:tests:testだけ変わった場合はtest_changedとしてdriftを報告する:FR-024": {
       "from": "sha256:2ae5e128ab880e3c8c97d1c69ebba93910111b6813b7d414942c7a30986d0660",
-      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "to": "sha256:2547db5062e3affa51044c7ce04c8584aa8ba1bd736308f66e566bd3541af813",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/check:tests:どのdocからもリンクされないreqはorphanになる:FR-026": {
       "from": "sha256:ee7dad58112e4d9caa65e30cca826caf5bd32ec4f514e18da5fceafa76f1752e",
@@ -553,6 +875,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/check:tests:ソースから消えたdescエッジはremovedとして報告する:FR-088": {
+      "from": "sha256:1b34c152ebbacbcc016338e39474b723ec3927394f8f54de888a40727e354ea4",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/check:tests:ソースから消えたエッジはremovedとして報告する:FR-025": {
       "from": "sha256:f045d7eaba06f1697f3f2d712a2d6769fcf31d59e3a3a664240a48a4f01ada08",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
@@ -567,6 +896,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/check:tests:ロックにないdescエッジはnewとして報告する:FR-088": {
+      "from": "sha256:86439cc65214eddba437b222f45a98f02670d2483a6caec30a773b2e33fa0176",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/check:tests:ロックにないエッジはnewとして報告する:FR-025": {
       "from": "sha256:06bd9bf25e8fdb2bb15d792531c17ba933353c38a42a70c6c8ae6f9c9209ff86",
       "to": "sha256:06e4179adbcf17b75b247c393b433e24a2b0d85ae75001ef8788bca37d0b2d31",
@@ -574,12 +910,40 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/check:tests:ロックの要約が空で要約も無ければdriftを報告しない:FR-088": {
+      "from": "sha256:931c85f32d2c33d922f4642a5b8a50e41e0f99f3366b72fd031e457f5ceff09a",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/check:tests:両側が変わった場合はboth_changedとして1件だけ報告する:FR-024": {
       "from": "sha256:8b3a55fb0eb8aace588e01c57989f020fcb8eb5c7fa167762239eeb46a96497f",
-      "to": "sha256:d7abceb5a83013ef302efb4f1594bc7fae4e3499e863dd141e5bac8e99a02806",
+      "to": "sha256:2547db5062e3affa51044c7ce04c8584aa8ba1bd736308f66e566bd3541af813",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:索引配下のreq本文を編集するとreq_changedとdescのbody_changedが出る:FR-088": {
+      "from": "sha256:e0292282da82d83eda90b9cbc4359f79a4c97026ad7c345bdf4fbd9396b96be9",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:要約だけを変えてもdoc_reqとtest_reqにfindingは出ない:FR-087": {
+      "from": "sha256:704de0ddb017083cae715823ef267196e6b8dc76d98412008963809c72f3d934",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/check:tests:要約を消すとロックの要約が非空ならdescription_changedになる:FR-088": {
+      "from": "sha256:ffdaf7dc51e1a0d661c2003680303c8c3a43c25a503b14c7e4153eba18517952",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/config:tests:diff_baseが空文字列なら設定エラーになる:FR-020": {
       "from": "sha256:f5dade3238a577ec186c624952d234809780c00a9db0204bf940b29754aa81b4",
@@ -594,6 +958,13 @@
       "by": "human",
       "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
       "at": "2026-10-01T02:13:08Z"
+    },
+    "test-req:src/config:tests:docsとrequirementsとtestsに親ディレクトリや空セグメントがあると設定エラーになる:FR-066": {
+      "from": "sha256:d5c5e5c0b3e032f235f0211dd17fee9f7f8f42799632bd2edd42d2c710bbce33",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:docsやrequirementsやtestsのパスが除外名を含むと設定エラーになる:FR-065": {
       "from": "sha256:ae4178a83676d155c36b7cb8c1de3cfab816dfe5c3ad2c95bea680057b280d06",
@@ -623,6 +994,62 @@
       "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
       "at": "2026-10-02T15:12:26Z"
     },
+    "test-req:src/config:tests:indexがdocsでもrequirementsでもない場所なら設定エラーになる:FR-066": {
+      "from": "sha256:0e896363bdc86b51e6f389ef13b5b22bbd62ddfa9c283fb18e6b0c85a33a4642",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexが正規化後にリポジトリ全体_ドットになると設定エラーになる:FR-066": {
+      "from": "sha256:71e40cda6818912c696e2c3772942785e49fe83bf6f2a7c30ab778ba3f6f669c",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexが除外名のセグメントを含むと設定エラーになる:FR-066": {
+      "from": "sha256:274a72917f580f9f417e6246e3ee9906797b28a631981b45df21e3d9fee4dc72",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexに親ディレクトリや空セグメントがあると設定エラーになる:FR-066": {
+      "from": "sha256:fc3e4e40f578356602cc24295a2c6ec5d65389ab5948ead8ea761e9d9b816761",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexの要素が空なら設定エラーになる:FR-066": {
+      "from": "sha256:971d0f3cce1b30739fdbf2cd11ab12da85c7a14c93f1c005b5d94ea5117a78a2",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexはdocsかrequirements配下なら正規化されて受理される:FR-066": {
+      "from": "sha256:7124650193bc327d517b0d784b67565bef4779899dbe4082531f48b9771f96f3",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:indexを省略すると空の一覧として扱われる:FR-066": {
+      "from": "sha256:1769b6b549e82bcc5515b8ac4454270fff974d473736dc02197d708f62b29414",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/config:tests:index同士が同一または包含関係なら設定エラーになる:FR-066": {
+      "from": "sha256:93f0e46792f6a03610e4677fb2bb958147dfdb2e6796efdb3b3330ef8e8199a5",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/config:tests:max_body_bytesが0なら設定エラーになる:FR-020": {
       "from": "sha256:ef0ff8daed417485d2618c3c166c14885516834c52d8d7141b2f4c1c728af3a0",
       "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
@@ -639,10 +1066,10 @@
     },
     "test-req:src/config:tests:max_body_bytesを省略したyamlは既定値で読める:FR-019": {
       "from": "sha256:30fb457c119cb9f587833fb51cb81f7650764c202f77838989a33993b17a2dea",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:rustのtest_attributesにパス区切りや空文字があるとparseエラーになる:FR-058": {
       "from": "sha256:d53bde879aad0fb9f00206fd1e502b40da0ad4c7fe3c5e73719de6aa4f8bdb69",
@@ -679,33 +1106,40 @@
       "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
       "at": "2026-10-01T02:13:08Z"
     },
+    "test-req:src/config:tests:既定のconfigのindexはdocsを1件含む:FR-019": {
+      "from": "sha256:443db8bfaecb2f9a4b367c0fadaafd93f4e5edd988ece7dbf65eb32f20026132",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/config:tests:既定のconfigのyamlはexcludeを空配列で含む:FR-019": {
       "from": "sha256:5ae67d98550aefd3faf39c245dab6d733f8077eff24830b63da3dc7c3676191e",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:既定のconfigのyamlはrustのtest_attributesを空配列で含む:FR-019": {
       "from": "sha256:18559bddb92234400072d5ef59dee199741c2cc24b9009a7634b95b439d8a506",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:既定値のmax_body_bytesは200000で妥当な設定である:FR-019": {
       "from": "sha256:27e566cd420add509897265ef4da1815e734b3e97cfd8fbe6592625f50687685",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/config:tests:既定値のthresholdは0_9で妥当な設定である:FR-019": {
       "from": "sha256:72599f677b4109acd7ec0a69362831fc6503429a8ec6ff1bd415e8dfce383ebf",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/extract:tests:csharpのcontentは属性を含まず修飾子から始まる:FR-052": {
       "from": "sha256:07c175587f6bb2175094b4b0567228953598c486a9379bff4272195a026d67aa",
@@ -1779,11 +2213,11 @@
       "at": "2026-10-01T14:00:21Z"
     },
     "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
-      "from": "sha256:9e38df37e37a0c2eaf6a5ed10a75b387e00e06f19b2b4425a02e0d5df81dfbb8",
+      "from": "sha256:c35d24b691e37d99e051a78afb6cf5d252bea84c0ce056dfc3e85d36867600a2",
       "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:src/graph:tests:csharp_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:8e591a891ddf617f169e9c675124e06ea5c53ab887b1a6ceb1b29f3ec1267436",
@@ -1805,6 +2239,55 @@
       "by": "human",
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
+    },
+    "test-req:src/graph:tests:descエッジのfromは前後の空白を除いた要約のハッシュになる:FR-087": {
+      "from": "sha256:d76dc5bfef095580d7707800b63c9a6c2facf0aa7f08ea26ae57b49264454129",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:descエッジのfromは折り畳みスカラーの要約を1行に畳んだハッシュになる:FR-087": {
+      "from": "sha256:276caa7f85078e1265eaf7b51272c6b88e9636dc9cabaf7848fe585097bf2c19",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:descエッジのfromは要約_toは本文のハッシュになる:FR-087": {
+      "from": "sha256:e59954283eeaa97393707cfec2eab48ebc1370e6f46a8d302b1b084a1cc92129",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:descエッジのfromは要約が無い_空_改行を含むときは空文字列のハッシュになる:FR-087": {
+      "from": "sha256:5811e093b383285548c918824e680551568097f3a6b0f1ed3302a478d9b8277d",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:descエッジはdescriptionが無いノードにもできる:FR-086": {
+      "from": "sha256:4675c1a513f305da644297ba6e8415c9b9465fbf3e1fd57901bb9d06a5ed6bd4",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:descエッジはorphanとno_testの判定に影響しない:FR-086": {
+      "from": "sha256:6dea983e00c0634aef3ccc31bdc766e68d028e619529aa4b5bb01378ada337ab",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:descエッジは空や改行を含むdescriptionのノードにもできる:FR-086": {
+      "from": "sha256:9d29e15b31db76dbcdd4302cdc7a9ac921a6240cc724fd81ab44532100c00a76",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/graph:tests:exclude_nextのようなドット始まりの名前も除外できる:FR-065": {
       "from": "sha256:0e35d2cb26c45e0dac93b5a1fa08e35fa0353fe3dc80e0e1d1ccb629f57130c1",
@@ -1862,12 +2345,61 @@
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
     },
+    "test-req:src/graph:tests:guideなどmiwaのノードでない文書にはdescエッジができない:FR-086": {
+      "from": "sha256:7b21be36eff9f78848859fc8f8394d412bae9ffb115f6884c86eba3edbc5b59b",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/graph:tests:idが空のファイルはmissing_idとして報告される:FR-007": {
       "from": "sha256:8d4683b0a9928750e2fb743f6f283c7027b68b785005e79473fb9bdabcb5b07b",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:indexが空ならdescエッジは1本もできない:FR-086": {
+      "from": "sha256:138e452d834d462c4fe631f35980b9f62d2585ef64cc8407bfe3cacc39ffe506",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:indexの根から外れるとロックのdescエッジはremovedになる:FR-086": {
+      "from": "sha256:f44e0b73c4973280763309383770cbb7ed18e34f8f3ecaae75e1862e27c8f22c",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:index未設定なら索引のfindingを一切出さない:FR-066": {
+      "from": "sha256:69abce1b13b85f649bf8d141afcc0b70c5d1fca84ccd724e9152c5e5e5692993",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/graph:tests:index設定があっても索引のtype_specificationはノードにならない:FR-067": {
+      "from": "sha256:eda48d44ba66b2ce82fc39f76874631629b795693bf99aeff879516707ee42ee",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/graph:tests:index設定があればbuild_graphが索引のfindingを集める:FR-073": {
+      "from": "sha256:d8a0550da7a3771d15ddf35a54007c9760274e8fa652bda7cf907c813b8f006b",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/graph:tests:index配下のdocとreqにdescエッジが1本ずつできる:FR-086": {
+      "from": "sha256:a5fc61d35146c0ca3a3c6ada01f7abfdd0c0068a0bbac7e551e3e46232575c43",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/graph:tests:javascriptのtest_jsとspec_mjsからtestノードが作られる:FR-053": {
       "from": "sha256:36fa2c21b44f14e64e0a976a8f388c48ed7a555634b9709c0a6cdce3f2b6f691",
@@ -2009,12 +2541,33 @@
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
     },
+    "test-req:src/graph:tests:ロックにdescエッジがありノードが無ければremovedになる:FR-086": {
+      "from": "sha256:24fa14fad21eb26fd170bca6af73f1de7ff0e3aaecc9119138059df17d697912",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/graph:tests:不正な文字を含むidはinvalid_idとして報告される:FR-006": {
       "from": "sha256:7121aaf049c06fa3847f5b4c668f4a34f6b714a14f67654addb0a8deeb46cfea",
       "to": "sha256:011981572e49cbfaadc83a5f11c9f775de23a8f5051bcd0d3c8d1c9b4d12cc2c",
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/graph:tests:予約名のindex_mdとlog_mdはdocsでもrequirementsでもノードにならない:FR-067": {
+      "from": "sha256:e019684375e032dbc76c8ea032b57cb3e2fbdb40c36b4ac8ab38a6d4e4c8ffdf",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/graph:tests:同じidのdocとreqは別々のdescエッジになる:FR-086": {
+      "from": "sha256:5ce547e071eaa4368f4b89ac14d1d0f05ac4676741bf3a26e204fb0867d4bca4",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/graph:tests:同じidを持つファイルが複数あるとduplicate_idとして報告される:FR-007": {
       "from": "sha256:d06a3354a3c4eb5dcfed5def07753b4d178977092c762e78602528d177d9436e",
@@ -2093,12 +2646,40 @@
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
     },
+    "test-req:src/graph:tests:無効なidのノードにはdescエッジができない:FR-086": {
+      "from": "sha256:41168bac7fe21fded810bec6f8f6063848ffbcaa3330b1f8d09c80d3b450e08e",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/graph:tests:異なるreqを指す重複はduplicate_idとなりノードもエッジも作られない:FR-057": {
       "from": "sha256:06addf82d52e8b9a192750d2c988b31d9d5047a0d092bdc1eba01a9edf4a1029",
       "to": "sha256:4c1af686532cc22299d7e7286a7caffc751443f7ef98ad9780bd619efbc320e2",
       "by": "human",
       "reason": "Java / Kotlin（JUnit）対応: FR-059〜063 の新設と FR-003 / 014 / 057 の更新を合意",
       "at": "2026-10-02T11:46:19Z"
+    },
+    "test-req:src/graph:tests:索引の根の外にあるreqにはdescエッジができない:FR-086": {
+      "from": "sha256:cefbe46e7ec960e95217d0b49a7d71f8ab0292317ed735011c967effbb9df068",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:索引の根の配下にあるreqにはdescエッジができる:FR-086": {
+      "from": "sha256:df4ded80743b6ebdec2affa409911988058056aaa184b14ca340b1e0717136fc",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/graph:tests:要約だけを変えてもdoc_reqとtest_reqのハッシュは変わらずfindingも出ない:FR-087": {
+      "from": "sha256:3ab988aa6338669f87027ac5339eeb34c8b51a30261ab4757120c011cea294c5",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/graph:tests:重複の1つが複数マーカーで残りが1件なら通常のtestとして扱われる:FR-057": {
       "from": "sha256:a64fc17c32d0d9a67beddef0cf6456a91993537a1dca0d64d8a8281de86eff83",
@@ -2135,12 +2716,894 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/index:tests:bomがあっても同じエントリが検出される:FR-068": {
+      "from": "sha256:ce10a0d3690e9e18d10c44b5044736a4305fe70183d043cb59bc8b70548963fa",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:bomは書き換え後も保存される:FR-081": {
+      "from": "sha256:823f0da321a023d403192d9ba257e70b3b2a27cee6c988ee6293d8fe001a4e10",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:broken_entryのdetailとtargetの正準形:FR-076": {
+      "from": "sha256:5f29bd3103bcccb01da948b8fc570afe29b978858ca31c8228f406faf62aa6c3",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:descriptionがない_空_改行入りの文書はmissing_description:FR-078": {
+      "from": "sha256:72de3732b24a0e3f47d3b440a7360feb7cf46081c27e734360352e24f98ac7e7",
+      "to": "sha256:374d7b3e0dcd130fc24195de948d591c3bf6db01d255334d4226610253f5ca8a",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:descriptionのない文書は区切りも要約も付けない:FR-081": {
+      "from": "sha256:b0ab2191c5392dad17185cb747face5d5db692569175961ef28932046d37940c",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:descriptionの有無と空と改行の扱い:FR-071": {
+      "from": "sha256:19429304c82229f63fbdf94767c3d38ae69b7d63537ad93fad737487210bab2e",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:h1のコードスパンはソースのまま含む:FR-071": {
+      "from": "sha256:93b5f14fcbba52b0f6334120ee40f4f020f20a14ba21dd817a78e899d9b34a33",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:h1はatx閉じのシャープを含まない:FR-071": {
+      "from": "sha256:f4d86aec743be29489c4002af28cb8b493819292fc98d0f95a638055eedd502d",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:h1はsetext形式でも取れて下線を含まない:FR-071": {
+      "from": "sha256:a9b08bb09473588d217e71a1310b025eaaca98b29e9b57b7a372273a3d5717bf",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:h1以外の見出しは無視されファイル名にフォールバックする:FR-071": {
+      "from": "sha256:c239d1ff00322b4207c7c9c5f66e517e6317dc93031ee9a168ee3bc0b27ab894",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:indexとlogは予約名で文書にならず索引として分類される:FR-067": {
+      "from": "sha256:831ce5f2829afdc87a92eb3e21780beca6a17d4b6b50766e0855693583d17892",
+      "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:line_spanは先頭行から改行までを含む:FR-083": {
+      "from": "sha256:83fef5c3c66b612acc8b7f3608da8a0490c79538b751e947ea1789bfa47287e5",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:missing_descriptionは未列挙の文書にも出る:FR-078": {
+      "from": "sha256:d87860295707c65342331a79bec5d7f38a461c6956e5af6ac0d67a1d8b28f19a",
+      "to": "sha256:374d7b3e0dcd130fc24195de948d591c3bf6db01d255334d4226610253f5ca8a",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:missing_index時は索引側の6種のfindingがすべて出ない:FR-073": {
+      "from": "sha256:9778bc15380952417d9acedb662076f95474dcafe4911d419273592517881031",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:okf_version等のfrontmatter付き索引でも検出される:FR-068": {
+      "from": "sha256:8d88d049ffe7982e1d04ba6e4080fa32f803b52ccbcadd9f74446f89f0ea8bca",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:setextのレベル2下線はh1として扱わない:FR-071": {
+      "from": "sha256:704bcd7e4f5d61d60b8117879ce29a26874dcb8088a3e4e9e8180654cfe9c370",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:titleが空なら最初のh1にフォールバックする:FR-071": {
+      "from": "sha256:efec1a39d99ad0c6e55a7cc37e712c5f3b7eb765768a45d7f79062584b4dbf48",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:titleはフロントマターのtitleを優先し前後の空白を除く:FR-071": {
+      "from": "sha256:065ebc629c4ca2a8b0ac5ebfba59b041f4e4d357c47763a39920fba93bb44533",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:typeなしとフロントマターなしはuntypedで壊れたフロントマターは無視される:FR-075": {
+      "from": "sha256:dba980ca1004cf87d39bc08d607c2920e5840b7a645b7356e19e49936e111ec9",
+      "to": "sha256:6b969130f89d6e8195fb0bb6e0bcd8cacca5bb56df2250840326459795d9004b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:typeのないmdはuntyped_fileでindexとlogと根の外は対象外:FR-075": {
+      "from": "sha256:0cd5ea23526c20f6c4bc51626a5aeb873dd05a5cac52ee6f64a944497734522d",
+      "to": "sha256:6b969130f89d6e8195fb0bb6e0bcd8cacca5bb56df2250840326459795d9004b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:typeは任意の値でも文書になる:FR-071": {
+      "from": "sha256:cb157a1138603fc4223a372480777a4baacc2acf95ae492973daa6eafbe1c2bd",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:すでに一致していればバイト列は変わらない:FR-081": {
+      "from": "sha256:4dd6ca02857037e8dba0eec2b3acf951d0e19e5a725f2bedf0909f153d9bd51c",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:エスケープされた角括弧を含むリンク文は壊れずに冪等に書き換わる:FR-081": {
+      "from": "sha256:9b473d89e06876647107ceca40484954df2c08db24d88702fa1a4a8f391d15de",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:エントリの要約が空でも子にdescriptionがあればdescription_mismatchだけが出る:FR-079": {
+      "from": "sha256:6a74c8ff662e735a081c267a8664da7c84b3cb5859a5f4638da37439b767609b",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:エントリの要約が空で子にもなければmissing_directory_descriptionだけが出る:FR-079": {
+      "from": "sha256:bcb2d2d72888d642889c72a3e0ed2e3791fa8619b0b564b486078d45a3f5aa23",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:エントリ行以外のバイト列は変更されない:FR-085": {
+      "from": "sha256:4f627eaa9e7f20d850aae1354859a787f7ce1404e4ad189dd6d56bd6c2dd94bc",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:コードブロック内のシャープ行はh1として扱わない:FR-071": {
+      "from": "sha256:ea065747ff18d05d71f5210cbfcf8b1fc248ac127f760c5c0021a1c8e9dd2ab5",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:スラッシュなしでも配下にファイルがあればディレクトリになる:FR-070": {
+      "from": "sha256:d94e39a7e5c0c3369a58c5d2407751db9a3f46ac386f9cf611b278d686a05e7b",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:タイトルが一致しなければtitle_mismatchで対象は文書のパス:FR-077": {
+      "from": "sha256:40afc943526b946ff04eba345465821cd78800c3e95d53bf92ca82b4d18a5ee5",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:タイトルの角括弧はエスケープされる:FR-081": {
+      "from": "sha256:bae876149101860f25e0e8103b88a7cfe87194a7096aa45fbe497088419641f8",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:タスクリストの項目はエントリではない:FR-068": {
+      "from": "sha256:a2a1b32113053efacb88bc9e1e21eea10cc784ada21fddfef131035ddea58391",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリを指す3形は同じディレクトリエントリになる:FR-070": {
+      "from": "sha256:1e7b33f0b842d9b649ef52ff4412b6c680d3f543de7f78a40f4446b646be88cf",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリのリンク文が子のtitleと違えばtitle_mismatch:FR-077": {
+      "from": "sha256:4ebbd1a243e1a22f02a74707c00af7ba969db5e464f3148ea2fae071f3bcabd6",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリのリンク文と要約を子の索引の値で置き換える:FR-081": {
+      "from": "sha256:64c15fd7754130f150b4be3f15866054706faf3bb7c8cce1afad4be3240ffaed",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリの折り畳み参照はリンク文を保ち後ろだけ更新する:FR-081": {
+      "from": "sha256:8a92c296dc20d4182c8a07da6e289f5a3af3a924023ce33dc94a45939b430b58",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリの書き換えは冪等:FR-085": {
+      "from": "sha256:d03a89b1d669837385aa5f8cca15169651f8f635aac1bfb408c0cfd4be45f278",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ディレクトリエントリの要約が子のdescriptionと違えばdescription_mismatch:FR-077": {
+      "from": "sha256:4d315c1cf8fe83927a38d8850176ed66cf030fd83fded301164b6db7539e87c4",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:ハードブレークとソフトブレークの直後の要約は1行に畳まれる:FR-081": {
+      "from": "sha256:a86c3f21ec7daf6798d889926a9ae486b66a3c4b784b5f1e766844e016aeea02",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:バックスラッシュはエスケープされ再パースで元のタイトルに戻る:FR-082": {
+      "from": "sha256:50aebf22b37297254cd6451c5f02d28d8b7ddb735edcb1c0698074c7bb8ad7d5",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:パーセントエンコードされたドットドットはデコード後に正規化される:FR-070": {
+      "from": "sha256:a0b92a00fb243affe56ab8c79fc95e537fba453158992f9a58233cbf4264793c",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:パーセントデコードされ_デコード後のシャープは再分割されない:FR-070": {
+      "from": "sha256:abfa83cc4d5ce0dbb6962471753543ce65c0800579034db4e38aedf86547d07c",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:フラグメントを除いてファイルに解決される:FR-070": {
+      "from": "sha256:0b5a9e4efb3127358bb765e8e1043d35a400320c5bb0a5232b1d8e55f2e9056e",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:フラグメント付きの索引ファイル指定もディレクトリエントリになる:FR-070": {
+      "from": "sha256:71d64d0b50c00164af448cee8b5d8fffd8fa269895848d332dffb31da253d31a",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:リンクで始まらない項目はエントリではない:FR-068": {
+      "from": "sha256:a120a4df7a227f75f79cef72e0b55b628c8508f8f06d222978d05cb93614f24e",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:リンクのtitle属性は無視される:FR-068": {
+      "from": "sha256:30a8f17fcd64ef0943ee676374c258ac53f3387a94a3ba9d21fdba34d13a201c",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:リンク先のソースは変更しない:FR-081": {
+      "from": "sha256:b04df16f9e7ad127fb30778098f29284c8fe74face017622f6c68130eae717a3",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:リンク文と要約を文書の値で置き換え区切りは既存を保つ:FR-081": {
+      "from": "sha256:66ba8417963867843ae6cf530c677bf712aeda890be24a9e529579f087135f9a",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:リンク文のコードスパンや入れ子の角括弧はソースのまま扱う:FR-069": {
+      "from": "sha256:b211441a486d47eb6168b3c0023474ac0f1de0fe545fec947a29d1e1a2ab2f26",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:ルーズリストでも同じ結果になる:FR-068": {
+      "from": "sha256:5b5b94b06235e36009430dfa4ffff712f326b9846d817e825ecf953e14ce63cc",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:中間ディレクトリに索引がなくても最も近い祖先の索引が親になる:FR-072": {
+      "from": "sha256:a0372ef069388ffa3b398b3fead70557aead8636c6caaf2539dcacf2a52ea7a0",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:中間索引を飛ばしたディレクトリエントリも子の索引で判定する:FR-079": {
+      "from": "sha256:e8b5eb361df14f18d4b7d8c4de0cace478c22be1716a03e9fdfdb3a3a729b767",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:入れ子の索引で子の文書は子の索引が担当する:FR-072": {
+      "from": "sha256:794391b618e7efcd83d8c066f6f02021bcc0412ce0bd1782db5c174c07405705",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:入れ子の項目も任意の深さでエントリとして検出される:FR-068": {
+      "from": "sha256:6f218ac99e7d791aa3cce950d91ca8357a0f2db18245bb86d4f2e5364e309b62",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:列挙されていない文書はnot_listedになりidの妥当性に依存しない:FR-074": {
+      "from": "sha256:f737fcf5291e73a9a6b2680641cd6808a1e41789e472f5f487e23ec7c5487212",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:削除した項目の子項目は残る:FR-083": {
+      "from": "sha256:371d33455f825dce48c1fc052d840a1828c8bdd2bddc6b5d21ac5580d156fdb1",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:削除時もbomは保存される:FR-083": {
+      "from": "sha256:6a33891a19c34918bda13e05d40ef6fa8302443c17a3b6b21c56033ba40dc007",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:区切り4種を除いて要約を取り出す:FR-069": {
+      "from": "sha256:299e5b91724db1ee1280fd244eb8b9023b1fa0f4a832abf4cced29038f910547",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:区切りがなくても要約になり_区切りの二重指定は1文字だけ除く:FR-069": {
+      "from": "sha256:f7da16314fa68651bb62e49cde2a9bcf51e8e34d55cfa650c82712c7f251ef37",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:区切りのen_dashは書き戻しで保持される:FR-081": {
+      "from": "sha256:09c861c94a9d4d0a8bb488a5f2fd0a4284a7ecd79e90f45e754c310cc9026bba",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:参照形式とショートカットの後ろから要約を切り出す:FR-069": {
+      "from": "sha256:29ef1c437decd76ca87186048817cf6523e3bfa7f5975a07a213acef39e6bb26",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:参照形式のリンクで始まる項目もエントリになる:FR-068": {
+      "from": "sha256:1a1030499a04c020bc46b7182afc151e947ebd08bdff819adbbfc2bacf8a9f19",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:参照形式の定義とラベルは変更しない:FR-081": {
+      "from": "sha256:7dae0d3466d68b6cb3c3d73b2f689b55a047dee0705916bcb9f6e553641b67fd",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:各リンク形式でリンク文の範囲は元のソースの閉じ括弧までになる:FR-081": {
+      "from": "sha256:d88e105c1481dd90aa27120ad44512888049a115862bf5505703f2b51f8e4ffd",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:同じ文書を指す2本目だけ不一致でもfindingが出る:FR-077": {
+      "from": "sha256:5d8b650b94de4555c3c7f58c5f275c663169e77ba9b7f17e00b003d2835ae869",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:同じ文書を指す複数エントリはすべて比較され_findingは重複しない:FR-077": {
+      "from": "sha256:9951cba166fd6ef26a736359a8e1b68efd1dde1d69477e47b310a307da12fc6d",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:同じ文書を指す重複エントリはすべて書き換える:FR-081": {
+      "from": "sha256:b56384484222c30cf679c0b86c504c285696fb6a262866913b85b96cf2f6125f",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:外部リンクは無視される:FR-070": {
+      "from": "sha256:b8dcceccdb6bd06783805036b828e9c5dedfe3345b8b6d4ce3e6f4a5b2bb9495",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:太字で包まれたリンクで始まる項目はエントリではない:FR-068": {
+      "from": "sha256:59f1f7ae6a1f63224990d691c12ccb02cda4f0a5ce72fd81a615023b48f44e6f",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子にtitleがなければディレクトリ名と照合される:FR-077": {
+      "from": "sha256:e9372116244a634f4f0071d7b876ab4ac323807edd8524ad21a1bede8045bb5b",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子に要約がなければディレクトリエントリの後ろは空になる:FR-081": {
+      "from": "sha256:e995af2528da738ad4c270d8b919d099761655562331c0bab1ccd5b1996cfb67",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子に要約がなければ追加するディレクトリエントリは区切りを付けない:FR-082": {
+      "from": "sha256:29a9828508b888d0d2f9e73294cd7fb85512a3ca1a5e5be6dbe95b52d02acefe",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子のdescriptionが空や改行入りでもmissing_directory_description:FR-079": {
+      "from": "sha256:fef0507f573e964f0d25e13858fc754684b30d7427ec6bc936d82a2acc24cb51",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子の索引と一致するディレクトリエントリは問題にならない:FR-079": {
+      "from": "sha256:992ab2d0c6b6bb0ea03d09073131b77d5d00876a7f124ba75cb8cbac91fbb77c",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子の索引にdescriptionがなければmissing_directory_descriptionで対象は子の索引のパス:FR-079": {
+      "from": "sha256:75852735e45f735460f3d2cf866924ae0bc7a87e9dbb674a80552f8e4230394b",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:子の索引のフロントマターが壊れていればタイトルと要約の照合をしない:FR-071": {
+      "from": "sha256:447fb5ea8facb0456f6c31b6e641164b703b1e91279c9d0d773e3512951dc34e",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:子の索引のフロントマターが壊れていれば親のエントリを書き換えない:FR-071": {
+      "from": "sha256:24578e370078f6cc379d5a7530559d1bf9f2fc8e96b83ebccc28149f8efa867c",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:子索引の追加は直近の親の索引の末尾にだけ行われる:FR-082": {
+      "from": "sha256:5279ba8485f7202ec3973f9a2f62cd42ec7c7e40c5320ae7bf83718ced412e21",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:存在しないファイルは文書エントリとして扱う:FR-070": {
+      "from": "sha256:dfb3f79425240df2196aa8e667671489a005a3c47e031c1bba865d2a99f69773",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:存在しない文書へのエントリ行は削除される:FR-083": {
+      "from": "sha256:d96f87eb3f0d3f8d195eb09c7091d1c8706761d46ea12b440e175a6976735050",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:山括弧とtitle付きの宛先のbroken_entryのtargetは解釈後のdestinationになる:FR-076": {
+      "from": "sha256:2e6538777139ee68bcfaaf29524b4c48743ce3fb623568f9bdc08db523ae441d",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:強調を含むリンク文はソース文字列のまま扱われる:FR-069": {
+      "from": "sha256:fa2a56474069857ff61f7862cb3b0b8a189b3de0c72b1369d669c5fe8cc472fb",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:折り畳み参照のラベルは変えず要約だけ更新されtitle_mismatchが残る:FR-081": {
+      "from": "sha256:c5f04221425174c249392bf26f5e648a5c841021403b46b19ee9a3bba5473782",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:折り畳み参照の後ろから要約を取り出す:FR-069": {
+      "from": "sha256:47027244b0223ab8d1401b03e195966d742e5e9c42d7b2007b0ce40bfd7358d8",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:担当索引が列挙していなければ他の索引が列挙していてもnot_listedになる:FR-074": {
+      "from": "sha256:33026b8889a16c6765ccee3f046b823179882b915f3053b24a100db89c1e4375",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:改行crを含むdescriptionは要約なし:FR-071": {
+      "from": "sha256:4e312ff9216564b4e53ac6cf44e3ff98c9f9216d539b446bb4b1f8dbaac17a13",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:改行を含むtitleは無いものとしてh1にフォールバックする:FR-071": {
+      "from": "sha256:83b55c9b8acc5ab6d84b7804339b217d8e37f7a3c9826511aafa5358ee19998d",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:改行コードは既存本文にcrlfがあればcrlfになる:FR-082": {
+      "from": "sha256:5f444be3592cef7efef97c6d2a342bb221ee1d3318cf67f7e31dcd0a73a59b7b",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:文書が0件の根ではmissing_indexを出さない:FR-073": {
+      "from": "sha256:d4963348833d0ee571ddd7a796dadf231ab9d31d5f8b5093ec447edb914996b9",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:文書にdescriptionがなければdescription_mismatchを出さない:FR-077": {
+      "from": "sha256:2bd0620668697c560498116aa51db1023f06a8a9b3a57fa4561f3e1329cea303",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:新規作成でも子索引のディレクトリエントリは子のtitleと要約を使う:FR-084": {
+      "from": "sha256:9f105766c31d4be0d1f615acf3b25bf2433e2086e083abd982b9ec0cb67ef579",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:更新は冪等で2回目は同一文字列になる:FR-085": {
+      "from": "sha256:a5bb983205b321c8f53692da39e90954ceac25a177778d92360667a30137c5f6",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:書き込みはrename失敗時に同じディレクトリの一時ファイルを残さない:FR-085": {
+      "from": "sha256:655c5527ae8c92767d0f9eb837407427e12b044ca313936e38e12bfaea38b3fa",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:最初のh1が空なら次のh1を探さずファイル名にフォールバックする:FR-071": {
+      "from": "sha256:c3ecfe1251f7f451c88fe0eff44becc11321c48efea571d7a9c9a4d00857edb6",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:未列挙の文書がパス順に末尾へ追加される:FR-082": {
+      "from": "sha256:a2703710c05b7c60902b67eb45834b9670aaefa0cb9fb3ba2f7fd2c21e84afb1",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:末尾の改行と空行の規則:FR-082": {
+      "from": "sha256:c2232a78a5aab9204ece6e48c03ebfa6639809629530b9614ce4a6475695b4df",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:根が子孫を列挙していても直近の親が列挙していなければunlinked_indexになる:FR-079": {
+      "from": "sha256:f10fb4b9fbad812b9a8f4116a6361e07709c0a7da1e4617e673ffd3dcd7331d1",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:根のみの索引で整合していればfindingは出ない:FR-072": {
+      "from": "sha256:92c1af0fc64fa4a24e3c06782a9bef678227674f99da18200aa9c20cc1919453",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:根の索引がなく文書があればmissing_indexで他の検査は省く:FR-073": {
+      "from": "sha256:232c965e1c6774906d5bd07e2f8ef774a9e8de36c800a968a4a2ff9599e4c09f",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:段落中や見出し中のリンクはエントリではない:FR-068": {
+      "from": "sha256:b02696e0f8b01b3cebb6b5cdc59b058e90bb4f861ae2cee1efc1fef1289b27f8",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:直前に項目がある状態で削除すると子項目は直前の項目の下に残る:FR-083": {
+      "from": "sha256:50078150b850627bdc17f804195ea2b20dffb63903b51497ff6fe7d55b88b8b4",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:空とフラグメントのみは解決不能になる:FR-070": {
+      "from": "sha256:8302cd04ad01f732e2feb32672289eb849149b0154b90a1502eed0435a844309",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:空のリンク文は空文字列でspanは開き括弧の直後になる:FR-069": {
+      "from": "sha256:44c513388c5839d0a5fc735f852e60832d1cf152f070be7ef6337114f44bf21c",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:箇条書き記号とorderedの各形式がエントリとして検出される:FR-068": {
+      "from": "sha256:81eff14b0ab208e2beec83511ffe798e12c927d1f86c6654fcc59a02733d3335",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:索引がなければ見出しなしの平坦なリストを作る:FR-084": {
+      "from": "sha256:ca014c028847753d79c9d83f264d4a1a692a2e3a4f50d4f2b226389cbcd086ae",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:索引のtitleとdescriptionはディレクトリのタイトルと要約になる:FR-071": {
+      "from": "sha256:d0b03121726b60817d49217fe71caf562511b1c83c99348c24747f2114696881",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "子 index.md のフロントマター解析エラー時は照合・書き換えをしない（レビュー対応）",
+      "at": "2026-10-05T23:52:57Z"
+    },
+    "test-req:src/index:tests:索引自身を指すエントリは自己か祖先として壊れている:FR-076": {
+      "from": "sha256:9d5fffe40a4bfbe75f187034caf1fd52bdae216db76ab81f287a8a1c0f70d470",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:絶対パスとリポジトリ外と根の外は解決不能になる:FR-070": {
+      "from": "sha256:c19b07aa4820f57b36dd1d4c2da4ac5d37add4c84a84fc327e32fa487ed0d8b1",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:自前の索引を持たない中間ディレクトリへのエントリはbroken_entryになる:FR-072": {
+      "from": "sha256:3b7f6af8439e21d6e28e3a7f2dd02b1259e4aa52fba1c5c52a8c1ebdc18d2289",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:自身と祖先のディレクトリは解決不能になる:FR-070": {
+      "from": "sha256:2e68cc0c0319764dfa4ad5a382bbc5ce3d6e629a08c423ab40be13d8b967057b",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:複数行にわたる項目も1つのエントリになる:FR-068": {
+      "from": "sha256:ad43d62e24f1fc462541c7e77fc907fa37fad93aa74bfc4b1e2523c31cf830b3",
+      "to": "sha256:98b6a74ccec783ddd825e537edd1bd00a4b21bd6884dc18bceaa070deabbefa3",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:複数行エントリの削除で末尾行まで消える:FR-083": {
+      "from": "sha256:0bc4b3b1ad3c05133206e51673707977f864a9acfed8b7b7b9dc9c522e852330",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:複数行エントリは1行に畳まれる:FR-081": {
+      "from": "sha256:7209a2f5dd838db35759ed5689efbd22f55d113f6bc9f35911eb4b4539bfa60e",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:要約が一致しなければdescription_mismatchで空白は正規化しない:FR-077": {
+      "from": "sha256:76c9fc8dbc9425e57d9c3830ccbbd24ac40fb53e274eac036fe485c22c242f11",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:要約に入れ子の子項目は含まれない:FR-069": {
+      "from": "sha256:edef1378848d759389aa5420d624898ab3485f2ef3ea6710f618b3c24919bfa0",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:要約のないエントリは空の要約になる:FR-069": {
+      "from": "sha256:464063336acded137925f661f506bfa95416ffee79494bb63fd84f5325292aee",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:要約の角括弧とバックスラッシュもエスケープされ比較で不一致にならない:FR-081": {
+      "from": "sha256:c7c221223c3d7bfa9cfc0624f07906a4b6446d8a930fcb1dc5e4653200437411",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:親から辿れない子の索引はunlinked_index:FR-079": {
+      "from": "sha256:ab5d7937c417c3fd53a4bb84cdaf9f9d240abe288fd2cac2c311203ecb6caf73",
+      "to": "sha256:edd6c84ae1c6ff5f5f169eea2e11c2637c6df32453f80072986e17e67e141d0f",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:親が子の担当文書を直接列挙しても_同じ文書の重複列挙もfindingにならない:FR-072": {
+      "from": "sha256:80d9f3b7464bfdbe7b5af975b95e77ddb5476860691fea38a8478ebeb13b1ed5",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:角括弧のエスケープは比較時に戻される:FR-069": {
+      "from": "sha256:935977573ba01a75bbd1bca2193405cf4e7286a343b815dad7071e87d4b303e2",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:設定した根が配下のディレクトリでも担当範囲はその根の中だけになる:FR-072": {
+      "from": "sha256:69445f4c942879b6a4fb9c850c3a66cd5283d04fe491883bbbb79d2b80a42064",
+      "to": "sha256:23ce4a21d52e6e964967483a6c6de940b475014d8a6c978065d2a1b00c8fc203",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:辿れない子の索引はディレクトリエントリとして文書の後に追加される:FR-082": {
+      "from": "sha256:b12c7bd0b1438c2d61e328e865eb4861d91ee13d1b54f06afb512077f9f12b29",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:追加するパスは相対でエンコードされタイトルはエスケープされる:FR-082": {
+      "from": "sha256:1c0ab9d7d583cfb7cbf92c97450a578faec1ffa57cfc847f1e4c3d7ab7f84b0b",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:遅延継続行と複数行の要約を含む:FR-069": {
+      "from": "sha256:1a2a543dd2596458d1b4d489bec04a3073141b91f816a909f1c65b1ede6322df",
+      "to": "sha256:67f7d659e53f1576d994334325818fa2e826941df61b70ba5929e54526b0534e",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/index:tests:除外名の配下を指す存在しないエントリ行は削除されない:FR-083": {
+      "from": "sha256:53937c013064e642acf3cd74e1d7126a3b338817923742c71a405ad5ea608c06",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:src/index:tests:除外配下_typeなし_解決不能_ディレクトリは削除しない:FR-083": {
+      "from": "sha256:9458d12dbc8cdbb9209eb1541e57caa60ccdd9a70ee2e61a7e4c94d5c8af4582",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/judge:tests:apply_auto_reconcileはconsistentのエッジだけをjevの合意として記録する:FR-048": {
       "from": "sha256:40df02c870ecd9ce80e390eee6f7c0edd2ee27a4e8c5d5531ec4d67836f28828",
       "to": "sha256:4feb72b2d319ccccd6f3afaa31486df961cc6cfbdca0e6eb5be54760ad933b05",
       "by": "human",
       "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
       "at": "2026-10-01T01:51:00Z"
+    },
+    "test-req:src/judge:tests:apply_auto_reconcileはdescエッジの要約と本文のハッシュをjevの合意として記録する:FR-048": {
+      "from": "sha256:ead87011a35cb44d1c71e25f78b02afa28b04fd94503bac3d96cc5daf03b7c04",
+      "to": "sha256:4feb72b2d319ccccd6f3afaa31486df961cc6cfbdca0e6eb5be54760ad933b05",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:apply_auto_reconcileはreviewとskippedを記録せず既存エントリを変えない:FR-048": {
       "from": "sha256:24aa91c7ab521fda98adc5cc980e8ecce7c15fd96a1845bc466feb305cdafdf7",
@@ -2156,19 +3619,47 @@
       "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
       "at": "2026-10-01T01:51:00Z"
     },
+    "test-req:src/judge:tests:build_jev_requestはdescで要約が空でもdescriptionキーを空文字列で送る:FR-041": {
+      "from": "sha256:d1eeda02b2c340b207e39e4278b42d888c47c2997d8ea3b8d08c9db23f7c769f",
+      "to": "sha256:8cf3acd2e45c6222f984e2b4554f8456b4c44e3cc86396b475ac34207729c7b8",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:build_jev_requestはdescエッジのstateと質問文言を組み立てる:FR-041": {
+      "from": "sha256:cac24b9a3fe974556397a460b964edbf38ba788570a8ce08114c4d12597d8df1",
+      "to": "sha256:8cf3acd2e45c6222f984e2b4554f8456b4c44e3cc86396b475ac34207729c7b8",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/judge:tests:build_jev_requestはdoc_reqエッジのstateとquestionsを組み立てる:FR-041": {
       "from": "sha256:602a7b3aa76554b0b63e6a2134f1f14303199db9556055800ba84aee5b457898",
-      "to": "sha256:59d7548fd351cd1fbb74f8930702c4d0ab90dbe2d38e3536e8aad8b84e73363a",
+      "to": "sha256:8cf3acd2e45c6222f984e2b4554f8456b4c44e3cc86396b475ac34207729c7b8",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:build_jev_requestはtest_reqエッジのstateとquestionsを組み立てる:FR-041": {
       "from": "sha256:71d8753b1b0a72889ca39402914bdbbebe6d0d8c1b34b4752df175767600d738",
-      "to": "sha256:59d7548fd351cd1fbb74f8930702c4d0ab90dbe2d38e3536e8aad8b84e73363a",
+      "to": "sha256:8cf3acd2e45c6222f984e2b4554f8456b4c44e3cc86396b475ac34207729c7b8",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:descエッジの要約と本文の合計が上限ちょうどならjevを呼ぶ:FR-045": {
+      "from": "sha256:e305a1996ec5dd33ecf8194d9f7800412e85dc471705dd240c8658529245a16f",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:descエッジも要約と本文の合計が上限を超えるとjevを呼ばずskippedになる:FR-045": {
+      "from": "sha256:feab9d11bbc5711f192a21a688190a66fa930dd4b6d0f3f6528576d857b01b2f",
+      "to": "sha256:f216bb8a4137cd365d31c86158d7651f766febb124b6466c6c72352f1a2e2af9",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:jevがhttpエラーを返すとjudge_edgesはエラーになる:FR-043": {
       "from": "sha256:65af47c22de04e1fd7b55cdee3237e4b87e2c75fbff68048abbae7bb06afcb47",
@@ -2179,10 +3670,10 @@
     },
     "test-req:src/judge:tests:jevの質問文言はreqの文言と完全一致する:FR-041": {
       "from": "sha256:6fcea5a458089bbe5ac45be94b055e6cd6cb77c2920098c51dd671c1df7f3fb5",
-      "to": "sha256:59d7548fd351cd1fbb74f8930702c4d0ab90dbe2d38e3536e8aad8b84e73363a",
+      "to": "sha256:8cf3acd2e45c6222f984e2b4554f8456b4c44e3cc86396b475ac34207729c7b8",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:judge_edgesはエッジid昇順で判定結果を返す:FR-044": {
       "from": "sha256:278660bcf13d6e7b0bc9171eae25ebaafca63de9e987778fd1777c9f1f110618",
@@ -2242,45 +3733,101 @@
     },
     "test-req:src/judge:tests:select_targetsはbrokenやinvalidに関わるエッジとremovedを対象にしない:FR-038": {
       "from": "sha256:8d3743ecd55c49b5ba75071add63d0404de4e5fd3577dcd8d9b840b56d987fe3",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはdescのdriftを対象にし要約と本文を詰める:FR-038": {
+      "from": "sha256:843b1c3f957e589ecd489381f64072241593dacbaa8caa9ef1cf855336373b01",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはdescのnewを対象にし要約が無ければfrom_textを空文字列にする:FR-038": {
+      "from": "sha256:1806d2e36181d654ee3499baff74f2749256900e8a4ec8dcff61e5ae9894c6b9",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはdescエッジもエッジid昇順に並べ_descがdoc_reqより先になる:FR-038": {
+      "from": "sha256:12b6c6ed7b6ade35630292965a767368b0043f8d0a60fd3a9edeb411cdb9951e",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:select_targetsはdriftとnewのエッジだけをエッジid昇順で返す:FR-038": {
       "from": "sha256:4ff347c9a21f9e62da773778b5be19e1386f5c3db9d1d92a037951bae34afa68",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはedge指定でdescエッジを選べる:FR-038": {
+      "from": "sha256:f5f0cb0da2fc0993223c7513da57e3e82e585a89ff9c8802c20dcca9b92c145d",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:select_targetsはedge指定で絞り込み重複指定は1つにまとめる:FR-038": {
       "from": "sha256:ef7cfb67495a5f875e400eda47e2cbfe8f716cd1b01a83fdb9dbefcfc8439d16",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはfindingのないdescエッジを対象にせずedge指定はnot_a_targetになる:FR-038": {
+      "from": "sha256:0b7c0c9e909187876e79e5fcf71ccb2ce7dfda20ca0c193c97f58e6bbdccd6ec",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはinvalidに関わるノードのdescエッジを対象にしない:FR-038": {
+      "from": "sha256:4c4f6461ba67396cda06cdcebaf617611553488302bf3e80b67ee6eb5c489305",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:select_targetsはinvalidの種別と端点の種別が一致するときだけ除外する:FR-038": {
       "from": "sha256:710d0143dc44d080ca166ed372a8a3179618b855430dbb79ccf1e541e6998dc7",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:select_targetsはエッジの両端のパス_本文_ハッシュをedge_inputに詰める:FR-038": {
       "from": "sha256:934d19e87069fdfd0a7cd8446250bb82fed219e9a590494825b29365e48b2a9e",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはリンク切れを持つdocのdescエッジを対象にしない:FR-038": {
+      "from": "sha256:61c8512159ddf2c8c6554418844ea752d75cd13244b3a30f4845fd21dbbb6dad",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/judge:tests:select_targetsはロックにのみ存在するdescエッジのedge指定をnot_a_targetにする:FR-038": {
+      "from": "sha256:24c27c5d57ecc4f5761624f7e7ffb388524a5cc6b7f5b16b2b4564d982880ee5",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:select_targetsは対象外のidを指定するとnot_a_targetになる:FR-038": {
       "from": "sha256:3dadeaba5bb6b7c9f30cd57e43e886d79594494618b0042c4fe3f35c3764cd1e",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/judge:tests:スコアが閾値ちょうどならconsistentになる:FR-044": {
       "from": "sha256:78ae6de32989b47425f731001a8d40b6ce222da73afe0a0422d073a82a9151bc",
@@ -2359,6 +3906,27 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/markdown:tests:normalize_relativeはresolve_linkと同じ正規化をする:FR-070": {
+      "from": "sha256:a3faf8cfabdc3a650b3cc97258e74ea54940b954f0ce7f3ff7a6334f0fde3173",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/markdown:tests:percent_decodeは不正な列をそのまま残す:FR-070": {
+      "from": "sha256:49134c0916ccd1a79f88a1cd6622a5913155b23019949872211a45d88c2598bf",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:src/markdown:tests:percent_decodeは通常の列をutf8としてデコードする:FR-070": {
+      "from": "sha256:3178b79ca309250266764401d9ae3e44ca27efe4ce5d1a2f47cfda73cba0f8c4",
+      "to": "sha256:7900920ada251cfb38f2a46ef71f93f06f64d302d4bd0b61e860380a481eb252",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:src/markdown:tests:resolve_linkはフラグメントを取り除いてから解決する:FR-009": {
       "from": "sha256:98bfa428895fb876953c3e69e3c15f641e420a38e4ada144998cd362a5e1fa7d",
       "to": "sha256:98af7dbee38bf5aba62d6f28102856b95d367391394e6f067082f2127222461b",
@@ -2401,19 +3969,54 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/model:tests:desc_edge_idはノード種別の接頭辞とノードのidを持つ:FR-023": {
+      "from": "sha256:855d4d99c32af5ed1a15d1b3f2b2742eba6213c4f19f9dddf0644aa2d6d2bea4",
+      "to": "sha256:19e2924a3e42be2c3df3dee01040f6ef820dac4786142f802c2c2be31849efa7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/model:tests:edge_hashesのdescは要約が無ければ空文字列のハッシュをfromにする:FR-087": {
+      "from": "sha256:686841ca9d535099fa9d46f6ca3038a4378c745040fc7a87dcbc0cabe6d984bf",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/model:tests:edge_hashesのdescは要約のハッシュと本文のハッシュを返す:FR-087": {
+      "from": "sha256:29db15cb8ac5e3c1809da1dc35346b369939a4c6e44ac0c1edc357ad49ab45f6",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/model:tests:edge_hashesのdescは要約を変えるとfromだけが変わる:FR-087": {
+      "from": "sha256:89f7340269fc7f924b9a44457d32b71d2c0b3a3d432bf74d99f2a99700eb1c40",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/model:tests:edge_hashesのdoc_reqは要約を変えても変わらない:FR-087": {
+      "from": "sha256:5f03ea06aea68e37353c733f88edb8fc2672d8b3d31fa456b3b7eb4e5e0b566e",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/model:tests:edge_idはdoc_reqの接頭辞と両端のidを持つ:FR-023": {
       "from": "sha256:ad17456a25ac364d66a23ec786890aabb19a05585027e3ab8d9cbbfb842ca9d4",
-      "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
+      "to": "sha256:19e2924a3e42be2c3df3dee01040f6ef820dac4786142f802c2c2be31849efa7",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/model:tests:edge_idはtest_reqの接頭辞と両端のidを持つ:FR-023": {
       "from": "sha256:1b5a6cc9246b2ebe8078c0b30698819fd50393c32fdf6290e72b88e6a1842360",
-      "to": "sha256:0062a72183acb9ab15e2312fe86f6e04d9457d8b33950024099b5e3be96855c7",
+      "to": "sha256:19e2924a3e42be2c3df3dee01040f6ef820dac4786142f802c2c2be31849efa7",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/model:tests:is_valid_idはコロンや空白_日本語_空文字を拒否する:FR-006": {
       "from": "sha256:62174129bc01591bcd07ea812478c12b24c4a35c19940e02408450426e597317",
@@ -2450,6 +4053,20 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/reconcile:tests:allはdescエッジも記録し変更のないdescは据え置く:FR-036": {
+      "from": "sha256:9c788f24b7ca993324717346447f342b792205b2d48b79431d21d6250acec656",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/reconcile:tests:allはロックにないdescエッジを新規に記録する:FR-036": {
+      "from": "sha256:ef80446039b0472126aa2b378cdafeb0a20015d739a34e373ae119cea82335c6",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/reconcile:tests:allは変更のないエッジを据え置き_新規を追加し_消えたエッジを削除する:FR-036": {
       "from": "sha256:65858f29eef0a4caf9dc55771f0a2dab71c5f2597fdb669c4e9b97de2128f325",
       "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
@@ -2457,12 +4074,40 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/reconcile:tests:descエッジは要約が無ければ空文字列のハッシュを記録する:FR-087": {
+      "from": "sha256:b3724bc6005aa4c3d44ad2400d3504c350fd62d9df5b5151ada0345dcf383d39",
+      "to": "sha256:06e113d15621d4fb609d5b34d49165bec5145a43c1f0f318dd8e4460821b1df7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/reconcile:tests:descエッジを指定すると現在の要約と本文のハッシュが記録される:FR-033": {
+      "from": "sha256:f444f68f025288f50e83be4f15f9312a30dc4117d862424e845a3e1f7bea6081",
+      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/reconcile:tests:edgeを指定すると現在の両端のハッシュがロックに記録される:FR-033": {
       "from": "sha256:aecedaff61f348470442226f09c58adf99073ed62942f44c82675a7cc54cabfb",
       "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
       "by": "human",
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
+    },
+    "test-req:src/reconcile:tests:invalidなdocのdescエッジを指定するとblockedになる:FR-035": {
+      "from": "sha256:3108265fbcccd1a48bcc7d3322944a264e4b713c8814ad06a9526b41a89a5d36",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/reconcile:tests:parse_edge_idはdescエッジを種別とidに分解する:FR-023": {
+      "from": "sha256:38656c98c57ee3f41f670a1be4a3b29e63b9cf0da37ac67b2a4776fa8b5cfff6",
+      "to": "sha256:19e2924a3e42be2c3df3dee01040f6ef820dac4786142f802c2c2be31849efa7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/reconcile:tests:reasonを指定した場合はエントリに記録される:FR-037": {
       "from": "sha256:262632d80e03f9b7e1246b6e5dc743d13757e1581ad0a1360591a540ef904d6d",
@@ -2478,12 +4123,33 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/reconcile:tests:リンク切れを持つdocのdescエッジを指定するとblockedになる:FR-035": {
+      "from": "sha256:d0801f038a43f08e40229dd05e20ad21e6a2a2a7b0f8b2867c3ff8bd37f8e124",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:src/reconcile:tests:ロックにのみ存在するcsharpのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
       "from": "sha256:24b8a9ec66f2712a67082478329191dce0f73e3c0131f5a2a77dd79677371416",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
       "reason": "C# / TypeScript (Vitest) 対応: 新 req FR-049〜057 と FR-003/014/018 の更新を合意",
       "at": "2026-10-01T09:16:16Z"
+    },
+    "test-req:src/reconcile:tests:ロックにのみ存在するdescエッジのノードがinvalidならblockedになる:FR-035": {
+      "from": "sha256:e668674c136c4586e89ca3500e012cc49a460669e211297547407bc302a3c114",
+      "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:src/reconcile:tests:ロックにのみ存在するdescエッジを指定するとロックから削除される:FR-034": {
+      "from": "sha256:f35671a4617056be3a8e079aefd287ac5a3558d28583c8823480ae0e7e177322",
+      "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:src/reconcile:tests:ロックにのみ存在するgoのtest_reqエッジは所在ファイルが構文エラーだとblockedになる:FR-035": {
       "from": "sha256:b4668576828923a9a9401cb8b2840ea474a1f931a267f27d603d713814a01bd8",
@@ -2723,6 +4389,55 @@
       "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
       "at": "2026-10-01T01:51:00Z"
     },
+    "test-req:tests/cli_desc::diffは基準側にindexが無ければdescエッジを新規のnewとして報告する:FR-086": {
+      "from": "sha256:63acb171a79089dfd03bdf890ce11c7bdf6d192bd8751c04418b942ffac05477",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_desc::doc本文を変えるとdoc_reqのdoc_changedとdescのbody_changedが別々に出る:FR-088": {
+      "from": "sha256:ffa258370683fb181adf5c92af25cbf38604460cdeeace75a9349f741b8f3c7d",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_desc::index設定があるとcheckはdescエッジをnewとして報告する:FR-086": {
+      "from": "sha256:ec9bbf181814412e9d042603bf3a5bda36c75b47c92a1a581312e006432e180b",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_desc::index設定が無ければcheckはdescエッジを報告しない:FR-086": {
+      "from": "sha256:236f9252589b21913c997d5a26856ea9603c96dee33ea4e7610b870ce3ad2cc4",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_desc::reconcile後のcheckはdescエッジのfindingを出さない:FR-086": {
+      "from": "sha256:cc88fef80767c969fe20430ac7a63ba8902938771cd15c8acc2b5afb89e9cab2",
+      "to": "sha256:ab54d6e9bda01b875b77e5a302cf21f6158826701dc4d2ca9925e7f078ff60ea",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_desc::要約を変えるとdescエッジだけがdescription_changedのdriftになる:FR-088": {
+      "from": "sha256:a44921ea8f51339bc8b9e30c4d75a7605dda37c1d8b95ca93d975e983b0e9fd8",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_desc::要約を消すとindexのmissing_descriptionとdescのdriftの2件が出る:FR-088": {
+      "from": "sha256:1e91a1cdb69e12687b2b19ae6670c3f663dcc3009c435daee2522faa7da8943f",
+      "to": "sha256:c7606fa95442e6ebb04a5bab35a41a4cf595c09ee19cb3b93b43bfce9ad96702",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:tests/cli_diff::diffはbaseのexcludeでbaseを評価する_headでexcludeを外すとnewが出る:FR-065": {
       "from": "sha256:3d4727ab74937d7ba82aaf06cab0b7250d0866dc17025a95202b3b6428323270",
       "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
@@ -2765,19 +4480,187 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:tests/cli_index::checkのtextとjsonは種別をindexと表示しgateはexit_code_2を返す:FR-080": {
+      "from": "sha256:39516b798e99f646090ae2b3ae67722e6800195e57ec20d5be5f469f856d0778",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::diffは基準側にも存在するindex_findingを報告しない:FR-080": {
+      "from": "sha256:f8d503dae4cbb2a80fd912075153ac8612786575e4d2ebab3d433937d5b3c128",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::diffは基準側の設定にindexがなければ現在側のindex_findingをすべて新規として報告する:FR-080": {
+      "from": "sha256:644f57bfa6bc8582153a72fbffa90eabd55f47a11da59151d6836250c7242941",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::indexが未設定ならexit_code_1とメッセージで失敗する:FR-085": {
+      "from": "sha256:e97e82c3643d2352df1a1f84de8c63ef5e555d69d936976e88437bcd6a2a5804",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::indexのfindingが残っていてもreconcile_allは成功しロックに影響しない:FR-080": {
+      "from": "sha256:72b80f61e8534fa3930227735ee209ee8c5594a2822d4a8e9367a57dc7c50867",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::indexのfindingが残っていてもreconcile_edgeは成功する:FR-080": {
+      "from": "sha256:a0bc639cb9eede72d7886190ce4381eeb6e5cfb60fdedc66a6ecc0c0b2fae163",
+      "to": "sha256:086bd17d5b49ca1388bbbcd2ad6958209b1602ab7ffc70fd4f36ce8848ce5daf",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::index実行後に残るindexのfindingは人の判断が要るものだけになる:FR-085": {
+      "from": "sha256:9c831116a3e4dcccb2f968ddc67775476b51345446ead82f96d052baff6729cc",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::utf8として読めない索引は書き換えずにexit_code_1で失敗する:FR-085": {
+      "from": "sha256:43ca712d66c948823ba6d7d98a4ec21398eb0ddbe31830d6903cb0a48140b379",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::エントリ行以外のバイト列はbomとcrlfを含めて保存される:FR-085": {
+      "from": "sha256:e40b362c7deb0d466e3eb4ce4987fbc9162935b1ae4090833d6e96969f40db75",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::タイトルと要約の不一致をcheckが報告する:FR-077": {
+      "from": "sha256:1ccf26da6614adc47e2e246ad42e99424768efc1effb30b1d87fa067f6ed75a7",
+      "to": "sha256:c49dd203b049883ab23fe78bbc5ab7c57757c699bc4cb9096b500f50eb75e4ea",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::列挙されていない文書をcheckがnot_listedで報告する:FR-074": {
+      "from": "sha256:a184fb08dfab3be13adffe533653a9bc5f26084bd0e47ab6a60b2536a90aa0b1",
+      "to": "sha256:c67001e640e1a35536ffd2ad0cd491323b30f3c6e0fce71f3c1a97d0dcb6037b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::壊れたエントリの正準形targetがtextとjsonに出る:FR-076": {
+      "from": "sha256:cf055dfd169221137e353c6fa6218f5c77a38a5873ed45c9ab82bc37f2138dfa",
+      "to": "sha256:853a0800dc118fbafe20f997a4626fd8bde0824e07c8e37de6ae3484a240fe8b",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::子の索引にtitleも要約もなければディレクトリ名で区切りなしのエントリが追加される:FR-082": {
+      "from": "sha256:a5d568e05fe0fad4f98f255770864ece466edc8fafab48995fb76279edcbd1d8",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::存在しない文書のエントリは削除され_除外配下は残る:FR-083": {
+      "from": "sha256:42b2cb1791094e90b83362089dae5271f0ffe6e64141398281c90092de04693f",
+      "to": "sha256:a5638c0684532599686ca2e135688a51157a2ea2a3130411fb569e140421fb8c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::実行後は索引と同じ場所にも他の場所にも一時ファイルが残らない:FR-085": {
+      "from": "sha256:ba30a493ea1bfa356a3448c2a2db067972766cfc4d08f58b8a956ee12e483404",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::文書が0件の根では索引を作らない:FR-084": {
+      "from": "sha256:56ceb0f74bca0bae381eb52cdd87a337a30a298ca17ea7d5e85a4301826e5a0d",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::既存のディレクトリエントリが子の索引の値に書き換えられ_2回目はunchanged:FR-081": {
+      "from": "sha256:af6a4ebb3832c7a42b5b20229ade473462ec2bac01128cd2b9ee54c51fb7461c",
+      "to": "sha256:ce4a2eed81078cc23d1aaa6dadba52207dcd86298f093ff8764f4c31df31a4ff",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::更新はupdatedで出力され_2回目は全件unchangedで一時ファイルも残らない:FR-085": {
+      "from": "sha256:71da5b45e7c1c6de96da3dc7616aa4738743f45fbff315984ea15d78aa2a9acd",
+      "to": "sha256:947d426e893f058bac94a4baacf545393fd35d77112697376746bfa6e0d970c7",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::未列挙の文書と辿れない子の索引が末尾に追加される:FR-082": {
+      "from": "sha256:4302c70d0b84e0278cc3f037ddab964eb12b5a249f189107536b659adb893b72",
+      "to": "sha256:1034cfde89c2b726792fcb4392e4ce2b485c3dad2e7e4f78b123110890b61efe",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::根の索引がなければcheckがmissing_indexを報告する:FR-073": {
+      "from": "sha256:7b5ed8cff9bd75f34352ba16d761b39f30eb839dcb7f158f14aab8adb8937aa5",
+      "to": "sha256:e39e15053be52cf65802a0f5c8af5fcc06dece90e7b55f0daf237a2ad604431c",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_index::根の索引の新規作成では文書の後に子索引のディレクトリエントリが入る:FR-084": {
+      "from": "sha256:2cb1ee6eccdbe8895055ec9f07e81c31fdf6f7d0a48a1b45dfb0f99a677272fa",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::索引がなければ平坦なリストで新規作成されcreatedが出力される:FR-084": {
+      "from": "sha256:973e64dbd92f80ada01991b4369d2012df057d53c3db9f088d93616b398dc6ae",
+      "to": "sha256:fcb07b8f76d28362299b2e86e081f566bc6a9e80394070549d9f0f9c0d482fd8",
+      "by": "human",
+      "reason": "ディレクトリの要約の SoT を子 index.md のフロントマターに変更（PR #21 レビュー対応）",
+      "at": "2026-10-05T17:24:34Z"
+    },
+    "test-req:tests/cli_index::設定違反ではindexもcheckもexit_code_1で止まる:FR-066": {
+      "from": "sha256:cc677733a322d99a8fe92c1f55f972d81a72b3fb9f049ec3f31e1e71dccd3b0c",
+      "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_init::initの生成物はindexにdocsを1件含む:FR-019": {
+      "from": "sha256:1952457734c209ba7172f4a34f59ababb51a0fbfed3ac583db4a1def3d783b2b",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
+      "by": "human",
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
     "test-req:tests/cli_init::initは既定値でconfigを生成する:FR-019": {
       "from": "sha256:b652d3aa29678949c274006d70fc53b91283b074cfad123217944f43a80d2681",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:tests/cli_init::既にconfigが存在する場合は上書きせず失敗する:FR-019": {
       "from": "sha256:b66872b9219212696ad48e751ac2947b39d7db15a3f6001c71565a6b16a71342",
-      "to": "sha256:e86080c746b86e8d6db06496f6a4f21b3e20da7eb3e45132562dade0d1153d9c",
+      "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "探索除外の拡張（Issue #12）: dist を既定に追加、exclude 設定（FR-065）を新設",
-      "at": "2026-10-02T15:12:26Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:tests/cli_judge::apiキーが未設定なら何も送信せずキー名を表示してexit1になる:FR-039": {
       "from": "sha256:afd2121c575a1d153e2aa90fba9cd2309ba54ccc0131b0151877ef3a477691b1",
@@ -2802,10 +4685,10 @@
     },
     "test-req:tests/cli_judge::apiキー未設定で終了する場合は外部送信の表示を行わない:FR-040": {
       "from": "sha256:e1afc181ba20afe88d19d7259deef075c10fc2e7137c0a4fab54f51d53983227",
-      "to": "sha256:ec60d43857ef60fac83546da78359de3f64527baa6c0a5117502fead2db1c39d",
+      "to": "sha256:77a1bfd9573dc45ac2a1e8ded892911e222f39cc4aab3f861a736fb6bc34becd",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:tests/cli_judge::auto_reconcileなしならロックは変更されない:FR-048": {
       "from": "sha256:70fab3aa0cadd24fcbb19e09cfc001afc39a629044531d041fda8d54dac34ed2",
@@ -2821,6 +4704,13 @@
       "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
       "at": "2026-10-01T01:51:00Z"
     },
+    "test-req:tests/cli_judge::auto_reconcileはdescエッジをjevの合意としてロックに記録する:FR-048": {
+      "from": "sha256:2a3bbd435728555a802661b5392aa8048bfc4681d73c19ea07bab63b4b0647af",
+      "to": "sha256:4feb72b2d319ccccd6f3afaa31486df961cc6cfbdca0e6eb5be54760ad933b05",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:tests/cli_judge::jevが503を返したらexit1になりapiキーをstderrに出さない:FR-043": {
       "from": "sha256:60c097124c18a0f9d130a17946ad14da3969d0be8137daa2c38788a39b2cfc2b",
       "to": "sha256:b627b654e1ea48ec5c66458db85390a6445ed6f6cd12a855b6c85ec8db4b8c34",
@@ -2830,10 +4720,10 @@
     },
     "test-req:tests/cli_judge::jevにはbearer認証のpostでmodelを指定して送る:FR-041": {
       "from": "sha256:c80eeb629c31960faaa89f8438bdc94682eb421cbfafc8d961277e422562953e",
-      "to": "sha256:59d7548fd351cd1fbb74f8930702c4d0ab90dbe2d38e3536e8aad8b84e73363a",
+      "to": "sha256:8cf3acd2e45c6222f984e2b4554f8456b4c44e3cc86396b475ac34207729c7b8",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:tests/cli_judge::jevの応答からスコアが取れなければexit1になり:FR-042": {
       "from": "sha256:74ac237f0d876ba78e7d2fdd2e5c0da8e501fb2569d367fcb004623d8d1f293f",
@@ -2849,33 +4739,47 @@
       "reason": "judge.max_body_bytes の追加に伴う doc / req / テストの変更（レビュー済み）",
       "at": "2026-10-01T02:13:08Z"
     },
+    "test-req:tests/cli_judge::judgeのedge指定でdescエッジだけを判定できる:FR-038": {
+      "from": "sha256:38e30cb4960527f7181990fab842851de1ce8c3df9d477296b0de9e44eeef7fc",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:tests/cli_judge::judgeのedge指定は対象外のidならapiを呼ばずexit1になる:FR-038": {
       "from": "sha256:bdd447bf3f328c36f656ceb266866ca09f3b8e2db041c34352a1055c7c6c1bef",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:tests/cli_judge::judgeのedge指定は指定したエッジだけを判定する:FR-038": {
       "from": "sha256:4fe1ecc6ad7daab6cd64ffa728182aee0fbd2f9913431472890ff11e50181cb4",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_judge::judgeはdescエッジを最初に判定にかける:FR-038": {
+      "from": "sha256:b74f10718b05e8420f17b7e1c09086b80943012a9279d69cb954b28103a134c9",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:tests/cli_judge::judgeはdriftとnewのエッジを判定にかける:FR-038": {
       "from": "sha256:16bd28627479877908bffae16abb9f80fe5d32befc5a7450394ce2c756a7e01c",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:tests/cli_judge::judgeはformatオプションを持たない:FR-038": {
       "from": "sha256:85d44f38e9aaeedc04bbea8927da8d4a5321caa6c9b66c38744500a54b6a1622",
-      "to": "sha256:0924c645d9f23428eda5024c1939d16b2ef134b03f51a205a7585b78f1893d90",
+      "to": "sha256:72c8ded9e66886edef87bfd1b04c105c168871b0dead8d16f267f7aa27c5a265",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:tests/cli_judge::reviewやskippedがあっても判定が完了すればexit0になる:FR-047": {
       "from": "sha256:1bc73a76327bd48455a34f7107e391c54c7ae6aa026cf955e6fd969a6fb48217",
@@ -2907,10 +4811,10 @@
     },
     "test-req:tests/cli_judge::実行開始時に外部送信する旨をstderrに1行で表示する:FR-040": {
       "from": "sha256:9f417cb2e1760b60917dd09630a0aab1aff9517240e6c369519cd5bfddcead84",
-      "to": "sha256:ec60d43857ef60fac83546da78359de3f64527baa6c0a5117502fead2db1c39d",
+      "to": "sha256:77a1bfd9573dc45ac2a1e8ded892911e222f39cc4aab3f861a736fb6bc34becd",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     },
     "test-req:tests/cli_judge::対象が0件なら対象なしと表示してexit0になりapiを呼ばない:FR-047": {
       "from": "sha256:4121a6817d19801ad27280a29ac55db72a66bd3132f177d3a34277320f781caf",
@@ -2940,12 +4844,19 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:tests/cli_reconcile::all指定のreconcileはdescエッジも記録する:FR-036": {
+      "from": "sha256:423eee558ab0904eaac100741d2597745e56342498ac5d326046142a6552f0f6",
+      "to": "sha256:5a417ca7b57c332d7b673158e3d9d4040e153b976de743ffb3e0c2de1689d8fb",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:tests/cli_reconcile::brokenなtest_reqエッジを指定したreconcileは拒否されロックは書き込まれない:FR-035": {
-      "from": "sha256:ce9951cf239c1caf81efed92f686267fa48d1590cb9e0a813f231111a4884bc6",
+      "from": "sha256:95482d40508d11a1a6eec290cfb384cfd6a1f286a326891ebb195940666810a0",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
     },
     "test-req:tests/cli_reconcile::edgeとallを同時に指定するとreconcileは拒否される:FR-036": {
       "from": "sha256:0573b29a19ecc000b0ce36044a4606358b275759f0aba75c780968fa15364585",
@@ -2961,6 +4872,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:tests/cli_reconcile::edge指定のreconcileはdescエッジの要約と本文のハッシュを記録する:FR-033": {
+      "from": "sha256:d5e960c7e3325a663a04d2e1a8813702af41673f2af1668550f5813b923163ef",
+      "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
+    },
     "test-req:tests/cli_reconcile::edge指定のreconcileはロックファイルに現在のハッシュを書き込む:FR-033": {
       "from": "sha256:e293f4b1d4a12589bdc520ce402c25c8b99e354f09a5da841abb205e0ab16c66",
       "to": "sha256:550b61bbdcfa2d55706af9f72fc15b82a301ecb232348fd318982d310c8e67bb",
@@ -2969,11 +4887,18 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_reconcile::invalidなreqに紐づくエッジを指定したreconcileは拒否されロックは書き込まれない:FR-035": {
-      "from": "sha256:699932d0f41888dd39d4a91a75e38618078950604a36c85cc4fac23b6d6a68e3",
+      "from": "sha256:4be6d9a30ebc03a23795b64d6acb7abcff496e13f76f8b0a7c27da24b2d8b670",
       "to": "sha256:5b7c3eee9a0e82697465ff1888104504f8baee66e352dda5e6f972ed2a2d77e7",
       "by": "human",
-      "reason": "α版の初回合意",
-      "at": "2026-09-30T16:19:51Z"
+      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
+      "at": "2026-10-02T23:47:26Z"
+    },
+    "test-req:tests/cli_reconcile::ロックにのみ存在するdescエッジはedge指定のreconcileで削除できる:FR-034": {
+      "from": "sha256:adbc14e198a6c60a3f05526cb4ecbd6b61c0472adfbfae84b52004418effd4bc",
+      "to": "sha256:0d6bafeb4e439c0b60c68aa1211e9119339283840c7be0cbd1c5306e220b6f5d",
+      "by": "human",
+      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
+      "at": "2026-10-06T00:14:13Z"
     }
   }
 }

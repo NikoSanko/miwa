@@ -395,3 +395,92 @@ fn 判定の途中でエラーになったらロックは変更されない() {
     assert_eq!(output.status.code(), Some(1));
     assert_eq!(env.lock_bytes().unwrap(), before);
 }
+
+const DESC_EDGE: &str = "desc:doc:DOC-A";
+const DOC_A_BODY: &str = "# Spec\n\nSee [req](../req/fr1.md).\n";
+
+/// The judge fixture with `index: [docs]` and a description on DOC-A, so that
+/// `desc:doc:DOC-A`, `doc-req:...` and `test-req:...` are all `new`.
+fn write_desc_judge_fixture(dir: &std::path::Path) {
+    write_judge_fixture(dir);
+    common::write(
+        dir,
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\nindex:\n  - docs\ndiff_base: main\njudge:\n  threshold: 0.9\n",
+    );
+    common::write(
+        dir,
+        "docs/spec.md",
+        "---\ntype: Specification\nid: DOC-A\ndescription: 要約A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
+    );
+}
+
+// [FR-038]
+#[test]
+fn judgeはdescエッジを最初に判定にかける() {
+    let repo = tempfile::tempdir().unwrap();
+    write_desc_judge_fixture(repo.path());
+    let server = MockServer::start(vec![ok(0.95)]);
+    let output = run_judge(repo.path(), &server, &[]).output().unwrap();
+    assert_eq!(output.status.code(), Some(0));
+    let bodies: Vec<serde_json::Value> = server
+        .requests()
+        .iter()
+        .map(|r| serde_json::from_str(&r.body).unwrap())
+        .collect();
+    assert_eq!(bodies.len(), 3, "{bodies:?}");
+    assert_eq!(bodies[0]["state"]["description"], "要約A");
+    assert!(
+        bodies[0]["state"]["body"]
+            .as_str()
+            .unwrap()
+            .contains("See [req]"),
+        "{}",
+        bodies[0]
+    );
+    assert!(bodies[1]["state"].get("doc").is_some(), "{}", bodies[1]);
+    assert!(bodies[2]["state"].get("test").is_some(), "{}", bodies[2]);
+    let stdout = stdout_of(&output);
+    assert!(stdout.contains(DESC_EDGE), "{stdout}");
+}
+
+// [FR-038]
+#[test]
+fn judgeのedge指定でdescエッジだけを判定できる() {
+    let repo = tempfile::tempdir().unwrap();
+    write_desc_judge_fixture(repo.path());
+    let server = MockServer::start(vec![ok(0.95)]);
+    let output = run_judge(repo.path(), &server, &["--edge", DESC_EDGE])
+        .output()
+        .unwrap();
+    assert_eq!(output.status.code(), Some(0));
+    assert_eq!(server.requests().len(), 1);
+    let body: serde_json::Value = serde_json::from_str(&server.requests()[0].body).unwrap();
+    assert!(body["state"].get("description").is_some(), "{body}");
+}
+
+// [FR-048]
+#[test]
+fn auto_reconcileはdescエッジをjevの合意としてロックに記録する() {
+    let repo = tempfile::tempdir().unwrap();
+    write_desc_judge_fixture(repo.path());
+    let server = MockServer::start(vec![ok(0.95)]);
+    run_judge(repo.path(), &server, &["--auto-reconcile"])
+        .assert()
+        .success();
+    let lock: serde_json::Value = serde_json::from_str(
+        &std::fs::read_to_string(repo.path().join(".miwa/lock.json")).unwrap(),
+    )
+    .unwrap();
+    let entry = &lock["edges"][DESC_EDGE];
+    assert_eq!(entry["by"], serde_json::json!("jev"));
+    assert_eq!(entry["score"], serde_json::json!(0.95));
+    assert_eq!(
+        entry["from"],
+        serde_json::json!(miwa::hash::content_hash("要約A"))
+    );
+    assert_eq!(
+        entry["to"],
+        serde_json::json!(miwa::hash::content_hash(DOC_A_BODY))
+    );
+}

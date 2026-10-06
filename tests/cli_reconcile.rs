@@ -37,7 +37,7 @@ fn invalidなreqに紐づくエッジを指定したreconcileは拒否されロ�
     common::write(
         dir.path(),
         ".miwa/config.yaml",
-        common::default_config_yaml(),
+        common::config_yaml_without_index(),
     );
     common::write(
         dir.path(),
@@ -74,7 +74,7 @@ fn brokenなtest_reqエッジを指定したreconcileは拒否されロックは
     common::write(
         dir.path(),
         ".miwa/config.yaml",
-        common::default_config_yaml(),
+        common::config_yaml_without_index(),
     );
     // マーカーが指す FR-999 は存在しない req id なので broken になる
     common::write(
@@ -149,4 +149,88 @@ fn edgeとallを同時に指定するとreconcileは拒否される() {
         !dir.path().join(".miwa/lock.json").exists(),
         "lock must not be created when --edge and --all conflict"
     );
+}
+
+const DOC_A_BODY: &str = "# Spec\n\nSee [req](../req/fr1.md).\n";
+
+fn write_desc_fixture(dir: &std::path::Path) {
+    common::write_minimal_fixture(dir);
+    common::write(
+        dir,
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\nindex:\n  - docs\ndiff_base: main\njudge:\n  threshold: 0.9\n",
+    );
+    common::write(
+        dir,
+        "docs/spec.md",
+        "---\ntype: Specification\nid: DOC-A\ndescription: 要約A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
+    );
+}
+
+fn read_lock(dir: &std::path::Path) -> serde_json::Value {
+    serde_json::from_str(&std::fs::read_to_string(dir.join(".miwa/lock.json")).unwrap()).unwrap()
+}
+
+// [FR-033]
+#[test]
+fn edge指定のreconcileはdescエッジの要約と本文のハッシュを記録する() {
+    let dir = tempfile::tempdir().unwrap();
+    write_desc_fixture(dir.path());
+
+    common::run(dir.path(), &["reconcile", "--edge", "desc:doc:DOC-A"])
+        .assert()
+        .success();
+
+    let lock = read_lock(dir.path());
+    let entry = &lock["edges"]["desc:doc:DOC-A"];
+    assert_eq!(entry["by"], serde_json::json!("human"));
+    assert_eq!(
+        entry["from"],
+        serde_json::json!(miwa::hash::content_hash("要約A"))
+    );
+    assert_eq!(
+        entry["to"],
+        serde_json::json!(miwa::hash::content_hash(DOC_A_BODY))
+    );
+    assert_ne!(entry["from"], entry["to"]);
+    assert!(lock["edges"].get("doc-req:DOC-A:FR-001").is_none());
+}
+
+// [FR-036]
+#[test]
+fn all指定のreconcileはdescエッジも記録する() {
+    let dir = tempfile::tempdir().unwrap();
+    write_desc_fixture(dir.path());
+
+    common::run(dir.path(), &["reconcile", "--all"])
+        .assert()
+        .success();
+
+    let lock = read_lock(dir.path());
+    assert!(lock["edges"].get("desc:doc:DOC-A").is_some(), "{lock}");
+    assert!(lock["edges"].get("doc-req:DOC-A:FR-001").is_some());
+}
+
+// [FR-034]
+#[test]
+fn ロックにのみ存在するdescエッジはedge指定のreconcileで削除できる() {
+    let dir = tempfile::tempdir().unwrap();
+    write_desc_fixture(dir.path());
+    common::run(dir.path(), &["reconcile", "--all"])
+        .assert()
+        .success();
+    // 索引の根から外す → desc:doc:DOC-A はソースから消える
+    common::write(
+        dir.path(),
+        ".miwa/config.yaml",
+        common::config_yaml_without_index(),
+    );
+
+    common::run(dir.path(), &["reconcile", "--edge", "desc:doc:DOC-A"])
+        .assert()
+        .success();
+
+    let lock = read_lock(dir.path());
+    assert!(lock["edges"].get("desc:doc:DOC-A").is_none(), "{lock}");
+    assert!(lock["edges"].get("doc-req:DOC-A:FR-001").is_some());
 }

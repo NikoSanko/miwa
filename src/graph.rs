@@ -5,8 +5,8 @@ pub fn build_graph(
     config: &crate::config::Config,
 ) -> anyhow::Result<crate::model::Graph> {
     use crate::model::{
-        edge_id, is_valid_id, Broken, Edge, EdgeKind, Invalid, Node, NodeKey, NodeKind, ReasonCode,
-        TargetKind,
+        desc_edge_id, edge_id, is_valid_id, Broken, Edge, EdgeKind, Invalid, Node, NodeKey,
+        NodeKind, ReasonCode, TargetKind,
     };
     use std::collections::{BTreeMap, BTreeSet};
 
@@ -23,42 +23,66 @@ pub fn build_graph(
         kind: NodeKind,
         id: Option<String>,
         body: String,
+        description: Option<String>,
     }
     let mut candidates: Vec<Candidate> = Vec::new();
+    let mut texts: BTreeMap<String, crate::index::ParsedText> = BTreeMap::new();
+    let index_roots: Vec<String> = config
+        .index
+        .iter()
+        .map(|r| crate::config::normalize_dir(r))
+        .collect();
 
     for path in &files {
         if !path.ends_with(".md") {
             continue;
         }
-        if !(is_under(path, &config.docs) || is_under(path, &config.requirements)) {
+        if !(is_under_any(path, &config.docs) || is_under_any(path, &config.requirements)) {
             continue;
         }
         let bytes = source.read(path)?;
         let text = String::from_utf8_lossy(&bytes).into_owned();
-        let fm = match crate::frontmatter::parse(&text) {
-            Ok(Some(fm)) => fm,
-            Ok(None) => continue,
-            Err(_e) => {
-                graph.invalid.push(Invalid {
-                    target_kind: TargetKind::File,
-                    target: path.clone(),
-                    reason: ReasonCode::ParseError,
-                    detail: format!("invalid front matter in {path}"),
-                });
-                continue;
+        let parsed = crate::frontmatter::parse(&text);
+        // Reserved names never become nodes (the index still reads their bodies).
+        if !matches!(path.rsplit('/').next(), Some("index.md" | "log.md")) {
+            match &parsed {
+                Ok(Some(fm)) => {
+                    let kind = match fm.kind.as_deref() {
+                        Some("Specification") => Some(NodeKind::Doc),
+                        Some("Requirement") => Some(NodeKind::Req),
+                        _ => None,
+                    };
+                    if let Some(kind) = kind {
+                        candidates.push(Candidate {
+                            path: path.clone(),
+                            kind,
+                            id: fm.id.clone(),
+                            body: fm.body.clone(),
+                            description: crate::index::normalize_description(fm),
+                        });
+                    }
+                }
+                Ok(None) => {}
+                Err(_e) => {
+                    graph.invalid.push(Invalid {
+                        target_kind: TargetKind::File,
+                        target: path.clone(),
+                        reason: ReasonCode::ParseError,
+                        detail: format!("invalid front matter in {path}"),
+                    });
+                }
             }
-        };
-        let kind = match fm.kind.as_deref() {
-            Some("Specification") => NodeKind::Doc,
-            Some("Requirement") => NodeKind::Req,
-            _ => continue,
-        };
-        candidates.push(Candidate {
-            path: path.clone(),
-            kind,
-            id: fm.id,
-            body: fm.body,
-        });
+        }
+        // Bodies are only kept for files under an index root.
+        if index_roots.iter().any(|r| crate::config::is_under(path, r)) {
+            texts.insert(
+                path.clone(),
+                crate::index::ParsedText {
+                    text,
+                    front_matter: parsed,
+                },
+            );
+        }
     }
 
     let mut by_kind_id: BTreeMap<(NodeKind, String), Vec<usize>> = BTreeMap::new();
@@ -124,6 +148,7 @@ pub fn build_graph(
                 path: c.path.clone(),
                 content: c.body.clone(),
                 hash,
+                description: c.description.clone(),
             },
         );
         if kind == NodeKind::Req {
@@ -131,6 +156,26 @@ pub fn build_graph(
         }
     }
 
+    // `desc:doc:<id>` / `desc:req:<id>` self-loop edges for Doc / Req nodes under an index root.
+    let desc_edges: Vec<Edge> = graph
+        .nodes
+        .values()
+        .filter(|n| matches!(n.key.kind, NodeKind::Doc | NodeKind::Req))
+        .filter(|n| {
+            index_roots
+                .iter()
+                .any(|r| crate::config::is_under(&n.path, r))
+        })
+        .map(|n| Edge {
+            id: desc_edge_id(&n.key),
+            kind: EdgeKind::Desc,
+            from: n.key.clone(),
+            to: n.key.clone(),
+        })
+        .collect();
+    for e in desc_edges {
+        graph.edges.insert(e.id.clone(), e);
+    }
     let doc_entries: Vec<(NodeKey, String, String)> = graph
         .nodes
         .values()
@@ -143,7 +188,7 @@ pub fn build_graph(
             let Some(resolved) = crate::markdown::resolve_link(&doc_path, &link) else {
                 continue;
             };
-            if !is_under(&resolved, &config.requirements) {
+            if !is_under_any(&resolved, &config.requirements) {
                 continue;
             }
             if let Some(req_id) = path_to_req_id.get(&resolved) {
@@ -181,7 +226,7 @@ pub fn build_graph(
 
     let mut extracted_tests: Vec<(String, crate::extract::ExtractedTest)> = Vec::new();
     for path in &files {
-        if !is_under(path, &config.tests) {
+        if !is_under_any(path, &config.tests) {
             continue;
         }
         let Some(language) = test_language(path) else {
@@ -274,6 +319,7 @@ pub fn build_graph(
                 path,
                 content,
                 hash,
+                description: None,
             },
         );
         let req_key = NodeKey {
@@ -301,35 +347,21 @@ pub fn build_graph(
         }
     }
 
+    // Index checks only run when at least one index root is configured.
+    if !config.index.is_empty() {
+        graph.index_issues = crate::index::collect_issues(config, &files, &texts)
+            .into_iter()
+            .collect();
+    }
+
     graph.invalid.sort();
     graph.broken.sort();
     Ok(graph)
 }
 
-/// Normalizes a configured directory entry: strips a leading `./`, strips a
-/// trailing `/`, and maps `.` / `./` / `` (empty) to `.` (the whole repo).
-fn normalize_dir(d: &str) -> String {
-    let mut s = d.trim();
-    while let Some(rest) = s.strip_prefix("./") {
-        s = rest;
-    }
-    let s = s.trim_end_matches('/');
-    if s.is_empty() {
-        ".".to_string()
-    } else {
-        s.to_string()
-    }
-}
-
-fn is_under(path: &str, dirs: &[String]) -> bool {
-    dirs.iter().any(|d| {
-        let normalized = normalize_dir(d);
-        if normalized == "." {
-            true
-        } else {
-            path == normalized.as_str() || path.starts_with(&format!("{normalized}/"))
-        }
-    })
+fn is_under_any(path: &str, dirs: &[String]) -> bool {
+    dirs.iter()
+        .any(|d| crate::config::is_under(path, &crate::config::normalize_dir(d)))
 }
 
 #[derive(Debug, Clone, Copy)]
@@ -410,6 +442,7 @@ mod tests {
             },
             rust: crate::config::RustConfig::default(),
             exclude: vec![],
+            index: vec![],
         }
     }
 
@@ -641,6 +674,7 @@ mod tests {
             },
             rust: crate::config::RustConfig::default(),
             exclude: vec![],
+            index: vec![],
         };
         let graph = build_graph(&source, &config).unwrap();
         assert!(graph
@@ -1290,5 +1324,462 @@ mod tests {
         let graph = build_graph(&source, &exclude_config(&[".next"])).unwrap();
         assert!(!has_test_node(&graph, ".next/a.test::works"));
         assert!(has_test_node(&graph, "src/a.test::works"));
+    }
+
+    // [FR-067]
+    #[test]
+    fn 予約名のindex_mdとlog_mdはdocsでもrequirementsでもノードにならない() {
+        let source = FakeSource::new(&[
+            (
+                "docs/index.md",
+                "---\ntype: Specification\nid: DOC-X\n---\n[r](../req/fr1.md)\n",
+            ),
+            ("docs/log.md", "---\ntype: Specification\nid: DOC-L\n---\n"),
+            ("docs/sub/index.md", "---\ntype: Specification\n---\n"),
+            ("req/index.md", "---\ntype: Requirement\nid: FR-001\n---\n"),
+            ("req/log.md", "---\ntype: Requirement\n---\n"),
+            (
+                "req/fr1.md",
+                "---\ntype: Requirement\nid: FR-001\n---\n本文\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(
+            graph.invalid.is_empty(),
+            "reserved names must not be invalid: {:?}",
+            graph.invalid
+        );
+        assert!(!graph.nodes.values().any(|n| n.key.kind == NodeKind::Doc));
+        let reqs: Vec<&str> = graph
+            .nodes
+            .values()
+            .filter(|n| n.key.kind == NodeKind::Req)
+            .map(|n| n.path.as_str())
+            .collect();
+        assert_eq!(reqs, ["req/fr1.md"]);
+        assert!(graph.edges.is_empty(), "{:?}", graph.edges);
+    }
+
+    // [FR-066]
+    #[test]
+    fn index未設定なら索引のfindingを一切出さない() {
+        let source = FakeSource::new(&[
+            ("docs/a.md", "---\ntype: Specification\nid: DOC-A\n---\n"),
+            ("docs/untyped.md", "plain\n"),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph.index_issues.is_empty(), "{:?}", graph.index_issues);
+    }
+
+    // [FR-067]
+    #[test]
+    fn index設定があっても索引のtype_specificationはノードにならない() {
+        let source = FakeSource::new(&[
+            (
+                "docs/index.md",
+                "---\ntype: Specification\nid: DOC-X\n---\n- [A](a.md) — D\n",
+            ),
+            (
+                "docs/a.md",
+                "---\ntype: Specification\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
+            ),
+        ]);
+        let mut cfg = config();
+        cfg.index = vec!["docs".to_string()];
+        let graph = build_graph(&source, &cfg).unwrap();
+        assert!(graph.invalid.is_empty(), "{:?}", graph.invalid);
+        let docs: Vec<&str> = graph
+            .nodes
+            .values()
+            .filter(|n| n.key.kind == NodeKind::Doc)
+            .map(|n| n.path.as_str())
+            .collect();
+        assert_eq!(docs, ["docs/a.md"]);
+        assert!(graph.index_issues.is_empty(), "{:?}", graph.index_issues);
+    }
+
+    // [FR-073]
+    #[test]
+    fn index設定があればbuild_graphが索引のfindingを集める() {
+        let source = FakeSource::new(&[
+            (
+                "docs/a.md",
+                "---\ntype: Specification\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
+            ),
+            ("docs/untyped.md", "plain\n"),
+        ]);
+        let mut cfg = config();
+        cfg.index = vec!["docs".to_string()];
+        let graph = build_graph(&source, &cfg).unwrap();
+        assert!(graph
+            .index_issues
+            .iter()
+            .any(|i| i.reason == ReasonCode::MissingIndex && i.target == "docs"));
+        assert!(graph
+            .index_issues
+            .iter()
+            .any(|i| i.reason == ReasonCode::UntypedFile && i.target == "docs/untyped.md"));
+    }
+
+    fn indexed_config(roots: &[&str]) -> Config {
+        let mut cfg = config();
+        cfg.index = roots.iter().map(|r| r.to_string()).collect();
+        cfg
+    }
+
+    fn desc_edges(graph: &crate::model::Graph) -> Vec<&crate::model::Edge> {
+        graph
+            .edges
+            .values()
+            .filter(|e| e.kind == crate::model::EdgeKind::Desc)
+            .collect()
+    }
+
+    const DOC_A: &str = "---\ntype: Specification\nid: DOC-A\ndescription: 要約A\n---\n本文A\n";
+    const REQ_1: &str = "---\ntype: Requirement\nid: FR-001\ndescription: 要約1\n---\n本文1\n";
+
+    // [FR-086]
+    #[test]
+    fn index配下のdocとreqにdescエッジが1本ずつできる() {
+        let source = FakeSource::new(&[("docs/a.md", DOC_A), ("docs/r.md", REQ_1)]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        let doc = graph.edges.get("desc:doc:DOC-A").expect("desc:doc:DOC-A");
+        assert_eq!(doc.kind, crate::model::EdgeKind::Desc);
+        assert_eq!(doc.from, doc.to);
+        assert_eq!(doc.from.kind, NodeKind::Doc);
+        assert_eq!(doc.from.id, "DOC-A");
+        let req = graph.edges.get("desc:req:FR-001").expect("desc:req:FR-001");
+        assert_eq!(req.kind, crate::model::EdgeKind::Desc);
+        assert_eq!(req.from, req.to);
+        assert_eq!(req.from.kind, NodeKind::Req);
+        assert_eq!(desc_edges(&graph).len(), 2, "{:?}", graph.edges);
+    }
+
+    // [FR-086]
+    #[test]
+    fn descエッジはdescriptionが無いノードにもできる() {
+        let source = FakeSource::new(&[(
+            "docs/a.md",
+            "---\ntype: Specification\nid: DOC-A\n---\n本文A\n",
+        )]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert!(
+            graph.edges.contains_key("desc:doc:DOC-A"),
+            "{:?}",
+            graph.edges
+        );
+    }
+
+    // [FR-086]
+    #[test]
+    fn descエッジは空や改行を含むdescriptionのノードにもできる() {
+        let source = FakeSource::new(&[
+            (
+                "docs/a.md",
+                "---\ntype: Specification\nid: DOC-A\ndescription: \"\"\n---\n本文\n",
+            ),
+            (
+                "docs/b.md",
+                "---\ntype: Specification\nid: DOC-B\ndescription: |\n  一行目\n  二行目\n---\n本文\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert!(
+            graph.edges.contains_key("desc:doc:DOC-A"),
+            "{:?}",
+            graph.edges
+        );
+        assert!(
+            graph.edges.contains_key("desc:doc:DOC-B"),
+            "{:?}",
+            graph.edges
+        );
+    }
+
+    // [FR-086]
+    #[test]
+    fn indexが空ならdescエッジは1本もできない() {
+        let source = FakeSource::new(&[("docs/a.md", DOC_A), ("docs/r.md", REQ_1)]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(desc_edges(&graph).is_empty(), "{:?}", graph.edges);
+    }
+
+    // [FR-086]
+    #[test]
+    fn 索引の根の外にあるreqにはdescエッジができない() {
+        let source = FakeSource::new(&[("docs/a.md", DOC_A), ("req/fr1.md", REQ_1)]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert!(graph.edges.contains_key("desc:doc:DOC-A"));
+        assert!(
+            !graph.edges.contains_key("desc:req:FR-001"),
+            "{:?}",
+            graph.edges
+        );
+    }
+
+    // [FR-086]
+    #[test]
+    fn 索引の根の配下にあるreqにはdescエッジができる() {
+        let source = FakeSource::new(&[("docs/a.md", DOC_A), ("req/fr1.md", REQ_1)]);
+        let graph = build_graph(&source, &indexed_config(&["docs", "req"])).unwrap();
+        assert!(
+            graph.edges.contains_key("desc:req:FR-001"),
+            "{:?}",
+            graph.edges
+        );
+    }
+
+    // [FR-086]
+    #[test]
+    fn 無効なidのノードにはdescエッジができない() {
+        let source = FakeSource::new(&[
+            (
+                "docs/bad.md",
+                "---\ntype: Specification\nid: BAD ID\ndescription: D\n---\n本文\n",
+            ),
+            (
+                "docs/noid.md",
+                "---\ntype: Specification\ndescription: D\n---\n本文\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert!(!graph.invalid.is_empty());
+        assert!(desc_edges(&graph).is_empty(), "{:?}", graph.edges);
+    }
+
+    // [FR-086]
+    #[test]
+    fn guideなどmiwaのノードでない文書にはdescエッジができない() {
+        let source = FakeSource::new(&[(
+            "docs/g.md",
+            "---\ntype: Guide\nid: GUIDE-1\ndescription: D\n---\n本文\n",
+        )]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert!(desc_edges(&graph).is_empty(), "{:?}", graph.edges);
+    }
+
+    // [FR-086]
+    #[test]
+    fn descエッジはorphanとno_testの判定に影響しない() {
+        let source = FakeSource::new(&[("docs/r.md", REQ_1), ("docs/a.md", DOC_A)]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        let findings = crate::check::check(&graph, &crate::lock::Lock::default());
+        assert!(findings
+            .iter()
+            .any(|f| f.kind == crate::check::FindingKind::Orphan
+                && f.reason == ReasonCode::ReqWithoutDoc
+                && f.target == "FR-001"));
+        assert!(findings
+            .iter()
+            .any(|f| f.kind == crate::check::FindingKind::NoTest && f.target == "FR-001"));
+        assert!(findings
+            .iter()
+            .any(|f| f.kind == crate::check::FindingKind::Orphan
+                && f.reason == ReasonCode::DocWithoutReq
+                && f.target == "DOC-A"));
+    }
+
+    // [FR-086]
+    #[test]
+    fn ロックにdescエッジがありノードが無ければremovedになる() {
+        let source = FakeSource::new(&[("docs/a.md", DOC_A)]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        let mut lock = crate::lock::Lock::default();
+        lock.edges.insert(
+            "desc:doc:DOC-GONE".to_string(),
+            crate::lock::LockEntry {
+                from: "sha256:x".to_string(),
+                to: "sha256:y".to_string(),
+                by: "human".to_string(),
+                reason: None,
+                score: None,
+                at: "2026-01-01T00:00:00Z".to_string(),
+            },
+        );
+        let findings = crate::check::check(&graph, &lock);
+        assert!(findings
+            .iter()
+            .any(|f| f.kind == crate::check::FindingKind::Removed
+                && f.target == "desc:doc:DOC-GONE"
+                && f.reason == ReasonCode::RemovedEdge));
+    }
+
+    // [FR-086]
+    #[test]
+    fn indexの根から外れるとロックのdescエッジはremovedになる() {
+        let source = FakeSource::new(&[("docs/a.md", DOC_A)]);
+        let with_index = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        let mut lock = crate::lock::Lock::default();
+        let (from, to) =
+            crate::model::edge_hashes(&with_index, &with_index.edges["desc:doc:DOC-A"]);
+        lock.edges.insert(
+            "desc:doc:DOC-A".to_string(),
+            crate::lock::LockEntry {
+                from,
+                to,
+                by: "human".to_string(),
+                reason: None,
+                score: None,
+                at: "2026-01-01T00:00:00Z".to_string(),
+            },
+        );
+        let without_index = build_graph(&source, &config()).unwrap();
+        let findings = crate::check::check(&without_index, &lock);
+        assert!(findings
+            .iter()
+            .any(|f| f.kind == crate::check::FindingKind::Removed && f.target == "desc:doc:DOC-A"));
+    }
+
+    fn desc_hashes(graph: &crate::model::Graph, id: &str) -> (String, String) {
+        crate::model::edge_hashes(graph, &graph.edges[id])
+    }
+
+    // [FR-087]
+    #[test]
+    fn descエッジのfromは要約_toは本文のハッシュになる() {
+        let source = FakeSource::new(&[("docs/a.md", DOC_A)]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert_eq!(
+            desc_hashes(&graph, "desc:doc:DOC-A"),
+            (
+                crate::hash::content_hash("要約A"),
+                crate::hash::content_hash("本文A\n")
+            )
+        );
+    }
+
+    // [FR-087]
+    #[test]
+    fn descエッジのfromは前後の空白を除いた要約のハッシュになる() {
+        let source = FakeSource::new(&[(
+            "docs/a.md",
+            "---\ntype: Specification\nid: DOC-A\ndescription: \"  要約A  \"\n---\n本文A\n",
+        )]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert_eq!(
+            desc_hashes(&graph, "desc:doc:DOC-A").0,
+            crate::hash::content_hash("要約A")
+        );
+    }
+
+    // [FR-087]
+    #[test]
+    fn descエッジのfromは要約が無い_空_改行を含むときは空文字列のハッシュになる() {
+        let empty = crate::hash::content_hash("");
+        for fm in [
+            "type: Specification\nid: DOC-A",
+            "type: Specification\nid: DOC-A\ndescription: \"\"",
+            "type: Specification\nid: DOC-A\ndescription: |\n  一行目\n  二行目",
+        ] {
+            let source = FakeSource::new(&[("docs/a.md", &format!("---\n{fm}\n---\n本文\n"))]);
+            let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+            assert_eq!(desc_hashes(&graph, "desc:doc:DOC-A").0, empty, "{fm}");
+        }
+    }
+
+    // [FR-087]
+    #[test]
+    fn descエッジのfromは折り畳みスカラーの要約を1行に畳んだハッシュになる() {
+        let source = FakeSource::new(&[(
+            "docs/a.md",
+            "---\ntype: Specification\nid: DOC-A\ndescription: >\n  一行目\n  二行目\n---\n本文\n",
+        )]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert_eq!(
+            desc_hashes(&graph, "desc:doc:DOC-A").0,
+            crate::hash::content_hash("一行目 二行目")
+        );
+    }
+
+    // [FR-086]
+    #[test]
+    fn 同じidのdocとreqは別々のdescエッジになる() {
+        let source = FakeSource::new(&[
+            (
+                "docs/a.md",
+                "---\ntype: Specification\nid: X-1\ndescription: 要約D\n---\n本文D\n",
+            ),
+            (
+                "docs/r.md",
+                "---\ntype: Requirement\nid: X-1\ndescription: 要約R\n---\n本文R\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
+        assert!(
+            graph.edges.contains_key("desc:doc:X-1"),
+            "{:?}",
+            graph.edges
+        );
+        assert!(
+            graph.edges.contains_key("desc:req:X-1"),
+            "{:?}",
+            graph.edges
+        );
+        assert_eq!(desc_edges(&graph).len(), 2, "{:?}", graph.edges);
+        assert_eq!(
+            desc_hashes(&graph, "desc:doc:X-1").0,
+            crate::hash::content_hash("要約D")
+        );
+        assert_eq!(
+            desc_hashes(&graph, "desc:req:X-1").0,
+            crate::hash::content_hash("要約R")
+        );
+    }
+
+    // [FR-087]
+    #[test]
+    fn 要約だけを変えてもdoc_reqとtest_reqのハッシュは変わらずfindingも出ない() {
+        let build = |description: &str| {
+            let source = FakeSource::new(&[
+                (
+                    "docs/a.md",
+                    &format!(
+                        "---\ntype: Specification\nid: DOC-A\ndescription: {description}\n---\n[r](../req/fr1.md)\n"
+                    ),
+                ),
+                (
+                    "req/fr1.md",
+                    "---\ntype: Requirement\nid: FR-001\n---\n本文1\n",
+                ),
+                ("tests/t.rs", "// [FR-001]\n#[test]\nfn t() {}\n"),
+            ]);
+            build_graph(&source, &indexed_config(&["docs"])).unwrap()
+        };
+        let old = build("旧要約");
+        let new = build("新要約");
+        let test_edge = old
+            .edges
+            .keys()
+            .find(|k| k.starts_with("test-req:"))
+            .cloned()
+            .expect("test-req edge");
+        for id in ["doc-req:DOC-A:FR-001", test_edge.as_str()] {
+            assert_eq!(desc_hashes(&old, id), desc_hashes(&new, id), "{id}");
+        }
+        assert_ne!(
+            desc_hashes(&old, "desc:doc:DOC-A").0,
+            desc_hashes(&new, "desc:doc:DOC-A").0
+        );
+        let mut lock = crate::lock::Lock::default();
+        for (id, edge) in &old.edges {
+            let (from, to) = crate::model::edge_hashes(&old, edge);
+            lock.edges.insert(
+                id.clone(),
+                crate::lock::LockEntry {
+                    from,
+                    to,
+                    by: "human".to_string(),
+                    reason: None,
+                    score: None,
+                    at: "2026-01-01T00:00:00Z".to_string(),
+                },
+            );
+        }
+        let drifts: Vec<String> = crate::check::check(&new, &lock)
+            .into_iter()
+            .filter(|f| f.kind == crate::check::FindingKind::Drift)
+            .map(|f| f.target)
+            .collect();
+        assert_eq!(drifts, vec!["desc:doc:DOC-A".to_string()]);
     }
 }
