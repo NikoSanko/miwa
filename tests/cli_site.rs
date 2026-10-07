@@ -5,7 +5,7 @@ use std::path::{Path, PathBuf};
 
 const CFG: &str = "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\njudge:\n  threshold: 0.9\nindex:\n  - docs\n";
 
-const CSP: &str = r#"<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https:; style-src 'unsafe-inline'">"#;
+const CSP: &str = r#"<meta http-equiv="Content-Security-Policy" content="default-src 'none'; img-src 'self' https:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">"#;
 
 struct Fixture {
     _tmp: tempfile::TempDir,
@@ -1198,7 +1198,7 @@ fn インラインのhtmlコメントは出力しない() {
 
 // [FR-097]
 #[test]
-fn 最初の行がコメントで始まらないブロックの中のコメントはエスケープして表示される() {
+fn 最初の行がコメントで始まらないブロックの中のコメントは取り除かれて表示される() {
     let f = basic();
     common::write(
         &f.root,
@@ -1207,8 +1207,8 @@ fn 最初の行がコメントで始まらないブロックの中のコメン�
     );
     site_ok(&f.root);
     let html = page(&f.root, "docs/spec.html");
-    assert!(html.contains("&lt;!-- KEEPME --&gt;"), "{html}");
-    assert!(!html.contains("<!-- KEEPME"), "{html}");
+    assert!(!html.contains("KEEPME"), "{html}");
+    assert!(html.contains("&lt;div&gt;"), "{html}");
 }
 
 // ---------------------------------------------------------------- FR-098
@@ -1876,7 +1876,7 @@ fn 先頭行がハイフン3つでなければフロントマターなしとし�
 
 // [FR-102]
 #[test]
-fn 閉じのハイフンが無い文書は公開されず索引ページは全体を本文として公開される() {
+fn 閉じのハイフンが無い文書は公開されず索引ページは本文を空として公開される() {
     let f = basic();
     common::write(
         &f.root,
@@ -1890,8 +1890,8 @@ fn 閉じのハイフンが無い文書は公開されず索引ページは全�
     let html = page(&f.root, "docs/index.html");
     assert!(html.contains("<title>docs</title>"), "{html}");
     assert!(meta_description(&html).is_none(), "{html}");
-    assert!(html.contains("INDEXBODY"), "{html}");
-    assert!(html.contains("title: 文書"), "{html}");
+    assert!(!html.contains("INDEXBODY"), "{html}");
+    assert!(!html.contains("title: 文書"), "{html}");
 }
 
 // [FR-102]
@@ -2799,4 +2799,144 @@ fn 根のindexmdのフロントマターが解析できないときトップの�
         top.contains(r#"<li><a href="docs/index.html">docs</a></li>"#),
         "{top}"
     );
+}
+
+// [FR-094]
+#[test]
+fn site設定の折り畳みスカラーは末尾の改行が除かれて有効になる() {
+    let f = fixture_with_config(&cfg_with(
+        "site:\n  title: >\n    折り畳み題名\n  description: >\n    折り畳み要約\n",
+    ));
+    common::write(&f.root, "docs/index.md", index_md());
+    let o = site(&f.root, &[]);
+    assert_eq!(o.code, 0, "{}", o.stderr);
+    let top = page(&f.root, "index.html");
+    assert!(top.contains("<title>折り畳み題名</title>"), "{top}");
+    assert!(
+        meta_description(&top).as_deref() == Some("折り畳み要約"),
+        "{top}"
+    );
+}
+
+// [FR-105]
+#[test]
+fn 中身が空のh1は本文の見出しとみなさずテンプレートのh1を出す() {
+    let f = basic();
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc("DOC-A", "FMタイトル", "#\n\n続き\n"),
+    );
+    site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    assert!(heading_id(&html, 1, "FMタイトル").is_some(), "{html}");
+    let tpl = pos(&html, "FMタイトル</h1>");
+    let desc_or_id = pos(&html, r#"<p class="id">DOC-A</p>"#);
+    assert!(tpl < desc_or_id, "{html}");
+}
+
+// [FR-106]
+#[test]
+fn 見出しのidにインラインの生htmlやコメントを含めず前後の空白を除く() {
+    let f = basic();
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc(
+            "DOC-A",
+            "Spec",
+            "## Title <!-- x -->\n\n## Foo <b>bar</b> baz\n",
+        ),
+    );
+    site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    let ids = heading_ids(&html, 2);
+    assert_eq!(
+        ids,
+        vec![Some("title".to_string()), Some("foo-bar-baz".to_string())],
+        "{html}"
+    );
+}
+
+// [FR-097]
+#[test]
+fn ブロックの生htmlをpre表示するとき中のコメントを取り除く() {
+    let f = basic();
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc(
+            "DOC-A",
+            "Spec",
+            "<div>\nA<!-- SECRETCOMMENT -->B\n</div>\n\n後続\n",
+        ),
+    );
+    site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    assert!(!html.contains("SECRETCOMMENT"), "{html}");
+    assert!(!html.contains("&lt;!--"), "{html}");
+    assert!(html.contains("AB"), "{html}");
+}
+
+// [FR-099]
+#[test]
+fn 警告のリンク先の制御文字はエスケープされる() {
+    let f = basic();
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc(
+            "DOC-A",
+            "Spec",
+            "[l](<a\u{1b}b.md>)\n\n![i](<c\u{7}d.png>)\n",
+        ),
+    );
+    let o = site_ok(&f.root);
+    assert_eq!(
+        o.warnings(),
+        vec![
+            "warning: docs/spec.md: unpublished link: a\\u{1b}b.md",
+            "warning: docs/spec.md: unpublished image: c\\u{7}d.png",
+        ]
+    );
+    assert!(!o.stderr.contains('\u{1b}'));
+}
+
+// [FR-095]
+#[test]
+fn cspにbase_uriとform_actionの制限が含まれる() {
+    let f = basic();
+    site_ok(&f.root);
+    let html = page(&f.root, "index.html");
+    assert!(
+        html.contains("base-uri 'none'; form-action 'none'"),
+        "{html}"
+    );
+}
+
+// [FR-089]
+#[cfg(unix)]
+#[test]
+fn 出力先がシンボリックリンクならエラーで何も書かない() {
+    let f = basic();
+    let target = f._tmp.path().join("real_out");
+    std::fs::create_dir_all(&target).unwrap();
+    std::os::unix::fs::symlink(&target, f.root.join("out")).unwrap();
+    let o = site(&f.root, &["--out", "out"]);
+    assert_eq!(o.code, 1);
+    assert!(!o.stderr.trim().is_empty());
+    assert_eq!(std::fs::read_dir(&target).unwrap().count(), 0);
+}
+
+// [FR-089]
+#[cfg(unix)]
+#[test]
+fn 出力先が壊れたシンボリックリンクでもエラーで何も書かない() {
+    let f = basic();
+    let missing = f._tmp.path().join("nowhere");
+    std::os::unix::fs::symlink(&missing, f.root.join("out")).unwrap();
+    let o = site(&f.root, &["--out", "out"]);
+    assert_eq!(o.code, 1);
+    assert!(!missing.exists());
+    assert!(std::fs::symlink_metadata(f.root.join("out")).is_ok());
 }

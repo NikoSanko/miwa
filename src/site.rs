@@ -7,6 +7,7 @@
 use std::collections::{BTreeMap, BTreeSet, HashSet};
 use std::path::Path;
 
+use anyhow::Context;
 use pulldown_cmark::{CowStr, Event, HeadingLevel, LinkType, Options, Parser, Tag, TagEnd};
 
 use crate::config::{is_under, join_under, normalize_dir, Config};
@@ -97,7 +98,12 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
         let wanted = path.ends_with(".md")
             && (node_paths.contains(path.as_str()) || roots.iter().any(|r| is_under(path, r)));
         if wanted {
-            let text = String::from_utf8_lossy(&source.read(path)?).into_owned();
+            let text = String::from_utf8_lossy(
+                &source
+                    .read(path)
+                    .with_context(|| format!("failed to read {path}"))?,
+            )
+            .into_owned();
             let front_matter = crate::frontmatter::parse(&text);
             texts.insert(path.clone(), ParsedText { text, front_matter });
         }
@@ -235,25 +241,39 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
         top_page(&roots, &pages, &site_title, site_description.as_deref()).into_bytes(),
     );
     for image in &images {
-        output.insert(image.clone(), source.read(image)?);
+        output.insert(
+            image.clone(),
+            source
+                .read(image)
+                .with_context(|| format!("failed to read {image}"))?,
+        );
     }
 
-    std::fs::create_dir_all(&out_dir)?;
+    std::fs::create_dir_all(&out_dir)
+        .with_context(|| format!("failed to create {}", out_dir.display()))?;
     for (rel, bytes) in &output {
         let dest = out_dir.join(rel);
         if let Some(parent) = dest.parent() {
-            std::fs::create_dir_all(parent)?;
+            std::fs::create_dir_all(parent)
+                .with_context(|| format!("failed to create {}", parent.display()))?;
         }
-        std::fs::write(&dest, bytes)?;
+        std::fs::write(&dest, bytes)
+            .with_context(|| format!("failed to write {}", dest.display()))?;
     }
     Ok(warnings)
 }
 
 /// The output directory must be absent or an empty directory.
 fn check_out_dir(out_dir: &Path) -> anyhow::Result<()> {
-    match std::fs::metadata(out_dir) {
+    match std::fs::symlink_metadata(out_dir) {
+        Ok(meta) if meta.file_type().is_symlink() => {
+            anyhow::bail!("output path {} is a symbolic link", out_dir.display())
+        }
         Ok(meta) if meta.is_dir() => {
-            if std::fs::read_dir(out_dir)?.next().is_some() {
+            let mut entries = std::fs::read_dir(out_dir).with_context(|| {
+                format!("failed to inspect output directory {}", out_dir.display())
+            })?;
+            if entries.next().is_some() {
                 anyhow::bail!(
                     "output directory {} is not empty; empty it first",
                     out_dir.display()
@@ -266,16 +286,20 @@ fn check_out_dir(out_dir: &Path) -> anyhow::Result<()> {
             out_dir.display()
         ),
         Err(e) if e.kind() == std::io::ErrorKind::NotFound => Ok(()),
-        Err(e) => Err(e.into()),
+        Err(e) => Err(anyhow::Error::new(e).context(format!(
+            "failed to inspect output directory {}",
+            out_dir.display()
+        ))),
     }
 }
 
-/// The body without the front matter. An unterminated front matter leaves the
-/// whole text as the body (only index pages get here in that case).
+/// The body without the front matter. An unterminated front matter gives an
+/// empty body (only index pages get here in that case; FR-102).
 fn body_of(text: &str) -> String {
     match crate::frontmatter::split(text) {
         Ok(Some((_, body))) => body.to_string(),
-        _ => text.to_string(),
+        Err(_) => String::new(),
+        Ok(None) => text.to_string(),
     }
 }
 
@@ -542,6 +566,34 @@ impl Env<'_> {
     }
 }
 
+/// Removes every `<!--` ... `-->` span (to the end when unterminated).
+fn strip_comments(s: &str) -> String {
+    let mut out = String::with_capacity(s.len());
+    let mut rest = s;
+    while let Some(start) = rest.find("<!--") {
+        out.push_str(&rest[..start]);
+        match rest[start + 4..].find("-->") {
+            Some(end) => rest = &rest[start + 4 + end + 3..],
+            None => return out,
+        }
+    }
+    out.push_str(rest);
+    out
+}
+
+/// Escapes control characters as `\u{1b}` (FR-099, FR-100).
+fn escape_controls(s: &str) -> String {
+    s.chars()
+        .map(|c| {
+            if c.is_control() {
+                format!("\\u{{{:x}}}", c as u32)
+            } else {
+                c.to_string()
+            }
+        })
+        .collect()
+}
+
 fn is_comment_html(s: &str) -> bool {
     s.trim_start().starts_with("<!--")
 }
@@ -602,7 +654,9 @@ fn render_body(
                 if at_top && first.is_none() {
                     first = Some(false);
                 }
-                out.push(Event::Html(format!("<pre>{}</pre>\n", esc(&text)).into()));
+                out.push(Event::Html(
+                    format!("<pre>{}</pre>\n", esc(&strip_comments(&text))).into(),
+                ));
             }
             Event::Html(s) => {
                 if is_comment_html(&s) {
@@ -611,7 +665,9 @@ fn render_body(
                 if at_top && first.is_none() {
                     first = Some(false);
                 }
-                out.push(Event::Html(format!("<pre>{}</pre>\n", esc(&s)).into()));
+                out.push(Event::Html(
+                    format!("<pre>{}</pre>\n", esc(&strip_comments(&s))).into(),
+                ));
             }
             Event::InlineHtml(s) => {
                 if !is_comment_html(&s) {
@@ -624,8 +680,9 @@ fn render_body(
                 attrs,
                 ..
             }) => {
+                let empty = matches!(events.get(i), Some(Event::End(TagEnd::Heading(_))));
                 if at_top && first.is_none() {
-                    first = Some(level == HeadingLevel::H1);
+                    first = Some(level == HeadingLevel::H1 && !empty);
                 }
                 let mut plain = String::new();
                 for inner in &events[i..] {
@@ -635,7 +692,7 @@ fn render_body(
                         _ => {}
                     }
                 }
-                let slug = heading_slug(&plain);
+                let slug = heading_slug(plain.trim());
                 let id = if slug.is_empty() {
                     None
                 } else {
@@ -695,9 +752,10 @@ fn render_body(
                     }
                     None => {
                         kept.push(false);
-                        rendered
-                            .warnings
-                            .push(format!("warning: {src_path}: unpublished link: {dest_url}"));
+                        rendered.warnings.push(format!(
+                            "warning: {src_path}: unpublished link: {}",
+                            escape_controls(&dest_url)
+                        ));
                     }
                 }
             }
@@ -730,7 +788,8 @@ fn render_body(
                     None => {
                         kept.push(false);
                         rendered.warnings.push(format!(
-                            "warning: {src_path}: unpublished image: {dest_url}"
+                            "warning: {src_path}: unpublished image: {}",
+                            escape_controls(&dest_url)
                         ));
                     }
                 }
@@ -828,7 +887,7 @@ fn html_document(title: &str, description: Option<&str>, nav: &str, main: &str) 
     let mut head = String::new();
     head.push_str("<meta charset=\"utf-8\">\n");
     head.push_str("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n");
-    head.push_str("<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; img-src 'self' https:; style-src 'unsafe-inline'\">\n");
+    head.push_str("<meta http-equiv=\"Content-Security-Policy\" content=\"default-src 'none'; img-src 'self' https:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'\">\n");
     head.push_str("<meta name=\"referrer\" content=\"no-referrer\">\n");
     head.push_str(&format!("<title>{}</title>\n", esc(title)));
     if let Some(d) = description {

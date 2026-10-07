@@ -100,7 +100,8 @@ impl SiteConfig {
     fn validate(&self) -> anyhow::Result<()> {
         for (field, value) in [("title", &self.title), ("description", &self.description)] {
             let Some(v) = value else { continue };
-            if v.trim().is_empty() {
+            let v = v.trim();
+            if v.is_empty() {
                 anyhow::bail!("site.{field} must not be empty");
             }
             if v.contains('\n') || v.contains('\r') {
