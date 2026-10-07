@@ -93,20 +93,30 @@ pub(crate) fn percent_decode(s: &str) -> String {
 /// `mailto:`, `data:`, `https:`. Windows drive letters (`C:\...`) are not
 /// treated specially.
 pub(crate) fn has_uri_scheme(s: &str) -> bool {
-    let mut chars = s.chars();
+    uri_scheme(s).is_some()
+}
+
+/// The URI scheme of `s` (without the colon), if it starts with one.
+pub(crate) fn uri_scheme(s: &str) -> Option<&str> {
+    let mut chars = s.char_indices();
     match chars.next() {
-        Some(c) if c.is_ascii_alphabetic() => {}
-        _ => return false,
+        Some((_, c)) if c.is_ascii_alphabetic() => {}
+        _ => return None,
     }
-    for c in chars {
+    for (i, c) in chars {
         if c == ':' {
-            return true;
+            return Some(&s[..i]);
         }
         if !(c.is_ascii_alphanumeric() || c == '+' || c == '.' || c == '-') {
-            return false;
+            return None;
         }
     }
-    false
+    None
+}
+
+/// Directory part of a `/`-separated path (`""` when there is none).
+pub(crate) fn parent_dir(path: &str) -> &str {
+    path.rsplit_once('/').map(|(dir, _)| dir).unwrap_or("")
 }
 
 #[cfg(test)]

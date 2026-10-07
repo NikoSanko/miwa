@@ -14,7 +14,8 @@ use crate::config::{is_under, join_under, normalize_dir, Config};
 use crate::index::{
     collect_documents, document_title, normalize_description, IndexTree, ParsedText,
 };
-use crate::model::{EdgeKind, NodeKind};
+use crate::markdown::{parent_dir, uri_scheme};
+use crate::model::{EdgeKind, Graph, NodeKind};
 use crate::source::{FsSource, Source};
 
 /// A relative link destination resolved against the source file's directory.
@@ -28,11 +29,10 @@ pub(crate) struct ResolvedLink {
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
 enum Kind {
-    /// A doc node (`type: Specification`).
-    Doc,
-    /// A req node (`type: Requirement`).
+    /// A req node (`type: Requirement`); lists the docs referencing it.
     Req,
-    /// Any other typed document under an index root.
+    /// Any other document (including doc nodes). Whether an id is shown is
+    /// decided by `Page::id`, not by the kind.
     Plain,
     /// An `index.md` under an index root.
     Index,
@@ -109,77 +109,9 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
         }
     }
 
-    // Pages: documents and index pages under the roots, plus doc / req nodes.
-    let mut pages: BTreeMap<String, Page> = BTreeMap::new();
-    let mut trees: Vec<(String, IndexTree)> = Vec::new();
-    for root in &roots {
-        let found = collect_documents(root, &texts);
-        for d in found.documents {
-            let body = body_of(&texts[&d.path].text);
-            pages.insert(
-                d.path,
-                Page {
-                    kind: Kind::Plain,
-                    id: None,
-                    title: d.title,
-                    description: d.description,
-                    body,
-                },
-            );
-        }
-        let index_paths: Vec<String> = found.indexes.iter().map(|m| m.path.clone()).collect();
-        for m in found.indexes {
-            let body = body_of(&texts[&m.path].text);
-            pages.insert(
-                m.path,
-                Page {
-                    kind: Kind::Index,
-                    id: None,
-                    title: m.title,
-                    description: m.description,
-                    body,
-                },
-            );
-        }
-        trees.push((root.clone(), IndexTree::new(root, index_paths)));
-    }
-    for node in graph.nodes.values() {
-        let kind = match node.key.kind {
-            NodeKind::Doc => Kind::Doc,
-            NodeKind::Req => Kind::Req,
-            NodeKind::Test => continue,
-        };
-        let Some(parsed) = texts.get(&node.path) else {
-            continue;
-        };
-        let Ok(Some(fm)) = &parsed.front_matter else {
-            continue;
-        };
-        pages.insert(
-            node.path.clone(),
-            Page {
-                kind,
-                id: Some(node.key.id.clone()),
-                title: document_title(&node.path, fm),
-                description: normalize_description(fm),
-                body: fm.body.clone(),
-            },
-        );
-    }
+    let (pages, trees) = collect_pages(&graph, &texts, &roots);
 
-    // doc -> req references, keyed by the req page path.
-    let mut referrers: BTreeMap<String, BTreeSet<String>> = BTreeMap::new();
-    for edge in graph.edges.values() {
-        if edge.kind != EdgeKind::DocReq {
-            continue;
-        }
-        if let (Some(doc), Some(req)) = (graph.nodes.get(&edge.from), graph.nodes.get(&edge.to)) {
-            referrers
-                .entry(req.path.clone())
-                .or_default()
-                .insert(doc.path.clone());
-        }
-    }
+    let referrers = collect_referrers(&graph);
 
     let mut warnings: Vec<String> = Vec::new();
     for root in &roots {
@@ -219,29 +151,151 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
         media_roots: &media_roots,
     };
 
+    let (output, images) = render_pages(
+        &env,
+        &trees,
+        &referrers,
+        &roots,
+        &site_title,
+        site_description.as_deref(),
+        &mut warnings,
+    );
+    write_output(&out_dir, &source, &output, &images)?;
+    Ok(warnings)
+}
+
+/// Pages: documents and index pages under the roots, plus doc / req nodes,
+/// and the index tree of each root.
+fn collect_pages(
+    graph: &Graph,
+    texts: &BTreeMap<String, ParsedText>,
+    roots: &[String],
+) -> (BTreeMap<String, Page>, Vec<(String, IndexTree)>) {
+    let mut pages: BTreeMap<String, Page> = BTreeMap::new();
+    let mut trees: Vec<(String, IndexTree)> = Vec::new();
+    for root in roots {
+        let found = collect_documents(root, texts);
+        for d in found.documents {
+            let body = body_of(&texts[&d.path].text);
+            pages.insert(
+                d.path,
+                Page {
+                    kind: Kind::Plain,
+                    id: None,
+                    title: d.title,
+                    description: d.description,
+                    body,
+                },
+            );
+        }
+        let index_paths: Vec<String> = found.indexes.iter().map(|m| m.path.clone()).collect();
+        for m in found.indexes {
+            let body = body_of(&texts[&m.path].text);
+            pages.insert(
+                m.path,
+                Page {
+                    kind: Kind::Index,
+                    id: None,
+                    title: m.title,
+                    description: m.description,
+                    body,
+                },
+            );
+        }
+        trees.push((root.clone(), IndexTree::new(root, index_paths)));
+    }
+    // A graph node overrides a collect_documents entry for the same path.
+    for node in graph.nodes.values() {
+        let kind = match node.key.kind {
+            NodeKind::Doc => Kind::Plain,
+            NodeKind::Req => Kind::Req,
+            NodeKind::Test => continue,
+        };
+        let Some(parsed) = texts.get(&node.path) else {
+            continue;
+        };
+        let Ok(Some(fm)) = &parsed.front_matter else {
+            continue;
+        };
+        pages.insert(
+            node.path.clone(),
+            Page {
+                kind,
+                id: Some(node.key.id.clone()),
+                title: document_title(&node.path, fm),
+                description: normalize_description(fm),
+                body: body_of(&parsed.text),
+            },
+        );
+    }
+    (pages, trees)
+}
+
+/// doc -> req references, keyed by the req page path.
+fn collect_referrers(graph: &Graph) -> BTreeMap<String, BTreeSet<String>> {
+    let mut referrers: BTreeMap<String, BTreeSet<String>> = BTreeMap::new();
+    for edge in graph.edges.values() {
+        if edge.kind != EdgeKind::DocReq {
+            continue;
+        }
+        if let (Some(doc), Some(req)) = (graph.nodes.get(&edge.from), graph.nodes.get(&edge.to)) {
+            referrers
+                .entry(req.path.clone())
+                .or_default()
+                .insert(doc.path.clone());
+        }
+    }
+    referrers
+}
+
+/// Renders every page and the top page; returns the files by output path and
+/// the set of images to copy.
+fn render_pages(
+    env: &Env,
+    trees: &[(String, IndexTree)],
+    referrers: &BTreeMap<String, BTreeSet<String>>,
+    roots: &[String],
+    site_title: &str,
+    site_description: Option<&str>,
+    warnings: &mut Vec<String>,
+) -> (BTreeMap<String, Vec<u8>>, BTreeSet<String>) {
+    let pages = env.pages;
     let mut output: BTreeMap<String, Vec<u8>> = BTreeMap::new();
     let mut images: BTreeSet<String> = BTreeSet::new();
-    for (path, page) in &pages {
+    for (path, page) in pages {
         let from_dir = parent_dir(path);
-        let mut nav = vec![(relative_path(from_dir, "index.html"), site_title.clone())];
-        if let Some(index_path) = nav_index_of(path, page, &trees, &pages) {
+        let mut nav = vec![(
+            relative_path(from_dir, "index.html"),
+            site_title.to_string(),
+        )];
+        if let Some(index_path) = nav_index_of(path, page, trees, pages) {
             nav.push((
                 relative_path(from_dir, &html_path(&index_path)),
                 pages[&index_path].title.clone(),
             ));
         }
         let mut rendered = Rendered::default();
-        let html = render_page(&env, path, page, &nav, referrers.get(path), &mut rendered);
+        let html = render_page(env, path, page, &nav, referrers.get(path), &mut rendered);
         warnings.extend(rendered.warnings);
         images.extend(rendered.images);
         output.insert(html_path(path), html.into_bytes());
     }
     output.insert(
         "index.html".to_string(),
-        top_page(&roots, &pages, &site_title, site_description.as_deref()).into_bytes(),
+        top_page(roots, pages, site_title, site_description).into_bytes(),
     );
+    (output, images)
+}
 
-    std::fs::create_dir_all(&out_dir)
+/// Writes the pages, then copies the images one at a time (never all held in
+/// memory).
+fn write_output(
+    out_dir: &Path,
+    source: &FsSource,
+    output: &BTreeMap<String, Vec<u8>>,
+    images: &BTreeSet<String>,
+) -> anyhow::Result<()> {
+    std::fs::create_dir_all(out_dir)
         .with_context(|| format!("failed to create {}", out_dir.display()))?;
     let write_file = |rel: &str, bytes: &[u8]| -> anyhow::Result<()> {
         let dest = out_dir.join(rel);
@@ -251,17 +305,16 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
         }
         std::fs::write(&dest, bytes).with_context(|| format!("failed to write {}", dest.display()))
     };
-    for (rel, bytes) in &output {
+    for (rel, bytes) in output {
         write_file(rel, bytes)?;
     }
-    // Images are read and written one at a time (never all held in memory).
-    for image in &images {
+    for image in images {
         let bytes = source
             .read(image)
             .with_context(|| format!("failed to read {image}"))?;
         write_file(image, &bytes)?;
     }
-    Ok(warnings)
+    Ok(())
 }
 
 /// The output directory must be absent or an empty directory.
@@ -323,10 +376,6 @@ fn nav_index_of(
     }
 }
 
-fn parent_dir(path: &str) -> &str {
-    path.rsplit_once('/').map(|(dir, _)| dir).unwrap_or("")
-}
-
 /// `docs/a.md` -> `docs/a.html`.
 fn html_path(md_path: &str) -> String {
     format!("{}.html", md_path.strip_suffix(".md").unwrap_or(md_path))
@@ -385,23 +434,14 @@ pub(crate) fn resolve_link_path(source_dir: &str, dest: &str) -> Option<Resolved
         return None;
     }
     let decoded = crate::markdown::percent_decode(path_part);
-    let mut segments: Vec<&str> = source_dir.split('/').filter(|s| !s.is_empty()).collect();
-    for part in decoded.split('/') {
-        match part {
-            "" | "." => {}
-            ".." => {
-                segments.pop()?;
-            }
-            other => segments.push(other),
-        }
-    }
-    if segments.is_empty() {
-        return None;
-    }
-    Some(ResolvedLink {
-        path: segments.join("/"),
-        fragment,
-    })
+    // `normalize_relative` drops the last segment of its base (a file name).
+    let base = if source_dir.is_empty() {
+        String::new()
+    } else {
+        format!("{source_dir}/_")
+    };
+    let path = crate::markdown::normalize_relative(&base, &decoded)?;
+    Some(ResolvedLink { path, fragment })
 }
 
 /// RFC 3986 pchar minus pct-encoded (`@` and `:` included).
@@ -484,14 +524,6 @@ pub(crate) fn encode_href(path: &str, fragment: Option<&str>) -> String {
 }
 
 /// The URI scheme of `dest` (without the colon), if it starts with one.
-fn uri_scheme(dest: &str) -> Option<&str> {
-    if crate::markdown::has_uri_scheme(dest) {
-        dest.split_once(':').map(|(scheme, _)| scheme)
-    } else {
-        None
-    }
-}
-
 impl Env<'_> {
     /// The output page (repository-relative `.html` path) a resolved path
     /// publishes as: a published `.md` page, or the published `index.md` of a
@@ -602,6 +634,39 @@ fn is_comment_html(s: &str) -> bool {
 /// Converts the Markdown `body` of the page at `src_path` to HTML. When the
 /// first block is a level-1 heading, `meta` (id and summary) is placed right
 /// after it and the second value is `true`.
+/// Whether the first block is a non-empty level-1 heading. HTML comment
+/// blocks (and inline comments) are not blocks and are skipped.
+fn starts_with_h1(events: &[Event]) -> bool {
+    let mut i = 0;
+    while i < events.len() {
+        match &events[i] {
+            Event::Start(Tag::HtmlBlock) => {
+                let mut text = String::new();
+                i += 1;
+                while i < events.len() {
+                    match &events[i] {
+                        Event::End(TagEnd::HtmlBlock) => break,
+                        Event::Html(s) | Event::Text(s) => text.push_str(s),
+                        _ => {}
+                    }
+                    i += 1;
+                }
+                if !is_comment_html(&text) {
+                    return false;
+                }
+            }
+            Event::InlineHtml(s) if is_comment_html(s) => {}
+            Event::Start(Tag::Heading { level, .. }) => {
+                let empty = matches!(events.get(i + 1), Some(Event::End(TagEnd::Heading(_))));
+                return *level == HeadingLevel::H1 && !empty;
+            }
+            _ => return false,
+        }
+        i += 1;
+    }
+    false
+}
+
 fn render_body(
     env: &Env,
     src_path: &str,
@@ -631,14 +696,12 @@ fn render_body(
     // Whether each open link / image is kept (an unpublished one loses its tags).
     let mut kept: Vec<bool> = Vec::new();
     let mut depth = 0usize;
-    // `Some(true)` when the first top-level block is a level-1 heading.
-    let mut first: Option<bool> = None;
+    let first_is_h1 = starts_with_h1(&events);
     let mut injected = false;
     let mut i = 0;
     while i < events.len() {
         let ev = events[i].clone();
         i += 1;
-        let at_top = depth == 0;
         match ev {
             Event::Start(Tag::HtmlBlock) => {
                 let mut text = String::new();
@@ -653,9 +716,6 @@ fn render_body(
                 }
                 if is_comment_html(&text) {
                     continue;
-                }
-                if at_top && first.is_none() {
-                    first = Some(false);
                 }
                 out.push(Event::Html(
                     format!("<pre>{}</pre>\n", esc(&strip_comments(&text))).into(),
@@ -672,10 +732,6 @@ fn render_body(
                 attrs,
                 ..
             }) => {
-                let empty = matches!(events.get(i), Some(Event::End(TagEnd::Heading(_))));
-                if at_top && first.is_none() {
-                    first = Some(level == HeadingLevel::H1 && !empty);
-                }
                 let mut plain = String::new();
                 for inner in &events[i..] {
                     match inner {
@@ -708,7 +764,7 @@ fn render_body(
             Event::End(TagEnd::Heading(level)) => {
                 depth = depth.saturating_sub(1);
                 out.push(Event::End(TagEnd::Heading(level)));
-                if depth == 0 && first == Some(true) && !injected {
+                if depth == 0 && first_is_h1 && !injected {
                     injected = true;
                     out.push(Event::Html(meta.to_string().into()));
                 }
@@ -719,9 +775,6 @@ fn render_body(
                 title,
                 id,
             }) => {
-                if at_top && first.is_none() {
-                    first = Some(false);
-                }
                 depth += 1;
                 let dest = if link_type == LinkType::Email {
                     format!("mailto:{dest_url}")
@@ -763,9 +816,6 @@ fn render_body(
                 title,
                 id,
             }) => {
-                if at_top && first.is_none() {
-                    first = Some(false);
-                }
                 depth += 1;
                 match env.image_src(src_path, &dest_url, &mut rendered.images) {
                     Some(src) => {
@@ -793,9 +843,6 @@ fn render_body(
                 }
             }
             Event::Start(tag) => {
-                if at_top && first.is_none() {
-                    first = Some(false);
-                }
                 depth += 1;
                 out.push(Event::Start(tag));
             }
@@ -804,16 +851,13 @@ fn render_body(
                 out.push(Event::End(tag));
             }
             other => {
-                if at_top && first.is_none() {
-                    first = Some(false);
-                }
                 out.push(other);
             }
         }
     }
     let mut html = String::new();
     pulldown_cmark::html::push_html(&mut html, out.into_iter());
-    (html, first == Some(true))
+    (html, first_is_h1)
 }
 
 fn meta_block(page: &Page) -> String {
