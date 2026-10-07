@@ -24,7 +24,7 @@ miwa init
 - `tests`: test（テストコード）を探すフォルダの一覧
 - `diff_base`: `check --diff` で比較する既定のブランチ・タグ
 - `judge`: 意味判定（[`judge`](judge.md)）の設定
-  - `threshold`: Jev のスコアがこの値以上なら「整合」とみなします。範囲は0〜1で、既定値は 0.9 です。
+  - `threshold`: Jev のスコアがこの値以上なら「整合」とみなします。範囲は 0〜1 で、既定値は 0.9 です。
   - `max_body_bytes`: 1つの依存関係で Jev に送る両端の本文の、合計バイト数の上限です。超えると `skipped` になります。既定は 200000 です。
   - API キーは設定ファイルではなく環境変数 `TYPESAFE_API_KEY` で渡します。
 - `rust.test_attributes`: Rust で `test` 以外の名前の test 属性（例: `rstest`）を test として扱うための、属性名の一覧。省略時は空。属性パスの末尾の名前だけを書きます（`rstest::rstest` ではなく `rstest`）。
@@ -44,7 +44,7 @@ Java / Kotlin では、Gradle / Maven のモジュール直下であれば `test
 
 `init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.max_body_bytes` は 200000、`index` は `[docs]` です。
 
-設定ファイルの値には[制約](../req/config-validation-rules.md)があります。`judge` のしきい値は0から1の範囲、`judge.max_body_bytes` は1以上の整数でなければなりません。`docs` / `requirements` / `tests` は、いずれも空にできません。範囲外の値や空の一覧が設定されていると、miwa は実行時にエラーで止まります。設定を直接編集したときは、この点に注意してください。
+設定ファイルの値には[制約](../req/config-validation-rules.md)があります。`judge` のしきい値は 0 から 1 の範囲、`judge.max_body_bytes` は 1 以上の整数でなければなりません。`docs` / `requirements` / `tests` は、いずれも空にできません。範囲外の値や空の一覧が設定されていると、miwa は実行時にエラーで止まります。設定を直接編集したときは、この点に注意してください。
 
 `exclude` の各項目は、ディレクトリ名として[次の条件](../req/config-exclude-dirs.md)を満たす必要があります。前後の空白を除いて空でないこと、空白・`/`・`\`・`*` `?` `[` を含まないこと、`.` や `..` でないことです。また、`docs` / `requirements` / `tests` のパスに、`exclude` や既定の除外名と同じ名前のフォルダが含まれていると、探索先が丸ごと消えてしまうため、エラーになります。
 

@@ -7,7 +7,7 @@ description: "check が見つけた drift と new について、両端が意味
 
 # 意味が合っているか判定する（`judge`）
 
-`check` は、内容が変わったことを機械的に見つけます。ただし、その変更が本当に問題（矛盾）なのかまでは分かりません。たとえば doc の言い回しを直しただけなら、req やテストはそのままで構いません。
+`check` は、内容が変わったことを機械的に見つけます。ただし、その変更が本当に問題（矛盾）なのかまでは分かりません。例えば doc の言い回しを直しただけなら、req やテストはそのままで構いません。
 
 `miwa judge` は、`check` が見つけた `drift` と `new` について、依存関係の両端が意味的に整合しているかを Jev でスコア化します。スコアがしきい値以上なら `consistent`、未満なら `review` として報告します。`review` になったものが本当に矛盾しているかの判断は、呼び出し元（人や LLM）に任せます。
 
@@ -29,7 +29,7 @@ miwa judge --auto-reconcile
 
 ## 判定の流れ
 
-`judge` は、依存関係の両端の現在の本文を読み、TypeSafe AI の Jev に「整合しているか」を0〜1のスコアで答えさせます。1に近いほど、整合していることを表します。
+`judge` は、依存関係の両端の現在の本文を読み、TypeSafe AI の Jev に「整合しているか」を 0〜1 のスコアで答えさせます。1 に近いほど、整合していることを表します。
 
 1. doc と req の組、test と req の組、要約と本文の組を、1組ずつ Jev に送ります（[リクエストの内容](../req/judge-jev-request.md)）。要約と本文の組では、「`description` は `body` の内容を正しく要約しているか」を尋ねます。この組で送るのは、[正規化した `description` と、フロントマターを除いた本文](../req/desc-edge-hash-sources.md)です。Jev が返すのは数値だけで、文章による理由は返しません。[スコアが取り出せない応答](../req/judge-jev-response-score.md)は、実行エラーとして扱います。
 2. [スコアとしきい値による判定](../req/judge-threshold-decides-consistent-or-review.md)では、スコアが設定のしきい値（`judge.threshold`）以上なら `consistent`（整合）、未満なら `review`（見直しが必要）とします。`review` について、矛盾かどうかを判断し、どちらを直すかを決めるのは呼び出し元です。miwa は理由の文章を作りません。
@@ -62,7 +62,7 @@ skipped doc-req:DOC-BIG:FR-090 score=-
 - `review`: しきい値に届かなかった。整合しているかの判断は呼び出し元に任せる
 - `skipped`: 本文が大きすぎて判定できなかった
 
-全件の判定が完了すれば、`review` や `skipped` があっても、[終了コードは0](../req/judge-exit-codes-and-no-targets.md)です。`judge` は結果を報告するコマンドで、CI のゲートではないためです。設定や API キーの問題、通信エラーなどで実行できなかった場合は、終了コード1になります。
+全件の判定が完了すれば、`review` や `skipped` があっても、[終了コードは 0](../req/judge-exit-codes-and-no-targets.md)です。`judge` は結果を報告するコマンドで、CI のゲートではないためです。設定や API キーの問題、通信エラーなどで実行できなかった場合は、終了コード 1 になります。
 
 ## 自動で合意する（`--auto-reconcile`）
 

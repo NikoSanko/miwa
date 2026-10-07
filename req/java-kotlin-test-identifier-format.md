@@ -6,7 +6,7 @@ Java と Kotlin の test の識別子は、`<拡張子を除いたファイル�
 
 Kotlin のバッククォートで囲んだ名前は、バッククォートを除いた中身（空白を含んでよい）を名前とする。companion object は、名前があればその名前、なければ `Companion` を型名とする。Kotlin のトップレベル関数は、型名の部分を空にする。
 
-例を 2 つ示す。
+例を 2つ示す。
 - `src/test/kotlin/AuthTest.kt` の `class AuthTest` 内の `` fun `一覧 取得 は 200`() `` は、`src/test/kotlin/AuthTest:AuthTest:一覧 取得 は 200` になる。
 - `class AuthTest { @Nested inner class 一覧取得 { @Test fun 取得() } }` 内の `取得` は、`src/test/kotlin/AuthTest:AuthTest/一覧取得:取得` になる。
 

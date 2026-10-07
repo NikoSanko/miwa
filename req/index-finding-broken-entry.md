@@ -2,8 +2,7 @@
 type: Requirement
 id: FR-076
 ---
-索引の文書エントリまたはディレクトリエントリのリンク先が有効でないとき、`index` 種別の finding を理由 `BrokenEntry` で報告する。
-target は `<索引のパス> -> <リンク先>` の形とする。リンク先は、pulldown-cmark が解釈した destination とし、`<…>` や title 属性を除く。
+索引の文書エントリまたはディレクトリエントリのリンク先が有効でないとき、`index` 種別の finding を理由 `BrokenEntry` で報告する。target は `<索引のパス> -> <リンク先>` の形とする。リンク先は、pulldown-cmark が解釈した destination とし、`<…>` や title 属性を除く。
 
 detail は次のいずれかとする。
 - FR-070 の解決不能の場合は、`empty target` `absolute path` `escapes repository` `outside index root` `self or ancestor directory` の文言をそのまま使う。
