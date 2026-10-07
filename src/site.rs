@@ -4,7 +4,7 @@
 //! (or an index page) rendered from its Markdown source, with navigation built
 //! from the index structure (FR-089 .. FR-107).
 
-use std::collections::{BTreeMap, BTreeSet, HashSet};
+use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
 use std::path::Path;
 
 use anyhow::Context;
@@ -19,7 +19,7 @@ use crate::source::{FsSource, Source};
 
 /// A relative link destination resolved against the source file's directory.
 #[derive(Debug, Clone, PartialEq, Eq)]
-pub struct ResolvedLink {
+pub(crate) struct ResolvedLink {
     /// Repository-relative path (normalized, percent-decoded).
     pub path: String,
     /// Fragment after `#`, if any.
@@ -240,25 +240,26 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
         "index.html".to_string(),
         top_page(&roots, &pages, &site_title, site_description.as_deref()).into_bytes(),
     );
-    for image in &images {
-        output.insert(
-            image.clone(),
-            source
-                .read(image)
-                .with_context(|| format!("failed to read {image}"))?,
-        );
-    }
 
     std::fs::create_dir_all(&out_dir)
         .with_context(|| format!("failed to create {}", out_dir.display()))?;
-    for (rel, bytes) in &output {
+    let write_file = |rel: &str, bytes: &[u8]| -> anyhow::Result<()> {
         let dest = out_dir.join(rel);
         if let Some(parent) = dest.parent() {
             std::fs::create_dir_all(parent)
                 .with_context(|| format!("failed to create {}", parent.display()))?;
         }
-        std::fs::write(&dest, bytes)
-            .with_context(|| format!("failed to write {}", dest.display()))?;
+        std::fs::write(&dest, bytes).with_context(|| format!("failed to write {}", dest.display()))
+    };
+    for (rel, bytes) in &output {
+        write_file(rel, bytes)?;
+    }
+    // Images are read and written one at a time (never all held in memory).
+    for image in &images {
+        let bytes = source
+            .read(image)
+            .with_context(|| format!("failed to read {image}"))?;
+        write_file(image, &bytes)?;
     }
     Ok(warnings)
 }
@@ -359,7 +360,7 @@ fn esc(s: &str) -> String {
 
 /// GitHub-compatible heading id for the rendered plain text of a heading
 /// (empty when nothing remains).
-pub fn heading_slug(text: &str) -> String {
+pub(crate) fn heading_slug(text: &str) -> String {
     text.chars()
         .flat_map(char::to_lowercase)
         .filter_map(|c| match c {
@@ -374,7 +375,7 @@ pub fn heading_slug(text: &str) -> String {
 /// Resolves a relative link / image destination from a file in `source_dir`
 /// (repository-relative directory, `""` for the root). `None` when the
 /// destination is empty (after dropping `?...`) or escapes the repository.
-pub fn resolve_link_path(source_dir: &str, dest: &str) -> Option<ResolvedLink> {
+pub(crate) fn resolve_link_path(source_dir: &str, dest: &str) -> Option<ResolvedLink> {
     let (path_part, fragment) = match dest.split_once('#') {
         Some((p, f)) => (p, Some(f.to_string())),
         None => (dest, None),
@@ -459,7 +460,7 @@ fn encode_fragment(fragment: &str) -> String {
 /// Builds an href from a resolved path: each segment percent-encoded except
 /// RFC 3986 pchar, a `:` in the first segment encoded as `%3A`, fragment
 /// appended after `#`.
-pub fn encode_href(path: &str, fragment: Option<&str>) -> String {
+pub(crate) fn encode_href(path: &str, fragment: Option<&str>) -> String {
     let mut out = String::with_capacity(path.len());
     for (i, segment) in path.split('/').enumerate() {
         if i > 0 {
@@ -615,6 +616,8 @@ fn render_body(
     let events: Vec<Event> = Parser::new_ext(body, options).collect();
 
     let mut used_ids: HashSet<String> = HashSet::new();
+    // Next suffix to try per slug (avoids rescanning `slug-1`, `slug-2`, ...).
+    let mut next_suffix: HashMap<String, usize> = HashMap::new();
     for ev in &events {
         match ev {
             Event::FootnoteReference(label) | Event::Start(Tag::FootnoteDefinition(label)) => {
@@ -658,17 +661,6 @@ fn render_body(
                     format!("<pre>{}</pre>\n", esc(&strip_comments(&text))).into(),
                 ));
             }
-            Event::Html(s) => {
-                if is_comment_html(&s) {
-                    continue;
-                }
-                if at_top && first.is_none() {
-                    first = Some(false);
-                }
-                out.push(Event::Html(
-                    format!("<pre>{}</pre>\n", esc(&strip_comments(&s))).into(),
-                ));
-            }
             Event::InlineHtml(s) => {
                 if !is_comment_html(&s) {
                     out.push(Event::Text(s));
@@ -697,10 +689,10 @@ fn render_body(
                     None
                 } else {
                     let mut candidate = slug.clone();
-                    let mut n = 0;
+                    let next = next_suffix.entry(slug.clone()).or_insert(0);
                     while used_ids.contains(&candidate) {
-                        n += 1;
-                        candidate = format!("{slug}-{n}");
+                        *next += 1;
+                        candidate = format!("{slug}-{next}");
                     }
                     used_ids.insert(candidate.clone());
                     Some(CowStr::from(candidate))
@@ -714,7 +706,7 @@ fn render_body(
                 }));
             }
             Event::End(TagEnd::Heading(level)) => {
-                depth -= 1;
+                depth = depth.saturating_sub(1);
                 out.push(Event::End(TagEnd::Heading(level)));
                 if depth == 0 && first == Some(true) && !injected {
                     injected = true;
@@ -760,8 +752,8 @@ fn render_body(
                 }
             }
             Event::End(TagEnd::Link) => {
-                depth -= 1;
-                if kept.pop().unwrap_or(true) {
+                depth = depth.saturating_sub(1);
+                if kept.pop().expect("link/image end matches a start") {
                     out.push(Event::End(TagEnd::Link));
                 }
             }
@@ -795,8 +787,8 @@ fn render_body(
                 }
             }
             Event::End(TagEnd::Image) => {
-                depth -= 1;
-                if kept.pop().unwrap_or(true) {
+                depth = depth.saturating_sub(1);
+                if kept.pop().expect("link/image end matches a start") {
                     out.push(Event::End(TagEnd::Image));
                 }
             }

@@ -64,7 +64,7 @@ where
 {
     use serde::Deserialize;
     match Option::<serde_yaml_ng::Value>::deserialize(d)? {
-        None | Some(serde_yaml_ng::Value::Null) => Ok(None),
+        None => Ok(None),
         Some(serde_yaml_ng::Value::String(s)) => Ok(Some(s)),
         Some(_) => Err(serde::de::Error::custom(format!(
             "site.{field} must be a string"
