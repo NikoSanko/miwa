@@ -3027,3 +3027,56 @@ fn 先頭h1にリンクを含んでもidと要約はh1直後に1回だけ入る(
         "{sq}"
     );
 }
+
+// [FR-089]
+#[cfg(unix)]
+#[test]
+fn 出力先の末尾スラッシュでもシンボリックリンクの検査をすり抜けない() {
+    let f = basic();
+    let target = f._tmp.path().join("real_out");
+    std::fs::create_dir_all(&target).unwrap();
+    std::os::unix::fs::symlink(&target, f.root.join("linkdir")).unwrap();
+    let missing = f._tmp.path().join("nowhere");
+    std::os::unix::fs::symlink(&missing, f.root.join("dang")).unwrap();
+    for out in ["linkdir/", "linkdir/.", "dang/"] {
+        let o = site(&f.root, &["--out", out]);
+        assert_eq!(o.code, 1, "{out}: {}", o.stderr);
+    }
+    assert_eq!(std::fs::read_dir(&target).unwrap().count(), 0);
+    assert!(!missing.exists());
+}
+
+// [FR-105]
+#[test]
+fn コメントだけのh1は本文の見出しとみなさずテンプレートのh1を出す() {
+    let f = basic();
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc("DOC-A", "FMタイトル", "# <!-- c -->\n\n続き\n"),
+    );
+    site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    assert!(heading_id(&html, 1, "FMタイトル").is_some(), "{html}");
+    assert!(pos(&html, "FMタイトル</h1>") < pos(&html, r#"<p class="id">DOC-A</p>"#));
+}
+
+// [FR-099]
+#[cfg(unix)]
+#[test]
+fn 警告の元ファイルのパスの制御文字もエスケープされる() {
+    let f = basic();
+    common::write(
+        &f.root,
+        "docs/a\u{1b}b.md",
+        &doc("DOC-B", "B", "[l](missing.md)\n"),
+    );
+    let o = site_ok(&f.root);
+    assert!(!o.stderr.contains('\u{1b}'), "{}", o.stderr);
+    assert!(
+        o.warnings()
+            .contains(&"warning: docs/a\\u{1b}b.md: unpublished link: missing.md"),
+        "{}",
+        o.stderr
+    );
+}

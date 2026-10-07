@@ -5,7 +5,7 @@
 //! from the index structure (FR-089 .. FR-107).
 
 use std::collections::{BTreeMap, BTreeSet, HashMap, HashSet};
-use std::path::Path;
+use std::path::{Path, PathBuf};
 
 use anyhow::Context;
 use pulldown_cmark::{CowStr, Event, HeadingLevel, LinkType, Options, Parser, Tag, TagEnd};
@@ -74,7 +74,8 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
     if config.index.is_empty() {
         anyhow::bail!("index is not configured in .miwa/config.yaml");
     }
-    let out_dir = repo_root.join(out);
+    // Normalize a trailing separator and `.` so the symlink check sees the entry itself.
+    let out_dir: PathBuf = repo_root.join(out).components().collect();
     check_out_dir(&out_dir)?;
 
     let source = FsSource::new(repo_root);
@@ -117,7 +118,10 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
     for root in &roots {
         let root_index = join_under(root, "index.md");
         if !matches!(pages.get(&root_index), Some(p) if p.kind == Kind::Index) {
-            warnings.push(format!("warning: {root_index}: missing index"));
+            warnings.push(format!(
+                "warning: {}: missing index",
+                escape_controls(&root_index)
+            ));
         }
     }
 
@@ -523,7 +527,6 @@ pub(crate) fn encode_href(path: &str, fragment: Option<&str>) -> String {
     out
 }
 
-/// The URI scheme of `dest` (without the colon), if it starts with one.
 impl Env<'_> {
     /// The output page (repository-relative `.html` path) a resolved path
     /// publishes as: a published `.md` page, or the published `index.md` of a
@@ -631,42 +634,57 @@ fn is_comment_html(s: &str) -> bool {
     s.trim_start().starts_with("<!--")
 }
 
-/// Converts the Markdown `body` of the page at `src_path` to HTML. When the
-/// first block is a level-1 heading, `meta` (id and summary) is placed right
-/// after it and the second value is `true`.
-/// Whether the first block is a non-empty level-1 heading. HTML comment
-/// blocks (and inline comments) are not blocks and are skipped.
+/// Concatenated text of an HTML block whose `Start` was just consumed (`i` is
+/// the index after it); returns the text and the index after its `End`.
+fn html_block_text(events: &[Event], mut i: usize) -> (String, usize) {
+    let mut text = String::new();
+    while i < events.len() {
+        let piece = &events[i];
+        i += 1;
+        match piece {
+            Event::End(TagEnd::HtmlBlock) => break,
+            Event::Html(s) | Event::Text(s) => text.push_str(s),
+            _ => {}
+        }
+    }
+    (text, i)
+}
+
+/// Whether the first block is a level-1 heading with rendered content. HTML
+/// comment blocks are not blocks and are skipped; a heading holding only
+/// inline comments and whitespace is empty.
 fn starts_with_h1(events: &[Event]) -> bool {
     let mut i = 0;
     while i < events.len() {
         match &events[i] {
             Event::Start(Tag::HtmlBlock) => {
-                let mut text = String::new();
-                i += 1;
-                while i < events.len() {
-                    match &events[i] {
-                        Event::End(TagEnd::HtmlBlock) => break,
-                        Event::Html(s) | Event::Text(s) => text.push_str(s),
-                        _ => {}
-                    }
-                    i += 1;
-                }
+                let (text, next) = html_block_text(events, i + 1);
                 if !is_comment_html(&text) {
                     return false;
                 }
+                i = next;
+                continue;
             }
-            Event::InlineHtml(s) if is_comment_html(s) => {}
             Event::Start(Tag::Heading { level, .. }) => {
-                let empty = matches!(events.get(i + 1), Some(Event::End(TagEnd::Heading(_))));
+                let empty = events[i + 1..]
+                    .iter()
+                    .take_while(|e| !matches!(e, Event::End(TagEnd::Heading(_))))
+                    .all(|e| match e {
+                        Event::InlineHtml(s) => is_comment_html(s),
+                        Event::Text(t) => t.trim().is_empty(),
+                        _ => false,
+                    });
                 return *level == HeadingLevel::H1 && !empty;
             }
             _ => return false,
         }
-        i += 1;
     }
     false
 }
 
+/// Converts the Markdown `body` of the page at `src_path` to HTML. When the
+/// first block is a level-1 heading, `meta` (id and summary) is placed right
+/// after it and the second value is `true`.
 fn render_body(
     env: &Env,
     src_path: &str,
@@ -704,16 +722,8 @@ fn render_body(
         i += 1;
         match ev {
             Event::Start(Tag::HtmlBlock) => {
-                let mut text = String::new();
-                while i < events.len() {
-                    let piece = &events[i];
-                    i += 1;
-                    match piece {
-                        Event::End(TagEnd::HtmlBlock) => break,
-                        Event::Html(s) | Event::Text(s) => text.push_str(s),
-                        _ => {}
-                    }
-                }
+                let (text, next) = html_block_text(&events, i);
+                i = next;
                 if is_comment_html(&text) {
                     continue;
                 }
@@ -798,7 +808,8 @@ fn render_body(
                     None => {
                         kept.push(false);
                         rendered.warnings.push(format!(
-                            "warning: {src_path}: unpublished link: {}",
+                            "warning: {}: unpublished link: {}",
+                            escape_controls(src_path),
                             escape_controls(&dest_url)
                         ));
                     }
@@ -830,7 +841,8 @@ fn render_body(
                     None => {
                         kept.push(false);
                         rendered.warnings.push(format!(
-                            "warning: {src_path}: unpublished image: {}",
+                            "warning: {}: unpublished image: {}",
+                            escape_controls(src_path),
                             escape_controls(&dest_url)
                         ));
                     }

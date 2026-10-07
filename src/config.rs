@@ -645,9 +645,7 @@ mod tests {
     }
 
     fn site_yaml(site: &str) -> String {
-        format!(
-            "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\nsite:\n{site}"
-        )
+        format!("{BASE_YAML}site:\n{site}")
     }
 
     // [FR-094]
@@ -675,8 +673,10 @@ mod tests {
             assert_eq!(s.title(), None, "{site}");
             assert_eq!(s.description(), None, "{site}");
         }
-        let c = Config::parse(&site_yaml("  null\n"));
-        assert!(c.map(|c| c.site.is_none()).unwrap_or(true));
+        assert!(Config::parse(&site_yaml("  null\n"))
+            .unwrap()
+            .site
+            .is_none());
     }
 
     // [FR-094]
