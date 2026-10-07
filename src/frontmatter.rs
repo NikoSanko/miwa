@@ -141,4 +141,40 @@ mod tests {
         let fm = parse(text).unwrap().unwrap();
         assert_eq!(fm.kind, None);
     }
+
+    // [FR-102]
+    #[test]
+    fn splitは閉じ無しや空など境界の入力を正しく分ける() {
+        fn sp(t: &str) -> Result<Option<(&str, &str)>, ()> {
+            split(t).map_err(|_| ())
+        }
+        assert_eq!(sp("---"), Err(()));
+        assert_eq!(sp("---\n"), Err(()));
+        assert_eq!(sp("---\na: 1\n"), Err(()));
+        assert_eq!(sp("---\n---\n"), Ok(Some(("", ""))));
+        assert_eq!(sp("---\na: 1\n---"), Ok(Some(("a: 1", ""))));
+        assert_eq!(
+            sp("---\r\na: 1\r\n---\r\nbody\r\n"),
+            Ok(Some(("a: 1\r", "body\r\n")))
+        );
+        assert_eq!(
+            sp("---\na: 1\n---\nx\n---\ny\n"),
+            Ok(Some(("a: 1", "x\n---\ny\n")))
+        );
+        assert_eq!(sp("本文\n---\n"), Ok(None));
+    }
+
+    // [FR-102]
+    #[test]
+    fn parseのbodyはsplitの本文と一致する() {
+        for text in [
+            "---\n---\n",
+            "---\na: 1\n---",
+            "---\r\na: 1\r\n---\r\nbody\r\n",
+            "---\na: 1\n---\nx\n---\ny\n",
+        ] {
+            let (_, body) = split(text).unwrap().unwrap();
+            assert_eq!(parse(text).unwrap().unwrap().body, body, "{text:?}");
+        }
+    }
 }

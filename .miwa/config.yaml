@@ -14,3 +14,6 @@ rust:
 exclude: []
 index:
   - docs
+site:
+  title: "miwa の仕様"
+  description: "doc・req・test の追随漏れを検知する CLI、miwa の使い方と要件"

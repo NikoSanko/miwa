@@ -2940,3 +2940,90 @@ fn 出力先が壊れたシンボリックリンクでもエラーで何も書�
     assert!(!missing.exists());
     assert!(std::fs::symlink_metadata(f.root.join("out")).is_ok());
 }
+
+// [FR-100]
+#[test]
+fn 公開される画像を囲む公開されないリンクはimgだけ残り警告は1件() {
+    let f = basic();
+    common::write(&f.root, "docs/img.png", "png");
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc("DOC-A", "Spec", "[![a](img.png)](missing.md)\n"),
+    );
+    let o = site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    let main = &html[html.find("</nav>").unwrap()..];
+    assert!(!main.contains("<a "), "{html}");
+    assert!(main.contains(r#"<img src="img.png" alt="a""#), "{html}");
+    assert_eq!(
+        o.warnings(),
+        vec!["warning: docs/spec.md: unpublished link: missing.md"]
+    );
+}
+
+// [FR-100]
+#[test]
+fn 公開されない画像を囲む公開されるリンクはaだけ残り警告は1件() {
+    let f = basic();
+    common::write(&f.root, "docs/ok.md", &reference("OK", "ok\n"));
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc("DOC-A", "Spec", "[![a](missing.png)](ok.md)\n"),
+    );
+    let o = site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    assert!(!html.contains("<img"), "{html}");
+    assert!(html.contains(r#"<a href="ok.html">a</a>"#), "{html}");
+    assert_eq!(
+        o.warnings(),
+        vec!["warning: docs/spec.md: unpublished image: missing.png"]
+    );
+}
+
+// [FR-100]
+#[test]
+fn 画像のクエリとフラグメントは解決時に取り除かれコピーされる() {
+    let f = basic();
+    common::write(&f.root, "docs/a.png", "png");
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc("DOC-A", "Spec", "![i](a.png?v=1#x)\n"),
+    );
+    let o = site_ok(&f.root);
+    assert!(o.warnings().is_empty(), "{}", o.stderr);
+    assert!(exists(&f.root, "docs/a.png"));
+    let html = page(&f.root, "docs/spec.html");
+    assert!(html.contains(r#"<img src="a.png#x" alt="i""#), "{html}");
+}
+
+// [FR-105]
+#[test]
+fn 先頭h1にリンクを含んでもidと要約はh1直後に1回だけ入る() {
+    let f = basic();
+    common::write(&f.root, "docs/ok.md", &reference("OK", "ok\n"));
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        "---\ntype: Specification\nid: DOC-A\ntitle: Spec\ndescription: 要約文\n---\n# [リンク](ok.md) 見出し\n\n続き\n",
+    );
+    site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    assert_eq!(
+        html.matches(r#"<p class="id">DOC-A</p>"#).count(),
+        1,
+        "{html}"
+    );
+    assert_eq!(
+        html.matches(r#"<p class="description">要約文</p>"#).count(),
+        1,
+        "{html}"
+    );
+    let sq = squash(&html);
+    assert!(
+        sq.contains(r#"</h1><p class="id">DOC-A</p><p class="description">要約文</p><p>続き</p>"#),
+        "{sq}"
+    );
+}

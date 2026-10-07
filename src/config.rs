@@ -643,4 +643,55 @@ mod tests {
             }
         }
     }
+
+    fn site_yaml(site: &str) -> String {
+        format!(
+            "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\njudge:\n  threshold: 0.9\nsite:\n{site}"
+        )
+    }
+
+    // [FR-094]
+    #[test]
+    fn siteの文字列でない値はフィールド名つきの設定エラーになる() {
+        for field in ["title", "description"] {
+            for bad in ["1", "true", "[a]", "{a: b}"] {
+                let err = Config::parse(&site_yaml(&format!("  {field}: {bad}\n")))
+                    .unwrap_err()
+                    .to_string();
+                assert!(
+                    err.contains(&format!("site.{field}")),
+                    "{field} {bad}: {err}"
+                );
+            }
+        }
+    }
+
+    // [FR-094]
+    #[test]
+    fn siteのnullと空の節は未指定になる() {
+        for site in ["  title: null\n  description: ~\n", "  {}\n"] {
+            let c = Config::parse(&site_yaml(site)).unwrap();
+            let s = c.site.unwrap();
+            assert_eq!(s.title(), None, "{site}");
+            assert_eq!(s.description(), None, "{site}");
+        }
+        let c = Config::parse(&site_yaml("  null\n"));
+        assert!(c.map(|c| c.site.is_none()).unwrap_or(true));
+    }
+
+    // [FR-094]
+    #[test]
+    fn siteの値は前後の空白が除かれ往復しても変わらない() {
+        let c = Config::parse(&site_yaml(
+            "  title: \"  題名  \"\n  description: \" 要約 \"\n",
+        ))
+        .unwrap();
+        let s = c.site.as_ref().unwrap();
+        assert_eq!(s.title(), Some("題名"));
+        assert_eq!(s.description(), Some("要約"));
+        let again = Config::parse(&c.to_yaml()).unwrap();
+        let s2 = again.site.as_ref().unwrap();
+        assert_eq!(s2.title(), Some("題名"));
+        assert_eq!(s2.description(), Some("要約"));
+    }
 }
