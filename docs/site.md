@@ -93,7 +93,7 @@ miwa site
 aws s3 sync --delete _site/ s3://<bucket>/<project>/
 ```
 
-`--delete` は、削除した文書をサイトからも消すためです。閲覧者の認証（たとえば Cloudflare Access）は、配信側の責務で、miwa は関与しません。
+`--delete` は、削除した文書をサイトからも消すためです。公開は CI などのクリーンなチェックアウトから行ってください。miwa は `.gitignore` を見ないので、手元で実行すると、未追跡のファイルや無視しているファイル（下書きなど）も公開物に入ります。閲覧者の認証（たとえば Cloudflare Access）は、配信側の責務で、miwa は関与しません。
 
 出力先 `_site/` は生成物なので、`.gitignore` に `_site/` を足して、コミットしないようにしてください。
 
