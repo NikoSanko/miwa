@@ -14,6 +14,7 @@
   - [docs/reconcile.md](docs/reconcile.md) — 合意を記録する `reconcile`
   - [docs/judge.md](docs/judge.md) — 意味が合っているか判定する `judge`
   - [docs/index-command.md](docs/index-command.md) — 索引を保つ `index`
+  - [docs/site.md](docs/site.md) — 閲覧サイトを作る `site`
   - [docs/setup.md](docs/setup.md) — 使い始め方
 
 ## インストール

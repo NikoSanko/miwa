@@ -30,6 +30,7 @@ miwa init
 - `rust.test_attributes`: Rust で `test` 以外の名前の test 属性（例: `rstest`）を test として扱うための属性名の一覧。省略時は空。属性パスの末尾の名前だけを書きます（`rstest::rstest` ではなく `rstest`）
 - [`exclude`](../req/config-exclude-dirs.md): 探索から除外するディレクトリ名の一覧。省略時は空。パスではなく名前だけを書き、どの深さでも一致するディレクトリ配下が除外されます（例: Gradle の `build`、Next.js の `.next`。Vite や tsc の出力先 `dist` は既定で除外されます）
 - [`index`](../req/config-index-roots.md): 索引（`index.md`）を検査・生成する根のフォルダの一覧。省略時は空で、空のときは索引の機能は無効です。`docs` か `requirements` のフォルダと同じか、その配下のフォルダを書きます（`exclude` 配下は不可。要素同士が包含関係にあるのも不可）。子孫フォルダの `index.md` は設定しなくても担当を持ちます。詳細は [索引を保つ](index-command.md) を参照してください
+- [`site`](../req/config-site-settings.md): [`miwa site`](site.md) が作る閲覧サイトのトップページの設定。省略可で、`title`（省略時は miwa を実行したフォルダの名前）と `description`（省略時は要約なし）を書きます。前後の空白を除いて空になる値、改行を含む値、文字列でない値は設定エラーで、この検証はすべてのコマンドで行われます
 
 `docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。また、[`.git` `target` `.miwa` `.worktrees` `node_modules` `obj` `dist` という名前のフォルダは自動的に探索から除外され、シンボリックリンクの先は辿りません](../req/source-scan-scope-and-exclusions.md)。大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません（`obj` は C# のビルド生成物を読み込まないための除外で、docs・requirements・tests のすべてに適用されます）。
 
