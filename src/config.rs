@@ -42,10 +42,73 @@ pub struct Config {
 /// `site` section of `.miwa/config.yaml`.
 #[derive(Debug, Clone, PartialEq, Default, serde::Serialize, serde::Deserialize)]
 pub struct SiteConfig {
-    #[serde(default)]
+    #[serde(
+        default,
+        deserialize_with = "deserialize_site_title",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub title: Option<String>,
-    #[serde(default)]
+    #[serde(
+        default,
+        deserialize_with = "deserialize_site_description",
+        skip_serializing_if = "Option::is_none"
+    )]
     pub description: Option<String>,
+}
+
+/// `null` and an absent key are "unspecified"; anything but a string is an
+/// error (YAML numbers and booleans must not be coerced to strings).
+fn deserialize_site_string<'de, D>(d: D, field: &str) -> Result<Option<String>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    use serde::Deserialize;
+    match Option::<serde_yaml_ng::Value>::deserialize(d)? {
+        None | Some(serde_yaml_ng::Value::Null) => Ok(None),
+        Some(serde_yaml_ng::Value::String(s)) => Ok(Some(s)),
+        Some(_) => Err(serde::de::Error::custom(format!(
+            "site.{field} must be a string"
+        ))),
+    }
+}
+
+fn deserialize_site_title<'de, D>(d: D) -> Result<Option<String>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    deserialize_site_string(d, "title")
+}
+
+fn deserialize_site_description<'de, D>(d: D) -> Result<Option<String>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    deserialize_site_string(d, "description")
+}
+
+impl SiteConfig {
+    /// `title` with surrounding whitespace removed.
+    pub fn title(&self) -> Option<&str> {
+        self.title.as_deref().map(str::trim)
+    }
+
+    /// `description` with surrounding whitespace removed.
+    pub fn description(&self) -> Option<&str> {
+        self.description.as_deref().map(str::trim)
+    }
+
+    fn validate(&self) -> anyhow::Result<()> {
+        for (field, value) in [("title", &self.title), ("description", &self.description)] {
+            let Some(v) = value else { continue };
+            if v.trim().is_empty() {
+                anyhow::bail!("site.{field} must not be empty");
+            }
+            if v.contains('\n') || v.contains('\r') {
+                anyhow::bail!("site.{field} must be a single line");
+            }
+        }
+        Ok(())
+    }
 }
 
 impl Config {
@@ -160,6 +223,9 @@ impl Config {
             }
         }
         self.validate_index()?;
+        if let Some(site) = &self.site {
+            site.validate()?;
+        }
         Ok(())
     }
 

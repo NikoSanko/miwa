@@ -17,40 +17,59 @@ pub enum FrontMatterError {
     Unterminated,
 }
 
+/// Splits `text` into the front matter block (the lines between the opening
+/// and closing `---`, without the fences) and the body, without parsing the
+/// YAML. Returns `Ok(None)` if the first line is not `---` (the whole text is
+/// the body), and `Err(Unterminated)` if no closing `---` line follows.
+/// A trailing CR on the fence lines is ignored.
+pub fn split(text: &str) -> Result<Option<(&str, &str)>, FrontMatterError> {
+    let first_end = text.find('\n').unwrap_or(text.len());
+    if text[..first_end].trim_end_matches('\r') != "---" {
+        return Ok(None);
+    }
+    if first_end == text.len() {
+        return Err(FrontMatterError::Unterminated);
+    }
+    let yaml_start = first_end + 1;
+    let mut pos = yaml_start;
+    loop {
+        let end = text[pos..]
+            .find('\n')
+            .map(|i| pos + i)
+            .unwrap_or(text.len());
+        if text[pos..end].trim_end_matches('\r') == "---" {
+            let yaml = if pos == yaml_start {
+                ""
+            } else {
+                &text[yaml_start..pos - 1]
+            };
+            let body = if end < text.len() {
+                &text[end + 1..]
+            } else {
+                ""
+            };
+            return Ok(Some((yaml, body)));
+        }
+        if end == text.len() {
+            return Err(FrontMatterError::Unterminated);
+        }
+        pos = end + 1;
+    }
+}
+
 /// Parse the front matter of `text`. Returns `Ok(None)` if `text` does not start
 /// with a `---` line.
 pub fn parse(text: &str) -> Result<Option<FrontMatter>, FrontMatterError> {
-    let mut lines = text.split('\n');
-    let first = match lines.next() {
-        Some(l) => l,
-        None => return Ok(None),
-    };
-    if first.trim_end_matches('\r') != "---" {
+    let Some((yaml_text, body)) = split(text)? else {
         return Ok(None);
-    }
-
-    let mut yaml_lines: Vec<&str> = Vec::new();
-    let mut rest = lines;
-    let body = loop {
-        match rest.next() {
-            None => return Err(FrontMatterError::Unterminated),
-            Some(line) => {
-                if line.trim_end_matches('\r') == "---" {
-                    let remaining: Vec<&str> = rest.collect();
-                    break remaining.join("\n");
-                } else {
-                    yaml_lines.push(line);
-                }
-            }
-        }
     };
-    let yaml_text = yaml_lines.join("\n");
+    let body = body.to_string();
 
     let map: std::collections::BTreeMap<String, serde_yaml_ng::Value> =
         if yaml_text.trim().is_empty() {
             std::collections::BTreeMap::new()
         } else {
-            serde_yaml_ng::from_str(&yaml_text)
+            serde_yaml_ng::from_str(yaml_text)
                 .map_err(|e| FrontMatterError::InvalidYaml(e.to_string()))?
         };
 
