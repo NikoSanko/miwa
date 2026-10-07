@@ -34,6 +34,18 @@ pub struct Config {
     /// Index roots (directories whose `index.md` lists the documents below).
     #[serde(default)]
     pub index: Vec<String>,
+    /// Settings for `miwa site`.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site: Option<SiteConfig>,
+}
+
+/// `site` section of `.miwa/config.yaml`.
+#[derive(Debug, Clone, PartialEq, Default, serde::Serialize, serde::Deserialize)]
+pub struct SiteConfig {
+    #[serde(default)]
+    pub title: Option<String>,
+    #[serde(default)]
+    pub description: Option<String>,
 }
 
 impl Config {
@@ -51,6 +63,7 @@ impl Config {
             rust: RustConfig::default(),
             exclude: vec![],
             index: vec!["docs".to_string()],
+            site: None,
         }
     }
 
@@ -267,6 +280,7 @@ mod tests {
             rust: RustConfig::default(),
             exclude: vec![],
             index: vec![],
+            site: None,
         }
     }
 

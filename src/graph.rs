@@ -443,6 +443,7 @@ mod tests {
             rust: crate::config::RustConfig::default(),
             exclude: vec![],
             index: vec![],
+            site: None,
         }
     }
 
@@ -675,6 +676,7 @@ mod tests {
             rust: crate::config::RustConfig::default(),
             exclude: vec![],
             index: vec![],
+            site: None,
         };
         let graph = build_graph(&source, &config).unwrap();
         assert!(graph

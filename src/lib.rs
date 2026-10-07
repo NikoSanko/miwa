@@ -13,4 +13,5 @@ pub mod markdown;
 pub mod model;
 pub mod output;
 pub mod reconcile;
+pub mod site;
 pub mod source;
