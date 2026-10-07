@@ -37,10 +37,17 @@
     },
     "desc:doc:DOC-SETUP": {
       "from": "sha256:bf2710c18a0162cec3ac53eaa2fc6ac366bf9fde06eae6fec0b919ef24434a5a",
-      "to": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "to": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "desc:doc:DOC-SITE": {
+      "from": "sha256:1be6e92fb522d3963accffa1fdb8a30a9e1850580e3e937ea28efa132e09707f",
+      "to": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-CHECK:FR-014": {
       "from": "sha256:f88a7c4d4316b801aaca2cfb57f122c0c96533abe4cb4ed572e3f562f68b9c4f",
@@ -708,60 +715,207 @@
       "at": "2026-10-06T00:14:13Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:29c8147f598904680f8fe8a2d337979a6039b4d96d7d75585d9c78ed90ba5442",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:3c7b8dd5e87eaead13debeef2e4bfd947adb7968aeb2929e149b7319ddac831f",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:e647fdecfb7bcae9e4cf10fc62203985904a01cb8116e2e3e2607efd068f3e37",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-SETUP:FR-063": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:554f4398cfee83d74400c6168f76cfeab393e0f739406b1e3d2803a4435f3dae",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-SETUP:FR-065": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:8d6fdf9b71bbe559376f5b6fb33fc714e6bc516143cdf3035dd4b7975354cd62",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-SETUP:FR-066": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:3e7f130f28fe126aa2853411b73cbff8b371073b845131f636a8bdb45ec2f978",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "doc-req:DOC-SETUP:FR-067": {
-      "from": "sha256:593226c4d2f436bb86873ce435c68a719acd9b33188ab4d6d725ec4baabbcdbc",
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
       "to": "sha256:6da304984b5503c504b795708207b10c8f7b37455d38df4b69075adcc67ef5d9",
       "by": "human",
-      "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
-      "at": "2026-10-06T00:14:13Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SETUP:FR-094": {
+      "from": "sha256:7ba6cbb62e69d28742bee0711e05c3606a4cd140115ab6cd22e28fbba9f27de0",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-071": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:3224f65d59ae9f24c1247c1794a13fa677b09d9b023350d0c8dcbb14d021eb91",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-089": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-090": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:c37199ad085b376fe3efb99666042beb5deb87d1585d5ba56c5e84ca38df9098",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-091": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:4f593baa208afb53a6211facfac6f796d6f149940c8da814732890654e666222",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-092": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:e0c9956f4ae2d11770fd172c45b7d7d19599e9cfca7fd529110571b84b1b265e",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-093": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-094": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-095": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-096": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:a1347b68e4685eb31f123608a60be4e312afb09ca170df45edeef638205241ad",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-097": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-098": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:65cffda5f615cd6397ed9036367fffe4a8865290ad906eb05aa38260ead52d06",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-099": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-100": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-101": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-102": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-103": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:5a3516baa1cb8f16c4e7750579099f15c4a8b072daa1c4613fb9093fc25e822d",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-104": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-105": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-106": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "doc-req:DOC-SITE:FR-107": {
+      "from": "sha256:e6279d4a3f3ba6c1044ad221f0ef1bf5c0cf9613194629f0f3e253a956953b9b",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "test-req:src/check:tests:descしか持たないdocはorphanのままになる:FR-086": {
       "from": "sha256:592dfc2d353150950625cb0f4be5763e6ce8fa81426de9f6d7739139bdd8583d",
@@ -1091,6 +1245,27 @@
       "by": "human",
       "reason": "main（PR #11）取り込み後の再合意",
       "at": "2026-10-01T14:00:21Z"
+    },
+    "test-req:src/config:tests:siteのnullと空の節は未指定になる:FR-094": {
+      "from": "sha256:4cfdb7c4dbaa5e3d0792567fac489e65289567f59f53886ebf07c6707f8b7e6d",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/config:tests:siteの値は前後の空白が除かれ往復しても変わらない:FR-094": {
+      "from": "sha256:62dc3b67154377512d487799396881b77816ec747a32f4ce2ffdda82b64d9544",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/config:tests:siteの文字列でない値はフィールド名つきの設定エラーになる:FR-094": {
+      "from": "sha256:3ea66c84f31d89ebea38115279aa93ff806bb57f847a4b2fd1082f3d386c4402",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "test-req:src/config:tests:thresholdが0から1の範囲内であれば妥当:FR-020": {
       "from": "sha256:654ad0b23b63ac3ae03dff0926bf3e21556da586eb0d5b51c9658bf66dab39b3",
@@ -2191,6 +2366,20 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/frontmatter:tests:parseのbodyはsplitの本文と一致する:FR-102": {
+      "from": "sha256:469adac6530023f50f0d8b588a3106990c35f416dcb71d231eb4f11d72819159",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/frontmatter:tests:splitは閉じ無しや空など境界の入力を正しく分ける:FR-102": {
+      "from": "sha256:727a57659af280ccb000c14f3275546579822e8fd002f79493a2a293a7ceb119",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
     "test-req:src/frontmatter:tests:typeフィールドがない場合はkindがnoneになる:FR-005": {
       "from": "sha256:93e7d867ed6032b7b92c872143b91c49e83ec4b8d0ffc3ba18fb97a06ec9eb6b",
       "to": "sha256:9a589d6d56d8c11529cd1d4e71882fd3fa4b3da6dc0f8650982cd11ec928abdd",
@@ -2213,11 +2402,11 @@
       "at": "2026-10-01T14:00:21Z"
     },
     "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
-      "from": "sha256:c35d24b691e37d99e051a78afb6cf5d252bea84c0ce056dfc3e85d36867600a2",
+      "from": "sha256:5f3d96199e089b18aaa30c37b3d8dad356ba4c90d02e789436ccb793b91bc7ea",
       "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
       "by": "human",
-      "reason": "索引の構造検査と miwa index を追加（#19 PR 1）",
-      "at": "2026-10-02T23:47:26Z"
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     },
     "test-req:src/graph:tests:csharp_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:8e591a891ddf617f169e9c675124e06ea5c53ab887b1a6ceb1b29f3ec1267436",
@@ -4235,6 +4424,118 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:src/site:tests:hrefの最初のセグメントのコロンだけを3aにする:FR-107": {
+      "from": "sha256:f8d48b869e81687e9c39617a974655ad86f65bead2f372f249eb3e9420f6bed9",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:hrefはpchar以外をセグメントごとにパーセントエンコードする:FR-107": {
+      "from": "sha256:ff208c474797d6969520a97eaa7fba987980c601a2d39033cf67dd7e1ef92204",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:hrefはフラグメントの有効なパーセント表記を保持し他のパーセントを符号化する:FR-107": {
+      "from": "sha256:0c3c77d70cd993e98f74e996efc537d417fb59df57e4fea2975e61f4dcdd9586",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:hrefはフラグメントをシャープで付ける:FR-107": {
+      "from": "sha256:5a15e4899c13ec9b2ffdf7a91416f9022440ae1f45fddd56e5028e8f4d6911d4",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:リンク解決のドットは自ディレクトリを指す:FR-107": {
+      "from": "sha256:e3bda3fef6801889acf43f214d8a7cdfa39dfa9b88e10aafc4a782b153e1696d",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:リンク解決はクエリだけや空やリポジトリ外をnoneにする:FR-107": {
+      "from": "sha256:871501a5ba4cdd180a3688f484817641421a8b2f99c2497191abfa3bcde1da8a",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:リンク解決はクエリを先に捨ててからデコードする:FR-107": {
+      "from": "sha256:92d913309e09d9fea3f976d727d09fe95fd0b7234b9fcab53d97d385550dd933",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:リンク解決はクエリを捨ててフラグメントを保持する:FR-107": {
+      "from": "sha256:4949b5072fdbe9a76800b3258cd28e7447e691ffaa76e03bcb83f163dbda531a",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:リンク解決はパーセントデコードしデコード後のシャープを再分割しない:FR-107": {
+      "from": "sha256:7a332aaeb7216905ab78c4445e8eef5eaee67e181fd85ca265aac170f48684c8",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:リンク解決はフラグメント中のクエスチョンを保持する:FR-107": {
+      "from": "sha256:298fa120b541d2dabb7477e90f5cd0cd3a2811d22b49e2e8e398446d089cff05",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:リンク解決は元ファイルのディレクトリ基準でドットを正規化する:FR-107": {
+      "from": "sha256:e57ac2eb517abafccf9497a9c712ed2a9f3824b7424b2c6a5b8491ef51c52c27",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:見出しidはunicodeの文字と数字を残し小文字にする:FR-106": {
+      "from": "sha256:e590028683efa87c51afbaab392e2305dc15a916ef317e74d7a5d81ba17da0ae",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:見出しidはタブと全角空白を除去する:FR-106": {
+      "from": "sha256:0184395217703aa13facf03a11c6569c98810ec4dfed4e4f5e22533fb6fd58be",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:見出しidは小文字化し記号を除き空白をハイフンにする:FR-106": {
+      "from": "sha256:2ae8d2f34fa1c5228ce58484e4d96fa6c31eec02e1535ceb1e4809b08b3dac3c",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:見出しidは記号だけなら空になる:FR-106": {
+      "from": "sha256:ee9d05fc6af72c0501c35584a097864589164d9b44b73f62453b1f20df284923",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:src/site:tests:見出しidは連続する空白を1つずつハイフンにする:FR-106": {
+      "from": "sha256:16c9c6ab3b4c259259b44f857dcf2adbf150da731d57db5c2da2c34c449f091e",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
     "test-req:src/source:tests:fssourceのreadは絶対パスやドットドットや空パスを拒否する:FR-018": {
       "from": "sha256:44a9b182d3c88a11d35f9230c217c9cb648eb548f4a7597b8237a1c385a39b26",
       "to": "sha256:388a663b643710034b577dfd2f31025560134fac9929ccb282155bf82c9a229e",
@@ -4899,6 +5200,937 @@
       "by": "human",
       "reason": "desc エッジ（要約と本文の追随）と judge 対応を追加（#19 PR 2）",
       "at": "2026-10-06T00:14:13Z"
+    },
+    "test-req:tests/cli_site::cspにbase_uriとform_actionの制限が含まれる:FR-095": {
+      "from": "sha256:647a7933b923e01e9118ddfd064c9c2cab1c1b8e36a840f4f0a0b475a6a0bf92",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::docページと索引対象文書と索引ページには参照元の節を出さない:FR-101": {
+      "from": "sha256:e81fb9b4a3661be5f901c78e81f2f605d0822d2cdccdbf02e9adaf2e307c4d48",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::docページのヘッダにトップと担当索引へのリンクが順に出る:FR-104": {
+      "from": "sha256:95b2039d65fab5fc63dc7ce3c2f038ae20c4c97fd45c3674a0b20d3582e9cf75",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::hrefの最初のセグメントのコロンは3aになる:FR-107": {
+      "from": "sha256:7a6a121b5ea0ac1dda74f037d64891df24fe5cb5bcb26ef6d36b532d053f8b77",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::hrefは非ascii文字をセグメントごとにパーセントエンコードする:FR-107": {
+      "from": "sha256:59e1b02b3f096deb5a09900cfb51bb10e6daf3e4eb596a90d59865b6e7ef930e",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::htmlコメントのブロックは複数行でも出力せず警告も出ない:FR-097": {
+      "from": "sha256:53db41b654696cf6a3d6a9f511912118e7ed14edda67b2c330d2fd645af60abc",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::htmlブロックはエスケープしてpreで囲んで表示する:FR-097": {
+      "from": "sha256:32f9728372ec86c5d89fa0924e10da5365a6ed9d76787aa0fe9808a16f8891f9",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::httpsの画像はコピーせずそのまま参照し警告も出ない:FR-100": {
+      "from": "sha256:c6ebfd04e6cc93d5351057131a3a37d03183d59f038f5c54d9e5fc3973307734",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::httpの画像とスラッシュ始まりの画像は公開されない画像として警告になる:FR-100": {
+      "from": "sha256:8022f17f3e8872cf566d9b9792b5b84f33e8f7ba50d12d75b767ed8a5d37e16c",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::idが不正なspecificationも索引の根の配下なら公開されidは表示されない:FR-091": {
+      "from": "sha256:7b2507dee34adc263294d30f978762038d66b7b57df3921db7f006119ae4ff81",
+      "to": "sha256:4f593baa208afb53a6211facfac6f796d6f149940c8da814732890654e666222",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::id重複のrequirementは索引の根の外ならページにならない:FR-091": {
+      "from": "sha256:c856a3b3053d8bd2c889f2c327643a0ba0e381db998d5e80aafb1166628fffe6",
+      "to": "sha256:4f593baa208afb53a6211facfac6f796d6f149940c8da814732890654e666222",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::indexが未設定で出力先を指定しても何も作られない:FR-090": {
+      "from": "sha256:709fa5d3d630763f04f57178c0e02fea0a7b952ce040efd071ab30b2e22ea578",
+      "to": "sha256:c37199ad085b376fe3efb99666042beb5deb87d1585d5ba56c5e84ca38df9098",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::indexが未設定ならメッセージを出して失敗し何も書かない:FR-090": {
+      "from": "sha256:4b403f950e49e2e5998be769edf2d42701da5959bedbf41637929b23103d5a51",
+      "to": "sha256:c37199ad085b376fe3efb99666042beb5deb87d1585d5ba56c5e84ca38df9098",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::indexの根の外のdocとreqはページになり根の外の型付き文書はならない:FR-091": {
+      "from": "sha256:ee0aebd48a0f19c7d5b999257df6ef0241fa77ff03da7eca3916bb62f459cef5",
+      "to": "sha256:4f593baa208afb53a6211facfac6f796d6f149940c8da814732890654e666222",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::indexを空配列で明示してもエラーで何も書かない:FR-090": {
+      "from": "sha256:e8559759d13c3db553aa8d21b77f28140bdb0e8998affb295a16842b56d77c40",
+      "to": "sha256:c37199ad085b376fe3efb99666042beb5deb87d1585d5ba56c5e84ca38df9098",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::out_に絶対パスを指定できる:FR-089": {
+      "from": "sha256:126b467bbf89ac99042b890d7eb4b87576ac94a63ace9768d01a18c0d144cbd8",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::out_ドットのようなリポジトリ自身の指定はエラーで既存ファイルを消さない:FR-089": {
+      "from": "sha256:aef08cd20ab0d556f84a89d6fb554169dbcb13c14f1ccf40387a4eec0fc3b05e",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::out指定の出力先が存在しなければ作られる:FR-089": {
+      "from": "sha256:477720819c59fc73e7e9fb0c79c1ff76de85159f42c9b046962fe4b62bf9bef9",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::referenceやreqからの参照は参照元一覧に出ない:FR-101": {
+      "from": "sha256:009edd55bba24eade31cf7fa7bee95bdb57bb94589e148ae9d01807fb71867af",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::requirementsの根の配下の画像もコピーされimgから相対参照される:FR-100": {
+      "from": "sha256:f531b1e09b17c5b44710809c15def79839aa4ce3874386176df4e7af57c38ef5",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::reqのタイトルもidではなく文書のタイトル規則で決まる:FR-096": {
+      "from": "sha256:5f60b44d3724e1abcec8026bdb38b0752f01ff265b7414a74c9033b4754f6f57",
+      "to": "sha256:a1347b68e4685eb31f123608a60be4e312afb09ca170df45edeef638205241ad",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::reqページの末尾に参照しているdocの一覧が出る:FR-101": {
+      "from": "sha256:2f92c349bf825de25574fa59cca85dce5891fe4c95100ad3cec79864ac637c27",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定が無いときタイトルは実行ディレクトリ名で要約は出ない:FR-093": {
+      "from": "sha256:9fa9a52dbbde7e17c8ca0388628c713afd74979f00128b00a3df7aae860d9a08",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定のnullや空の節は未指定として扱われる:FR-094": {
+      "from": "sha256:3619545755236a16cbcab4c5d4c5ddd084bddc456268cc52a3f600605bc687b8",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定のタイトルが空白だけなら設定エラーになる:FR-094": {
+      "from": "sha256:0c1ee7fec51153424da1d7bb59926e5d762ce304a9419628020bfdd78f1be57c",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定の値が文字列でなければ設定エラーになる:FR-094": {
+      "from": "sha256:947b6f8aa3a008c2e8b86b407db3b17579b498651ea40d7f1bb00507a435fbf9",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定の値にlfやcrがあれば設定エラーになる:FR-094": {
+      "from": "sha256:4cde8750121d3ad5d2f6f22e3c7e566b4404f2df53a94fb4fb7d9c224abb7ac0",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定の値は前後の空白を除いて使われる:FR-094": {
+      "from": "sha256:8cb2e5bed1e72ef2e9164b7772709c9692fe1fdac1ae985a0dd3a2df121ea13f",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定の折り畳みスカラーは末尾の改行が除かれて有効になる:FR-094": {
+      "from": "sha256:c614298f23b03f36f6a9b954c663d80edd3917577a04c0cc775a6328a3b188d5",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定の検証はsite以外のすべてのコマンドでも行われる:FR-094": {
+      "from": "sha256:6782c1c7d0a2fe3148a527bdc72baca27d70b5e196f36a7c89e506b1e1e41225",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定の要約が空白だけなら設定エラーになる:FR-094": {
+      "from": "sha256:13ef0dafddefd7fced2818efcde2dac12e27c025531bdfca8f63bf64c4197659",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::site設定の要約だけを省略するとタイトルだけが使われる:FR-093": {
+      "from": "sha256:6690f16fafe960dbaa2522a4da4fa09f8ef539983c1d3a487b73355e87f22d77",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::svgとその他の拡張子の画像は出さず代替テキストだけを残して警告する:FR-100": {
+      "from": "sha256:6c237fb531c049ce1b63bdfe34a7b547f1d7b08ed552d58b883a3b80463cc2f6",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::testsの根の配下の画像はコピーされず警告になる:FR-100": {
+      "from": "sha256:e3972592bb49203889d5f920079c0214b5e6d70366692bd530d29195a8f94745",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::typeが無い文書とlogmdと除外対象へのリンクは公開されない:FR-099": {
+      "from": "sha256:c0f77a1da74813997144dfdd3e740730689cb826e486e7740ddc2a048b82ce66",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::すべてのページがhtml5の骨格とcspとreferrerを持つ:FR-095": {
+      "from": "sha256:77eda0d3e92b2b236ed1b2e639b87600a56fc5acfaa4799f95d45abb1226640a",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::インラインのhtmlコメントは出力しない:FR-097": {
+      "from": "sha256:1d4a32d3374f630cccd1f26df176a3fad11a45de72a4bcc7b9df9415025be646",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::インラインの生htmlはエスケープして文字として表示する:FR-097": {
+      "from": "sha256:fc0c16a57871d58dedae8e8093164ba4977a9496c0d3cb91fd23dd2817e25c9e",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::クエリを捨てた結果が空のリンクは空のリンクとして公開されない:FR-107": {
+      "from": "sha256:09c85eea4079e179340a40e4b4fb2145f25161d92a4aa613cf9f351f2ce030e4",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::コメントだけのh1は本文の見出しとみなさずテンプレートのh1を出す:FR-105": {
+      "from": "sha256:614b7f74509586cd94d6c480d9cb45c4ce45cbea7acccceca936ca20a0260341",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::コードスパンの中身を連結したプレーンテキストからidが決まる:FR-106": {
+      "from": "sha256:13df0fc74cd0d37667444200a72c901b6702d49ba223d380f9d84486cf884c1d",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::スクリプトのhtmlブロックは実行できない形で表示される:FR-097": {
+      "from": "sha256:6464d3207f7805cb9da47c0e8d76d70da15c2e5ba2f0c5c099b955a5d81972cb",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::スクリプトや属性注入の経路はリンクにならず警告になる:FR-099": {
+      "from": "sha256:4dbd2596a4eacb69bc5d8b07649892a4efda5a4bd82ce5af46f269449039dd20",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::タイトルと要約はエスケープされmeta_descriptionにも入る:FR-095": {
+      "from": "sha256:cbbecd25cc19f01f5e816ba5fecd76dd94a340752bd808d39759a5a6102e1ec0",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::タイトルはフロントマターのtitleを優先し無ければ最初のh1で無ければファイル名になる:FR-096": {
+      "from": "sha256:ae76e59fc604131a3acc5203fc55ba1aa18e2d0e6cbf14c2ac91d481231719d2",
+      "to": "sha256:a1347b68e4685eb31f123608a60be4e312afb09ca170df45edeef638205241ad",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::タイトル要約の順で出てdocとreqのページにはidが表示される:FR-095": {
+      "from": "sha256:321230d8c03f737acee02cdc5ed488cc235344573b1c59873c40def159c272b7",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ディレクトリを指すリンクで索引ページが公開されないときはリンクにならず警告になる:FR-099": {
+      "from": "sha256:85bbc77554be43c8471bb88d2000d10a2d4a92d591a9f86796f6801bb5ed41c9",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ディレクトリを指すリンクは索引ページのindex_htmlになる:FR-098": {
+      "from": "sha256:af2e0e732ef3bf3e060dee8735c147b3945d04b67c6314d28f45fcb36efe6561",
+      "to": "sha256:65cffda5f615cd6397ed9036367fffe4a8865290ad906eb05aa38260ead52d06",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::デコード後に現れるシャープはフラグメントとして再分割しない:FR-107": {
+      "from": "sha256:b618cbefe47338eca8fffbde48933c721b5040228118e0f7530bc7e43025c52b",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::トップページのエントリのタイトルと要約はエスケープされる:FR-093": {
+      "from": "sha256:156e9bef3298680e71768c04892ea6ae60ca12cfc72b010b9f2f41f5931db70d",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::トップページのエントリは根のindexmdのタイトルが不正ならディレクトリ名と要約なしになる:FR-093": {
+      "from": "sha256:c33b1c5c554777b7344262be02f991b2b1eab321f87dbdba11fbe996364056c6",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::トップページのエントリは空のタイトルと空の要約を無いものとして扱う:FR-093": {
+      "from": "sha256:609dbfa0b3f65996af49ed40e424fe510b2f5a9b7eaec884ed489ee3e2b09cf6",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::トップページのタイトルと要約はsite設定から決まる:FR-093": {
+      "from": "sha256:6e6308948c4a2b76c8b042dcd0bd27cbda2985b5db168dbe1ec00958ad7b8ba4",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::トップページはindex設定の根を順にタイトルと要約の一覧にする:FR-093": {
+      "from": "sha256:cf08c23e25ba122303f7560f876186de6731deb1cf82f75285e27176c91a4b2f",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::トップページ自身にはヘッダのリンクを置かない:FR-104": {
+      "from": "sha256:07d76a8e36193930eff31e274d167904743956ae6b37fa180ef1dc5d289a332a",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ノードでないdocやidが重複するreqからの参照は参照元一覧に出ない:FR-101": {
+      "from": "sha256:cf8d8b1925c5aa21548b5b60e103c4452d58901f9157bc87cd5f071197e17197",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::パーセント記号を含むファイル名とアンパサンドはhrefで符号化される:FR-107": {
+      "from": "sha256:d8390fb6be3438fce3407aa7875be96ee4e50eb07fff1272bdaf522c6f4492d0",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::フラグメントはrfc3986で許される文字以外をパーセントエンコードする:FR-107": {
+      "from": "sha256:c56dc2d65943f2544e4fb733a0be32e3a3843faecd750cd81d7431eeff1c0093",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::フロントマターは本文から取り除かれcrlfの囲みでも同じ:FR-102": {
+      "from": "sha256:d13881a5b9ec7ade5cdea08935cbc9f754242a079639878fbd0aa9e63073f21e",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ブロックの生htmlをpre表示するとき中のコメントを取り除く:FR-097": {
+      "from": "sha256:b56a68fc0c98d447dc2e9a52555e26757c185a05aafe4df3db5d60959a506f03",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ヘッダと一覧と参照元一覧のhrefも同じエンコード規則に従う:FR-095": {
+      "from": "sha256:e5349bc4481e9387ab227bee1dc32d0fd33f0d8d8772fbc6f781961cdcd1fa63",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ヘッダのリンクの文はエスケープされる:FR-104": {
+      "from": "sha256:095ae342a1359b619f369b39c0a10a45d4dfe8eb8e414bf4249ebcb810b948c7",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ページにならないreqへのリンクは公開されないリンクになる:FR-099": {
+      "from": "sha256:21df576cee627ca5366ef45af0563b9a659c46a7ef592f41e7003a268cf07d94",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ページは外部リソースもスクリプトも含まない:FR-095": {
+      "from": "sha256:0f8e87dfa3a888d836e73b6b40790a8c0a30ad433cdd47a39951409cc35126f3",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::メールの自動リンクはmailtoのリンクになり素のurlは自動リンクにならない:FR-098": {
+      "from": "sha256:3f0c5f3c6301087e788b01cb19ea51251f60f1a8ed23c57c6dd82e7c25277a00",
+      "to": "sha256:65cffda5f615cd6397ed9036367fffe4a8865290ad906eb05aa38260ead52d06",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::リンクのクエリは捨てられパーセントデコードしてから解決される:FR-107": {
+      "from": "sha256:d31f2618bf2bdd79cc0315c319aa0c1f7a74f2ad1caa8ac3cc1c2ae9bd67dd23",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::リンク先は山括弧とtitle属性を除いたdestinationで警告に出る:FR-099": {
+      "from": "sha256:43220d97bdac454df09a10e98d644d62723ec3fed51ac66b45b7ab7d431d154f",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::ロックが無くても壊れていても成功しロックを作らない:FR-090": {
+      "from": "sha256:bad3792b65b04508b43cfdf93c43b1ac108c914163659ea543b8bbaf26f9a216",
+      "to": "sha256:c37199ad085b376fe3efb99666042beb5deb87d1585d5ba56c5e84ca38df9098",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::中身が空のh1は本文の見出しとみなさずテンプレートのh1を出す:FR-105": {
+      "from": "sha256:6a5186e21185453251931b69745e0a59fd3e12df0d408b68f0043d979b567720",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::先頭h1にリンクを含んでもidと要約はh1直後に1回だけ入る:FR-105": {
+      "from": "sha256:f4b80b8c2fbcca5ab75732096d04430ec2df5b8702e976d9715e57c886327514",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::先頭行がハイフン3つでなければフロントマターなしとして全体を本文にする:FR-102": {
+      "from": "sha256:09a3b91f91f524ffc8e2278004b72adeafc6786ef67ec6f25da551ad31e62e34",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::公開されないリンクがあっても終了コード0で警告だけ出す:FR-090": {
+      "from": "sha256:eca2778f464b3f7096c96ea11de92eb553b19bcd795b88294733ed54e08c7ca1",
+      "to": "sha256:c37199ad085b376fe3efb99666042beb5deb87d1585d5ba56c5e84ca38df9098",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::公開されないリンクはリンク文だけを残して警告の書式で出る:FR-099": {
+      "from": "sha256:8f3c69bc8bb598c232699e85559259b35f1d1d4cd69ce5d6879246d00c1df9df",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::公開されない画像を囲む公開されるリンクはaだけ残り警告は1件:FR-100": {
+      "from": "sha256:a0864c5ec60da13fc0a515e324b4e9c85ac69579d978b121b05589b510bdb152",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::公開されるページはdocとreqと索引対象文書と索引ページの和集合に限る:FR-091": {
+      "from": "sha256:4d7ffb35fc15513e36875f9d56c712a8001225c675098f9f20eadcc2a261ae9b",
+      "to": "sha256:4f593baa208afb53a6211facfac6f796d6f149940c8da814732890654e666222",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::公開される画像を囲む公開されないリンクはimgだけ残り警告は1件:FR-100": {
+      "from": "sha256:daeb1ea84961fb1ef4002c6aafcd6edc9d3c49b5780acda460def35ae86eceee",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::内部リンクはすべて相対パスでスラッシュで始まらない:FR-095": {
+      "from": "sha256:5a9dba16b2e5daf366ed7c689877b32cc362cc23a8c290a42f86cb12ab8af43c",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::出力しないコメントのブロックは最初のブロックに数えない:FR-105": {
+      "from": "sha256:314f867acdcbcd2951a0d31918de8cb629f4e25e56115d6c475b8250ad571a35",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::出力パスは元のパスの拡張子をhtmlに置き換えたものになる:FR-092": {
+      "from": "sha256:ca4155443e0efcdd608e06957e505903a51ac891ace70f31b3be9aa7f4578541",
+      "to": "sha256:e0c9956f4ae2d11770fd172c45b7d7d19599e9cfca7fd529110571b84b1b265e",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::出力先がファイルのときはエラーで何も書かず中身も変わらない:FR-089": {
+      "from": "sha256:4258a156d5ee54c5a0b397a27fe3f133aace889a628aceee12083dbb7a3e0f73",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::出力先が空のサブディレクトリだけを持つ場合もエラーで何も書かない:FR-089": {
+      "from": "sha256:3955f6f2646e4e70f66ee0e3627067e8846948e012f44fcb1151840d0a5b09dc",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::出力先にファイルが1つでもあるとエラーで何も書かない:FR-089": {
+      "from": "sha256:56c3d0e3601baf2fa2b0b9dfbcc2a87f06e2a8508f4689de443045ada155dd10",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::出力先の既定は_siteで存在しなければ作られる:FR-089": {
+      "from": "sha256:447410e50f46ebc65d9bf373febaaaf61824ec083b06d57cc7f786d73d838e2f",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::参照しているdocが無いときは見出しごと節を出さない:FR-101": {
+      "from": "sha256:117baee11e92b1a8da3b6e715c48bb42984da6cc9fd581a256b7034778f24273",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::参照元のタイトルはエスケープされる:FR-101": {
+      "from": "sha256:8bbf74794430c46767dfe334ffaa7325f3a0bbe59d7530dd72f4a7068440bfa1",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::参照元の一覧はdocのリポジトリ相対パスの順でタイトルの順ではない:FR-101": {
+      "from": "sha256:a65f4dd2002a1ae52069c18e87754868744b8a02d19c9b1880aca5eac7df45e0",
+      "to": "sha256:b759210a98543f9ef4f61cf28860c2de44a32502aabd9b4a1960b9af6dca8034",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::同じ値の見出しは2つ目から連番のサフィックスが付く:FR-106": {
+      "from": "sha256:25593a5b03eadb104ea368906869b2b08161034c57a538dc23b218509c32d3d3",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::同じ入力から2回生成するとファイル集合も内容もバイト一致する:FR-090": {
+      "from": "sha256:c0b7b60f93438ad85480123eb07278175f5fe10c7db948facae539fc4e3f497f",
+      "to": "sha256:c37199ad085b376fe3efb99666042beb5deb87d1585d5ba56c5e84ca38df9098",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::外部リンクとメールとページ内アンカーはそのまま出力される:FR-098": {
+      "from": "sha256:51e90c610309b0340bbdc2993017919fdbd0bb2f66c9597b817edfd28a240df3",
+      "to": "sha256:65cffda5f615cd6397ed9036367fffe4a8865290ad906eb05aa38260ead52d06",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::存在して空の出力先はそのまま使われる:FR-089": {
+      "from": "sha256:ebc91315b5cd5f83909917d6fa689775038bf0b9d67e807158decbc3ed608c8b",
+      "to": "sha256:71c34bd79120a2872eff04c04fae84b3ec792eb9d9d4cfb561e3efe01e51a756",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::最初のブロックがatxのh1のときテンプレートのh1を出さず本文の見出しを使う:FR-105": {
+      "from": "sha256:22ebf327c71f73d020302cf12f8b7eaa7aa8385495806a6f1f8116f42edfd019",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::最初のブロックがh1でなければテンプレートのh1を出す:FR-105": {
+      "from": "sha256:d9164bfcdfe74719790e81905c602cce721c859de2c3a57b7be2be8b614ad622",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::最初のブロックがh2のときもテンプレートのh1を出す:FR-105": {
+      "from": "sha256:cb667d0e55f3fed46154bd281b0134fd39f6f8f1c045d159a4e08492bbba617e",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::最初のブロックがsetextのh1のときも本文の見出しを使う:FR-105": {
+      "from": "sha256:0ca9868228817c73f5b4e804365276ce7ae126c6706c182310616303e3299529",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::最初の行がコメントで始まらないブロックの中のコメントは取り除かれて表示される:FR-097": {
+      "from": "sha256:207292d0c2bf0aa4b8d1a685e37054e8ab9717d61480c9f46a10dd3ddf133e0a",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::本文の最初が見出しのときも要約はその見出しの直後に置かれる:FR-105": {
+      "from": "sha256:3475461d44f1b91af2c66aeeffb157bc1619a8daaf62c57648f6d5448829a2c3",
+      "to": "sha256:d32109150902de32d7a8a8f1c2c266dd075cc7dbac1df8cb0d51bdfd8cb935fc",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::根にindexmdが無いときエントリはリンクなしのディレクトリ名になり警告が出る:FR-103": {
+      "from": "sha256:674d30bfc402d2721e9c2576e0df7dcb11d9c132c7e51c33f23f06851d15f900",
+      "to": "sha256:5a3516baa1cb8f16c4e7750579099f15c4a8b072daa1c4613fb9093fc25e822d",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::根にindexmdが無くても根の文書へのリンクは通常どおり書き換わる:FR-103": {
+      "from": "sha256:a8c0b34ad83eea346cb089cb5988a5f00146e8041fbdac621dc46f8a36ec04fb",
+      "to": "sha256:5a3516baa1cb8f16c4e7750579099f15c4a8b072daa1c4613fb9093fc25e822d",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::根にindexmdが無く子の索引だけあるとき公開されない索引にはリンクしない:FR-104": {
+      "from": "sha256:953bb429e5d48a3a92bfd29b8ad45d6f2e8087580a0d911858d083df05232b2e",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::根に公開された索引ページが無いときはトップへのリンクだけになる:FR-104": {
+      "from": "sha256:ae1e9ab182b7186138e943a07e5b226d5a0ba24217d8f384d3f4cf798017134d",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::根のindexmdのフロントマターが解析できないときトップのエントリはディレクトリ名で要約なしになる:FR-093": {
+      "from": "sha256:3022f9bd261e2f17514eb1d205906531436ae82d2206950b0969248fcb9afd66",
+      "to": "sha256:c89eaf57a4ff7c542fab9a32c7c191356f48a1bb74f14df8fb65ff5627f78ef7",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::根の外のindexmdと根が別なら根の外のindexmdは公開されずリンクは警告になる:FR-091": {
+      "from": "sha256:b2651a5a732692ded05832fdcceb046673fae97e3d05e6112dd341e926811e39",
+      "to": "sha256:4f593baa208afb53a6211facfac6f796d6f149940c8da814732890654e666222",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::根の索引ページとreqと根の外のdocにはトップへのリンクだけを置く:FR-104": {
+      "from": "sha256:d168f126b732e8223f68508c7423a753f53dd6850527fdf98fe5c88f77c40b20",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::正しいsite設定はsite以外のコマンドの出力に影響しない:FR-094": {
+      "from": "sha256:a1c56aecaa838e7b12e1bce45c2d6f04a0a5f57dd39800cbd2ec3c162b761c20",
+      "to": "sha256:aac7ce6ff99e94252afed0a1c1e14bb0c1062db5bdf076b3eb45e1113945f547",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::画像のクエリとフラグメントは解決時に取り除かれコピーされる:FR-100": {
+      "from": "sha256:3b00b1d5392d5d9d47884fac3ec5314085ec6ae168d64cdbd12f224dcfd0feb0",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::画像の相対パスは元ファイルのディレクトリ基準でパーセントデコードされる:FR-100": {
+      "from": "sha256:84f54026f2c48972a1a3afab5cc279d5cddc6fee7eb862c048cd133d8e0b9aef",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::相対mdリンクは出力上の相対パスのhtmlリンクに書き換わる:FR-098": {
+      "from": "sha256:abf5e318b48a72a6bfc6409559f352fd24a02780f50ad619755d16f91fa867c3",
+      "to": "sha256:65cffda5f615cd6397ed9036367fffe4a8865290ad906eb05aa38260ead52d06",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::空のリンク先は公開されないリンクとして警告になる:FR-099": {
+      "from": "sha256:8a74c809082efe371c818f68a3057bbdcb5187528cb47a0be1c3467fce7a46a7",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引ページのタイトルと要約はディレクトリの規則に従う:FR-096": {
+      "from": "sha256:99f30370f36c2b44739b67cabc476a092455ab6d281dc111c7f336a156199011",
+      "to": "sha256:a1347b68e4685eb31f123608a60be4e312afb09ca170df45edeef638205241ad",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引ページのヘッダは親の索引へのリンクを持つ:FR-104": {
+      "from": "sha256:45f93054567a097ac687410bcfd4ef1c55b44093d7c233d908271a175711f7bc",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引ページの本文にも同じ規則が適用されエントリがそのまま一覧になる:FR-098": {
+      "from": "sha256:43f9f6b59ca667d9717387931628fe059ad9f146c9f7635cf2c7390fc11076cf",
+      "to": "sha256:65cffda5f615cd6397ed9036367fffe4a8865290ad906eb05aa38260ead52d06",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引ページの親は階層を飛ばした最も近い祖先の索引になる:FR-104": {
+      "from": "sha256:97dc6e010099d105bbf2d9649a7485cf5aba922ee84ec9b8da06a7e8625f3c2f",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引ページの非utf8のバイトも置換文字になる:FR-102": {
+      "from": "sha256:380b95e064816863596d3f41d83178d8b28d02bb8f564d73054e6c932f287525",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引ページはフロントマターを解析できなくても公開されタイトルはディレクトリ名になる:FR-096": {
+      "from": "sha256:c8d63348ccd6fe282596f173343038e5740415476bb4d1867e080cf5af58d212",
+      "to": "sha256:a1347b68e4685eb31f123608a60be4e312afb09ca170df45edeef638205241ad",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引ページは本文の見出しがあってもタイトルはディレクトリ名になる:FR-096": {
+      "from": "sha256:605b57baa797d5f84e625b38b32a8ac54d4f39825ab11de2a8f9708c0ec88ef8",
+      "to": "sha256:a1347b68e4685eb31f123608a60be4e312afb09ca170df45edeef638205241ad",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::索引対象文書と索引ページにはidを表示しない:FR-095": {
+      "from": "sha256:41001536ef99fa408617393af98489254c3d0b00c2b1501b16beec17b9ff3111",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::脚注のラベルは使用済みとして扱い見出しのidと重ならないようにする:FR-106": {
+      "from": "sha256:05428694f237a97018033fed8560235a2f5c3b902926779de5282b77f02581e3",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::表と取り消し線とタスクリストと脚注が変換される:FR-097": {
+      "from": "sha256:b9f2fe6ae93e91df0582f7b8292762878e586ebf9f2584f89f4ffada7113617a",
+      "to": "sha256:226f54f45a0d5b928eaa2b65aefe0a50574a7970c7841818d2144a8084dd1520",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::要約が無いとき要約の段落もmeta_descriptionも出ない:FR-095": {
+      "from": "sha256:88cac195f2cb01fa1d093443775a4615a67c0c15c7c115c652a478054cbb4f8b",
+      "to": "sha256:c0fc2d13d095d3edd42ae79ffb1b42a07279b8f2997f1193b2a35065eb51e139",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::要約は無い空改行を含むときなしで折り畳みスカラーは有効になる:FR-096": {
+      "from": "sha256:e252d5f94a62ea288be15633f21fad103f56dd89dc95cef8110a76e4d007fddc",
+      "to": "sha256:a1347b68e4685eb31f123608a60be4e312afb09ca170df45edeef638205241ad",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::見出しidへのページ内リンクはそのまま出力される:FR-106": {
+      "from": "sha256:b08d17bafad6125e3ccdb0faa0bbac2ab01dae607e209b3860f2477f7e31a381",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::見出しにはgithub互換のid属性が付く:FR-106": {
+      "from": "sha256:91e96ff7859f10766c19d41e23622aedf3f5c7a658d218448ee55aea4499e139",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::見出しのidにインラインの生htmlやコメントを含めず前後の空白を除く:FR-106": {
+      "from": "sha256:1d4a25de1f6ce211a0318a0efc5e3f6111220298fb07e4ab7b560bc43a4b53d9",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::規則を当てた結果が空の見出しにはidを付けない:FR-106": {
+      "from": "sha256:c1b17757de6b62c67c611bd3c6323a83511fdb6dac30ebb918aedd53baecb6bb",
+      "to": "sha256:5311473dce37c9134d6bcde999cf3f8d80ee800a974fb1069acf39fd9391cb05",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::親ディレクトリを辿るリンクは正規化されて解決される:FR-107": {
+      "from": "sha256:be542641763af01444ab8777fa84ef9b38b28dcbceb75b49da9208e5f963c2b4",
+      "to": "sha256:56dcf3004a20082b1e56f4517249cf2cc299c7327033f73f77d9292d664a1dac",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::許可された拡張子の画像は大文字小文字を問わず同じ相対位置へコピーされる:FR-100": {
+      "from": "sha256:09fd40558de0d1a78f977ce93d2e5b30d0035360173b63eff09b9afc0919e3c2",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::警告のリンク先の制御文字はエスケープされる:FR-099": {
+      "from": "sha256:e2f55635bd21996311ecd6553a9f206ddc5a9cd0ab6f7a5a3a0de227cd1e18a1",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::警告はページの元パスのバイト順でページ内は画像とリンクを区別せず出現順になる:FR-099": {
+      "from": "sha256:1fee6c4c808e57bb630ef4991a7ccaf90021045d873e0e706cc521f2c91a0a28",
+      "to": "sha256:b7fe0776c4d8c07836a064fed225a0bca892725becd98d2920e6742a68e43030",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::閉じのハイフンが無い型付き文書へのリンクは公開されないリンクになる:FR-102": {
+      "from": "sha256:ce17995971ce59fd9b60a50088858dfced1cda7f53723f5bd34dab1f6803c930",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::閉じのハイフンが無い文書は公開されず索引ページは本文を空として公開される:FR-102": {
+      "from": "sha256:0be5407ae830e4572ed2f0162844d94b965b67473b9b96f27fe418280b9f1f64",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::除外ディレクトリの画像とdocsとrequirementsの外の画像はコピーされない:FR-100": {
+      "from": "sha256:db1c19287c18f4653ef91180e031c31608f9fb1a5ef03c217b7074a07d019f58",
+      "to": "sha256:6e662f045a1394e26fbcff544b0b9cf600ff743e05a7c71440f5b77589b2f74f",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::階層を飛ばした文書は最も近い公開された索引へリンクする:FR-104": {
+      "from": "sha256:848381d74062cc324d5095bf2a89498772134eb26492b4e0a7c7f34fcfc580e0",
+      "to": "sha256:e82e8c07200aaa5d157d52655bcc469ebfaf55a82029ba3f8969d8f1b6052354",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
+    },
+    "test-req:tests/cli_site::非utf8のバイトは置換文字になり失敗しない:FR-102": {
+      "from": "sha256:68a3bb47a862d028214411709d9f123b66a21fe96e8b0d56e72f07ca6f2a1d2c",
+      "to": "sha256:f368e8b5bc4bc38666487efd8ac839101bf11ed8a2a0b57997be4a3cd4edeb25",
+      "by": "human",
+      "reason": "miwa site（非開発者向け閲覧サイトの生成）を追加",
+      "at": "2026-10-07T11:28:56Z"
     }
   }
 }
