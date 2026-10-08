@@ -15,6 +15,6 @@ Req が索引の根の配下にある場合は、Req の本文を編集すると
 - その Req を `to` とする各エッジの `ReqChanged`
 - その Req の `desc` エッジの `BodyChanged`
 
-要約の変更だけでは、`doc-req` と `test-req` の finding は出ない（FR-087）。索引配下のノードから `description` を消すと、次の 2件が報告される。
+要約の変更だけでは、`doc-req` と `test-req` の finding は出ない（FR-087）。索引配下のノードから `description` を消すと、次の2件が報告される。
 - `index` 種別の `MissingDescription`（FR-078）
 - `desc` エッジの `drift`（`DescriptionChanged`。ロックに記録された要約が空でなかった場合）

@@ -38,13 +38,13 @@ description: "doc・req・test の追随漏れや索引の乱れを、ロック�
 
   既存の `broken` / `invalid` は、グラフ自体が信用できないことを示します。そのため `reconcile --all` は、1件でもあれば失敗します。`--edge` も、関係するエッジを拒否します（[FR-035](../req/reconcile-rejects-broken-or-invalid.md) 参照）。これに対して `index` の finding は、`index.md` と文書の食い違いを示すもので、エッジやハッシュとは無関係です。そのため、[`reconcile` の成否と記録内容](../req/index-findings-do-not-block-reconcile.md)は、`index` の finding に左右されません。解消する手段は `reconcile` ではなく、`miwa index` の実行や文書の修正（`description` / `type` を付ける）です。索引が乱れていても、doc / req / test の合意は記録できます。
 
-  `--gate` では、他の finding と同様に終了コード 2 になります。`--diff` では、基準側の設定に `index` がなければ、現在の `index` finding がすべて新規として報告されます。text 出力では種別が `index` と表示され、JSON 出力では `kind` が `Index` になります。`BrokenEntry` と、ディレクトリエントリの `TitleMismatch` / `DescriptionMismatch` の target には、空白が含まれます（`docs/index.md -> x.md`）。text 出力を空白で列に分けるときは注意してください。
+  `--gate` では、他の finding と同様に終了コード 2 になります。`--diff` では、基準側の設定に `index` が無ければ、現在の `index` finding がすべて新規として報告されます。text 出力では種別が `index` と表示され、JSON 出力では `kind` が `Index` になります。`BrokenEntry` と、ディレクトリエントリの `TitleMismatch` / `DescriptionMismatch` の target には、空白が含まれます（`docs/index.md -> x.md`）。text 出力を空白で列に分けるときは注意してください。
 
 `check` は診断だけを行います。[前回合意した記録（ロック）の内容](../req/check-does-not-write-lock.md)を書き換えることはありません。同じ入力に対する[finding の内容と順序は常に同じ](../req/check-findings-deterministic-order.md)です。
 
 ## CI での使い方（`--gate`）
 
-`check --gate` を CI に組み込むと、更新漏れがあるときにビルドを失敗させられます。[終了コード](../req/check-gate-exit-codes.md)は次のとおりです。finding が1件でもあれば終了コード 2、設定不備などの実行エラーがあれば終了コード 1、問題がなければ終了コード 0 です。
+`check --gate` を CI に組み込むと、更新漏れがあるときにビルドを失敗させられます。[終了コード](../req/check-gate-exit-codes.md)は、finding が1件でもあれば 2、設定不備などの実行エラーがあれば 1、問題がなければ 0 です。
 
 ## 差分だけを見る（`--diff`）
 

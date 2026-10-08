@@ -2,7 +2,7 @@
 type: Requirement
 id: FR-041
 ---
-`judge` は対象エッジ 1本につき、`POST https://api.typesafe.ai/v1/systemone` を 1回呼ぶ。ヘッダは `Authorization: Bearer <TYPESAFE_API_KEY>` と `Content-Type: application/json` とする。本体は、`model: "jev-latest"`、構造化オブジェクトの `state`、1 問だけの `questions`（キー `consistent`、`type: "noul"`）を持つ。
+`judge` は対象エッジ1本につき、`POST https://api.typesafe.ai/v1/systemone` を1回呼ぶ。ヘッダは `Authorization: Bearer <TYPESAFE_API_KEY>` と `Content-Type: application/json` とする。本体は、`model: "jev-latest"`、構造化オブジェクトの `state`、1問だけの `questions`（キー `consistent`、`type: "noul"`）を持つ。
 
 `state` はエッジの種別ごとに次のとおりとする。
 - doc–req エッジ: `{ "doc": <doc 本文>, "req": <req 本文> }`

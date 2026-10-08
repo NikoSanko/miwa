@@ -25,7 +25,7 @@ miwa judge --auto-reconcile
 
 `--edge` を付けると、指定した依存関係だけに絞れます。対象でない ID を指定するとエラーになります。リンク切れ（`broken`）や不正な状態（`invalid`）に関わる依存関係は、先にソースを直す必要があるため対象になりません。
 
-対象が1件もない場合は、「対象なし」と表示し、[正常終了](../req/judge-exit-codes-and-no-targets.md)します。
+対象が1件もない場合は、「対象なし」と表示して正常終了します（[終了コードの規則](../req/judge-exit-codes-and-no-targets.md)）。
 
 ## 判定の流れ
 
@@ -62,13 +62,13 @@ skipped doc-req:DOC-BIG:FR-090 score=-
 - `review`: しきい値に届かなかった。整合しているかの判断は呼び出し元に任せる
 - `skipped`: 本文が大きすぎて判定できなかった
 
-全件の判定が完了すれば、`review` や `skipped` があっても、[終了コードは 0](../req/judge-exit-codes-and-no-targets.md)です。`judge` は結果を報告するコマンドで、CI のゲートではないためです。設定や API キーの問題、通信エラーなどで実行できなかった場合は、終了コード 1 になります。
+全件の判定が完了すれば、`review` や `skipped` があっても、[終了コード](../req/judge-exit-codes-and-no-targets.md)は 0 です。`judge` は結果を報告するコマンドで、CI のゲートではないためです。設定や API キーの問題、通信エラーなどで実行できなかった場合は、終了コード 1 になります。
 
 ## 自動で合意する（`--auto-reconcile`）
 
 既定では、`judge` は表示と報告だけで、ロックを書き換えません。
 
-`--auto-reconcile` を付けたときだけ、Jev が `consistent` と判断したものについて、合意（reconcile）まで進みます。ロックへの記録は、全件の判定が終わった後に、[まとめて1回](../req/judge-auto-reconcile-lock-policy.md)で行います。途中でエラーになった場合は、何も書きません。記録には、合意者 `by: jev` と Jev のスコアが残ります。`review` と `skipped` のものは記録しません。人が確認して [`reconcile`](reconcile.md) してください。
+`--auto-reconcile` を付けたときだけ、Jev が `consistent` と判断したものについて、合意（reconcile）まで進みます。ロックへの記録は、全件の判定が終わった後にまとめて1回で行います（[自動合意とロックの扱い](../req/judge-auto-reconcile-lock-policy.md)）。途中でエラーになった場合は、何も書きません。記録には、合意者 `by: jev` と Jev のスコアが残ります。`review` と `skipped` のものは記録しません。人が確認して [`reconcile`](reconcile.md) してください。
 
 ## 使い方の例
 

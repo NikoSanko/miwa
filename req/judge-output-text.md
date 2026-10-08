@@ -2,7 +2,7 @@
 type: Requirement
 id: FR-046
 ---
-`judge` 自身の出力は text 形式のみとする。判定結果は、エッジごとに 1行の `<verdict> <edge id> score=<0.00〜1.00>` として stdout に出力する。
+`judge` 自身の出力は text 形式のみとする。判定結果は、エッジごとに1行の `<verdict> <edge id> score=<0.00〜1.00>` として stdout に出力する。
 
 verdict は次のいずれかとする。
 - `consistent`

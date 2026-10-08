@@ -95,7 +95,7 @@ Go の test の識別子は、テストファイルが置かれたディレク�
 fn rejects_short_password() { ... }
 ```
 
-Rust では、属性パスの末尾が `test` の属性が付いた関数が対象です。`#[test]`、`#[tokio::test]`、`#[async_std::test]` などが該当し、引数付きも可です（[属性の検出規則](../req/rust-test-attribute-detection.md)）。他の属性の引数の中に現れる `test`（`#[cfg_attr(x, test)]` など）は見ません。
+Rust では、属性パスの末尾が `test` の属性が付いた関数が対象です。`#[test]`、`#[tokio::test]`、`#[async_std::test]` などが該当し、引数付きの属性も対象です（[属性の検出規則](../req/rust-test-attribute-detection.md)）。他の属性の引数の中に現れる `test`（`#[cfg_attr(x, test)]` など）は見ません。
 
 `#[rstest]` のようにこれに当たらない属性は、`.miwa/config.yaml` の `rust.test_attributes` に名前を列挙すると対象になります。既定は空です（[設定の規則](../req/config-rust-test-attributes.md)）。
 
@@ -185,11 +185,11 @@ TypeScript / JavaScript の test の識別子は、ファイルパスと describ
 miwa は doc・req・test それぞれの「内容」をハッシュ値にして、前回合意した内容と比べます。ハッシュの計算には SHA-256 を使い、改行コードの違いだけは無視します（[ハッシュの規則](../req/hash-sha256-with-lf-normalization.md)）。
 
 - doc・req は、フロントマターを除いた本文だけが比較対象です（[比較範囲の規則](../req/hash-doc-req-scope-excludes-frontmatter.md)）。`id` だけを書き換えても、内容の変更とはみなされません。
-- 索引の対象になっている doc・req には、要約（`description`）と本文の対を見る [`desc` エッジ](../req/desc-edge-exists-for-indexed-nodes.md)があります。要約と本文のハッシュは別々に取ります（[ハッシュの取り方](../req/desc-edge-hash-sources.md)）。そのため、`description` だけを変えても doc → req や test → req のエッジには影響しません。本文を編集すると、doc → req のエッジと `desc` エッジの両方に現れます。
+- 索引の対象になっている doc・req には、要約（`description`）と本文の対を見る [`desc` エッジ](../req/desc-edge-exists-for-indexed-nodes.md)があります。要約と本文のハッシュは別々に取ります（[ハッシュの取り方](../req/desc-edge-hash-sources.md)）。そのため、`description` だけを変えても doc → req や test → req のエッジには影響しません。本文の編集は、doc → req のエッジと `desc` エッジの両方に現れます。
 - test は、関数の定義全体が比較対象です（[比較範囲の規則](../req/hash-test-scope-is-whole-function.md)）。言語ごとの扱いは次のとおりです。
-  - Rust は、`#[test]` などの属性とマーカーコメントを含めません（[Rust の除外範囲](../req/hash-rust-test-excludes-outer-attributes.md)）。
-  - C# は、メソッドに付けた属性（`[Fact]` など）と属性直後のコメントを含めません（[C# の除外範囲](../req/hash-csharp-test-excludes-attributes.md)）。
-  - Java / Kotlin は、先頭に連続する注釈（`@Test` など）と、その間・直後のコメントを含めません（[Java / Kotlin の除外範囲](../req/hash-java-kotlin-test-excludes-annotations.md)）。修飾子より後ろに書いた注釈は含みます。
+  - Rust は、`#[test]` などの属性とマーカーコメントをハッシュの対象に含めません（[Rust の除外範囲](../req/hash-rust-test-excludes-outer-attributes.md)）。
+  - C# は、メソッドに付けた属性（`[Fact]` など）と属性直後のコメントをハッシュの対象に含めません（[C# の除外範囲](../req/hash-csharp-test-excludes-attributes.md)）。
+  - Java / Kotlin は、先頭に連続する注釈（`@Test` など）と、その間・直後のコメントをハッシュの対象に含めません（[Java / Kotlin の除外範囲](../req/hash-java-kotlin-test-excludes-annotations.md)）。修飾子より後ろに書いた注釈は含みます。
   - TypeScript / JavaScript は、`test(...)` / `it(...)` の呼び出し文全体が対象です。
 
 ## エッジの識別子

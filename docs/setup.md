@@ -13,7 +13,7 @@ miwa をリポジトリで使うには、最初に `init` コマンドで設定�
 miwa init
 ```
 
-`init` を実行すると、既定値で `.miwa/config.yaml` を作ります。すでに `.miwa/config.yaml` がある状態で `init` を実行すると、[既存の設定を上書きせずに失敗します](../req/init-generates-default-config.md)。設定をやり直したい場合は、先に既存のファイルを削除するか、直接編集してください。
+`init` を実行すると、既定値で `.miwa/config.yaml` を作ります。すでに `.miwa/config.yaml` がある状態で `init` を実行すると、既存の設定は上書きせずに失敗します（[`init` の規則](../req/init-generates-default-config.md)）。設定をやり直したい場合は、先に既存のファイルを削除するか、直接編集してください。
 
 ## 設定ファイルで何を決めるか
 
@@ -30,15 +30,15 @@ miwa init
 - `rust.test_attributes`: Rust で `test` 以外の名前の test 属性（例: `rstest`）を test として扱うための、属性名の一覧。省略時は空。属性パスの末尾の名前だけを書きます（`rstest::rstest` ではなく `rstest`）。
 - [`exclude`](../req/config-exclude-dirs.md): 探索から除外するディレクトリ名の一覧。省略時は空。パスではなく名前だけを書きます。どの深さでも、一致するディレクトリ配下が除外されます（例: Gradle の `build`、Next.js の `.next`）。Vite や tsc の出力先 `dist` は、既定で除外されます。
 - [`index`](../req/config-index-roots.md): 索引（`index.md`）を検査・生成する根のフォルダの一覧。省略時は空で、空のときは索引の機能は無効です。書けるのは、`docs` か `requirements` のフォルダと同じフォルダか、その配下のフォルダです。`exclude` の配下は書けません。要素同士が包含関係にあるのも不可です。子孫フォルダの `index.md` は、設定しなくても担当を持ちます。詳細は [索引を保つ](index-command.md) を参照してください。
-- [`site`](../req/config-site-settings.md): [`miwa site`](site.md) が作る閲覧サイトのトップページの設定。省略でき、書けるのは `title`（省略時は miwa を実行したフォルダの名前）と `description`（省略時は要約なし）です。前後の空白を除くと空になる値、改行を含む値、文字列でない値は、設定エラーになります。この検証は、すべてのコマンドで行います。
+- [`site`](../req/config-site-settings.md): [`miwa site`](site.md) が作る閲覧サイトのトップページの設定。省略でき、`title`（省略時は miwa を実行したフォルダの名前）と `description`（省略時は要約なし）を書きます。前後の空白を除くと空になる値、改行を含む値、文字列でない値は、設定エラーになります。この検証は、すべてのコマンドで行います。
 
 `docs` / `requirements` / `tests` に指定したフォルダの外にあるファイルは、miwa の対象になりません。さらに、`.git` `target` `.miwa` `.worktrees` `node_modules` `obj` `dist` という名前のフォルダは、自動的に探索から除外されます。シンボリックリンクの先は辿りません。こうした[探索範囲の制限](../req/source-scan-scope-and-exclusions.md)があるので、大きなリポジトリでも、意図しないファイルまで読み込まれる心配はありません。`obj` は C# のビルド生成物を読み込まないための除外で、docs・requirements・tests のすべてに適用されます。
 
 既知の制約として、miwa が使っている構文解析器が未対応の構文を含むテストファイルは、構文エラーとして `invalid` になります（例: C# のリストパターン内のスライス `[.., var r]`）。該当するファイルは、その構文を避けて書くか、`tests` の対象から外してください。Kotlin には、さらに次の制約があります。
 
-- 非 ASCII 文字（漢字・カタカナ・ハングルなど）を含む行では、構文エラーの検知が緩くなります。この制約で緩むのは構文エラーの検知であり、有効なコードが `invalid` になる方向ではありません。
+- 非 ASCII 文字（漢字・カタカナ・ハングルなど）を含む行では、構文エラーの検知が緩くなることがあります。ただし、有効なコードが `invalid` になる方向には緩みません。
 - メンバーを1つでも持つ1行の class / object / interface / companion object 本体（`class A { fun x() {} }`、`object O { const val X = 1 }` など）は、構文エラーになります。複数行に分ければ問題ありません。
-- 注釈を2つ以上付けた、supertype のないクラスの本体に、`@Nested inner class` のように注釈付きの inner class があると、構文解析器の不具合でクラス全体が認識できなくなる場合があります。miwa は、[このパターンを自動で回避します](../req/kotlin-non-ascii-identifiers.md)。回避できない場合は、構文エラー（`invalid`）として扱います。その場合は、supertype（`: Any()` など）を付けるか、クラスの注釈を1つにしてください。
+- 注釈を2つ以上付けた、supertype のないクラスの本体に、`@Nested inner class` のように注釈付きの inner class があると、構文解析器の不具合でクラス全体が認識できなくなる場合があります。miwa は[このパターンの回避](../req/kotlin-non-ascii-identifiers.md)を自動で行います。回避できない場合は、構文エラー（`invalid`）として扱います。その場合は、supertype（`: Any()` など）を付けるか、クラスの注釈を1つにしてください。
 
 Java / Kotlin では、Gradle / Maven のモジュール直下であれば `tests: ["src/test"]` のように指定します。monorepo ではモジュールのパスを先頭に付けて、`tests: ["packages/api/src/test"]` のようにします。生成コードの `src/generated` は `tests` に含めないでください。ビルド出力の `build` などは、`exclude: ["build"]` のように指定して探索から除外します。
 
@@ -52,7 +52,7 @@ Java / Kotlin では、Gradle / Maven のモジュール直下であれば `test
 
 ## 予約名
 
-`index.md` と `log.md` は予約名です。`docs` と `requirements` のどちらの配下でも、`type` を持っていても、[doc や req として扱いません](../req/index-reserved-names.md)。設定で変えることはできません。
+`index.md` と `log.md` は予約名です。`docs` と `requirements` のどちらの配下でも、`type` を持っていても、doc や req として扱いません（[予約名の規則](../req/index-reserved-names.md)）。設定で変えることはできません。
 
 ## 索引を導入する手順
 
