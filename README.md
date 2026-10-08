@@ -232,3 +232,7 @@ cargo fmt
 
 - [Issue #3](https://github.com/NikoSanko/miwa/issues/3) — test の十分性の検証方法（検討中）
 - [Issue #4](https://github.com/NikoSanko/miwa/issues/4) — Anthropic API を直接呼び出す版の `judge`（優先度低）
+
+## ライセンス
+
+[MIT License](LICENSE)
