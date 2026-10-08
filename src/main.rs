@@ -32,6 +32,11 @@ enum Command {
     },
     /// Create or update `index.md` files from the documents they list.
     Index,
+    /// Write a static HTML site for reading the documents.
+    Site {
+        #[arg(long, default_value = "_site")]
+        out: String,
+    },
     /// Record the current state of edges into the lock.
     Reconcile {
         #[arg(long = "edge", conflicts_with = "all")]
@@ -61,6 +66,7 @@ fn main() {
             format,
         } => run_check(gate, diff, base, format),
         Command::Index => run_index(),
+        Command::Site { out } => run_site(out),
         Command::Reconcile { edge, all, reason } => run_reconcile(edge, all, reason),
         Command::Judge {
             edge,
@@ -171,6 +177,27 @@ fn run_index() {
         Ok(results) => {
             for (status, path) in results {
                 println!("{} {path}", status.as_str());
+            }
+            std::process::exit(0)
+        }
+        Err(e) => {
+            eprintln!("{e}");
+            std::process::exit(1);
+        }
+    }
+}
+
+fn run_site(out: String) {
+    let result = std::env::current_dir()
+        .map_err(anyhow::Error::from)
+        .and_then(|root| {
+            let config = load_config(&root)?;
+            miwa::site::run(&root, &config, std::path::Path::new(&out))
+        });
+    match result {
+        Ok(warnings) => {
+            for w in warnings {
+                eprintln!("{w}");
             }
             std::process::exit(0)
         }

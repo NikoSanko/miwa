@@ -6,6 +6,7 @@ use std::ops::Range;
 use pulldown_cmark::{Event, HeadingLevel, LinkType, Options, Parser, Tag, TagEnd};
 
 use crate::frontmatter::{FrontMatter, FrontMatterError};
+use crate::markdown::parent_dir;
 use crate::model::ReasonCode;
 
 /// One list entry of an index: a list item that starts with a link.
@@ -120,10 +121,6 @@ fn percent_encode(s: &str) -> String {
         }
     }
     out
-}
-
-fn parent_dir(path: &str) -> &str {
-    path.rfind('/').map(|i| &path[..i]).unwrap_or("")
 }
 
 fn is_inline_event(ev: &Event) -> bool {

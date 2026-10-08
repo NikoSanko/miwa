@@ -1,6 +1,6 @@
 # miwa の仕様
 
-miwa は doc・req・test の追随漏れを検知する CLI です。ここから使い方の文書と参考資料をたどれます。
+miwa は doc・req・test の追随漏れを検知する CLI です。このページから、使い方の文書と参考資料をたどれます。
 
 ## 使い方
 
@@ -10,6 +10,7 @@ miwa は doc・req・test の追随漏れを検知する CLI です。ここか�
 - [合意を記録する（reconcile）](reconcile.md) — check が見つけた drift や new を人が確認して合意した結果を、ロックに記録するコマンドの仕様。
 - [意味が合っているか判定する（judge）](judge.md) — check が見つけた drift と new について、両端が意味的に整合しているかを Jev でスコア化し、助言として報告するコマンドの仕様。
 - [索引を保つ（index）](index-command.md) — LLM と人が索引（index.md）のタイトルと要約だけをたどって必要な文書を選べるように、索引の形式と、索引を文書から更新する `miwa index` の動作、LLM の読み方を説明する。
+- [閲覧サイトを作る（site）](site.md) — 非開発者が GitHub なしで業務要件を読めるように、索引の木をそのまま静的 HTML 一式として出力する `miwa site` の動作と、`site` 設定、公開の例を説明する。
 
 ## 参考資料
 

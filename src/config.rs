@@ -34,6 +34,82 @@ pub struct Config {
     /// Index roots (directories whose `index.md` lists the documents below).
     #[serde(default)]
     pub index: Vec<String>,
+    /// Settings for `miwa site`.
+    #[serde(default, skip_serializing_if = "Option::is_none")]
+    pub site: Option<SiteConfig>,
+}
+
+/// `site` section of `.miwa/config.yaml`.
+#[derive(Debug, Clone, PartialEq, Default, serde::Serialize, serde::Deserialize)]
+pub struct SiteConfig {
+    #[serde(
+        default,
+        deserialize_with = "deserialize_site_title",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub title: Option<String>,
+    #[serde(
+        default,
+        deserialize_with = "deserialize_site_description",
+        skip_serializing_if = "Option::is_none"
+    )]
+    pub description: Option<String>,
+}
+
+/// `null` and an absent key are "unspecified"; anything but a string is an
+/// error (YAML numbers and booleans must not be coerced to strings).
+fn deserialize_site_string<'de, D>(d: D, field: &str) -> Result<Option<String>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    use serde::Deserialize;
+    match Option::<serde_yaml_ng::Value>::deserialize(d)? {
+        None => Ok(None),
+        Some(serde_yaml_ng::Value::String(s)) => Ok(Some(s)),
+        Some(_) => Err(serde::de::Error::custom(format!(
+            "site.{field} must be a string"
+        ))),
+    }
+}
+
+fn deserialize_site_title<'de, D>(d: D) -> Result<Option<String>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    deserialize_site_string(d, "title")
+}
+
+fn deserialize_site_description<'de, D>(d: D) -> Result<Option<String>, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    deserialize_site_string(d, "description")
+}
+
+impl SiteConfig {
+    /// `title` with surrounding whitespace removed.
+    pub fn title(&self) -> Option<&str> {
+        self.title.as_deref().map(str::trim)
+    }
+
+    /// `description` with surrounding whitespace removed.
+    pub fn description(&self) -> Option<&str> {
+        self.description.as_deref().map(str::trim)
+    }
+
+    fn validate(&self) -> anyhow::Result<()> {
+        for (field, value) in [("title", &self.title), ("description", &self.description)] {
+            let Some(v) = value else { continue };
+            let v = v.trim();
+            if v.is_empty() {
+                anyhow::bail!("site.{field} must not be empty");
+            }
+            if v.contains('\n') || v.contains('\r') {
+                anyhow::bail!("site.{field} must be a single line");
+            }
+        }
+        Ok(())
+    }
 }
 
 impl Config {
@@ -51,6 +127,7 @@ impl Config {
             rust: RustConfig::default(),
             exclude: vec![],
             index: vec!["docs".to_string()],
+            site: None,
         }
     }
 
@@ -147,6 +224,9 @@ impl Config {
             }
         }
         self.validate_index()?;
+        if let Some(site) = &self.site {
+            site.validate()?;
+        }
         Ok(())
     }
 
@@ -267,6 +347,7 @@ mod tests {
             rust: RustConfig::default(),
             exclude: vec![],
             index: vec![],
+            site: None,
         }
     }
 
@@ -561,5 +642,56 @@ mod tests {
                 assert!(Config::parse(&yaml).is_err(), "{field}: {bad}");
             }
         }
+    }
+
+    fn site_yaml(site: &str) -> String {
+        format!("{BASE_YAML}site:\n{site}")
+    }
+
+    // [FR-094]
+    #[test]
+    fn siteの文字列でない値はフィールド名つきの設定エラーになる() {
+        for field in ["title", "description"] {
+            for bad in ["1", "true", "[a]", "{a: b}"] {
+                let err = Config::parse(&site_yaml(&format!("  {field}: {bad}\n")))
+                    .unwrap_err()
+                    .to_string();
+                assert!(
+                    err.contains(&format!("site.{field}")),
+                    "{field} {bad}: {err}"
+                );
+            }
+        }
+    }
+
+    // [FR-094]
+    #[test]
+    fn siteのnullと空の節は未指定になる() {
+        for site in ["  title: null\n  description: ~\n", "  {}\n"] {
+            let c = Config::parse(&site_yaml(site)).unwrap();
+            let s = c.site.unwrap();
+            assert_eq!(s.title(), None, "{site}");
+            assert_eq!(s.description(), None, "{site}");
+        }
+        assert!(Config::parse(&site_yaml("  null\n"))
+            .unwrap()
+            .site
+            .is_none());
+    }
+
+    // [FR-094]
+    #[test]
+    fn siteの値は前後の空白が除かれ往復しても変わらない() {
+        let c = Config::parse(&site_yaml(
+            "  title: \"  題名  \"\n  description: \" 要約 \"\n",
+        ))
+        .unwrap();
+        let s = c.site.as_ref().unwrap();
+        assert_eq!(s.title(), Some("題名"));
+        assert_eq!(s.description(), Some("要約"));
+        let again = Config::parse(&c.to_yaml()).unwrap();
+        let s2 = again.site.as_ref().unwrap();
+        assert_eq!(s2.title(), Some("題名"));
+        assert_eq!(s2.description(), Some("要約"));
     }
 }
