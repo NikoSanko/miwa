@@ -4,6 +4,7 @@ version = "0.4.0"
 edition = "2021"
 description = "doc / req / test の3層の仕様乖離（ドリフト）を検知する CLI"
 repository = "https://github.com/NikoSanko/miwa"
+license = "MIT"
 readme = "README.md"
 rust-version = "1.92"
 publish = false
