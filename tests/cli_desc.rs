@@ -5,7 +5,7 @@ use std::path::Path;
 const DOC_BODY: &str = "# Spec\n\nSee [req](../req/fr1.md).\n";
 
 fn doc_source(description: &str, body: &str) -> String {
-    format!("---\ntype: Specification\nid: DOC-A\ndescription: {description}\n---\n{body}")
+    format!("---\ntype: BusinessNeed\nid: DOC-A\ndescription: {description}\n---\n{body}")
 }
 
 /// `index: [docs]` + one Doc (with a description) linking to one req, and one test.
@@ -126,7 +126,7 @@ fn 要約を消すとindexのmissing_descriptionとdescのdriftの2件が出る(
     common::write(
         dir.path(),
         "docs/spec.md",
-        &format!("---\ntype: Specification\nid: DOC-A\n---\n{DOC_BODY}"),
+        &format!("---\ntype: BusinessNeed\nid: DOC-A\n---\n{DOC_BODY}"),
     );
     let stdout = check_stdout(dir.path());
     assert!(

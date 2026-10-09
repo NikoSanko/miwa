@@ -51,8 +51,8 @@ pub fn run_git(dir: &Path, args: &[&str]) -> String {
 /// A typed document source with `title` / `description` front matter.
 pub fn typed(title: &str, description: Option<&str>) -> String {
     match description {
-        Some(d) => format!("---\ntype: Specification\ntitle: {title}\ndescription: {d}\n---\n"),
-        None => format!("---\ntype: Specification\ntitle: {title}\n---\n"),
+        Some(d) => format!("---\ntype: BusinessNeed\ntitle: {title}\ndescription: {d}\n---\n"),
+        None => format!("---\ntype: BusinessNeed\ntitle: {title}\n---\n"),
     }
 }
 
@@ -76,7 +76,7 @@ pub fn write_minimal_fixture(dir: &Path) {
     write(
         dir,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
     );
     write(
         dir,

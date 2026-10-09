@@ -9,7 +9,7 @@ fn write_base_fixture(dir: &std::path::Path) {
     common::write(
         dir,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\n---\n[a](../req/fr1.md) と [b](../req/fr2.md)\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\n---\n[a](../req/fr1.md) と [b](../req/fr2.md)\n",
     );
     common::write(
         dir,
@@ -136,7 +136,7 @@ fn diffはhead時点の設定で評価する_新しいrequirements領域のreq�
     common::write(
         root,
         "docs/spec2.md",
-        "---\ntype: Specification\nid: DOC-B\n---\n[c](../req2/fr3.md)\n",
+        "---\ntype: BusinessNeed\nid: DOC-B\n---\n[c](../req2/fr3.md)\n",
     );
     common::git_commit(root, "add req2 area at head");
 

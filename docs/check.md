@@ -1,5 +1,5 @@
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-CHECK
 title: "更新漏れを検知する（check）"
 description: "doc・req・test の追随漏れや索引の乱れを、ロックとの比較で機械的に見つけて finding として報告するコマンドの仕様。"

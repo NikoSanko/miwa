@@ -411,7 +411,7 @@ fn write_desc_judge_fixture(dir: &std::path::Path) {
     common::write(
         dir,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\ndescription: 要約A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\ndescription: 要約A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
     );
 }
 

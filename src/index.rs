@@ -1065,8 +1065,8 @@ mod tests {
     /// A typed document source with `title` / `description` front matter.
     fn typed(title: &str, description: Option<&str>) -> String {
         match description {
-            Some(d) => format!("---\ntype: Specification\ntitle: {title}\ndescription: {d}\n---\n"),
-            None => format!("---\ntype: Specification\ntitle: {title}\n---\n"),
+            Some(d) => format!("---\ntype: BusinessNeed\ntitle: {title}\ndescription: {d}\n---\n"),
+            None => format!("---\ntype: BusinessNeed\ntitle: {title}\n---\n"),
         }
     }
 
@@ -1394,7 +1394,7 @@ mod tests {
             ("docs/index.md", "- [a\\[1\\]](a.md) — x \\] y\n"),
             (
                 "docs/a.md",
-                "---\ntype: Specification\ntitle: \"a[1]\"\ndescription: \"x ] y\"\n---\n",
+                "---\ntype: BusinessNeed\ntitle: \"a[1]\"\ndescription: \"x ] y\"\n---\n",
             ),
         ];
         assert!(issues(&files).is_empty(), "{:?}", issues(&files));
@@ -1642,7 +1642,7 @@ mod tests {
             ("docs/e/f/index.md", "plain\n"),
             (
                 "docs/g/index.md",
-                "---\ntype: Specification\ntitle: G\ndescription: DG\n---\n",
+                "---\ntype: BusinessNeed\ntitle: G\ndescription: DG\n---\n",
             ),
         ];
         let RootFiles {
@@ -1679,7 +1679,7 @@ mod tests {
         let files = [
             ("docs/index.md", "- [a](a.md)\n"),
             ("docs/sub/index.md", "- [b](b.md)\n"),
-            ("docs/log.md", "---\ntype: Specification\n---\n"),
+            ("docs/log.md", "---\ntype: BusinessNeed\n---\n"),
             ("docs/a.md", "---\ntype: Note\ntitle: A\n---\n"),
         ];
         let RootFiles {

@@ -137,7 +137,7 @@ pub fn build_jev_request(input: &EdgeInput) -> serde_json::Value {
     let (state, instructions, true_c, false_c) = match input.kind {
         EdgeKind::DocReq => (
             serde_json::json!({"doc": input.from_text, "req": input.req_text}),
-            "`req` は `doc` の該当部分と矛盾せず、その部分を具体化した技術要件になっているか",
+            "`req` は `doc` の該当部分と矛盾せず、その部分を具体化したシステム要件になっているか",
             "req が扱う事項について doc と矛盾がなく、doc の記述を具体化している",
             "req が doc と矛盾している、または doc に対応する記述がない",
         ),
@@ -913,7 +913,7 @@ mod tests {
         let q = &d["questions"]["consistent"];
         assert_eq!(
             q["instructions"],
-            "`req` は `doc` の該当部分と矛盾せず、その部分を具体化した技術要件になっているか"
+            "`req` は `doc` の該当部分と矛盾せず、その部分を具体化したシステム要件になっているか"
         );
         assert_eq!(
             q["criteria"]["true"],

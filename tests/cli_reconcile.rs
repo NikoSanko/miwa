@@ -42,7 +42,7 @@ fn invalidなreqに紐づくエッジを指定したreconcileは拒否されロ�
     common::write(
         dir.path(),
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\n---\n[リンク](../req/fr1.md)\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\n---\n[リンク](../req/fr1.md)\n",
     );
     // FR-001 を id とする req ファイルが2つあり、duplicate id として invalid になる
     common::write(
@@ -163,7 +163,7 @@ fn write_desc_fixture(dir: &std::path::Path) {
     common::write(
         dir,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\ndescription: 要約A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\ndescription: 要約A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
     );
 }
 

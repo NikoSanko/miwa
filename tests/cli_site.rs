@@ -30,7 +30,7 @@ fn cfg_with(extra: &str) -> String {
 }
 
 fn doc(id: &str, title: &str, body: &str) -> String {
-    format!("---\ntype: Specification\nid: {id}\ntitle: {title}\n---\n{body}")
+    format!("---\ntype: BusinessNeed\nid: {id}\ntitle: {title}\n---\n{body}")
 }
 
 fn req(id: &str, title: &str, body: &str) -> String {
@@ -408,12 +408,8 @@ fn 公開されるページはdocとreqと索引対象文書と索引ページ�
     common::write(r, "docs/drafts/d.md", &reference("D", "x\n"));
     common::write(r, "docs/node_modules/n.md", &reference("N", "x\n"));
     common::write(r, "docs/note.txt", "text\n");
-    common::write(
-        r,
-        "docs/bad.md",
-        "---\ntype: Specification\nid: [\n---\nx\n",
-    );
-    common::write(r, "docs/unterm.md", "---\ntype: Specification\nid: DOC-U\n");
+    common::write(r, "docs/bad.md", "---\ntype: BusinessNeed\nid: [\n---\nx\n");
+    common::write(r, "docs/unterm.md", "---\ntype: BusinessNeed\nid: DOC-U\n");
     common::write(r, "req/untyped.md", "plain\n");
     common::write(r, "other/x.md", &reference("X", "x\n"));
 
@@ -843,7 +839,7 @@ fn タイトルと要約はエスケープされmeta_descriptionにも入る() {
     common::write(
         &f.root,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\ntitle: \"A & <B> \\\"q\\\"\"\ndescription: \"x < y & 'z'\"\n---\nbody\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\ntitle: \"A & <B> \\\"q\\\"\"\ndescription: \"x < y & 'z'\"\n---\nbody\n",
     );
     site_ok(&f.root);
     let html = page(&f.root, "docs/spec.html");
@@ -888,7 +884,7 @@ fn タイトル要約の順で出てdocとreqのページにはidが表示され
         &f.root,
         "docs/spec.md",
         &common::typed("Spec", Some("要約です"))
-            .replace("type: Specification\n", "type: Specification\nid: DOC-A\n"),
+            .replace("type: BusinessNeed\n", "type: BusinessNeed\nid: DOC-A\n"),
     );
     common::write(
         &f.root,
@@ -1088,7 +1084,7 @@ fn 表と取り消し線とタスクリストと脚注が変換される() {
     assert!(html.contains(r#"type="checkbox""#), "{html}");
     assert!(html.contains("脚注本文"), "{html}");
     assert!(html.contains(r##"href="#n""##), "{html}");
-    assert!(!html.contains("type: Specification"), "{html}");
+    assert!(!html.contains("type: BusinessNeed"), "{html}");
 }
 
 // [FR-097]
@@ -1822,7 +1818,7 @@ fn docページと索引対象文書と索引ページには参照元の節を�
 #[test]
 fn 非utf8のバイトは置換文字になり失敗しない() {
     let f = basic();
-    let mut bytes = b"---\ntype: Specification\nid: DOC-A\ntitle: Spec\n---\nbefore ".to_vec();
+    let mut bytes = b"---\ntype: BusinessNeed\nid: DOC-A\ntitle: Spec\n---\nbefore ".to_vec();
     bytes.extend_from_slice(&[0xff, 0xfe]);
     bytes.extend_from_slice(b" after\n");
     write_bin(&f.root, "docs/spec.md", &bytes);
@@ -1852,12 +1848,12 @@ fn フロントマターは本文から取り除かれcrlfの囲みでも同じ(
     common::write(
         &f.root,
         "docs/spec.md",
-        "---\r\ntype: Specification\r\nid: DOC-A\r\ntitle: Spec\r\n---\r\n本文CRLF\r\n",
+        "---\r\ntype: BusinessNeed\r\nid: DOC-A\r\ntitle: Spec\r\n---\r\n本文CRLF\r\n",
     );
     site_ok(&f.root);
     let html = page(&f.root, "docs/spec.html");
     assert!(html.contains("本文CRLF"), "{html}");
-    assert!(!html.contains("type: Specification"), "{html}");
+    assert!(!html.contains("type: BusinessNeed"), "{html}");
     assert!(!html.contains("id: DOC-A"), "{html}");
 }
 
@@ -1881,7 +1877,7 @@ fn 閉じのハイフンが無い文書は公開されず索引ページは本�
     common::write(
         &f.root,
         "docs/unterm.md",
-        "---\ntype: Specification\nid: DOC-U\ntitle: U\n本文U\n",
+        "---\ntype: BusinessNeed\nid: DOC-U\ntitle: U\n本文U\n",
     );
     common::write(&f.root, "docs/index.md", "---\ntitle: 文書\nINDEXBODY\n");
     let o = site(&f.root, &[]);
@@ -2101,7 +2097,7 @@ fn 最初のブロックがatxのh1のときテンプレートのh1を出さず�
     common::write(
         &f.root,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\ntitle: FMタイトル\ndescription: 要約文\n---\n# 本文の見出し\n\n続き\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\ntitle: FMタイトル\ndescription: 要約文\n---\n# 本文の見出し\n\n続き\n",
     );
     site_ok(&f.root);
     let html = page(&f.root, "docs/spec.html");
@@ -2544,7 +2540,7 @@ fn スクリプトや属性注入の経路はリンクにならず警告にな�
 
 // [FR-091]
 #[test]
-fn idが不正なspecificationも索引の根の配下なら公開されidは表示されない() {
+fn idが不正なbusiness_needも索引の根の配下なら公開されidは表示されない() {
     let f = basic();
     let r = &f.root;
     common::write(r, "docs/badid.md", &doc("bad id!", "BadId", "本文\n"));
@@ -3007,7 +3003,7 @@ fn 先頭h1にリンクを含んでもidと要約はh1直後に1回だけ入る(
     common::write(
         &f.root,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\ntitle: Spec\ndescription: 要約文\n---\n# [リンク](ok.md) 見出し\n\n続き\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\ntitle: Spec\ndescription: 要約文\n---\n# [リンク](ok.md) 見出し\n\n続き\n",
     );
     site_ok(&f.root);
     let html = page(&f.root, "docs/spec.html");

@@ -1,5 +1,5 @@
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-INDEX
 title: "索引を保つ（index）"
 description: "LLM と人が索引（index.md）のタイトルと要約だけをたどって必要な文書を選べるように、索引の形式と、索引を文書から更新する `miwa index` の動作、LLM の読み方を説明する。"
@@ -108,7 +108,7 @@ miwa index
 
 ## 要約の追随
 
-読み手は要約だけを頼りに、文書を開くか決めます。本文を直したのに要約が古いままだと、LLM も人も誤った判断をします。miwa は、`index` の対象になっている文書（`Specification` と `Requirement`）それぞれについて、[要約と本文の対を `desc:doc:<id>` / `desc:req:<id>` エッジとして扱います](../req/desc-edge-exists-for-indexed-nodes.md)。エッジにすることで、次の2つが得られます。
+読み手は要約だけを頼りに、文書を開くか決めます。本文を直したのに要約が古いままだと、LLM も人も誤った判断をします。miwa は、`index` の対象になっている文書（`BusinessNeed` と `Requirement`）それぞれについて、[要約と本文の対を `desc:doc:<id>` / `desc:req:<id>` エッジとして扱います](../req/desc-edge-exists-for-indexed-nodes.md)。エッジにすることで、次の2つが得られます。
 
 - 本文だけが変わって要約が追随していないとき、`check` が `drift` を報告します。そのため、要約の見直しに気づけます。[理由は `DescriptionChanged` / `BodyChanged` / `BothChanged`](../req/desc-edge-drift-reasons.md) のいずれかです（詳しくは [check](check.md) を参照）。
 - 要約が本文を正しく表しているかを、[`judge`](judge.md) で意味的に確かめられます。

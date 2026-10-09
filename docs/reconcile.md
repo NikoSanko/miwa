@@ -1,5 +1,5 @@
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-RECONCILE
 title: "合意を記録する（reconcile）"
 description: "check が見つけた drift や new を人が確認して合意した結果を、ロックに記録するコマンドの仕様。"
