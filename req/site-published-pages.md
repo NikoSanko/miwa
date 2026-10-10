@@ -2,7 +2,7 @@
 type: Requirement
 id: FR-091
 ---
-`miwa site` が HTML にするページは、次の和集合に限る。(1) doc ノード（`type: Specification`）、(2) req ノード（`type: Requirement`）、(3) 各 `index` の根の配下で索引の対象になる文書、(4) 各 `index` の根の配下にある `index.md`（索引ページ）。
+`miwa site` が HTML にするページは、次の和集合に限る。(1) doc ノード（`type: BusinessNeed`）、(2) req ノード（`type: Requirement`）、(3) 各 `index` の根の配下で索引の対象になる文書、(4) 各 `index` の根の配下にある `index.md`（索引ページ）。
 
 (3) は `miwa index` と同じ判定で、フロントマターに `type` を持つ Markdown であればよい。`type` の値は問わず（例: `type: Reference`）、`id` の欠落・不正・重複も問わない。同じファイルが複数の分類に当たってもページは1つである。タイトルと要約の規則は分類によらず同じ（FR-096）なので、優先順位は要らない。
 

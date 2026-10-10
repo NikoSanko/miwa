@@ -1,5 +1,5 @@
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-SETUP
 title: "miwa を使い始める"
 description: "miwa をリポジトリで使い始めるための init と設定ファイル、索引の導入手順を説明する。"
@@ -19,8 +19,8 @@ miwa init
 
 `.miwa/config.yaml` には次のような項目があります。
 
-- `docs`: doc（業務要件）を探すフォルダの一覧
-- `requirements`: req（技術要件）を探すフォルダの一覧
+- `docs`: doc（業務要求）を探すフォルダの一覧
+- `requirements`: req（システム要件）を探すフォルダの一覧
 - `tests`: test（テストコード）を探すフォルダの一覧
 - `diff_base`: `check --diff` で比較する既定のブランチ・タグ
 - `judge`: 意味判定（[`judge`](judge.md)）の設定

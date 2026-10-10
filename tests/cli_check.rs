@@ -16,17 +16,17 @@ fn write_rich_fixture(dir: &std::path::Path) {
     common::write(
         dir,
         "docs/omega.md",
-        "---\ntype: Specification\nid: DOC-C\n---\n[a](../req/zulu.md) と [b](../req/echo.md)\n",
+        "---\ntype: BusinessNeed\nid: DOC-C\n---\n[a](../req/zulu.md) と [b](../req/echo.md)\n",
     );
     common::write(
         dir,
         "docs/alpha.md",
-        "---\ntype: Specification\nid: DOC-A\n---\n[c](../req/mike.md)\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\n---\n[c](../req/mike.md)\n",
     );
     common::write(
         dir,
         "docs/kappa.md",
-        "---\ntype: Specification\nid: DOC-B\n---\nどこにもリンクしない。\n",
+        "---\ntype: BusinessNeed\nid: DOC-B\n---\nどこにもリンクしない。\n",
     );
 
     common::write(
@@ -198,7 +198,7 @@ fn write_lang_fixture(dir: &std::path::Path, test_path: &str, test_src: &str) {
     common::write(
         dir,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\n---\n# Spec\n\nSee [req](../req/fr1.md).\n",
     );
     common::write(
         dir,
@@ -328,7 +328,7 @@ fn excludeしたディレクトリ配下のtestはfindingに出ない() {
     common::write(
         root,
         "docs/spec.md",
-        "---\ntype: Specification\nid: DOC-A\n---\n[req](../req/fr1.md)\n",
+        "---\ntype: BusinessNeed\nid: DOC-A\n---\n[req](../req/fr1.md)\n",
     );
     common::write(
         root,

@@ -1,5 +1,5 @@
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-MODEL
 title: "miwa の3層モデル"
 description: "doc・req・test の3層の関係と、それぞれの書き方、変更の検知に使う範囲、エッジの識別子を説明する。"
@@ -7,22 +7,24 @@ description: "doc・req・test の3層の関係と、それぞれの書き方、
 
 # miwa の3層モデル
 
-miwa は、「業務要件（doc）」「技術要件（req）」「テスト（test）」という3つの文書・コードを結び付け、どれかが更新されたのに残りが追随していない状態を見つけるツールです。
+miwa は、「業務要求（doc）」「システム要件（req）」「テスト（test）」という3つの文書・コードを結び付け、どれかが更新されたのに残りが追随していない状態を見つけるツールです。
+
+ここでの「要求」は業務として実現したいことを、「要件」はそれを検証できる形に具体化したもの（機能・非機能を含む）を指します。
 
 ```
-doc（業務要件） ── 依存 ──▶ req（技術要件） ◀── 検証 ── test（テストコード）
+doc（業務要求） ── 依存 ──▶ req（システム要件） ◀── 検証 ── test（テストコード）
 ```
 
 - 1つの doc は複数の req に依存できます。1つの req は複数の doc から依存されてかまいません。
 - 1つの req は複数の test で検証できます。ただし1つの test が検証する req は必ず1つです。
 
-## doc（業務要件）の書き方
+## doc（業務要求）の書き方
 
-doc は非開発メンバーが読む業務要件の文書です。ファイルの先頭に次のような情報（フロントマター）を書き、`type: Specification` を付けます。
+doc は、非開発メンバーが読む、業務要求を書いた文書です。ファイルの先頭に次のような情報（フロントマター）を書き、`type: BusinessNeed` を付けます。
 
 ```markdown
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-AUTH
 ---
 # ログイン
@@ -37,14 +39,14 @@ doc には、`id` のほかに `title`（任意）と `description`（1文の要
 
 ```markdown
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-AUTH
 title: "ログイン"
 description: "メールアドレスとパスワードによる認証の振る舞いを定める。"
 ---
 ```
 
-## req（技術要件）の書き方
+## req（システム要件）の書き方
 
 req は、検証可能な1つの振る舞いを「〜する」「〜を返す」の形で書いた短い文書です。doc と同じくフロントマターに `type: Requirement` を付けます。
 

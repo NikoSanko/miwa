@@ -1,15 +1,15 @@
 ---
-type: Specification
+type: BusinessNeed
 id: DOC-SITE
 title: "閲覧サイトを作る（site）"
-description: "非開発者が GitHub なしで業務要件を読めるように、索引の木をそのまま静的 HTML 一式として出力する `miwa site` の動作と、`site` 設定、公開の例を説明する。"
+description: "非開発者が GitHub なしで業務要求を読めるように、索引の木をそのまま静的 HTML 一式として出力する `miwa site` の動作と、`site` 設定、公開の例を説明する。"
 ---
 
 # 閲覧サイトを作る（`site`）
 
 ## なぜサイトか
 
-業務要件を確認したいのは、開発者だけではありません。企画や運用のメンバーは GitHub のアカウントを持たないことが多く、リポジトリの Markdown を直接は読めません。そこで `miwa site` は、リポジトリの文書を **誰でもブラウザで読める静的な HTML 一式** にして出力します。
+業務要求を確認したいのは、開発者だけではありません。企画や運用のメンバーは GitHub のアカウントを持たないことが多く、リポジトリの Markdown を直接は読めません。そこで `miwa site` は、リポジトリの文書を **誰でもブラウザで読める静的な HTML 一式** にして出力します。
 
 miwa の責務は、HTML 一式を出力するところまでです。置き場所と、誰に見せるか（認証など）は miwa の外で決めます。
 
@@ -39,7 +39,7 @@ miwa site [--out <dir>]
 
 [ページになるのは次のものです](../req/site-published-pages.md)。
 
-- doc（`type: Specification`）と req（`type: Requirement`）
+- doc（`type: BusinessNeed`）と req（`type: Requirement`）
 - 索引の根の配下で、索引の対象になる文書（`type` を持つ Markdown。例: `type: Reference`）
 - 索引の根の配下の `index.md`（索引ページ）
 
@@ -70,7 +70,7 @@ doc と req のページには、タイトルの下に `id`（FR-098 のよう�
 
 [本文は Markdown を HTML に変換したものです](../req/site-markdown-to-html-escapes-raw-html.md)。表、取り消し線、タスクリスト、脚注に対応します。Markdown に書かれた生の HTML は、公開するページにスクリプトなどが紛れ込まないように、実行も描画もせず、文字のまま表示します。HTML コメントだけは出力しません。
 
-[req のページの末尾には、その req を参照している doc の一覧が付きます](../req/site-req-page-lists-referencing-docs.md)。業務要件の側から結びついた技術要件をたどるのとは逆に、技術要件から元の業務要件へ戻れます。参照している doc が無ければ、この節は出ません。
+[req のページの末尾には、その req を参照している doc の一覧が付きます](../req/site-req-page-lists-referencing-docs.md)。業務要求の側から結びついたシステム要件をたどるのとは逆に、システム要件から元の業務要求へ戻れます。参照している doc が無ければ、この節は出ません。
 
 ## トップページと `site` 設定
 
@@ -79,7 +79,7 @@ doc と req のページには、タイトルの下に `id`（FR-098 のよう�
 ```yaml
 site:
   title: "○○プロジェクトの仕様"
-  description: "業務要件の閲覧用サイト"
+  description: "業務要求の閲覧用サイト"
 ```
 
 - [`site` は省略でき、`title` と `description` も省略できます](../req/config-site-settings.md)。空の文字列と、改行を含む値は設定エラーです。

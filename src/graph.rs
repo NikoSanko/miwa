@@ -48,7 +48,7 @@ pub fn build_graph(
             match &parsed {
                 Ok(Some(fm)) => {
                     let kind = match fm.kind.as_deref() {
-                        Some("Specification") => Some(NodeKind::Doc),
+                        Some("BusinessNeed") => Some(NodeKind::Doc),
                         Some("Requirement") => Some(NodeKind::Req),
                         _ => None,
                     };
@@ -468,7 +468,7 @@ mod tests {
 
     // [FR-005]
     #[test]
-    fn typeの値がspecification_requirement以外なら対象外になる() {
+    fn typeの値がbusiness_need_requirement以外なら対象外になる() {
         let source = FakeSource::new(&[
             ("docs/b.md", "---\ntype: Note\nid: DOC-B\n---\n本文\n"),
             (
@@ -478,6 +478,28 @@ mod tests {
         ]);
         let graph = build_graph(&source, &config()).unwrap();
         assert!(!graph.nodes.values().any(|n| n.key.id == "DOC-B"));
+    }
+
+    // [FR-005]
+    #[test]
+    fn type_specificationの文書はdocノードにならない() {
+        let source = FakeSource::new(&[
+            (
+                "docs/old.md",
+                "---\ntype: Specification\nid: DOC-OLD\n---\n本文\n",
+            ),
+            (
+                "req/fr1.md",
+                "---\ntype: Requirement\nid: FR-001\n---\n本文\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(!graph.nodes.values().any(|n| n.key.id == "DOC-OLD"));
+        assert!(
+            graph.invalid.is_empty(),
+            "should be silently excluded, not invalid: {:?}",
+            graph.invalid
+        );
     }
 
     // [FR-006]
@@ -534,7 +556,7 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/a.md",
-                "---\ntype: Specification\nid: DOC-A\n---\n[外部req](../outside/x.md)\n",
+                "---\ntype: BusinessNeed\nid: DOC-A\n---\n[外部req](../outside/x.md)\n",
             ),
             (
                 "outside/x.md",
@@ -558,7 +580,7 @@ mod tests {
     fn 存在しないreqファイルを指すリンクはbrokenになる() {
         let source = FakeSource::new(&[(
             "docs/a.md",
-            "---\ntype: Specification\nid: DOC-A\n---\n[リンク](../req/missing.md)\n",
+            "---\ntype: BusinessNeed\nid: DOC-A\n---\n[リンク](../req/missing.md)\n",
         )]);
         let graph = build_graph(&source, &config()).unwrap();
         assert!(graph
@@ -573,11 +595,11 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/a.md",
-                "---\ntype: Specification\nid: DOC-A\n---\n[リンク](../req/not-a-req.md)\n",
+                "---\ntype: BusinessNeed\nid: DOC-A\n---\n[リンク](../req/not-a-req.md)\n",
             ),
             (
                 "req/not-a-req.md",
-                "---\ntype: Specification\nid: DOC-FAKE\n---\n本文\n",
+                "---\ntype: BusinessNeed\nid: DOC-FAKE\n---\n本文\n",
             ),
         ]);
         let graph = build_graph(&source, &config()).unwrap();
@@ -657,7 +679,7 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/spec.md",
-                "---\ntype: Specification\nid: DOC-A\n---\n[リンク](../req/fr1.md)\n",
+                "---\ntype: BusinessNeed\nid: DOC-A\n---\n[リンク](../req/fr1.md)\n",
             ),
             (
                 "req/fr1.md",
@@ -1334,10 +1356,10 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/index.md",
-                "---\ntype: Specification\nid: DOC-X\n---\n[r](../req/fr1.md)\n",
+                "---\ntype: BusinessNeed\nid: DOC-X\n---\n[r](../req/fr1.md)\n",
             ),
-            ("docs/log.md", "---\ntype: Specification\nid: DOC-L\n---\n"),
-            ("docs/sub/index.md", "---\ntype: Specification\n---\n"),
+            ("docs/log.md", "---\ntype: BusinessNeed\nid: DOC-L\n---\n"),
+            ("docs/sub/index.md", "---\ntype: BusinessNeed\n---\n"),
             ("req/index.md", "---\ntype: Requirement\nid: FR-001\n---\n"),
             ("req/log.md", "---\ntype: Requirement\n---\n"),
             (
@@ -1366,7 +1388,7 @@ mod tests {
     #[test]
     fn index未設定なら索引のfindingを一切出さない() {
         let source = FakeSource::new(&[
-            ("docs/a.md", "---\ntype: Specification\nid: DOC-A\n---\n"),
+            ("docs/a.md", "---\ntype: BusinessNeed\nid: DOC-A\n---\n"),
             ("docs/untyped.md", "plain\n"),
         ]);
         let graph = build_graph(&source, &config()).unwrap();
@@ -1375,15 +1397,15 @@ mod tests {
 
     // [FR-067]
     #[test]
-    fn index設定があっても索引のtype_specificationはノードにならない() {
+    fn index設定があっても索引のtype_business_needはノードにならない() {
         let source = FakeSource::new(&[
             (
                 "docs/index.md",
-                "---\ntype: Specification\nid: DOC-X\n---\n- [A](a.md) — D\n",
+                "---\ntype: BusinessNeed\nid: DOC-X\n---\n- [A](a.md) — D\n",
             ),
             (
                 "docs/a.md",
-                "---\ntype: Specification\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
+                "---\ntype: BusinessNeed\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
             ),
         ]);
         let mut cfg = config();
@@ -1406,7 +1428,7 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/a.md",
-                "---\ntype: Specification\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
+                "---\ntype: BusinessNeed\nid: DOC-A\ntitle: A\ndescription: D\n---\n",
             ),
             ("docs/untyped.md", "plain\n"),
         ]);
@@ -1437,7 +1459,7 @@ mod tests {
             .collect()
     }
 
-    const DOC_A: &str = "---\ntype: Specification\nid: DOC-A\ndescription: 要約A\n---\n本文A\n";
+    const DOC_A: &str = "---\ntype: BusinessNeed\nid: DOC-A\ndescription: 要約A\n---\n本文A\n";
     const REQ_1: &str = "---\ntype: Requirement\nid: FR-001\ndescription: 要約1\n---\n本文1\n";
 
     // [FR-086]
@@ -1462,7 +1484,7 @@ mod tests {
     fn descエッジはdescriptionが無いノードにもできる() {
         let source = FakeSource::new(&[(
             "docs/a.md",
-            "---\ntype: Specification\nid: DOC-A\n---\n本文A\n",
+            "---\ntype: BusinessNeed\nid: DOC-A\n---\n本文A\n",
         )]);
         let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
         assert!(
@@ -1478,11 +1500,11 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/a.md",
-                "---\ntype: Specification\nid: DOC-A\ndescription: \"\"\n---\n本文\n",
+                "---\ntype: BusinessNeed\nid: DOC-A\ndescription: \"\"\n---\n本文\n",
             ),
             (
                 "docs/b.md",
-                "---\ntype: Specification\nid: DOC-B\ndescription: |\n  一行目\n  二行目\n---\n本文\n",
+                "---\ntype: BusinessNeed\nid: DOC-B\ndescription: |\n  一行目\n  二行目\n---\n本文\n",
             ),
         ]);
         let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
@@ -1537,11 +1559,11 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/bad.md",
-                "---\ntype: Specification\nid: BAD ID\ndescription: D\n---\n本文\n",
+                "---\ntype: BusinessNeed\nid: BAD ID\ndescription: D\n---\n本文\n",
             ),
             (
                 "docs/noid.md",
-                "---\ntype: Specification\ndescription: D\n---\n本文\n",
+                "---\ntype: BusinessNeed\ndescription: D\n---\n本文\n",
             ),
         ]);
         let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
@@ -1655,7 +1677,7 @@ mod tests {
     fn descエッジのfromは前後の空白を除いた要約のハッシュになる() {
         let source = FakeSource::new(&[(
             "docs/a.md",
-            "---\ntype: Specification\nid: DOC-A\ndescription: \"  要約A  \"\n---\n本文A\n",
+            "---\ntype: BusinessNeed\nid: DOC-A\ndescription: \"  要約A  \"\n---\n本文A\n",
         )]);
         let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
         assert_eq!(
@@ -1669,9 +1691,9 @@ mod tests {
     fn descエッジのfromは要約が無い_空_改行を含むときは空文字列のハッシュになる() {
         let empty = crate::hash::content_hash("");
         for fm in [
-            "type: Specification\nid: DOC-A",
-            "type: Specification\nid: DOC-A\ndescription: \"\"",
-            "type: Specification\nid: DOC-A\ndescription: |\n  一行目\n  二行目",
+            "type: BusinessNeed\nid: DOC-A",
+            "type: BusinessNeed\nid: DOC-A\ndescription: \"\"",
+            "type: BusinessNeed\nid: DOC-A\ndescription: |\n  一行目\n  二行目",
         ] {
             let source = FakeSource::new(&[("docs/a.md", &format!("---\n{fm}\n---\n本文\n"))]);
             let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
@@ -1684,7 +1706,7 @@ mod tests {
     fn descエッジのfromは折り畳みスカラーの要約を1行に畳んだハッシュになる() {
         let source = FakeSource::new(&[(
             "docs/a.md",
-            "---\ntype: Specification\nid: DOC-A\ndescription: >\n  一行目\n  二行目\n---\n本文\n",
+            "---\ntype: BusinessNeed\nid: DOC-A\ndescription: >\n  一行目\n  二行目\n---\n本文\n",
         )]);
         let graph = build_graph(&source, &indexed_config(&["docs"])).unwrap();
         assert_eq!(
@@ -1699,7 +1721,7 @@ mod tests {
         let source = FakeSource::new(&[
             (
                 "docs/a.md",
-                "---\ntype: Specification\nid: X-1\ndescription: 要約D\n---\n本文D\n",
+                "---\ntype: BusinessNeed\nid: X-1\ndescription: 要約D\n---\n本文D\n",
             ),
             (
                 "docs/r.md",
@@ -1736,7 +1758,7 @@ mod tests {
                 (
                     "docs/a.md",
                     &format!(
-                        "---\ntype: Specification\nid: DOC-A\ndescription: {description}\n---\n[r](../req/fr1.md)\n"
+                        "---\ntype: BusinessNeed\nid: DOC-A\ndescription: {description}\n---\n[r](../req/fr1.md)\n"
                     ),
                 ),
                 (

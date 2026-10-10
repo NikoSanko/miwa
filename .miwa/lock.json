@@ -9,10 +9,10 @@
     },
     "desc:doc:DOC-INDEX": {
       "from": "sha256:c900c476f334244260611eaaf2e4105d847f879e9e64eb3c9018a6a5a024ed15",
-      "to": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "to": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "desc:doc:DOC-JUDGE": {
       "from": "sha256:f8910f28f64124c465f165769af47993572956352407da83c4923ab6f53e6db6",
@@ -23,10 +23,10 @@
     },
     "desc:doc:DOC-MODEL": {
       "from": "sha256:ca3ad0836e1fbc85a3e65d4e8bc10d9691ea2831ffb66cace333b82b5d7ff85d",
-      "to": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "to": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "desc:doc:DOC-RECONCILE": {
       "from": "sha256:8ea0b733babc6ed9a59f29e77b2616da57ef145ff297974443a6590b095d2db8",
@@ -37,17 +37,17 @@
     },
     "desc:doc:DOC-SETUP": {
       "from": "sha256:bf2710c18a0162cec3ac53eaa2fc6ac366bf9fde06eae6fec0b919ef24434a5a",
-      "to": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "to": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "desc:doc:DOC-SITE": {
-      "from": "sha256:1be6e92fb522d3963accffa1fdb8a30a9e1850580e3e937ea28efa132e09707f",
-      "to": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:a6f8ab67ed10c4f8538e37a8d42a698caf3875356e9204d0f7d13eaa56aef8ed",
+      "to": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-CHECK:FR-014": {
       "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
@@ -197,102 +197,102 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "doc-req:DOC-INDEX:FR-067": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-068": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:abe3104b4f4eb05174e47ba69c7267908920a27bc3834025fe7e2dbe4bd0f953",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-069": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:e9e09b11ac125b517547cdb8611cb01cc473de7ecc660ae8c93f8709cee6f28a",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-070": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:b59ddcf90bd2dc920950072311cd777dd94ce14cf862854af6b84d32e6276a35",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-071": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:0ccc0a872993c859c4e7e8984007fac62694cf5f9efc7e3eccbc1b93d05091ae",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-072": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:92e15bc461a01d59dcdcf5354b4efef612c864f82e32ecdd38dba7162af2179f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-081": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:30b04212aba5790078de53e6461a3503750b2cc7f11ccae5706345078f549766",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-082": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:c9836e0b809bb02ca4fc57666956268cb521c6fb75e554ca71aedf63fa4dba16",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-083": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:56e05791df7055a69fe8dda611f0fe2d78d3b494fa17614414d891acbd03957e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-084": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:37dfd64ba8082b4680047a711d4e5d9f8a1f0297cf45fd3f7e19c59809d26b3e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-085": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:796c02a21f5625075b970258af76b82a0e969cf919e990d78c95d3f34e3b6a45",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-086": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-087": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:fb6d7da1625119f595f0f269237b2b3547de46af7fa47573f53572cea5be10d1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-INDEX:FR-088": {
-      "from": "sha256:bb7563777fd4168241ea1d80a401df1768c59a9b6c2393ea4e7fd7ca870a244c",
+      "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
       "to": "sha256:55ff3a5a2c084ff1f69598e54afdf4f664c682ad935969ae72b387b5ef22e37e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-JUDGE:FR-038": {
       "from": "sha256:62955f834933a99e13439a5bfa926ce5b9aedf6a8eaff75beb762195fa14034c",
@@ -317,10 +317,10 @@
     },
     "doc-req:DOC-JUDGE:FR-041": {
       "from": "sha256:62955f834933a99e13439a5bfa926ce5b9aedf6a8eaff75beb762195fa14034c",
-      "to": "sha256:e88fc04aacdd1a3719c2fa7ad15ddb1ca6c7193500f5fa9cae6ded74773d558b",
+      "to": "sha256:67188169e083a46ac522eb61401f8eb8cf1f569ddcc5b0db153a5306e3147d09",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-JUDGE:FR-042": {
       "from": "sha256:62955f834933a99e13439a5bfa926ce5b9aedf6a8eaff75beb762195fa14034c",
@@ -379,270 +379,270 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:0cc68ec9e9fc4a2e6d4ebed84e1b6f37d1d5b2740f381c60192ec2798255fe72",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:8743ac5a7182cdd56ae43aaba93732713f621335f905ec77135f1872a7f3329b",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
-      "to": "sha256:c26dba07f8763b91080cf9e5fe11e3351bbaa80ee54bc04a8c9469545d0d9df8",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "to": "sha256:bc5eee8f4e8f84a1c196570f151f58ab50434cdd75e07f842db1abdaf1d40424",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:6c6d0a228450b98b5997646b4e70961aa81ffe58d931a0f76d1adb487ec0cbab",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:ceef93bb0530bddcf07e2cdc816334d6468bec281b6e4803d870dc90af710f1a",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:727add672f485a6cd00f5f5155a0f36eb0535909887b9eaa4a1fb54d064dfe31",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:63e69d520353920273b6ec21da28174eb15b6547583d59e52f0281d00e0dfc53",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:0e9737a3d00e0bcd0424049b0f35e44ac311b479564fd4ea2740a5b71987ac22",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:3e79ce6d5dc6b29e7fd949a8794dfe5f114dd1d902161886bf48ffa1f9ca4fdf",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:aef129400ebc01b35c417f837e72cbb5537cb5749a99f82bff359afa2114dca4",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:0fc6d38e603b7285e62e6684aea110ea72fdc68299dff3b7d02de3d77fa3314d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:19e2924a3e42be2c3df3dee01040f6ef820dac4786142f802c2c2be31849efa7",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:fb0093f337cac7c942a9d388b7aba4e4743a2d82a643fd85021251e816c05775",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:2b986f6a429ef077a911c310486aa5e671dc687cf001beaa06ab395d91237e75",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:823c22290d91669cb3e7fddbc0e96ab0aa00a65b5d7806ede897508ed2aab1ef",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:1bad13176724520b87f7e738ffb5212cb9301b6e14e94d37f172542463fe3367",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:a9be52f9a99f4594a1fbd925de57f51517a222ea9489c508a7c8a6ad91ab2a7f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:5c7b8ab51d7f8d5c26ad7d8f6481384968eb3fb9e265202cc32cad1117cda38f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:ce7e396045ae79148262d254258984c267c179e44d505d2aba3c5fd6ebdd0be0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:424f2a0edc1b588641919d0410a462d9f96ce2ca07240fe3bb5963de22bc8377",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-058": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:88360898a559e901e7644707b93ecc3b87fb44ef1ee280e0b3ada5da619471a6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-059": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:10418f3643adb5e4b906ab8a1029c578251b123afe4090bcc7c79f68537473e3",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-060": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-061": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:21de8a48ce1ea6aff1d9037692a744995abf55abbdb4dcc31578abf9f21e89f2",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-062": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:b491fca86f39572079fb61422782faccc3fe6d3816e6d6de90322521c7aff2f5",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-063": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-064": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-065": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:3b3a9585010d6d955ade4ff689ed58a8469e21c87c26c78c98f5029ae5fcccf1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-067": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-071": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:0ccc0a872993c859c4e7e8984007fac62694cf5f9efc7e3eccbc1b93d05091ae",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-086": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-MODEL:FR-087": {
-      "from": "sha256:0cb9009e1e949e24982ecaa7965a1ecd45a72e368ec5836924dcb461c28c1718",
+      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
       "to": "sha256:fb6d7da1625119f595f0f269237b2b3547de46af7fa47573f53572cea5be10d1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:32250dbf740681b9b5bfa199c5141e1bcc187b6b85a725ed9a2f181071e52289",
@@ -709,227 +709,227 @@
     },
     "doc-req:DOC-RECONCILE:FR-086": {
       "from": "sha256:32250dbf740681b9b5bfa199c5141e1bcc187b6b85a725ed9a2f181071e52289",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:33ac2f45bc2882c26998ebc4903304054fd034c31bdd9df9ded25bbf3166a486",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:efab34c17d0f5a4e35fd2e6a3646438bcaf0788ab0fce4986c8cc0aa7490fa17",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:88360898a559e901e7644707b93ecc3b87fb44ef1ee280e0b3ada5da619471a6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-063": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-065": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:3b3a9585010d6d955ade4ff689ed58a8469e21c87c26c78c98f5029ae5fcccf1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-066": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:3a17e75b94eb4ea4ad0ad367931cc37c02015e21783e2c0eb1726f7e3d8a118e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-067": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-094": {
-      "from": "sha256:e088354c45faf3723a66f48f3eed4094637b4fac74ccd3624d6478dd2a328128",
+      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
       "to": "sha256:1de719d3009f1fc09cb52b3f1e070a613371a7066337cb6637234a9660e8db4c",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-071": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:0ccc0a872993c859c4e7e8984007fac62694cf5f9efc7e3eccbc1b93d05091ae",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-089": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:d4022c1db63f2d6b53f929968390a016770630b0a793ba1ad663a6f58a67694f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-090": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:09e1ff4e009d4c7c942f9f6afeaa335440400fcc926ca5a29866d3001e490061",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-091": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
-      "to": "sha256:52536435fbf2f4ddd9e421dd4ef41874fa669e322d734f81de47f75b8e807bdc",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-092": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:78e14ed69dd36285c74f30e467ae245297f407cdf7b667f37306e342ab018462",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-093": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:c816cdff2dc422c1fb4a3e7ec2fb3edaede08ca2d6a1d0e1d7ead54cbf193d56",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-094": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:1de719d3009f1fc09cb52b3f1e070a613371a7066337cb6637234a9660e8db4c",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-095": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:2061b9f29a68b3c82a669e52a2afc9ab43ccd5c209f850444fdf5effa932743e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-096": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:4b3c313e93febec135afd5220e7a19a9a1a27d6014314e67c240fd2c1bbe6388",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-097": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:d78878d61c8329e6bb276d26f9f150330068c805cbaffdadd4f952260b4f4bf2",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-098": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:942988504c73194d15ddbe190712e25a3ddeaf3bba6d54879fb00a2dfea37a76",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-099": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:e694eaf1d4106c217db5ac05caf855618fb51f7b9096ba46e7a00d2514cb0e21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-100": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:ddbfc4a1d647ba7067a0ad85ba7a50eb815b68a647f908bc5a078967984333b3",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-101": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:b5c6971f87ebf9c21088cc2b206af48f9ce10fc3a3e4b0fe443048aacb3a1724",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-102": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:a6eccb50f5d0aea5887c49371fec51487ec0ec66dc5730ff9fde5ba356363747",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-103": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:842a7f877ae491f75df01c41999023bf9fdbd4cf740430dde58e047debea66c3",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-104": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:8ddcdea4361037444ca75f5ce6f2647414123ca676a3165602170ac8551c24ca",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-105": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:b2ecd11491a63a26658b6281bc27259ebf006a418a0868107b96519724f4d184",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-106": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:7dc821408822a345c20f92ebaa7de0d88496941cc5db7ee2c34893caeb3681f4",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-107": {
-      "from": "sha256:f65901d11252c29ae7c73998088c1ca207a80835e55c21763eca738c91685457",
+      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
       "to": "sha256:b24f81db76223756567c4901403cb1c9be6546b49cb97262aec64be30c9b2783",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/check:tests:descしか持たないdocはorphanのままになる:FR-086": {
       "from": "sha256:592dfc2d353150950625cb0f4be5763e6ce8fa81426de9f6d7739139bdd8583d",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/check:tests:descしか持たないreqはorphanとno_testのままになる:FR-086": {
       "from": "sha256:64d2f88e3e4be3b1580d3f9bb700bac24b6a54c3b04c6c8488f601295ca8429f",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/check:tests:descは変化がなければdriftを報告しない:FR-088": {
       "from": "sha256:9600d68af9da75531115da431cbc89bbbbde80fb24359ef6316b384b7a7e6ca7",
@@ -2382,17 +2382,17 @@
     },
     "test-req:src/frontmatter:tests:typeフィールドがない場合はkindがnoneになる:FR-005": {
       "from": "sha256:93e7d867ed6032b7b92c872143b91c49e83ec4b8d0ffc3ba18fb97a06ec9eb6b",
-      "to": "sha256:c26dba07f8763b91080cf9e5fe11e3351bbaa80ee54bc04a8c9469545d0d9df8",
+      "to": "sha256:bc5eee8f4e8f84a1c196570f151f58ab50434cdd75e07f842db1abdaf1d40424",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/frontmatter:tests:ハイフン3つで始まらないテキストはnoneになる:FR-005": {
       "from": "sha256:fda49ebf189b1a3f91ca49a6bf1622dfa87b94a376f896ab905609d25549acc6",
-      "to": "sha256:c26dba07f8763b91080cf9e5fe11e3351bbaa80ee54bc04a8c9469545d0d9df8",
+      "to": "sha256:bc5eee8f4e8f84a1c196570f151f58ab50434cdd75e07f842db1abdaf1d40424",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:configのrust_test_attributesが抽出に反映される:FR-015": {
       "from": "sha256:2a8a52a926fe9b9da735af720825449d2e494936795d9fcdfb9eddbc432563a1",
@@ -2402,11 +2402,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/graph:tests:configのディレクトリ表記がドットスラッシュや末尾スラッシュ付きでも拾われる:FR-018": {
-      "from": "sha256:5f3d96199e089b18aaa30c37b3d8dad356ba4c90d02e789436ccb793b91bc7ea",
+      "from": "sha256:d0caeb8fc53d42b4e429ed1080906496fc1363452b83a8a5840281470af4440d",
       "to": "sha256:33ac2f45bc2882c26998ebc4903304054fd034c31bdd9df9ded25bbf3166a486",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:csharp_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:8e591a891ddf617f169e9c675124e06ea5c53ab887b1a6ceb1b29f3ec1267436",
@@ -2430,18 +2430,18 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/graph:tests:descエッジのfromは前後の空白を除いた要約のハッシュになる:FR-087": {
-      "from": "sha256:d76dc5bfef095580d7707800b63c9a6c2facf0aa7f08ea26ae57b49264454129",
+      "from": "sha256:68e7dedf6e503fe83cea9313c80b7b3d0fc85ed56bbcb4f7dcbeeadaf4ca7d77",
       "to": "sha256:fb6d7da1625119f595f0f269237b2b3547de46af7fa47573f53572cea5be10d1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:descエッジのfromは折り畳みスカラーの要約を1行に畳んだハッシュになる:FR-087": {
-      "from": "sha256:276caa7f85078e1265eaf7b51272c6b88e9636dc9cabaf7848fe585097bf2c19",
+      "from": "sha256:de5bcaa1c69fa73a08042121933ec1def16da1726b079ee5c37f5b4e84ee2e64",
       "to": "sha256:fb6d7da1625119f595f0f269237b2b3547de46af7fa47573f53572cea5be10d1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:descエッジのfromは要約_toは本文のハッシュになる:FR-087": {
       "from": "sha256:e59954283eeaa97393707cfec2eab48ebc1370e6f46a8d302b1b084a1cc92129",
@@ -2451,32 +2451,32 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/graph:tests:descエッジのfromは要約が無い_空_改行を含むときは空文字列のハッシュになる:FR-087": {
-      "from": "sha256:5811e093b383285548c918824e680551568097f3a6b0f1ed3302a478d9b8277d",
+      "from": "sha256:223cad080dd7830bb5a8fcf791a078710dea3cdef860ff92603f2a7a6b97b5b1",
       "to": "sha256:fb6d7da1625119f595f0f269237b2b3547de46af7fa47573f53572cea5be10d1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:descエッジはdescriptionが無いノードにもできる:FR-086": {
-      "from": "sha256:4675c1a513f305da644297ba6e8415c9b9465fbf3e1fd57901bb9d06a5ed6bd4",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "from": "sha256:d51cbe77c01df6903bc3211299c79504fd3712f1502930a05fba01097c1730a0",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:descエッジはorphanとno_testの判定に影響しない:FR-086": {
       "from": "sha256:6dea983e00c0634aef3ccc31bdc766e68d028e619529aa4b5bb01378ada337ab",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:descエッジは空や改行を含むdescriptionのノードにもできる:FR-086": {
-      "from": "sha256:9d29e15b31db76dbcdd4302cdc7a9ac921a6240cc724fd81ab44532100c00a76",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "from": "sha256:02e1d1c0309e9cca1fc24c11a8d06cd36b3dd63930f1491f586b9b01df8f0c89",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:exclude_nextのようなドット始まりの名前も除外できる:FR-065": {
       "from": "sha256:0e35d2cb26c45e0dac93b5a1fa08e35fa0353fe3dc80e0e1d1ccb629f57130c1",
@@ -2536,10 +2536,10 @@
     },
     "test-req:src/graph:tests:guideなどmiwaのノードでない文書にはdescエッジができない:FR-086": {
       "from": "sha256:7b21be36eff9f78848859fc8f8394d412bae9ffb115f6884c86eba3edbc5b59b",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:idが空のファイルはmissing_idとして報告される:FR-007": {
       "from": "sha256:8d4683b0a9928750e2fb743f6f283c7027b68b785005e79473fb9bdabcb5b07b",
@@ -2550,45 +2550,45 @@
     },
     "test-req:src/graph:tests:indexが空ならdescエッジは1本もできない:FR-086": {
       "from": "sha256:138e452d834d462c4fe631f35980b9f62d2585ef64cc8407bfe3cacc39ffe506",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:indexの根から外れるとロックのdescエッジはremovedになる:FR-086": {
       "from": "sha256:f44e0b73c4973280763309383770cbb7ed18e34f8f3ecaae75e1862e27c8f22c",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:index未設定なら索引のfindingを一切出さない:FR-066": {
-      "from": "sha256:69abce1b13b85f649bf8d141afcc0b70c5d1fca84ccd724e9152c5e5e5692993",
+      "from": "sha256:9d78449a80212460e2743e3a8cbe7521c8ad2e702b31826270f4f139cb98e0a0",
       "to": "sha256:3a17e75b94eb4ea4ad0ad367931cc37c02015e21783e2c0eb1726f7e3d8a118e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
-    "test-req:src/graph:tests:index設定があっても索引のtype_specificationはノードにならない:FR-067": {
-      "from": "sha256:eda48d44ba66b2ce82fc39f76874631629b795693bf99aeff879516707ee42ee",
+    "test-req:src/graph:tests:index設定があっても索引のtype_business_needはノードにならない:FR-067": {
+      "from": "sha256:dba28515e357442716875768ff471021e9233db9b3f7f406eed25412e65aae29",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:index設定があればbuild_graphが索引のfindingを集める:FR-073": {
-      "from": "sha256:d8a0550da7a3771d15ddf35a54007c9760274e8fa652bda7cf907c813b8f006b",
+      "from": "sha256:60d6bfe31eca0beafff1bdfc18604432e032e75744f8b939e4c247602174dcf5",
       "to": "sha256:a9e3aa324191d738ae7ecc3b98884859301e4acf908d55e8afced3666bd5346d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:index配下のdocとreqにdescエッジが1本ずつできる:FR-086": {
       "from": "sha256:a5fc61d35146c0ca3a3c6ada01f7abfdd0c0068a0bbac7e551e3e46232575c43",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:javascriptのtest_jsとspec_mjsからtestノードが作られる:FR-053": {
       "from": "sha256:36fa2c21b44f14e64e0a976a8f388c48ed7a555634b9709c0a6cdce3f2b6f691",
@@ -2626,18 +2626,18 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/graph:tests:requirements領域外を指すリンクはエッジにもbrokenにもならない:FR-010": {
-      "from": "sha256:08456d470f12742417e5a32ca9c67119c0ca73ecf9142a80d6e451c3cd3389c5",
+      "from": "sha256:875301ccead48d9def07de71b15430e94ba8b8769d1d3997f695ff1632309752",
       "to": "sha256:63e69d520353920273b6ec21da28174eb15b6547583d59e52f0281d00e0dfc53",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:requirement型でないファイルを指すリンクはnot_req_fileとしてbrokenになる:FR-011": {
-      "from": "sha256:b463d5c33d6af94a819162234fc24fc3f5b01234df36d2e5c622c14f8d177c64",
+      "from": "sha256:2b86ae03f8ae525b21705d9cb7bfaaea216227fdf96a4bf6392ff31b68c01a4b",
       "to": "sha256:0e9737a3d00e0bcd0424049b0f35e44ac311b479564fd4ea2740a5b71987ac22",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:rust_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:450cd6de02730e0650465f516903cf30ae66d476cd5cd013c358e533107c72e2",
@@ -2667,6 +2667,13 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:src/graph:tests:type_specificationの文書はdocノードにならない:FR-005": {
+      "from": "sha256:68a877b9dcd45f265b2b5e50484edb1f7c4af533ffddd5a31cfd0731f92d40d1",
+      "to": "sha256:bc5eee8f4e8f84a1c196570f151f58ab50434cdd75e07f842db1abdaf1d40424",
+      "by": "human",
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
+    },
     "test-req:src/graph:tests:typescript_1つのテストに2件以上のマーカーがあるとinvalidになる:FR-014": {
       "from": "sha256:375b372630f87fa20e0bedebbc2704b04f4da7eb54bbeb895c94782821f7267b",
       "to": "sha256:028d29b3058a37abd55defb0d2e8dd9a501a78ffa1532fa2abf7a1aa97c8d7d0",
@@ -2695,19 +2702,19 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
-    "test-req:src/graph:tests:typeの値がspecification_requirement以外なら対象外になる:FR-005": {
-      "from": "sha256:2f4bbe94f27d9f4c9a3d2710a4f9869ddc629713a54302bf93324872cc67eaef",
-      "to": "sha256:c26dba07f8763b91080cf9e5fe11e3351bbaa80ee54bc04a8c9469545d0d9df8",
+    "test-req:src/graph:tests:typeの値がbusiness_need_requirement以外なら対象外になる:FR-005": {
+      "from": "sha256:79dd96d8fbac450c0cb73aae5aca9e70f7cba7198b39df8e644617768eca85b9",
+      "to": "sha256:bc5eee8f4e8f84a1c196570f151f58ab50434cdd75e07f842db1abdaf1d40424",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:typeフィールドのないmdファイルはノードとして扱われない:FR-005": {
       "from": "sha256:8cbe323a8dc7f51239d097d8cf657508f0388ce666f746586ee24148477541b4",
-      "to": "sha256:c26dba07f8763b91080cf9e5fe11e3351bbaa80ee54bc04a8c9469545d0d9df8",
+      "to": "sha256:bc5eee8f4e8f84a1c196570f151f58ab50434cdd75e07f842db1abdaf1d40424",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:まとめたtestは出現の本体が変わるとhashが変わる:FR-057": {
       "from": "sha256:5a0308bc1875e71026b624b574f40fc994e91828245b3a720537fae3f8532dfb",
@@ -2732,10 +2739,10 @@
     },
     "test-req:src/graph:tests:ロックにdescエッジがありノードが無ければremovedになる:FR-086": {
       "from": "sha256:24fa14fad21eb26fd170bca6af73f1de7ff0e3aaecc9119138059df17d697912",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:不正な文字を含むidはinvalid_idとして報告される:FR-006": {
       "from": "sha256:7121aaf049c06fa3847f5b4c668f4a34f6b714a14f67654addb0a8deeb46cfea",
@@ -2745,18 +2752,18 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/graph:tests:予約名のindex_mdとlog_mdはdocsでもrequirementsでもノードにならない:FR-067": {
-      "from": "sha256:e019684375e032dbc76c8ea032b57cb3e2fbdb40c36b4ac8ab38a6d4e4c8ffdf",
+      "from": "sha256:471594a5982f5c6caabb2aa96d9082e39e7d8dc5e7a08bfaedbef6d2c3478ed8",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:同じidのdocとreqは別々のdescエッジになる:FR-086": {
-      "from": "sha256:5ce547e071eaa4368f4b89ac14d1d0f05ac4676741bf3a26e204fb0867d4bca4",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "from": "sha256:874b8ee4f5542430094945d06e742b23360dbd229e240a859e5dd3ba8f383ca7",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:同じidを持つファイルが複数あるとduplicate_idとして報告される:FR-007": {
       "from": "sha256:d06a3354a3c4eb5dcfed5def07753b4d178977092c762e78602528d177d9436e",
@@ -2780,11 +2787,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/graph:tests:存在しないreqファイルを指すリンクはbrokenになる:FR-011": {
-      "from": "sha256:bc2ce90c9bdcbd9a37138dacca0894d92d8e8af87c79cc8145d94d02feafa86a",
+      "from": "sha256:2e56384db7247ab9efabfd4099bed35acbf2eed745ff271bc0a14ace48e6f419",
       "to": "sha256:0e9737a3d00e0bcd0424049b0f35e44ac311b479564fd4ea2740a5b71987ac22",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:構文エラーのcsharpテストファイルはparse_errorとしてinvalidになる:FR-014": {
       "from": "sha256:b9c1f591ba680de1a7a28d8fc7a3eabd541cfa1a05ad972fa09146c037d65f02",
@@ -2836,11 +2843,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/graph:tests:無効なidのノードにはdescエッジができない:FR-086": {
-      "from": "sha256:41168bac7fe21fded810bec6f8f6063848ffbcaa3330b1f8d09c80d3b450e08e",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "from": "sha256:2f2c1993efe625564a018574069b48553617cdaf378780c4ca5e746461f0194b",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:異なるreqを指す重複はduplicate_idとなりノードもエッジも作られない:FR-057": {
       "from": "sha256:06addf82d52e8b9a192750d2c988b31d9d5047a0d092bdc1eba01a9edf4a1029",
@@ -2851,24 +2858,24 @@
     },
     "test-req:src/graph:tests:索引の根の外にあるreqにはdescエッジができない:FR-086": {
       "from": "sha256:cefbe46e7ec960e95217d0b49a7d71f8ab0292317ed735011c967effbb9df068",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:索引の根の配下にあるreqにはdescエッジができる:FR-086": {
       "from": "sha256:df4ded80743b6ebdec2affa409911988058056aaa184b14ca340b1e0717136fc",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:要約だけを変えてもdoc_reqとtest_reqのハッシュは変わらずfindingも出ない:FR-087": {
-      "from": "sha256:3ab988aa6338669f87027ac5339eeb34c8b51a30261ab4757120c011cea294c5",
+      "from": "sha256:b0e4f7944383fe49ce6173672b4b7ad3d93c4db3eb84113c04dd302e54a774cd",
       "to": "sha256:fb6d7da1625119f595f0f269237b2b3547de46af7fa47573f53572cea5be10d1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/graph:tests:重複の1つが複数マーカーで残りが1件なら通常のtestとして扱われる:FR-057": {
       "from": "sha256:a64fc17c32d0d9a67beddef0cf6456a91993537a1dca0d64d8a8281de86eff83",
@@ -2976,11 +2983,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/index:tests:indexとlogは予約名で文書にならず索引として分類される:FR-067": {
-      "from": "sha256:831ce5f2829afdc87a92eb3e21780beca6a17d4b6b50766e0855693583d17892",
+      "from": "sha256:310e08c4add80e11436fcaff983cce1ec38e3d37b28e99a97c391b9da9a56ed2",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/index:tests:line_spanは先頭行から改行までを含む:FR-083": {
       "from": "sha256:83fef5c3c66b612acc8b7f3608da8a0490c79538b751e947ea1789bfa47287e5",
@@ -3634,11 +3641,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/index:tests:索引のtitleとdescriptionはディレクトリのタイトルと要約になる:FR-071": {
-      "from": "sha256:d0b03121726b60817d49217fe71caf562511b1c83c99348c24747f2114696881",
+      "from": "sha256:b7c0ae47c210af1467c39c2e1e58887f0dd99548d7bcac3993d704360aeb47a8",
       "to": "sha256:0ccc0a872993c859c4e7e8984007fac62694cf5f9efc7e3eccbc1b93d05091ae",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/index:tests:索引自身を指すエントリは自己か祖先として壊れている:FR-076": {
       "from": "sha256:9d5fffe40a4bfbe75f187034caf1fd52bdae216db76ab81f287a8a1c0f70d470",
@@ -3732,11 +3739,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/index:tests:角括弧のエスケープは比較時に戻される:FR-069": {
-      "from": "sha256:935977573ba01a75bbd1bca2193405cf4e7286a343b815dad7071e87d4b303e2",
+      "from": "sha256:8630bebff41612d4d747e0fe68ef012df69238ccc1c22df00aa3edc2001e0008",
       "to": "sha256:e9e09b11ac125b517547cdb8611cb01cc473de7ecc660ae8c93f8709cee6f28a",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/index:tests:設定した根が配下のディレクトリでも担当範囲はその根の中だけになる:FR-072": {
       "from": "sha256:69445f4c942879b6a4fb9c850c3a66cd5283d04fe491883bbbb79d2b80a42064",
@@ -3810,31 +3817,31 @@
     },
     "test-req:src/judge:tests:build_jev_requestはdescで要約が空でもdescriptionキーを空文字列で送る:FR-041": {
       "from": "sha256:d1eeda02b2c340b207e39e4278b42d888c47c2997d8ea3b8d08c9db23f7c769f",
-      "to": "sha256:e88fc04aacdd1a3719c2fa7ad15ddb1ca6c7193500f5fa9cae6ded74773d558b",
+      "to": "sha256:67188169e083a46ac522eb61401f8eb8cf1f569ddcc5b0db153a5306e3147d09",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/judge:tests:build_jev_requestはdescエッジのstateと質問文言を組み立てる:FR-041": {
       "from": "sha256:cac24b9a3fe974556397a460b964edbf38ba788570a8ce08114c4d12597d8df1",
-      "to": "sha256:e88fc04aacdd1a3719c2fa7ad15ddb1ca6c7193500f5fa9cae6ded74773d558b",
+      "to": "sha256:67188169e083a46ac522eb61401f8eb8cf1f569ddcc5b0db153a5306e3147d09",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/judge:tests:build_jev_requestはdoc_reqエッジのstateとquestionsを組み立てる:FR-041": {
       "from": "sha256:602a7b3aa76554b0b63e6a2134f1f14303199db9556055800ba84aee5b457898",
-      "to": "sha256:e88fc04aacdd1a3719c2fa7ad15ddb1ca6c7193500f5fa9cae6ded74773d558b",
+      "to": "sha256:67188169e083a46ac522eb61401f8eb8cf1f569ddcc5b0db153a5306e3147d09",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/judge:tests:build_jev_requestはtest_reqエッジのstateとquestionsを組み立てる:FR-041": {
       "from": "sha256:71d8753b1b0a72889ca39402914bdbbebe6d0d8c1b34b4752df175767600d738",
-      "to": "sha256:e88fc04aacdd1a3719c2fa7ad15ddb1ca6c7193500f5fa9cae6ded74773d558b",
+      "to": "sha256:67188169e083a46ac522eb61401f8eb8cf1f569ddcc5b0db153a5306e3147d09",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/judge:tests:descエッジの要約と本文の合計が上限ちょうどならjevを呼ぶ:FR-045": {
       "from": "sha256:e305a1996ec5dd33ecf8194d9f7800412e85dc471705dd240c8658529245a16f",
@@ -3858,11 +3865,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:src/judge:tests:jevの質問文言はreqの文言と完全一致する:FR-041": {
-      "from": "sha256:6fcea5a458089bbe5ac45be94b055e6cd6cb77c2920098c51dd671c1df7f3fb5",
-      "to": "sha256:e88fc04aacdd1a3719c2fa7ad15ddb1ca6c7193500f5fa9cae6ded74773d558b",
+      "from": "sha256:2e6d352ac201763340c19ec8ceff1edb094bf454c57793d59ddffbf2aeef3f29",
+      "to": "sha256:67188169e083a46ac522eb61401f8eb8cf1f569ddcc5b0db153a5306e3147d09",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:src/judge:tests:judge_edgesはエッジid昇順で判定結果を返す:FR-044": {
       "from": "sha256:278660bcf13d6e7b0bc9171eae25ebaafca63de9e987778fd1777c9f1f110618",
@@ -4621,11 +4628,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_check::excludeしたディレクトリ配下のtestはfindingに出ない:FR-065": {
-      "from": "sha256:a6a8659a40a5485651e816692178841dd809f065febd7fa98e33e746ab79706a",
+      "from": "sha256:f2e433b44739f7249e3745f55f24128601e28572038415489ca678a926f411bd",
       "to": "sha256:3b3a9585010d6d955ade4ff689ed58a8469e21c87c26c78c98f5029ae5fcccf1",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_check::findingが0件でgateがあってもexit_code_0を返す:FR-030": {
       "from": "sha256:edfcffdb652ad03df3f9e9bc7adde477c0a818f15b14d578463aab61d625480d",
@@ -4692,10 +4699,10 @@
     },
     "test-req:tests/cli_desc::diffは基準側にindexが無ければdescエッジを新規のnewとして報告する:FR-086": {
       "from": "sha256:63acb171a79089dfd03bdf890ce11c7bdf6d192bd8751c04418b942ffac05477",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_desc::doc本文を変えるとdoc_reqのdoc_changedとdescのbody_changedが別々に出る:FR-088": {
       "from": "sha256:ffa258370683fb181adf5c92af25cbf38604460cdeeace75a9349f741b8f3c7d",
@@ -4706,24 +4713,24 @@
     },
     "test-req:tests/cli_desc::index設定があるとcheckはdescエッジをnewとして報告する:FR-086": {
       "from": "sha256:ec9bbf181814412e9d042603bf3a5bda36c75b47c92a1a581312e006432e180b",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_desc::index設定が無ければcheckはdescエッジを報告しない:FR-086": {
       "from": "sha256:236f9252589b21913c997d5a26856ea9603c96dee33ea4e7610b870ce3ad2cc4",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_desc::reconcile後のcheckはdescエッジのfindingを出さない:FR-086": {
       "from": "sha256:cc88fef80767c969fe20430ac7a63ba8902938771cd15c8acc2b5afb89e9cab2",
-      "to": "sha256:bdb08924d9f6ae36db89f34ac8eb937fa8dbc9250c9a0df07054006d7cf42697",
+      "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_desc::要約を変えるとdescエッジだけがdescription_changedのdriftになる:FR-088": {
       "from": "sha256:a44921ea8f51339bc8b9e30c4d75a7605dda37c1d8b95ca93d975e983b0e9fd8",
@@ -4733,11 +4740,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_desc::要約を消すとindexのmissing_descriptionとdescのdriftの2件が出る:FR-088": {
-      "from": "sha256:1e91a1cdb69e12687b2b19ae6670c3f663dcc3009c435daee2522faa7da8943f",
+      "from": "sha256:458ade597aa091c3fa4010148fe622e6a53c2afc5e5da1db372d55af3ba1eb0b",
       "to": "sha256:55ff3a5a2c084ff1f69598e54afdf4f664c682ad935969ae72b387b5ef22e37e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_diff::diffはbaseのexcludeでbaseを評価する_headでexcludeを外すとnewが出る:FR-065": {
       "from": "sha256:3d4727ab74937d7ba82aaf06cab0b7250d0866dc17025a95202b3b6428323270",
@@ -4761,11 +4768,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_diff::diffはhead時点の設定で評価する_新しいrequirements領域のreqはnewとno_testになる:FR-031": {
-      "from": "sha256:78c4897cc734c82061033be9e2bfdcb43e02ceeb6e946147f9adb5cbe68e12f0",
+      "from": "sha256:b36bd6b33975020b2ee1c27a167d3faf94572ef92630d78cdc97356a5db1420f",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "judge を Jev のみに変更（req 番号の詰め直し、エージェント関連の req・テストの削除。レビュー済み）",
-      "at": "2026-10-01T01:51:00Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_diff::diffはmerge_base以降に新たに発生したfindingだけを報告する:FR-031": {
       "from": "sha256:949a2a53884e1c9d035b179fe6671040e46a14cc987701d67a0820af866b4645",
@@ -5021,10 +5028,10 @@
     },
     "test-req:tests/cli_judge::jevにはbearer認証のpostでmodelを指定して送る:FR-041": {
       "from": "sha256:c80eeb629c31960faaa89f8438bdc94682eb421cbfafc8d961277e422562953e",
-      "to": "sha256:e88fc04aacdd1a3719c2fa7ad15ddb1ca6c7193500f5fa9cae6ded74773d558b",
+      "to": "sha256:67188169e083a46ac522eb61401f8eb8cf1f569ddcc5b0db153a5306e3147d09",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_judge::jevの応答からスコアが取れなければexit1になり:FR-042": {
       "from": "sha256:74ac237f0d876ba78e7d2fdd2e5c0da8e501fb2569d367fcb004623d8d1f293f",
@@ -5188,11 +5195,11 @@
       "at": "2026-09-30T16:19:51Z"
     },
     "test-req:tests/cli_reconcile::invalidなreqに紐づくエッジを指定したreconcileは拒否されロックは書き込まれない:FR-035": {
-      "from": "sha256:4be6d9a30ebc03a23795b64d6acb7abcff496e13f76f8b0a7c27da24b2d8b670",
+      "from": "sha256:21d1647527559efd8ab3f9e9856e719d1b5c56b89781a7d4081bd852d2141db4",
       "to": "sha256:0de78c905afe98c238696972f277eac8dd4218a905f094bf62f11faac77dde50",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_reconcile::ロックにのみ存在するdescエッジはedge指定のreconcileで削除できる:FR-034": {
       "from": "sha256:adbc14e198a6c60a3f05526cb4ecbd6b61c0472adfbfae84b52004418effd4bc",
@@ -5264,19 +5271,19 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
-    "test-req:tests/cli_site::idが不正なspecificationも索引の根の配下なら公開されidは表示されない:FR-091": {
-      "from": "sha256:7b2507dee34adc263294d30f978762038d66b7b57df3921db7f006119ae4ff81",
-      "to": "sha256:52536435fbf2f4ddd9e421dd4ef41874fa669e322d734f81de47f75b8e807bdc",
+    "test-req:tests/cli_site::idが不正なbusiness_needも索引の根の配下なら公開されidは表示されない:FR-091": {
+      "from": "sha256:23026c9957aba172ffa0b2682ca56dc992f4c198e1f35b7b71eeccdf7fa5aae3",
+      "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::id重複のrequirementは索引の根の外ならページにならない:FR-091": {
       "from": "sha256:c856a3b3053d8bd2c889f2c327643a0ba0e381db998d5e80aafb1166628fffe6",
-      "to": "sha256:52536435fbf2f4ddd9e421dd4ef41874fa669e322d734f81de47f75b8e807bdc",
+      "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::indexが未設定で出力先を指定しても何も作られない:FR-090": {
       "from": "sha256:709fa5d3d630763f04f57178c0e02fea0a7b952ce040efd071ab30b2e22ea578",
@@ -5294,10 +5301,10 @@
     },
     "test-req:tests/cli_site::indexの根の外のdocとreqはページになり根の外の型付き文書はならない:FR-091": {
       "from": "sha256:ee0aebd48a0f19c7d5b999257df6ef0241fa77ff03da7eca3916bb62f459cef5",
-      "to": "sha256:52536435fbf2f4ddd9e421dd4ef41874fa669e322d734f81de47f75b8e807bdc",
+      "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::indexを空配列で明示してもエラーで何も書かない:FR-090": {
       "from": "sha256:e8559759d13c3db553aa8d21b77f28140bdb0e8998affb295a16842b56d77c40",
@@ -5503,11 +5510,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::タイトルと要約はエスケープされmeta_descriptionにも入る:FR-095": {
-      "from": "sha256:cbbecd25cc19f01f5e816ba5fecd76dd94a340752bd808d39759a5a6102e1ec0",
+      "from": "sha256:11d2f463c788d4b4218b8a808097af318a3e5ebc767d512dc3775929a08702ca",
       "to": "sha256:2061b9f29a68b3c82a669e52a2afc9ab43ccd5c209f850444fdf5effa932743e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::タイトルはフロントマターのtitleを優先し無ければ最初のh1で無ければファイル名になる:FR-096": {
       "from": "sha256:ae76e59fc604131a3acc5203fc55ba1aa18e2d0e6cbf14c2ac91d481231719d2",
@@ -5517,11 +5524,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::タイトル要約の順で出てdocとreqのページにはidが表示される:FR-095": {
-      "from": "sha256:321230d8c03f737acee02cdc5ed488cc235344573b1c59873c40def159c272b7",
+      "from": "sha256:e525c7827e39565f7dac9747e462140557324170d4472270432346585630257e",
       "to": "sha256:2061b9f29a68b3c82a669e52a2afc9ab43ccd5c209f850444fdf5effa932743e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::ディレクトリを指すリンクで索引ページが公開されないときはリンクにならず警告になる:FR-099": {
       "from": "sha256:85bbc77554be43c8471bb88d2000d10a2d4a92d591a9f86796f6801bb5ed41c9",
@@ -5608,11 +5615,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::フロントマターは本文から取り除かれcrlfの囲みでも同じ:FR-102": {
-      "from": "sha256:d13881a5b9ec7ade5cdea08935cbc9f754242a079639878fbd0aa9e63073f21e",
+      "from": "sha256:93eb2216dfe4352f72af4ee9aee69be21b737cf600bb8c77ed3574d41d66865e",
       "to": "sha256:a6eccb50f5d0aea5887c49371fec51487ec0ec66dc5730ff9fde5ba356363747",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::ブロックの生htmlをpre表示するとき中のコメントを取り除く:FR-097": {
       "from": "sha256:b56a68fc0c98d447dc2e9a52555e26757c185a05aafe4df3db5d60959a506f03",
@@ -5685,11 +5692,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::先頭h1にリンクを含んでもidと要約はh1直後に1回だけ入る:FR-105": {
-      "from": "sha256:f4b80b8c2fbcca5ab75732096d04430ec2df5b8702e976d9715e57c886327514",
+      "from": "sha256:72737b1130d3b9df3942a7557398f427b84a332aba981e0967305fe0a119e471",
       "to": "sha256:b2ecd11491a63a26658b6281bc27259ebf006a418a0868107b96519724f4d184",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::先頭行がハイフン3つでなければフロントマターなしとして全体を本文にする:FR-102": {
       "from": "sha256:09a3b91f91f524ffc8e2278004b72adeafc6786ef67ec6f25da551ad31e62e34",
@@ -5720,11 +5727,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::公開されるページはdocとreqと索引対象文書と索引ページの和集合に限る:FR-091": {
-      "from": "sha256:4d7ffb35fc15513e36875f9d56c712a8001225c675098f9f20eadcc2a261ae9b",
-      "to": "sha256:52536435fbf2f4ddd9e421dd4ef41874fa669e322d734f81de47f75b8e807bdc",
+      "from": "sha256:ae7982ba99fbcece91ad4ec47ff35fc418dc2fc3760d9e82cea8e3998f906abe",
+      "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::公開される画像を囲む公開されないリンクはimgだけ残り警告は1件:FR-100": {
       "from": "sha256:daeb1ea84961fb1ef4002c6aafcd6edc9d3c49b5780acda460def35ae86eceee",
@@ -5832,11 +5839,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::最初のブロックがatxのh1のときテンプレートのh1を出さず本文の見出しを使う:FR-105": {
-      "from": "sha256:22ebf327c71f73d020302cf12f8b7eaa7aa8385495806a6f1f8116f42edfd019",
+      "from": "sha256:06d50cfdc9d7797eb9b57ca1f6293480285001c0d872c520ace81b753c4fc5e9",
       "to": "sha256:b2ecd11491a63a26658b6281bc27259ebf006a418a0868107b96519724f4d184",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::最初のブロックがh1でなければテンプレートのh1を出す:FR-105": {
       "from": "sha256:d9164bfcdfe74719790e81905c602cce721c859de2c3a57b7be2be8b614ad622",
@@ -5910,10 +5917,10 @@
     },
     "test-req:tests/cli_site::根の外のindexmdと根が別なら根の外のindexmdは公開されずリンクは警告になる:FR-091": {
       "from": "sha256:b2651a5a732692ded05832fdcceb046673fae97e3d05e6112dd341e926811e39",
-      "to": "sha256:52536435fbf2f4ddd9e421dd4ef41874fa669e322d734f81de47f75b8e807bdc",
+      "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::根の索引ページとreqと根の外のdocにはトップへのリンクだけを置く:FR-104": {
       "from": "sha256:d168f126b732e8223f68508c7423a753f53dd6850527fdf98fe5c88f77c40b20",
@@ -6021,11 +6028,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::表と取り消し線とタスクリストと脚注が変換される:FR-097": {
-      "from": "sha256:b9f2fe6ae93e91df0582f7b8292762878e586ebf9f2584f89f4ffada7113617a",
+      "from": "sha256:61ca3d720fd2aa5b218a46fed58160d8fbfc036fa41927437afecd9971a08e09",
       "to": "sha256:d78878d61c8329e6bb276d26f9f150330068c805cbaffdadd4f952260b4f4bf2",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::要約が無いとき要約の段落もmeta_descriptionも出ない:FR-095": {
       "from": "sha256:88cac195f2cb01fa1d093443775a4615a67c0c15c7c115c652a478054cbb4f8b",
@@ -6105,11 +6112,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::閉じのハイフンが無い文書は公開されず索引ページは本文を空として公開される:FR-102": {
-      "from": "sha256:0be5407ae830e4572ed2f0162844d94b965b67473b9b96f27fe418280b9f1f64",
+      "from": "sha256:7ecb7a56700f36355dfcb7780b85360c76d1450ff6e389813cbe434fe22a71b5",
       "to": "sha256:a6eccb50f5d0aea5887c49371fec51487ec0ec66dc5730ff9fde5ba356363747",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     },
     "test-req:tests/cli_site::除外ディレクトリの画像とdocsとrequirementsの外の画像はコピーされない:FR-100": {
       "from": "sha256:db1c19287c18f4653ef91180e031c31608f9fb1a5ef03c217b7074a07d019f58",
@@ -6126,11 +6133,11 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "test-req:tests/cli_site::非utf8のバイトは置換文字になり失敗しない:FR-102": {
-      "from": "sha256:68a3bb47a862d028214411709d9f123b66a21fe96e8b0d56e72f07ca6f2a1d2c",
+      "from": "sha256:8273d1c94c44a6902ff9ab64dd86797afeac57d1548b8ab0ef8cbdbc336783d4",
       "to": "sha256:a6eccb50f5d0aea5887c49371fec51487ec0ec66dc5730ff9fde5ba356363747",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
+      "at": "2026-10-09T14:16:47Z"
     }
   }
 }
