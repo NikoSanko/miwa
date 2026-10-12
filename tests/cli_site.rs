@@ -3076,3 +3076,53 @@ fn 警告の元ファイルのパスの制御文字もエスケープされる()
         o.stderr
     );
 }
+
+// ---------------------------------------------------------------- regression
+
+// [FR-095]
+#[test]
+fn 入れ子リスト_開始番号付きリスト_表_脚注_コード_画像を含むmainが固定のhtmlになる() {
+    let f = basic();
+    common::write(
+        &f.root,
+        "docs/spec.md",
+        &doc(
+            "DOC-A",
+            "Spec",
+            "## 見出し\n\n- 親1\n  - 子1\n  - 子2\n- 親2\n\n3. 三\n4. 四\n\n| a | b |\n|---|---|\n| 1 | 2 |\n\n脚注あり[^n]。\n\n```rust\nfn main() {}\n```\n\n![alt](pic/a.png)\n\n[^n]: 脚注本文\n",
+        ),
+    );
+    write_bin(&f.root, "docs/pic/a.png", &png_bytes());
+    site_ok(&f.root);
+    let html = page(&f.root, "docs/spec.html");
+    let start = pos(&html, "<main>\n") + "<main>\n".len();
+    let end = pos(&html, "</main>");
+    let expected = r##"<h1>Spec</h1>
+<p class="id">DOC-A</p>
+<h2 id="見出し">見出し</h2>
+<ul>
+<li>親1
+<ul>
+<li>子1</li>
+<li>子2</li>
+</ul>
+</li>
+<li>親2</li>
+</ul>
+<ol start="3">
+<li>三</li>
+<li>四</li>
+</ol>
+<table><thead><tr><th>a</th><th>b</th></tr></thead><tbody>
+<tr><td>1</td><td>2</td></tr>
+</tbody></table>
+<p>脚注あり<sup class="footnote-reference"><a href="#n">1</a></sup>。</p>
+<pre><code class="language-rust">fn main() {}
+</code></pre>
+<p><img src="pic/a.png" alt="alt" /></p>
+<div class="footnote-definition" id="n"><sup class="footnote-definition-label">1</sup>
+<p>脚注本文</p>
+</div>
+"##;
+    assert_eq!(&html[start..end], expected);
+}
