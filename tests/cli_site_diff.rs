@@ -1864,3 +1864,47 @@ fn 画像の参照先が違う画像だけのブロックも左右の対にな�
     let html = r.html();
     assert_eq!(count(&html, r#"<div class="row img">"#), 1);
 }
+
+// [FR-117]
+#[test]
+fn 開始番号付きの入れ子リストは変わった項目だけがrow_modになり番号が保たれる() {
+    let r = repo();
+    r.write(
+        "docs/spec.md",
+        &spec("3. 三番目の項目です\n   - 入れ子の甲\n   - 入れ子の乙\n4. 四番目の項目です\n5. 五番目の項目です\n"),
+    );
+    r.base();
+    r.write(
+        "docs/spec.md",
+        &spec("3. 三番目の項目です\n   - 入れ子の甲\n   - 入れ子の乙\n4. 四番目の項目です（修正）\n5. 五番目の項目です\n"),
+    );
+    let html = r.html();
+    assert_eq!(count(&html, r#"<div class="row mod">"#), 1, "{html}");
+    assert_eq!(count(&html, r#"<div class="row same">"#), 2, "{html}");
+    // each item block keeps its own number
+    assert!(html.contains(r#"<ol start="3">"#), "{html}");
+    assert!(html.contains(r#"<ol start="4">"#), "{html}");
+    assert!(html.contains(r#"<ol start="5">"#), "{html}");
+    assert!(html.contains("入れ子の乙"));
+}
+
+// [FR-120]
+#[cfg(unix)]
+#[test]
+fn 読めない画像があるとexit_1で何も書かずパスをstderrに出す() {
+    use std::os::unix::fs::PermissionsExt;
+    let r = repo();
+    r.write("docs/spec.md", &spec("![図](pic/a.png)\n"));
+    r.write_bin("docs/pic/a.png", &png(1));
+    r.base();
+    r.write("docs/spec.md", &spec("![図](pic/a.png) 変更\n"));
+    let img = r.root.join("docs/pic/a.png");
+    std::fs::set_permissions(&img, std::fs::Permissions::from_mode(0o000)).unwrap();
+    if std::fs::read(&img).is_ok() {
+        // running as root: permissions do not block reads
+        return;
+    }
+    let e = r.expect_error(&[]);
+    assert!(e.contains("docs/pic/a.png"), "{e}");
+    std::fs::set_permissions(&img, std::fs::Permissions::from_mode(0o644)).unwrap();
+}

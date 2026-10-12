@@ -36,23 +36,40 @@ pub struct DiffOptions {
     pub head_label: Option<String>,
 }
 
-/// Hashes and embeds the images of one side, reading each file at most once
-/// for its hash.
+/// Hashes and embeds the images of one side. Each file is read once for its
+/// hash and once for its data URI. A read failure is remembered (the first
+/// one) and reported by [`Images::finish`], so that nothing is written.
 struct Images<'a> {
     source: &'a dyn Source,
+    /// Where the side's files come from, for error messages.
+    origin: String,
     hashes: RefCell<HashMap<String, Option<String>>>,
+    uris: RefCell<HashMap<String, Option<String>>>,
+    failure: RefCell<Option<anyhow::Error>>,
 }
 
 impl Images<'_> {
+    fn read(&self, path: &str) -> Option<Vec<u8>> {
+        match self.source.read(path) {
+            Ok(bytes) => Some(bytes),
+            Err(e) => {
+                let mut failure = self.failure.borrow_mut();
+                if failure.is_none() {
+                    *failure =
+                        Some(e.context(format!("failed to read image {path} at {}", self.origin)));
+                }
+                None
+            }
+        }
+    }
+
     /// The SHA-256 of the image file, `None` when it cannot be read.
     fn hash(&self, path: &str) -> Option<String> {
         if let Some(h) = self.hashes.borrow().get(path) {
             return h.clone();
         }
         let hash = self
-            .source
             .read(path)
-            .ok()
             .map(|bytes| hex::encode(sha2::Sha256::digest(&bytes)));
         self.hashes
             .borrow_mut()
@@ -60,8 +77,12 @@ impl Images<'_> {
         hash
     }
 
-    /// The image as a `data:` URI, `None` when it cannot be read.
+    /// The image as a `data:` URI (built once per file), `None` when it
+    /// cannot be read.
     fn data_uri(&self, path: &str) -> Option<String> {
+        if let Some(u) = self.uris.borrow().get(path) {
+            return u.clone();
+        }
         let mime = match path.rsplit_once('.')?.1.to_ascii_lowercase().as_str() {
             "png" => "image/png",
             "jpg" | "jpeg" => "image/jpeg",
@@ -69,8 +90,19 @@ impl Images<'_> {
             "webp" => "image/webp",
             _ => return None,
         };
-        let bytes = self.source.read(path).ok()?;
-        Some(format!("data:{mime};base64,{}", base64(&bytes)))
+        let uri = self
+            .read(path)
+            .map(|bytes| format!("data:{mime};base64,{}", base64(&bytes)));
+        self.uris.borrow_mut().insert(path.to_string(), uri.clone());
+        uri
+    }
+
+    /// Fails with the first image read error, if any.
+    fn finish(&self) -> anyhow::Result<()> {
+        match self.failure.borrow_mut().take() {
+            Some(e) => Err(e),
+            None => Ok(()),
+        }
     }
 }
 
@@ -108,14 +140,20 @@ struct Side<'a> {
 }
 
 impl<'a> Side<'a> {
-    fn load(tag: char, source: &'a dyn Source, config: &Config) -> anyhow::Result<Side<'a>> {
+    fn load(
+        tag: char,
+        origin: &str,
+        source: &'a dyn Source,
+        config: &Config,
+    ) -> anyhow::Result<Side<'a>> {
         let model = load_side(source, config)?;
         let candidates = unpublished_candidates(source, config, &model)?;
-        Ok(Side::new(tag, source, model, candidates))
+        Ok(Side::new(tag, origin, source, model, candidates))
     }
 
     fn new(
         tag: char,
+        origin: &str,
         source: &'a dyn Source,
         model: SideModel,
         candidates: Vec<Candidate>,
@@ -126,7 +164,10 @@ impl<'a> Side<'a> {
             candidates,
             images: Images {
                 source,
+                origin: origin.to_string(),
                 hashes: RefCell::new(HashMap::new()),
+                uris: RefCell::new(HashMap::new()),
+                failure: RefCell::new(None),
             },
         }
     }
@@ -314,13 +355,26 @@ pub fn run(repo_root: &Path, config: &Config, opts: &DiffOptions) -> anyhow::Res
     let base_source = GitTreeSource::new(repo_root, &merge_base_rev)?;
     let head_source = FsSource::new(repo_root);
     let base = match base_config(&base_source, &merge_base_rev)? {
-        Some(cfg) => Side::load('b', &base_source, &cfg)?,
-        None => Side::new('b', &base_source, SideModel::default(), Vec::new()),
+        Some(cfg) => Side::load(
+            'b',
+            &format!("merge-base {merge_base_rev}"),
+            &base_source,
+            &cfg,
+        )?,
+        None => Side::new(
+            'b',
+            &merge_base_rev,
+            &base_source,
+            SideModel::default(),
+            Vec::new(),
+        ),
     };
-    let head = Side::load('h', &head_source, config)?;
+    let head = Side::load('h', "working tree", &head_source, config)?;
 
     let mut items = pair::pair_documents(&base, &head)?;
     items.extend(pair::pair_indexes(&base, &head));
+    base.images.finish()?;
+    head.images.finish()?;
     if items.is_empty() {
         return Ok(());
     }
@@ -348,6 +402,9 @@ pub fn run(repo_root: &Path, config: &Config, opts: &DiffOptions) -> anyhow::Res
         .enumerate()
         .map(|(i, item)| render_frame(&ctx, item, &format!("d{}", i + 1)))
         .collect();
+
+    base.images.finish()?;
+    head.images.finish()?;
 
     let site_title = config
         .site

@@ -171,7 +171,7 @@ req/example.md
 
 ### GitHub Actions での使い方
 
-PR ごとに差分 HTML を作り、Workflow の Artifact にアップロードして、PR のコメントからリンクする例です。コメントは PR につき1件で、push のたびに更新します。変更がなければ Artifact は作らず、コメントに「変更なし」と書きます。fork からの PR では、コメントの書き込み権限が無いため、コメントを省略して Artifact だけ作ります。`pull_request_target` は、信頼できないコードを書き込み権限で動かすことになるので使いません。
+PR ごとに差分 HTML を作り、Workflow の Artifact にアップロードして、PR のコメントからリンクする例です。PR のコードを動かすジョブ（`build`）は読み取り権限だけにし、コメントを書くジョブ（`comment`）は PR のコードを checkout せずに書き込み権限を持たせます。コメントは PR につき1件で、push のたびに更新します。変更がなければ Artifact は作らず、コメントに「変更なし」と書きます。fork からの PR では、コメントの書き込み権限が無いため、コメントを省略して Artifact だけ作ります。`pull_request_target` は、信頼できないコードを書き込み権限で動かすことになるので使いません。
 
 miwa は、`cargo install --git https://github.com/NikoSanko/miwa --tag vX.Y.Z --locked` で入れるか、Releases のバイナリをダウンロードして使います。次の例は `cargo install` を使います。バージョンは、プロジェクトで使うものに置き換えてください。
 
@@ -180,24 +180,33 @@ name: site-diff
 
 on: pull_request
 
-permissions:
-  contents: read
-  pull-requests: write
+permissions: {}
 
 concurrency:
   group: site-diff-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
-  site-diff:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      exists: ${{ steps.output.outputs.exists }}
+      artifact-url: ${{ steps.upload.outputs.artifact-url }}
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
         with:
+          # Check out the PR head commit (not the merge commit) so the diff is
+          # labelled and linked against what the author pushed.
           ref: ${{ github.event.pull_request.head.sha }}
+          # `site --diff` needs full history to locate the merge-base; a shallow
+          # clone makes it exit with code 1.
           fetch-depth: 0
 
-      - uses: dtolnay/rust-toolchain@stable
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
 
       - name: Install miwa
         run: cargo install --git https://github.com/NikoSanko/miwa --tag vX.Y.Z --locked
@@ -233,12 +242,20 @@ jobs:
           archive: false
           retention-days: 14
 
+  comment:
+    needs: build
+    # Forks get a read-only token, so skip commenting for them.
+    if: github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    # No checkout: this job holds the write token and never runs PR code.
+    permissions:
+      pull-requests: write
+    steps:
       - name: Comment on the PR
-        if: github.event.pull_request.head.repo.full_name == github.repository
         uses: actions/github-script@v7
         env:
-          EXISTS: ${{ steps.output.outputs.exists }}
-          ARTIFACT_URL: ${{ steps.upload.outputs.artifact-url }}
+          EXISTS: ${{ needs.build.outputs.exists }}
+          ARTIFACT_URL: ${{ needs.build.outputs.artifact-url }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         with:
           script: |
