@@ -1,5 +1,6 @@
 ---
 type: Reference
+id: REF-SPEC-ALPHA
 title: "仕様乖離検知ツール α版の要件・仕様"
 description: "α版の目的・要件・仕様をまとめた参考資料。"
 ---
