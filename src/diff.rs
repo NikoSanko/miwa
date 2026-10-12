@@ -1,5 +1,6 @@
 //! Block alignment and character-level diff used by `miwa site --diff`.
 
+use std::collections::HashMap;
 use std::ops::Range;
 
 /// Minimum similarity for pairing a deleted block with an added block.
@@ -24,13 +25,121 @@ pub enum Op {
 }
 
 /// Myers diff. Returns None when the edit distance exceeds `max_edits`.
-pub fn diff_ops<T: Eq>(_a: &[T], _b: &[T], _max_edits: usize) -> Option<Vec<Op>> {
-    todo!()
+pub fn diff_ops<T: Eq>(a: &[T], b: &[T], max_edits: usize) -> Option<Vec<Op>> {
+    let (n, m) = (a.len(), b.len());
+    // v[k + offset] = furthest x reached on diagonal k (k = x - y).
+    let offset = max_edits as isize + 1;
+    let mut v = vec![0usize; 2 * max_edits + 3];
+    // trace[d] holds v for diagonals -d..=d (step 2) after round d; index (k + d) / 2.
+    let mut trace: Vec<Vec<usize>> = Vec::new();
+    let idx = |k: isize| (k + offset) as usize;
+    let mut found = false;
+    for d in 0..=max_edits as isize {
+        let mut k = -d;
+        while k <= d {
+            let mut x = if k == -d || (k != d && v[idx(k - 1)] < v[idx(k + 1)]) {
+                v[idx(k + 1)]
+            } else {
+                v[idx(k - 1)] + 1
+            };
+            let mut y = (x as isize - k) as usize;
+            // Follow the diagonal while elements match.
+            while x < n && y < m && a[x] == b[y] {
+                x += 1;
+                y += 1;
+            }
+            v[idx(k)] = x;
+            if x >= n && y >= m {
+                found = true;
+            }
+            k += 2;
+        }
+        trace.push((-d..=d).step_by(2).map(|k| v[idx(k)]).collect());
+        if found {
+            break;
+        }
+    }
+    if !found {
+        return None;
+    }
+
+    // Walk back from (n, m), collecting elementary ops in reverse.
+    let mut rev: Vec<Op> = Vec::new();
+    let (mut x, mut y) = (n, m);
+    for d in (0..trace.len() as isize).rev() {
+        let k = x as isize - y as isize;
+        if d == 0 {
+            if x > 0 {
+                rev.push(Op::Equal { a: 0..x, b: 0..y });
+            }
+            break;
+        }
+        let prev = &trace[(d - 1) as usize];
+        let at = |kk: isize| prev[((kk + d - 1) / 2) as usize];
+        let prev_k = if k == -d || (k != d && at(k - 1) < at(k + 1)) {
+            k + 1
+        } else {
+            k - 1
+        };
+        let px = at(prev_k);
+        let py = (px as isize - prev_k) as usize;
+        // Position right after the single insert/delete step.
+        let (mx, my) = if prev_k == k + 1 {
+            (px, py + 1)
+        } else {
+            (px + 1, py)
+        };
+        if x > mx {
+            rev.push(Op::Equal { a: mx..x, b: my..y });
+        }
+        if prev_k == k + 1 {
+            rev.push(Op::Insert { b: py..my });
+        } else {
+            rev.push(Op::Delete { a: px..mx });
+        }
+        x = px;
+        y = py;
+    }
+
+    // Reverse and merge adjacent ops of the same kind.
+    let mut ops: Vec<Op> = Vec::new();
+    for op in rev.into_iter().rev() {
+        match (ops.last_mut(), &op) {
+            (Some(Op::Equal { a, b }), Op::Equal { a: na, b: nb }) => {
+                a.end = na.end;
+                b.end = nb.end;
+            }
+            (Some(Op::Delete { a }), Op::Delete { a: na }) => a.end = na.end,
+            (Some(Op::Insert { b }), Op::Insert { b: nb }) => b.end = nb.end,
+            _ => ops.push(op),
+        }
+    }
+    Some(ops)
 }
 
 /// Multiset character overlap: 2 * common / (len_a + len_b). Both empty -> 1.0.
-pub fn similarity(_a: &str, _b: &str) -> f64 {
-    todo!()
+pub fn similarity(a: &str, b: &str) -> f64 {
+    let mut counts: HashMap<char, usize> = HashMap::new();
+    let mut len_a = 0usize;
+    for c in a.chars() {
+        *counts.entry(c).or_insert(0) += 1;
+        len_a += 1;
+    }
+    let mut len_b = 0usize;
+    let mut common = 0usize;
+    for c in b.chars() {
+        len_b += 1;
+        if let Some(n) = counts.get_mut(&c) {
+            if *n > 0 {
+                *n -= 1;
+                common += 1;
+            }
+        }
+    }
+    if len_a + len_b == 0 {
+        return 1.0;
+    }
+    2.0 * common as f64 / (len_a + len_b) as f64
 }
 
 /// Kind of a rendered block.
@@ -76,14 +185,148 @@ pub struct Row {
 }
 
 /// Aligns two block sequences per FR-117 (limits included).
-pub fn align_blocks(_a: &[BlockKey], _b: &[BlockKey]) -> Vec<Row> {
-    todo!()
+pub fn align_blocks(a: &[BlockKey], b: &[BlockKey]) -> Vec<Row> {
+    if a.len() + b.len() > DOC_MAX_BLOCKS {
+        return all_deleted_then_added(0..a.len(), 0..b.len());
+    }
+    let ka: Vec<&str> = a.iter().map(|x| x.key.as_str()).collect();
+    let kb: Vec<&str> = b.iter().map(|x| x.key.as_str()).collect();
+    let Some(ops) = diff_ops(&ka, &kb, MYERS_MAX_EDITS) else {
+        return all_deleted_then_added(0..a.len(), 0..b.len());
+    };
+
+    let mut rows = Vec::new();
+    // Pending replacement region (consecutive Delete / Insert ops).
+    let mut region: Option<(Range<usize>, Range<usize>)> = None;
+    for op in ops {
+        match op {
+            Op::Equal { a: ra, b: rb } => {
+                if let Some((da, ib)) = region.take() {
+                    pair_region(a, b, da, ib, &mut rows);
+                }
+                for (i, j) in ra.zip(rb) {
+                    rows.push(Row {
+                        kind: RowKind::Same,
+                        left: Some(i),
+                        right: Some(j),
+                    });
+                }
+            }
+            Op::Delete { a: ra } => {
+                let r = region.get_or_insert((ra.start..ra.start, 0..0));
+                r.0.end = ra.end;
+            }
+            Op::Insert { b: rb } => {
+                let r = region.get_or_insert((0..0, rb.start..rb.start));
+                if r.1.is_empty() && r.1.start == 0 {
+                    r.1.start = rb.start;
+                }
+                r.1.end = rb.end;
+            }
+        }
+    }
+    if let Some((da, ib)) = region.take() {
+        pair_region(a, b, da, ib, &mut rows);
+    }
+    rows
+}
+
+/// All left blocks as Deleted, then all right blocks as Added.
+fn all_deleted_then_added(da: Range<usize>, ib: Range<usize>) -> Vec<Row> {
+    let deleted = da.map(|i| Row {
+        kind: RowKind::Deleted,
+        left: Some(i),
+        right: None,
+    });
+    let added = ib.map(|j| Row {
+        kind: RowKind::Added,
+        left: None,
+        right: Some(j),
+    });
+    deleted.chain(added).collect()
+}
+
+/// Similarity of two blocks; empty texts compare by block kind.
+fn block_similarity(l: &BlockKey, r: &BlockKey) -> f64 {
+    if l.text.is_empty() && r.text.is_empty() {
+        return if l.kind == r.kind { 1.0 } else { 0.0 };
+    }
+    similarity(&l.text, &r.text)
+}
+
+/// Pairs blocks of one replacement region greedily, keeping order.
+fn pair_region(
+    a: &[BlockKey],
+    b: &[BlockKey],
+    da: Range<usize>,
+    ib: Range<usize>,
+    rows: &mut Vec<Row>,
+) {
+    if da.len() * ib.len() > PAIRING_MAX_PRODUCT {
+        rows.extend(all_deleted_then_added(da, ib));
+        return;
+    }
+    let (mut i, mut j) = (da.start, ib.start);
+    while i < da.end && j < ib.end {
+        let cur = block_similarity(&a[i], &b[j]);
+        // Best partner for the current left among remaining rights, and vice versa.
+        let best_r = (j + 1..ib.end)
+            .map(|jj| block_similarity(&a[i], &b[jj]))
+            .fold(0.0, f64::max);
+        let best_l = (i + 1..da.end)
+            .map(|ii| block_similarity(&a[ii], &b[j]))
+            .fold(0.0, f64::max);
+        if cur >= SIMILARITY_THRESHOLD && cur >= best_r && cur >= best_l {
+            rows.push(Row {
+                kind: RowKind::Changed,
+                left: Some(i),
+                right: Some(j),
+            });
+            i += 1;
+            j += 1;
+        } else if best_r > best_l {
+            rows.push(Row {
+                kind: RowKind::Added,
+                left: None,
+                right: Some(j),
+            });
+            j += 1;
+        } else {
+            rows.push(Row {
+                kind: RowKind::Deleted,
+                left: Some(i),
+                right: None,
+            });
+            i += 1;
+        }
+    }
+    rows.extend(all_deleted_then_added(i..da.end, j..ib.end));
 }
 
 /// Character-level marks per FR-117: `Some((changed_in_a, changed_in_b))` with one bool per char,
 /// or None when the pair exceeds CHAR_DIFF_MAX_CHARS or MYERS_MAX_EDITS (whole block changed, no highlight).
-pub fn char_marks(_a: &[char], _b: &[char]) -> Option<(Vec<bool>, Vec<bool>)> {
-    todo!()
+pub fn char_marks(a: &[char], b: &[char]) -> Option<(Vec<bool>, Vec<bool>)> {
+    if a.len() + b.len() > CHAR_DIFF_MAX_CHARS {
+        return None;
+    }
+    let ops = diff_ops(a, b, MYERS_MAX_EDITS)?;
+    let mut ma = vec![false; a.len()];
+    let mut mb = vec![false; b.len()];
+    for (idx, op) in ops.iter().enumerate() {
+        match op {
+            Op::Delete { a: r } => ma[r.clone()].fill(true),
+            Op::Insert { b: r } => mb[r.clone()].fill(true),
+            // Short equal runs between two changes are absorbed into the change.
+            Op::Equal { a: ra, b: rb }
+                if idx > 0 && idx + 1 < ops.len() && ra.len() <= ABSORB_EQUAL_MAX =>
+            {
+                ma[ra.clone()].fill(true);
+                mb[rb.clone()].fill(true);
+            }
+            Op::Equal { .. } => {}
+        }
+    }
+    Some((ma, mb))
 }
 
 #[cfg(test)]

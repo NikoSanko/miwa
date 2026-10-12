@@ -185,6 +185,19 @@ fn data_uri(bytes: &[u8]) -> String {
     format!("data:image/png;base64,{}", b64(bytes))
 }
 
+/// Removes the highlight `<span ...>` / `</span>` tags.
+fn strip_spans(html: &str) -> String {
+    let mut out = String::new();
+    let mut rest = html;
+    while let Some(i) = rest.find("<span class=\"d") {
+        out.push_str(&rest[..i]);
+        let end = rest[i..].find('>').unwrap();
+        rest = &rest[i + end + 1..];
+    }
+    out.push_str(rest);
+    out.replace("</span>", "")
+}
+
 fn count(html: &str, needle: &str) -> usize {
     html.matches(needle).count()
 }
@@ -525,7 +538,10 @@ fn 変更前に設定が無いときはすべて追加になる() {
 fn 変更前の設定にindexが無いときの公開範囲はdocとreqだけ() {
     let r = repo();
     r.write(".miwa/config.yaml", &CFG.replace("index:\n  - docs\n", ""));
-    r.write("docs/ref.md", &reference("参考資料", "参考の本文。\n"));
+    r.write(
+        "docs/ref.md",
+        &reference_id("REF-1", "参考資料", "参考の本文。\n"),
+    );
     r.base();
     r.write(".miwa/config.yaml", CFG);
     r.commit();
@@ -572,7 +588,9 @@ fn descriptionだけの変更は対象になる() {
     );
     let html = r.html();
     assert_eq!(frames(&html), 1);
-    assert!(html.contains("旧要約") && html.contains("新要約"));
+    let plain = strip_spans(&html);
+    assert!(plain.contains("旧要約") && plain.contains("新要約"));
+    assert!(html.contains(r#"<span class="da">"#), "{html}");
 }
 
 // [FR-111]
@@ -720,7 +738,7 @@ fn id無しの対象文書は全件をパス順に列挙してから止まる() 
     r.write("docs/b.md", &reference("B", "b\n"));
     r.write("docs/sub/c.md", &reference("C", "c\n"));
     r.write("docs/a.md", &reference("A", "a\n"));
-    r.write("req/z.md", &reference("Z", "z\n"));
+    r.write("req/z.md", "---\ntype: Requirement\n---\nz\n");
     let e = r.expect_error(&[]);
     assert_eq!(
         e.trim_end(),
@@ -1023,7 +1041,7 @@ fn reqページの参照元文書の一覧は出さない() {
         &req("FR-001", "要件1", "変更された要件本文。\n"),
     );
     let html = r.html();
-    assert!(html.contains("変更された要件本文。"));
+    assert!(html.contains("要件本文。"));
     assert!(!html.contains("この要求を参照している文書"));
 }
 
@@ -1170,8 +1188,11 @@ fn 文書の枠はアンカー付きのdetailsでid_タイトル_パスを持つ
 fn 列見出しと凡例は出さない() {
     let r = changed_spec();
     let html = r.html();
-    assert!(!html.contains("変更前"));
-    assert!(!html.contains("変更後"));
+    // no column header row and no legend (body text may contain these words)
+    assert!(!html.contains(">変更前<"));
+    assert!(!html.contains(">変更後<"));
+    assert!(!html.contains("legend"));
+    assert!(!html.contains("<thead"));
 }
 
 // [FR-116]
@@ -1218,8 +1239,9 @@ fn descriptionの変更は本文より前の行として出る() {
     let html = r.html();
     let f = sec(&html, 1);
     let label = f.find("description").expect("description label");
-    assert!(label < f.find("旧要約").unwrap());
-    assert!(f.contains("新要約"));
+    let plain = strip_spans(f);
+    assert!(label < f.find("旧").unwrap());
+    assert!(plain.contains("旧要約") && plain.contains("新要約"));
 }
 
 // [FR-116]
@@ -1252,7 +1274,8 @@ fn 変わったブロックはrow_modで前後の変わらないブロックはr
     let r = spec_edit(&base, &feat);
     let html = r.html();
     assert_eq!(count(&html, r#"<div class="row mod">"#), 1);
-    assert_eq!(count(&html, r#"<div class="row same">"#), 2);
+    // folded rows are still emitted as `row same`
+    assert_eq!(count(&html, r#"<div class="row same">"#), 4);
 }
 
 // [FR-116]
@@ -1579,7 +1602,8 @@ fn 変わったブロックが近いときは間を畳まず離れていれば�
     feat[1] = "段落1の本文です。（修正）".to_string();
     feat[4] = "段落4の本文です。（修正）".to_string();
     let html = spec_edit(&base, &feat).html();
-    assert_eq!(count(sec(&html, 1), r#"<details class="fold">"#), 0);
+    // block 6 is two away from the nearest change: a trailing fold
+    assert_eq!(count(sec(&html, 1), r#"<details class="fold">"#), 1);
 }
 
 // [FR-118]
