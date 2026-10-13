@@ -491,7 +491,6 @@ fn 文書でないファイルだけの変更は対象にならない() {
 }
 
 // [FR-110]
-// [FR-112]
 #[test]
 fn idの欠落エラーは変更なしの扱いより優先される() {
     let r = repo();
@@ -614,7 +613,6 @@ fn 追加と削除と移動は対象になり変更の無い文書は含まれ�
     assert!(!html.contains("要件本文。"));
 }
 
-// [FR-111]
 // [FR-112]
 #[test]
 fn idを付けただけの変更は対象にならずエラーにもならない() {
@@ -1383,7 +1381,6 @@ fn 未変更の見出しとページ内リンクは左右で同じブロック�
     assert_eq!(count(&html, r#"<div class="row same">"#), 2);
 }
 
-// [FR-117]
 // [FR-119]
 #[test]
 fn 見出しidには文書と側を表す接頭辞が付く() {
@@ -1959,7 +1956,6 @@ fn 公開されないid無しreqは画像の差し替えだけでもid無しエ�
 }
 
 // [FR-116]
-// [FR-119]
 #[test]
 fn 表示が同じでソースだけ変わった移動文書は通常の枠で畳まれ見出しidへのリンクが有効() {
     let r = repo();
@@ -1997,4 +1993,32 @@ fn 表示が同じでソースだけ変わった移動文書は通常の枠で�
         sec(&html, 2).contains(r##"href="#d1-h-section""##),
         "{html}"
     );
+}
+
+// [FR-117]
+#[test]
+fn 生htmlブロックの文字の変更も強調される() {
+    let r = spec_edit(
+        &["<div>赤い車です</div>".to_string()],
+        &["<div>青い車です</div>".to_string()],
+    );
+    let html = r.html();
+    assert_eq!(count(&html, r#"<div class="row mod">"#), 1, "{html}");
+    assert!(html.contains(r#"<span class="dd">赤</span>"#), "{html}");
+    assert!(html.contains(r#"<span class="da">青</span>"#), "{html}");
+    assert!(html.contains("&lt;div&gt;"), "{html}");
+}
+
+// [FR-116]
+#[test]
+fn 移動のみの文書は画像を埋め込まず変更量バーはすべて灰色() {
+    let r = repo();
+    r.write("docs/spec.md", &spec("![図](pic/a.png)\n"));
+    r.write_bin("docs/pic/a.png", &png(1));
+    r.base();
+    std::fs::rename(r.root.join("docs/spec.md"), r.root.join("docs/moved.md")).unwrap();
+    let html = r.html();
+    assert!(sec(&html, 1).contains("内容の変更なし"));
+    assert!(!html.contains("data:image"), "{html}");
+    assert_eq!(bar_counts(sec(&html, 1)), (0, 0, 5));
 }

@@ -23,8 +23,8 @@ pub(super) struct Ctx<'a> {
     pub base_anchors: HashMap<String, String>,
     pub head_anchors: HashMap<String, String>,
     /// Paths (per side) of the documents shown without content.
-    pub base_frameless: HashSet<String>,
-    pub head_frameless: HashSet<String>,
+    pub base_omit_body: HashSet<String>,
+    pub head_omit_body: HashSet<String>,
     pub link_base: Option<&'a str>,
 }
 
@@ -92,17 +92,17 @@ fn side_blocks<'a>(
     page: &'a Page,
 ) -> SideBlocks<'a> {
     let env = side.model.env();
-    let (anchors, frameless) = if side.tag == 'b' {
-        (&ctx.base_anchors, &ctx.base_frameless)
+    let (anchors, omit_body) = if side.tag == 'b' {
+        (&ctx.base_anchors, &ctx.base_omit_body)
     } else {
-        (&ctx.head_anchors, &ctx.head_frameless)
+        (&ctx.head_anchors, &ctx.head_omit_body)
     };
     let mut key_src = |image: &str| side.images.hash(image).map(|h| format!("{image}#{h}"));
     let mut key_mode = Mode::Diff(DiffMode {
         own: anchor,
         side: None,
         anchors,
-        frameless,
+        omit_body,
         link_base: ctx.link_base,
         image_src: &mut key_src,
     });
@@ -152,7 +152,7 @@ fn side_blocks<'a>(
         own: anchor,
         side: Some(side.tag),
         anchors,
-        frameless,
+        omit_body,
         link_base: ctx.link_base,
         image_src: &mut show_src,
     });
@@ -531,6 +531,11 @@ pub(super) fn render_frame(ctx: &Ctx, item: &Item, anchor: &str) -> String {
         )
     };
     let (body, classes) = match item.status {
+        // Moved only: nothing to show, so no body is rendered or embedded.
+        Status::Move if item.omit_body => (
+            "<p class=\"nochange\">内容の変更なし</p>\n".to_string(),
+            Vec::new(),
+        ),
         Status::Add => single_column(&head_blocks(), Status::Add),
         Status::Del => single_column(&base_blocks(), Status::Del),
         Status::Mod | Status::Move => {
@@ -548,21 +553,14 @@ pub(super) fn render_frame(ctx: &Ctx, item: &Item, anchor: &str) -> String {
             }
             let rows = body_rows(&base_blocks(), &head_blocks());
             let classes: Vec<RowClass> = meta.iter().chain(rows.iter()).map(|r| r.class).collect();
-            if item.frameless {
-                (
-                    "<p class=\"nochange\">内容の変更なし</p>\n".to_string(),
-                    classes,
-                )
-            } else {
-                let meta_html: String = meta.iter().map(row_html).collect();
-                (
-                    format!(
-                        "<div class=\"split\">\n{meta_html}{}</div>\n",
-                        folded_html(&rows)
-                    ),
-                    classes,
-                )
-            }
+            let meta_html: String = meta.iter().map(row_html).collect();
+            (
+                format!(
+                    "<div class=\"split\">\n{meta_html}{}</div>\n",
+                    folded_html(&rows)
+                ),
+                classes,
+            )
         }
     };
     let path = match (&item.base, &item.head) {

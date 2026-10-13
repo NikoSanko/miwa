@@ -23,7 +23,7 @@ pub(super) struct Item {
     /// The front matter `id` (index pages have none).
     pub id: Option<String>,
     /// Moved without any change of content: the frame shows no blocks.
-    pub frameless: bool,
+    pub omit_body: bool,
 }
 
 impl Item {
@@ -182,21 +182,21 @@ pub(super) fn pair_documents(base: &Side, head: &Side) -> anyhow::Result<Vec<Ite
                 base: Some(b.path.to_string()),
                 head: Some(h.path.to_string()),
                 id: h.id.or(b.id).map(str::to_string),
-                frameless: !content,
+                omit_body: !content,
             }),
             (Some(b), None) => Some(Item {
                 status: Status::Del,
                 base: Some(b.path.to_string()),
                 head: None,
                 id: b.id.map(str::to_string),
-                frameless: false,
+                omit_body: false,
             }),
             (None, Some(h)) => Some(Item {
                 status: Status::Add,
                 base: None,
                 head: Some(h.path.to_string()),
                 id: h.id.map(str::to_string),
-                frameless: false,
+                omit_body: false,
             }),
             _ => None,
         };
@@ -248,7 +248,7 @@ pub(super) fn pair_indexes(base: &Side, head: &Side) -> Vec<Item> {
             base: b.contains_key(path).then(|| path.clone()),
             head: h.contains_key(path).then(|| path.clone()),
             id: None,
-            frameless: false,
+            omit_body: false,
         });
     }
     items

@@ -188,12 +188,12 @@ impl SideModel {
             Some(image.to_string())
         };
         let anchors = HashMap::new();
-        let frameless = HashSet::new();
+        let omit_body = HashSet::new();
         let mut mode = Mode::Diff(DiffMode {
             own: "",
             side: None,
             anchors: &anchors,
-            frameless: &frameless,
+            omit_body: &omit_body,
             link_base: None,
             image_src: &mut record,
         });
@@ -940,7 +940,7 @@ pub(crate) struct DiffMode<'a> {
     pub(crate) anchors: &'a HashMap<String, String>,
     /// Documents of the diff whose frame has no content (moved only): links
     /// into them point to the frame, never to a heading.
-    pub(crate) frameless: &'a HashSet<String>,
+    pub(crate) omit_body: &'a HashSet<String>,
     /// Base URL (with a trailing `/`) for links to documents outside the diff.
     pub(crate) link_base: Option<&'a str>,
     /// The `src` for a published image file (by path), or `None` to drop it.
@@ -1039,7 +1039,7 @@ fn mode_link_href(
         LinkTarget::External(url) => Some(url),
         LinkTarget::Page { md, fragment } => match diff.anchors.get(&md) {
             Some(anchor) => Some(match fragment {
-                Some(f) if !f.is_empty() && !diff.frameless.contains(&md) => {
+                Some(f) if !f.is_empty() && !diff.omit_body.contains(&md) => {
                     format!("#{}{}", id_prefix(anchor, diff.side), encode_fragment(&f))
                 }
                 _ => format!("#{anchor}"),
@@ -1150,9 +1150,17 @@ pub(crate) fn rewrite_events<'a>(
                 if is_comment_html(&text) {
                     continue;
                 }
-                out.push(Event::Html(
-                    format!("<pre>{}</pre>\n", esc(&strip_comments(&text))).into(),
-                ));
+                if matches!(mode, Mode::Diff(_)) {
+                    // The renderer escapes the text, which then takes part in
+                    // the character-level diff.
+                    out.push(Event::Html("<pre>".into()));
+                    out.push(Event::Text(strip_comments(&text).into()));
+                    out.push(Event::Html("</pre>\n".into()));
+                } else {
+                    out.push(Event::Html(
+                        format!("<pre>{}</pre>\n", esc(&strip_comments(&text))).into(),
+                    ));
+                }
             }
             Event::InlineHtml(s) => {
                 if !is_comment_html(&s) {
