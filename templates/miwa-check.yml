@@ -1,0 +1,39 @@
+# miwa check for pull requests (template).
+#
+# Usage:
+#   1. Copy this file to .github/workflows/miwa-check.yml in your repository.
+#   2. Replace the miwa-cli version below (0.5.0) with the version you use.
+#      Update it when you move to a newer miwa-cli.
+#   3. Make `miwa check` a required status check if you want it to block merges.
+#
+# `check --diff` reports only the findings the pull request introduces,
+# compared with the merge-base of the base branch.
+name: miwa check
+
+on: pull_request
+
+permissions:
+  contents: read
+
+jobs:
+  miwa-check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # `check --diff` needs history to locate the merge-base; a shallow
+          # clone makes it exit with code 1.
+          fetch-depth: 0
+
+      - name: Install miwa
+        uses: taiki-e/install-action@v2
+        with:
+          tool: miwa-cli@0.5.0
+
+      - name: Check
+        env:
+          BASE_REF: ${{ github.base_ref }}
+        # A pull request checkout has no local branch for the base, so name the
+        # remote-tracking one. --gate exits with code 2 when a finding remains.
+        run: miwa check --diff --gate --base "origin/${BASE_REF}"

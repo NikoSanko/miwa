@@ -75,30 +75,65 @@ doc とテストを見直して問題がなければ、`miwa reconcile` で新�
 
 ### インストール
 
-前提として、Rust ツールチェーン（[rustup](https://rustup.rs/)）が必要です。GitHub Releases にある利用したいタグを指定して、Git からインストールします。
+インストーラ、`cargo binstall`、`cargo install` のどれでも入れられます。入れたら `miwa --version` で確かめてください。
+
+#### インストーラ
+
+macOS / Linux はシェルスクリプトで入れます。`$CARGO_HOME/bin`（既定は `~/.cargo/bin`）に置かれます。
+
+```bash
+curl --proto '=https' --tlsv1.2 -LsSf https://github.com/NikoSanko/miwa/releases/latest/download/miwa-cli-installer.sh | sh
+```
+
+Windows は PowerShell で入れます。
+
+```powershell
+powershell -ExecutionPolicy Bypass -c "irm https://github.com/NikoSanko/miwa/releases/latest/download/miwa-cli-installer.ps1 | iex"
+```
+
+`latest` を `download/vX.Y.Z` に置き換えると、バージョンを固定できます。
+
+#### cargo binstall
+
+[cargo-binstall](https://github.com/cargo-bins/cargo-binstall) があれば、GitHub Releases のビルド済みバイナリを入れられます。
+
+```bash
+cargo binstall miwa-cli
+```
+
+#### cargo install
+
+Rust ツールチェーン（[rustup](https://rustup.rs/)）が必要です。crates.io からソースをビルドして入れます。
+
+```bash
+cargo install miwa-cli --locked
+```
+
+Git のタグを指定して入れることもできます。
 
 ```bash
 cargo install --git https://github.com/NikoSanko/miwa --tag vX.Y.Z --locked
 ```
 
-タグを固定すると、誰がいつ入れても同じバージョンになります。最新の main を入れる場合は、`--tag` を省略します。
-
-private リポジトリのため、GitHub の認証が必要です。
-
-- HTTPS: `gh auth setup-git` などで credential helper を設定します
-- SSH: `--git ssh://git@github.com/NikoSanko/miwa.git` の形で指定します
-
 リポジトリをクローンし、その中で `cargo install --path . --locked` を実行しても入れられます。
 
-タグを push すると、GitHub Releases に macOS / Linux / Windows のバイナリが添付される予定です（[`.github/workflows/release.yml`](.github/workflows/release.yml)）。Release には `SHA256SUMS` も添付されます。ダウンロードしたアーカイブと `SHA256SUMS` を同じディレクトリに保存し、展開前に次のコマンドで検証してください。macOS では `sha256sum` の代わりに `shasum -a 256` を使います。
+#### Releases から手動で入れる
+
+[Releases](https://github.com/NikoSanko/miwa/releases) から、環境に合うアーカイブ（`miwa-cli-<target>.tar.xz`。Windows は `miwa-cli-x86_64-pc-windows-msvc.zip`）をダウンロードします。各アーカイブには、チェックサムのファイル（`<アーカイブ名>.sha256`）が付いています。同じディレクトリに保存し、展開前に次のコマンドで検証してください。macOS では `sha256sum` の代わりに `shasum -a 256` を使います。
 
 ```bash
-sha256sum --ignore-missing -c SHA256SUMS
+sha256sum -c miwa-cli-x86_64-unknown-linux-gnu.tar.xz.sha256
 # macOS
-shasum -a 256 --ignore-missing -c SHA256SUMS
+shasum -a 256 -c miwa-cli-aarch64-apple-darwin.tar.xz.sha256
 ```
 
-検証できたらアーカイブを展開し、`miwa`（Windows では `miwa.exe`）を PATH の通った場所に置きます。
+検証できたらアーカイブを展開し、`miwa`（Windows では `miwa.exe`）を PATH の通った場所に置きます。全アーカイブのチェックサムをまとめた `sha256.sum` も添付されています。
+
+v0.5.0 から、成果物の名前を `miwa-cli-<target>.tar.xz` の形に変え、チェックサムのファイルも `SHA256SUMS` から上記のものに変えました。
+
+#### CI で使う
+
+pull request ごとに `miwa check --diff --gate` を実行する GitHub Actions のテンプレートを [`templates/miwa-check.yml`](templates/miwa-check.yml) に置いています。`.github/workflows/` にコピーして使います。
 
 今後の配布計画は [Issue #6](https://github.com/NikoSanko/miwa/issues/6) を参照してください。
 

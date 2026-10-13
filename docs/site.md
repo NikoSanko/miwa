@@ -173,7 +173,7 @@ req/example.md
 
 PR ごとに差分 HTML を作り、Workflow の Artifact にアップロードして、PR のコメントからリンクする例です。PR のコードを動かすジョブ（`build`）は読み取り権限だけにし、コメントを書くジョブ（`comment`）は PR のコードを checkout せずに書き込み権限を持たせます。コメントは PR につき1件で、push のたびに更新します。変更がなければ Artifact は作らず、コメントに「変更なし」と書きます。fork からの PR では、コメントの書き込み権限が無いため、コメントを省略して Artifact だけ作ります。`pull_request_target` は、信頼できないコードを書き込み権限で動かすことになるので使いません。
 
-miwa は、`cargo install --git https://github.com/NikoSanko/miwa --tag vX.Y.Z --locked` で入れるか、Releases のバイナリをダウンロードして使います。次の例は `cargo install` を使います。バージョンは、プロジェクトで使うものに置き換えてください。
+次の例は、`taiki-e/install-action` で miwa（crate 名は `miwa-cli`）を入れます。バージョンは、プロジェクトで使うものに置き換えてください。
 
 ```yaml
 name: site-diff
@@ -205,11 +205,10 @@ jobs:
           # clone makes it exit with code 1.
           fetch-depth: 0
 
-      - name: Install Rust toolchain
-        uses: dtolnay/rust-toolchain@stable
-
       - name: Install miwa
-        run: cargo install --git https://github.com/NikoSanko/miwa --tag vX.Y.Z --locked
+        uses: taiki-e/install-action@v2
+        with:
+          tool: miwa-cli@X.Y.Z
 
       - name: Build the diff
         env:

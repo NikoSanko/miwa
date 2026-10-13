@@ -35,3 +35,6 @@ jobs:
 
       - name: Dogfood (miwa checks itself)
         run: cargo run --locked -- check --gate
+
+      - name: Check the crate can be published
+        run: cargo publish --dry-run --locked

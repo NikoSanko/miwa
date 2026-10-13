@@ -50,7 +50,7 @@ description: "doc・req・test の追随漏れや索引の乱れを、ロック�
 
 PR ごとのレビューでは、リポジトリ全体の finding ではなく、そのブランチで新たに発生した finding だけを知りたいことがほとんどです。`check --diff` は、現在のブランチと比較対象の分岐点（merge-base）の時点で評価した finding を、現在の finding と比べます。[merge-base の時点にはなかった finding だけ](../req/check-diff-scoped-to-new-findings.md)を報告します。比較対象は、既定では設定の `diff_base` で、`--base` で上書きできます。浅いクローンなどで merge-base が特定できない場合は、実行エラーとして終了コード 1 を返します。
 
-CI のどの段階で `--gate` と `--diff` のどちらを使うか、あるいは両方使うかは、プロジェクトが判断します。
+CI のどの段階で `--gate` と `--diff` のどちらを使うか、あるいは両方使うかは、プロジェクトが判断します。pull request ごとに `check --diff --gate` を実行する GitHub Actions の例は、リポジトリの [`templates/miwa-check.yml`](../templates/miwa-check.yml) にあります。
 
 ## 出力形式（`--format`）
 
