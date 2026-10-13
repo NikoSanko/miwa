@@ -246,12 +246,38 @@ fn all_deleted_then_added(da: Range<usize>, ib: Range<usize>) -> Vec<Row> {
     deleted.chain(added).collect()
 }
 
-/// Similarity of two blocks; empty texts compare by block kind.
-fn block_similarity(l: &BlockKey, r: &BlockKey) -> f64 {
-    if l.text.is_empty() && r.text.is_empty() {
+/// Character counts and total length of a text, computed once per block.
+fn char_counts(text: &str) -> (HashMap<char, usize>, usize) {
+    let mut counts = HashMap::new();
+    let mut len = 0;
+    for c in text.chars() {
+        *counts.entry(c).or_insert(0) += 1;
+        len += 1;
+    }
+    (counts, len)
+}
+
+/// Similarity of two blocks from precomputed counts; empty texts compare by block kind.
+fn block_similarity(
+    l: &BlockKey,
+    lc: &(HashMap<char, usize>, usize),
+    r: &BlockKey,
+    rc: &(HashMap<char, usize>, usize),
+) -> f64 {
+    if lc.1 == 0 && rc.1 == 0 {
         return if l.kind == r.kind { 1.0 } else { 0.0 };
     }
-    similarity(&l.text, &r.text)
+    // Iterate the smaller map; the multiset overlap is the sum of per-char minima.
+    let (small, large) = if lc.0.len() <= rc.0.len() {
+        (&lc.0, &rc.0)
+    } else {
+        (&rc.0, &lc.0)
+    };
+    let common: usize = small
+        .iter()
+        .map(|(c, n)| large.get(c).map_or(0, |m| *n.min(m)))
+        .sum();
+    2.0 * common as f64 / (lc.1 + rc.1) as f64
 }
 
 /// Pairs blocks of one replacement region greedily, keeping order.
@@ -266,21 +292,39 @@ fn pair_region(
         rows.extend(all_deleted_then_added(da, ib));
         return;
     }
-    let (mut i, mut j) = (da.start, ib.start);
-    while i < da.end && j < ib.end {
-        let cur = block_similarity(&a[i], &b[j]);
+    let (na, nb) = (da.len(), ib.len());
+    let ca: Vec<_> = a[da.clone()].iter().map(|x| char_counts(&x.text)).collect();
+    let cb: Vec<_> = b[ib.clone()].iter().map(|x| char_counts(&x.text)).collect();
+    // sim[i * nb + j]: each pair is computed exactly once (na * nb is bounded).
+    let mut sim = vec![0.0f64; na * nb];
+    for i in 0..na {
+        for j in 0..nb {
+            sim[i * nb + j] = block_similarity(&a[da.start + i], &ca[i], &b[ib.start + j], &cb[j]);
+        }
+    }
+    // Suffix maxima (0.0 past the end): right_max[i][j] = max sim[i][j..],
+    // down_max[i][j] = max sim[i..][j]; both are (na + 1) x (nb + 1).
+    let w = nb + 1;
+    let mut right_max = vec![0.0f64; (na + 1) * w];
+    let mut down_max = vec![0.0f64; (na + 1) * w];
+    for i in (0..na).rev() {
+        for j in (0..nb).rev() {
+            let v = sim[i * nb + j];
+            right_max[i * w + j] = v.max(right_max[i * w + j + 1]);
+            down_max[i * w + j] = v.max(down_max[(i + 1) * w + j]);
+        }
+    }
+    let (mut i, mut j) = (0, 0);
+    while i < na && j < nb {
+        let cur = sim[i * nb + j];
         // Best partner for the current left among remaining rights, and vice versa.
-        let best_r = (j + 1..ib.end)
-            .map(|jj| block_similarity(&a[i], &b[jj]))
-            .fold(0.0, f64::max);
-        let best_l = (i + 1..da.end)
-            .map(|ii| block_similarity(&a[ii], &b[j]))
-            .fold(0.0, f64::max);
+        let best_r = right_max[i * w + j + 1];
+        let best_l = down_max[(i + 1) * w + j];
         if cur >= SIMILARITY_THRESHOLD && cur >= best_r && cur >= best_l {
             rows.push(Row {
                 kind: RowKind::Changed,
-                left: Some(i),
-                right: Some(j),
+                left: Some(da.start + i),
+                right: Some(ib.start + j),
             });
             i += 1;
             j += 1;
@@ -288,19 +332,22 @@ fn pair_region(
             rows.push(Row {
                 kind: RowKind::Added,
                 left: None,
-                right: Some(j),
+                right: Some(ib.start + j),
             });
             j += 1;
         } else {
             rows.push(Row {
                 kind: RowKind::Deleted,
-                left: Some(i),
+                left: Some(da.start + i),
                 right: None,
             });
             i += 1;
         }
     }
-    rows.extend(all_deleted_then_added(i..da.end, j..ib.end));
+    rows.extend(all_deleted_then_added(
+        da.start + i..da.end,
+        ib.start + j..ib.end,
+    ));
 }
 
 /// Character-level marks per FR-117: `Some((changed_in_a, changed_in_b))` with one bool per char,
@@ -632,6 +679,24 @@ mod tests {
         assert_eq!(a.len() * b.len(), PAIRING_MAX_PRODUCT);
         let rows = align_blocks(&a, &b);
         assert_eq!(count(&rows, RowKind::Changed), 100);
+    }
+
+    // [FR-117]
+    #[test]
+    fn align_blocksは大きな置換区間でも似ていないブロックを速く削除と追加にする() {
+        // 1,000 old blocks vs 1 new block, ~200 chars each, no shared chars.
+        let a: Vec<BlockKey> = (0..1000)
+            .map(|i| para(&format!("l{i}"), &"a".repeat(200)))
+            .collect();
+        let b = vec![para("r0", &"b".repeat(200))];
+        let rows = align_blocks(&a, &b);
+        assert_eq!(rows.len(), 1001);
+        assert_eq!(count(&rows, RowKind::Changed), 0);
+        assert_eq!(count(&rows, RowKind::Deleted), 1000);
+        assert_eq!(count(&rows, RowKind::Added), 1);
+        // Deleted first on equal lookahead bests, then the leftover Added.
+        assert!(rows[..1000].iter().all(|r| r.kind == RowKind::Deleted));
+        assert_eq!(rows[1000].kind, RowKind::Added);
     }
 
     // [FR-117]

@@ -22,6 +22,8 @@ pub(super) struct Item {
     pub head: Option<String>,
     /// The front matter `id` (index pages have none).
     pub id: Option<String>,
+    /// Moved without any change of content: the frame shows no blocks.
+    pub frameless: bool,
 }
 
 impl Item {
@@ -144,14 +146,13 @@ fn pair_entries(base: &[Entry], head: &[Entry]) -> Vec<(Option<usize>, Option<us
     pairs
 }
 
-/// Whether the paired documents differ in what the page shows: path, title,
-/// description, body and, when both are published, the referenced images.
-fn changed(base: &Side, head: &Side, b: &Entry, h: &Entry) -> bool {
-    if b.path != h.path || b.title != h.title || b.description != h.description || b.body != h.body
-    {
+/// Whether the paired documents differ in content: title, description, body
+/// and the referenced images (published or not).
+fn content_changed(base: &Side, head: &Side, b: &Entry, h: &Entry) -> bool {
+    if b.title != h.title || b.description != h.description || b.body != h.body {
         return true;
     }
-    b.published && h.published && base.image_hashes(b.path) != head.image_hashes(h.path)
+    base.image_hashes(b.path, b.body) != head.image_hashes(h.path, h.body)
 }
 
 /// The documents that changed, and the ones that must have an `id` but do
@@ -165,10 +166,12 @@ pub(super) fn pair_documents(base: &Side, head: &Side) -> anyhow::Result<Vec<Ite
     let mut without_id: BTreeSet<&str> = BTreeSet::new();
     for (bi, hi) in pair_entries(&be, &he) {
         let (b, h) = (bi.map(|i| &be[i]), hi.map(|j| &he[j]));
-        let differs = match (b, h) {
-            (Some(b), Some(h)) => changed(base, head, b, h),
+        let content = match (b, h) {
+            (Some(b), Some(h)) => content_changed(base, head, b, h),
             _ => true,
         };
+        let moved = matches!((b, h), (Some(b), Some(h)) if b.path != h.path);
+        let differs = content || moved;
         let item = match (b.filter(|e| e.published), h.filter(|e| e.published)) {
             (Some(b), Some(h)) if differs => Some(Item {
                 status: if b.path == h.path {
@@ -179,18 +182,21 @@ pub(super) fn pair_documents(base: &Side, head: &Side) -> anyhow::Result<Vec<Ite
                 base: Some(b.path.to_string()),
                 head: Some(h.path.to_string()),
                 id: h.id.or(b.id).map(str::to_string),
+                frameless: !content,
             }),
             (Some(b), None) => Some(Item {
                 status: Status::Del,
                 base: Some(b.path.to_string()),
                 head: None,
                 id: b.id.map(str::to_string),
+                frameless: false,
             }),
             (None, Some(h)) => Some(Item {
                 status: Status::Add,
                 base: None,
                 head: Some(h.path.to_string()),
                 id: h.id.map(str::to_string),
+                frameless: false,
             }),
             _ => None,
         };
@@ -242,6 +248,7 @@ pub(super) fn pair_indexes(base: &Side, head: &Side) -> Vec<Item> {
             base: b.contains_key(path).then(|| path.clone()),
             head: h.contains_key(path).then(|| path.clone()),
             id: None,
+            frameless: false,
         });
     }
     items

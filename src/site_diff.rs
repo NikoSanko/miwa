@@ -10,7 +10,7 @@ mod style;
 
 use std::cell::RefCell;
 use std::cmp::Ordering;
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 use std::path::{Path, PathBuf};
 
 use anyhow::Context;
@@ -173,9 +173,9 @@ impl<'a> Side<'a> {
     }
 
     /// The published images the page references, with their content hashes.
-    fn image_hashes(&self, path: &str) -> Vec<(String, Option<String>)> {
+    fn image_hashes(&self, path: &str, body: &str) -> Vec<(String, Option<String>)> {
         self.model
-            .referenced_images(path)
+            .referenced_images(path, body)
             .into_iter()
             .map(|image| {
                 let hash = self.images.hash(&image);
@@ -382,6 +382,8 @@ pub fn run(repo_root: &Path, config: &Config, opts: &DiffOptions) -> anyhow::Res
 
     let mut base_anchors = HashMap::new();
     let mut head_anchors = HashMap::new();
+    let mut base_frameless = HashSet::new();
+    let mut head_frameless = HashSet::new();
     for (i, item) in items.iter().enumerate() {
         if let Some(p) = &item.base {
             base_anchors.insert(p.clone(), format!("d{}", i + 1));
@@ -389,12 +391,18 @@ pub fn run(repo_root: &Path, config: &Config, opts: &DiffOptions) -> anyhow::Res
         if let Some(p) = &item.head {
             head_anchors.insert(p.clone(), format!("d{}", i + 1));
         }
+        if item.frameless {
+            base_frameless.extend(item.base.clone());
+            head_frameless.extend(item.head.clone());
+        }
     }
     let ctx = Ctx {
         base: &base,
         head: &head,
         base_anchors,
         head_anchors,
+        base_frameless,
+        head_frameless,
         link_base: link_base.as_deref(),
     };
     let frames: String = items

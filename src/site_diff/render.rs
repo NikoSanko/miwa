@@ -1,7 +1,7 @@
 //! The frame of one document: blocks aligned side by side, character-level
 //! marks, folding of the unchanged rows (FR-116 .. FR-118).
 
-use std::collections::HashMap;
+use std::collections::{HashMap, HashSet};
 
 use pulldown_cmark::{html::push_html, CowStr, Event, Tag, TagEnd};
 
@@ -22,6 +22,9 @@ pub(super) struct Ctx<'a> {
     /// Anchor of each document of the diff, by its path on each side.
     pub base_anchors: HashMap<String, String>,
     pub head_anchors: HashMap<String, String>,
+    /// Paths (per side) of the documents shown without content.
+    pub base_frameless: HashSet<String>,
+    pub head_frameless: HashSet<String>,
     pub link_base: Option<&'a str>,
 }
 
@@ -89,16 +92,17 @@ fn side_blocks<'a>(
     page: &'a Page,
 ) -> SideBlocks<'a> {
     let env = side.model.env();
-    let anchors = if side.tag == 'b' {
-        &ctx.base_anchors
+    let (anchors, frameless) = if side.tag == 'b' {
+        (&ctx.base_anchors, &ctx.base_frameless)
     } else {
-        &ctx.head_anchors
+        (&ctx.head_anchors, &ctx.head_frameless)
     };
     let mut key_src = |image: &str| side.images.hash(image).map(|h| format!("{image}#{h}"));
     let mut key_mode = Mode::Diff(DiffMode {
         own: anchor,
         side: None,
         anchors,
+        frameless,
         link_base: ctx.link_base,
         image_src: &mut key_src,
     });
@@ -148,6 +152,7 @@ fn side_blocks<'a>(
         own: anchor,
         side: Some(side.tag),
         anchors,
+        frameless,
         link_base: ctx.link_base,
         image_src: &mut show_src,
     });
@@ -543,7 +548,7 @@ pub(super) fn render_frame(ctx: &Ctx, item: &Item, anchor: &str) -> String {
             }
             let rows = body_rows(&base_blocks(), &head_blocks());
             let classes: Vec<RowClass> = meta.iter().chain(rows.iter()).map(|r| r.class).collect();
-            if meta.is_empty() && rows.iter().all(|r| r.class == RowClass::Same) {
+            if item.frameless {
                 (
                     "<p class=\"nochange\">内容の変更なし</p>\n".to_string(),
                     classes,

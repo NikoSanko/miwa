@@ -1908,3 +1908,93 @@ fn 読めない画像があるとexit_1で何も書かずパスをstderrに出�
     assert!(e.contains("docs/pic/a.png"), "{e}");
     std::fs::set_permissions(&img, std::fs::Permissions::from_mode(0o644)).unwrap();
 }
+
+// [FR-119]
+#[test]
+fn 移動しただけの文書へのリンクはフラグメント付きでも枠のアンカーになる() {
+    let r = repo();
+    r.write(
+        "docs/a.md",
+        &doc("DOC-L", "リンク元", "[節](target.md#section) 本文。\n"),
+    );
+    r.write(
+        "docs/target.md",
+        &doc("DOC-T", "移動先", "## section\n\n中身。\n"),
+    );
+    r.base();
+    std::fs::create_dir_all(r.root.join("docs/sub")).unwrap();
+    std::fs::rename(
+        r.root.join("docs/target.md"),
+        r.root.join("docs/sub/target.md"),
+    )
+    .unwrap();
+    r.write(
+        "docs/a.md",
+        &doc(
+            "DOC-L",
+            "リンク元",
+            "[節](sub/target.md#section) 本文を直した。\n",
+        ),
+    );
+    let html = r.html();
+    // docs/sub/target.md is d1 (moved only), docs/a.md is d2
+    assert!(sec(&html, 1).contains("内容の変更なし"), "{html}");
+    assert!(sec(&html, 2).contains(r##"href="#d1""##), "{html}");
+    assert!(!html.contains(r##"href="#d1-"##), "{html}");
+}
+
+// [FR-112]
+#[test]
+fn 公開されないid無しreqは画像の差し替えだけでもid無しエラーになる() {
+    let r = repo();
+    r.write(
+        "req/noid.md",
+        "---\ntype: Requirement\ntitle: 無し\n---\n![図](img.png)\n",
+    );
+    r.write_bin("req/img.png", &png(1));
+    r.base();
+    r.write_bin("req/img.png", &png(2));
+    let e = r.expect_error(&[]);
+    assert!(e.contains("req/noid.md"), "{e}");
+}
+
+// [FR-116]
+// [FR-119]
+#[test]
+fn 表示が同じでソースだけ変わった移動文書は通常の枠で畳まれ見出しidへのリンクが有効() {
+    let r = repo();
+    r.write(
+        "docs/a.md",
+        &doc("DOC-L", "リンク元", "[節](target.md#section) 旧。\n"),
+    );
+    r.write(
+        "docs/target.md",
+        &doc("DOC-T", "移動先", "## section\n\n*強調* です。\n"),
+    );
+    r.base();
+    std::fs::create_dir_all(r.root.join("docs/sub")).unwrap();
+    std::fs::rename(
+        r.root.join("docs/target.md"),
+        r.root.join("docs/sub/target.md"),
+    )
+    .unwrap();
+    // only the source differs (`*x*` -> `_x_`); it renders the same
+    r.write(
+        "docs/sub/target.md",
+        &doc("DOC-T", "移動先", "## section\n\n_強調_ です。\n"),
+    );
+    r.write(
+        "docs/a.md",
+        &doc("DOC-L", "リンク元", "[節](sub/target.md#section) 新。\n"),
+    );
+    let html = r.html();
+    // docs/sub/target.md is d1, docs/a.md is d2
+    let moved = sec(&html, 1);
+    assert!(!moved.contains("内容の変更なし"), "{moved}");
+    assert!(moved.contains(r#"<details class="fold">"#), "{moved}");
+    assert!(html.contains(r#"id="d1-h-section""#), "{html}");
+    assert!(
+        sec(&html, 2).contains(r##"href="#d1-h-section""##),
+        "{html}"
+    );
+}

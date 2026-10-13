@@ -181,27 +181,26 @@ impl SideModel {
 
     /// The repository-relative paths of the images the page at `path`
     /// references and that are published (FR-100's conditions).
-    pub(crate) fn referenced_images(&self, path: &str) -> BTreeSet<String> {
-        let Some(page) = self.pages.get(path) else {
-            return BTreeSet::new();
-        };
+    pub(crate) fn referenced_images(&self, path: &str, body: &str) -> BTreeSet<String> {
         let found = std::cell::RefCell::new(BTreeSet::new());
         let mut record = |image: &str| {
             found.borrow_mut().insert(image.to_string());
             Some(image.to_string())
         };
         let anchors = HashMap::new();
+        let frameless = HashSet::new();
         let mut mode = Mode::Diff(DiffMode {
             own: "",
             side: None,
             anchors: &anchors,
+            frameless: &frameless,
             link_base: None,
             image_src: &mut record,
         });
         rewrite_events(
             &self.env(),
             path,
-            &page.body,
+            body,
             "",
             &mut mode,
             &mut Rendered::default(),
@@ -939,6 +938,9 @@ pub(crate) struct DiffMode<'a> {
     pub(crate) side: Option<char>,
     /// Anchor of each document in the diff, by path on this side.
     pub(crate) anchors: &'a HashMap<String, String>,
+    /// Documents of the diff whose frame has no content (moved only): links
+    /// into them point to the frame, never to a heading.
+    pub(crate) frameless: &'a HashSet<String>,
     /// Base URL (with a trailing `/`) for links to documents outside the diff.
     pub(crate) link_base: Option<&'a str>,
     /// The `src` for a published image file (by path), or `None` to drop it.
@@ -1037,7 +1039,7 @@ fn mode_link_href(
         LinkTarget::External(url) => Some(url),
         LinkTarget::Page { md, fragment } => match diff.anchors.get(&md) {
             Some(anchor) => Some(match fragment {
-                Some(f) if !f.is_empty() => {
+                Some(f) if !f.is_empty() && !diff.frameless.contains(&md) => {
                     format!("#{}{}", id_prefix(anchor, diff.side), encode_fragment(&f))
                 }
                 _ => format!("#{anchor}"),
