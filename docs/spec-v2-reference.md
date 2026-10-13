@@ -1,5 +1,6 @@
 ---
 type: Reference
+id: REF-SPEC-V2
 title: "仕様乖離検知ツール v2 の詳細検討"
 description: "v1 からの変更点を含む、詳細検討の参考資料。"
 ---

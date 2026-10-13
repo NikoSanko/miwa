@@ -2,6 +2,7 @@
 
 pub mod check;
 pub mod config;
+pub mod diff;
 pub mod extract;
 pub mod frontmatter;
 pub mod graph;
@@ -14,4 +15,5 @@ pub mod model;
 pub mod output;
 pub mod reconcile;
 pub mod site;
+pub mod site_diff;
 pub mod source;

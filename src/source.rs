@@ -113,7 +113,10 @@ pub struct GitTreeSource {
     files: std::collections::BTreeMap<String, String>,
 }
 
-fn run_git(repo: &std::path::Path, args: &[&str]) -> anyhow::Result<std::process::Output> {
+pub(crate) fn run_git(
+    repo: &std::path::Path,
+    args: &[&str],
+) -> anyhow::Result<std::process::Output> {
     let output = std::process::Command::new("git")
         .args(args)
         .current_dir(repo)

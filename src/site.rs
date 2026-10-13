@@ -28,7 +28,7 @@ pub(crate) struct ResolvedLink {
 }
 
 #[derive(Debug, Clone, Copy, PartialEq, Eq)]
-enum Kind {
+pub(crate) enum Kind {
     /// A req node (`type: Requirement`); lists the docs referencing it.
     Req,
     /// Any other document (including doc nodes). Whether an id is shown is
@@ -38,22 +38,47 @@ enum Kind {
     Index,
 }
 
-struct Page {
-    kind: Kind,
-    id: Option<String>,
-    title: String,
-    description: Option<String>,
-    body: String,
+/// Classification of a typed document, by its front matter `type`.
+#[derive(Debug, Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash)]
+pub(crate) enum DocClass {
+    /// `type: BusinessNeed`.
+    Doc,
+    /// `type: Requirement`.
+    Req,
+    /// Any other `type` (and index pages).
+    Other,
+}
+
+impl DocClass {
+    fn of_type(kind: Option<&str>) -> DocClass {
+        match kind {
+            Some("BusinessNeed") => DocClass::Doc,
+            Some("Requirement") => DocClass::Req,
+            _ => DocClass::Other,
+        }
+    }
+}
+
+pub(crate) struct Page {
+    pub(crate) kind: Kind,
+    pub(crate) id: Option<String>,
+    pub(crate) title: String,
+    pub(crate) description: Option<String>,
+    pub(crate) body: String,
+    pub(crate) class: DocClass,
+    /// The front matter `id` (also for documents that are not graph nodes);
+    /// unlike `id` it is never shown by `site`.
+    pub(crate) front_id: Option<String>,
 }
 
 /// What rendering one page produced besides its HTML.
 #[derive(Default)]
-struct Rendered {
+pub(crate) struct Rendered {
     warnings: Vec<String>,
     images: BTreeSet<String>,
 }
 
-struct Env<'a> {
+pub(crate) struct Env<'a> {
     pages: &'a BTreeMap<String, Page>,
     files: &'a HashSet<String>,
     /// Normalized `docs` and `requirements` roots (images are copied from here).
@@ -79,7 +104,116 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
     check_out_dir(&out_dir)?;
 
     let source = FsSource::new(repo_root);
-    let graph = crate::graph::build_graph(&source, config)?;
+    let model = load_side(&source, config)?;
+    let pages = &model.pages;
+    let roots = &model.roots;
+
+    let mut warnings: Vec<String> = Vec::new();
+    for root in roots {
+        let root_index = join_under(root, "index.md");
+        if !matches!(pages.get(&root_index), Some(p) if p.kind == Kind::Index) {
+            warnings.push(format!(
+                "warning: {}: missing index",
+                escape_controls(&root_index)
+            ));
+        }
+    }
+
+    let site_title = config
+        .site
+        .as_ref()
+        .and_then(|s| s.title())
+        .map(str::to_string)
+        .unwrap_or_else(|| {
+            repo_root
+                .file_name()
+                .map(|n| n.to_string_lossy().into_owned())
+                .unwrap_or_default()
+        });
+    let site_description = config
+        .site
+        .as_ref()
+        .and_then(|s| s.description())
+        .map(str::to_string);
+
+    let env = model.env();
+
+    let (output, images) = render_pages(
+        &env,
+        &model.trees,
+        &model.referrers,
+        roots,
+        &site_title,
+        site_description.as_deref(),
+        &mut warnings,
+    );
+    write_output(&out_dir, &source, &output, &images)?;
+    Ok(warnings)
+}
+
+/// One side of a comparison: the published pages of a repository snapshot
+/// with the index structure, built by [`load_side`].
+#[derive(Default)]
+pub(crate) struct SideModel {
+    /// Documents and index pages by repository-relative path.
+    pub(crate) pages: BTreeMap<String, Page>,
+    /// The index tree of each root.
+    pub(crate) trees: Vec<(String, IndexTree)>,
+    /// doc -> req references, keyed by the req page path.
+    pub(crate) referrers: BTreeMap<String, BTreeSet<String>>,
+    /// Normalized index roots.
+    pub(crate) roots: Vec<String>,
+    /// Files of the snapshot (excluded directories removed).
+    pub(crate) files: Vec<String>,
+    file_set: HashSet<String>,
+    /// Normalized `docs` and `requirements` roots (images are read from here).
+    media_roots: Vec<String>,
+}
+
+impl SideModel {
+    pub(crate) fn env(&self) -> Env<'_> {
+        Env {
+            pages: &self.pages,
+            files: &self.file_set,
+            media_roots: &self.media_roots,
+        }
+    }
+
+    /// The repository-relative paths of the images the page at `path`
+    /// references and that are published (FR-100's conditions).
+    pub(crate) fn referenced_images(&self, path: &str, body: &str) -> BTreeSet<String> {
+        let found = std::cell::RefCell::new(BTreeSet::new());
+        let mut record = |image: &str| {
+            found.borrow_mut().insert(image.to_string());
+            Some(image.to_string())
+        };
+        let anchors = HashMap::new();
+        let omit_body = HashSet::new();
+        let mut mode = Mode::Diff(DiffMode {
+            own: "",
+            side: None,
+            anchors: &anchors,
+            omit_body: &omit_body,
+            link_base: None,
+            image_src: &mut record,
+        });
+        rewrite_events(
+            &self.env(),
+            path,
+            body,
+            "",
+            &mut mode,
+            &mut Rendered::default(),
+        );
+        found.into_inner()
+    }
+}
+
+/// Reads the published pages of `source` under `config`: documents and index
+/// pages under the index roots plus doc / req nodes, and the index tree of
+/// each root.
+pub(crate) fn load_side(source: &dyn Source, config: &Config) -> anyhow::Result<SideModel> {
+    let graph = crate::graph::build_graph(source, config)?;
     let files: Vec<String> = source
         .list_files()?
         .into_iter()
@@ -111,61 +245,83 @@ pub fn run(repo_root: &Path, config: &Config, out: &Path) -> anyhow::Result<Vec<
     }
 
     let (pages, trees) = collect_pages(&graph, &texts, &roots);
-
     let referrers = collect_referrers(&graph);
 
-    let mut warnings: Vec<String> = Vec::new();
-    for root in &roots {
-        let root_index = join_under(root, "index.md");
-        if !matches!(pages.get(&root_index), Some(p) if p.kind == Kind::Index) {
-            warnings.push(format!(
-                "warning: {}: missing index",
-                escape_controls(&root_index)
-            ));
-        }
-    }
-
-    let site_title = config
-        .site
-        .as_ref()
-        .and_then(|s| s.title())
-        .map(str::to_string)
-        .unwrap_or_else(|| {
-            repo_root
-                .file_name()
-                .map(|n| n.to_string_lossy().into_owned())
-                .unwrap_or_default()
-        });
-    let site_description = config
-        .site
-        .as_ref()
-        .and_then(|s| s.description())
-        .map(str::to_string);
-
-    let file_set: HashSet<String> = files.iter().cloned().collect();
     let media_roots: Vec<String> = config
         .docs
         .iter()
         .chain(config.requirements.iter())
         .map(|d| normalize_dir(d))
         .collect();
-    let env = Env {
-        pages: &pages,
-        files: &file_set,
-        media_roots: &media_roots,
-    };
+    let file_set: HashSet<String> = files.iter().cloned().collect();
+    Ok(SideModel {
+        pages,
+        trees,
+        referrers,
+        roots,
+        files,
+        file_set,
+        media_roots,
+    })
+}
 
-    let (output, images) = render_pages(
-        &env,
-        &trees,
-        &referrers,
-        &roots,
-        &site_title,
-        site_description.as_deref(),
-        &mut warnings,
-    );
-    write_output(&out_dir, &source, &output, &images)?;
-    Ok(warnings)
+/// A `BusinessNeed` / `Requirement` file under `docs` / `requirements` that
+/// `model` does not publish (for example one whose `id` is missing or invalid
+/// and that lies outside the index roots), with its `id` as written (before validation).
+pub(crate) struct Candidate {
+    pub(crate) path: String,
+    pub(crate) class: DocClass,
+    pub(crate) id: Option<String>,
+    pub(crate) title: String,
+    pub(crate) description: Option<String>,
+    pub(crate) body: String,
+}
+
+/// The doc / req files under `docs` / `requirements` that `model` does not publish.
+pub(crate) fn unpublished_candidates(
+    source: &dyn Source,
+    config: &Config,
+    model: &SideModel,
+) -> anyhow::Result<Vec<Candidate>> {
+    let dirs: Vec<String> = config
+        .docs
+        .iter()
+        .chain(config.requirements.iter())
+        .map(|d| normalize_dir(d))
+        .collect();
+    let mut out = Vec::new();
+    for path in &model.files {
+        let reserved = matches!(path.rsplit('/').next(), Some("index.md" | "log.md"));
+        if !path.ends_with(".md")
+            || reserved
+            || model.pages.contains_key(path)
+            || !dirs.iter().any(|d| is_under(path, d))
+        {
+            continue;
+        }
+        let text = String::from_utf8_lossy(
+            &source
+                .read(path)
+                .with_context(|| format!("failed to read {path}"))?,
+        )
+        .into_owned();
+        let Ok(Some(fm)) = crate::frontmatter::parse(&text) else {
+            continue;
+        };
+        let class = DocClass::of_type(fm.kind.as_deref());
+        if class == DocClass::Other {
+            continue;
+        }
+        out.push(Candidate {
+            path: path.clone(),
+            class,
+            id: fm.id.clone().filter(|id| !id.trim().is_empty()),
+            title: document_title(path, &fm),
+            description: normalize_description(&fm),
+            body: fm.body.clone(),
+        });
+    }
+    Ok(out)
 }
 
 /// Pages: documents and index pages under the roots, plus doc / req nodes,
@@ -180,7 +336,9 @@ fn collect_pages(
     for root in roots {
         let found = collect_documents(root, texts);
         for d in found.documents {
-            let body = body_of(&texts[&d.path].text);
+            let parsed = &texts[&d.path];
+            let body = body_of(&parsed.text);
+            let (class, front_id) = class_and_id(parsed);
             pages.insert(
                 d.path,
                 Page {
@@ -189,6 +347,8 @@ fn collect_pages(
                     title: d.title,
                     description: d.description,
                     body,
+                    class,
+                    front_id,
                 },
             );
         }
@@ -203,6 +363,8 @@ fn collect_pages(
                     title: m.title,
                     description: m.description,
                     body,
+                    class: DocClass::Other,
+                    front_id: None,
                 },
             );
         }
@@ -210,9 +372,9 @@ fn collect_pages(
     }
     // A graph node overrides a collect_documents entry for the same path.
     for node in graph.nodes.values() {
-        let kind = match node.key.kind {
-            NodeKind::Doc => Kind::Plain,
-            NodeKind::Req => Kind::Req,
+        let (kind, class) = match node.key.kind {
+            NodeKind::Doc => (Kind::Plain, DocClass::Doc),
+            NodeKind::Req => (Kind::Req, DocClass::Req),
             NodeKind::Test => continue,
         };
         let Some(parsed) = texts.get(&node.path) else {
@@ -229,10 +391,23 @@ fn collect_pages(
                 title: document_title(&node.path, fm),
                 description: normalize_description(fm),
                 body: body_of(&parsed.text),
+                class,
+                front_id: Some(node.key.id.clone()),
             },
         );
     }
     (pages, trees)
+}
+
+/// The class and the (non-blank) front matter `id` of a parsed document.
+pub(crate) fn class_and_id(parsed: &ParsedText) -> (DocClass, Option<String>) {
+    match &parsed.front_matter {
+        Ok(Some(fm)) => (
+            DocClass::of_type(fm.kind.as_deref()),
+            fm.id.clone().filter(|id| !id.trim().is_empty()),
+        ),
+        _ => (DocClass::Other, None),
+    }
 }
 
 /// doc -> req references, keyed by the req page path.
@@ -396,7 +571,7 @@ fn relative_path(from_dir: &str, to: &str) -> String {
     out
 }
 
-fn esc(s: &str) -> String {
+pub(crate) fn esc(s: &str) -> String {
     let mut out = String::with_capacity(s.len());
     for c in s.chars() {
         match c {
@@ -527,43 +702,121 @@ pub(crate) fn encode_href(path: &str, fragment: Option<&str>) -> String {
     out
 }
 
+/// What a link destination points at.
+enum LinkTarget {
+    /// A `#fragment` of the same page (the text after `#`).
+    Fragment(String),
+    /// An `http:` / `https:` / `mailto:` destination, kept as written.
+    External(String),
+    /// A published page (its `.md` path) with an optional fragment.
+    Page {
+        md: String,
+        fragment: Option<String>,
+    },
+    Unpublished,
+}
+
+/// What an image destination points at.
+enum ImageTarget {
+    /// An `https:` image, referenced as written.
+    External(String),
+    /// A published image file.
+    Local {
+        path: String,
+        fragment: Option<String>,
+    },
+    Unpublished,
+}
+
 impl Env<'_> {
-    /// The output page (repository-relative `.html` path) a resolved path
-    /// publishes as: a published `.md` page, or the published `index.md` of a
-    /// directory.
-    fn target_page(&self, path: &str) -> Option<String> {
+    /// The `.md` path of the page a resolved path publishes as: a published
+    /// `.md` page, or the published `index.md` of a directory.
+    fn target_md(&self, path: &str) -> Option<String> {
         if path.ends_with(".md") && self.pages.contains_key(path) {
-            return Some(html_path(path));
+            return Some(path.to_string());
         }
         let index = format!("{path}/index.md");
         match self.pages.get(&index) {
-            Some(p) if p.kind == Kind::Index => Some(html_path(&index)),
+            Some(p) if p.kind == Kind::Index => Some(index),
             _ => None,
+        }
+    }
+
+    /// Classifies a link destination of the file `src_path` (FR-098, FR-099).
+    fn link_target(&self, src_path: &str, dest: &str) -> LinkTarget {
+        if let Some(rest) = dest.strip_prefix('#') {
+            return LinkTarget::Fragment(rest.to_string());
+        }
+        if let Some(scheme) = uri_scheme(dest) {
+            let ok = ["http", "https", "mailto"]
+                .iter()
+                .any(|s| scheme.eq_ignore_ascii_case(s));
+            return if ok {
+                LinkTarget::External(dest.to_string())
+            } else {
+                LinkTarget::Unpublished
+            };
+        }
+        if dest.starts_with('/') {
+            return LinkTarget::Unpublished;
+        }
+        let Some(resolved) = resolve_link_path(parent_dir(src_path), dest) else {
+            return LinkTarget::Unpublished;
+        };
+        match self.target_md(&resolved.path) {
+            Some(md) => LinkTarget::Page {
+                md,
+                fragment: resolved.fragment,
+            },
+            None => LinkTarget::Unpublished,
         }
     }
 
     /// The href for a link destination, or `None` when it is not published
     /// (FR-098, FR-099).
     fn link_href(&self, src_path: &str, dest: &str) -> Option<String> {
-        if let Some(rest) = dest.strip_prefix('#') {
-            return Some(format!("#{}", encode_fragment(rest)));
+        match self.link_target(src_path, dest) {
+            LinkTarget::Fragment(rest) => Some(format!("#{}", encode_fragment(&rest))),
+            LinkTarget::External(url) => Some(url),
+            LinkTarget::Page { md, fragment } => Some(encode_href(
+                &relative_path(parent_dir(src_path), &html_path(&md)),
+                fragment.as_deref(),
+            )),
+            LinkTarget::Unpublished => None,
         }
+    }
+
+    /// Classifies an image destination of the file `src_path` (FR-100).
+    fn image_target(&self, src_path: &str, dest: &str) -> ImageTarget {
         if let Some(scheme) = uri_scheme(dest) {
-            let ok = ["http", "https", "mailto"]
-                .iter()
-                .any(|s| scheme.eq_ignore_ascii_case(s));
-            return ok.then(|| dest.to_string());
+            return if scheme.eq_ignore_ascii_case("https") {
+                ImageTarget::External(dest.to_string())
+            } else {
+                ImageTarget::Unpublished
+            };
         }
         if dest.starts_with('/') {
-            return None;
+            return ImageTarget::Unpublished;
         }
-        let src_dir = parent_dir(src_path);
-        let resolved = resolve_link_path(src_dir, dest)?;
-        let target = self.target_page(&resolved.path)?;
-        Some(encode_href(
-            &relative_path(src_dir, &target),
-            resolved.fragment.as_deref(),
-        ))
+        let Some(resolved) = resolve_link_path(parent_dir(src_path), dest) else {
+            return ImageTarget::Unpublished;
+        };
+        let Some((_, ext)) = resolved.path.rsplit_once('.') else {
+            return ImageTarget::Unpublished;
+        };
+        let ext = ext.to_ascii_lowercase();
+        if !["png", "jpg", "jpeg", "gif", "webp"].contains(&ext.as_str()) {
+            return ImageTarget::Unpublished;
+        }
+        if !self.files.contains(&resolved.path)
+            || !self.media_roots.iter().any(|r| is_under(&resolved.path, r))
+        {
+            return ImageTarget::Unpublished;
+        }
+        ImageTarget::Local {
+            path: resolved.path,
+            fragment: resolved.fragment,
+        }
     }
 
     /// The `src` for an image destination, or `None` when it is not published
@@ -574,31 +827,18 @@ impl Env<'_> {
         dest: &str,
         images: &mut BTreeSet<String>,
     ) -> Option<String> {
-        if let Some(scheme) = uri_scheme(dest) {
-            return scheme
-                .eq_ignore_ascii_case("https")
-                .then(|| dest.to_string());
+        match self.image_target(src_path, dest) {
+            ImageTarget::External(url) => Some(url),
+            ImageTarget::Local { path, fragment } => {
+                let href = encode_href(
+                    &relative_path(parent_dir(src_path), &path),
+                    fragment.as_deref(),
+                );
+                images.insert(path);
+                Some(href)
+            }
+            ImageTarget::Unpublished => None,
         }
-        if dest.starts_with('/') {
-            return None;
-        }
-        let src_dir = parent_dir(src_path);
-        let resolved = resolve_link_path(src_dir, dest)?;
-        let ext = resolved.path.rsplit_once('.')?.1.to_ascii_lowercase();
-        if !["png", "jpg", "jpeg", "gif", "webp"].contains(&ext.as_str()) {
-            return None;
-        }
-        if !self.files.contains(&resolved.path)
-            || !self.media_roots.iter().any(|r| is_under(&resolved.path, r))
-        {
-            return None;
-        }
-        let href = encode_href(
-            &relative_path(src_dir, &resolved.path),
-            resolved.fragment.as_deref(),
-        );
-        images.insert(resolved.path);
-        Some(href)
     }
 }
 
@@ -682,6 +922,77 @@ fn starts_with_h1(events: &[Event]) -> bool {
     false
 }
 
+/// How links, images, heading ids and footnotes of a body are rewritten.
+pub(crate) enum Mode<'a> {
+    /// `miwa site`: relative links between the generated pages, images copied.
+    Site,
+    /// `miwa site --diff`: one page per side, ids prefixed per document and side.
+    Diff(DiffMode<'a>),
+}
+
+pub(crate) struct DiffMode<'a> {
+    /// Anchor of the document being rendered (`d3`).
+    pub(crate) own: &'a str,
+    /// `b` (base) or `h` (head); `None` renders the comparison key, whose ids
+    /// carry no side.
+    pub(crate) side: Option<char>,
+    /// Anchor of each document in the diff, by path on this side.
+    pub(crate) anchors: &'a HashMap<String, String>,
+    /// Documents of the diff whose frame has no content (moved only): links
+    /// into them point to the frame, never to a heading.
+    pub(crate) omit_body: &'a HashSet<String>,
+    /// Base URL (with a trailing `/`) for links to documents outside the diff.
+    pub(crate) link_base: Option<&'a str>,
+    /// The `src` for a published image file (by path), or `None` to drop it.
+    pub(crate) image_src: &'a mut dyn FnMut(&str) -> Option<String>,
+}
+
+/// The id prefix of the document `anchor` on the side `side`.
+pub(crate) fn id_prefix(anchor: &str, side: Option<char>) -> String {
+    match side {
+        Some(c) => format!("{anchor}-{c}-"),
+        None => format!("{anchor}-"),
+    }
+}
+
+/// What a top-level list item belongs to.
+#[derive(Debug, Clone, Copy, PartialEq, Eq)]
+pub(crate) enum ListKind {
+    Unordered,
+    /// The number of this item.
+    Ordered(u64),
+}
+
+/// A top-level block of a rewritten body: a range of events.
+#[derive(Debug, Clone)]
+pub(crate) struct BlockSpan {
+    pub(crate) range: std::ops::Range<usize>,
+    pub(crate) kind: crate::diff::BlockKind,
+    /// Set for a list item (the span covers the item, not the list).
+    pub(crate) list: Option<ListKind>,
+}
+
+/// The rewritten events of a body and where its top-level blocks lie.
+pub(crate) struct Rewritten<'a> {
+    pub(crate) events: Vec<Event<'a>>,
+    pub(crate) blocks: Vec<BlockSpan>,
+    /// Whether the first block is a level-1 heading with rendered content.
+    pub(crate) first_is_h1: bool,
+}
+
+fn block_kind(tag: &Tag) -> crate::diff::BlockKind {
+    use crate::diff::BlockKind;
+    match tag {
+        Tag::Paragraph => BlockKind::Paragraph,
+        Tag::Heading { .. } => BlockKind::Heading,
+        Tag::CodeBlock(_) => BlockKind::Code,
+        Tag::Table(_) => BlockKind::Table,
+        Tag::BlockQuote(_) => BlockKind::Quote,
+        Tag::FootnoteDefinition(_) => BlockKind::Footnote,
+        _ => BlockKind::Other,
+    }
+}
+
 /// Converts the Markdown `body` of the page at `src_path` to HTML. When the
 /// first block is a level-1 heading, `meta` (id and summary) is placed right
 /// after it and the second value is `true`.
@@ -692,25 +1003,122 @@ fn render_body(
     meta: &str,
     rendered: &mut Rendered,
 ) -> (String, bool) {
+    let r = rewrite_events(env, src_path, body, meta, &mut Mode::Site, rendered);
+    let mut html = String::new();
+    pulldown_cmark::html::push_html(&mut html, r.events.into_iter());
+    (html, r.first_is_h1)
+}
+
+/// Resolves a link destination to the href to write, or `None` to drop the
+/// link and keep its text.
+fn mode_link_href(
+    env: &Env,
+    mode: &Mode,
+    src_path: &str,
+    dest: &str,
+    rendered: &mut Rendered,
+) -> Option<String> {
+    let Mode::Diff(diff) = mode else {
+        let href = env.link_href(src_path, dest);
+        if href.is_none() {
+            rendered.warnings.push(format!(
+                "warning: {}: unpublished link: {}",
+                escape_controls(src_path),
+                escape_controls(dest)
+            ));
+        }
+        return href;
+    };
+    match env.link_target(src_path, dest) {
+        LinkTarget::Fragment(rest) if rest.is_empty() => Some("#".to_string()),
+        LinkTarget::Fragment(rest) => Some(format!(
+            "#{}{}",
+            id_prefix(diff.own, diff.side),
+            encode_fragment(&rest)
+        )),
+        LinkTarget::External(url) => Some(url),
+        LinkTarget::Page { md, fragment } => match diff.anchors.get(&md) {
+            Some(anchor) => Some(match fragment {
+                Some(f) if !f.is_empty() && !diff.omit_body.contains(&md) => {
+                    format!("#{}{}", id_prefix(anchor, diff.side), encode_fragment(&f))
+                }
+                _ => format!("#{anchor}"),
+            }),
+            None => diff
+                .link_base
+                .map(|base| format!("{base}{}", encode_href(&md, fragment.as_deref()))),
+        },
+        LinkTarget::Unpublished => None,
+    }
+}
+
+/// Resolves an image destination to the `src` to write, or `None` to drop the
+/// image and keep its alt text.
+fn mode_image_src(
+    env: &Env,
+    mode: &mut Mode,
+    src_path: &str,
+    dest: &str,
+    rendered: &mut Rendered,
+) -> Option<String> {
+    let Mode::Diff(diff) = mode else {
+        let src = env.image_src(src_path, dest, &mut rendered.images);
+        if src.is_none() {
+            rendered.warnings.push(format!(
+                "warning: {}: unpublished image: {}",
+                escape_controls(src_path),
+                escape_controls(dest)
+            ));
+        }
+        return src;
+    };
+    match env.image_target(src_path, dest) {
+        ImageTarget::External(url) => Some(url),
+        ImageTarget::Local { path, .. } => (diff.image_src)(&path),
+        ImageTarget::Unpublished => None,
+    }
+}
+
+/// Parses the Markdown `body` of the page at `src_path` and rewrites links,
+/// images, heading ids, comments and raw HTML. Top-level blocks are reported
+/// as ranges of the rewritten events (list items as blocks of their own).
+pub(crate) fn rewrite_events<'a>(
+    env: &Env,
+    src_path: &str,
+    body: &'a str,
+    meta: &str,
+    mode: &mut Mode,
+    rendered: &mut Rendered,
+) -> Rewritten<'a> {
     let options = Options::ENABLE_TABLES
         | Options::ENABLE_STRIKETHROUGH
         | Options::ENABLE_TASKLISTS
         | Options::ENABLE_FOOTNOTES;
     let events: Vec<Event> = Parser::new_ext(body, options).collect();
 
+    // Footnotes are rendered by hand in the diff (their ids carry a prefix).
+    let (id_pfx, footnote_prefix) = match mode {
+        Mode::Site => (String::new(), ""),
+        Mode::Diff(d) => (id_prefix(d.own, d.side), "fn-"),
+    };
     let mut used_ids: HashSet<String> = HashSet::new();
     // Next suffix to try per slug (avoids rescanning `slug-1`, `slug-2`, ...).
     let mut next_suffix: HashMap<String, usize> = HashMap::new();
     for ev in &events {
         match ev {
             Event::FootnoteReference(label) | Event::Start(Tag::FootnoteDefinition(label)) => {
-                used_ids.insert(label.to_string());
+                used_ids.insert(format!("{footnote_prefix}{label}"));
             }
             _ => {}
         }
     }
 
     let mut out: Vec<Event> = Vec::with_capacity(events.len());
+    let mut blocks: Vec<BlockSpan> = Vec::new();
+    // The open top-level block (start index, kind) and the open top-level list
+    // (ordered start, items so far).
+    let mut open_block: Option<(usize, crate::diff::BlockKind, Option<ListKind>)> = None;
+    let mut open_list: Option<(Option<u64>, u64)> = None;
     // Whether each open link / image is kept (an unpublished one loses its tags).
     let mut kept: Vec<bool> = Vec::new();
     let mut depth = 0usize;
@@ -720,6 +1128,21 @@ fn render_body(
     while i < events.len() {
         let ev = events[i].clone();
         i += 1;
+        let before = out.len();
+        let depth_before = depth;
+        // Block bookkeeping needs the event's shape before it is consumed.
+        let opens = match &ev {
+            Event::Start(Tag::HtmlBlock) => None,
+            Event::Start(tag) => Some(tag.clone()),
+            _ => None,
+        };
+        let leaf_kind = match &ev {
+            Event::Start(Tag::HtmlBlock) => Some(crate::diff::BlockKind::Html),
+            Event::Rule => Some(crate::diff::BlockKind::Rule),
+            Event::Start(_) | Event::End(_) => None,
+            _ => Some(crate::diff::BlockKind::Other),
+        };
+        let closes = matches!(ev, Event::End(_));
         match ev {
             Event::Start(Tag::HtmlBlock) => {
                 let (text, next) = html_block_text(&events, i);
@@ -727,14 +1150,48 @@ fn render_body(
                 if is_comment_html(&text) {
                     continue;
                 }
-                out.push(Event::Html(
-                    format!("<pre>{}</pre>\n", esc(&strip_comments(&text))).into(),
-                ));
+                if matches!(mode, Mode::Diff(_)) {
+                    // The renderer escapes the text, which then takes part in
+                    // the character-level diff.
+                    out.push(Event::Html("<pre>".into()));
+                    out.push(Event::Text(strip_comments(&text).into()));
+                    out.push(Event::Html("</pre>\n".into()));
+                } else {
+                    out.push(Event::Html(
+                        format!("<pre>{}</pre>\n", esc(&strip_comments(&text))).into(),
+                    ));
+                }
             }
             Event::InlineHtml(s) => {
                 if !is_comment_html(&s) {
                     out.push(Event::Text(s));
                 }
+            }
+            Event::FootnoteReference(label) if matches!(mode, Mode::Diff(_)) => {
+                let id = format!("{id_pfx}fn-{label}");
+                out.push(Event::Html(
+                    format!(
+                        "<sup class=\"footnote-reference\"><a href=\"#{}\">{}</a></sup>",
+                        esc(&encode_fragment(&id)),
+                        esc(&label)
+                    )
+                    .into(),
+                ));
+            }
+            Event::Start(Tag::FootnoteDefinition(label)) if matches!(mode, Mode::Diff(_)) => {
+                depth += 1;
+                out.push(Event::Html(
+                    format!(
+                        "<div class=\"footnote-definition\" id=\"{}\"><sup class=\"footnote-definition-label\">{}</sup>",
+                        esc(&format!("{id_pfx}fn-{label}")),
+                        esc(&label)
+                    )
+                    .into(),
+                ));
+            }
+            Event::End(TagEnd::FootnoteDefinition) if matches!(mode, Mode::Diff(_)) => {
+                depth = depth.saturating_sub(1);
+                out.push(Event::Html("</div>\n".into()));
             }
             Event::Start(Tag::Heading {
                 level,
@@ -761,7 +1218,7 @@ fn render_body(
                         candidate = format!("{slug}-{next}");
                     }
                     used_ids.insert(candidate.clone());
-                    Some(CowStr::from(candidate))
+                    Some(CowStr::from(format!("{id_pfx}{candidate}")))
                 };
                 depth += 1;
                 out.push(Event::Start(Tag::Heading {
@@ -774,7 +1231,7 @@ fn render_body(
             Event::End(TagEnd::Heading(level)) => {
                 depth = depth.saturating_sub(1);
                 out.push(Event::End(TagEnd::Heading(level)));
-                if depth == 0 && first_is_h1 && !injected {
+                if depth == 0 && first_is_h1 && !injected && matches!(mode, Mode::Site) {
                     injected = true;
                     out.push(Event::Html(meta.to_string().into()));
                 }
@@ -791,7 +1248,7 @@ fn render_body(
                 } else {
                     dest_url.to_string()
                 };
-                match env.link_href(src_path, &dest) {
+                match mode_link_href(env, mode, src_path, &dest, rendered) {
                     Some(href) => {
                         kept.push(true);
                         out.push(Event::Start(Tag::Link {
@@ -805,14 +1262,7 @@ fn render_body(
                             id,
                         }));
                     }
-                    None => {
-                        kept.push(false);
-                        rendered.warnings.push(format!(
-                            "warning: {}: unpublished link: {}",
-                            escape_controls(src_path),
-                            escape_controls(&dest_url)
-                        ));
-                    }
+                    None => kept.push(false),
                 }
             }
             Event::End(TagEnd::Link) => {
@@ -828,7 +1278,7 @@ fn render_body(
                 id,
             }) => {
                 depth += 1;
-                match env.image_src(src_path, &dest_url, &mut rendered.images) {
+                match mode_image_src(env, mode, src_path, &dest_url, rendered) {
                     Some(src) => {
                         kept.push(true);
                         out.push(Event::Start(Tag::Image {
@@ -838,14 +1288,7 @@ fn render_body(
                             id,
                         }));
                     }
-                    None => {
-                        kept.push(false);
-                        rendered.warnings.push(format!(
-                            "warning: {}: unpublished image: {}",
-                            escape_controls(src_path),
-                            escape_controls(&dest_url)
-                        ));
-                    }
+                    None => kept.push(false),
                 }
             }
             Event::End(TagEnd::Image) => {
@@ -866,10 +1309,53 @@ fn render_body(
                 out.push(other);
             }
         }
+
+        // Top-level blocks: a tag opened at depth 0, or a leaf at depth 0; list
+        // items (depth 1 inside a top-level list) are blocks of their own.
+        if let Some(tag) = opens {
+            match tag {
+                Tag::List(start) if depth_before == 0 => open_list = Some((start, 0)),
+                Tag::Item if depth_before == 1 && open_list.is_some() => {
+                    let (start, index) = open_list.as_mut().expect("checked above");
+                    let list = match start {
+                        Some(s) => ListKind::Ordered(*s + *index),
+                        None => ListKind::Unordered,
+                    };
+                    *index += 1;
+                    open_block = Some((before, crate::diff::BlockKind::ListItem, Some(list)));
+                }
+                tag if depth_before == 0 => open_block = Some((before, block_kind(&tag), None)),
+                _ => {}
+            }
+        } else if closes {
+            let block_ends = depth == 0 && open_list.is_none() || depth == 1 && open_list.is_some();
+            if depth == 0 {
+                open_list = None;
+            }
+            if block_ends {
+                if let Some((start, kind, list)) = open_block.take() {
+                    blocks.push(BlockSpan {
+                        range: start..out.len(),
+                        kind,
+                        list,
+                    });
+                }
+            }
+        } else if let (Some(kind), 0) = (leaf_kind, depth_before) {
+            if out.len() > before {
+                blocks.push(BlockSpan {
+                    range: before..out.len(),
+                    kind,
+                    list: None,
+                });
+            }
+        }
     }
-    let mut html = String::new();
-    pulldown_cmark::html::push_html(&mut html, out.into_iter());
-    (html, first_is_h1)
+    Rewritten {
+        events: out,
+        blocks,
+        first_is_h1,
+    }
 }
 
 fn meta_block(page: &Page) -> String {

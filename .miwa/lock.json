@@ -43,11 +43,11 @@
       "at": "2026-10-09T14:16:47Z"
     },
     "desc:doc:DOC-SITE": {
-      "from": "sha256:a6f8ab67ed10c4f8538e37a8d42a698caf3875356e9204d0f7d13eaa56aef8ed",
-      "to": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:f5ed33afb5f225d58a30acdb88ea09c765ac0c62048b97a41f7fd7b408fd432f",
+      "to": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-CHECK:FR-014": {
       "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
@@ -778,144 +778,235 @@
       "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-071": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:0ccc0a872993c859c4e7e8984007fac62694cf5f9efc7e3eccbc1b93d05091ae",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-089": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:d4022c1db63f2d6b53f929968390a016770630b0a793ba1ad663a6f58a67694f",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-090": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:09e1ff4e009d4c7c942f9f6afeaa335440400fcc926ca5a29866d3001e490061",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-091": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-092": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:78e14ed69dd36285c74f30e467ae245297f407cdf7b667f37306e342ab018462",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-093": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:c816cdff2dc422c1fb4a3e7ec2fb3edaede08ca2d6a1d0e1d7ead54cbf193d56",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-094": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:1de719d3009f1fc09cb52b3f1e070a613371a7066337cb6637234a9660e8db4c",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-095": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:2061b9f29a68b3c82a669e52a2afc9ab43ccd5c209f850444fdf5effa932743e",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-096": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:4b3c313e93febec135afd5220e7a19a9a1a27d6014314e67c240fd2c1bbe6388",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-097": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:d78878d61c8329e6bb276d26f9f150330068c805cbaffdadd4f952260b4f4bf2",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-098": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:942988504c73194d15ddbe190712e25a3ddeaf3bba6d54879fb00a2dfea37a76",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-099": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:e694eaf1d4106c217db5ac05caf855618fb51f7b9096ba46e7a00d2514cb0e21",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-100": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:ddbfc4a1d647ba7067a0ad85ba7a50eb815b68a647f908bc5a078967984333b3",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-101": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:b5c6971f87ebf9c21088cc2b206af48f9ce10fc3a3e4b0fe443048aacb3a1724",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-102": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:a6eccb50f5d0aea5887c49371fec51487ec0ec66dc5730ff9fde5ba356363747",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-103": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:842a7f877ae491f75df01c41999023bf9fdbd4cf740430dde58e047debea66c3",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-104": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:8ddcdea4361037444ca75f5ce6f2647414123ca676a3165602170ac8551c24ca",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-105": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:b2ecd11491a63a26658b6281bc27259ebf006a418a0868107b96519724f4d184",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-106": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:7dc821408822a345c20f92ebaa7de0d88496941cc5db7ee2c34893caeb3681f4",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "doc-req:DOC-SITE:FR-107": {
-      "from": "sha256:ca1abea5e7c318b7853b5cff103d6189e9a830c6bb48422841913a0ebb5816dd",
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
       "to": "sha256:b24f81db76223756567c4901403cb1c9be6546b49cb97262aec64be30c9b2783",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-108": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-109": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-110": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:cf76f0fd08f7363b7aa2e358f1413fd76fe2632ca76be758ad2983cdcf53390c",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-111": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-112": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-113": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-114": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-115": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-116": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-117": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-118": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:87bb78c7e3b4c3a23ddc71d87019d4ae7f54aa90baf583f879a60fe5f62bc7ea",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-119": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "doc-req:DOC-SITE:FR-120": {
+      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:4d6d1a984b99af5a605f75785f879174fd789d600cc8bfdc42d374cbfd045149",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "test-req:src/check:tests:descしか持たないdocはorphanのままになる:FR-086": {
       "from": "sha256:592dfc2d353150950625cb0f4be5763e6ce8fa81426de9f6d7739139bdd8583d",
@@ -1315,6 +1406,258 @@
       "by": "human",
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
+    },
+    "test-req:src/diff:tests:align_blocksはブロック数の和が上限ちょうどなら通常どおり比べる:FR-117": {
+      "from": "sha256:7841f75d78c725e2bf839799ed5f3581d51d785f186846914a19eda3bada9e66",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksはブロック数の和が上限を超えると全削除の後に全追加にする:FR-117": {
+      "from": "sha256:735fcac131f7dd5827f98e34bf9814b90b0a72a2020c20dc7ae9bb132b1c001d",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは両方空なら行も空:FR-117": {
+      "from": "sha256:378b4490a20b42a50abdd72b75ffcf1ca37b01f2acb605e650ea076e6ef69531",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは先読みして良い相手が後ろにあれば手前を単独の追加にする:FR-117": {
+      "from": "sha256:1d427b906a4aeb9e72640a0ced95d55cf8a35c935512b79df8fc3f6d10e5bd1b",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは同一列ならすべてsameで添字が揃う:FR-117": {
+      "from": "sha256:744490388e3365774ca027a9d04cb36b3a10c28cb8461a0a6087bd46e2d6d3a8",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは大きな置換区間でも似ていないブロックを速く削除と追加にする:FR-117": {
+      "from": "sha256:59ace9ad781190cf5964904d0c4cf618180c241d58b73468f79621c6ecf23f5d",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは対にしたブロックの順序を保つ:FR-117": {
+      "from": "sha256:85596b5c3f6ffba28fb40898b1a2937b0a8baf60159c1cf8bc3226b27444eb08",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは片側だけのブロックを追加と削除にする:FR-117": {
+      "from": "sha256:8abed6ef1561b82fc69be92236f2097434f330884265e04c1ef070a6bc1a006c",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは積が上限ちょうどなら対づけする:FR-117": {
+      "from": "sha256:ab02fc4a7f47447699e050838ff1f9c5e6b175bdf83b02c06d651b5a0627abf1",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは積が上限を超えると対づけせずすべて削除と追加にする:FR-117": {
+      "from": "sha256:edfad8040f525b15cb14b3bfb232ad23f096674dc649970d53beea0c7905ae57",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは空テキストで種類が同じブロックを対にする:FR-117": {
+      "from": "sha256:a2f87ef7542584d2b90b0a274d8333256f6303e2594898688ac629ca0613d3a8",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは空テキストで種類が違うブロックを対にしない:FR-117": {
+      "from": "sha256:265b150090975f040f219b5cfca6a9d49aceecbc08eb6c042aa51a4a6f67b3e5",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは類似度がちょうど0_45なら対にする:FR-117": {
+      "from": "sha256:f05e0774cf23742ae1892eed8e55a7fdad663f658a97ecbb26b4d455017f0de2",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは類似度が閾値以上の置換区間のブロックを対にする:FR-117": {
+      "from": "sha256:db35161dffae1c9817ec65abb7b02f3b0b5624a263e9d6615dbdd8352839d4e6",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:align_blocksは類似度が閾値未満なら対にせず削除と追加にする:FR-117": {
+      "from": "sha256:3d07030effd331bce0ef2aa477662cf8ee43a2214cd68dab06ef4fe96219244f",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは1文字の一致に挟まれた変更もまとめる:FR-117": {
+      "from": "sha256:aa4327959989399c09ab9abc206a0b9deddfc9db4c02fc2a0a62c292fea4ec53",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは2文字以下の一致に挟まれた変更を1つにまとめる:FR-117": {
+      "from": "sha256:b5e61ddac2743f7379761bf38e13af6746f4c1f851960b3c709c1ddf7c64fbf8",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは3文字の一致に挟まれた変更はまとめない:FR-117": {
+      "from": "sha256:0ac58bcb9d5168da9547065dcff56b2135f2aa8fbecb6ac19163c93a85e89cc4",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは同一なら印を付けない:FR-117": {
+      "from": "sha256:c1f2e7091a9e9cc152a586f70d561fef7ada4930a1f577cb06cf8a1d1c81ea4a",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは変わった文字だけに印を付ける:FR-117": {
+      "from": "sha256:168996a202ce7a2678d4d7ca3ba9720f000db115f1bdf5ccdeaeba69f0cb7c2a",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは挿入と削除を別々の側に印付けする:FR-117": {
+      "from": "sha256:e01bb3904ee1ed246508a51b25ac20d62f0e8e6c98f41137d6fc7229c3b17cdf",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは文字数の和が上限ちょうどなら印を返す:FR-117": {
+      "from": "sha256:5c4cb0875e998e41d3c528ff3bc812235dbb237f5b25a7ecccd849a7d32e9e34",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは文字数の和が上限を超えるとnone:FR-117": {
+      "from": "sha256:5cd2f192d7723a797275b7f46b14f847f3e0aeb9c993cb4d7dab6a36a69ad1e0",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは編集距離が上限を超えるとnone:FR-117": {
+      "from": "sha256:be56e3b47f7b80d27381ccf1c71eafca1d3f12962fafc2a3f19f86260da595f0",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:char_marksは編集距離が上限以内なら印を返す:FR-117": {
+      "from": "sha256:5467356227e90008ff80f3bfac7f9778f148457370476a7d128172dc2a1e5fbe",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:diff_opsは両方空なら空の編集列を返す:FR-117": {
+      "from": "sha256:18cb8d307d08a6efaa4a120f6c56e3f87ed0adc17c2cb7c8b016878bf573bd3c",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:diff_opsは全置換なら削除と挿入だけでequalを含まない:FR-117": {
+      "from": "sha256:6fd741d1ee2f4255b32eb0c0d88b023a0208deaae204ce3c0f73901ebec8f69f",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:diff_opsは削除のみなら挿入を含まない:FR-117": {
+      "from": "sha256:2ff9f0cd938ddcea6483e0d5432fa4a7d6ab339de84f64839f46ebe9797155bc",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:diff_opsは同一列ならequalだけを返す:FR-117": {
+      "from": "sha256:a4a58eecf21d5842735fa03704d8060548c8c04a5225a2d6f03713f5535b9d69",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:diff_opsは挿入のみなら削除を含まない:FR-117": {
+      "from": "sha256:3d65f53034b0a6659d4e82a1f85d412cfdd06ba99e8c03b091f29f461becf26c",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:diff_opsは混在した変更でも両列を復元できる:FR-117": {
+      "from": "sha256:0741b466f30780e50425288b35962b549ecdcb5871f864ddda6e4a5a3a4a5640",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:diff_opsは編集距離がmax_editsを超えるとnoneで等しければsome:FR-117": {
+      "from": "sha256:586fa40c14365f9a59d5ef78f86f3ad2fab2869c4e7a9511867b67ef8cd2e300",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:similarityは両方空なら1:FR-117": {
+      "from": "sha256:a384684057414abdb596adf75a6254d8e7246516cffe6ce8e0ff02591040f6a1",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:similarityは同一文字列なら1で共通が無ければ0:FR-117": {
+      "from": "sha256:0376aa31d86647bff1ce4f7b62a128dc21ffb26cfd3f4d9256db9cdd7ca44e3b",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:similarityは文字の多重集合の重なりで定まる:FR-117": {
+      "from": "sha256:ee9fb5b4431acab6304a0f38e9da5f1521bd738d606f00d079e1a7330f7849dc",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:src/diff:tests:similarityは片側だけ空なら0:FR-117": {
+      "from": "sha256:c8bffba9f32526ea5e5316100edb67a6d1686da668c39bf2b87d57ec1fae8dd9",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "test-req:src/extract:tests:csharpのcontentは属性を含まず修飾子から始まる:FR-052": {
       "from": "sha256:07c175587f6bb2175094b4b0567228953598c486a9379bff4272195a026d67aa",
@@ -5705,6 +6048,13 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:tests/cli_site::入れ子リスト_開始番号付きリスト_表_脚注_コード_画像を含むmainが固定のhtmlになる:FR-095": {
+      "from": "sha256:b0da598df5b15b2de303b439b02ee2a185538f9cc71779e87ebe554a4bba1c19",
+      "to": "sha256:2061b9f29a68b3c82a669e52a2afc9ab43ccd5c209f850444fdf5effa932743e",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
     "test-req:tests/cli_site::公開されないリンクがあっても終了コード0で警告だけ出す:FR-090": {
       "from": "sha256:eca2778f464b3f7096c96ea11de92eb553b19bcd795b88294733ed54e08c7ca1",
       "to": "sha256:09e1ff4e009d4c7c942f9f6afeaa335440400fcc926ca5a29866d3001e490061",
@@ -5837,6 +6187,13 @@
       "by": "human",
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
+    },
+    "test-req:tests/cli_site::文書間リンク_未公開リンク_生html_コメント_重複見出しを含むmainが固定のhtmlになる:FR-095": {
+      "from": "sha256:5b3cb4dce384091552084d5936bbbfed1ddd0021098f21ae562c05cccdb57385",
+      "to": "sha256:2061b9f29a68b3c82a669e52a2afc9ab43ccd5c209f850444fdf5effa932743e",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     },
     "test-req:tests/cli_site::最初のブロックがatxのh1のときテンプレートのh1を出さず本文の見出しを使う:FR-105": {
       "from": "sha256:06d50cfdc9d7797eb9b57ca1f6293480285001c0d872c520ace81b753c4fc5e9",
@@ -6138,6 +6495,762 @@
       "by": "human",
       "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
       "at": "2026-10-09T14:16:47Z"
+    },
+    "test-req:tests/cli_site_diff::baseでdiff_baseを上書きできる:FR-108": {
+      "from": "sha256:e120748a5bd54966b1e007c147118cd86d29decdda900f27433af893d06dd8fe",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::descriptionだけの変更は対象になる:FR-111": {
+      "from": "sha256:5a7e2613765445c8fb70c123dd2e9497a9fc91fbe9f2a2f9de2e9561c842d9e0",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::descriptionの変更は本文より前の行として出る:FR-116": {
+      "from": "sha256:da2077c0ed5769153239d3d65839ecd38378d1a90e1c8c77f6112de7c9bbd990",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::detached_headではhead_label省略時にheadと出る:FR-115": {
+      "from": "sha256:869aad8470a83aa60c69291af0db916c769119b11c854c37f0472750c4f37c07",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::diffなしのbase_link_base_head_labelはclapのエラーで終了コード2:FR-108": {
+      "from": "sha256:a9317bb799fa925e896681b9d85543156a8a23abe3e2b2b1364ddb9cce260584",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::diffを付けないsiteの動作は変わらない:FR-108": {
+      "from": "sha256:47fa5e894172affea44525f24c6ef6cfde1bf4d0ac34443e7ae52f923ed6300e",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::head_labelの改行や制御文字はexit_1:FR-115": {
+      "from": "sha256:ade05bf2948ce398b3e3578863833154d7eb5691d4791b98b7b8ed4e06a71489",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::head_labelはhtmlエスケープされて表示される:FR-115": {
+      "from": "sha256:41ffc4ceff982a025906f84efe2c72e7bebdca9799a0205e235c6045b5668069",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::head_labelを渡すとヘッダに使われbaseは指定の文字列のまま出る:FR-115": {
+      "from": "sha256:2a64c60da2f2f42039192e53ed8405e5424fe65ac2131a5afc00fc6b79f95818",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::htmlの骨格とcspとreferrerを持ちスクリプトも外部リソースも無い:FR-114": {
+      "from": "sha256:5b3ec2b76e3515a549dd75b93c9a20ba300ccb95dfdfd203b4d77dc2740d431a",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::http_https_mailtoはそのまま残る:FR-119": {
+      "from": "sha256:b85b2a2914d00e3ae7354f0a68f02c2d3b1a8707f7c9291b396f924060bc24c8",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::https画像はそのまま参照しsvgや条件を満たさない画像はimgを出さず代替テキストだけ残す:FR-120": {
+      "from": "sha256:d3426458dbb8f11002528bb320f2234041799c24b34ebdb805aa3927df9a9da5",
+      "to": "sha256:4d6d1a984b99af5a605f75785f879174fd789d600cc8bfdc42d374cbfd045149",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::idが不正でノードにならないdocも変更前後の候補として扱う:FR-112": {
+      "from": "sha256:364e46b531d9c197fcfbae337168f84c245c0c9afa12eed9e06e5db2330a0960",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::idの欠落エラーは変更なしの扱いより優先される:FR-110": {
+      "from": "sha256:afc5b2596cb86db76d983646eb185de2b5b99c1263fc5f96632cc429168693fe",
+      "to": "sha256:cf76f0fd08f7363b7aa2e358f1413fd76fe2632ca76be758ad2983cdcf53390c",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::idを付けただけの変更は対象にならずエラーにもならない:FR-112": {
+      "from": "sha256:6f4bbd48a58965618cf1010650ddc3e8c6550bc7c083ad4e738166596ea7952d",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::id無しの対象文書は全件をパス順に列挙してから止まる:FR-112": {
+      "from": "sha256:6c86fac7ad4de43107f2761c159b952af0be22f1bb67e215aff6cfc34786a98e",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::link_baseが無いときと公開されないリンクは文字だけを残す:FR-119": {
+      "from": "sha256:37b82bd5a9920a71a2fece5a4bbf00ab054dac6130e4c790334200b0635036e3",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::link_baseの末尾スラッシュは補われ有っても同じ:FR-119": {
+      "from": "sha256:aca2c2cef08b10589fcf6187dad36aad7d6c10f8b4b510db5c2b723b11bc67d7",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::link_baseはhttpかhttpsで始まる値だけ受け付けそれ以外はexit_1:FR-119": {
+      "from": "sha256:4995bd003d9945e769f3d9bf665d10334a5b004844f418ca5cd6f4535b356483",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::merge_baseの短縮shaは分岐点でheadと別になる:FR-115": {
+      "from": "sha256:d795fbfc40b2840c0af66ec4888662aab2f3ddbc32270e17d9ebcc075c9bfa6e",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::outの相対パスはリポジトリルートからで親ディレクトリが作られる:FR-109": {
+      "from": "sha256:f5af2ffb84ae89350e8c2abb51e7a01fb87dfe35f7d9e91b8c529eddb20cfff5",
+      "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::outは絶対パスと親参照を含むパスも使える:FR-109": {
+      "from": "sha256:8e51510d3989f6e82e6539d96ac76804db21a72c2ccd4a11e70ee6bbb6d110e7",
+      "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::reqページの参照元文書の一覧は出さない:FR-114": {
+      "from": "sha256:828b3a173b3c22142c7265c9d883fe00bb44b07dc0916ceb851bbd9aaf118def",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::titleだけの変更は対象になる:FR-111": {
+      "from": "sha256:7fbda1f8154ea2a840771bb4200be36c9e1fc442aef2f888222a5ec92cc5d986",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::titleのsiteタイトルはsite設定に従いエスケープされる:FR-114": {
+      "from": "sha256:035d907eee1d9f156c1b44f3386573ed93dccc7330864e61fd5dd9473e83481f",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::titleは_base_から_head_label_ダッシュ_siteのタイトルの形:FR-114": {
+      "from": "sha256:6e32560e0e1c81fa966716c71ccfbbaea068a5b76c5535837d11e497b4b1609a",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::インラインコードの中の文字も囲む:FR-117": {
+      "from": "sha256:e29bbe42ae6896743653498ac577305176512299e1bc36b2f70c817800c5ce26",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::タイトルが変わったときは旧タイトルを取り消し線で並べる:FR-116": {
+      "from": "sha256:6580224cc4f5e5d051dc4b9b4c2121ec8cd648406da66ad329a54c61b511dba6",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::ツリーはディレクトリを先にパス順で並べアンカーがd1から採番される:FR-115": {
+      "from": "sha256:2547e929d27ba503ad0af6d4cf323cf9517f02cf46efc6edab5d316ca99d8d68",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::ディレクトリを移動した索引ページは旧パスの削除と新パスの追加になる:FR-113": {
+      "from": "sha256:f3e7413c29c89c3b7c98698e499d2374c4db358c67ac85c9ebf2293b33ce3ea0",
+      "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::ヘッダにsiteタイトルと比較の2点が七文字のshaで出る:FR-115": {
+      "from": "sha256:d0070e97842ccd7b67718e44bb358fd77505a1918c95b95eaaa4321afd3a40a3",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::リンク先だけ変わったブロックは文字の強調なしの変更になる:FR-117": {
+      "from": "sha256:5f0037803182818e78d7c7892632f0ea72e1df8ee28a6e6a41d2460c389ba0c3",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::リンク先のパスはsiteと同じ規則でパーセントエンコードされる:FR-119": {
+      "from": "sha256:1a79b27939077bf16a4d68bb1eccb53a4d47a4c30a0eec70b90770c94a4955ac",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::一般文書の同じidの重複もexit_1:FR-112": {
+      "from": "sha256:2c69b0ebfeae423fec790ca45e31bd33fe3e1562a07dd210df366524e3d5d6b5",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::両側でidが無く内容が変わらない文書はエラーにならない:FR-112": {
+      "from": "sha256:5e7042c55de7137b158d3368cd769d06755102f28e0764b55e29dcd8bb023c3d",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::元のmarkdownが変わった索引ページは差分の対象になる:FR-113": {
+      "from": "sha256:25cd80cfe07ecd745d29d80ec1c005baed5b87ae2f0504d87f98c83625cea963",
+      "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::先頭のブロックが変わったときは手前に折り畳みを出さない:FR-118": {
+      "from": "sha256:18bdd5bb519db258addadcb314e4b22aa82a874531a0724fbfde7ff04841bf48",
+      "to": "sha256:87bb78c7e3b4c3a23ddc71d87019d4ae7f54aa90baf583f879a60fe5f62bc7ea",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::公開されないid無しreqは画像の差し替えだけでもid無しエラーになる:FR-112": {
+      "from": "sha256:6c8897abde6a645755f60b6f5afbe29661506208480c41c1507d0c8f19cf5864",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::共通の祖先が無いときはexit_1で何も書かない:FR-108": {
+      "from": "sha256:8dbd1a037cbea742ba8a8e7a8613a11e06856d2ab945e1ddebe247f12ccbc017",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::内容が同じ索引ページは対象にならない:FR-113": {
+      "from": "sha256:fa82335c564e487f84c430b8d9e5ef06cc3c5b5d715d38689927bd8538234e85",
+      "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::出力先にディレクトリがあるとexit_1で中身を残す:FR-109": {
+      "from": "sha256:44ef205f886b0c97f17bb8dfda2869ff0f0e0536e7af9e927c74d7910c44eb95",
+      "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::出力先に通常のファイルがあるとexit_1で上書きしない:FR-109": {
+      "from": "sha256:e6e0cf29bbdf850beb437f299b0cd0a68c29755b64265e7264d4046b0b6e5277",
+      "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::出力先の既定はリポジトリルートの_site_diff_htmlで標準出力は空:FR-108": {
+      "from": "sha256:2eb5270da27145dcb2c0468edfe7e31c93da41c025827804ea23669ff569decf",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::出力先の確認は比較より前に行われる:FR-109": {
+      "from": "sha256:3c86b0a0258ea169e4a1384fe6bd022aeb70ca82fdfde5de8344869c4bd77f6a",
+      "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::分類をまたぐtypeの変更は削除と追加になる:FR-112": {
+      "from": "sha256:a677d94200124fdfb1e1023904b32ed6b10d3670e2aa643fdbee7fcd6b79c2b9",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::分類をまたぐ同じidは別の文書で重複エラーにならない:FR-112": {
+      "from": "sha256:d69adad7500519566013c9146acc70edd5dac3774d70490d6f04de12866c5e21",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::列見出しと凡例は出さない:FR-116": {
+      "from": "sha256:81b87ede90deebe9491cffb09346d988438240a12d204e66c2ad8b387254eb19",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::削除された索引ページは差分の対象になる:FR-113": {
+      "from": "sha256:bc6e7a8100cf1fac9ac8b25759624feb8007738068dec3cb193781b1efaf5a30",
+      "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::参照する画像の中身だけの差し替えは対象になる:FR-111": {
+      "from": "sha256:72c856cbf8895ff1c530c4032b249304927e6cfd10e800dffd3b2d95c386aee3",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::右だけのブロックはrow_add_左だけのブロックはrow_del:FR-116": {
+      "from": "sha256:1cac4ced4a168256fedf38797281217e84ef807b041f26dd8298bccc33addef4",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::同じidでパスが違えば移動として旧パス_新パスを出す:FR-112": {
+      "from": "sha256:a1984929d21d1cf892a1e8f2234b6ec093b08304beb61801a8cbbff373b1eeea",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::同じパスで内容が違う画像だけのブロックは左右の対になる:FR-120": {
+      "from": "sha256:2a7628f3a54f5458767b69d6544c6950ae02b970e2866e5e2e4eed71d112e01f",
+      "to": "sha256:4d6d1a984b99af5a605f75785f879174fd789d600cc8bfdc42d374cbfd045149",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::同じパスで対になりidを足して本文も変えると変更として出る:FR-112": {
+      "from": "sha256:a4c3d5ca95f4919f4665bbc41ad697c3a49438d6df7f812493566ffc5d8bbc01",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::同じ入力からは別の出力先でも同じバイト列になる:FR-114": {
+      "from": "sha256:c63b095e180e283db1c13e9f0d70acb68ccfe80ae3725f8febf04e14915d0203",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::同じ分類で同じidの重複はexit_1:FR-112": {
+      "from": "sha256:23258437fd3462d966a8dd9fc6e74a8af36f7963d46187ffd10c401ca85f5d24",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変わったブロックが近いときは間を畳まず離れていれば畳む:FR-118": {
+      "from": "sha256:9f5c4ae28c1b5ee5337569768dda25db775b597ad3d977693862a2fa561e4272",
+      "to": "sha256:87bb78c7e3b4c3a23ddc71d87019d4ae7f54aa90baf583f879a60fe5f62bc7ea",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変わったブロックの前後1ブロックだけ表示し残りを畳む:FR-118": {
+      "from": "sha256:ee408db85da05a146f0e2c730aeb77e33b05d6a11e0466eb11d7ce8df654a666",
+      "to": "sha256:87bb78c7e3b4c3a23ddc71d87019d4ae7f54aa90baf583f879a60fe5f62bc7ea",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変わったブロックはrow_modで前後の変わらないブロックはrow_same:FR-116": {
+      "from": "sha256:8ce9da64a0e3f436a69c5effa0ccb0c65e7b35684362d22ec8e584e4c6b47aa1",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更が無くても出力先が存在すればexit_1:FR-109": {
+      "from": "sha256:1550af5cfabd6d8906aec186b88f57a3f3a33cc3767696843fd0f69ee1e52ae9",
+      "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更前だけidが無い文書は同じパスの相手と対になる:FR-112": {
+      "from": "sha256:ce93ff17fb971c26482c9fae8059e0e219ba27d91db2ad1e97829b35c1fceaa2",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更前にあったidを消した文書は内容が同じでもexit_1:FR-112": {
+      "from": "sha256:873500af6bc4eb97b19b3b5461b2b1e7753616972653f49273a130595f4960cd",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更前に設定が無いときはすべて追加になる:FR-111": {
+      "from": "sha256:5884688ba3f3f8cab4cd5b6b1e932d653bcb0ea078b5157d5cc7650e492b437f",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更前の側だけでidが無い文書は同じパスの相手が無ければ削除として出る:FR-112": {
+      "from": "sha256:ad312f57c758c8915fe7c342a0b8d6b9aaafe0907d5f4e01083d68d4ed511a82",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更前の画像は変更前の時点から変更後の画像は作業ツリーから読む:FR-120": {
+      "from": "sha256:e01138ebb6063aaca4d09d2bcaabb929973b0e3fbbce809b6d3e2ab9d462f995",
+      "to": "sha256:4d6d1a984b99af5a605f75785f879174fd789d600cc8bfdc42d374cbfd045149",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更前の設定にindexが無いときの公開範囲はdocとreqだけ:FR-111": {
+      "from": "sha256:055869c10068db2e8580c728e85712c286eb240f038698cc4b6e3d624a32e432",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更後にidが無い対象文書はexit_1でメッセージの形が決まっている:FR-112": {
+      "from": "sha256:c9141d32b37dcae55af7045858ee8cd6774c2af9cedcca84afb625e0bac6708c",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更後の設定にindexが無いとexit_1:FR-111": {
+      "from": "sha256:a2b051cdf56b717a16d585c86a3c0d7454eed28c369ef7736ce8df33fda3bb1b",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更量バーは0でない側を必ず1個以上にして合計5を超えたら多い方から減らす:FR-116": {
+      "from": "sha256:f1e5a9b74bae4e1c0450d63fae6808e40179bd1ee4fc1a572d87b4e8ddef342f",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更量バーは削除だけなら赤5:FR-116": {
+      "from": "sha256:0d5f24596fe7bf495c4eddd35e570b37cdac77ad94f72e58200e9e6bb4b29075",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::変更量バーは緑4赤1灰0になる:FR-116": {
+      "from": "sha256:88db9cb57113d92e04515081de87774e20280724cc1a3684110de5ad643e44ef",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::存在しないbaseはexit_1で何も書かない:FR-108": {
+      "from": "sha256:5a3947f2734306c88bcd3bd9207a1e91f4d5425247501f88f0bad76ef369e304",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::対象の変更が無ければファイルを作らずexit_0:FR-110": {
+      "from": "sha256:3dcc6737045ae50a056bde9b59c8394b288aa3608f8a46ca59b6d22fd729c506",
+      "to": "sha256:cf76f0fd08f7363b7aa2e358f1413fd76fe2632ca76be758ad2983cdcf53390c",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::差分に含まれない文書へのリンクはlink_baseとリポジトリ相対パスをつなぐ:FR-119": {
+      "from": "sha256:9d11c6b9dbc90457e44dfd1d3ae93096e058d3a9e4f56dbac28811ffa6c58ddd",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::差分に含まれる文書へのリンクはアンカーになりフラグメントは同じ側の見出しid:FR-119": {
+      "from": "sha256:43908c16cecd07e570359e29620859e3b382ce78a4ad6a4e836ba60bb1bf4ef7",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::文字の強調はテキストの内側だけでタグの外に要素を作らない:FR-117": {
+      "from": "sha256:8124b98712f2991de115910911c856c6d25d24cd3bcc129a81b2ad102977867f",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::文字の強調は変更前をddと変更後をdaのspanで囲む:FR-117": {
+      "from": "sha256:de6d881004668a3865a17636a144f2434740f775fc63215ac0ee56e91ae3e03c",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::文書でないファイルだけの変更は対象にならない:FR-110": {
+      "from": "sha256:8d0603e95dc4c3296b01b2e0d0fdae2cfb052ad9410ac17ddfe2512b6df13f1d",
+      "to": "sha256:cf76f0fd08f7363b7aa2e358f1413fd76fe2632ca76be758ad2983cdcf53390c",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::文書の枠はアンカー付きのdetailsでid_タイトル_パスを持つ:FR-116": {
+      "from": "sha256:5d427e6f0d5569f1d94bca26cd03d8ea0747d0cd70bf5f29ecbdeccb92440bdb",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::既存の取り消し線は文字の強調と区別される:FR-117": {
+      "from": "sha256:af36e2a78595ca767142287f45636b82f055c120ac2f9cd679428babd672ae0b",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::未コミットの変更が変更後に含まれる:FR-108": {
+      "from": "sha256:ab2e0dc8d591da1806d493ee62b074722efdf034df7510356aa1d8215a626d8b",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::未公開リンクや未公開画像の警告は出ない:FR-114": {
+      "from": "sha256:fe50c219639048a8646a5c8df49836c4923e059200a076c3d0cb6852fc0f05c6",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::未変更の見出しとページ内リンクは左右で同じブロックになる:FR-117": {
+      "from": "sha256:adc6fe32b0323129baa5f5197ee8c789774e5f7d6050d738c681bc2d95e86699",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::未追跡のファイルが変更後に含まれる:FR-108": {
+      "from": "sha256:e701f725c96203c488a3eae345654bcec77473d141a1b2b7ad755f8a8023ca82",
+      "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::本文だけの変更は対象になる:FR-111": {
+      "from": "sha256:3302700e5c4cb9accd15d55266be6ffefe6ff3aa1ff11e96778bdc9de489a3e8",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::条件を満たす画像はdata_uriで埋め込まれ参照されない画像は埋め込まれない:FR-120": {
+      "from": "sha256:e1073df5272d2fc91b088d9e11c117d48dd24ec8eb2ff708ed67e3898a4fde5a",
+      "to": "sha256:4d6d1a984b99af5a605f75785f879174fd789d600cc8bfdc42d374cbfd045149",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::状態アイコンは変更_追加_削除_移動の4種類で件数がヘッダに出る:FR-115": {
+      "from": "sha256:9bc33ea20f94d8f0771c0bf0bfb2926be00f5c92afe9634ef119d24e88e5bc7b",
+      "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::生htmlブロックの文字の変更も強調される:FR-117": {
+      "from": "sha256:307cf5e93d2e9dd50a5b666a89801006606a0150d70f60673f7afc61623d7508",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::生のhtmlは文字のまま表示されコメントは出力されない:FR-114": {
+      "from": "sha256:4e31bfc9643474dfcc8a1dd3b901bd9beaa20dd0a47a380c88291ba8dc014f5f",
+      "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::画像だけのブロックの参照先の変更は左右の対になる:FR-117": {
+      "from": "sha256:e619f5a1610712c703a1328a6cfe399535d5011c21910326bcb18c1fe696540a",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::画像だけのブロックの差し替えはrow_img:FR-116": {
+      "from": "sha256:8e72c2c14bb4cefe51acdd8467b53f784e2582175d5d4a6679ac6f3162b56da5",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::画像の参照先が違う画像だけのブロックも左右の対になる:FR-120": {
+      "from": "sha256:42f89bb8f4bba27ed65e7b050a399a2fc9443cbb6b991b9a267d2ce48e249acf",
+      "to": "sha256:4d6d1a984b99af5a605f75785f879174fd789d600cc8bfdc42d374cbfd045149",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::畳んだ範囲の見出しは最後の見出しで見出しが無ければ直近の前の見出し:FR-118": {
+      "from": "sha256:46ba99b6a9c87c6ed6c77b556a0068cceccabd3fef86a88e5513f1b7bbb2fcc3",
+      "to": "sha256:87bb78c7e3b4c3a23ddc71d87019d4ae7f54aa90baf583f879a60fe5f62bc7ea",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::移動しただけの文書の変更量バーはすべて灰色:FR-116": {
+      "from": "sha256:f8329c993ddd790cca4985c2fc5185528026ac262aa2d6ecdb3c495e50c30055",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::移動しただけの文書は内容の変更なしの1行だけで折り畳みも行も出ない:FR-116": {
+      "from": "sha256:e265e6fda180d0b837460fb25ecfdb2407e7dc735448568ecd67a530f5cccc1f",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::移動しただけの文書へのリンクはフラグメント付きでも枠のアンカーになる:FR-119": {
+      "from": "sha256:dcbaf42d76f2cb5f90df67041bd88f928ceef228e2fa6bb4e50a094f9e646e29",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::移動のみの文書と追加された文書には折り畳みを出さない:FR-118": {
+      "from": "sha256:77dd8285df30a323545717400f1c17bd302b9751e190239c1192c24b438d1642",
+      "to": "sha256:87bb78c7e3b4c3a23ddc71d87019d4ae7f54aa90baf583f879a60fe5f62bc7ea",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::移動のみの文書は画像を埋め込まず変更量バーはすべて灰色:FR-116": {
+      "from": "sha256:18091658826be09fd152c4bf4f16e290a9b68fb14f42e8c650e9f1b81ead12b2",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::索引の根の外にあるreqのidを消してもエラーになる:FR-112": {
+      "from": "sha256:3897cbbb18a3269bcdc981cbfd62e465c7694500c054c3cdf0515009b73a860d",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::索引ページはid検査の対象にならない:FR-113": {
+      "from": "sha256:6af9faf36c3c23829c659967b750a1073255a4ebd05fca56a69d88d62eb5c9f4",
+      "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::脚注のidは文書間で衝突しない:FR-117": {
+      "from": "sha256:cb83b21a83c7d8de8e419415180b7b5e5917ae522c4f24b3885ecbf7ee1d52ed",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::脚注はラベルで表示され接頭辞付きidを持ち左右がそれぞれ自分の定義を指す:FR-117": {
+      "from": "sha256:e400468121cdf237e6e0445c92c6de22326bc138a2e1fb1c03918781c79095c7",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::表示が同じでソースだけ変わった移動文書は通常の枠で畳まれ見出しidへのリンクが有効:FR-116": {
+      "from": "sha256:64054ecc456cd35c87e25b4be844e233478b6ed5d5d875b92467a60a1cd259eb",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::見出しidには文書と側を表す接頭辞が付く:FR-119": {
+      "from": "sha256:512384341e04f94ab6e94420dd8cf976de1d9a4fc768603eb9a0fba9a6c8dddb",
+      "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::追加された文書は1列で出し削除された文書も1列で出す:FR-116": {
+      "from": "sha256:553079b651497a9f5efd3d7bf14ff44633505bc91b6b91e7717dfa061b747f1d",
+      "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::追加された索引ページは差分の対象になる:FR-113": {
+      "from": "sha256:b4888302bdf4173d2c691727b420afc41d3bfab18e7bb1b08241c4f9f4989620",
+      "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::追加と削除と移動は対象になり変更の無い文書は含まれない:FR-111": {
+      "from": "sha256:8e28c94e020ce23a7c9f723527973369c5e02630ddcb2c5eecdd83a5e1cc3533",
+      "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::重複は差分の対象でなくてもexit_1:FR-112": {
+      "from": "sha256:f7bd441ad8e16e80392841dc3c16b20eacf101f2275fe6655639453b0c836923",
+      "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
+    },
+    "test-req:tests/cli_site_diff::開始番号付きの入れ子リストは変わった項目だけがrow_modになり番号が保たれる:FR-117": {
+      "from": "sha256:2f0bb03593c0335057687e0a89f77eab8b07b80979f8aa4532da06705ed44f2b",
+      "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
+      "by": "human",
+      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
+      "at": "2026-10-13T02:13:08Z"
     }
   }
 }

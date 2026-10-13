@@ -34,8 +34,18 @@ enum Command {
     Index,
     /// Write a static HTML site for reading the documents.
     Site {
-        #[arg(long, default_value = "_site")]
-        out: String,
+        /// Output path (default `_site`, or `_site-diff.html` with --diff).
+        #[arg(long)]
+        out: Option<String>,
+        /// Write a single-page HTML diff against the merge-base.
+        #[arg(long)]
+        diff: bool,
+        #[arg(long, requires = "diff")]
+        base: Option<String>,
+        #[arg(long, requires = "diff")]
+        link_base: Option<String>,
+        #[arg(long, requires = "diff")]
+        head_label: Option<String>,
     },
     /// Record the current state of edges into the lock.
     Reconcile {
@@ -66,7 +76,24 @@ fn main() {
             format,
         } => run_check(gate, diff, base, format),
         Command::Index => run_index(),
-        Command::Site { out } => run_site(out),
+        Command::Site {
+            out,
+            diff,
+            base,
+            link_base,
+            head_label,
+        } => {
+            if diff {
+                run_site_diff(miwa::site_diff::DiffOptions {
+                    base_ref: base,
+                    out,
+                    link_base,
+                    head_label,
+                })
+            } else {
+                run_site(out.unwrap_or_else(|| "_site".to_string()))
+            }
+        }
         Command::Reconcile { edge, all, reason } => run_reconcile(edge, all, reason),
         Command::Judge {
             edge,
@@ -201,6 +228,22 @@ fn run_site(out: String) {
             }
             std::process::exit(0)
         }
+        Err(e) => {
+            eprintln!("{e}");
+            std::process::exit(1);
+        }
+    }
+}
+
+fn run_site_diff(opts: miwa::site_diff::DiffOptions) {
+    let result = std::env::current_dir()
+        .map_err(anyhow::Error::from)
+        .and_then(|root| {
+            let config = load_config(&root)?;
+            miwa::site_diff::run(&root, &config, &opts)
+        });
+    match result {
+        Ok(()) => std::process::exit(0),
         Err(e) => {
             eprintln!("{e}");
             std::process::exit(1);
