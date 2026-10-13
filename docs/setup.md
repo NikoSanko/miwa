@@ -39,6 +39,11 @@ miwa init
 - 非 ASCII 文字（漢字・カタカナ・ハングルなど）を含む行では、構文エラーの検知が緩くなることがあります。ただし、有効なコードが `invalid` になる方向には緩みません。
 - メンバーを1つでも持つ1行の class / object / interface / companion object 本体（`class A { fun x() {} }`、`object O { const val X = 1 }` など）は、構文エラーになります。複数行に分ければ問題ありません。
 - 注釈を2つ以上付けた、supertype のないクラスの本体に、`@Nested inner class` のように注釈付きの inner class があると、構文解析器の不具合でクラス全体が認識できなくなる場合があります。miwa は[このパターンの回避](../req/kotlin-non-ascii-identifiers.md)を自動で行います。回避できない場合は、構文エラー（`invalid`）として扱います。その場合は、supertype（`: Any()` など）を付けるか、クラスの注釈を1つにしてください。
+- 直前にトップレベルの宣言とコメントがあり、位置引数付きの注釈（`@Suppress("LongParameterList")` など）が付いた宣言では、構文解析器の不具合で注釈が宣言から切り離されて認識されます。miwa は[この注釈を無視して抽出](../req/kotlin-non-ascii-identifiers.md)するので、書き方を変える必要はありません。
+
+TypeScript にも、次の制約があります。
+
+- `f<typeof import('x')>()` のように、呼び出しの型引数に `typeof import(...)` を書いたテストファイルは、構文解析器が解析できず `invalid` になります。ファイルの先頭で `import type * as M from 'x'` と書き、`f<typeof M>()` に書き換えると解析できます。
 
 Java / Kotlin では、Gradle / Maven のモジュール直下であれば `tests: ["src/test"]` のように指定します。monorepo ではモジュールのパスを先頭に付けて、`tests: ["packages/api/src/test"]` のようにします。生成コードの `src/generated` は `tests` に含めないでください。ビルド出力の `build` などは、`exclude: ["build"]` のように指定して探索から除外します。
 

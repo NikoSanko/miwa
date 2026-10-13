@@ -338,25 +338,52 @@ fn is_valid_test_name(name: &str) -> bool {
             .any(|c| c.is_control() || matches!(c, '\u{85}' | '\u{2028}' | '\u{2029}'))
 }
 
-/// Extracts every `[marker]` occurrence, where `marker` is one or more
-/// `[A-Za-z0-9._-]` characters.
+/// Strips the comment syntax once per kind and returns the body together with
+/// whether it is a block comment body. Line comments lose `//` and at most one
+/// more `/` (`///`); block comments lose `/*`, at most one more `*` (`/**`) and
+/// the closing `*/`. Any further `/` or `*` stays in the body.
+fn comment_body(text: &str) -> (&str, bool) {
+    if let Some(rest) = text.strip_prefix("//") {
+        return (rest.strip_prefix('/').unwrap_or(rest), false);
+    }
+    match text.strip_prefix("/*") {
+        Some(rest) => {
+            let rest = rest.strip_suffix("*/").unwrap_or(rest);
+            (rest.strip_prefix('*').unwrap_or(rest), true)
+        }
+        None => (text, false),
+    }
+}
+
+/// Returns the markers of one comment. The comment is a marker comment only
+/// when its body (comment syntax and surrounding whitespace removed) consists
+/// solely of whitespace-separated `[marker]` tokens, where `marker` is one or
+/// more `[A-Za-z0-9._-]` characters. Any other text makes it a plain comment
+/// with no markers. FR-121.
 fn extract_markers(text: &str) -> Vec<String> {
+    let (body, is_block) = comment_body(text);
     let mut markers = Vec::new();
-    let mut rest = text;
-    while let Some(start) = rest.find('[') {
-        let after_open = &rest[start + 1..];
-        let Some(end) = after_open.find(']') else {
-            break;
+    for (i, line) in body.lines().enumerate() {
+        // Continuation lines of a block comment may start with one `*`.
+        let line = match (is_block && i > 0, line.trim_start().strip_prefix('*')) {
+            (true, Some(rest)) => rest,
+            _ => line,
         };
-        let inner = &after_open[..end];
-        if !inner.is_empty()
-            && inner
-                .chars()
-                .all(|c| c.is_ascii_alphanumeric() || c == '.' || c == '_' || c == '-')
-        {
+        for token in line.split_whitespace() {
+            let Some(inner) = token
+                .strip_prefix('[')
+                .and_then(|t| t.strip_suffix(']'))
+                .filter(|inner| {
+                    !inner.is_empty()
+                        && inner
+                            .chars()
+                            .all(|c| c.is_ascii_alphanumeric() || c == '.' || c == '_' || c == '-')
+                })
+            else {
+                return Vec::new();
+            };
             markers.push(inner.to_string());
         }
-        rest = &after_open[end + 1..];
     }
     markers
 }
@@ -969,12 +996,14 @@ fn kotlin_extract(
     if tree.root_node().has_error() {
         return Err(parse_err());
     }
-    // Grammar bug: a class with 2+ annotations, no supertype and an
-    // `@Annotation inner class` in its body parses as one
-    // `annotated_expression` with no error. The class annotations are not
-    // needed for extraction, so blank them out and parse again.
+    // Grammar bugs that leave an `annotated_expression` at file level with no
+    // error: (1) a class with 2+ annotations, no supertype and an
+    // `@Annotation inner class` in its body; (2) an annotation with
+    // positional arguments (`@S("L")`) after a top-level declaration and a
+    // comment. The annotations are not needed for extraction, so blank them
+    // out and parse again.
     if retry_annotated_expression && kotlin_has_annotated_expression(tree.root_node()) {
-        let ranges = kotlin_annotated_expression_annotations(tree.root_node());
+        let ranges = kotlin_annotated_expression_ranges(tree.root_node());
         drop(tree);
         shadow.blank_ranges(&ranges);
         tree = parser.parse(&shadow.shadow, None).ok_or_else(parse_err)?;
@@ -1006,7 +1035,15 @@ fn kotlin_has_annotated_expression(root: tree_sitter::Node) -> bool {
     found
 }
 
-fn kotlin_annotated_expression_annotations(root: tree_sitter::Node) -> Vec<(usize, usize)> {
+/// Byte ranges to blank for each file-level `annotated_expression`. With
+/// positional arguments (`@S("L")`) the grammar splits the annotation into an
+/// `annotation` (`@S`) and a `parenthesized_expression` (`("L")`); only the
+/// latter is blanked, which leaves a plain annotation that parses as part of
+/// the declaration's modifiers (so marker adjacency still sees its first
+/// row). Otherwise (the class case) the `annotation` children are blanked. The
+/// expression as a whole is never blanked: in the class case it spans the
+/// entire class body.
+fn kotlin_annotated_expression_ranges(root: tree_sitter::Node) -> Vec<(usize, usize)> {
     let mut ranges = Vec::new();
     let mut cursor = root.walk();
     for expr in root.children(&mut cursor) {
@@ -1014,11 +1051,21 @@ fn kotlin_annotated_expression_annotations(root: tree_sitter::Node) -> Vec<(usiz
             continue;
         }
         let mut c2 = expr.walk();
-        for child in expr.children(&mut c2) {
-            if child.kind() == "annotation" {
-                ranges.push((child.start_byte(), child.end_byte()));
-            }
-        }
+        let children: Vec<tree_sitter::Node> = expr.children(&mut c2).collect();
+        let args: Vec<_> = children
+            .windows(2)
+            .filter(|w| w[0].kind() == "annotation" && w[1].kind() == "parenthesized_expression")
+            .map(|w| &w[1])
+            .collect();
+        let picked: Vec<_> = if args.is_empty() {
+            children
+                .iter()
+                .filter(|c| c.kind() == "annotation")
+                .collect()
+        } else {
+            args
+        };
+        ranges.extend(picked.iter().map(|n| (n.start_byte(), n.end_byte())));
     }
     ranges
 }
@@ -2642,9 +2689,9 @@ if (cond) {
 
     // [FR-016]
     #[test]
-    fn rustのスラッシュ4つのコメントは通常コメントとしてマーカーになる() {
+    fn rustのスラッシュ4つのコメントは通常コメントだが余分な記号が本文に残りマーカーにならない() {
         let tests = rs("//// [FR-001]\n#[test]\nfn t() {}\n", &[]);
-        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
     }
 
     // [FR-016]
@@ -2750,9 +2797,9 @@ if (cond) {
 
     // [FR-016]
     #[test]
-    fn rustのスラッシュ星3つのコメントは通常コメントとしてマーカーになる() {
+    fn rustのスラッシュ星3つのコメントは通常コメントだが余分な記号が本文に残りマーカーにならない() {
         let tests = rs("/*** [FR-001] */\n#[test]\nfn t() {}\n", &[]);
-        assert_eq!(find(&tests, "t").markers, vec!["FR-001".to_string()]);
+        assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
     }
 
     // [FR-016]
@@ -2760,5 +2807,166 @@ if (cond) {
     fn rustの外側ブロックdocコメントはマーカーにならない() {
         let tests = rs("/** [FR-001] */\n#[test]\nfn t() {}\n", &[]);
         assert_eq!(find(&tests, "t").markers, Vec::<String>::new());
+    }
+
+    // ---- マーカーの厳格化（FR-121） ----
+
+    /// (コメント, 期待するマーカー)。コメントの直後に test が続く。
+    fn marker_cases() -> Vec<(&'static str, Vec<&'static str>)> {
+        vec![
+            ("// [FR-001]", vec!["FR-001"]),
+            ("//   [FR-001]   ", vec!["FR-001"]),
+            ("// [FR-001] [FR-002]", vec!["FR-001", "FR-002"]),
+            ("// [FR-001]\n// [FR-002]", vec!["FR-001", "FR-002"]),
+            ("//// [FR-001]", vec![]),
+            ("/*** [FR-001] */", vec![]),
+            ("// [FR-001] 説明", vec![]),
+            ("// 説明 [FR-001]", vec![]),
+            ("// 説明 [0] 説明", vec![]),
+            ("// [FR-001] [正常系]", vec![]),
+            ("// [FR-001][FR-002]", vec![]),
+            ("//", vec![]),
+            ("/* [FR-001] */", vec!["FR-001"]),
+            ("/*\n * [FR-001]\n */", vec!["FR-001"]),
+            (
+                "/*\n * [FR-001]\n * [FR-002]\n */",
+                vec!["FR-001", "FR-002"],
+            ),
+            ("/* [FR-001] [FR-002] */", vec!["FR-001", "FR-002"]),
+            ("/*\n * [FR-001] 説明\n */", vec![]),
+            ("/* 説明 [0] */", vec![]),
+        ]
+    }
+
+    fn assert_marker_cases(markers_of: impl Fn(&str) -> Vec<String>) {
+        for (comment, expected) in marker_cases() {
+            assert_eq!(markers_of(comment), expected, "comment: {comment:?}");
+        }
+    }
+
+    // [FR-121]
+    #[test]
+    fn goはコメントが単一トークンだけのときマーカーにする() {
+        assert_marker_cases(|c| {
+            let source = format!("{c}\nfunc TestA(t *testing.T) {{}}\n");
+            find(&extract_go_tests("a/x_test.go", &source).unwrap(), "TestA")
+                .markers
+                .clone()
+        });
+    }
+
+    // [FR-121]
+    #[test]
+    fn rustはコメントが単一トークンだけのときマーカーにする() {
+        assert_marker_cases(|c| {
+            rs(&format!("{c}\n#[test]\nfn t() {{}}\n"), &[])[0]
+                .markers
+                .clone()
+        });
+    }
+
+    // [FR-121]
+    #[test]
+    fn csharpはコメントが単一トークンだけのときマーカーにする() {
+        assert_marker_cases(|c| {
+            cs(&cs_wrap(&format!("{c}\n[Fact]\npublic void T() {{ }}")))[0]
+                .markers
+                .clone()
+        });
+    }
+
+    // [FR-121]
+    #[test]
+    fn javaはコメントが単一トークンだけのときマーカーにする() {
+        assert_marker_cases(|c| {
+            jv(&jv_wrap(&format!("{c}\n@Test\nvoid t() {{ }}")))[0]
+                .markers
+                .clone()
+        });
+    }
+
+    // [FR-121]
+    #[test]
+    fn kotlinはコメントが単一トークンだけのときマーカーにする() {
+        assert_marker_cases(|c| {
+            kt(&kt_wrap(&format!("{c}\n@Test\nfun t() {{ }}")))[0]
+                .markers
+                .clone()
+        });
+    }
+
+    // [FR-121]
+    #[test]
+    fn typescriptはコメントが単一トークンだけのときマーカーにする() {
+        assert_marker_cases(|c| {
+            ts(&format!("{c}\nit(\"t\", () => {{}});\n"))[0]
+                .markers
+                .clone()
+        });
+    }
+
+    // [FR-121]
+    #[test]
+    fn csharpの三連スラッシュコメントも単一トークンだけならマーカーにする() {
+        let tests = cs(&cs_wrap("/// [FR-001]\n[Fact]\npublic void T() { }"));
+        assert_eq!(tests[0].markers, vec!["FR-001".to_string()]);
+        let tests = cs(&cs_wrap("/// [FR-001] 説明\n[Fact]\npublic void T() { }"));
+        assert!(tests[0].markers.is_empty());
+    }
+
+    // ---- Kotlin の位置引数付き注釈（FR-063） ----
+
+    const KOTLIN_KDOC_FIXTURE: &str = include_str!("../fixtures/kotlin_kdoc_annotation.kt");
+    const KOTLIN_SUPPORT_FIXTURE: &str = include_str!("../fixtures/kotlin_annotation_support.kt");
+
+    // [FR-063]
+    #[test]
+    fn kotlinは直前の宣言とコメントの後の位置引数付き注釈でも解析できる() {
+        let tests = kt("fun g() {}\n// a\n@S(\"L\")\nfun f() {}\n");
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは非asciiのkdocと位置引数付き注釈の組み合わせでも解析できる() {
+        let tests = kt(KOTLIN_KDOC_FIXTURE);
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは位置引数付き注釈を持つサポートコードのファイルを解析できる() {
+        let tests = kt(KOTLIN_SUPPORT_FIXTURE);
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは位置引数付き注釈の後ろにtestが続いてもtestを取る() {
+        let tests = kt("fun g(){}\n// a\n@DisplayName(\"x\")\n@Test\nfun f(){}\n");
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].name, "f");
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは位置引数付き注釈の後ろのtestのマーカーも取る() {
+        let tests = kt("fun g(){}\n// a\n// [FR-001]\n@DisplayName(\"x\")\n@Test\nfun f(){}\n");
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-014]
+    #[test]
+    fn kotlinは位置引数付き注釈のある本当の構文エラーを引き続きエラーにする() {
+        let source = "fun g() {}\n// a\n@S(\"L\")\nfun f( {\n";
+        assert!(extract_kotlin_tests("tests/A.kt", source).is_err());
+    }
+
+    // [FR-063]
+    #[test]
+    fn kotlinは位置引数付き注釈が複数あってもtestを取る() {
+        let tests = kt("fun g(){}\n// a\n@A(\"x\")\n@B(\"y\")\n@Test\nfun f(){}\n");
+        assert_eq!(tests.len(), 1, "{tests:?}");
     }
 }

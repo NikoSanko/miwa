@@ -354,3 +354,178 @@ fn excludeしたディレクトリ配下のtestはfindingに出ない() {
         "build/ must be excluded: {findings:?}"
     );
 }
+
+/// マーカーの厳格化（FR-121）。コメントの直後に test が続くソースを `build` で
+/// 組み立て、検知結果を確かめる。
+fn assert_exact_token_findings(test_path: &str, build: impl Fn(&str) -> String) {
+    let findings_for = |comment: &str| {
+        let dir = tempfile::tempdir().unwrap();
+        write_lang_fixture(dir.path(), test_path, &build(comment));
+        check_json(dir.path())
+    };
+    let has_edge = |findings: &[serde_json::Value]| {
+        findings.iter().any(|f| {
+            f["kind"] == "New"
+                && f["target"]
+                    .as_str()
+                    .is_some_and(|t| t.starts_with("test-req:") && t.ends_with(":FR-001"))
+        })
+    };
+    let has_invalid =
+        |findings: &[serde_json::Value]| findings.iter().any(|f| f["kind"] == "Invalid");
+
+    // 単一トークンはマーカー
+    let findings = findings_for("// [FR-001]");
+    assert!(
+        has_edge(&findings) && !has_invalid(&findings),
+        "{findings:?}"
+    );
+    // ブロックコメント内の単一トークンもマーカー
+    let findings = findings_for("/* [FR-001] */");
+    assert!(
+        has_edge(&findings) && !has_invalid(&findings),
+        "{findings:?}"
+    );
+    // 1 コメントに 2 トークンは invalid
+    let findings = findings_for("// [FR-001] [FR-002]");
+    assert!(has_invalid(&findings), "{findings:?}");
+    // 2 行のコメントに 1 トークンずつでも invalid
+    let findings = findings_for("// [FR-001]\n// [FR-002]");
+    assert!(has_invalid(&findings), "{findings:?}");
+    // 説明文は、角括弧を含んでいてもマーカーにならない
+    for comment in ["// [FR-001] 説明", "// 説明 [0] 説明"] {
+        let findings = findings_for(comment);
+        assert!(
+            !has_edge(&findings) && !has_invalid(&findings),
+            "{comment}: {findings:?}"
+        );
+    }
+}
+
+// [FR-121]
+#[test]
+fn goはコメントが単一トークンだけのときマーカーにする() {
+    assert_exact_token_findings("tests/a_test.go", |c| {
+        format!("package a\n\n{c}\nfunc TestA(t *testing.T) {{}}\n")
+    });
+}
+
+// [FR-121]
+#[test]
+fn rustはコメントが単一トークンだけのときマーカーにする() {
+    assert_exact_token_findings("tests/a.rs", |c| format!("{c}\n#[test]\nfn t() {{}}\n"));
+}
+
+// [FR-121]
+#[test]
+fn csharpはコメントが単一トークンだけのときマーカーにする() {
+    assert_exact_token_findings("tests/AuthTests.cs", |c| {
+        format!("public class AuthTests\n{{\n{c}\n[Fact]\npublic void T() {{ }}\n}}\n")
+    });
+}
+
+// [FR-121]
+#[test]
+fn javaはコメントが単一トークンだけのときマーカーにする() {
+    assert_exact_token_findings("tests/AuthTests.java", |c| {
+        format!("public class AuthTests {{\n{c}\n@Test\nvoid t() {{ }}\n}}\n")
+    });
+}
+
+// [FR-121]
+#[test]
+fn kotlinはコメントが単一トークンだけのときマーカーにする() {
+    assert_exact_token_findings("tests/AuthTest.kt", |c| {
+        format!("class AuthTest {{\n{c}\n@Test\nfun t() {{ }}\n}}\n")
+    });
+}
+
+// [FR-121]
+#[test]
+fn typescriptはコメントが単一トークンだけのときマーカーにする() {
+    assert_exact_token_findings("tests/a.test.ts", |c| {
+        format!("{c}\nit(\"t\", () => {{}});\n")
+    });
+}
+
+fn assert_kotlin_file_parses(source: &str) {
+    let dir = tempfile::tempdir().unwrap();
+    write_lang_fixture(dir.path(), "tests/Support.kt", source);
+    let findings = check_json(dir.path());
+    assert!(
+        !findings.iter().any(|f| f["kind"] == "Invalid"),
+        "{findings:?}"
+    );
+}
+
+// [FR-063]
+#[test]
+fn kotlinは位置引数付き注釈の最小再現を解析できる() {
+    assert_kotlin_file_parses("fun g() {}\n// a\n@S(\"L\")\nfun f() {}\n");
+}
+
+// [FR-063]
+#[test]
+fn kotlinは非asciiのkdoc付き位置引数付き注釈を解析できる() {
+    assert_kotlin_file_parses(include_str!("../fixtures/kotlin_kdoc_annotation.kt"));
+}
+
+// [FR-063]
+#[test]
+fn kotlinは位置引数付き注釈を持つサポートコードを解析できる() {
+    assert_kotlin_file_parses(include_str!("../fixtures/kotlin_annotation_support.kt"));
+}
+
+// [FR-063]
+#[test]
+fn kotlinは位置引数付き注釈の後ろのtestを検知する() {
+    let dir = tempfile::tempdir().unwrap();
+    write_lang_fixture(
+        dir.path(),
+        "tests/Support.kt",
+        "fun g(){}\n// a\n// [FR-001]\n@DisplayName(\"x\")\n@Test\nfun f(){}\n",
+    );
+    let findings = check_json(dir.path());
+    assert!(
+        findings.iter().any(|f| f["kind"] == "New"
+            && f["target"]
+                .as_str()
+                .is_some_and(|t| t.starts_with("test-req:") && t.ends_with(":f:FR-001"))),
+        "{findings:?}"
+    );
+}
+
+// [FR-063]
+#[test]
+fn kotlinはクラスの複数注釈とnested_inner_classを引き続き検知する() {
+    let dir = tempfile::tempdir().unwrap();
+    write_lang_fixture(
+        dir.path(),
+        "tests/P.kt",
+        "@A\n@C\nclass P {\n    @Nested\n    inner class X {\n        // [FR-001]\n        @Test\n        fun t() { }\n    }\n}\n",
+    );
+    let findings = check_json(dir.path());
+    assert!(
+        findings
+            .iter()
+            .any(|f| f["kind"] == "New"
+                && f["target"].as_str().is_some_and(|t| t.ends_with(":FR-001"))),
+        "{findings:?}"
+    );
+}
+
+// [FR-014]
+#[test]
+fn kotlinの本当の構文エラーは位置引数付き注釈があってもinvalidになる() {
+    let dir = tempfile::tempdir().unwrap();
+    write_lang_fixture(
+        dir.path(),
+        "tests/Support.kt",
+        "fun g() {}\n// a\n@S(\"L\")\nfun f( {\n",
+    );
+    let findings = check_json(dir.path());
+    assert!(
+        findings.iter().any(|f| f["kind"] == "Invalid"),
+        "{findings:?}"
+    );
+}
