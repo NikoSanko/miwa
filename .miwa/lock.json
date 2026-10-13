@@ -2,10 +2,10 @@
   "edges": {
     "desc:doc:DOC-CHECK": {
       "from": "sha256:2536d2ff59e09fe78450e76017752f3620b2d212f91498f6b8ebf3ec8972fc2c",
-      "to": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "to": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "desc:doc:DOC-INDEX": {
       "from": "sha256:c900c476f334244260611eaaf2e4105d847f879e9e64eb3c9018a6a5a024ed15",
@@ -44,157 +44,157 @@
     },
     "desc:doc:DOC-SITE": {
       "from": "sha256:f5ed33afb5f225d58a30acdb88ea09c765ac0c62048b97a41f7fd7b408fd432f",
-      "to": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "to": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:028d29b3058a37abd55defb0d2e8dd9a501a78ffa1532fa2abf7a1aa97c8d7d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:66de0b9f75fe32a642231fd08667084ff0b01106c707531607e7c303e757a7f7",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:24cbacb53ef98460fdf6ca4e748c6ef5493f0f516969375d2ed21aa0a2284960",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:3bc18860230b32f454bc7b793a778dc134f6f72180735133185f50217abe9ccc",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:477e9cd918f07a68d06335b0e1bde0fcb46907b832676ca63e8035d28f4330f7",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:b65372b34274f2d890b9e39e7d9ca088b5d1de2b77ebf2f65c67e7cf377ff230",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:8aae14a46155d4b45c333551c6660a1ba828f8b0c51b408c72319822bcaa7d69",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-035": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:0de78c905afe98c238696972f277eac8dd4218a905f094bf62f11faac77dde50",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:424f2a0edc1b588641919d0410a462d9f96ce2ca07240fe3bb5963de22bc8377",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-073": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:a9e3aa324191d738ae7ecc3b98884859301e4acf908d55e8afced3666bd5346d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-074": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:5ddb812bc60108b73a687669d88cbe2c74ea7f70fd208da73983e0f91164bd7b",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-075": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:661dbe11660a72e9200cadce7e28066436341d59ade34e6d14e0500af63f62b8",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-076": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:4aee539257913d58ce14272528db4d4e94df06a76267148bfcc2ab2102ba404e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-077": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:5c3b34f37ff94ad60c63604243762641ae73bab8736710dd056b48124f3af9d3",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-078": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:dedd6acb2719b1a318ed1a59b70ad6471dc695aae869b3f673e6c851c2ed5cb2",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-079": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:f41c95899ab96f9b85764eb0eba529ea42135314946cf36999b59e3d3757060e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-080": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:dfbe50181925169c4fe2df5c63b3a380ea99c15c7f89da58f5f444abcf79fdf8",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-088": {
-      "from": "sha256:8257910e79ae74d7bffea7613186add65cd39e41f6814660c6f79d743246be45",
+      "from": "sha256:47a6ac05ef82116db9228bc9b7aa0760536656c39310f5e6b3429fa460a212f6",
       "to": "sha256:55ff3a5a2c084ff1f69598e54afdf4f664c682ad935969ae72b387b5ef22e37e",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-INDEX:FR-067": {
       "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
@@ -778,235 +778,235 @@
       "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SITE:FR-071": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:0ccc0a872993c859c4e7e8984007fac62694cf5f9efc7e3eccbc1b93d05091ae",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-089": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:d4022c1db63f2d6b53f929968390a016770630b0a793ba1ad663a6f58a67694f",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-090": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:09e1ff4e009d4c7c942f9f6afeaa335440400fcc926ca5a29866d3001e490061",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-091": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:a1c0726b0bb55d6676640cb0d4078a8b31cf3eff7f35075ee3d45c33c9e1471f",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-092": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:78e14ed69dd36285c74f30e467ae245297f407cdf7b667f37306e342ab018462",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-093": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:c816cdff2dc422c1fb4a3e7ec2fb3edaede08ca2d6a1d0e1d7ead54cbf193d56",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-094": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:1de719d3009f1fc09cb52b3f1e070a613371a7066337cb6637234a9660e8db4c",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-095": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:2061b9f29a68b3c82a669e52a2afc9ab43ccd5c209f850444fdf5effa932743e",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-096": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:4b3c313e93febec135afd5220e7a19a9a1a27d6014314e67c240fd2c1bbe6388",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-097": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:d78878d61c8329e6bb276d26f9f150330068c805cbaffdadd4f952260b4f4bf2",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-098": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:942988504c73194d15ddbe190712e25a3ddeaf3bba6d54879fb00a2dfea37a76",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-099": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:e694eaf1d4106c217db5ac05caf855618fb51f7b9096ba46e7a00d2514cb0e21",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-100": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:ddbfc4a1d647ba7067a0ad85ba7a50eb815b68a647f908bc5a078967984333b3",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-101": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:b5c6971f87ebf9c21088cc2b206af48f9ce10fc3a3e4b0fe443048aacb3a1724",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-102": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:a6eccb50f5d0aea5887c49371fec51487ec0ec66dc5730ff9fde5ba356363747",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-103": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:842a7f877ae491f75df01c41999023bf9fdbd4cf740430dde58e047debea66c3",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-104": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:8ddcdea4361037444ca75f5ce6f2647414123ca676a3165602170ac8551c24ca",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-105": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:b2ecd11491a63a26658b6281bc27259ebf006a418a0868107b96519724f4d184",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-106": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:7dc821408822a345c20f92ebaa7de0d88496941cc5db7ee2c34893caeb3681f4",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-107": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:b24f81db76223756567c4901403cb1c9be6546b49cb97262aec64be30c9b2783",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-108": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:f14f232a250429dde4a094b285cb86ae8f9fcae2d5bcbdf61af1a0847a763913",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-109": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:13416a2984eac0d19ed57f0644d5b909b322efb6262c11516e9a19d613571544",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-110": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:cf76f0fd08f7363b7aa2e358f1413fd76fe2632ca76be758ad2983cdcf53390c",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-111": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:f048918b6c81e735193df015ce0221f3ebc841707afd2ea8160157c97be4cdd8",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-112": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:489382a16dfaff0e7d3b6ad1e9eb73d1f9e9fb1dfb366d265940bf0c9345e6f8",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-113": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:72f61c031b111e20add38109d20eed5095e963fe4cb3010f1d034f91d93bbc1b",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-114": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:997f286393f36df8c893b17200309908afbfca80fa64dc322018794c416e9bf5",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-115": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:3cbbb762e05e63cb9da0dc64cd0daff1d529e2664ee7127e630777265f3e7ae9",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-116": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:5113b976d7e91db5d55d1dc22089bb8ea8c9b29c6e33e7816bd1f1689650ec09",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-117": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:4f935824e12328a34872891714ee4a1b450e7516ffc7fdaf8e9cb739d58249fe",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-118": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:87bb78c7e3b4c3a23ddc71d87019d4ae7f54aa90baf583f879a60fe5f62bc7ea",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-119": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:0d17a91452345ada9902c83e292e71b01591d8c82ee1c359ecf848691b3234f2",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-SITE:FR-120": {
-      "from": "sha256:51261570ab82d5c074bcd9692a1089acb6df4c48d3a11a18f6dc8deae515bd06",
+      "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
       "to": "sha256:4d6d1a984b99af5a605f75785f879174fd789d600cc8bfdc42d374cbfd045149",
       "by": "human",
-      "reason": "miwa site --diff の追加（#32）。docs/site.md への節の追加による既存エッジの drift は既存の要件の意味を変えない",
-      "at": "2026-10-13T02:13:08Z"
+      "reason": "インストール手順・CI 例を miwa-cli の配布に合わせた doc 本文の更新。req の変更は不要",
+      "at": "2026-10-13T08:33:30Z"
     },
     "test-req:src/check:tests:descしか持たないdocはorphanのままになる:FR-086": {
       "from": "sha256:592dfc2d353150950625cb0f4be5763e6ce8fa81426de9f6d7739139bdd8583d",
