@@ -2,7 +2,7 @@
 #
 # Usage:
 #   1. Copy this file to .github/workflows/miwa-check.yml in your repository.
-#   2. Replace the miwa-cli version below (0.5.0) with the version you use.
+#   2. Replace the miwa-cli version below (0.6.0) with the version you use.
 #      Update it when you move to a newer miwa-cli.
 #   3. Make `miwa check` a required status check if you want it to block merges.
 #
@@ -29,7 +29,7 @@ jobs:
       - name: Install miwa
         uses: taiki-e/install-action@1168f6810a3cb30a3514bf5756a3b7f0422c6df8 # v2.87.28
         with:
-          tool: miwa-cli@0.5.0
+          tool: miwa-cli@0.6.0
 
       - name: Check
         env:
