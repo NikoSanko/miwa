@@ -24,8 +24,8 @@ install-path = "CARGO_HOME"
 install-updater = false
 # Checksums to generate for each App
 checksum = "sha256"
-# Build and upload artifacts on pull requests too (to exercise every target)
-pr-run-mode = "upload"
+# On pull requests, only run `dist plan` (no release builds)
+pr-run-mode = "plan"
 # Custom jobs: verify before building, publish to crates.io, check installs after announce
 plan-jobs = ["./release-verify"]
 publish-jobs = ["./publish-crates"]
