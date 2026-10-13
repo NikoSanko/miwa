@@ -23,10 +23,10 @@
     },
     "desc:doc:DOC-MODEL": {
       "from": "sha256:ca3ad0836e1fbc85a3e65d4e8bc10d9691ea2831ffb66cace333b82b5d7ff85d",
-      "to": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "to": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "desc:doc:DOC-RECONCILE": {
       "from": "sha256:8ea0b733babc6ed9a59f29e77b2616da57ef145ff297974443a6590b095d2db8",
@@ -37,10 +37,10 @@
     },
     "desc:doc:DOC-SETUP": {
       "from": "sha256:bf2710c18a0162cec3ac53eaa2fc6ac366bf9fde06eae6fec0b919ef24434a5a",
-      "to": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "to": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "desc:doc:DOC-SITE": {
       "from": "sha256:f5ed33afb5f225d58a30acdb88ea09c765ac0c62048b97a41f7fd7b408fd432f",
@@ -379,270 +379,277 @@
       "at": "2026-10-08T03:24:12Z"
     },
     "doc-req:DOC-MODEL:FR-001": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:0cc68ec9e9fc4a2e6d4ebed84e1b6f37d1d5b2740f381c60192ec2798255fe72",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-002": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:0cfbd077b0856816b3aab1ff10193391ba0f40371741d96ec9b40a27109fe65a",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-003": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:8743ac5a7182cdd56ae43aaba93732713f621335f905ec77135f1872a7f3329b",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-004": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:8149d81ff328ee4c4aa112de97d338533d21671ca1cb9ff9e4155f0eda5878b9",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-005": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:bc5eee8f4e8f84a1c196570f151f58ab50434cdd75e07f842db1abdaf1d40424",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-006": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:6c6d0a228450b98b5997646b4e70961aa81ffe58d931a0f76d1adb487ec0cbab",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-007": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:6fb05b33fb5152935205a93764dcdc8425a4820ab68e73f2fe698b4345530d7c",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-008": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:ceef93bb0530bddcf07e2cdc816334d6468bec281b6e4803d870dc90af710f1a",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-009": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:727add672f485a6cd00f5f5155a0f36eb0535909887b9eaa4a1fb54d064dfe31",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-010": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:63e69d520353920273b6ec21da28174eb15b6547583d59e52f0281d00e0dfc53",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-011": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:0e9737a3d00e0bcd0424049b0f35e44ac311b479564fd4ea2740a5b71987ac22",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-012": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
-      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:dbb2ff03444ea4712947ca484a24f87bdf3dea331cd6ce938eef31d17c7866de",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-013": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:3e79ce6d5dc6b29e7fd949a8794dfe5f114dd1d902161886bf48ffa1f9ca4fdf",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-015": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:aef129400ebc01b35c417f837e72cbb5537cb5749a99f82bff359afa2114dca4",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-016": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "doc-req:DOC-MODEL:FR-017": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:0fc6d38e603b7285e62e6684aea110ea72fdc68299dff3b7d02de3d77fa3314d",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-023": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:19e2924a3e42be2c3df3dee01040f6ef820dac4786142f802c2c2be31849efa7",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-049": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:fb0093f337cac7c942a9d388b7aba4e4743a2d82a643fd85021251e816c05775",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-050": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
-      "to": "sha256:2b986f6a429ef077a911c310486aa5e671dc687cf001beaa06ab395d91237e75",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:7a1f6cf6d4b41da6d24b8a5fd0236c2248bc48c8cd916ee48a43b925487fb75f",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-051": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:823c22290d91669cb3e7fddbc0e96ab0aa00a65b5d7806ede897508ed2aab1ef",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-052": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:1bad13176724520b87f7e738ffb5212cb9301b6e14e94d37f172542463fe3367",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-053": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:a9be52f9a99f4594a1fbd925de57f51517a222ea9489c508a7c8a6ad91ab2a7f",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-054": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:5c7b8ab51d7f8d5c26ad7d8f6481384968eb3fb9e265202cc32cad1117cda38f",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-055": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
-      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:2873839aad144fa2f5c2686a67711fe3f6c8e6227aa4156ada88bdda213422cb",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-056": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:ce7e396045ae79148262d254258984c267c179e44d505d2aba3c5fd6ebdd0be0",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-057": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:424f2a0edc1b588641919d0410a462d9f96ce2ca07240fe3bb5963de22bc8377",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-058": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:88360898a559e901e7644707b93ecc3b87fb44ef1ee280e0b3ada5da619471a6",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-059": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:10418f3643adb5e4b906ab8a1029c578251b123afe4090bcc7c79f68537473e3",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-060": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-061": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:21de8a48ce1ea6aff1d9037692a744995abf55abbdb4dcc31578abf9f21e89f2",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-062": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:b491fca86f39572079fb61422782faccc3fe6d3816e6d6de90322521c7aff2f5",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-063": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-064": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-065": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:3b3a9585010d6d955ade4ff689ed58a8469e21c87c26c78c98f5029ae5fcccf1",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-067": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-071": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:0ccc0a872993c859c4e7e8984007fac62694cf5f9efc7e3eccbc1b93d05091ae",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-086": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:ab791bf1caa652df948b6dcc6b04f49af2a5f0a3b05be4cde89a122263b03c90",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-MODEL:FR-087": {
-      "from": "sha256:053c606c591d772c976180299a93999ca592fea0600a552b11212431a4cdfc42",
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
       "to": "sha256:fb6d7da1625119f595f0f269237b2b3547de46af7fa47573f53572cea5be10d1",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "doc-req:DOC-MODEL:FR-121": {
+      "from": "sha256:5a0510cf13a25372cef1d3eca94213905f30a2685793ac6341dd1820ccf21c1c",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "doc-req:DOC-RECONCILE:FR-021": {
       "from": "sha256:32250dbf740681b9b5bfa199c5141e1bcc187b6b85a725ed9a2f181071e52289",
@@ -715,67 +722,67 @@
       "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:33ac2f45bc2882c26998ebc4903304054fd034c31bdd9df9ded25bbf3166a486",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:efab34c17d0f5a4e35fd2e6a3646438bcaf0788ab0fce4986c8cc0aa7490fa17",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:88360898a559e901e7644707b93ecc3b87fb44ef1ee280e0b3ada5da619471a6",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-063": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-065": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:3b3a9585010d6d955ade4ff689ed58a8469e21c87c26c78c98f5029ae5fcccf1",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-066": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:3a17e75b94eb4ea4ad0ad367931cc37c02015e21783e2c0eb1726f7e3d8a118e",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-067": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SETUP:FR-094": {
-      "from": "sha256:5ece104813a53d2dfebdac563f6f84e53ed00b89ded6bfb4eab2a329fcabe70c",
+      "from": "sha256:11179f493aa8f82af620fc4b846a0ce4015666c20228320d44fbb2c0bcecdfc4",
       "to": "sha256:1de719d3009f1fc09cb52b3f1e070a613371a7066337cb6637234a9660e8db4c",
       "by": "human",
-      "reason": "用語の変更（業務要求・システム要件、type: BusinessNeed）に伴う更新",
-      "at": "2026-10-09T14:16:47Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "doc-req:DOC-SITE:FR-071": {
       "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
@@ -1701,6 +1708,13 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:src/extract:tests:csharpの三連スラッシュコメントも単一トークンだけならマーカーにする:FR-121": {
+      "from": "sha256:4014d4c7bef1018af0e45d4409b57111f50de70b476899820ec23806f8cef186",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
+    },
     "test-req:src/extract:tests:csharpの属性だけの変更はcontentを変えない:FR-052": {
       "from": "sha256:d98ba1322b3185eb3464cf678076e14ac7f5c7f873d9d2964d2cfb52639fa5f6",
       "to": "sha256:1bad13176724520b87f7e738ffb5212cb9301b6e14e94d37f172542463fe3367",
@@ -1743,19 +1757,26 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:src/extract:tests:csharpはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:cd1469607e6a050bb98e6f0561388cf8ead1f7ab56e0da54ab5541ae4625c8ad",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
+    },
     "test-req:src/extract:tests:csharpはドキュメントコメントとブロックコメントもマーカーにできる:FR-050": {
       "from": "sha256:e16fa71b7cb4ab8f88b987a1a2aaebbbdccbc5c6f3dc10d7900de7880b63b0c1",
-      "to": "sha256:2b986f6a429ef077a911c310486aa5e671dc687cf001beaa06ab395d91237e75",
+      "to": "sha256:7a1f6cf6d4b41da6d24b8a5fd0236c2248bc48c8cd916ee48a43b925487fb75f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:csharpは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
       "from": "sha256:ce632d89b3e8117fbf52683e9871e41848e64c10dfe0bd54fb7da542ce55cdf3",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:csharpは同一属性リスト内の他の属性と並んだ属性も検出する:FR-049": {
       "from": "sha256:6b6616d0642569fa6634dbb4eae0b1071051b3755b979abe6be352b457146a0c",
@@ -1773,17 +1794,17 @@
     },
     "test-req:src/extract:tests:csharpは属性と署名の間のコメントをマーカーにせずcontentにも含めない:FR-050": {
       "from": "sha256:9e188c90857287eac05f4f244a2a74e9abfbc02494d84edfbfafa452f1e9dc43",
-      "to": "sha256:2b986f6a429ef077a911c310486aa5e671dc687cf001beaa06ab395d91237e75",
+      "to": "sha256:7a1f6cf6d4b41da6d24b8a5fd0236c2248bc48c8cd916ee48a43b925487fb75f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:csharpは属性リストの間のコメントをマーカーにせずcontentにも含めない:FR-050": {
       "from": "sha256:85799a9e9b519fb982dd26e3606f804498c73c1a2e9cdd65e1e57efc8e9ad09a",
-      "to": "sha256:2b986f6a429ef077a911c310486aa5e671dc687cf001beaa06ab395d91237e75",
+      "to": "sha256:7a1f6cf6d4b41da6d24b8a5fd0236c2248bc48c8cd916ee48a43b925487fb75f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:csharpは引数付きの属性も検出する:FR-049": {
       "from": "sha256:f4778691e8df71c19400a86ef4bfa3b7bd0d516469eb6ddc5662c0623e7d96d3",
@@ -1801,10 +1822,10 @@
     },
     "test-req:src/extract:tests:csharpは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-050": {
       "from": "sha256:f53ee7f7f10d9fea7d67f48883520f978b19251fc12fed6431fb29c091d3250f",
-      "to": "sha256:2b986f6a429ef077a911c310486aa5e671dc687cf001beaa06ab395d91237e75",
+      "to": "sha256:7a1f6cf6d4b41da6d24b8a5fd0236c2248bc48c8cd916ee48a43b925487fb75f",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:csharpは複数の属性リストの順序に関わらず検出する:FR-049": {
       "from": "sha256:4fad624e088e28a61bae92576eaf0a26663683f0beb0ecf3acab889e83b79db8",
@@ -1836,31 +1857,38 @@
     },
     "test-req:src/extract:tests:goはbomの直後の1行目マーカーを取る:FR-064": {
       "from": "sha256:ffe645c51c05f87805fe92ed8d86afb9820b67d3cc89e8eb4f6dff5f0f566e88",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:goはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:bf7c74d094d99182662d78a358f8f625fc96017b4f4d4eddb39706cd3232d340",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:goは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
       "from": "sha256:d157d3cafd9593475f300aab84dc2849b13a5e611d202c9aac3d5b5c25b91529",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:goは直前に隣接するコメントをマーカーとして抽出する:FR-012": {
       "from": "sha256:9ef89183b685271fc708b7e61da1dd7e3e87b3d5c2cd9fe880f8d4e6ca367205",
-      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
+      "to": "sha256:dbb2ff03444ea4712947ca484a24f87bdf3dea331cd6ce938eef31d17c7866de",
       "by": "human",
-      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
-      "at": "2026-10-02T14:58:07Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:goは空行を挟んだコメントや欠落をマーカーなしとして無視する:FR-012": {
       "from": "sha256:6f7283511e3859425075dc5111af47b2376e460139abda632cc06b6499362fbf",
-      "to": "sha256:6be70eaf93d893fdacabe00c021ddb45c89064fe04c84608f8566cd10f4f0536",
+      "to": "sha256:dbb2ff03444ea4712947ca484a24f87bdf3dea331cd6ce938eef31d17c7866de",
       "by": "human",
-      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
-      "at": "2026-10-02T14:58:07Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:javaのcontentは修飾子なしなら型パラメータから始まる:FR-062": {
       "from": "sha256:38247ceb07a61824013a0db6e4b186a3cca1b1330b36f9ce6ed376dcb16899b2",
@@ -1934,17 +1962,24 @@
     },
     "test-req:src/extract:tests:javaはdocコメントを挟んでも手前のマーカーが有効になる:FR-060": {
       "from": "sha256:0d5a3af401692e14b6cd959b51b63ea79aad3efdabfa995bdc4d7c948d2edcd3",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:javaはjavadocコメントをマーカーにしない:FR-060": {
       "from": "sha256:d6048a517fbfbbc559dad5fdb273dc5500dfce362a8bb3c20f7ee11f51fb283e",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:javaはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:c47ec084b1f3f4021d00bc6d409ae2fbb08c922ed22e94dcf2056910f86efc61",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:javaはトップレベルメソッドを対象外にする:FR-059": {
       "from": "sha256:a440b14cb4f774ac41d972e989577e95b5256801ad3728dfa695bd3d9314bfdc",
@@ -1955,10 +1990,10 @@
     },
     "test-req:src/extract:tests:javaはブロックコメントをマーカーにできる:FR-060": {
       "from": "sha256:4aa8157ac1e10497dc36258748c19386a7494149f71dca05b7837c1bc267d8b2",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:javaは修飾名の注釈と引数付きの注釈も検出する:FR-059": {
       "from": "sha256:efe3760008f1fead9539db50974aeeaebf8e5622e1a1a80832e93fd612b72b22",
@@ -1976,10 +2011,10 @@
     },
     "test-req:src/extract:tests:javaは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
       "from": "sha256:e337d3584de86f7aef1f21c9549da2ad1d65fa4b6bef21df32a96e1b3ae61097",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:javaは匿名クラスとenum定数本体の中を対象外にする:FR-059": {
       "from": "sha256:c29f366672ab4d1ebeadfca85e1ffb53b60a561fc93fcd8777fa65d579b19812",
@@ -1997,17 +2032,17 @@
     },
     "test-req:src/extract:tests:javaは注釈と署名の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
       "from": "sha256:db5cb58abb57d6c6ad84a4090c345c84a6a6296b72363c5f0dfec5906a56e67a",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:javaは注釈同士の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
       "from": "sha256:2c870b4dd5b11facf71ca6853550328d5303498aa950bd01fbbed9b18075c827",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:javaは無関係な注釈のみのメソッドを検出しない:FR-059": {
       "from": "sha256:e6d1663eb1e028fc7ccb75a8e37273e004606207d48c9bbbdbf1682f2addf081",
@@ -2018,10 +2053,10 @@
     },
     "test-req:src/extract:tests:javaは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-060": {
       "from": "sha256:9bbe927948b865b434aa25e107ae4e266d087a6421a09b7bd019a01da7c4095e",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinのcontentは注釈のみならfunから始まる:FR-062": {
       "from": "sha256:2bd087ce93d0066261de8bc78be07225c6bf0969e47483fd25146f1ec8ec5bb7",
@@ -2074,10 +2109,10 @@
     },
     "test-req:src/extract:tests:kotlinのマーカーは元のソースから取り非asciiの角括弧は偽マーカーにならない:FR-060": {
       "from": "sha256:3b644f12bb911691c1d5b9f4a07faa272a3d6b1cb058f0048d148855abe4657d",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinの修飾子の後ろに書かれた注釈はcontentに含まれる:FR-062": {
       "from": "sha256:fde25f801b53968327f95abdcbd467a00780cac9d3a891558b5f94d1ea9ebd77",
@@ -2116,10 +2151,10 @@
     },
     "test-req:src/extract:tests:kotlinはbom付きファイルも解析できる:FR-063": {
       "from": "sha256:c0552c7717cbf106e04e1f59e20536fe66b25061a5f20cb733bf791ea4e62547",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinはdata_classとinterfaceの直下のtestも辿る:FR-061": {
       "from": "sha256:05b12f23a26772e77074230dd7217a54ff19c520c6588e9bb2f853260297a018",
@@ -2130,38 +2165,45 @@
     },
     "test-req:src/extract:tests:kotlinはdocコメントを挟んでも手前のマーカーが有効になる:FR-060": {
       "from": "sha256:877f81b28a21e61ef5c49a4d9b3c7c4c6f0b40924affd251a3c97bed80df3318",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinはkdocコメントをマーカーにしない:FR-060": {
       "from": "sha256:293acbf9e00ffe88489318b8c194e63154b2a41d9e17c93888a8252eed7880e6",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinはnestedを含む複数注釈クラスでも非asciiの名前を元のまま取る:FR-063": {
       "from": "sha256:1d6b0a0ab655b958a8eb41ab90ac0f4b486a12c1f8a5bf8f916ca96f7e9c153f",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinはshebangやimportやtypealiasなど宣言以外の通常の構造でok空になる:FR-063": {
       "from": "sha256:fe3e2bf75d37e2255d62a22e057a9c2d2f2e077095cb6cfef69f57ad70aaeae9",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinはカタカナとハングルの関数名も抽出する:FR-063": {
       "from": "sha256:eeb66e3fb482fcef0344a64eacc61b67a6d6610c694c8a7b4441ba65539ae483",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:kotlinはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:b3fcb7714061544882d6742b54dea3176df31098a7814458ab344a84ffa3fc0a",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:kotlinはコンストラクタ注釈付きの主コンストラクタを持つクラスでもtestを取れる:FR-061": {
       "from": "sha256:c7391cab47c7d9ac906d6ef8b08bb86aec9bda50adb7a73a8473e80f3ebccd89",
@@ -2169,6 +2211,41 @@
       "by": "human",
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
+    },
+    "test-req:src/extract:tests:kotlinは位置引数付き注釈が複数あってもtestを取る:FR-063": {
+      "from": "sha256:649f922c2c18d6268852031fc22bc1329697ca8c64ba65def14191852c1ad2dd",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:kotlinは位置引数付き注釈のある本当の構文エラーを引き続きエラーにする:FR-014": {
+      "from": "sha256:6ccfa0e16ac1a4dc05879b69abb6ed81b829c7f25dd9335bdf23b1d278641315",
+      "to": "sha256:028d29b3058a37abd55defb0d2e8dd9a501a78ffa1532fa2abf7a1aa97c8d7d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:kotlinは位置引数付き注釈の後ろにtestが続いてもtestを取る:FR-063": {
+      "from": "sha256:707e1bba270ae0ab1b7195912df6c70aa675752d2ba9232f4998715c95803a3e",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:kotlinは位置引数付き注釈の後ろのtestのマーカーも取る:FR-063": {
+      "from": "sha256:9fe75af5a8351cea7afcac08cd38385b57f1fe5eb4663b17b10e6772eb691fd8",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:kotlinは位置引数付き注釈を持つサポートコードのファイルを解析できる:FR-063": {
+      "from": "sha256:107c8855fb7f176e4bf07230f21f8b24a25fc29152fd0ecd18997b58ab035cf9",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは修飾名と複数注釈リストとuse_site_target付きの注釈も検出する:FR-059": {
       "from": "sha256:50c91fe64313ae0f36f4a2ceed7092292aac92517b2523876b643053ec801b6d",
@@ -2186,17 +2263,17 @@
     },
     "test-req:src/extract:tests:kotlinは宣言以外のトップレベル構造やキーワードを含む文字列でもok空になる:FR-063": {
       "from": "sha256:3085376c8a68c919b116dea6af321ad5f9603910c78057f61c9dcf360d822fe5",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは文法の不具合で宣言が認識されなかった場合に構文エラーを返す:FR-063": {
       "from": "sha256:216eb142a6f4f46159696d37dd6b4cfdea6120e8f40144d087af4b96b5230466",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは構文エラーのソースでエラーを返す:FR-014": {
       "from": "sha256:196d9f68c45c5e4eb2eb85f5f124089b49dc43dc2821976435fbc1a5d60fc404",
@@ -2207,17 +2284,17 @@
     },
     "test-req:src/extract:tests:kotlinは注釈2つで基底型なしのクラス内の注釈付きinner_classでもtestを取れる:FR-063": {
       "from": "sha256:fbaa8966c36ac05be603e4d99ac8e80246d3edef87598f49124807dcda904ea3",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは注釈と署名の間のコメントをマーカーにせずcontentにも含めない:FR-060": {
       "from": "sha256:29190e555c351771d6c57bf5be6782acb4535a6f45bc04b8d1a2152f9db9623c",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは注釈の間と直後のコメントをcontentに含めない:FR-062": {
       "from": "sha256:f3ccd0645a38c6853f216835f9abbf7bb96aa50ac305ba9b56c2a57e853d553f",
@@ -2228,17 +2305,17 @@
     },
     "test-req:src/extract:tests:kotlinは注釈同士の間のコメントをマーカーにしない:FR-060": {
       "from": "sha256:47c61132e4b39583a1198550eae8b8b7c149708e376e9217ff21a0be73b56111",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは漢字の関数名と型名のtestを抽出し識別子とcontentが元の文字を保つ:FR-063": {
       "from": "sha256:a4f5f79e30bf2f2c9d5af184d287bdbf137e665399ff6b1243b95466f9a34c6b",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは無関係な注釈のみの関数を検出しない:FR-059": {
       "from": "sha256:e2b8c6675791d9082baf7b57bd5a29207be8b37ca3452e03be4326fb8cda4700",
@@ -2249,10 +2326,17 @@
     },
     "test-req:src/extract:tests:kotlinは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-060": {
       "from": "sha256:a06d761cff003e88a777821702e1231ec5f36cf0de7ff41c2dc6c3495bb27f4b",
-      "to": "sha256:ec87a40f6d08f29e761adc3a71ef8d652ea0ee778879e53558380e7dafcccbb6",
+      "to": "sha256:f744bc895e918b0d2d138724c1b60417aaf3940edf7c6c26c9b657ff2506cdc6",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:kotlinは直前の宣言とコメントの後の位置引数付き注釈でも解析できる:FR-063": {
+      "from": "sha256:b0b77d81b97d74b20ad2cc7be4e7ca6a34a46601a19dbafb612e0fdb5487d45b",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは関数本体内のローカル関数や匿名objectやenum定数本体やgetterを対象外にする:FR-059": {
       "from": "sha256:7d45a4686f0236c76151ff61a8dac597d5c3f102dd7961941c883ac6724f8f6a",
@@ -2261,19 +2345,26 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:src/extract:tests:kotlinは非asciiのkdocと位置引数付き注釈の組み合わせでも解析できる:FR-063": {
+      "from": "sha256:b5ee3eaa969815973f6a5aff59ca23978820c2151159cc3afbe8a5541eea5b2b",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
     "test-req:src/extract:tests:kotlinは非asciiの文字リテラルを含むファイルも解析できる:FR-063": {
       "from": "sha256:d1156f9728d2490085d8a8a234fbde1c5797c649dcfbef083f74206e3eeb8a61",
-      "to": "sha256:5333a5bce4cc3f0eaa8671433c914d648cbcf70532800421a4902f817beedb50",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:kotlinは非ascii識別子の後の末尾行コメントを次のtestのマーカーにしない:FR-064": {
       "from": "sha256:d4d371f216310c235f4d71b51d810103c4cab35361aae38cd31fc25474615e06",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:rustのcontentは外側の属性とマーカーコメントを含まない:FR-004": {
       "from": "sha256:572aea5b124db0c4c563d194775723acc5ded60cad87deb681490a885d1fbec6",
@@ -2324,47 +2415,47 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
-    "test-req:src/extract:tests:rustのスラッシュ4つのコメントは通常コメントとしてマーカーになる:FR-016": {
-      "from": "sha256:71187e10db998937298ebf1c4d56901850db610f70fb25d6edac8de97efb98cc",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+    "test-req:src/extract:tests:rustのスラッシュ4つのコメントは通常コメントだが余分な記号が本文に残りマーカーにならない:FR-016": {
+      "from": "sha256:a5316c384de2a8532687e9c0cf514f21172cca9beecf354da613fec70ac634f2",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
-    "test-req:src/extract:tests:rustのスラッシュ星3つのコメントは通常コメントとしてマーカーになる:FR-016": {
-      "from": "sha256:b961c31262d6b84db74e05ce2286c47c7e40734ad3bd619ea533ac539822d101",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+    "test-req:src/extract:tests:rustのスラッシュ星3つのコメントは通常コメントだが余分な記号が本文に残りマーカーにならない:FR-016": {
+      "from": "sha256:0fe280227417746effe578c7c6d1b3902a0177ef27316b76955ce51588c9e33b",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustの内側docコメントはマーカーにならない:FR-016": {
       "from": "sha256:200977fbbb663815ec249f1aca588a118fbf81ee786a5430eec43ba45c16f859",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustの内側ブロックdocコメントはマーカーにならない:FR-016": {
       "from": "sha256:30a6da4e57bfda3b754d962628c8aafa47dc87eaeac2afc57783107dfd4b7ed6",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustの外側docコメントはマーカーにならない:FR-016": {
       "from": "sha256:2190e9309d6946f867f67e574bb8409688f2a2bc59de840d224da625a279e326",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustの外側ブロックdocコメントはマーカーにならない:FR-016": {
       "from": "sha256:55394ce548eaec2849231862b18c1ad93c62093702c7d8499e8e9106181f85ea",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustの関数本体の変更はcontentに反映される:FR-003": {
       "from": "sha256:195431d6e26235ff51203f48d3b5b69f31dc09dde94c924bf8f33c16f83b2d95",
@@ -2375,87 +2466,94 @@
     },
     "test-req:src/extract:tests:rustはbomの直後の1行目マーカーを取る:FR-064": {
       "from": "sha256:76ddeed23eaf3cd2f25f3b0d5a3f5fc7495967f0db61cfb3e6d0d5bfe9b385c5",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:rustはcrlfでもdocコメントを挟んでマーカーを取る:FR-016": {
       "from": "sha256:adb4d5bb66f917e679cf45331d41cf7259ac306279b84d5a56a76a1006f742a0",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustはdocコメントの後に空行があるとマーカーを取らない:FR-016": {
       "from": "sha256:6f69b79918780822a53972363d47f3b35945a31d372e1fb8e310cce33730e9eb",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustはdocコメントを挟んでもマーカーを取る:FR-016": {
       "from": "sha256:242574a9a56424dcadd89476016df2c4c0046806ed544310a3184af3f343aed3",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustはtestとfnの間にコメントがあってもtestとして検出しマーカーを採用する:FR-016": {
       "from": "sha256:91ef470166431e5b2248cd193454f3ebee1d8b76dc7e6de5e88cb124ddeaf117",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustはtest属性の直前に隣接するコメントをマーカーとする:FR-016": {
       "from": "sha256:5bfae528dc2d303fab75326dc11e9b0c1879de3bea7d203bcbb77bd0f3468d19",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustはインデント付きの行頭コメントをマーカーにする:FR-064": {
       "from": "sha256:bd5ce7f7c7faf1569f13b7e261af13832965100db2d7d8702ffa6cbed6f30478",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:rustはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:fb383256d120230684921c6154e95d9e0c45da74afd7ef33626cc5b15a3cba86",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustはブロックdocコメントを挟んでもマーカーを取る:FR-016": {
       "from": "sha256:47cd1c41bad75233613676c1ec771ee91ae348baae96ace359375679a292b0bf",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustは他の属性の後ろでもtestの直前のコメントはマーカーになる:FR-016": {
       "from": "sha256:d2c708a8e8892449a173bbf222a661d01f39fb47f99c5c17c0f269626786d82b",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustは前の宣言の末尾行コメントを次のtestのマーカーにしない:FR-064": {
       "from": "sha256:be873844944806e8e9c68a0c3901e4c2167e6f2562948e87c30b1ab0bf22c947",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:rustは対象属性の設定によりマーカー位置が変わる:FR-016": {
       "from": "sha256:72714ba3c4c7ac43c7ed238d23da26126a5249f19adc312640e53f0ba0b30659",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustは属性が間に挟まるとtestの直前のコメントをマーカーにしない:FR-016": {
       "from": "sha256:edbd6fea22228deda9c33e88d481feeebd8902cc3c514ef4b033e83813f0fc4a",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustは属性パスの末尾がtestならtestとして抽出する:FR-015": {
       "from": "sha256:d0c68692b110a76589fd58851402a994822893cfa18281d9ae4929aca7ae485e",
@@ -2466,17 +2564,17 @@
     },
     "test-req:src/extract:tests:rustは属性間や属性末尾のコメントがあってもtestとして検出しマーカーを取る:FR-016": {
       "from": "sha256:0d173fff7f904dddf924727d8ddb8108890587f3de1c8ffaf4b5d270157effec",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:rustは最初の対象属性の直前のコメントをマーカーにする:FR-016": {
       "from": "sha256:fa631884599cd83d0724b0c1658922a7ab5edd43f574e28037cef99aac93bec6",
-      "to": "sha256:c56286935831ec46fa56536fb7bfa2fe4c3ecf6f730fb6dd69660e4d3ffb907e",
+      "to": "sha256:9065d9c5120567e834ac1a6a31795b11db615a4103ed8adb0d058dab44c9f29d",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:src/extract:tests:tokioのtest属性はcontentに含まれない:FR-004": {
       "from": "sha256:f7117e68be0b6a95b180fc4e7a06e5ebe1629f8d6ca84e30fb1bcd3619900d7a",
@@ -2550,10 +2648,10 @@
     },
     "test-req:src/extract:tests:typescriptはdescribe内のtestでも直前のコメントをマーカーにする:FR-055": {
       "from": "sha256:3acc0a3d1a9c48be18e49e2bde4c5b72dca75fd8e224bde20a6562601cf1e523",
-      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
+      "to": "sha256:2873839aad144fa2f5c2686a67711fe3f6c8e6227aa4156ada88bdda213422cb",
       "by": "human",
-      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
-      "at": "2026-10-02T14:58:07Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:typescriptはexport_defaultやskipif_describeやforループ内のitを検出しない:FR-054": {
       "from": "sha256:d0831f0f9acc70d3ecce67bd8a299c1abd66d949d466dfc8bb6d1c5ec73f890b",
@@ -2618,19 +2716,26 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:src/extract:tests:typescriptはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:1f8beb167bd3374655b91eefc8d72df61a2214e7ad2172d5b477a90f390d9df9",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
+    },
     "test-req:src/extract:tests:typescriptは前の文の末尾行コメントを次のtestのマーカーにしない:FR-064": {
       "from": "sha256:b47186f4ecc7d023812898fee1cb0770ddccffa9e879d333edb660ac55282fac",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:typescriptは同じ行に複数のコメントがあると2つ目以降は行頭でないので打ち切る:FR-064": {
       "from": "sha256:25bd441b8365ce62d358d858cec82a5cab2e076c4840075e9bb5b76fa63f95fe",
-      "to": "sha256:84079a2e15ecfa2ab94d53ff9bfd052449038393593815081d118db0569aa7eb",
+      "to": "sha256:68010d9ccdd24c2c4b9a8661d90aedab60a2c66dd8f0f12348af5cb2c64f9b21",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:typescriptは構文エラーのソースでエラーを返す:FR-014": {
       "from": "sha256:7bdda4dda67dce24ea0925bc6ad582cd8ecde666ae97ed1d9c657e94e203636c",
@@ -2641,10 +2746,10 @@
     },
     "test-req:src/extract:tests:typescriptは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する:FR-055": {
       "from": "sha256:af9387d11a3aea25301f48a537abd722fdbbbabc46ff4e8a70ce98e742dad745",
-      "to": "sha256:acf7f42494069f1244213332b9e8eb8583065112729d45bb367fd06418cd4e66",
+      "to": "sha256:2873839aad144fa2f5c2686a67711fe3f6c8e6227aa4156ada88bdda213422cb",
       "by": "human",
-      "reason": "コメント隣接判定の修正（Issue #14）: FR-064 新設、FR-012/016/050/055/060 の更新を合意",
-      "at": "2026-10-02T14:58:07Z"
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
     },
     "test-req:src/extract:tests:typescriptは空文字名と改行を含む名前を無視する:FR-056": {
       "from": "sha256:eb17ab080eb96d65b1ab58f34da5edc523f9571aea7ab1d6a5578fd42868e809",
@@ -4970,6 +5075,13 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:tests/cli_check::csharpはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:e7b96e0b859fead3011374a00a572079d3f2dea0a82c755eb5f0cb9f6763a450",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
+    },
     "test-req:tests/cli_check::excludeしたディレクトリ配下のtestはfindingに出ない:FR-065": {
       "from": "sha256:f2e433b44739f7249e3745f55f24128601e28572038415489ca678a926f411bd",
       "to": "sha256:3b3a9585010d6d955ade4ff689ed58a8469e21c87c26c78c98f5029ae5fcccf1",
@@ -4998,6 +5110,13 @@
       "reason": "α版の初回合意",
       "at": "2026-09-30T16:19:51Z"
     },
+    "test-req:tests/cli_check::goはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:64cedb85c4c11f40e4df82733d982129d41e7a16f805e6e6e5fbee0fa0dcfd80",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
+    },
     "test-req:tests/cli_check::javascriptのtestはnew_reconcile_driftの順で検知される:FR-053": {
       "from": "sha256:64f7c5cc41dacdaa89009e0a452c45f0999a2169d132b25fca924b1719919cab",
       "to": "sha256:a9be52f9a99f4594a1fbd925de57f51517a222ea9489c508a7c8a6ad91ab2a7f",
@@ -5005,12 +5124,75 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:tests/cli_check::javaはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:e43f306a32ba16456c012f2d19fdb4a03a114737a3ee89d388ec28302ce9ef05",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
+    },
     "test-req:tests/cli_check::kotlinのtestはnew_reconcile_driftの順で検知される:FR-059": {
       "from": "sha256:bafa814f8796313d83db8957adde06c214c0ff11893f3fc21beaf3a5f13b3991",
       "to": "sha256:10418f3643adb5e4b906ab8a1029c578251b123afe4090bcc7c79f68537473e3",
       "by": "human",
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
+    },
+    "test-req:tests/cli_check::kotlinの本当の構文エラーは位置引数付き注釈があってもinvalidになる:FR-014": {
+      "from": "sha256:801efb466f28eb398086c3d76e033c1192bca61d6c758ebe50e9e6e56a060707",
+      "to": "sha256:028d29b3058a37abd55defb0d2e8dd9a501a78ffa1532fa2abf7a1aa97c8d7d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:tests/cli_check::kotlinはクラスの複数注釈とnested_inner_classを引き続き検知する:FR-063": {
+      "from": "sha256:53d466d39ab6aa2eca9fe9a7b03a3e0c5b3039e1326a951012478d934adedbce",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:tests/cli_check::kotlinはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:dde454fc2eca729c31f0017f41bcc66d0c5d5a58b9f9442bf9f61488293a3791",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
+    },
+    "test-req:tests/cli_check::kotlinは位置引数付き注釈の後ろのtestを検知する:FR-063": {
+      "from": "sha256:2eb03208b7edfa704c4fca5ef7a1b295c19d334fe66c469e995336823c0cfb6f",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:tests/cli_check::kotlinは位置引数付き注釈の最小再現を解析できる:FR-063": {
+      "from": "sha256:57c6d9738ff2876e700dc3de35834fc73f7099ac35bc80fca9f820f2cd64bc57",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:tests/cli_check::kotlinは位置引数付き注釈を持つサポートコードを解析できる:FR-063": {
+      "from": "sha256:b4ab608162a37bf3cf31bb1f0ab18365ee4fb98fe804b08aa55e9b919af100a1",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:tests/cli_check::kotlinは非asciiのkdoc付き位置引数付き注釈を解析できる:FR-063": {
+      "from": "sha256:440eaa3f2b15820efd9a4ebcd3da74ca0ebf3a1239d68d4218226e5b5b87ca84",
+      "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
+      "by": "human",
+      "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
+      "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:tests/cli_check::rustはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:18502e16308c1e92c728138ab925fffb6f58e003acdbfa70e811bafaddd377dc",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:tests/cli_check::textとjsonは同じ数のfindingを表す:FR-032": {
       "from": "sha256:f98a22937f95ba74469c00a49594dc8155fdec0fa92b9cef9f44dfe227ac9fc5",
@@ -5032,6 +5214,13 @@
       "by": "human",
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
+    },
+    "test-req:tests/cli_check::typescriptはコメントが単一トークンだけのときマーカーにする:FR-121": {
+      "from": "sha256:5c0406665fd2cd57a23a06850194a0109efba0fc370c41e5b87e28b7d6730749",
+      "to": "sha256:4f2b466ebbfbac88d2c110960b920d6f7bebde0f06c7d7eeb2402010f06028ba",
+      "by": "human",
+      "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
+      "at": "2026-10-13T16:59:39Z"
     },
     "test-req:tests/cli_check::設定エラーの場合はexit_code_1を返す:FR-030": {
       "from": "sha256:d520dc7db90be1061d9d3ea2de226b946e0806aca89f9bf9fa500e1261fde29f",
