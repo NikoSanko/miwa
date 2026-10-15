@@ -23,7 +23,7 @@ doc を直したら req を、req を直したらテストを見直す。こう�
 
 実装コードそのものは扱いません。テストを実装側の仕様とみなし、ドキュメントとテストの追随だけを見ます。機械的な検知（ハッシュ比較）は CI で使い、意味が合っているかの判定（`judge`）はローカルでだけ使います。
 
-テストのマーカーを読み取れる言語は、Go・Rust・C#・Java・Kotlin・TypeScript・JavaScript です。
+テストのマーカーを読み取れる言語は、Go・Rust・C#・Java・Kotlin・TypeScript・JavaScript・Dart（Flutter）です。
 
 ## 例えば
 

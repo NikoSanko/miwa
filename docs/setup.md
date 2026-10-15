@@ -45,6 +45,8 @@ TypeScript にも、次の制約があります。
 
 - `f<typeof import('x')>()` のように、呼び出しの型引数に `typeof import(...)` を書いたテストファイルは、構文解析器が解析できず `invalid` になります。ファイルの先頭で `import type * as M from 'x'` と書き、`f<typeof M>()` に書き換えると解析できます。
 
+Dart / Flutter では、`*_test.dart` を置くフォルダを `tests` に指定します（Flutter の既定は `test`、monorepo では `mobile/test` のようにパスを付けます）。`integration_test` を使う場合は、そのフォルダも `tests` に加えます。
+
 Java / Kotlin では、Gradle / Maven のモジュール直下であれば `tests: ["src/test"]` のように指定します。monorepo ではモジュールのパスを先頭に付けて、`tests: ["packages/api/src/test"]` のようにします。生成コードの `src/generated` は `tests` に含めないでください。ビルド出力の `build` などは、`exclude: ["build"]` のように指定して探索から除外します。
 
 `init` が作る[既定の設定](../req/init-generates-default-config.md)では、`judge.threshold` は 0.9、`judge.max_body_bytes` は 200000、`index` は `[docs]` です。

@@ -74,7 +74,7 @@ doc の本文中で req ファイルへ相対リンクを張ると、それが d
 
 ## test（テストコード）の書き方
 
-test は、req が実際に検証されていることを示すコードです。miwa は現時点で Go・Rust・C#・Java・Kotlin（JUnit）・TypeScript / JavaScript（Vitest）の6言語に対応しています。
+test は、req が実際に検証されていることを示すコードです。miwa は現時点で Go・Rust・C#・Java・Kotlin（JUnit）・TypeScript / JavaScript（Vitest）・Dart / Flutter（`package:test` / `flutter_test`）の7言語に対応しています。
 
 どの言語でも、マーカーに採用するのは行頭から始まるコメントだけです（[マーカーコメントの規則](../req/marker-comment-own-line.md)）。前の宣言の末尾に書いたコメント（`fn x() {} // [FR-001]` など）は、次の test の直前にあっても拾いません。同じ行に複数のコメントがある行は、その行のコメントを読まず、マーカーの探索をそこで打ち切ります。
 
@@ -192,6 +192,25 @@ TypeScript / JavaScript で対象になるファイルは、`<name>.test.<ext>` 
 
 TypeScript / JavaScript の test の識別子は、ファイルパスと describe 名の階層、test 名を組み合わせた形式です（[識別子の形式](../req/typescript-test-identifier-format.md)）。上の例は `src/auth.test:auth:rejects short password` になります。
 
+### Dart / Flutter（package:test / flutter_test）
+
+```dart
+void main() {
+  group('validateBackendUrl', () {
+    // [FR-001]
+    test('rejects an empty backend URL', () { ... });
+  });
+}
+```
+
+Dart で対象になるファイルは、`tests` 配下の `*_test.dart` です（[ファイル名の規則](../req/dart-test-file-patterns.md)）。`_test.dart` で終わらない `.dart` ファイルは対象外です。
+
+ソース直下の `main` 関数の本体の直下、または `group(...)` のコールバック本体の直下にある `test(...)` / `testWidgets(...)` の呼び出し文が、test として抽出されます（[呼び出し文の検出規則](../req/dart-test-call-detection.md)）。`main` の戻り値型や `async` の有無は問いません。`skip:` などの名前付き引数が付いていても、1件の test です。`t.test(...)` のように prefix を付けた呼び出し、`for` / `if` や関数・test の中にある `test`、名前が補間を含む `group` の配下は無視されます。
+
+マーカーは、呼び出し文の直前に空行を挟まない `//` または `/* */` のコメントに書きます（[マーカーの隣接条件](../req/dart-test-marker-adjacency.md)）。ドキュメントコメント（`///` と `/** */`）はマーカーになりません。マーカーと呼び出し文の間にドキュメントコメントが挟まっていても、マーカーは有効です。
+
+Dart の test の識別子は、ファイルパス（`.dart` を除く）と group 名の階層、test 名を組み合わせた形式です（[識別子の形式](../req/dart-test-identifier-format.md)）。名前はソース表記のままで、隣接文字列連結は各部分を連結したものになります。補間や三重引用符を含む名前は無視されます。上の例は、ファイルが `test/local_dev_test.dart` なら `test/local_dev_test:validateBackendUrl:rejects an empty backend URL` になります。
+
 ## 変更の検知に使う範囲
 
 miwa は doc・req・test それぞれの「内容」をハッシュ値にして、前回合意した内容と比べます。ハッシュの計算には SHA-256 を使い、改行コードの違いだけは無視します（[ハッシュの規則](../req/hash-sha256-with-lf-normalization.md)）。
@@ -203,6 +222,7 @@ miwa は doc・req・test それぞれの「内容」をハッシュ値にして
   - C# は、メソッドに付けた属性（`[Fact]` など）と属性直後のコメントをハッシュの対象に含めません（[C# の除外範囲](../req/hash-csharp-test-excludes-attributes.md)）。
   - Java / Kotlin は、先頭に連続する注釈（`@Test` など）と、その間・直後のコメントをハッシュの対象に含めません（[Java / Kotlin の除外範囲](../req/hash-java-kotlin-test-excludes-annotations.md)）。修飾子より後ろに書いた注釈は含みます。
   - TypeScript / JavaScript は、`test(...)` / `it(...)` の呼び出し文全体が対象です。
+  - Dart は、`test(...)` / `testWidgets(...)` の呼び出し文全体が対象です。
 
 ## エッジの識別子
 
