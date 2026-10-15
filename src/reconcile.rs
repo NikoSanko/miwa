@@ -130,8 +130,8 @@ fn parse_edge_id(id: &str) -> Option<(&str, &str, &str)> {
 /// `internal/auth`, Go at the repo root `.:TestX` -> `.`). The match is
 /// deliberately conservative (a false positive only blocks a removal, it
 /// never silently drops information):
-/// - Rust / C# / Java / Kotlin / TypeScript / JavaScript: the target equals
-///   `<prefix>.rs` / `<prefix>.cs` / `<prefix>.java` / `<prefix>.kt` /
+/// - Rust / C# / Java / Kotlin / Dart / TypeScript / JavaScript: the target equals
+///   `<prefix>.rs` / `<prefix>.cs` / `<prefix>.java` / `<prefix>.kt` / `<prefix>.dart` /
 ///   `<prefix>.<ext>` exactly, `<ext>` being one of
 ///   `TYPESCRIPT_TEST_EXTENSIONS` (TS / JS prefixes keep `.test` / `.spec`).
 /// - Go (non-root): the target starts with `<prefix>/`.
@@ -147,6 +147,7 @@ fn test_source_has_parse_error(invalid: &[crate::model::Invalid], test_id: &str)
             || target == format!("{prefix}.cs")
             || target == format!("{prefix}.java")
             || target == format!("{prefix}.kt")
+            || target == format!("{prefix}.dart")
             || crate::extract::TYPESCRIPT_TEST_EXTENSIONS
                 .iter()
                 .any(|ext| target == format!("{prefix}.{ext}"))
@@ -588,6 +589,12 @@ mod tests {
     fn ロックにのみ存在するtypescriptのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
         assert_blocked_by_parse_error("src/a.test.ts", "test-req:src/a.test:d:t:FR-001");
         assert_blocked_by_parse_error("src/a.spec.ts", "test-req:src/a.spec:d:t:FR-001");
+    }
+
+    // [FR-035]
+    #[test]
+    fn ロックにのみ存在するdartのtest_reqエッジは所在ファイルが構文エラーだとblockedになる() {
+        assert_blocked_by_parse_error("test/a_test.dart", "test-req:test/a_test:g:t:FR-001");
     }
 
     // [FR-035]

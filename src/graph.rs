@@ -243,6 +243,7 @@ pub fn build_graph(
             TestLanguage::Java => crate::extract::extract_java_tests(path, &text),
             TestLanguage::Kotlin => crate::extract::extract_kotlin_tests(path, &text),
             TestLanguage::TypeScript => crate::extract::extract_typescript_tests(path, &text),
+            TestLanguage::Dart => crate::extract::extract_dart_tests(path, &text),
         };
         match result {
             Ok(tests) => {
@@ -372,6 +373,7 @@ enum TestLanguage {
     Java,
     Kotlin,
     TypeScript,
+    Dart,
 }
 
 /// Decides the extraction language from the file path; `None` if the file is
@@ -389,6 +391,8 @@ fn test_language(path: &str) -> Option<TestLanguage> {
         Some(TestLanguage::Kotlin)
     } else if crate::extract::is_typescript_test_file(path) {
         Some(TestLanguage::TypeScript)
+    } else if crate::extract::is_dart_test_file(path) {
+        Some(TestLanguage::Dart)
     } else {
         None
     }
@@ -771,6 +775,38 @@ mod tests {
         let graph = build_graph(&source, &config()).unwrap();
         assert!(has_test_node(&graph, "src/a.test::works"));
         assert!(has_test_node(&graph, "src/b.spec::renders"));
+    }
+
+    // [FR-122]
+    #[test]
+    fn dartのtest_dartからtestノードが作られ通常のdartファイルは走査されない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "src/a_test.dart",
+                "void main() {
+  group('g', () {
+    // [FR-001]
+    test('works', () {});
+  });
+}
+",
+            ),
+            (
+                "src/helper.dart",
+                "void main() {
+  // [FR-001]
+  test('skipped', () {});
+}
+",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(has_test_node(&graph, "src/a_test:g:works"));
+        assert!(!has_test_node(&graph, "src/helper::skipped"));
+        assert!(graph
+            .edges
+            .contains_key("test-req:src/a_test:g:works:FR-001"));
     }
 
     // [FR-053]
@@ -1222,6 +1258,40 @@ mod tests {
             .invalid
             .iter()
             .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("broken.test.ts")));
+    }
+
+    // [FR-014]
+    #[test]
+    fn 構文エラーのdartテストファイルはparse_errorとしてinvalidになる() {
+        let source = FakeSource::new(&[(
+            "src/broken_test.dart",
+            "void main() {
+  test('a', () {
+",
+        )]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::ParseError && i.target.contains("broken_test.dart")));
+    }
+
+    // [FR-014]
+    #[test]
+    fn dart_1つのテストに2件以上のマーカーがあるとinvalidになりエッジを作らない() {
+        let source = FakeSource::new(&[
+            REQ1,
+            (
+                "tests/a_test.dart",
+                "void main() {\n  // [FR-001]\n  // [FR-002]\n  test('t', () {});\n}\n",
+            ),
+        ]);
+        let graph = build_graph(&source, &config()).unwrap();
+        assert!(graph
+            .invalid
+            .iter()
+            .any(|i| i.reason == ReasonCode::MultipleMarkers));
+        assert!(!graph.edges.keys().any(|k| k.starts_with("test-req:")));
     }
 
     // [FR-014]

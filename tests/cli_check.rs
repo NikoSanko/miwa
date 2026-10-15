@@ -282,6 +282,17 @@ fn typescriptのtestはnew_reconcile_driftの順で検知される() {
     );
 }
 
+// [FR-122]
+#[test]
+fn dartのtestはnew_reconcile_driftの順で検知される() {
+    assert_new_then_drift(
+        "tests/a_test.dart",
+        "void main() {\n  group('g', () {\n    // [FR-001]\n    test('t', () { expect(1, 1); });\n  });\n}\n",
+        "void main() {\n  group('g', () {\n    // [FR-001]\n    test('t', () { expect(1, 2); });\n  });\n}\n",
+        "test-req:tests/a_test:g:t:FR-001",
+    );
+}
+
 // [FR-053]
 #[test]
 fn javascriptのtestはnew_reconcile_driftの順で検知される() {
@@ -445,6 +456,14 @@ fn kotlinはコメントが単一トークンだけのときマーカーにす�
 fn typescriptはコメントが単一トークンだけのときマーカーにする() {
     assert_exact_token_findings("tests/a.test.ts", |c| {
         format!("{c}\nit(\"t\", () => {{}});\n")
+    });
+}
+
+// [FR-121]
+#[test]
+fn dartはコメントが単一トークンだけのときマーカーにする() {
+    assert_exact_token_findings("tests/a_test.dart", |c| {
+        format!("void main() {{\n{c}\ntest('t', () {{}});\n}}\n")
     });
 }
 

@@ -22,8 +22,8 @@ description: "doc・req・test の追随漏れや索引の乱れを、ロック�
 - **new / removed**: 前回合意した記録（ロック）にない新しい依存関係は new、ロックにあったのにソースから消えた依存関係は removed です。この[2つの finding](../req/finding-new-and-removed.md)を報告します。
 - **orphan（孤立）**: どの doc からもリンクされていない req と、どの req にもリンクしていない doc を、[孤立したもの](../req/finding-orphan.md)として報告します。書いたのに使われていない req や、参照が漏れている doc を見つけられます。
 - **no-test**: 1件もテストで検証されていない req を、[no-test](../req/finding-no-test.md)として報告します。免除の仕組みはなく、すべての req が対象です。
-- **invalid**: id の重複や欠落、テスト関数に複数のマーカーが付いている状態、テストファイルが構文エラーで解析できない、といった不正な状態です。後ろの2つは、Go・Rust・C#・Java・Kotlin・TypeScript / JavaScript に共通の[invalid の条件](../req/test-invalid-conditions.md)です。
-  - マーカーを持つ test の識別子が重複している場合は、invalid にはなりません。例えば C# や Java のオーバーロード、Rust の `#[cfg]` 分岐による同名関数、TypeScript / JavaScript の同名 test が該当します。この場合は、[出現をまとめて1つの test](../req/test-duplicate-identifier-merged.md)として扱います。
+- **invalid**: id の重複や欠落、テスト関数に複数のマーカーが付いている状態、テストファイルが構文エラーで解析できない、といった不正な状態です。後ろの2つは、Go・Rust・C#・Java・Kotlin・TypeScript / JavaScript・Dart に共通の[invalid の条件](../req/test-invalid-conditions.md)です。
+  - マーカーを持つ test の識別子が重複している場合は、invalid にはなりません。例えば C# や Java のオーバーロード、Rust の `#[cfg]` 分岐による同名関数、TypeScript / JavaScript や Dart の同名 test が該当します。この場合は、[出現をまとめて1つの test](../req/test-duplicate-identifier-merged.md)として扱います。
   - 重複した識別子が invalid になるのは、まとめようとした出現のマーカーが異なる req を指している場合だけです。その場合は、その識別子のすべての出現が invalid となり、依存関係は作られません。
   - 同じ識別子にマーカーが複数ある不正な出現が残っている間は、まとめた test の依存関係も reconcile や judge の対象になりません。先に不正な出現を直してください。
 - **broken（壊れたリンク）**: doc から参照している req が存在しない、または req でないファイルを指している状態です。詳細は [モデル](model.md) を参照してください。

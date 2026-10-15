@@ -1,4 +1,4 @@
-//! Test extraction for Go, Rust, C#, Java, Kotlin, TypeScript and JavaScript source files.
+//! Test extraction for Go, Rust, C#, Java, Kotlin, TypeScript, JavaScript and Dart source files.
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 pub struct ExtractedTest {
@@ -712,6 +712,196 @@ fn walk_typescript_statements(
             let mut new_desc = describes.to_vec();
             new_desc.push(name.to_string());
             walk_typescript_statements(body, source, base, &new_desc, results);
+        }
+    }
+}
+
+// ---- Dart / Flutter (package:test / flutter_test) ----
+
+/// Whether `path` is a Dart test file, i.e. ends with `_test.dart`.
+pub fn is_dart_test_file(path: &str) -> bool {
+    path.ends_with("_test.dart")
+}
+
+/// Dart doc comments (`///`, `/** */`) are never markers and do not end the
+/// adjacent comment block. Decided by text so `////`, `/***` and `/**/` stay
+/// ordinary comments (as for Rust).
+fn is_dart_doc_comment(text: &str) -> bool {
+    (text.starts_with("///") && !text.starts_with("////"))
+        || (text.starts_with("/**") && !text.starts_with("/***") && !text.starts_with("/**/"))
+}
+
+/// Extract Dart (`package:test` / `flutter_test`) tests from a `*_test.dart`
+/// file: `test` / `testWidgets` call statements directly inside `main` or
+/// inside the callback of a `group` that is itself reachable that way.
+/// Markers come from the comment block immediately preceding the call, and
+/// `content` is the whole call statement.
+pub fn extract_dart_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>, ExtractError> {
+    let mut parser = tree_sitter::Parser::new();
+    parser
+        .set_language(&tree_sitter_dart::LANGUAGE.into())
+        .expect("valid dart grammar");
+    let tree = parser
+        .parse(source, None)
+        .ok_or_else(|| ExtractError::Parse {
+            path: path.to_string(),
+        })?;
+    let root = tree.root_node();
+    if root.has_error() {
+        return Err(ExtractError::Parse {
+            path: path.to_string(),
+        });
+    }
+    let base = path.strip_suffix(".dart").unwrap_or(path);
+    let mut results = Vec::new();
+    let mut cursor = root.walk();
+    for decl in root.children(&mut cursor) {
+        if decl.kind() != "function_declaration" {
+            continue;
+        }
+        let is_main = decl
+            .child_by_field_name("signature")
+            .and_then(|s| s.child_by_field_name("name"))
+            .and_then(|n| n.utf8_text(source.as_bytes()).ok())
+            == Some("main");
+        if !is_main {
+            continue;
+        }
+        let Some(block) = decl
+            .child_by_field_name("body")
+            .and_then(|b| b.named_child(0))
+            .filter(|b| b.kind() == "block")
+        else {
+            continue;
+        };
+        walk_dart_statements(block, source, base, &[], &mut results);
+    }
+    Ok(results)
+}
+
+/// Positional arguments of a Dart `arguments` node (named arguments such as
+/// `skip:` are left out).
+fn dart_positional_args(args: tree_sitter::Node) -> Vec<tree_sitter::Node> {
+    let mut cursor = args.walk();
+    args.named_children(&mut cursor)
+        .filter(|n| n.kind() != "named_argument" && n.kind() != "comment")
+        .collect()
+}
+
+/// Name from a single-line (possibly raw, possibly adjacent-concatenated)
+/// `string_literal`: the source text inside each part's quotes, joined. Strings
+/// with interpolation or triple quotes yield `None`; escapes are not
+/// interpreted.
+fn dart_string_name(lit: tree_sitter::Node, source: &str) -> Option<String> {
+    if lit.kind() != "string_literal" {
+        return None;
+    }
+    let mut name = String::new();
+    let mut cursor = lit.walk();
+    let mut parts = 0;
+    for part in lit.children(&mut cursor) {
+        let prefix = match part.kind() {
+            "string_literal_single_quotes" | "string_literal_double_quotes" => 1,
+            "raw_string_literal_single_quotes" | "raw_string_literal_double_quotes" => 2,
+            "comment" => continue,
+            _ => return None,
+        };
+        let mut c = part.walk();
+        if part
+            .children(&mut c)
+            .any(|ch| ch.kind() == "template_substitution")
+        {
+            return None;
+        }
+        let text = part.utf8_text(source.as_bytes()).ok()?;
+        if text.len() < prefix + 1 {
+            return None;
+        }
+        name.push_str(text.get(prefix..text.len() - 1)?);
+        parts += 1;
+    }
+    if parts == 0 || !is_valid_test_name(&name) {
+        return None;
+    }
+    Some(name)
+}
+
+fn walk_dart_statements(
+    block: tree_sitter::Node,
+    source: &str,
+    base: &str,
+    groups: &[String],
+    results: &mut Vec<ExtractedTest>,
+) {
+    let mut cursor = block.walk();
+    let children: Vec<tree_sitter::Node> = block.children(&mut cursor).collect();
+    for (idx, node) in children.iter().enumerate() {
+        if node.kind() != "expression_statement" {
+            continue;
+        }
+        let Some(call) = node.named_child(0) else {
+            continue;
+        };
+        if call.kind() != "call_expression" {
+            continue;
+        }
+        let (Some(callee), Some(args)) = (
+            call.child_by_field_name("function"),
+            call.child_by_field_name("arguments"),
+        ) else {
+            continue;
+        };
+        if callee.kind() != "identifier" {
+            continue;
+        }
+        let head = callee.utf8_text(source.as_bytes()).unwrap_or("");
+        if !matches!(head, "test" | "testWidgets" | "group") {
+            continue;
+        }
+        let positional = dart_positional_args(args);
+        let Some(name) = positional
+            .first()
+            .and_then(|a| dart_string_name(*a, source))
+        else {
+            continue;
+        };
+        if head == "group" {
+            let Some(cb) = positional
+                .get(1)
+                .filter(|cb| cb.kind() == "function_expression")
+            else {
+                continue;
+            };
+            let Some(inner) = cb
+                .child_by_field_name("body")
+                .filter(|b| b.kind() == "function_expression_body")
+                .and_then(|b| b.named_child(0))
+                .filter(|b| b.kind() == "block")
+            else {
+                continue;
+            };
+            let mut new_groups = groups.to_vec();
+            new_groups.push(name);
+            walk_dart_statements(inner, source, base, &new_groups, results);
+        } else {
+            let markers = collect_preceding_markers_with(
+                &children,
+                idx,
+                source,
+                &|n| n.utf8_text(source.as_bytes()).ok(),
+                &["comment"],
+                &|n| {
+                    n.utf8_text(source.as_bytes())
+                        .is_ok_and(is_dart_doc_comment)
+                },
+            );
+            let content = node.utf8_text(source.as_bytes()).unwrap_or("").to_string();
+            results.push(ExtractedTest {
+                id: format!("{base}:{}:{name}", groups.join("/")),
+                name,
+                markers,
+                content,
+            });
         }
     }
 }
@@ -2907,11 +3097,287 @@ if (cond) {
 
     // [FR-121]
     #[test]
+    fn dartはコメントが単一トークンだけのときマーカーにする() {
+        assert_marker_cases(|c| {
+            dt(&format!("void main() {{\n{c}\ntest('t', () {{}});\n}}\n"))[0]
+                .markers
+                .clone()
+        });
+    }
+    // [FR-121]
+    #[test]
     fn csharpの三連スラッシュコメントも単一トークンだけならマーカーにする() {
         let tests = cs(&cs_wrap("/// [FR-001]\n[Fact]\npublic void T() { }"));
         assert_eq!(tests[0].markers, vec!["FR-001".to_string()]);
         let tests = cs(&cs_wrap("/// [FR-001] 説明\n[Fact]\npublic void T() { }"));
         assert!(tests[0].markers.is_empty());
+    }
+
+    // ---- Dart / Flutter ----
+
+    fn dt(source: &str) -> Vec<ExtractedTest> {
+        extract_dart_tests("mobile/test/a_test.dart", source).unwrap()
+    }
+
+    // [FR-122]
+    #[test]
+    fn dartはtest_dartで終わるパスだけをテストファイルとして扱う() {
+        assert!(is_dart_test_file("test/a_test.dart"));
+        assert!(is_dart_test_file("a_test.dart"));
+        assert!(!is_dart_test_file("test/a.dart"));
+        assert!(!is_dart_test_file("test/a_test.dart.bak"));
+        assert!(!is_dart_test_file("test/a_test.rs"));
+        assert!(!is_dart_test_file("test/atest.dart"));
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはmain直下のtestとtestwidgetsを検出する() {
+        let tests =
+            dt("void main() {\n  test('a', () {});\n  testWidgets('b', (tester) async {});\n}\n");
+        assert_eq!(tests.len(), 2);
+        find(&tests, "a");
+        find(&tests, "b");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはgroupの入れ子を辿る() {
+        let tests = dt("void main() {\n  group('outer', () {\n    group('inner', () {\n      test('t', () {});\n    });\n    test('u', () {});\n  });\n}\n");
+        assert_eq!(tests.len(), 2);
+        assert_eq!(find(&tests, "t").id, "mobile/test/a_test:outer/inner:t");
+        assert_eq!(find(&tests, "u").id, "mobile/test/a_test:outer:u");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartのtest識別子はgroupの外なら空のgroupパスになる() {
+        let tests = dt("void main() { test('t', () {}); }\n");
+        assert_eq!(tests[0].id, "mobile/test/a_test::t");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはfuture_void_main_asyncでも検出する() {
+        let tests = dt("Future<void> main() async {\n  test('a', () {});\n}\n");
+        assert_eq!(tests.len(), 1);
+        let tests = dt("main() { test('a', () {}); }\n");
+        assert_eq!(tests.len(), 1);
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはasyncコールバックとアロー本体のtestも検出する() {
+        let tests = dt("void main() {\n  test('a', () async {});\n  test('b', () => expect(1, 1));\n  group('g', () async {\n    test('c', () {});\n  });\n}\n");
+        assert_eq!(tests.len(), 3);
+        assert_eq!(find(&tests, "c").id, "mobile/test/a_test:g:c");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartのgroupはアロー本体だと中へ降りない() {
+        let tests = dt("void main() {\n  group('g', () => test('t', () {}));\n}\n");
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartは名前付き引数付きでも1件のtestとして扱う() {
+        let tests = dt("void main() {\n  test('a', () {}, skip: true, timeout: Timeout.none);\n  group('g', () {\n    test('b', () {});\n  }, skip: 'x');\n}\n");
+        assert_eq!(tests.len(), 2);
+        assert_eq!(find(&tests, "b").id, "mobile/test/a_test:g:b");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartはraw文字列を引用符の内側のソース表記のまま名前にする() {
+        let tests = dt("void main() {\n  test(r'a\\n$b', () {});\n  test(r\"c\\d\", () {});\n}\n");
+        assert_eq!(tests.len(), 2);
+        find(&tests, "a\\n$b");
+        find(&tests, "c\\d");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartは隣接文字列連結を各部分の内側で連結して名前にする() {
+        let tests = dt("void main() {\n  test('abc '\n      \"def \"\n      r'g\\h', () {});\n}\n");
+        assert_eq!(tests.len(), 1);
+        assert_eq!(tests[0].name, "abc def g\\h");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartはエスケープを解釈せずソース表記のまま名前にする() {
+        let tests = dt("void main() {\n  test('it\\'s \\$x', () {});\n}\n");
+        assert_eq!(tests.len(), 1);
+        assert_eq!(tests[0].name, "it\\'s \\$x");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartは補間を含む名前のtestとgroupを無視する() {
+        let tests = dt("void main() {\n  test('a $x', () {});\n  test('b ${y}', () {});\n  test('c' 'd$z', () {});\n  group('g$x', () {\n    test('t', () {});\n  });\n}\n");
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartは三重引用符の名前を無視する() {
+        let tests = dt("void main() {\n  test('''a''', () {});\n  test(\"\"\"b\"\"\", () {});\n  test(r'''c''', () {});\n  test('d' '''e''', () {});\n}\n");
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartは無効な名前のgroup配下を走査しない() {
+        for name in ["''", "'''x'''", "'a\u{2028}b'", "'a\u{1}b'"] {
+            let source = format!(
+                "void main() {{\n  group({name}, () {{\n    test('t', () {{}});\n  }});\n}}\n"
+            );
+            let tests = dt(&source);
+            assert!(tests.is_empty(), "{name:?}: {tests:?}");
+        }
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartは行区切り文字や制御文字を含むtest名を無視する() {
+        let tests = dt("void main() {\n  test('a\u{2028}b', () {});\n  test('c\u{1}d', () {});\n  test('ok', () {});\n}\n");
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].name, "ok");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartは空文字名を無視する() {
+        let tests = dt(
+            "void main() {\n  test('', () {});\n  test('' '', () {});\n  test('ok', () {});\n}\n",
+        );
+        assert_eq!(tests.len(), 1);
+        assert_eq!(tests[0].name, "ok");
+    }
+
+    // [FR-125]
+    #[test]
+    fn dartは第1引数が文字列リテラルでない呼び出しを無視する() {
+        let tests = dt("void main() {\n  test(name, () {});\n  group(name, () {\n    test('t', () {});\n  });\n  test();\n  test(skip: true);\n}\n");
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartは修飾付きやメソッドチェーンやawait付きの呼び出しを無視する() {
+        let tests = dt("import 'package:test/test.dart' as t;\nvoid main() {\n  t.test('a', () {});\n  t.group('g', () {\n    test('b', () {});\n  });\n  test('c', () {}).foo();\n  await test('d', () {});\n  test('e', () {});\n}\n");
+        assert_eq!(tests.len(), 1, "{tests:?}");
+        assert_eq!(tests[0].name, "e");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはtestとgroupとtestwidgets以外の呼び出しを無視する() {
+        let tests =
+            dt("void main() {\n  setUp(() {});\n  it('a', () {});\n  Test('b', () {});\n}\n");
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはforとifと関数とtest本体の中のtestを無視する() {
+        let source = "void helper() {\n  test('h', () {});\n}\nvoid main() {\n  for (final x in [1]) {\n    test('f', () {});\n  }\n  if (true) {\n    test('i', () {});\n  }\n  test('outer', () {\n    test('inner', () {});\n  });\n  void local() {\n    test('l', () {});\n  }\n  group('g', () {\n    for (var i = 0; i < 2; i++) {\n      test('gf', () {});\n    }\n    test('ok', () {});\n  });\n}\n";
+        let tests = dt(source);
+        let mut names: Vec<&str> = tests.iter().map(|t| t.name.as_str()).collect();
+        names.sort();
+        assert_eq!(names, vec!["ok", "outer"], "{tests:?}");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはmain以外のトップレベル関数を入口にしない() {
+        let tests =
+            dt("void other() {\n  test('a', () {});\n}\nvoid mainx() {\n  test('b', () {});\n}\n");
+        assert!(tests.is_empty(), "{tests:?}");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartはmainが無いファイルを0件にする() {
+        assert!(dt("int x = 1;\n").is_empty());
+        assert!(dt("").is_empty());
+    }
+
+    // [FR-124]
+    #[test]
+    fn dartは直前に隣接するコメントをマーカーとして抽出し空行を挟むと無視する() {
+        let source = "void main() {\n  // [FR-001]\n  test('a', () {});\n\n  // [FR-002]\n\n  test('b', () {});\n  /* [FR-003] */\n  test('c', () {});\n}\n";
+        let tests = dt(source);
+        assert_eq!(find(&tests, "a").markers, vec!["FR-001".to_string()]);
+        assert!(find(&tests, "b").markers.is_empty());
+        assert_eq!(find(&tests, "c").markers, vec!["FR-003".to_string()]);
+    }
+
+    // [FR-124]
+    #[test]
+    fn dartはgroup内のtestでも直前のコメントをマーカーにする() {
+        let tests = dt(
+            "void main() {\n  group('g', () {\n    // [FR-001]\n    test('t', () {});\n  });\n}\n",
+        );
+        assert_eq!(tests[0].markers, vec!["FR-001".to_string()]);
+    }
+
+    // [FR-124]
+    #[test]
+    fn dartのドキュメントコメントはマーカーにならない() {
+        let source = "void main() {\n  /// [FR-001]\n  test('a', () {});\n  /** [FR-002] */\n  test('b', () {});\n  //// [FR-003]\n  test('c', () {});\n}\n";
+        let tests = dt(source);
+        for n in ["a", "b", "c"] {
+            assert!(find(&tests, n).markers.is_empty(), "{n}");
+        }
+    }
+
+    // [FR-124]
+    #[test]
+    fn dartはマーカーとtestの間にdocコメントが挟まってもマーカーを有効にする() {
+        let source = "void main() {\n  // [FR-001]\n  /// 説明 [Foo]\n  test('a', () {});\n  // [FR-002]\n  /** doc */\n  test('b', () {});\n}\n";
+        let tests = dt(source);
+        assert_eq!(find(&tests, "a").markers, vec!["FR-001".to_string()]);
+        assert_eq!(find(&tests, "b").markers, vec!["FR-002".to_string()]);
+    }
+
+    // [FR-124]
+    #[test]
+    fn dartは前の文の末尾行コメントを次のtestのマーカーにしない() {
+        let tests = dt("void main() {\n  test('a', () {}); // [FR-001]\n  test('b', () {});\n}\n");
+        assert!(find(&tests, "b").markers.is_empty());
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartのcontentは呼び出し文全体でマーカーコメントを含まない() {
+        let tests = dt("void main() {\n  // [FR-001]\n  test('a', () { expect(1, 1); });\n}\n");
+        assert_eq!(tests[0].content, "test('a', () { expect(1, 1); });");
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartの本体変更はcontentに反映される() {
+        let a = dt("void main() { test('a', () { expect(1, 1); }); }\n");
+        let b = dt("void main() { test('a', () { expect(1, 2); }); }\n");
+        assert_ne!(a[0].content, b[0].content);
+    }
+
+    // [FR-123]
+    #[test]
+    fn dartは同名のtestをそのまま複数返す() {
+        let tests = dt("void main() {\n  test('a', () {});\n  test('a', () {});\n}\n");
+        assert_eq!(tests.len(), 2);
+        assert_eq!(tests[0].id, tests[1].id);
+    }
+
+    // [FR-014]
+    #[test]
+    fn dartは構文エラーのソースでエラーを返す() {
+        let source = "void main() {\n  test('a', () {\n}\n";
+        assert!(extract_dart_tests("mobile/test/a_test.dart", source).is_err());
     }
 
     // ---- Kotlin の位置引数付き注釈（FR-063） ----
