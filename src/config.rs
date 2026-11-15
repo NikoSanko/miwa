@@ -3,15 +3,68 @@
 pub const CONFIG_PATH: &str = ".miwa/config.yaml";
 pub const LOCK_PATH: &str = ".miwa/lock.json";
 
+/// Default `judge.threshold` (FR-019, FR-126).
+pub const DEFAULT_THRESHOLD: f64 = 0.9;
+
+/// `judge` section. The section and each field are optional; an absent key
+/// and `null` both mean "unspecified" and take the default (FR-126).
 #[derive(Debug, Clone, PartialEq, serde::Serialize, serde::Deserialize)]
 pub struct JudgeConfig {
+    #[serde(
+        default = "default_threshold",
+        deserialize_with = "deserialize_threshold"
+    )]
     pub threshold: f64,
-    #[serde(default = "default_max_body_bytes")]
+    #[serde(
+        default = "default_max_body_bytes",
+        deserialize_with = "deserialize_max_body_bytes"
+    )]
     pub max_body_bytes: usize,
+}
+
+impl Default for JudgeConfig {
+    fn default() -> Self {
+        JudgeConfig {
+            threshold: DEFAULT_THRESHOLD,
+            max_body_bytes: crate::judge::DEFAULT_MAX_BODY_BYTES,
+        }
+    }
+}
+
+fn default_threshold() -> f64 {
+    DEFAULT_THRESHOLD
 }
 
 fn default_max_body_bytes() -> usize {
     crate::judge::DEFAULT_MAX_BODY_BYTES
+}
+
+/// `null` is "unspecified"; any other non-number is a type error.
+fn deserialize_threshold<'de, D>(d: D) -> Result<f64, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    use serde::Deserialize;
+    Ok(Option::<f64>::deserialize(d)?.unwrap_or(DEFAULT_THRESHOLD))
+}
+
+/// `null` is "unspecified"; any other non-integer is a type error.
+fn deserialize_max_body_bytes<'de, D>(d: D) -> Result<usize, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    use serde::Deserialize;
+    Ok(Option::<usize>::deserialize(d)?.unwrap_or_else(default_max_body_bytes))
+}
+
+/// The whole `judge` section: absent, `null` / `~`, and an empty value are
+/// "unspecified" (FR-126). A non-mapping value is a type error.
+fn deserialize_judge<'de, D>(d: D) -> Result<JudgeConfig, D::Error>
+where
+    D: serde::Deserializer<'de>,
+{
+    use serde::Deserialize;
+    Ok(Option::<JudgeConfig>::deserialize(d)?.unwrap_or_default())
 }
 
 #[derive(Debug, Clone, Default, PartialEq, serde::Serialize, serde::Deserialize)]
@@ -26,6 +79,7 @@ pub struct Config {
     pub requirements: Vec<String>,
     pub tests: Vec<String>,
     pub diff_base: String,
+    #[serde(default, deserialize_with = "deserialize_judge")]
     pub judge: JudgeConfig,
     #[serde(default)]
     pub rust: RustConfig,
@@ -120,10 +174,7 @@ impl Config {
             requirements: vec!["req".to_string()],
             tests: vec![".".to_string()],
             diff_base: "main".to_string(),
-            judge: JudgeConfig {
-                threshold: 0.9,
-                max_body_bytes: crate::judge::DEFAULT_MAX_BODY_BYTES,
-            },
+            judge: JudgeConfig::default(),
             rust: RustConfig::default(),
             exclude: vec![],
             index: vec!["docs".to_string()],
@@ -693,5 +744,134 @@ mod tests {
         let s2 = again.site.as_ref().unwrap();
         assert_eq!(s2.title(), Some("題名"));
         assert_eq!(s2.description(), Some("要約"));
+    }
+
+    const NO_JUDGE_YAML: &str =
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - .\ndiff_base: main\n";
+
+    /// One field of the `judge` mapping in the FR-126 decision table.
+    #[derive(Clone, Copy, Debug)]
+    enum Field {
+        Absent,
+        /// `null` spelled as an empty value, `null`, or `~`.
+        Null(&'static str),
+        Valid,
+    }
+
+    const FIELD_STATES: [Field; 5] = [
+        Field::Absent,
+        Field::Null(""),
+        Field::Null(" null"),
+        Field::Null(" ~"),
+        Field::Valid,
+    ];
+
+    /// Values distinct from the defaults, so "specified" and "defaulted" differ.
+    const SPECIFIED_THRESHOLD: f64 = 0.25;
+    const SPECIFIED_MAX_BODY_BYTES: usize = 1000;
+
+    fn field_line(name: &str, state: Field, valid: &str) -> String {
+        match state {
+            Field::Absent => String::new(),
+            Field::Null(spelling) => format!("  {name}:{spelling}\n"),
+            Field::Valid => format!("  {name}: {valid}\n"),
+        }
+    }
+
+    // [FR-126]
+    #[test]
+    fn judge節と各項目の省略とnullの全組合せは既定値で埋めて読める() {
+        // 節そのものがマップでない5通り（absent / 値なし / null / ~ / {}）。
+        // 末尾に置く場合と、後ろに別の節が続く場合の両方で読む。
+        for section in ["", "judge:\n", "judge: null\n", "judge: ~\n", "judge: {}\n"] {
+            for trailer in ["", "rust: {}\n"] {
+                let yaml = format!("{NO_JUDGE_YAML}{section}{trailer}");
+                let config =
+                    Config::parse(&yaml).unwrap_or_else(|e| panic!("{section:?}{trailer:?}: {e}"));
+                assert_eq!(config.judge.threshold, 0.9, "{section:?}{trailer:?}");
+                assert_eq!(
+                    config.judge.max_body_bytes, 200_000,
+                    "{section:?}{trailer:?}"
+                );
+            }
+        }
+        // マップの節: threshold × max_body_bytes の直積（両方 absent は `judge:` と同じ）。
+        // 期待値は「指定した値、指定していなければ既定値」。
+        let mut cases = 0;
+        for t in FIELD_STATES {
+            for m in FIELD_STATES {
+                if matches!((t, m), (Field::Absent, Field::Absent)) {
+                    continue;
+                }
+                let yaml = format!(
+                    "{NO_JUDGE_YAML}judge:\n{}{}",
+                    field_line("threshold", t, &SPECIFIED_THRESHOLD.to_string()),
+                    field_line("max_body_bytes", m, &SPECIFIED_MAX_BODY_BYTES.to_string()),
+                );
+                let config = Config::parse(&yaml).unwrap_or_else(|e| panic!("{yaml}: {e}"));
+                let want_t = if matches!(t, Field::Valid) {
+                    SPECIFIED_THRESHOLD
+                } else {
+                    0.9
+                };
+                let want_m = if matches!(m, Field::Valid) {
+                    SPECIFIED_MAX_BODY_BYTES
+                } else {
+                    200_000
+                };
+                assert_eq!(config.judge.threshold, want_t, "{yaml}");
+                assert_eq!(config.judge.max_body_bytes, want_m, "{yaml}");
+                cases += 1;
+            }
+        }
+        assert_eq!(cases, 24);
+    }
+
+    // [FR-126]
+    #[test]
+    fn judge節を省略した設定は既定値を明示した設定と同じに読める() {
+        let omitted = Config::parse(NO_JUDGE_YAML).unwrap();
+        let explicit = Config::parse(&format!(
+            "{NO_JUDGE_YAML}judge:\n  threshold: 0.9\n  max_body_bytes: 200000\n"
+        ))
+        .unwrap();
+        assert_eq!(omitted, explicit);
+        assert_eq!(omitted.judge, Config::default_config().judge);
+    }
+
+    // [FR-126]
+    #[test]
+    fn 従来受理していたjudge節は同じ値のまま読める() {
+        let c = Config::parse(&format!("{NO_JUDGE_YAML}judge:\n  threshold: 0.9\n")).unwrap();
+        assert_eq!((c.judge.threshold, c.judge.max_body_bytes), (0.9, 200_000));
+        let c = Config::parse(&format!(
+            "{NO_JUDGE_YAML}judge:\n  threshold: 0.9\n  max_body_bytes: 1000\n"
+        ))
+        .unwrap();
+        assert_eq!((c.judge.threshold, c.judge.max_body_bytes), (0.9, 1000));
+        let c = Config::parse(&format!("{NO_JUDGE_YAML}judge:\n  threshold: 1\n")).unwrap();
+        assert_eq!(c.judge.threshold, 1.0);
+    }
+
+    // [FR-126]
+    #[test]
+    fn judgeに明示した不正な値は設定エラーになる() {
+        for bad in [
+            "judge:\n  threshold: 1.5\n",
+            "judge:\n  threshold: \"0.9\"\n",
+            "judge:\n  threshold: true\n",
+            "judge:\n  threshold: [0.9]\n",
+            "judge:\n  max_body_bytes: 1.5\n",
+            "judge:\n  max_body_bytes: 0\n",
+            "judge:\n  max_body_bytes: \"abc\"\n",
+            "judge: 1\n",
+            "judge: []\n",
+            "judge: \"x\"\n",
+        ] {
+            let err = Config::parse(&format!("{NO_JUDGE_YAML}{bad}"))
+                .expect_err(bad)
+                .to_string();
+            assert!(err.contains("judge"), "{bad:?}: {err}");
+        }
     }
 }

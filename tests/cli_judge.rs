@@ -484,3 +484,27 @@ fn auto_reconcileはdescエッジをjevの合意としてロックに記録す�
         serde_json::json!(miwa::hash::content_hash(DOC_A_BODY))
     );
 }
+
+// [FR-126]
+#[test]
+fn judge節が無い設定ではjudgeが既定のしきい値0_9で判定する() {
+    let env = Env::new();
+    common::write(
+        env.repo.path(),
+        ".miwa/config.yaml",
+        "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\n",
+    );
+    let server = MockServer::start(vec![ok(0.9), ok(0.89)]);
+    let output = run_judge(env.repo.path(), &server, &[]).output().unwrap();
+    assert_eq!(output.status.code(), Some(0), "{}", stderr_of(&output));
+    assert_eq!(server.requests().len(), 2);
+    let stdout = stdout_of(&output);
+    assert!(
+        stdout.contains(&format!("consistent {DOC_EDGE} score=0.90")),
+        "{stdout}"
+    );
+    assert!(
+        stdout.contains(&format!("review {TEST_EDGE} score=0.89")),
+        "{stdout}"
+    );
+}
