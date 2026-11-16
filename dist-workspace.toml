@@ -34,6 +34,8 @@ post-announce-jobs = ["./install-check"]
 [dist.github-custom-runners]
 # tree-sitter contains C code, so build on a native arm runner instead of cross compiling
 aarch64-unknown-linux-gnu = "ubuntu-24.04-arm"
+# macos-14 runners are no longer available (macos-14 ランナーは利用不可になったため macos-15 を使う)
+aarch64-apple-darwin = "macos-15"
 
 [dist.github-custom-job-permissions]
 # Overriding drops the default permissions, so list everything the job needs
