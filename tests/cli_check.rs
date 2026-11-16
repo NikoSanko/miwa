@@ -548,3 +548,25 @@ fn kotlinの本当の構文エラーは位置引数付き注釈があってもin
         "{findings:?}"
     );
 }
+
+// [FR-126]
+#[test]
+fn judge節の無い設定でもcheckとreconcileが動く() {
+    for judge in ["", "judge:\n", "judge: null\n", "judge: {}\n"] {
+        let dir = tempfile::tempdir().unwrap();
+        common::write_minimal_fixture(dir.path());
+        common::write(
+            dir.path(),
+            ".miwa/config.yaml",
+            &format!(
+                "docs:\n  - docs\nrequirements:\n  - req\ntests:\n  - tests\ndiff_base: main\n{judge}"
+            ),
+        );
+        common::run(dir.path(), &["reconcile", "--all"])
+            .assert()
+            .success();
+        common::run(dir.path(), &["check", "--gate"])
+            .assert()
+            .success();
+    }
+}

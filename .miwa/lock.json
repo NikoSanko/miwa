@@ -35,9 +35,9 @@
     },
     "desc:doc:DOC-SETUP": {
       "from": "sha256:bf2710c18a0162cec3ac53eaa2fc6ac366bf9fde06eae6fec0b919ef24434a5a",
-      "to": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "to": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "desc:doc:DOC-SITE": {
       "from": "sha256:f5ed33afb5f225d58a30acdb88ea09c765ac0c62048b97a41f7fd7b408fd432f",
@@ -683,58 +683,64 @@
       "at": "2026-10-09T14:16:47Z"
     },
     "doc-req:DOC-SETUP:FR-018": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:33ac2f45bc2882c26998ebc4903304054fd034c31bdd9df9ded25bbf3166a486",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-019": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:efab34c17d0f5a4e35fd2e6a3646438bcaf0788ab0fce4986c8cc0aa7490fa17",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-020": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
-      "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
+      "to": "sha256:2078de6fff1004b2faf6e12d8d6c40dc4945788963b04dbad0d8fedaf3d36bbf",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-058": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:88360898a559e901e7644707b93ecc3b87fb44ef1ee280e0b3ada5da619471a6",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-063": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:3b7a886891f3b5779c323082014a98e07b49ae3fa2d912147c25ea2e575130d0",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-065": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:3b3a9585010d6d955ade4ff689ed58a8469e21c87c26c78c98f5029ae5fcccf1",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-066": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:3a17e75b94eb4ea4ad0ad367931cc37c02015e21783e2c0eb1726f7e3d8a118e",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-067": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:10dffcb2168995b8ed0a8a0719b03f9a17d42989bd548c34baef788ce2b7af60",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SETUP:FR-094": {
-      "from": "sha256:621a733e8738b1be40bda163e58a455fa1ba7dd35fb9d5627b118f9319fd2d3b",
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
       "to": "sha256:1de719d3009f1fc09cb52b3f1e070a613371a7066337cb6637234a9660e8db4c",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-13T17:42:15Z"
+    },
+    "doc-req:DOC-SETUP:FR-126": {
+      "from": "sha256:2c7baccc0a3a1a65dacee2b50aba0c01b74589c0efe63969fa788fddb0686b7b",
+      "to": "sha256:5cd07a25187088d2f5d6316f49b55c5ba066169365a0c55121ecae26674da1c8",
+      "by": "human",
+      "at": "2026-11-13T17:42:15Z"
     },
     "doc-req:DOC-SITE:FR-071": {
       "from": "sha256:5ea22f769d5a5e5617a51dc80288e965edc9afd5f74316f84787cc7c37a5fa85",
@@ -1151,17 +1157,15 @@
     },
     "test-req:src/config:tests:diff_baseが空文字列なら設定エラーになる:FR-020": {
       "from": "sha256:f5dade3238a577ec186c624952d234809780c00a9db0204bf940b29754aa81b4",
-      "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
+      "to": "sha256:2078de6fff1004b2faf6e12d8d6c40dc4945788963b04dbad0d8fedaf3d36bbf",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "test-req:src/config:tests:docs_requirements_testsのいずれかが空なら設定エラーになる:FR-020": {
       "from": "sha256:77929e7e9ca8ce34cf22e879437d562835cdd231c4d08cee6136332f11c386e7",
-      "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
+      "to": "sha256:2078de6fff1004b2faf6e12d8d6c40dc4945788963b04dbad0d8fedaf3d36bbf",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "test-req:src/config:tests:docsとrequirementsとtestsに親ディレクトリや空セグメントがあると設定エラーになる:FR-066": {
       "from": "sha256:d5c5e5c0b3e032f235f0211dd17fee9f7f8f42799632bd2edd42d2c710bbce33",
@@ -1254,19 +1258,35 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:src/config:tests:judgeに明示した不正な値は設定エラーになる:FR-126": {
+      "from": "sha256:6c556c53fb8fdcce85681dacbdd6796d9da861bbda2f1707acbd4ca6d1846c71",
+      "to": "sha256:5cd07a25187088d2f5d6316f49b55c5ba066169365a0c55121ecae26674da1c8",
+      "by": "human",
+      "at": "2026-11-13T17:42:15Z"
+    },
+    "test-req:src/config:tests:judge節と各項目の省略とnullの全組合せは既定値で埋めて読める:FR-126": {
+      "from": "sha256:3ebcaf45941d3bd6ed33395d4b55910adca252fed8fdeebe592bed109e498de3",
+      "to": "sha256:5cd07a25187088d2f5d6316f49b55c5ba066169365a0c55121ecae26674da1c8",
+      "by": "human",
+      "at": "2026-11-13T17:42:15Z"
+    },
+    "test-req:src/config:tests:judge節を省略した設定は既定値を明示した設定と同じに読める:FR-126": {
+      "from": "sha256:26731f089d787892fd6f834dc22d23dcbfd74971fa4600436df2235cb1d2c531",
+      "to": "sha256:5cd07a25187088d2f5d6316f49b55c5ba066169365a0c55121ecae26674da1c8",
+      "by": "human",
+      "at": "2026-11-13T17:42:15Z"
+    },
     "test-req:src/config:tests:max_body_bytesが0なら設定エラーになる:FR-020": {
       "from": "sha256:ef0ff8daed417485d2618c3c166c14885516834c52d8d7141b2f4c1c728af3a0",
-      "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
+      "to": "sha256:2078de6fff1004b2faf6e12d8d6c40dc4945788963b04dbad0d8fedaf3d36bbf",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "test-req:src/config:tests:max_body_bytesが整数以外のyamlはparseエラーになる:FR-020": {
       "from": "sha256:80559716c695df4b230189115813055035933f0873ef2f96bf3e5b5bf3487dc6",
-      "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
+      "to": "sha256:2078de6fff1004b2faf6e12d8d6c40dc4945788963b04dbad0d8fedaf3d36bbf",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "test-req:src/config:tests:max_body_bytesを省略したyamlは既定値で読める:FR-019": {
       "from": "sha256:30fb457c119cb9f587833fb51cb81f7650764c202f77838989a33993b17a2dea",
@@ -1319,17 +1339,21 @@
     },
     "test-req:src/config:tests:thresholdが0から1の範囲内であれば妥当:FR-020": {
       "from": "sha256:654ad0b23b63ac3ae03dff0926bf3e21556da586eb0d5b51c9658bf66dab39b3",
-      "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
+      "to": "sha256:2078de6fff1004b2faf6e12d8d6c40dc4945788963b04dbad0d8fedaf3d36bbf",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "at": "2026-11-13T17:42:15Z"
     },
     "test-req:src/config:tests:thresholdが範囲外なら設定エラーになる:FR-020": {
       "from": "sha256:f05352c3f3501f3d40227c722ee6af434188c780da9412e382f281a53f596f66",
-      "to": "sha256:aa61579ddf7286eb908db9436de21cd98c7d9bbb816cafc3022d73379014e75f",
+      "to": "sha256:2078de6fff1004b2faf6e12d8d6c40dc4945788963b04dbad0d8fedaf3d36bbf",
       "by": "human",
-      "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
-      "at": "2026-10-08T03:24:12Z"
+      "at": "2026-11-13T17:42:15Z"
+    },
+    "test-req:src/config:tests:従来受理していたjudge節は同じ値のまま読める:FR-126": {
+      "from": "sha256:48725c53b07db6b459f0e5c0cf520d27fb36f9a812edb657cf573d53a70c2465",
+      "to": "sha256:5cd07a25187088d2f5d6316f49b55c5ba066169365a0c55121ecae26674da1c8",
+      "by": "human",
+      "at": "2026-11-13T17:42:15Z"
     },
     "test-req:src/config:tests:既定のconfigのindexはdocsを1件含む:FR-019": {
       "from": "sha256:443db8bfaecb2f9a4b367c0fadaafd93f4e5edd988ece7dbf65eb32f20026132",
@@ -5276,6 +5300,12 @@
       "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
       "at": "2026-10-13T16:59:39Z"
     },
+    "test-req:tests/cli_check::judge節の無い設定でもcheckとreconcileが動く:FR-126": {
+      "from": "sha256:6b39b3e385a4ccd321c368f7022c418b74eb1fbdd5aff2c85c9e58d7c3886507",
+      "to": "sha256:5cd07a25187088d2f5d6316f49b55c5ba066169365a0c55121ecae26674da1c8",
+      "by": "human",
+      "at": "2026-11-13T17:42:15Z"
+    },
     "test-req:tests/cli_check::kotlinのtestはnew_reconcile_driftの順で検知される:FR-059": {
       "from": "sha256:bafa814f8796313d83db8957adde06c214c0ff11893f3fc21beaf3a5f13b3991",
       "to": "sha256:10418f3643adb5e4b906ab8a1029c578251b123afe4090bcc7c79f68537473e3",
@@ -5764,6 +5794,12 @@
       "by": "human",
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
+    },
+    "test-req:tests/cli_judge::judge節が無い設定ではjudgeが既定のしきい値0_9で判定する:FR-126": {
+      "from": "sha256:edae3310688c53122bc435967d40984769d15183c07edc28e66ac8f1b60d1ace",
+      "to": "sha256:5cd07a25187088d2f5d6316f49b55c5ba066169365a0c55121ecae26674da1c8",
+      "by": "human",
+      "at": "2026-11-13T17:46:56Z"
     },
     "test-req:tests/cli_judge::reviewやskippedがあっても判定が完了すればexit0になる:FR-047": {
       "from": "sha256:1bc73a76327bd48455a34f7107e391c54c7ae6aa026cf955e6fd969a6fb48217",
