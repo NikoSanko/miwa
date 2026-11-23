@@ -254,12 +254,17 @@ pub fn build_graph(
                         .map(|t| (path.clone(), t)),
                 );
             }
-            Err(_e) => {
+            Err(e) => {
+                let detail = match e {
+                    crate::extract::ExtractError::Parse { .. } => format!("failed to parse {path}"),
+                    // FR-127: reported like a parse error, with its own detail.
+                    crate::extract::ExtractError::TooDeep { .. } => e.to_string(),
+                };
                 graph.invalid.push(Invalid {
                     target_kind: TargetKind::File,
                     target: path.clone(),
                     reason: ReasonCode::ParseError,
-                    detail: format!("failed to parse {path}"),
+                    detail,
                 });
             }
         }

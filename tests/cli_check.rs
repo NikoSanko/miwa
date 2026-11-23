@@ -570,3 +570,32 @@ fn judge節の無い設定でもcheckとreconcileが動く() {
             .success();
     }
 }
+
+// [FR-127]
+#[test]
+fn 入れ子が極端に深いテストファイルがあってもcheckは異常終了せずinvalidを報告する() {
+    let dir = tempfile::tempdir().unwrap();
+    common::write_minimal_fixture(dir.path());
+    // 0.7.2 では 10,000 段でスタックオーバーフローにより abort していた。
+    let n = 100_000;
+    common::write(
+        dir.path(),
+        "tests/deep.rs",
+        &format!(
+            "{}// [FR-001]\n#[test]\nfn t() {{}}\n{}",
+            "mod m {\n".repeat(n),
+            "}\n".repeat(n)
+        ),
+    );
+    let out = common::run(dir.path(), &["check", "--gate"])
+        .assert()
+        .code(2)
+        .get_output()
+        .stdout
+        .clone();
+    let stdout = String::from_utf8(out).unwrap();
+    assert!(
+        stdout.contains("nesting deeper than 256 levels in tests/deep.rs"),
+        "{stdout}"
+    );
+}

@@ -2,9 +2,9 @@
   "edges": {
     "desc:doc:DOC-CHECK": {
       "from": "sha256:2536d2ff59e09fe78450e76017752f3620b2d212f91498f6b8ebf3ec8972fc2c",
-      "to": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "to": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "desc:doc:DOC-INDEX": {
       "from": "sha256:c900c476f334244260611eaaf2e4105d847f879e9e64eb3c9018a6a5a024ed15",
@@ -47,130 +47,136 @@
       "at": "2026-10-13T08:33:30Z"
     },
     "doc-req:DOC-CHECK:FR-014": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:b51e1d761a616e2e7f4f19afa0ca46b7467bd27f8305a1abebe4d73a3fce189f",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-024": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:66de0b9f75fe32a642231fd08667084ff0b01106c707531607e7c303e757a7f7",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-025": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:24cbacb53ef98460fdf6ca4e748c6ef5493f0f516969375d2ed21aa0a2284960",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-026": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:3bc18860230b32f454bc7b793a778dc134f6f72180735133185f50217abe9ccc",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-027": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:c032cc1ba3133ae8946932fa867b3dbcf42f078d8bb53bb899ef5072f8cdc991",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-028": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:477e9cd918f07a68d06335b0e1bde0fcb46907b832676ca63e8035d28f4330f7",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-029": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:b65372b34274f2d890b9e39e7d9ca088b5d1de2b77ebf2f65c67e7cf377ff230",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-030": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:8761cdc3b5922277b09d9d5fbb7931a326a51718b191c9228e1bedcba5cb8fa2",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-031": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:53e6752c34730cd1fbe765da13e2ea5d6caf5548375e1e5fe41a098a5a4d6662",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-032": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:8aae14a46155d4b45c333551c6660a1ba828f8b0c51b408c72319822bcaa7d69",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-035": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:0de78c905afe98c238696972f277eac8dd4218a905f094bf62f11faac77dde50",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-057": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:0cb089731eff9e17846bf50dffb0970950848a638ddcb4dccb3bb0e6ddd7c77f",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-073": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:a9e3aa324191d738ae7ecc3b98884859301e4acf908d55e8afced3666bd5346d",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-074": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:5ddb812bc60108b73a687669d88cbe2c74ea7f70fd208da73983e0f91164bd7b",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-075": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:661dbe11660a72e9200cadce7e28066436341d59ade34e6d14e0500af63f62b8",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-076": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:4aee539257913d58ce14272528db4d4e94df06a76267148bfcc2ab2102ba404e",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-077": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:5c3b34f37ff94ad60c63604243762641ae73bab8736710dd056b48124f3af9d3",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-078": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:dedd6acb2719b1a318ed1a59b70ad6471dc695aae869b3f673e6c851c2ed5cb2",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-079": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:f41c95899ab96f9b85764eb0eba529ea42135314946cf36999b59e3d3757060e",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-080": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:dfbe50181925169c4fe2df5c63b3a380ea99c15c7f89da58f5f444abcf79fdf8",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-CHECK:FR-088": {
-      "from": "sha256:d4bd68d5187aef343779e3bf1285ec8a25f9b4c419d5549410eba089af06c987",
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
       "to": "sha256:55ff3a5a2c084ff1f69598e54afdf4f664c682ad935969ae72b387b5ef22e37e",
       "by": "human",
-      "at": "2026-10-15T04:06:08Z"
+      "at": "2026-11-22T00:02:35Z"
+    },
+    "doc-req:DOC-CHECK:FR-127": {
+      "from": "sha256:a2fa941ca3bbe4beb3b6bec01697df178c627876a2240e756e1c3608d57e0419",
+      "to": "sha256:adc162160490e44177cb3b952b406d2b48878dcf8036c8289431dfed4582683d",
+      "by": "human",
+      "at": "2026-11-22T00:02:35Z"
     },
     "doc-req:DOC-INDEX:FR-067": {
       "from": "sha256:a6ee8f0c6312d64495729e3fe7cf85498b70ac0e06f66338b5bd442f6244b59b",
@@ -1761,6 +1767,12 @@
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
     },
+    "test-req:src/extract:tests:csharpは名前空間とifディレクティブも入れ子として数える:FR-127": {
+      "from": "sha256:e07b84ab767ac0e0a0da95cf0352af94c1cb605faeb004e2fbb1fe16b50de306",
+      "to": "sha256:adc162160490e44177cb3b952b406d2b48878dcf8036c8289431dfed4582683d",
+      "by": "human",
+      "at": "2026-11-22T00:02:35Z"
+    },
     "test-req:src/extract:tests:csharpは名前空間修飾された属性も検出する:FR-049": {
       "from": "sha256:fce2f4faeaafc5fa22cff7d06763b289f0d553f79a07a52536497bfd95e670a0",
       "to": "sha256:fb0093f337cac7c942a9d388b7aba4e4743a2d82a643fd85021251e816c05775",
@@ -2131,6 +2143,12 @@
       "by": "human",
       "reason": "マーカーを単一トークンのコメントに限定(FR-121)、Kotlin の位置引数付き注釈の解析失敗を修正(FR-063)、TypeScript の制約を追記",
       "at": "2026-10-13T16:49:58Z"
+    },
+    "test-req:src/extract:tests:javaはenum本体の中の型宣言も入れ子として数える:FR-127": {
+      "from": "sha256:759086055948d763a8f526079622d39d63f1711c991100fd193d601918bf020d",
+      "to": "sha256:adc162160490e44177cb3b952b406d2b48878dcf8036c8289431dfed4582683d",
+      "by": "human",
+      "at": "2026-11-22T00:02:35Z"
     },
     "test-req:src/extract:tests:javaはjavadocコメントをマーカーにしない:FR-060": {
       "from": "sha256:d6048a517fbfbbc559dad5fdb273dc5500dfce362a8bb3c20f7ee11f51fb283e",
@@ -2956,6 +2974,18 @@
       "by": "human",
       "reason": "yomiyasu による doc・req の推敲（意味は不変。敵対的レビュー2巡で確認）",
       "at": "2026-10-08T03:24:12Z"
+    },
+    "test-req:src/extract:tests:入れ子が256段までならtestを抽出し257段からはファイルをinvalidにする:FR-127": {
+      "from": "sha256:128988956092fd6403880df006f7c667dd2cb69ffa18afd0502a8a2477f601aa",
+      "to": "sha256:adc162160490e44177cb3b952b406d2b48878dcf8036c8289431dfed4582683d",
+      "by": "human",
+      "at": "2026-11-22T00:02:35Z"
+    },
+    "test-req:src/extract:tests:入れ子が極端に深くてもスタックオーバーフローせずinvalidにする:FR-127": {
+      "from": "sha256:134a1df5d239dc2734e166eed6e313203c2e92d1ea792326339609a6d83241e3",
+      "to": "sha256:adc162160490e44177cb3b952b406d2b48878dcf8036c8289431dfed4582683d",
+      "by": "human",
+      "at": "2026-11-22T00:02:35Z"
     },
     "test-req:src/frontmatter:tests:bodyにはフロントマターのブロックが含まれない:FR-002": {
       "from": "sha256:fa37e123aedbe74153243f29044ef60ff35d26300597ac994d33e770b7b7c42e",
@@ -5395,6 +5425,12 @@
       "by": "human",
       "reason": "コメント記号は種別ごとに1組だけ除き、//// や /*** はマーカーにしない(FR-121)。マーカー判定をストリーミング化",
       "at": "2026-10-13T16:59:39Z"
+    },
+    "test-req:tests/cli_check::入れ子が極端に深いテストファイルがあってもcheckは異常終了せずinvalidを報告する:FR-127": {
+      "from": "sha256:4d33ed61c6d2efcaba96abcee5597485fa84d7721d2251c94b00feeea450c531",
+      "to": "sha256:adc162160490e44177cb3b952b406d2b48878dcf8036c8289431dfed4582683d",
+      "by": "human",
+      "at": "2026-11-22T00:02:35Z"
     },
     "test-req:tests/cli_check::設定エラーの場合はexit_code_1を返す:FR-030": {
       "from": "sha256:d520dc7db90be1061d9d3ea2de226b946e0806aca89f9bf9fa500e1261fde29f",

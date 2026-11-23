@@ -12,6 +12,24 @@ pub struct ExtractedTest {
 pub enum ExtractError {
     #[error("parse error in {path}")]
     Parse { path: String },
+    /// The nesting the walker descends into exceeds [`MAX_NESTING_DEPTH`]
+    /// (FR-127).
+    #[error("nesting deeper than {MAX_NESTING_DEPTH} levels in {path}")]
+    TooDeep { path: String },
+}
+
+/// Maximum nesting (inline `mod`, type declarations, C# `#if`, `describe`,
+/// `group`) the extractors descend into; deeper files are invalid (FR-127).
+/// Bounding the recursion keeps `check` from overflowing the stack.
+pub const MAX_NESTING_DEPTH: usize = 256;
+
+/// The walker reached a container nested deeper than [`MAX_NESTING_DEPTH`].
+struct TooDeep;
+
+fn too_deep(path: &str) -> impl Fn(TooDeep) -> ExtractError + '_ {
+    move |TooDeep| ExtractError::TooDeep {
+        path: path.to_string(),
+    }
 }
 
 /// Extract Go tests from a `*_test.go` file: top-level `function_declaration`s
@@ -91,7 +109,8 @@ pub fn extract_rust_tests(
 
     let base = path.strip_suffix(".rs").unwrap_or(path);
     let mut results = Vec::new();
-    walk_rust_items(root, source, base, &[], extra_attributes, &mut results);
+    walk_rust_items(root, source, base, &[], extra_attributes, 0, &mut results)
+        .map_err(too_deep(path))?;
     Ok(results)
 }
 
@@ -101,8 +120,12 @@ fn walk_rust_items(
     base: &str,
     mods: &[String],
     extra_attributes: &[String],
+    depth: usize,
     results: &mut Vec<ExtractedTest>,
-) {
+) -> Result<(), TooDeep> {
+    if depth > MAX_NESTING_DEPTH {
+        return Err(TooDeep);
+    }
     let mut cursor = container.walk();
     let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
     for (idx, node) in children.iter().enumerate() {
@@ -145,11 +168,20 @@ fn walk_rust_items(
                     .to_string();
                 let mut new_mods = mods.to_vec();
                 new_mods.push(mod_name);
-                walk_rust_items(body, source, base, &new_mods, extra_attributes, results);
+                walk_rust_items(
+                    body,
+                    source,
+                    base,
+                    &new_mods,
+                    extra_attributes,
+                    depth + 1,
+                    results,
+                )?;
             }
             _ => {}
         }
     }
+    Ok(())
 }
 
 /// Last row a comment occupies. tree-sitter-rust includes the trailing newline
@@ -427,7 +459,7 @@ pub fn extract_csharp_tests(path: &str, source: &str) -> Result<Vec<ExtractedTes
     }
     let base = path.strip_suffix(".cs").unwrap_or(path);
     let mut results = Vec::new();
-    walk_csharp_container(root, source, base, &[], &mut results);
+    walk_csharp_container(root, source, base, &[], 0, &mut results).map_err(too_deep(path))?;
     Ok(results)
 }
 
@@ -436,18 +468,22 @@ fn walk_csharp_container(
     source: &str,
     base: &str,
     types: &[String],
+    depth: usize,
     results: &mut Vec<ExtractedTest>,
-) {
+) -> Result<(), TooDeep> {
+    if depth > MAX_NESTING_DEPTH {
+        return Err(TooDeep);
+    }
     let mut cursor = container.walk();
     let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
     for (idx, node) in children.iter().enumerate() {
         match node.kind() {
             "preproc_if" | "preproc_elif" | "preproc_else" => {
-                walk_csharp_container(*node, source, base, types, results);
+                walk_csharp_container(*node, source, base, types, depth + 1, results)?;
             }
             "namespace_declaration" => {
                 if let Some(body) = node.child_by_field_name("body") {
-                    walk_csharp_container(body, source, base, types, results);
+                    walk_csharp_container(body, source, base, types, depth + 1, results)?;
                 }
             }
             "class_declaration"
@@ -463,7 +499,7 @@ fn walk_csharp_container(
                 let name = name_node.utf8_text(source.as_bytes()).unwrap_or("");
                 let mut new_types = types.to_vec();
                 new_types.push(name.to_string());
-                walk_csharp_container(body, source, base, &new_types, results);
+                walk_csharp_container(body, source, base, &new_types, depth + 1, results)?;
             }
             "method_declaration" if !types.is_empty() => {
                 if !csharp_is_test_method(*node, source) {
@@ -495,6 +531,7 @@ fn walk_csharp_container(
             _ => {}
         }
     }
+    Ok(())
 }
 
 fn csharp_is_test_method(method: tree_sitter::Node, source: &str) -> bool {
@@ -587,7 +624,7 @@ pub fn extract_typescript_tests(
         .find_map(|ext| path.strip_suffix(&format!(".{ext}")))
         .unwrap_or(path);
     let mut results = Vec::new();
-    walk_typescript_statements(root, source, base, &[], &mut results);
+    walk_typescript_statements(root, source, base, &[], 0, &mut results).map_err(too_deep(path))?;
     Ok(results)
 }
 
@@ -655,8 +692,12 @@ fn walk_typescript_statements(
     source: &str,
     base: &str,
     describes: &[String],
+    depth: usize,
     results: &mut Vec<ExtractedTest>,
-) {
+) -> Result<(), TooDeep> {
+    if depth > MAX_NESTING_DEPTH {
+        return Err(TooDeep);
+    }
     let mut cursor = container.walk();
     let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
     for (idx, node) in children.iter().enumerate() {
@@ -711,9 +752,10 @@ fn walk_typescript_statements(
             }
             let mut new_desc = describes.to_vec();
             new_desc.push(name.to_string());
-            walk_typescript_statements(body, source, base, &new_desc, results);
+            walk_typescript_statements(body, source, base, &new_desc, depth + 1, results)?;
         }
     }
+    Ok(())
 }
 
 // ---- Dart / Flutter (package:test / flutter_test) ----
@@ -774,7 +816,7 @@ pub fn extract_dart_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>
         else {
             continue;
         };
-        walk_dart_statements(block, source, base, &[], &mut results);
+        walk_dart_statements(block, source, base, &[], 0, &mut results).map_err(too_deep(path))?;
     }
     Ok(results)
 }
@@ -831,8 +873,12 @@ fn walk_dart_statements(
     source: &str,
     base: &str,
     groups: &[String],
+    depth: usize,
     results: &mut Vec<ExtractedTest>,
-) {
+) -> Result<(), TooDeep> {
+    if depth > MAX_NESTING_DEPTH {
+        return Err(TooDeep);
+    }
     let mut cursor = block.walk();
     let children: Vec<tree_sitter::Node> = block.children(&mut cursor).collect();
     for (idx, node) in children.iter().enumerate() {
@@ -882,7 +928,7 @@ fn walk_dart_statements(
             };
             let mut new_groups = groups.to_vec();
             new_groups.push(name);
-            walk_dart_statements(inner, source, base, &new_groups, results);
+            walk_dart_statements(inner, source, base, &new_groups, depth + 1, results)?;
         } else {
             let markers = collect_preceding_markers_with(
                 &children,
@@ -904,6 +950,7 @@ fn walk_dart_statements(
             });
         }
     }
+    Ok(())
 }
 
 // ---- Java / Kotlin (JUnit) ----
@@ -973,7 +1020,7 @@ pub fn extract_java_tests(path: &str, source: &str) -> Result<Vec<ExtractedTest>
     }
     let base = path.strip_suffix(".java").unwrap_or(path);
     let mut results = Vec::new();
-    walk_java_container(root, source, base, &[], &mut results);
+    walk_java_container(root, source, base, &[], 0, &mut results).map_err(too_deep(path))?;
     Ok(results)
 }
 
@@ -982,8 +1029,12 @@ fn walk_java_container(
     source: &str,
     base: &str,
     types: &[String],
+    depth: usize,
     results: &mut Vec<ExtractedTest>,
-) {
+) -> Result<(), TooDeep> {
+    if depth > MAX_NESTING_DEPTH {
+        return Err(TooDeep);
+    }
     let mut cursor = container.walk();
     let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
     for (idx, node) in children.iter().enumerate() {
@@ -1008,10 +1059,10 @@ fn walk_java_container(
                         .filter(|n| n.kind() == "enum_body_declarations")
                         .collect();
                     for d in decls {
-                        walk_java_container(d, source, base, &new_types, results);
+                        walk_java_container(d, source, base, &new_types, depth + 1, results)?;
                     }
                 } else {
-                    walk_java_container(body, source, base, &new_types, results);
+                    walk_java_container(body, source, base, &new_types, depth + 1, results)?;
                 }
             }
             "method_declaration" if !types.is_empty() => {
@@ -1045,6 +1096,7 @@ fn walk_java_container(
             _ => {}
         }
     }
+    Ok(())
 }
 
 fn java_is_test_method(method: tree_sitter::Node, source: &str) -> bool {
@@ -1213,7 +1265,10 @@ fn kotlin_extract(
     }
     let base = path.strip_suffix(".kt").unwrap_or(path);
     let mut results = Vec::new();
-    walk_kotlin_container(root, &shadow, base, &[], &mut results).map_err(|()| parse_err())?;
+    walk_kotlin_container(root, &shadow, base, &[], 0, &mut results).map_err(|e| match e {
+        KotlinWalkError::Parse => parse_err(),
+        KotlinWalkError::TooDeep => too_deep(path)(TooDeep),
+    })?;
     Ok(results)
 }
 
@@ -1267,13 +1322,25 @@ fn kotlin_ident(text: &str) -> String {
         .to_string()
 }
 
+/// Why [`walk_kotlin_container`] gave up on a file.
+enum KotlinWalkError {
+    /// A name range off a char boundary (treated as a parse error).
+    Parse,
+    /// Nesting deeper than [`MAX_NESTING_DEPTH`] (FR-127).
+    TooDeep,
+}
+
 fn walk_kotlin_container(
     container: tree_sitter::Node,
     shadow: &KotlinShadow,
     base: &str,
     types: &[String],
+    depth: usize,
     results: &mut Vec<ExtractedTest>,
-) -> Result<(), ()> {
+) -> Result<(), KotlinWalkError> {
+    if depth > MAX_NESTING_DEPTH {
+        return Err(KotlinWalkError::TooDeep);
+    }
     let mut cursor = container.walk();
     let children: Vec<tree_sitter::Node> = container.children(&mut cursor).collect();
     for (idx, node) in children.iter().enumerate() {
@@ -1284,7 +1351,7 @@ fn walk_kotlin_container(
                         Some(t) => kotlin_ident(t),
                         None => {
                             debug_assert!(false, "kotlin name range off a char boundary");
-                            return Err(());
+                            return Err(KotlinWalkError::Parse);
                         }
                     },
                     None if node.kind() == "companion_object" => "Companion".to_string(),
@@ -1299,7 +1366,7 @@ fn walk_kotlin_container(
                 };
                 let mut new_types = types.to_vec();
                 new_types.push(name);
-                walk_kotlin_container(body, shadow, base, &new_types, results)?;
+                walk_kotlin_container(body, shadow, base, &new_types, depth + 1, results)?;
             }
             "function_declaration" => {
                 if !kotlin_is_test_function(*node, shadow) {
@@ -1310,7 +1377,7 @@ fn walk_kotlin_container(
                 };
                 let Some(name_text) = shadow.node_text(name_node) else {
                     debug_assert!(false, "kotlin name range off a char boundary");
-                    return Err(());
+                    return Err(KotlinWalkError::Parse);
                 };
                 let name = kotlin_ident(name_text);
                 if !is_valid_test_name(&name) {
@@ -1321,7 +1388,7 @@ fn walk_kotlin_container(
                 };
                 let Some(content) = shadow.slice(start, node.end_byte()) else {
                     debug_assert!(false, "kotlin content range off a char boundary");
-                    return Err(());
+                    return Err(KotlinWalkError::Parse);
                 };
                 results.push(ExtractedTest {
                     id: format!("{base}:{}:{name}", types.join("/")),
@@ -3434,5 +3501,164 @@ if (cond) {
     fn kotlinは位置引数付き注釈が複数あってもtestを取る() {
         let tests = kt("fun g(){}\n// a\n@A(\"x\")\n@B(\"y\")\n@Test\nfun f(){}\n");
         assert_eq!(tests.len(), 1, "{tests:?}");
+    }
+
+    /// Sources whose single marked test sits `n` levels deep, per language:
+    /// (language, file path, source). The nesting counted by FR-127 is the
+    /// inline `mod` / type declaration / `describe` / `group`.
+    fn nested_sources(n: usize) -> Vec<(&'static str, &'static str, String)> {
+        vec![
+            (
+                "rust",
+                "src/deep.rs",
+                format!(
+                    "{}// [FR-001]\n#[test]\nfn t() {{}}\n{}",
+                    "mod m {\n".repeat(n),
+                    "}\n".repeat(n)
+                ),
+            ),
+            (
+                "csharp",
+                "tests/Deep.cs",
+                format!(
+                    "{}// [FR-001]\n[Fact]\npublic void T() {{}}\n{}",
+                    "class C {\n".repeat(n),
+                    "}\n".repeat(n)
+                ),
+            ),
+            (
+                "java",
+                "src/Deep.java",
+                format!(
+                    "{}// [FR-001]\n@Test\nvoid t() {{}}\n{}",
+                    "class C {\n".repeat(n),
+                    "}\n".repeat(n)
+                ),
+            ),
+            (
+                "kotlin",
+                "src/Deep.kt",
+                format!(
+                    "{}// [FR-001]\n@Test\nfun t() {{}}\n{}",
+                    "class C {\n".repeat(n),
+                    "}\n".repeat(n)
+                ),
+            ),
+            (
+                "typescript",
+                "src/deep.test.ts",
+                format!(
+                    "{}// [FR-001]\nit(\"a\", () => {{}});\n{}",
+                    "describe(\"d\", () => {\n".repeat(n),
+                    "});\n".repeat(n)
+                ),
+            ),
+            (
+                "dart",
+                "test/deep_test.dart",
+                format!(
+                    "void main() {{\n{}// [FR-001]\ntest('a', () {{}});\n{}}}\n",
+                    "group('g', () {\n".repeat(n),
+                    "});\n".repeat(n)
+                ),
+            ),
+        ]
+    }
+
+    fn extract_any(
+        lang: &str,
+        path: &str,
+        source: &str,
+    ) -> Result<Vec<ExtractedTest>, ExtractError> {
+        match lang {
+            "rust" => extract_rust_tests(path, source, &[]),
+            "csharp" => extract_csharp_tests(path, source),
+            "java" => extract_java_tests(path, source),
+            "kotlin" => extract_kotlin_tests(path, source),
+            "typescript" => extract_typescript_tests(path, source),
+            "dart" => extract_dart_tests(path, source),
+            _ => unreachable!("{lang}"),
+        }
+    }
+
+    // [FR-127]
+    #[test]
+    fn 入れ子が256段までならtestを抽出し257段からはファイルをinvalidにする() {
+        assert_eq!(MAX_NESTING_DEPTH, 256);
+        for (lang, path, source) in nested_sources(256) {
+            let tests = extract_any(lang, path, &source)
+                .unwrap_or_else(|e| panic!("{lang}: 256 levels must extract: {e}"));
+            assert_eq!(tests.len(), 1, "{lang}: {tests:?}");
+            assert_eq!(tests[0].markers, vec!["FR-001".to_string()], "{lang}");
+        }
+        for (lang, path, source) in nested_sources(257) {
+            match extract_any(lang, path, &source) {
+                Err(ExtractError::TooDeep { path: p }) => assert_eq!(p, path, "{lang}"),
+                other => panic!("{lang}: 257 levels must be TooDeep, got {other:?}"),
+            }
+        }
+    }
+
+    // [FR-127]
+    #[test]
+    fn 入れ子が極端に深くてもスタックオーバーフローせずinvalidにする() {
+        // main の 10,000 段で abort していた深さの 10 倍。テストのスレッド
+        // （既定 2 MiB のスタック）で実行しても落ちないこと。
+        for (lang, path, source) in nested_sources(100_000) {
+            assert!(
+                matches!(
+                    extract_any(lang, path, &source),
+                    Err(ExtractError::TooDeep { .. })
+                ),
+                "{lang}"
+            );
+        }
+    }
+
+    // [FR-127]
+    #[test]
+    fn csharpは名前空間とifディレクティブも入れ子として数える() {
+        let wrap = |open: &str, close: &str, n: usize| {
+            format!(
+                "{}class C {{\n// [FR-001]\n[Fact]\npublic void T() {{}}\n}}\n{}",
+                open.repeat(n),
+                close.repeat(n)
+            )
+        };
+        // class 自身が 1 段なので、外側に 255 段までなら合計 256 段。
+        let ns = |n| wrap("namespace N {\n", "}\n", n);
+        assert_eq!(cs(&ns(255)).len(), 1);
+        assert!(matches!(
+            extract_csharp_tests("tests/Deep.cs", &ns(256)),
+            Err(ExtractError::TooDeep { .. })
+        ));
+        let pp = |n| wrap("#if A\n", "#endif\n", n);
+        assert_eq!(cs(&pp(255)).len(), 1);
+        assert!(matches!(
+            extract_csharp_tests("tests/Deep.cs", &pp(256)),
+            Err(ExtractError::TooDeep { .. })
+        ));
+    }
+
+    // [FR-127]
+    #[test]
+    fn javaはenum本体の中の型宣言も入れ子として数える() {
+        let src = |n: usize| {
+            format!(
+                "{}// [FR-001]\n@Test\nvoid t() {{}}\n{}",
+                "enum E {\n;\n".repeat(n),
+                "}\n".repeat(n)
+            )
+        };
+        assert_eq!(
+            extract_java_tests("src/Deep.java", &src(256))
+                .unwrap()
+                .len(),
+            1
+        );
+        assert!(matches!(
+            extract_java_tests("src/Deep.java", &src(257)),
+            Err(ExtractError::TooDeep { .. })
+        ));
     }
 }
